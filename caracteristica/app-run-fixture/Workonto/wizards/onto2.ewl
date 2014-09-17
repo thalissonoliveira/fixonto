@@ -1,0 +1,134 @@
+//####### EXTENSÃO DA FIXTURE COM FEA2ONTO 2.O ##########
+
+//####### WIZARD 1. FEA2ONTO 2.0 #########
+wizard FeaToOntoFixtureParser
+{
+	guard: self.isTypeOf(LPS)
+	title: 'Fixture - Fea2Onto 2.0'
+	do {
+		fixTure2(self);	
+	}
+}
+
+//####### WIZARD 2. ONTO ANALYSER #########
+wizard OntoAnalyser
+{
+	guard: self.isTypeOf(LPS)
+	title: 'MMSC Analyser Fea2Onto 2.0'
+	do {
+		ontoAnalyserFixture();
+	}
+}
+
+
+operation fixTure2(lps:LPS) {
+	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
+	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
+	var factoryFixture := featToOntoFixture.getSplElementsFactory();
+	var splFixture = factoryFixture.createSpl(lps.nome);
+	
+	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture);
+	featToOntoFixture.run(splFixture);
+	
+}
+
+
+operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture) {
+	
+	var raiz = lps.sistema;
+ 	var rootFixture = factoryFixture.createRootFeature(raiz.nome);
+	
+	splFixture.setSystem(rootFixture);
+	preecherElementosCaracteristicaLpsFixture(raiz, rootFixture, factoryFixture, splFixture);
+	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture);
+	
+	var elementoDoModelo;
+	
+	for (literal in lps.expressoes -> select(x|x.isTypeOf(ExpressaoRelacional))) {
+//		 literal.nome.println();
+	}
+	
+	return splFixture;
+}
+
+operation preecherElementosCaracteristicaLpsFixture(caracteristica : Caracteristica, rootFixture, factoryFixture, splFixture) {
+	
+	var childFeatureFixture = null;
+	var attributeFixture = null;
+	
+	splFixture.getElements().add(rootFixture);
+	
+	for (caracteristicaFilha in caracteristica.caracteristicaFilha) {
+		childFeatureFixture = criarNovaCaracteristicaFixture(caracteristicaFilha, factoryFixture);
+		splFixture.getElements().add(childFeatureFixture);
+		rootFixture.getChildrenFeatures().add(childFeatureFixture);
+		childFeatureFixture.setFatherFeature(rootFixture);
+		splFixture.getElements().add(childFeatureFixture);
+		
+		for (atributo in caracteristicaFilha.atributo) {
+			attributeFixture = factoryFixture.createAttribute(atributo.nome);
+			attributeFixture.setFatherFeature(childFeatureFixture);
+			childFeatureFixture.getAttributes().add(attributeFixture);
+			splFixture.getElements().add(attributeFixture);
+		}
+		
+		if (not caracteristicaFilha.caracteristicaFilha.isEmpty()) {
+			splFixture = preecherElementosCaracteristicaLpsFixture(caracteristicaFilha, childFeatureFixture, factoryFixture, splFixture);
+		}
+		
+	}
+	return splFixture;
+}
+
+operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFixture) {
+	var contextRootFixture = null;
+	var contextEntityFixture = null;
+	var contextInfoFixture = null;
+
+	for (raizDeContexto in lps.elementos -> select(x|x.isTypeOf(RaizDeContexto))) {
+		contextRootFixture = factoryFixture.createContextRoot(raizDeContexto.nome);
+		splFixture.getElements().add(contextRootFixture);
+		
+		for (entidadeDeContexto in raizDeContexto.entidadesDeContexto) {
+			contextEntityFixture = factoryFixture.createContextEntity(entidadeDeContexto.nome);
+			contextEntityFixture.setFatherContextRoot(contextRootFixture);
+			contextRootFixture.getContextEntities().add(contextEntityFixture);
+			splFixture.getElements.add(contextEntityFixture);
+		
+			for (informacaoDeContexto in entidadeDeContexto.informacoesdeContexto) {
+				contextInfoFixture = factoryFixture.createContextInfo(informacaoDeContexto.nome);
+				contextInfoFixture.setFatherContextEntity(contextEntityFixture);
+				contextEntityFixture.getContextInfos().add(contextInfoFixture);
+				splFixture.getElements.add(contextInfoFixture);
+			}
+			
+		}
+		
+	}
+}
+
+
+//#### Método que realiza a análise da ontologia gerada a partir do MMSC
+operation ontoAnalyserFixture() {
+	var rulesAnalyser := new Native('fixture.owl.reasoner.RulesAnalyser');
+	rulesAnalyser.run();
+}
+
+//############## MÉTODOS AUXILIARES AOS MÉTODOS PRINCIPAIS DO PARSER #####################
+operation criarNovaCaracteristicaFixture(caracteristica : Caracteristica, factoryFixture) {
+	if (caracteristica.isTypeOf(CaracteristicaMandatoria)) {
+		return factoryFixture.createMandatoryFeature(caracteristica.nome);
+	} else if (caracteristica.isTypeOf(CaracteristicaOpcional)) {
+		return factoryFixture.createOptionalFeature(caracteristica.nome);
+	} else if (caracteristica.isTypeOf(VariacaoDois)) {
+		return factoryFixture.createVariationTwo(caracteristica.nome);
+	} else if (caracteristica.isTypeOf(CaracteristicaAgrupada)) {
+		return factoryFixture.createGroupedFeature(caracteristica.nome);
+	} else {
+		'[ERROR] - Erro ao criar nova Feature pela Fixture: característica do modelo é inválida.'.println();
+		return null;
+	}
+	
+}
+
+

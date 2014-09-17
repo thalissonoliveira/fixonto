@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<caracteristica:LPS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:caracteristica="caracteristica" sistema="//@elementos.0" nome="">
+  <elementos xsi:type="caracteristica:CaracteristicaRaiz" nome="Root" caracteristicaFilha="//@elementos.1 //@elementos.2" LpsDoSistema="/"/>
+  <elementos xsi:type="caracteristica:CaracteristicaMandatoria" nome="MobileDevice" caracteristicaPai="//@elementos.0" caracteristicaFilha="//@elementos.3 //@elementos.4"/>
+  <elementos xsi:type="caracteristica:CaracteristicaMandatoria" nome="ContexManager" caracteristicaPai="//@elementos.0" atributo="//@elementos.10"/>
+  <elementos xsi:type="caracteristica:CaracteristicaOpcional" nome="GPS" caracteristicaPai="//@elementos.1"/>
+  <elementos xsi:type="caracteristica:VariacaoDois" nome="PV 1" caracteristicaPai="//@elementos.1" caracteristicaFilha="//@elementos.6 //@elementos.5" cardinalidadeMinimaOr="2" cardinalidadeMaximaOr="1"/>
+  <elementos xsi:type="caracteristica:CaracteristicaAgrupada" nome="Accelerometer" caracteristicaPai="//@elementos.4"/>
+  <elementos xsi:type="caracteristica:CaracteristicaAgrupada" nome="TemperatureSensor" caracteristicaPai="//@elementos.4"/>
+  <elementos xsi:type="caracteristica:RaizDeContexto" nome="ContextRoot" entidadesDeContexto="//@elementos.8"/>
+  <elementos xsi:type="caracteristica:EntidadeDeContexto" nome="ContextEntity" raiz="//@elementos.7" informacoesDeContexto="//@elementos.9"/>
+  <elementos xsi:type="caracteristica:InformacaoDeContexto" nome="ContextInfo" valor="10" elementoPai="//@elementos.8"/>
+  <elementos xsi:type="caracteristica:Atributo" nome="Attribute 1" caracteristicaPai="//@elementos.2"/>
+</caracteristica:LPS>

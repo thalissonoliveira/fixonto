@@ -87,23 +87,23 @@ public class FeaToOntoFixture {
 	}
 	
 	private void buildOntology(CompositionRule compositionRule) {
-		OWLIndividual currentCompotionRuleOWL = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(compositionRule);//Criação de Indivíduo OWL
+		OWLIndividual currentCompotionRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(compositionRule);//Criação de Indivíduo OWL
 		feaToOntoFixtureUtils.addCompositionRuleClassification(currentCompotionRuleOWL);//Classificação de Classe OWL
 	}
 
 	private void buildOntology(ContextRoot contextRoot) {
-		OWLIndividual currentContextRootOWL = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(contextRoot);
+		OWLIndividual currentContextRootOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRoot);
 		feaToOntoFixtureUtils.addContextRootClassification(currentContextRootOWL);
 		
 		OWLIndividual currentContextEntityOWL;
 		OWLIndividual currentContextInfoOWL;
 		for (ContextEntity contextEntity : contextRoot.getContextEntities()) {
-			currentContextEntityOWL = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(contextEntity);
+			currentContextEntityOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextEntity);
 			feaToOntoFixtureUtils.addContextEntityClassification(currentContextEntityOWL);
 			feaToOntoFixtureUtils.addParentalRelationBetweenContextRootAndEntity(currentContextRootOWL, currentContextEntityOWL);
 			
 			for (ContextInfo contextInfo : contextEntity.getContextInfos()) {
-				currentContextInfoOWL = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(contextInfo);
+				currentContextInfoOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextInfo);
 				feaToOntoFixtureUtils.addContextInfoClassification(currentContextInfoOWL);
 				feaToOntoFixtureUtils.addParentalRelationBetweenContextEntityAndInfo(currentContextEntityOWL, currentContextInfoOWL);
 			}
@@ -114,7 +114,7 @@ public class FeaToOntoFixture {
 
 	private void buildOntology(Feature feature) {
 		
-		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(feature);
+		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature);
 		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature);
 		
 		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);
@@ -127,7 +127,7 @@ public class FeaToOntoFixture {
 
 		OWLIndividual currentAttributeOwl;
 		for (Attribute attribute : attributes) {
-			currentAttributeOwl = feaToOntoFixtureUtils.createOWLNamedIndividualElementAndDataPropertyName(attribute);
+			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute);
 			feaToOntoFixtureUtils.addAttributeClassification(currentAttributeOwl);
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
 		}

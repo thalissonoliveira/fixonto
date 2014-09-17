@@ -129,9 +129,7 @@ public class OWLUtils {
 	
 	public OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
 		if (element != null) {
-			count++;
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName() + "_" + count));
-			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), element.getName());
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName()));
 			return owlNamedIndividual;
 		}
 		return null;
@@ -140,6 +138,16 @@ public class OWLUtils {
 	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature) {
 		if (feature != null && feature.getFatherFeature() != null) {
 			return createOWLNamedIndividualElementAndDataPropertyName(feature.getFatherFeature());
+		}
+		return null;
+	}
+	
+	public OWLIndividual createNewOWLNamedIndividual(Nameable element) {
+		if (element != null) {
+			count++;
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName() + "_" + count));
+			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), element.getName());
+			return owlNamedIndividual;
 		}
 		return null;
 	}
@@ -233,7 +241,5 @@ public class OWLUtils {
 		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);
 		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
 	}
-
-
 
 }

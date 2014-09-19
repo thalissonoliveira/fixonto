@@ -14,7 +14,10 @@ public enum OWLObjectPropertyTypeEnum {
 	HAS_FATHER_CONTEXT_ROOT (7, "Has Father Context Root", "hasFatherContextRoot"),
 	HAS_FATHER_CONTEXT_ENTITY (8, "Has Father Context Entitt", "hasFatherContextEntity"),
 	
-	HAS_ATTRIBUTE (9, "Has Attribute", "hasAttribute");
+	HAS_ATTRIBUTE (9, "Has Attribute", "hasAttribute"),
+	
+	HAS_ANTECEDENT (10, "Has Antecedent", "hasAntecedent"),
+	HAS_CONSEQUENT (11, "Has Consequent", "hasConsequent");
 	
 	private int code;
 	private String description;

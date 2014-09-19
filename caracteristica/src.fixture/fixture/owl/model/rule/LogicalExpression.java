@@ -1,5 +1,53 @@
 package fixture.owl.model.rule;
 
+import fixture.owl.model.enumeration.LogicalOperator;
 
-public class LogicalExpression extends Antecedent
-{} // ExpressaoLogica
+public class LogicalExpression extends Antecedent {
+
+	
+	private Antecedent rightSideComposition;
+	
+	private Antecedent leftSideComposition;
+	
+	private LogicalOperator logicalOperator;
+
+	public Antecedent getLeftSideComposition() {
+		return leftSideComposition;
+	}
+
+	public void setLeftSideComposition(Antecedent leftSideComposition) {
+		this.leftSideComposition = leftSideComposition;
+	}
+
+	public LogicalOperator getLogicalOperator() {
+		return logicalOperator;
+	}
+
+	public void setLogicalOperator(LogicalOperator logicalOperator) {
+		this.logicalOperator = logicalOperator;
+	}
+
+	public Antecedent getRightSideComposition() {
+		return rightSideComposition;
+	}
+
+	public void setRightSideComposition(Antecedent rightSideComposition) {
+		this.rightSideComposition = rightSideComposition;
+	}
+
+	@Override
+	public boolean isCompositionLiteral() {
+		return false;
+	}
+
+	@Override
+	public boolean isLogicalExpression() {
+		return true;
+	}
+
+	@Override
+	public boolean isRelationalExpressionj() {
+		return false;
+	}
+	
+} // ExpressaoLogica

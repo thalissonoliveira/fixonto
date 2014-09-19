@@ -20,7 +20,10 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	
 	COMPOSITION_RULE (10, "Compositin Rule", "CompositionRule"),
 	
-	COUNT(11, "count", "count");
+	COUNT(11, "count", "count"),
+	
+	
+	ANTECEDENT(12, "Antecedent", "Antecedent");
 	
 	
 	

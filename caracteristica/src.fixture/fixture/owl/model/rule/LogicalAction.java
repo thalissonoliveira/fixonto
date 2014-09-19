@@ -1,6 +1,37 @@
 package fixture.owl.model.rule;
 
+import fixture.owl.model.enumeration.LogicalActionOperator;
 
+public class LogicalAction extends Action {
+	
+	private Action rightSideAction;
+	
+	private Action leftSideAction;
+	
+	private LogicalActionOperator logicalActionOperator;
 
-public class LogicalAction extends Action
-{}
+	public Action getRightSideAction() {
+		return rightSideAction;
+	}
+
+	public void setRightSideAction(Action rightSideAction) {
+		this.rightSideAction = rightSideAction;
+	}
+
+	public Action getLeftSideAction() {
+		return leftSideAction;
+	}
+
+	public void setLeftSideAction(Action leftSideAction) {
+		this.leftSideAction = leftSideAction;
+	}
+
+	public LogicalActionOperator getLogicalActionOperator() {
+		return logicalActionOperator;
+	}
+
+	public void setLogicalActionOperator(LogicalActionOperator logicalActionOperator) {
+		this.logicalActionOperator = logicalActionOperator;
+	}
+	
+}

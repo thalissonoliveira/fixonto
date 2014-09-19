@@ -1,5 +1,6 @@
 package fixture.owl.utils;
 
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -20,6 +21,7 @@ import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import fixture.owl.enumeration.ModelOWLClassTypeEnum;
 import fixture.owl.enumeration.OWLDataPropertyTypeEnum;
 import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
+import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
 import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
@@ -50,6 +52,16 @@ public class OWLUtils {
 		return owlUtils;
 	}
 
+	public void addParentalRelationBetweenCompositionRuleAndAntecedent(OWLIndividual currentCompositionRuleOWL, OWLIndividual currentAntecedentRuleOWL) {
+		OWLObjectProperty hasAntecedentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ANTECEDENT);
+		addUnilateralRelationToOntology(currentCompositionRuleOWL, currentAntecedentRuleOWL, hasAntecedentProperty);
+	}
+	
+	public void addParentalRelationBetweenCompositionRuleAndConsequent(OWLIndividual currentCompositionRuleOWL, OWLIndividual currentConsequentRuleOWL) {
+		OWLObjectProperty hasConsequentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CONSEQUENT);
+		addUnilateralRelationToOntology(currentCompositionRuleOWL, currentConsequentRuleOWL, hasConsequentProperty);
+	}
+
 	
 	public void addParentalRelationBetweenFeatures(OWLIndividual currentFeatureOwl, OWLIndividual currentFatherFeatureOwl) {
 		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
@@ -57,29 +69,34 @@ public class OWLUtils {
 		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
 	}
 	
+	private void addIndividualClassification(OWLIndividual owlIndividual, FixtureOWLClassTypeEnumInterface fixtureOWLClassTypeEnumInterface) {
+		OWLClass owlClass = owlClassFactory.get(fixtureOWLClassTypeEnumInterface);
+		addEntityClassificationToOntology(owlIndividual, owlClass);
+	}
+	
+	public void addAntecedentClassification(OWLIndividual currentAntecedentRuleOWL) {
+		addIndividualClassification(currentAntecedentRuleOWL, ModelOWLClassTypeEnum.ANTECEDENT);
+	}
+
+	
 	public void addContextRootClassification(OWLIndividual currentContextRootOwl) {
-		OWLClass contextRootClass = owlClassFactory.get(ModelOWLClassTypeEnum.ROOT_FEATURE);
-		addEntityClassificationToOntology(currentContextRootOwl, contextRootClass);
+		addIndividualClassification(currentContextRootOwl, ModelOWLClassTypeEnum.CONTEXT_ROOT);
 	}
 	
 	public void addContextEntityClassification(OWLIndividual currentContextEntityOWL) {
-		OWLClass contextEntityClass = owlClassFactory.get(ModelOWLClassTypeEnum.CONTEXT_ENTITY);
-		addEntityClassificationToOntology(currentContextEntityOWL, contextEntityClass);
+		addIndividualClassification(currentContextEntityOWL, ModelOWLClassTypeEnum.CONTEXT_ENTITY);
 	}
 	
 	public void addContextInfoClassification(OWLIndividual currentContextInfoOWL) {
-		OWLClass contextInfoClass = owlClassFactory.get(ModelOWLClassTypeEnum.CONTEXT_INFO);
-		addEntityClassificationToOntology(currentContextInfoOWL, contextInfoClass);
+		addIndividualClassification(currentContextInfoOWL, ModelOWLClassTypeEnum.CONTEXT_INFO);
 	}
 	
 	public void addAttributeClassification(OWLIndividual currentAttributeOWL) {
-		OWLClass attributeClass = owlClassFactory.get(ModelOWLClassTypeEnum.ATTRIBUTE);
-		addEntityClassificationToOntology(currentAttributeOWL, attributeClass);
+		addIndividualClassification(currentAttributeOWL, ModelOWLClassTypeEnum.ATTRIBUTE);
 	}
 
 	public void addCompositionRuleClassification(OWLIndividual currentCompotionRuleOWL) {
-		OWLClass compositionRuleClass = owlClassFactory.get(ModelOWLClassTypeEnum.COMPOSITION_RULE);
-		addEntityClassificationToOntology(currentCompotionRuleOWL, compositionRuleClass);
+		addIndividualClassification(currentCompotionRuleOWL, ModelOWLClassTypeEnum.COMPOSITION_RULE);
 	}
 	
 	public Double getCountFromOntology() {
@@ -106,7 +123,7 @@ public class OWLUtils {
 		} else if (feature.isGroupedFeature()) {
 			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.GROUPED_FEATURE));
 		} else {
-			throw new RuntimeException("Erro ao traduzir uma característica para OWL. Tipo de característica inválido.");
+			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
 		}
 	}
 
@@ -127,7 +144,7 @@ public class OWLUtils {
 		addUnilateralRelationToOntology(currentAttributeOwl, currentFeatureOwl, hasAttribute);
 	}
 	
-	public OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
+	private OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
 		if (element != null) {
 			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName()));
 			return owlNamedIndividual;
@@ -147,6 +164,24 @@ public class OWLUtils {
 			count++;
 			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName() + "_" + count));
 			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), element.getName());
+			return owlNamedIndividual;
+		}
+		return null;
+	}
+	
+	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<String, Set<OWLNamedIndividual>> oracle) {
+		if (element != null) {
+			count++;
+			String name = element.getName();
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + name + "_" + count));
+			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
+			
+			
+			if (!oracle.containsKey(name)) {
+				oracle.put(name, new HashSet<OWLNamedIndividual>());
+			}
+			oracle.get(name).add(owlNamedIndividual);
+			
 			return owlNamedIndividual;
 		}
 		return null;

@@ -6,6 +6,8 @@ public abstract class Rule implements Nameable {
 	
 	private String name;
 	
+	private String conteudo;
+	
 	public Rule() {
 		super();
 	}
@@ -26,5 +28,14 @@ public abstract class Rule implements Nameable {
 	public String getName() {
 		return this.name;
 	}
+
+	public String getConteudo() {
+		return conteudo;
+	}
+
+	public void setConteudo(String conteudo) {
+		this.conteudo = conteudo;
+	}
+	
 
 } // Regra

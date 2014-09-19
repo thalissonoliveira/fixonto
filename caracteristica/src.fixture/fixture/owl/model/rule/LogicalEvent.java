@@ -1,6 +1,41 @@
 package fixture.owl.model.rule;
 
+import fixture.owl.model.enumeration.LogicalOperator;
 
+public class LogicalEvent extends Event {
+	
+	private Event rightSideEvent;
+	
+	private Event leftSideEvent;
+	
+	private LogicalOperator logicalOperator;
 
-public class LogicalEvent extends Event
-{} // EventoLogico
+	public Event getRightSideEvent() {
+		return rightSideEvent;
+	}
+
+	public void setRightSideEvent(Event rightSideEvent) {
+		this.rightSideEvent = rightSideEvent;
+	}
+
+	public Event getLeftSideEvent() {
+		return leftSideEvent;
+	}
+
+	public void setLeftSideEvent(Event leftSideEvent) {
+		this.leftSideEvent = leftSideEvent;
+	}
+
+	public LogicalOperator getLogicalOperator() {
+		return logicalOperator;
+	}
+
+	public void setLogicalOperator(LogicalOperator logicalOperator) {
+		this.logicalOperator = logicalOperator;
+	}
+	
+	
+	
+	
+	
+} // EventoLogico

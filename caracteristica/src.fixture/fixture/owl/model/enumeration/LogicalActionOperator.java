@@ -13,7 +13,7 @@ import java.util.List;
  * @model
  * @generated
  */
-public enum LogicActionOperator
+public enum LogicalActionOperator
 {
   /**
    * The '<em><b>AND</b></em>' literal object.
@@ -46,8 +46,8 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final LogicActionOperator[] VALUES_ARRAY =
-    new LogicActionOperator[]
+  private static final LogicalActionOperator[] VALUES_ARRAY =
+    new LogicalActionOperator[]
     {
       AND,
     };
@@ -58,7 +58,7 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<LogicActionOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<LogicalActionOperator> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
    * Returns the '<em><b>Operador Acao Logico</b></em>' literal with the specified literal value.
@@ -66,11 +66,11 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LogicActionOperator get(String literal)
+  public static LogicalActionOperator get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      LogicActionOperator result = VALUES_ARRAY[i];
+      LogicalActionOperator result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -85,11 +85,11 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LogicActionOperator getByName(String name)
+  public static LogicalActionOperator getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      LogicActionOperator result = VALUES_ARRAY[i];
+      LogicalActionOperator result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -104,7 +104,7 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  public static LogicActionOperator get(int value)
+  public static LogicalActionOperator get(int value)
   {
     switch (value)
     {
@@ -140,7 +140,7 @@ public enum LogicActionOperator
    * <!-- end-user-doc -->
    * @generated
    */
-  private LogicActionOperator(int value, String name, String literal)
+  private LogicalActionOperator(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;

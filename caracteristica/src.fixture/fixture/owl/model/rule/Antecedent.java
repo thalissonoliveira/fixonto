@@ -1,6 +1,10 @@
 package fixture.owl.model.rule;
 
 
-public class Antecedent extends Expression {
+public abstract class Antecedent extends Expression {
+	
+	public abstract boolean isCompositionLiteral();
+	public abstract boolean isLogicalExpression();
+	public abstract boolean isRelationalExpressionj();
 
 } // Antecedente

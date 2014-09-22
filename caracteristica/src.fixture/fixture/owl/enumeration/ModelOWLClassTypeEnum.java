@@ -17,15 +17,24 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	CONTEXT_INFO (8, "Context Info", "ContextInfo"),
 	
 	ATTRIBUTE (9, "Attribute", "Attribute"),
+	COUNT(10, "count", "count"),
+
+	COMPOSITION_RULE (11, "Compositin Rule", "CompositionRule"),
+	CONTEXT_RULE (12, "Compositin Rule", "CompositionRule"),
 	
-	COMPOSITION_RULE (10, "Compositin Rule", "CompositionRule"),
+	ANTECEDENT(13, "Antecedent", "Antecedent"),
+	COMPOSITION_LITERAL(14, "Composition Literal", "CompositionLiteral"),
+	LOGICAL_EXPRESSION(15, "Logical Expression", "LogicalExpression"),
+	RELATIONAL_EXPRESSION(16, "Relational Expression", "RelationalExpression"),
+
+	ACTION (17, "Action", "Action"),
+	ACTION_LITERAL(18, "Action Literal", "ActionLiteral"),
+	DESIGNATE(19, "Designate", "Designate"),
+	LOGICAL_ACTION(20, "Logical Action", "LogicalAction"),
 	
-	COUNT(11, "count", "count"),
-	
-	
-	ANTECEDENT(12, "Antecedent", "Antecedent");
-	
-	
+	EVENT(21, "Event", "Event"),
+	LOGICAL_EVENT(22, "LogicalEvent", "LogicalEvent"),
+	RELATIONAL_EVENT(23, "Relational Event", "RelationalEvent");
 	
 	private int code;
 	private String description;

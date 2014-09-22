@@ -27,6 +27,7 @@ import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.rule.Antecedent;
 
 public class OWLUtils {
 	
@@ -34,7 +35,7 @@ public class OWLUtils {
 	private OntoHelper ontoHelper;
 	private static OWLClassFactory owlClassFactory;
 	private static OWLObjectPropertyFactory owlObjetcPropertyFactory;
-	public static double count;
+	public static int count;
 	
 	private OWLUtils() {}
 	
@@ -61,8 +62,17 @@ public class OWLUtils {
 		OWLObjectProperty hasConsequentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CONSEQUENT);
 		addUnilateralRelationToOntology(currentCompositionRuleOWL, currentConsequentRuleOWL, hasConsequentProperty);
 	}
-
 	
+	public void addRelationBetweenCompositionLiteralAndFeaturedElement(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentFeaturedElementOwl) {
+		OWLObjectProperty hasFeaturedElement = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT);
+		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentFeaturedElementOwl, hasFeaturedElement);
+	}
+	
+	public void addRelationBetweenRelationalExpressionAndExpressionVariable(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentExpressionVariable) {
+		OWLObjectProperty hasVariableExpression = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_VARIABLE_EXPRESSION);
+		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentExpressionVariable, hasVariableExpression);
+	}
+
 	public void addParentalRelationBetweenFeatures(OWLIndividual currentFeatureOwl, OWLIndividual currentFatherFeatureOwl) {
 		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
 		OWLObjectProperty hasChildFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CHILD_FEATURE);
@@ -74,8 +84,16 @@ public class OWLUtils {
 		addEntityClassificationToOntology(owlIndividual, owlClass);
 	}
 	
-	public void addAntecedentClassification(OWLIndividual currentAntecedentRuleOWL) {
-		addIndividualClassification(currentAntecedentRuleOWL, ModelOWLClassTypeEnum.ANTECEDENT);
+	public void addAntecedentClassification(Antecedent antecedent, OWLIndividual currentAntecedentRuleOWL) {
+		if (antecedent.isCompositionLiteral()) {
+			addIndividualClassification(currentAntecedentRuleOWL, ModelOWLClassTypeEnum.COMPOSITION_LITERAL);
+		} else if (antecedent.isLogicalExpression()) {
+			addIndividualClassification(currentAntecedentRuleOWL, ModelOWLClassTypeEnum.LOGICAL_EXPRESSION);
+		} else if (antecedent.isRelationalExpression()) {
+			addIndividualClassification(currentAntecedentRuleOWL, ModelOWLClassTypeEnum.RELATIONAL_EXPRESSION);
+		} else {
+			throw new RuntimeException("SEE EXAMPLE OF FEATURE.");
+		}
 	}
 
 	
@@ -99,16 +117,16 @@ public class OWLUtils {
 		addIndividualClassification(currentCompotionRuleOWL, ModelOWLClassTypeEnum.COMPOSITION_RULE);
 	}
 	
-	public Double getCountFromOntology() {
+	public int getCountFromOntology() {
 		OWLEntity[] individualCount = ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "count")).toArray(new OWLEntity[1]);
 		Set<OWLEntity> entitiesInSignature = ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "hasMaxId"));
 		OWLDataProperty[] dataProperthasMaxId = entitiesInSignature.toArray(new OWLDataProperty[1]);
 		Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = ((OWLIndividual) individualCount[0]).getDataPropertyValues(ontoHelper.getMetaOntology());
 		Set<OWLLiteral> set = dataPropertyValues.get((OWLDataProperty) dataProperthasMaxId[0]);
 		if (set == null || set.isEmpty()) {
-			return -1d;
+			return -1;
 		}
-		return Double.valueOf(set.toArray(new OWLLiteral[1])[0].getLiteral());
+		return Integer.valueOf(set.toArray(new OWLLiteral[1])[0].getLiteral());
 	}
 	
 	public void addFeatureClassification(Feature feature, OWLIndividual currentFeatureOwl) {
@@ -142,6 +160,23 @@ public class OWLUtils {
 	public void addParentalRelationBetweenFeatureAndAttribute(OWLIndividual currentFeatureOwl, OWLIndividual currentAttributeOwl) {
 		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ATTRIBUTE);
 		addUnilateralRelationToOntology(currentAttributeOwl, currentFeatureOwl, hasAttribute);
+	}
+	
+	
+	public void addPresenceCompositionLiteralRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
+		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_PRESENCE), value);
+	}
+	
+	public void addLogicalOperatorLogicalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
+		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_LOGICAL_OPERATOR), value);
+	}
+	
+	public void addRelationalOperatorRelationalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
+		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_RELATIONAL_OPERATOR), value);
+	}
+
+	public void addValueRelationalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, String value) {
+		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
 	}
 	
 	private OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
@@ -196,21 +231,23 @@ public class OWLUtils {
 		Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = countIndividual.getDataPropertyValues(ontoHelper.getMetaOntology());
 		Set<OWLLiteral> collectionLiteralCount = dataPropertyValues.get(hasMaxId);
 		
-		if (collectionLiteralCount != null) {
-			Double literalValue = Double.valueOf(collectionLiteralCount.toArray(new OWLLiteral[1])[0].getLiteral());
+//		if (collectionLiteralCount != null) {
+			int literalValue = Integer.valueOf(collectionLiteralCount.toArray(new OWLLiteral[1])[0].getLiteral());
+			System.out.println("FOX " + literalValue);
 			removeDataPropertyFromOntology(countIndividual, hasMaxId, literalValue);
-		}
+//		}
 		
 		addDataPropertyAssertionToOntology(countIndividual, hasMaxId, this.count);
 		
 	}
+	
 
-	private void removeDataPropertyFromOntology(OWLIndividual countIndividual, OWLDataProperty hasMaxId, Double literalValue) {
+	private void removeDataPropertyFromOntology(OWLIndividual countIndividual, OWLDataProperty hasMaxId, int literalValue) {
 		OWLDataPropertyAssertionAxiom ax = ontoHelper.getDataFactory().getOWLDataPropertyAssertionAxiom(hasMaxId, countIndividual, literalValue);
 		ontoHelper.getManager().removeAxiom(ontoHelper.getMetaOntology(), ax);
 	}
 
-	private void addDataPropertyAssertionToOntology(OWLIndividual individual, OWLDataProperty dataProperty, double value) {
+	private void addDataPropertyAssertionToOntology(OWLIndividual individual, OWLDataProperty dataProperty, int value) {
 		OWLDataPropertyAssertionAxiom ax = ontoHelper.getDataFactory().getOWLDataPropertyAssertionAxiom(dataProperty, individual, value);
 		AddAxiom addAx = new AddAxiom(ontoHelper.getMetaOntology(), ax);
 		ontoHelper.getManager().applyChange(addAx);

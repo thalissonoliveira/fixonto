@@ -127,6 +127,9 @@
         <ObjectProperty IRI="#hasContextInfo"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasExpressionVariable"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasFatherContextEntity"/>
     </Declaration>
     <Declaration>
@@ -148,16 +151,10 @@
         <ObjectProperty IRI="#hasParentalInconsistency"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasPresence"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasRightSideAction"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasRightSideComposition"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasVariableExpression"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#relatesToElemet"/>
@@ -169,13 +166,16 @@
         <DataProperty IRI="#hasContent"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#hasLogicOperator"/>
+        <DataProperty IRI="#hasLogicalOperator"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasMaxId"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasPresence"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasRelationalOperator"/>
@@ -288,7 +288,7 @@
     <DataPropertyAssertion>
         <DataProperty IRI="#hasMaxId"/>
         <NamedIndividual IRI="#count"/>
-        <Literal datatypeIRI="&xsd;double">0.0</Literal>
+        <Literal datatypeIRI="&xsd;integer">0</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAntecedent"/>
@@ -313,6 +313,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasContextInfo"/>
         <ObjectProperty IRI="#relatesToElemet"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasExpressionVariable"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasFatherContextEntity"/>
@@ -343,10 +347,6 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasPresence"/>
-        <ObjectProperty IRI="#relatesToExpression"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRightSideAction"/>
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
@@ -355,30 +355,26 @@
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasVariableExpression"/>
-        <ObjectProperty IRI="#relatesToExpression"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#relatesToElemet"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasVariableExpression"/>
-        <Class IRI="#Attribute"/>
-    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasLogicalOperator"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
     <DataPropertyRange>
         <DataProperty IRI="#hasContent"/>
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#hasLogicOperator"/>
+        <DataProperty IRI="#hasLogicalOperator"/>
         <DatatypeRestriction>
-            <Datatype abbreviatedIRI="xsd:int"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;int">0</Literal>
-            </FacetRestriction>
+            <Datatype abbreviatedIRI="xsd:integer"/>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;int">1</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;int">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -391,14 +387,26 @@
         <Datatype abbreviatedIRI="xsd:string"/>
     </DataPropertyRange>
     <DataPropertyRange>
+        <DataProperty IRI="#hasPresence"/>
+        <DatatypeRestriction>
+            <Datatype abbreviatedIRI="xsd:integer"/>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+        </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasRelationalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;integer">0</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;integer">5</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -410,11 +418,11 @@
         <DataProperty IRI="#hasValueType"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;integer">0</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;integer">3</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>

@@ -86,7 +86,7 @@ public class FixtureTwoMainRun {
 	public static void runCoung() throws OWLOntologyCreationException {
 		OntoHelper ontoHelper = new OntoHelper();
 		ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
-		Double countFromOntology = OWLUtils.getInstance(ontoHelper).getCountFromOntology();
+		int countFromOntology = OWLUtils.getInstance(ontoHelper).getCountFromOntology();
 		System.out.println("OI? " + countFromOntology);
 		OWLUtils.getInstance(ontoHelper).addMaxIdCountToOntology();
 		ontoHelper.saveAndRemoveOntology();

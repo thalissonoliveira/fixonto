@@ -9,7 +9,7 @@ public class RelationalExpression extends Antecedent {
 	
 	private RelationalOperator relationalOperator;
 	
-	private String valor;
+	private String value;
 
 	public Attribute getExpressionVariable() {
 		return expressionVariable;
@@ -26,13 +26,13 @@ public class RelationalExpression extends Antecedent {
 	public void setRelationalOperator(RelationalOperator relationalOperator) {
 		this.relationalOperator = relationalOperator;
 	}
-
-	public String getValor() {
-		return valor;
+	
+	public String getValue() {
+		return value;
 	}
 
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setValue(String value) {
+		this.value = value;
 	}
 
 	@Override
@@ -46,7 +46,7 @@ public class RelationalExpression extends Antecedent {
 	}
 
 	@Override
-	public boolean isRelationalExpressionj() {
+	public boolean isRelationalExpression() {
 		return true;
 	}
 	

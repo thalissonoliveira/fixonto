@@ -38,7 +38,7 @@ public class CompositionLiteral extends Antecedent {
 	}
 
 	@Override
-	public boolean isRelationalExpressionj() {
+	public boolean isRelationalExpression() {
 		return false;
 	}
 	

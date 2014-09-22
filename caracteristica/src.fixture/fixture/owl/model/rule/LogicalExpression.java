@@ -46,7 +46,7 @@ public class LogicalExpression extends Antecedent {
 	}
 
 	@Override
-	public boolean isRelationalExpressionj() {
+	public boolean isRelationalExpression() {
 		return false;
 	}
 	

@@ -213,6 +213,20 @@ public class Utils {
 			}
 			System.out.println("---------------------");
 		}
+		System.out.println("Rules:");
+		System.out.println("Name - isCompositionRule - isContextRule");
+		for (Rule rule : spl.getRules()) {
+			System.out.println(rule.getName() + " - " + rule.isCompositionRule() + " - " + rule.isContextRule());
+			if (rule.isCompositionRule()) {
+				CompositionRule compoRule = (CompositionRule) rule;
+				System.out.println(compoRule.getAntecedent());
+				System.out.println(compoRule.getConsequent());
+			} else if(rule.isContextRule()) {
+				ContextRule contRule = (ContextRule) rule;
+				System.out.println(contRule);
+			}
+			System.out.println("--------------");
+		}
 	}
 
 }

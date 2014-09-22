@@ -10,6 +10,21 @@ public class LogicalExpression extends Antecedent {
 	private Antecedent leftSideComposition;
 	
 	private LogicalOperator logicalOperator;
+	
+	
+	public LogicalExpression() {
+		super();
+	}
+
+	public LogicalExpression(String name) {
+		super(name);
+	}
+
+
+	public void setLogicalOperator(int logicalOperator) {
+		this.logicalOperator = LogicalOperator.get(logicalOperator);
+	}
+	
 
 	public Antecedent getLeftSideComposition() {
 		return leftSideComposition;

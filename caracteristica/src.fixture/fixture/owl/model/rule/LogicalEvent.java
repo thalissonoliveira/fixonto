@@ -33,9 +33,15 @@ public class LogicalEvent extends Event {
 	public void setLogicalOperator(LogicalOperator logicalOperator) {
 		this.logicalOperator = logicalOperator;
 	}
-	
-	
-	
-	
+
+	@Override
+	public boolean isLogicalEvent() {
+		return true;
+	}
+
+	@Override
+	public boolean isRelationalEvent() {
+		return false;
+	}
 	
 } // EventoLogico

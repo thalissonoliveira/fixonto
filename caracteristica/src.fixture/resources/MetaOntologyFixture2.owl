@@ -109,6 +109,9 @@
         <Class IRI="#VariationTwo"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasAction"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasAntecedent"/>
     </Declaration>
     <Declaration>
@@ -125,6 +128,12 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasContextInfo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasContextVariable"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEvent"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasExpressionVariable"/>
@@ -148,6 +157,9 @@
         <ObjectProperty IRI="#hasLeftSideComposition"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasLeftSideEvent"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasParentalInconsistency"/>
     </Declaration>
     <Declaration>
@@ -157,6 +169,9 @@
         <ObjectProperty IRI="#hasRightSideComposition"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasRightSideEvent"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#relatesToElemet"/>
     </Declaration>
     <Declaration>
@@ -164,6 +179,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasContent"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasLogicalActionOperator"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasLogicalOperator"/>
@@ -291,6 +309,10 @@
         <Literal datatypeIRI="&xsd;integer">0</Literal>
     </DataPropertyAssertion>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasAction"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasAntecedent"/>
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
@@ -313,6 +335,14 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasContextInfo"/>
         <ObjectProperty IRI="#relatesToElemet"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasContextVariable"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasEvent"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasExpressionVariable"/>
@@ -343,6 +373,10 @@
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasLeftSideEvent"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasParentalInconsistency"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -352,6 +386,10 @@
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRightSideComposition"/>
+        <ObjectProperty IRI="#relatesToExpression"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasRightSideEvent"/>
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>

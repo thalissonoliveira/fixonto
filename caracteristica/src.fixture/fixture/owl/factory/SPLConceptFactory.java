@@ -10,6 +10,10 @@ import fixture.owl.model.element.MandatoryFeature;
 import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.rule.CompositionLiteral;
+import fixture.owl.model.rule.CompositionRule;
+import fixture.owl.model.rule.LogicalExpression;
+import fixture.owl.model.rule.RelationalExpression;
 
 /**
  * 
@@ -69,6 +73,23 @@ public class SPLConceptFactory {
 	
 	public ContextInfo createContextInfo(String name) {
 		return new ContextInfo(name);
+	}
+	
+	public CompositionRule createCompositionRule(String name) {
+		return new CompositionRule(name);
+	}
+	
+	public LogicalExpression createLogicalExpression(String name) {
+		return new LogicalExpression(name);
+	}
+	
+	
+	public CompositionLiteral createCompositionLiteral(String name) {
+		return new CompositionLiteral(name);
+	}
+	
+	public RelationalExpression createRelationalExpression(String name) {
+		return new RelationalExpression(name);
 	}
 	
 }

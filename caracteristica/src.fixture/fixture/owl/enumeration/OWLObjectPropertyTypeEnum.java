@@ -24,7 +24,15 @@ public enum OWLObjectPropertyTypeEnum {
 	HAS_RIGHT_SIDE_ACTION (13, "Has Right Side Action", "hasRightSideAction"),
 	HAS_LEFT_SIDE_COMPOSITION (14, "Has Left Side Composition", "hasLeftSideComposition"),
 	HAS_RIGHT_SIDE_COMPOSITION (15, "Has Right Side Composition", "hasRightSideComposition"),
-	HAS_VARIABLE_EXPRESSION (16, "Has Expression Variable", "hasExpressionVariable");
+	HAS_EXPRESSION_VARIABLE (16, "Has Expression Variable", "hasExpressionVariable"),
+	HAS_CONTEXT_VARIABLE (17, "Has Context Variable", "hasContextVariable"),
+	
+	HAS_EVENT (18, "Has Event", "hasEvent"),
+	HAS_ACTION (19, "Has Action", "hasAction"),
+	
+	HAS_LEFT_SIDE_EVENT (20, "Has Left Side Event", "hasLeftSideEvent"),
+	HAS_RIGHT_SIDE_EVENT (21, "Has Right Side Event", "hasRightSideEvent");
+	
 	
 	
 	private int code;

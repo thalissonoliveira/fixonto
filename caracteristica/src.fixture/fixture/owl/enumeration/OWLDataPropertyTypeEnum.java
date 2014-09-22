@@ -13,7 +13,10 @@ public enum OWLDataPropertyTypeEnum {
 	HAS_VALUE (6, "Has Value", "hasValue"),
 	HAS_VALUE_TYPE (7, "Has Value Type", "hasValueType"),
 	
-	HAS_PRESENCE (8, "Has Presence", "hasPresence");
+	HAS_PRESENCE (8, "Has Presence", "hasPresence"),
+	
+	HAS_LOGICAL_ACTION_OPERATOR (4, "Has Logical Action Operator", "hasLogicalActionOperator");
+	
 	
 	private int code;
 	private String description;

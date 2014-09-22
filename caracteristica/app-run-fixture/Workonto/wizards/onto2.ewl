@@ -24,23 +24,27 @@ wizard OntoAnalyser
 operation fixTure2(lps:LPS) {
 	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
 	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
-	var factoryFixture := featToOntoFixture.getSplElementsFactory();
+	var factoryFixture := featToOntoFixture.getSplConceptFactory();
 	var splFixture = factoryFixture.createSpl(lps.nome);
+	var oracle = featToOntoFixture.getOracle();
 	
-	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture);
+	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, oracle, featToOntoFixture);
 	featToOntoFixture.run(splFixture);
-	
 }
 
 
-operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture) {
+operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, oracle, featToOntoFixture) {
 	
 	var raiz = lps.sistema;
  	var rootFixture = factoryFixture.createRootFeature(raiz.nome);
+ 	
+ 	featToOntoFixture.addToFixtureOracle(splFixture);
 	
 	splFixture.setSystem(rootFixture);
-	preecherElementosCaracteristicaLpsFixture(raiz, rootFixture, factoryFixture, splFixture);
-	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture);
+	preecherElementosCaracteristicaLpsFixture(raiz, rootFixture, factoryFixture, splFixture, featToOntoFixture);
+	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
+	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, oracle);
+	
 	
 	var elementoDoModelo;
 	
@@ -51,7 +55,27 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture) {
 	return splFixture;
 }
 
-operation preecherElementosCaracteristicaLpsFixture(caracteristica : Caracteristica, rootFixture, factoryFixture, splFixture) {
+operation preencherRegrasLpsFixture(lps : LPS, factoryFixture, splFixture, oracle) {
+	var ruleFixture = null;
+
+	for (regra in lps.regras) {
+		if (regra.isTypeOf(RegraDeComposicao)) {
+			ruleFixture = preencherRegraDeComposicao(regra, factoryFixture, splFixture, oracle);
+		} else if (regra.isTypeOf(RegraDeContexto)) {
+//			ruleFixture = preencherRegraDeContexto(regra);
+		} else {
+			'[ERROR] - Erro ao criar nova Regra pela Fixture: regra do modelo é inválida.'.println();
+			return;
+		}
+		
+		splFixture.getRules.add(ruleFixture);
+	}
+}
+
+
+operation preecherElementosCaracteristicaLpsFixture(caracteristica : Caracteristica, rootFixture, factoryFixture, splFixture, featToOntoFixture) {
+	
+	featToOntoFixture.addToFixtureOracle(rootFixture);
 	
 	var childFeatureFixture = null;
 	var attributeFixture = null;
@@ -64,23 +88,25 @@ operation preecherElementosCaracteristicaLpsFixture(caracteristica : Caracterist
 		rootFixture.getChildrenFeatures().add(childFeatureFixture);
 		childFeatureFixture.setFatherFeature(rootFixture);
 		splFixture.getElements().add(childFeatureFixture);
+		featToOntoFixture.addToFixtureOracle(childFeatureFixture);
 		
 		for (atributo in caracteristicaFilha.atributo) {
 			attributeFixture = factoryFixture.createAttribute(atributo.nome);
 			attributeFixture.setFatherFeature(childFeatureFixture);
 			childFeatureFixture.getAttributes().add(attributeFixture);
 			splFixture.getElements().add(attributeFixture);
+			featToOntoFixture.addToFixtureOracle(attributeFixture);
 		}
 		
 		if (not caracteristicaFilha.caracteristicaFilha.isEmpty()) {
-			splFixture = preecherElementosCaracteristicaLpsFixture(caracteristicaFilha, childFeatureFixture, factoryFixture, splFixture);
+			splFixture = preecherElementosCaracteristicaLpsFixture(caracteristicaFilha, childFeatureFixture, factoryFixture, splFixture, featToOntoFixture);
 		}
 		
 	}
 	return splFixture;
 }
 
-operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFixture) {
+operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFixture, featToOntoFixture) {
 	var contextRootFixture = null;
 	var contextEntityFixture = null;
 	var contextInfoFixture = null;
@@ -88,18 +114,21 @@ operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFi
 	for (raizDeContexto in lps.elementos -> select(x|x.isTypeOf(RaizDeContexto))) {
 		contextRootFixture = factoryFixture.createContextRoot(raizDeContexto.nome);
 		splFixture.getElements().add(contextRootFixture);
+		featToOntoFixture.addToFixtureOracle(contextRootFixture);
 		
 		for (entidadeDeContexto in raizDeContexto.entidadesDeContexto) {
 			contextEntityFixture = factoryFixture.createContextEntity(entidadeDeContexto.nome);
 			contextEntityFixture.setFatherContextRoot(contextRootFixture);
 			contextRootFixture.getContextEntities().add(contextEntityFixture);
 			splFixture.getElements.add(contextEntityFixture);
+			featToOntoFixture.addToFixtureOracle(contextEntityFixture);
 		
 			for (informacaoDeContexto in entidadeDeContexto.informacoesdeContexto) {
 				contextInfoFixture = factoryFixture.createContextInfo(informacaoDeContexto.nome);
 				contextInfoFixture.setFatherContextEntity(contextEntityFixture);
 				contextEntityFixture.getContextInfos().add(contextInfoFixture);
 				splFixture.getElements.add(contextInfoFixture);
+				featToOntoFixture.addToFixtureOracle(contextInfoFixture);
 			}
 			
 		}
@@ -107,6 +136,50 @@ operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFi
 	}
 }
 
+operation preencherRegraDeComposicao(regraDeComposicao: RegraDeComposicao, factoryFixture, splFixture, oracle) {
+	var compositionRuleFixture = null;
+	var antecedentFixture = null;
+	var consequentFixture = null;
+	
+	compositionRuleFixture = factoryFixture.createCompositionRule(regraDeComposicao.nome);
+	antecedentFixture = preencherAntecedente(regraDeComposicao.antecedente, factoryFixture, splFixture, oracle);
+	consequentFixture = preencherAntecedente(regraDeComposicao.consequente, factoryFixture, splFixture, oracle);
+	compositionRuleFixture.setAntecedent(antecedentFixture);
+	compositionRuleFixture.setConsequent(consequentFixture);
+	
+	return compositionRuleFixture;
+}
+
+//TODO preencher a coleção de expressões. Só adiciona elementos em regras.
+operation preencherAntecedente(antecedente : Antecedente, factoryFixture, splFixture, oracle) {
+	var antecedentFixture = null;
+	if (antecedente.isTypeOf(ExpressaoLogica)) {
+		antecedentFixture = factoryFixture.createLogicalExpression(antecedente.nome);
+		antecedentFixture.setLeftSideComposition(preencherAntecedente(antecedente.ladoEsquerdoComposicao, factoryFixture, splFixture, oracle));
+		antecedentFixture.setRightSideComposition(preencherAntecedente(antecedente.ladoDireitoComposicao, factoryFixture, splFixture, oracle));
+		antecedentFixture.setLogicalOperator(antecedente.operadorLogico.value);
+		return antecedentFixture;
+	} else if (antecedente.isTypeOf(LiteralComposicao)) {
+		antecedentFixture = factoryFixture.createCompositionLiteral(antecedente.nome);
+		antecedentFixture.setPresence(antecedente.presenca.value);
+		"DEBUG:".println;
+		"1".println;
+		antecedente.elemento.println;
+		"2".println;
+		antecedente.elemento.nome.println;
+		
+		antecedentFixture.setFeaturedElement(oracle.get(antecedente.elemento.nome));
+		return antecedentFixture;
+	} else if (antecedente.isTypeOf(ExpressaoRelacional)) {
+		antecedentFixture = factoryFixture.createRelationalExpression(antecedente.nome);
+		antecedentFixture.setExpressionVariable(oracle.get(antecedente.variaveldaExpressao));
+		antecedentFixture.setRelationalOperator(antecedente.operadorRelacional.value);
+		antecedentFixture.setValue(antecedente.valor);
+		return antecedentFixture;
+	} else {
+		return null;
+	}
+}
 
 //#### Método que realiza a análise da ontologia gerada a partir do MMSC
 operation ontoAnalyserFixture() {
@@ -128,7 +201,6 @@ operation criarNovaCaracteristicaFixture(caracteristica : Caracteristica, factor
 		'[ERROR] - Erro ao criar nova Feature pela Fixture: característica do modelo é inválida.'.println();
 		return null;
 	}
-	
 }
-
+	
 

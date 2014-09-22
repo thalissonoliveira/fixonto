@@ -10,7 +10,19 @@ public class RelationalExpression extends Antecedent {
 	private RelationalOperator relationalOperator;
 	
 	private String value;
+	
+	public RelationalExpression() {
+		super();
+	}
 
+	public RelationalExpression(String name) {
+		super(name);
+	}
+
+	public void setRelationalOperator(int  relationalOperator) {
+		this.relationalOperator = RelationalOperator.get(relationalOperator);
+	}
+	
 	public Attribute getExpressionVariable() {
 		return expressionVariable;
 	}

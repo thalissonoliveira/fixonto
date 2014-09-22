@@ -34,4 +34,20 @@ public class LogicalAction extends Action {
 		this.logicalActionOperator = logicalActionOperator;
 	}
 	
+	@Override
+	public boolean isActionLiteral() {
+		return false;
+	}
+
+	@Override
+	public boolean isDesignate() {
+		return false;
+	}
+
+	@Override
+	public boolean isLogicalAction() {
+		return true;
+	}
+
+	
 }

@@ -24,5 +24,21 @@ public class ActionLiteral extends Action {
 	public void setFeaturedElement(FeaturedElement featuredElement) {
 		this.featuredElement = featuredElement;
 	}
+
+	@Override
+	public boolean isActionLiteral() {
+		return true;
+	}
+
+	@Override
+	public boolean isDesignate() {
+		return false;
+	}
+
+	@Override
+	public boolean isLogicalAction() {
+		return false;
+	}
+	
 	
 } // LiteralAcao

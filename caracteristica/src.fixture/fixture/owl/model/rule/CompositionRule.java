@@ -7,6 +7,15 @@ public class CompositionRule extends Rule {
 	
 	private Antecedent consequent;
 	
+	
+	public CompositionRule() {
+		super();
+	}
+
+	public CompositionRule(String name) {
+		super(name);
+	}
+
 	public Antecedent getAntecedent() {
 		return antecedent;
 	}

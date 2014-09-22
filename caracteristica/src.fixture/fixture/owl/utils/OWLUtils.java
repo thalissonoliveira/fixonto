@@ -27,7 +27,9 @@ import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.Antecedent;
+import fixture.owl.model.rule.Event;
 
 public class OWLUtils {
 	
@@ -52,6 +54,38 @@ public class OWLUtils {
 		}
 		return owlUtils;
 	}
+	
+	public void addParentalRelationBetweenEventAndLeftSideEvent(OWLIndividual currentEventOWL, OWLIndividual currentLeftSideEvent) {
+		OWLObjectProperty hasLeftSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_LEFT_SIDE_EVENT);
+		addUnilateralRelationToOntology(currentEventOWL, currentLeftSideEvent, hasLeftSideCompositionProperty);
+	}
+	
+	public void addParentalRelationBetweenEventAndRightSideEvent(OWLIndividual currentEventOWL, OWLIndividual currentRightSideEvent) {
+		OWLObjectProperty hasRightSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_RIGHT_SIDE_EVENT);
+		addUnilateralRelationToOntology(currentEventOWL, currentRightSideEvent, hasRightSideCompositionProperty);
+	}
+	
+	public void addParentalRelationBetweenActionAndLeftSideAction(OWLIndividual currentActionOWL, OWLIndividual currentLeftSideAction) {
+		OWLObjectProperty hasLeftSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_LEFT_SIDE_ACTION);
+		addUnilateralRelationToOntology(currentActionOWL, currentLeftSideAction, hasLeftSideCompositionProperty);
+	}
+	
+	public void addParentalRelationBetweenActionAndRightSideAction(OWLIndividual currentActionOWL, OWLIndividual currentRightSideAction) {
+		OWLObjectProperty hasRightSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_RIGHT_SIDE_ACTION);
+		addUnilateralRelationToOntology(currentActionOWL, currentRightSideAction, hasRightSideCompositionProperty);
+	}
+	
+	
+	
+	public void addParentalRelationBetweenAntecedentAndLeftSideComposition(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentLeftSideComposition) {
+		OWLObjectProperty hasLeftSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_LEFT_SIDE_COMPOSITION);
+		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentLeftSideComposition, hasLeftSideCompositionProperty);
+	}
+	
+	public void addParentalRelationBetweenAntecedentAndRightSideComposition(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentRightSideComposition) {
+		OWLObjectProperty hasRightSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_RIGHT_SIDE_COMPOSITION);
+		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentRightSideComposition, hasRightSideCompositionProperty);
+	}
 
 	public void addParentalRelationBetweenCompositionRuleAndAntecedent(OWLIndividual currentCompositionRuleOWL, OWLIndividual currentAntecedentRuleOWL) {
 		OWLObjectProperty hasAntecedentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ANTECEDENT);
@@ -63,14 +97,38 @@ public class OWLUtils {
 		addUnilateralRelationToOntology(currentCompositionRuleOWL, currentConsequentRuleOWL, hasConsequentProperty);
 	}
 	
+	public void addParentalRelationBetweenContextRuleAndEvent(OWLIndividual currentContextRuleOWL, OWLIndividual currentEventOWL) {
+		OWLObjectProperty hasConsequentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_EVENT);
+		addUnilateralRelationToOntology(currentContextRuleOWL, currentEventOWL, hasConsequentProperty);
+	}
+	
+	public void addParentalRelationBetweenContextRuleAndAction(OWLIndividual currentContextRuleOWL, OWLIndividual currentActionOWL) {
+		OWLObjectProperty hasConsequentProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ACTION);
+		addUnilateralRelationToOntology(currentContextRuleOWL, currentActionOWL, hasConsequentProperty);
+	}
+
+	
 	public void addRelationBetweenCompositionLiteralAndFeaturedElement(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentFeaturedElementOwl) {
 		OWLObjectProperty hasFeaturedElement = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT);
 		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentFeaturedElementOwl, hasFeaturedElement);
 	}
 	
+	public void addRelationBetweenActionLiteralAndFeaturedElement(OWLIndividual currentActionOWL, OWLIndividual currentFeaturedElementOwl) {
+		OWLObjectProperty hasFeaturedElement = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT);
+		addUnilateralRelationToOntology(currentActionOWL, currentFeaturedElementOwl, hasFeaturedElement);
+	}
+	
+	public void addRelationBetweenDesignateAndAttribute(OWLIndividual currentActionOWL, OWLIndividual currentAttribute) {
+		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ATTRIBUTE);
+		addUnilateralRelationToOntology(currentActionOWL, currentAttribute, hasAttribute);
+	}
+
 	public void addRelationBetweenRelationalExpressionAndExpressionVariable(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentExpressionVariable) {
-		OWLObjectProperty hasVariableExpression = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_VARIABLE_EXPRESSION);
-		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentExpressionVariable, hasVariableExpression);
+	}
+	
+	public void addRelationBetweenRelationalEventAndContextVariable(OWLIndividual currentEventOWL, OWLIndividual currentContextVariable) {
+		OWLObjectProperty hasContextVariable = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CONTEXT_VARIABLE);
+		addUnilateralRelationToOntology(currentEventOWL, currentContextVariable, hasContextVariable);
 	}
 
 	public void addParentalRelationBetweenFeatures(OWLIndividual currentFeatureOwl, OWLIndividual currentFatherFeatureOwl) {
@@ -115,6 +173,33 @@ public class OWLUtils {
 
 	public void addCompositionRuleClassification(OWLIndividual currentCompotionRuleOWL) {
 		addIndividualClassification(currentCompotionRuleOWL, ModelOWLClassTypeEnum.COMPOSITION_RULE);
+	}
+	
+	public void addContextRuleClassification(OWLIndividual currentCompotionRuleOWL) {
+		addIndividualClassification(currentCompotionRuleOWL, ModelOWLClassTypeEnum.CONTEXT_RULE);
+	}
+	
+	public void addEventClassification(Event event, OWLIndividual currentEventOWL) {
+		if (event.isLogicalEvent()) {
+			addIndividualClassification(currentEventOWL, ModelOWLClassTypeEnum.LOGICAL_EVENT);
+		} else if (event.isRelationalEvent()) {
+			addIndividualClassification(currentEventOWL, ModelOWLClassTypeEnum.RELATIONAL_EVENT);
+		} else {
+			throw new RuntimeException("Problem with OWL class Event.");
+		}
+	}
+	
+	public void addActionClassification(Action action, OWLIndividual currentActionOWL) {
+		if (action.isActionLiteral()) {
+			addIndividualClassification(currentActionOWL, ModelOWLClassTypeEnum.ACTION_LITERAL);
+		} else if (action.isDesignate()) {
+			addIndividualClassification(currentActionOWL, ModelOWLClassTypeEnum.DESIGNATE);
+		} else if (action.isLogicalAction()) {
+			addIndividualClassification(currentActionOWL, ModelOWLClassTypeEnum.LOGICAL_ACTION);
+		} else {
+			throw new RuntimeException("Action Error.");
+		}
+		
 	}
 	
 	public int getCountFromOntology() {
@@ -167,16 +252,47 @@ public class OWLUtils {
 		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_PRESENCE), value);
 	}
 	
+	public void addPresenceActionLiteralRelation(OWLIndividual currentActionOWL, int value) {
+		addDataPropertyAssertionToOntology(currentActionOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_PRESENCE), value);
+	}
+	
 	public void addLogicalOperatorLogicalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
 		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_LOGICAL_OPERATOR), value);
 	}
 	
+	public void addLogicalActionOperatorLogicalActionRelation(OWLIndividual currentActionOWL, int value) {
+		addDataPropertyAssertionToOntology(currentActionOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_LOGICAL_ACTION_OPERATOR), value);
+	}
+
+	
+	public void addLogicalOperatorLogicalEventRelation(OWLIndividual currentEventOWL, int value) {
+		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_LOGICAL_OPERATOR), value);
+	}
+
+	
 	public void addRelationalOperatorRelationalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
 		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_RELATIONAL_OPERATOR), value);
 	}
+	
+	public void addRelationalOperatorRelationalEventRelation(OWLIndividual currentAntecedentRuleOWL, int value) {
+		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_RELATIONAL_OPERATOR), value);
+	}
+	
 
 	public void addValueRelationalExpressionRelation(OWLIndividual currentAntecedentRuleOWL, String value) {
 		addDataPropertyAssertionToOntology(currentAntecedentRuleOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
+	}
+	
+	public void addValueDesignateRelation(OWLIndividual currentActionOWL, String value) {
+		addDataPropertyAssertionToOntology(currentActionOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
+	}
+	
+	public void addValueTypeDesignateRelation(OWLIndividual currentEventOWL, int value) {
+		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_RELATIONAL_OPERATOR), value);
+	}
+	
+	public void addValueRelationalEventRelation(OWLIndividual currentEventOWL, String value) {
+		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
 	}
 	
 	private OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
@@ -213,6 +329,7 @@ public class OWLUtils {
 			
 			
 			if (!oracle.containsKey(name)) {
+				System.out.println("key:" + name);
 				oracle.put(name, new HashSet<OWLNamedIndividual>());
 			}
 			oracle.get(name).add(owlNamedIndividual);
@@ -282,8 +399,6 @@ public class OWLUtils {
 	private void addUnilateralRelationToOntology(OWLIndividual individualOWL1, OWLIndividual individualOWL2, OWLObjectProperty objectPropertyOWL) {
 		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
 		AddAxiom addParentalRelationBetweenFeaturesAxiom;
-		
-		
 		
 		parentalRelationBetweenFeaturesAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL, individualOWL1, individualOWL2);
 		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);

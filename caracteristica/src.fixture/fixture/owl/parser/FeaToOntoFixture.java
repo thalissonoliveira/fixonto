@@ -2,6 +2,7 @@ package fixture.owl.parser;
 
 import java.net.URISyntaxException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -17,12 +18,21 @@ import fixture.owl.model.element.ContextInfo;
 import fixture.owl.model.element.ContextRoot;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.element.RootFeature;
+import fixture.owl.model.enumeration.LogicalOperator;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.rule.Action;
+import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.Antecedent;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
 import fixture.owl.model.rule.ContextRule;
+import fixture.owl.model.rule.Designate;
+import fixture.owl.model.rule.Event;
+import fixture.owl.model.rule.LogicalAction;
+import fixture.owl.model.rule.LogicalEvent;
 import fixture.owl.model.rule.LogicalExpression;
+import fixture.owl.model.rule.RelationalEvent;
 import fixture.owl.model.rule.RelationalExpression;
 import fixture.owl.model.rule.Rule;
 import fixture.owl.utils.OWLUtils;
@@ -40,11 +50,13 @@ public class FeaToOntoFixture {
 	
 	private OntoHelper ontoHelper;
 	private OWLUtils feaToOntoFixtureUtils;
-	private Map<String, Set<OWLNamedIndividual>> oracle;
-	
+	private Map<String, Set<OWLNamedIndividual>> owlOracle;
+	private Map<String, Set<Nameable>> fixtureOracle;
+		
 	public FeaToOntoFixture() {
 		ontoHelper = new OntoHelper();
-		oracle = new HashMap<String, Set<OWLNamedIndividual>>();
+		owlOracle = new HashMap<String, Set<OWLNamedIndividual>>();
+		fixtureOracle = new HashMap<String, Set<Nameable>>();
 	}
 	
 	public void run(SPL spl) {
@@ -53,12 +65,7 @@ public class FeaToOntoFixture {
 			ontoHelper.loadMetaOntology();
 			feaToOntoFixtureUtils = OWLUtils.getInstance(ontoHelper);
 			populateOWL(spl);
-			
-			Set<String> keySet = oracle.keySet();
-			for (String key : keySet) {
-				System.out.println(oracle.get(key));
-			}
-			
+			Utils.printSPLInfo(spl);
 			ontoHelper.saveAndRemoveOntology();
 			ontoHelper.deleteTempDir();
 		} catch (OWLOntologyCreationException e) {
@@ -94,36 +101,111 @@ public class FeaToOntoFixture {
 				compositionRule = Utils.getCompositionRuleOf(rule);
 				buildOntology(compositionRule);
 			} else if(rule.isContextRule()) {
-				contextRule = Utils.getContextRuleOf(rule);
-				buildOntology(contextRule);
+//				contextRule = Utils.getContextRuleOf(rule);
+//				buildOntology(contextRule);
 			}
 		}
 		
 	}
 	
 	private void buildOntology(ContextRule contextRule) {
-		//TODO Sérgio implementar
+	
+		OWLIndividual currentContextRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRule, owlOracle);
+		feaToOntoFixtureUtils.addContextRuleClassification(currentContextRuleOWL);
+		
+		Event event = contextRule.getEvent();
+		OWLIndividual currentEventOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(event, owlOracle);
+		feaToOntoFixtureUtils.addEventClassification(event, currentEventOWL);
+		buildOntology(event, currentEventOWL);
+		feaToOntoFixtureUtils.addParentalRelationBetweenContextRuleAndEvent(currentContextRuleOWL, currentEventOWL);
+		
+		
+		Action action = contextRule.getAction();
+		OWLIndividual currentActionOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(action, owlOracle);
+		feaToOntoFixtureUtils.addActionClassification(action, currentActionOWL);
+		buildOntology(action, currentActionOWL);
+		feaToOntoFixtureUtils.addParentalRelationBetweenContextRuleAndAction(currentContextRuleOWL, currentActionOWL);
+		
+	}
+
+	private void buildOntology(Action action, OWLIndividual currentActionOWL) {
+		if (action.isActionLiteral()) {
+			ActionLiteral actionLiteral = (ActionLiteral) action;
+
+			feaToOntoFixtureUtils.addPresenceActionLiteralRelation(currentActionOWL, actionLiteral.getPresence().getValue());
+			feaToOntoFixtureUtils.addRelationBetweenActionLiteralAndFeaturedElement(currentActionOWL, owlOracle.get(actionLiteral.getFeaturedElement().getName()).toArray(new OWLIndividual[1])[0]);
+			
+		} else if (action.isDesignate()) {
+			Designate designate = (Designate) action;
+			feaToOntoFixtureUtils.addRelationBetweenDesignateAndAttribute(currentActionOWL, owlOracle.get(designate.getAttribute().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addValueDesignateRelation(currentActionOWL, designate.getValue());
+			feaToOntoFixtureUtils.addValueTypeDesignateRelation(currentActionOWL, designate.getValueType().getValue());
+			
+		} else if (action.isLogicalAction()) {
+			LogicalAction logicalAction = (LogicalAction) action;
+			
+			Action leftSideAction = logicalAction.getLeftSideAction();
+			OWLIndividual currentLeftSideAction = feaToOntoFixtureUtils.createNewOWLNamedIndividual(leftSideAction, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenActionAndLeftSideAction(currentActionOWL, currentLeftSideAction);
+			
+			Action rightSideAction = logicalAction.getRightSideAction();
+			OWLIndividual currentRightSideAction = feaToOntoFixtureUtils.createNewOWLNamedIndividual(rightSideAction, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenActionAndRightSideAction(currentActionOWL, currentRightSideAction);
+			
+			buildOntology(leftSideAction, currentLeftSideAction);
+			buildOntology(rightSideAction, currentRightSideAction);
+			
+			feaToOntoFixtureUtils.addLogicalActionOperatorLogicalActionRelation(currentActionOWL, logicalAction.getLogicalActionOperator().getValue());
+			
+		} else {
+			throw new RuntimeException("Action Error.");
+		}
+	}
+
+	private void buildOntology(Event event, OWLIndividual currentEventOWL) {
+		if (event.isLogicalEvent()) {
+			LogicalEvent logicalEvent = (LogicalEvent) event;
+			
+			Event leftSideEvent = logicalEvent.getLeftSideEvent();
+			OWLIndividual currentLeftSideEvent = feaToOntoFixtureUtils.createNewOWLNamedIndividual(leftSideEvent, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenEventAndLeftSideEvent(currentEventOWL, currentLeftSideEvent);
+			
+			Event rightSideEvent = logicalEvent.getRightSideEvent();
+			OWLIndividual currentRightSideEvent = feaToOntoFixtureUtils.createNewOWLNamedIndividual(rightSideEvent, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenEventAndRightSideEvent(currentEventOWL, currentRightSideEvent);
+			
+			buildOntology(leftSideEvent, currentLeftSideEvent);
+			buildOntology(rightSideEvent, currentRightSideEvent);
+			
+			LogicalOperator logicalOperator = logicalEvent.getLogicalOperator();
+			feaToOntoFixtureUtils.addLogicalOperatorLogicalEventRelation(currentEventOWL, logicalOperator.getValue());
+		} else if (event.isRelationalEvent()) {
+			RelationalEvent relationalEvent = (RelationalEvent) event;
+			
+			feaToOntoFixtureUtils.addRelationBetweenRelationalEventAndContextVariable(currentEventOWL, owlOracle.get(relationalEvent.getContextVariable().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationalOperatorRelationalEventRelation(currentEventOWL, relationalEvent.getRelationalOperator().getValue());
+			feaToOntoFixtureUtils.addValueRelationalEventRelation(currentEventOWL, relationalEvent.getValue());
+		} else {
+			throw new RuntimeException("Event error");
+		}
 	}
 
 	private void buildOntology(CompositionRule compositionRule) {
-		OWLIndividual currentCompositionRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(compositionRule, oracle);
+		OWLIndividual currentCompositionRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(compositionRule, owlOracle);
 		feaToOntoFixtureUtils.addCompositionRuleClassification(currentCompositionRuleOWL);
 		
 		Antecedent antecedent = compositionRule.getAntecedent();
-		OWLIndividual currentAntecedentRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(antecedent, oracle);
+		OWLIndividual currentAntecedentRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(antecedent, owlOracle);
 		feaToOntoFixtureUtils.addAntecedentClassification(antecedent, currentAntecedentRuleOWL);
 		buildOntology(antecedent, currentAntecedentRuleOWL);
 		feaToOntoFixtureUtils.addParentalRelationBetweenCompositionRuleAndAntecedent(currentCompositionRuleOWL, currentAntecedentRuleOWL);
 		
 		
 		Antecedent consequent = compositionRule.getConsequent();
-		OWLIndividual currentConsequentRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(consequent, oracle);
+		OWLIndividual currentConsequentRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(consequent, owlOracle);
 		feaToOntoFixtureUtils.addAntecedentClassification(consequent, currentConsequentRuleOWL);
 		buildOntology(consequent, currentAntecedentRuleOWL);
 		feaToOntoFixtureUtils.addParentalRelationBetweenCompositionRuleAndConsequent(currentCompositionRuleOWL, currentConsequentRuleOWL);
-		
-		
-		
 	}
 
 	private void buildOntology(Antecedent antecedent, OWLIndividual currentAntecedentRuleOWL) {
@@ -131,20 +213,26 @@ public class FeaToOntoFixture {
 		if (antecedent.isCompositionLiteral()) {
 			CompositionLiteral compositionLiteral = (CompositionLiteral) antecedent;
 			feaToOntoFixtureUtils.addPresenceCompositionLiteralRelation(currentAntecedentRuleOWL, compositionLiteral.getPresence().getValue());
-			feaToOntoFixtureUtils.addRelationBetweenCompositionLiteralAndFeaturedElement(currentAntecedentRuleOWL, oracle.get(compositionLiteral.getFeaturedElement().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenCompositionLiteralAndFeaturedElement(currentAntecedentRuleOWL, owlOracle.get(compositionLiteral.getFeaturedElement().getName()).toArray(new OWLIndividual[1])[0]);
 		} else if (antecedent.isLogicalExpression()) {
 			LogicalExpression logicalExpression = (LogicalExpression) antecedent;
+
 			Antecedent leftSideComposition = logicalExpression.getLeftSideComposition();
-			OWLIndividual currentLeftSideComposition = feaToOntoFixtureUtils.createNewOWLNamedIndividual(leftSideComposition, oracle);
+			OWLIndividual currentLeftSideComposition = feaToOntoFixtureUtils.createNewOWLNamedIndividual(leftSideComposition, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenAntecedentAndLeftSideComposition(currentAntecedentRuleOWL, currentLeftSideComposition);
+			
 			Antecedent rightSideComposition = logicalExpression.getRightSideComposition();
-			OWLIndividual currentRightSideComposition = feaToOntoFixtureUtils.createNewOWLNamedIndividual(rightSideComposition, oracle);
+			OWLIndividual currentRightSideComposition = feaToOntoFixtureUtils.createNewOWLNamedIndividual(rightSideComposition, owlOracle);
+			feaToOntoFixtureUtils.addParentalRelationBetweenAntecedentAndRightSideComposition(currentAntecedentRuleOWL, currentRightSideComposition);
+			
 			buildOntology(leftSideComposition, currentLeftSideComposition);
 			buildOntology(rightSideComposition, currentRightSideComposition);
-			feaToOntoFixtureUtils.addLogicalOperatorLogicalExpressionRelation(currentAntecedentRuleOWL, logicalExpression.getLogicalOperator().getValue());
+			
 			feaToOntoFixtureUtils.addLogicalOperatorLogicalExpressionRelation(currentAntecedentRuleOWL, logicalExpression.getLogicalOperator().getValue());
 		} else if (antecedent.isRelationalExpression()) {
 			RelationalExpression relationalExpression = (RelationalExpression) antecedent;
-			feaToOntoFixtureUtils.addRelationBetweenRelationalExpressionAndExpressionVariable(currentAntecedentRuleOWL, oracle.get(relationalExpression.getExpressionVariable().getName()).toArray(new OWLIndividual[1])[0]);
+			
+			feaToOntoFixtureUtils.addRelationBetweenRelationalExpressionAndExpressionVariable(currentAntecedentRuleOWL, owlOracle.get(relationalExpression.getExpressionVariable().getName()).toArray(new OWLIndividual[1])[0]);
 			feaToOntoFixtureUtils.addRelationalOperatorRelationalExpressionRelation(currentAntecedentRuleOWL, relationalExpression.getRelationalOperator().getValue());
 			feaToOntoFixtureUtils.addValueRelationalExpressionRelation(currentAntecedentRuleOWL, relationalExpression.getValue());
 		} else {
@@ -154,18 +242,18 @@ public class FeaToOntoFixture {
 	}
 
 	private void buildOntology(ContextRoot contextRoot) {
-		OWLIndividual currentContextRootOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRoot, oracle);
+		OWLIndividual currentContextRootOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRoot, owlOracle);
 		feaToOntoFixtureUtils.addContextRootClassification(currentContextRootOWL);
 		
 		OWLIndividual currentContextEntityOWL;
 		OWLIndividual currentContextInfoOWL;
 		for (ContextEntity contextEntity : contextRoot.getContextEntities()) {
-			currentContextEntityOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextEntity, oracle);
+			currentContextEntityOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextEntity, owlOracle);
 			feaToOntoFixtureUtils.addContextEntityClassification(currentContextEntityOWL);
 			feaToOntoFixtureUtils.addParentalRelationBetweenContextRootAndEntity(currentContextRootOWL, currentContextEntityOWL);
 			
 			for (ContextInfo contextInfo : contextEntity.getContextInfos()) {
-				currentContextInfoOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextInfo, oracle);
+				currentContextInfoOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextInfo, owlOracle);
 				feaToOntoFixtureUtils.addContextInfoClassification(currentContextInfoOWL);
 				feaToOntoFixtureUtils.addParentalRelationBetweenContextEntityAndInfo(currentContextEntityOWL, currentContextInfoOWL);
 			}
@@ -176,7 +264,7 @@ public class FeaToOntoFixture {
 
 	private void buildOntology(Feature feature) {
 		
-		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, oracle);
+		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
 		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature);
 		
 		System.out.println("individuo " + currentFeatureOwl.asOWLNamedIndividual().getIRI());
@@ -191,7 +279,7 @@ public class FeaToOntoFixture {
 
 		OWLIndividual currentAttributeOwl;
 		for (Attribute attribute : attributes) {
-			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, oracle);
+			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
 			feaToOntoFixtureUtils.addAttributeClassification(currentAttributeOwl);
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
 		}
@@ -213,9 +301,22 @@ public class FeaToOntoFixture {
 	 * 
 	 * @return
 	 */
-	public SPLConceptFactory getSplElementsFactory() {
+	public SPLConceptFactory getSplConceptFactory() {
 		return SPLConceptFactory.getFactory();
 	}
 
+	public Map<String, Set<Nameable>> getOracle() {
+		return fixtureOracle;
+	}
+	
+	public void addToFixtureOracle(Nameable nameable) {
+		String nome = nameable.getName();
+		if (!fixtureOracle.containsKey(nome)) {
+			System.out.println("key fix oracle:" + nome);
+			fixtureOracle.put(nome, new HashSet<Nameable>());
+		}
+		fixtureOracle.get(nome).add(nameable);
+	}
+	
 }
 

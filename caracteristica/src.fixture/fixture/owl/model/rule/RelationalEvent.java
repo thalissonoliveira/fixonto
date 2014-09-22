@@ -35,4 +35,14 @@ public class RelationalEvent extends Event {
 		this.value = value;
 	}
 	
+	@Override
+	public boolean isLogicalEvent() {
+		return false;
+	}
+	
+	@Override
+	public boolean isRelationalEvent() {
+		return true;
+	}
+	
 } // EventoRelacional

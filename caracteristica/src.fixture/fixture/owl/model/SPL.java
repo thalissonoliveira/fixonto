@@ -5,13 +5,14 @@ import java.util.Set;
 
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.model.rule.Rule;
 
 /**
  * @author thalissonoliveira
  *
  */
-public class SPL {
+public class SPL implements Nameable {
 	
 	private String name;
 	

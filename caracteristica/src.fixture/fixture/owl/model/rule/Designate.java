@@ -10,6 +10,18 @@ public class Designate extends Action {
 	private ValueType valueType;
 	
 	private String value;
+	
+	public Designate() {
+		super();
+	}
+
+	public Designate(String name) {
+		super(name);
+	}
+	
+	public void setValueType(int valueType) {
+		this.valueType = ValueType.get(valueType);
+	}
 
 	public Attribute getAttribute() {
 		return attribute;

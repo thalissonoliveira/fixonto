@@ -8,6 +8,18 @@ public class ActionLiteral extends Action {
 	private Presence presence;
 	
 	private FeaturedElement featuredElement;
+	
+	public ActionLiteral() {
+		super();
+	}
+
+	public ActionLiteral(String name) {
+		super(name);
+	}
+	
+	public void setPresence(int presence) {
+		this.presence = Presence.get(presence);
+	}
 
 	public Presence getPresence() {
 		return presence;

@@ -205,13 +205,19 @@ public class Utils {
 		System.out.println("System: " + spl.getSystem().getName());
 		System.out.println("Elements:");
 		for (Element element : spl.getElements()) {
-			System.out.println(">> " + element.getName());
-			Feature f = (Feature) element;
-			System.out.println(f.getChildrenFeatures().size() != 0 ? "Children:::" : "No children");
-			for (Feature ft : f.getChildrenFeatures()) {
-				System.out.println(ft.getName());
+			boolean isFeature = element.isGroupedFeature() || element.isMandatoryFeature() || element.isOptionalFeature() || element.isRootFeature() || element.isVariatioTwoFeature();
+			if (isFeature) { 
+				System.out.println(">> " + element.getName());
+				Feature f = (Feature) element;
+				System.out.println(f.getChildrenFeatures().size() != 0 ? "Children:::" : "No children");
+				for (Feature ft : f.getChildrenFeatures()) {
+					System.out.println(ft.getName());
+				}
+				System.out.println("---------------------");
+			} else {
+				System.out.println(element);
+				System.out.println("-.-.-.-.-.-.-.-.-.-.-.");
 			}
-			System.out.println("---------------------");
 		}
 		System.out.println("Rules:");
 		System.out.println("Name - isCompositionRule - isContextRule");
@@ -225,7 +231,7 @@ public class Utils {
 				ContextRule contRule = (ContextRule) rule;
 				System.out.println(contRule);
 			}
-			System.out.println("--------------");
+			System.out.println("_._._._._._._._._._._._");
 		}
 	}
 

@@ -12,14 +12,14 @@
   <elementos xsi:type="caracteristica:InformacaoDeContexto" nome="ContextInfo" valor="10" elementoPai="//@elementos.8"/>
   <elementos xsi:type="caracteristica:Atributo" nome="Attribute 1" caracteristicaPai="//@elementos.2"/>
   <regras xsi:type="caracteristica:RegraDeComposicao" nome="CR1" conteudo="Conteudo" antecedente="//@expressoes.0" consequente="//@expressoes.1"/>
-  <regras xsi:type="caracteristica:RegraDeContexto" evento="//@expressoes.4" acao="//@expressoes.7"/>
+  <regras xsi:type="caracteristica:RegraDeContexto" nome="ContR1" conteudo="Conteudo" evento="//@expressoes.4" acao="//@expressoes.7"/>
   <expressoes xsi:type="caracteristica:LiteralComposicao" nome="LC1" elemento="//@elementos.3"/>
   <expressoes xsi:type="caracteristica:ExpressaoLogica" nome="OL1" ladoDireitoComposicao="//@expressoes.3" ladoEsquerdoComposicao="//@expressoes.2"/>
   <expressoes xsi:type="caracteristica:ExpressaoRelacional" nome="ER1" variaveldaExpressao="//@elementos.10" valor="10"/>
   <expressoes xsi:type="caracteristica:LiteralComposicao" nome="LC2" elemento="//@elementos.5"/>
-  <expressoes xsi:type="caracteristica:EventoLogico" ladoDireitoEvento="//@expressoes.6" ladoEsquerdoEvento="//@expressoes.5"/>
+  <expressoes xsi:type="caracteristica:EventoLogico" nome="EL1" ladoDireitoEvento="//@expressoes.6" ladoEsquerdoEvento="//@expressoes.5"/>
   <expressoes xsi:type="caracteristica:EventoRelacional" nome="EVR2" variavelDeContexto="//@elementos.9" valor="20"/>
-  <expressoes xsi:type="caracteristica:EventoRelacional" nome="EVR3" valor="50"/>
+  <expressoes xsi:type="caracteristica:EventoRelacional" nome="EVR3" variavelDeContexto="//@elementos.9" valor="50"/>
   <expressoes xsi:type="caracteristica:AcaoLogico" nome="ACL1" ladoEsquerdoAcao="//@expressoes.9" ladoDireitoAcao="//@expressoes.8"/>
   <expressoes xsi:type="caracteristica:Designar" nome="DES1" valor="10" atributo="//@elementos.10"/>
   <expressoes xsi:type="caracteristica:LiteralAcao" nome="LA1" elemento="//@elementos.6"/>

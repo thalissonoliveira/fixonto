@@ -9,6 +9,19 @@ public class LogicalEvent extends Event {
 	private Event leftSideEvent;
 	
 	private LogicalOperator logicalOperator;
+	
+
+	public LogicalEvent() {
+		super();
+	}
+
+	public LogicalEvent(String name) {
+		super(name);
+	}
+
+	public void setLogicalOperator(int logicalOperator) {
+		this.logicalOperator = LogicalOperator.get(logicalOperator);
+	}
 
 	public Event getRightSideEvent() {
 		return rightSideEvent;

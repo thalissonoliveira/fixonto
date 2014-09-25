@@ -26,14 +26,13 @@ operation fixTure2(lps:LPS) {
 	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
 	var factoryFixture := featToOntoFixture.getSplConceptFactory();
 	var splFixture = factoryFixture.createSpl(lps.nome);
-	var oracle = featToOntoFixture.getOracle();
 	
-	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, oracle, featToOntoFixture);
+	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, featToOntoFixture);
 	featToOntoFixture.run(splFixture);
 }
 
 
-operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, oracle, featToOntoFixture) {
+operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixture) {
 	
 	var raiz = lps.sistema;
  	var rootFixture = factoryFixture.createRootFeature(raiz.nome);
@@ -43,9 +42,8 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, oracle, featTo
 	splFixture.setSystem(rootFixture);
 	preecherElementosCaracteristicaLpsFixture(raiz, rootFixture, factoryFixture, splFixture, featToOntoFixture);
 	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
-	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, oracle);
-	
-	
+	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
+		
 	var elementoDoModelo;
 	
 	for (literal in lps.expressoes -> select(x|x.isTypeOf(ExpressaoRelacional))) {
@@ -55,14 +53,14 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, oracle, featTo
 	return splFixture;
 }
 
-operation preencherRegrasLpsFixture(lps : LPS, factoryFixture, splFixture, oracle) {
+operation preencherRegrasLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
 	var ruleFixture = null;
 
 	for (regra in lps.regras) {
 		if (regra.isTypeOf(RegraDeComposicao)) {
-			ruleFixture = preencherRegraDeComposicao(regra, factoryFixture, splFixture, oracle);
+			ruleFixture = preencherRegraDeComposicao(regra, factoryFixture, splFixture, featToOntoFixture);
 		} else if (regra.isTypeOf(RegraDeContexto)) {
-//			ruleFixture = preencherRegraDeContexto(regra);
+			ruleFixture = preencherRegraDeContexto(regra, factoryFixture, splFixture, featToOntoFixture);
 		} else {
 			'[ERROR] - Erro ao criar nova Regra pela Fixture: regra do modelo é inválida.'.println();
 			return;
@@ -136,14 +134,73 @@ operation preencherElementosContextuaisLpsFixture(lps:LPS, factoryFixture, splFi
 	}
 }
 
-operation preencherRegraDeComposicao(regraDeComposicao: RegraDeComposicao, factoryFixture, splFixture, oracle) {
+
+operation preencherRegraDeContexto(regraDeContexto: RegraDeContexto, factoryFixture, splFixture, featToOntoFixture) {
+	var contextRuleFixture = null;
+	var eventFixture = null;
+	var actionFixture = null;
+	
+	contextRuleFixture = factoryFixture.createContextRule(regraDeContexto.nome);
+	eventFixture = preencherEvento(regraDeContexto.evento, factoryFixture, splFixture, featToOntoFixture);
+	actionFixture = preencherAcao(regraDeContexto.acao, factoryFixture, splFixture, featToOntoFixture);
+	contextRuleFixture.setEvent(eventFixture);
+	contextRuleFixture.setAction(actionFixture);
+	
+	return contextRuleFixture;
+	
+}
+
+operation preencherAcao(acao: Acao, factoryFixture, splFixture, featToOntoFixture) {
+	var actionFixture = null;
+	if (acao.isTypeOf(AcaoLogico)) {
+		actionFixture = factoryFixture.createLogicalAction(acao.nome);
+		actionFixture.setLeftSideAction(preencherAcao(acao.ladoEsquerdoAcao, factoryFixture, splFixture, featToOntoFixture));
+		actionFixture.setRightSideAction(preencherAcao(acao.ladoDireitoAcao, factoryFixture, splFixture, featToOntoFixture));
+		actionFixture.setLogicalActionOperator(acao.operadorAcaoLogico.value);
+		return actionFixture;
+	} else if (acao.isTypeOf(LiteralAcao)) {
+		actionFixture = factoryFixture.createActionLiteral(acao.nome);
+		actionFixture.setPresence(acao.presenca.value);
+		actionFixture.setfeaturedElement(featToOntoFixture.getElementByName(acao.elemento.nome));
+		return actionFixture;
+	} else if (acao.isTypeOf(Designar)) {
+		actionFixture = factoryFixture.createDesignate(acao.nome);
+		actionFixture.setValue(acao.valor);
+		actionFixture.setAttribute(featToOntoFixture.getElementByName(acao.atributo.nome));
+		actionFixture.setValueType(acao.tipoValor.value);
+		return actionFixture;
+	} else {
+		return null;
+	}
+}
+
+operation preencherEvento(evento: Evento, factoryFixture, splFixture, featToOntoFixture) {
+	var eventFixture = null;
+	if (evento.isTypeOf(EventoLogico)) {
+		eventFixture = factoryFixture.createLogicalEvent(evento.nome);
+		eventFixture.setLeftSideEvent(preencherEvento(evento.ladoEsquerdoEvento, factoryFixture, splFixture, featToOntoFixture));
+		eventFixture.setRightSideEvent(preencherEvento(evento.ladoDireitoEvento, factoryFixture, splFixture, featToOntoFixture));
+		eventFixture.setLogicalOperator(evento.operadorLogico.value);
+		return eventFixture;
+	} else if (evento.isTypeOf(EventoRelacional)) {
+		eventFixture = factoryFixture.createRelationalEvent(evento.nome);
+		eventFixture.setContextVariable(featToOntoFixture.getElementByName(evento.variavelDeContexto.nome));
+		eventFixture.setRelationalOperator(evento.operadorRelacional.value);
+		eventFixture.setValue(evento.valor);
+		return eventFixture;
+	} else {
+		return null;
+	}
+}
+
+operation preencherRegraDeComposicao(regraDeComposicao: RegraDeComposicao, factoryFixture, splFixture, featToOntoFixture) {
 	var compositionRuleFixture = null;
 	var antecedentFixture = null;
 	var consequentFixture = null;
 	
 	compositionRuleFixture = factoryFixture.createCompositionRule(regraDeComposicao.nome);
-	antecedentFixture = preencherAntecedente(regraDeComposicao.antecedente, factoryFixture, splFixture, oracle);
-	consequentFixture = preencherAntecedente(regraDeComposicao.consequente, factoryFixture, splFixture, oracle);
+	antecedentFixture = preencherAntecedente(regraDeComposicao.antecedente, factoryFixture, splFixture, featToOntoFixture);
+	consequentFixture = preencherAntecedente(regraDeComposicao.consequente, factoryFixture, splFixture, featToOntoFixture);
 	compositionRuleFixture.setAntecedent(antecedentFixture);
 	compositionRuleFixture.setConsequent(consequentFixture);
 	
@@ -151,28 +208,22 @@ operation preencherRegraDeComposicao(regraDeComposicao: RegraDeComposicao, facto
 }
 
 //TODO preencher a coleção de expressões. Só adiciona elementos em regras.
-operation preencherAntecedente(antecedente : Antecedente, factoryFixture, splFixture, oracle) {
+operation preencherAntecedente(antecedente : Antecedente, factoryFixture, splFixture, featToOntoFixture) {
 	var antecedentFixture = null;
 	if (antecedente.isTypeOf(ExpressaoLogica)) {
 		antecedentFixture = factoryFixture.createLogicalExpression(antecedente.nome);
-		antecedentFixture.setLeftSideComposition(preencherAntecedente(antecedente.ladoEsquerdoComposicao, factoryFixture, splFixture, oracle));
-		antecedentFixture.setRightSideComposition(preencherAntecedente(antecedente.ladoDireitoComposicao, factoryFixture, splFixture, oracle));
+		antecedentFixture.setLeftSideComposition(preencherAntecedente(antecedente.ladoEsquerdoComposicao, factoryFixture, splFixture, featToOntoFixture));
+		antecedentFixture.setRightSideComposition(preencherAntecedente(antecedente.ladoDireitoComposicao, factoryFixture, splFixture, featToOntoFixture));
 		antecedentFixture.setLogicalOperator(antecedente.operadorLogico.value);
 		return antecedentFixture;
 	} else if (antecedente.isTypeOf(LiteralComposicao)) {
 		antecedentFixture = factoryFixture.createCompositionLiteral(antecedente.nome);
 		antecedentFixture.setPresence(antecedente.presenca.value);
-		"DEBUG:".println;
-		"1".println;
-		antecedente.elemento.println;
-		"2".println;
-		antecedente.elemento.nome.println;
-		
-		antecedentFixture.setFeaturedElement(oracle.get(antecedente.elemento.nome));
+		antecedentFixture.setFeaturedElement(featToOntoFixture.getElementByName(antecedente.elemento.nome));
 		return antecedentFixture;
 	} else if (antecedente.isTypeOf(ExpressaoRelacional)) {
 		antecedentFixture = factoryFixture.createRelationalExpression(antecedente.nome);
-		antecedentFixture.setExpressionVariable(oracle.get(antecedente.variaveldaExpressao));
+		antecedentFixture.setExpressionVariable(featToOntoFixture.getElementByName(antecedente.variaveldaExpressao.nome));
 		antecedentFixture.setRelationalOperator(antecedente.operadorRelacional.value);
 		antecedentFixture.setValue(antecedente.valor);
 		return antecedentFixture;

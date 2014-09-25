@@ -10,9 +10,15 @@ import fixture.owl.model.element.MandatoryFeature;
 import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
+import fixture.owl.model.rule.ContextRule;
+import fixture.owl.model.rule.Designate;
+import fixture.owl.model.rule.LogicalAction;
+import fixture.owl.model.rule.LogicalEvent;
 import fixture.owl.model.rule.LogicalExpression;
+import fixture.owl.model.rule.RelationalEvent;
 import fixture.owl.model.rule.RelationalExpression;
 
 /**
@@ -79,6 +85,10 @@ public class SPLConceptFactory {
 		return new CompositionRule(name);
 	}
 	
+	public ContextRule createContextRule(String name) {
+		return new ContextRule(name);
+	}
+	
 	public LogicalExpression createLogicalExpression(String name) {
 		return new LogicalExpression(name);
 	}
@@ -92,4 +102,24 @@ public class SPLConceptFactory {
 		return new RelationalExpression(name);
 	}
 	
+	public LogicalEvent createLogicalEvent(String name) {
+		return new LogicalEvent(name);
+	}
+	
+	public RelationalEvent createRelationalEvent(String name) {
+		return new RelationalEvent(name);
+	}
+	
+	public LogicalAction createLogicalAction(String name) {
+		return new LogicalAction(name);
+	}
+	
+	public ActionLiteral createActionLiteral(String name) {
+		return new ActionLiteral(name);
+	}
+	
+	public Designate createDesignate(String name) {
+		return new Designate(name);
+	}
+
 }

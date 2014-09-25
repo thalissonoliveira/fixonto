@@ -10,6 +10,18 @@ public class RelationalEvent extends Event {
 	private RelationalOperator relationalOperator;
 	
 	private String value;
+	
+	public RelationalEvent() {
+		super();
+	}
+
+	public RelationalEvent(String name) {
+		super(name);
+	}
+
+	public void setRelationalOperator(int relationalOperator) {
+		this.relationalOperator = RelationalOperator.get(relationalOperator);
+	}
 
 	public ContextInfo getContextVariable() {
 		return contextVariable;

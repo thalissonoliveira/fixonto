@@ -8,7 +8,14 @@ public class ContextRule extends Rule {
 	
 	private Action action;
 	
-	
+	public ContextRule() {
+		super();
+	}
+
+	public ContextRule(String name) {
+		super(name);
+	}
+
 	public Event getEvent() {
 		return event;
 	}

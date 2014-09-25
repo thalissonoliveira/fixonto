@@ -9,6 +9,18 @@ public class LogicalAction extends Action {
 	private Action leftSideAction;
 	
 	private LogicalActionOperator logicalActionOperator;
+	
+	public LogicalAction() {
+		super();
+	}
+
+	public LogicalAction(String name) {
+		super(name);
+	}
+	
+	public void setLogicalActionOperator(int logicalActionOperator) {
+		this.logicalActionOperator = LogicalActionOperator.get(logicalActionOperator);
+	}
 
 	public Action getRightSideAction() {
 		return rightSideAction;

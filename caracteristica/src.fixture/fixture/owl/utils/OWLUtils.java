@@ -327,9 +327,7 @@ public class OWLUtils {
 			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + name + "_" + count));
 			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
 			
-			
 			if (!oracle.containsKey(name)) {
-				System.out.println("key:" + name);
 				oracle.put(name, new HashSet<OWLNamedIndividual>());
 			}
 			oracle.get(name).add(owlNamedIndividual);

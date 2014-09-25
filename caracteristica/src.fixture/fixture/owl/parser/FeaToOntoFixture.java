@@ -1,6 +1,7 @@
 package fixture.owl.parser;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -101,8 +102,8 @@ public class FeaToOntoFixture {
 				compositionRule = Utils.getCompositionRuleOf(rule);
 				buildOntology(compositionRule);
 			} else if(rule.isContextRule()) {
-//				contextRule = Utils.getContextRuleOf(rule);
-//				buildOntology(contextRule);
+				contextRule = Utils.getContextRuleOf(rule);
+				buildOntology(contextRule);
 			}
 		}
 		
@@ -267,8 +268,6 @@ public class FeaToOntoFixture {
 		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
 		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature);
 		
-		System.out.println("individuo " + currentFeatureOwl.asOWLNamedIndividual().getIRI());
-		
 		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);
 		
 		if (currentFatherFeatureOwl != null) {
@@ -309,10 +308,17 @@ public class FeaToOntoFixture {
 		return fixtureOracle;
 	}
 	
+	public Nameable getElementByName(String name) {
+		Set<Nameable> set = getOracle().get(name);
+		if (set == null || set.isEmpty()) {
+			return null;
+		}
+		return new ArrayList<Nameable>(set).get(0);
+	}
+	
 	public void addToFixtureOracle(Nameable nameable) {
 		String nome = nameable.getName();
 		if (!fixtureOracle.containsKey(nome)) {
-			System.out.println("key fix oracle:" + nome);
 			fixtureOracle.put(nome, new HashSet<Nameable>());
 		}
 		fixtureOracle.get(nome).add(nameable);

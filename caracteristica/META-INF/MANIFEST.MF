@@ -61,7 +61,7 @@ Export-Package: caracteristica,
  jdd.util.sets,
  jdd.util.zip,
  jdd.zdd,
- plugin.extension
+ utils
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.eclipse.ui.ide;bundle-version="3.7.0",

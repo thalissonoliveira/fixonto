@@ -1,4 +1,4 @@
-package plugin.extension;
+package utils;
 
 import org.eclipse.draw2d.Figure;
 import org.eclipse.draw2d.Graphics;

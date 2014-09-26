@@ -293,21 +293,21 @@ context EventoRelacional
 	constraint TiposCompativeisInteiro
 	{
 		//novo
-		guard: self.satisfies('ValorNaoNulo') and self.variaveldeContexto.tipoValor == TipoValor#TInteger
+		guard: self.satisfies('ValorNaoNulo') and self.variavelDeContexto.tipoValor == TipoValor#TInteger
 		check: CHECK(self.valor.isInteger(), "fase 2")
 		message: 'O valor deste elemento deve ser do tipo inteiro para estar em conformidade com a variavel de contexto associada'
 	}
 	constraint TiposCompativeisReal
 	{
 		//novo
-		guard: self.satisfies('ValorNaoNulo') and self.variaveldeContexto.tipoValor == TipoValor#TFloat
+		guard: self.satisfies('ValorNaoNulo') and self.variavelDeContexto.tipoValor == TipoValor#TFloat
 		check: CHECK(self.valor.isReal(), "fase 2")
 		message: 'O valor deste elemento deve ser do tipo real para estar em conformidade com a variavel de contexto associada'
 	}
 	constraint TiposCompativeisBooleano
 	{
 		//novo
-		guard: self.satisfies('ValorNaoNulo') and self.variaveldeContexto.tipoValor == TipoValor#TBoolean
+		guard: self.satisfies('ValorNaoNulo') and self.variavelDeContexto.tipoValor == TipoValor#TBoolean
 		check: CHECK(self.valor=="true" or self.valor=="false", "fase 2")
 		message: 'O valor deste elemento deve ser do tipo booleano para estar em conformidade com a variavel de contexto associada'
 	}
@@ -454,7 +454,7 @@ context LiteralComposicao
 }
 
 
-context EntidadedeContexto
+context EntidadeDeContexto
 {
 	constraint ElementodeContextoSemAtributos 
 	{
@@ -464,7 +464,7 @@ context EntidadedeContexto
 	}
 }
 
-context InformacaodeContexto
+context InformacaoDeContexto
 {
 	constraint AtributodeContextoSemPai
 	{
@@ -496,7 +496,7 @@ context AtributoProduto
 
 
 
-context InformacaodeContexto
+context InformacaoDeContexto
 {
 	constraint AtributoProdutoDeveTerValor
 	{
@@ -546,7 +546,7 @@ context AtributoProduto
 }
 
 
-context InformacaodeContexto
+context InformacaoDeContexto
 {
 	constraint VerificacaoTipagemInteiro
 	{
@@ -618,7 +618,7 @@ context CaracteristicaProduto
 
 }
 
-//**Helper Operations
+//Helper Operations
 operation DetectarCiclo(lps:LPS)
 {
 	var color:Map;

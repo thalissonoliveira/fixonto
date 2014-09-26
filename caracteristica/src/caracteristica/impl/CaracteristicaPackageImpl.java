@@ -2600,7 +2600,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "label", "nome",
-       "figure", "plugin.extension.TriangleFigure",
+       "figure", "utils.TriangleFigure",
        "label.pattern", "Attribute {0}"
        });					
     addAnnotation
@@ -2626,7 +2626,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "label", "nome",
-       "figure", "plugin.extension.TriangleFigure",
+       "figure", "utils.TriangleFigure",
        "border.style", "dash",
        "border.width", "2"
        });		
@@ -2647,7 +2647,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        {
        "label", "nome,cardinalidadeMaxima",
        "label.pattern", "Variation {0} : {1} ",
-       "figure", "plugin.extension.DiamondFigure"
+       "figure", "utils.DiamondFigure"
        });			
     addAnnotation
       (raizDeContextoEClass, 
@@ -2678,7 +2678,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "label", "nome,valor",
-       "figure", "plugin.extension.TriangleFigure",
+       "figure", "utils.TriangleFigure",
        "label.pattern", "Attribute {0}:{1}"
        });		
     addAnnotation

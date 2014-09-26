@@ -26,35 +26,35 @@
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="plugin.extension.FlagValidacao"
+            class="utils.FlagValidacao"
             defaultName="FlagValidacao">
       </tool>
    </extension>
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="plugin.extension.FxDialog"
+            class="utils.FxDialog"
             defaultName="FxDialog">
       </tool>
    </extension>
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="plugin.extension.CriarLog"
+            class="utils.CriarLog"
             defaultName="CriarLog">
       </tool>
    </extension>
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="plugin.extension.DecisionDiagram"
+            class="utils.DecisionDiagram"
             defaultName="DecisionDiagram">
       </tool>
    </extension>
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="plugin.extension.SatSolver"
+            class="utils.SatSolver"
             defaultName="SatSolver">
       </tool>
    </extension>

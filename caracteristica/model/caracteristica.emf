@@ -25,7 +25,7 @@ class Elemento {
 class ElementoCaracteristico extends Elemento {
 }
 
-@gmf.node(label="nome", figure="plugin.extension.TriangleFigure", label.pattern="Attribute {0}")
+@gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Attribute {0}")
 class Atributo extends Elemento {
   attr TipoValor tipoValor;
   ref Caracteristica#atributo caracteristicaPai;
@@ -53,7 +53,7 @@ class CaracteristicaRaiz extends Caracteristica {
 class CaracteristicaOpcional extends Caracteristica, ElementoCaracteristico {
 }
 
-@gmf.node(label="nome", figure="plugin.extension.TriangleFigure", border.style="dash", border.width="2")
+@gmf.node(label="nome", figure="utils.TriangleFigure", border.style="dash", border.width="2")
 class CaracteristicaAgrupada extends Caracteristica, ElementoCaracteristico {
 }
 
@@ -61,7 +61,7 @@ class CaracteristicaAgrupada extends Caracteristica, ElementoCaracteristico {
 class CaracteristicaMandatoria extends Caracteristica {
 }
 
-@gmf.node(label="nome,cardinalidadeMaxima", label.pattern="Variation {0} : {1} ", figure="plugin.extension.DiamondFigure")
+@gmf.node(label="nome,cardinalidadeMaxima", label.pattern="Variation {0} : {1} ", figure="utils.DiamondFigure")
 class VariacaoDois extends Caracteristica, ElementoCaracteristico {
 	attr CardinalidadeMaxima cardinalidadeMaxima;
 	attr Integer cardinalidadeMinimaOr;
@@ -124,7 +124,7 @@ class CaracteristicaProduto extends ElementoDeProduto {
   ref AtributoProduto[*]#caracteristicaProdutoPai atributoProduto;
 }
 
-@gmf.node(label="nome,valor", figure="plugin.extension.TriangleFigure", label.pattern="Attribute {0}:{1}")
+@gmf.node(label="nome,valor", figure="utils.TriangleFigure", label.pattern="Attribute {0}:{1}")
 class AtributoProduto extends ElementoDeProduto {
   attr String valor;
   attr TipoValor tipoValor;

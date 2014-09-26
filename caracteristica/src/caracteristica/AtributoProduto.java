@@ -18,7 +18,7 @@ package caracteristica;
  * </p>
  *
  * @see caracteristica.CaracteristicaPackage#getAtributoProduto()
- * @model annotation="gmf.node label='nome,valor' figure='plugin.extension.TriangleFigure' label.pattern='Attribute {0}:{1}'"
+ * @model annotation="gmf.node label='nome,valor' figure='utils.TriangleFigure' label.pattern='Attribute {0}:{1}'"
  * @generated
  */
 public interface AtributoProduto extends ElementoDeProduto

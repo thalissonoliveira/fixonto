@@ -1,4 +1,4 @@
-package plugin.extension;
+package utils;
 
 import org.sat4j.core.VecInt;
 import org.sat4j.minisat.SolverFactory;

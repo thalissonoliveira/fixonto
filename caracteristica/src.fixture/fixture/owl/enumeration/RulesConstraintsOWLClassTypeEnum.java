@@ -6,9 +6,11 @@ import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
+import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.SWRLClassAtom;
+import org.semanticweb.owlapi.model.SWRLDataPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLObjectPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.model.SWRLVariable;
@@ -19,6 +21,7 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
 import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
 import fixture.owl.factory.OWLClassFactory;
+import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.rules.error.SWRLError;
 import fixture.owl.utils.OntoHelper;
@@ -26,7 +29,7 @@ import fixture.owl.utils.Utils;
 
 public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	
-	PARENTAL_INCONSISTENCY (1, "Parental Inconsistency",  "ParentalInconsistency", new IRI[]{IRI.create("X1")}) {
+	PARENTAL_INCONSISTENCY (1, "'Parental Inconsistency' Rule",  "ParentalInconsistency", new IRI[]{IRI.create("X1")}, "Uma característica não pode ser filha dela mesma.", "A feature can't be child of itself.") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLDataFactory dataFactory = ontoHelper.getDataFactory();
@@ -46,7 +49,29 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			return buildSWRLError(pelletReasoner, parentalInconsistencyOWLClass);
 		}
 	},
-	SAME_NAME_FEATURE_RULE (2, "Features with same name rule",  "ParentalInconsistency", new IRI[]{IRI.create("X1")}) {
+	SAME_NAME_FEATURE_RULE (2, "'Features with same name' Rule",  "GFR1", new IRI[]{IRI.create("X1")}, "", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			OWLDataFactory dataFactory = ontoHelper.getDataFactory();
+			OWLClassFactory owlClassFactory = OWLClassFactory.getInstance(ontoHelper);
+			OWLDataPropertyFactory owlObjectPropertyFactory = OWLDataPropertyFactory.getInstance(ontoHelper);
+			
+			OWLClass parentalInconsistencyOWLClass = owlClassFactory.get(RulesConstraintsOWLClassTypeEnum.SAME_NAME_FEATURE_RULE);
+			OWLDataProperty hasNameProperty = owlObjectPropertyFactory.get(OWLDataPropertyTypeEnum.HAS_NAME);
+			
+			SWRLVariable variableRule = dataFactory.getSWRLVariable(this.getIRIs()[0]);
+			SWRLDataPropertyAtom body = dataFactory.getSWRLDataPropertyAtom(hasNameProperty, variableRule, variableRule);
+			SWRLClassAtom head = dataFactory.getSWRLClassAtom(parentalInconsistencyOWLClass, variableRule);
+			SWRLRule rule = dataFactory.getSWRLRule(Collections.singleton(body), Collections.singleton(head));
+			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
+			ontoHelper.saveOntology();
+			pelletReasoner.flush();
+			ontoHelper.saveOntology();
+			
+			return buildSWRLError(pelletReasoner, parentalInconsistencyOWLClass);
+		}
+	},
+	SAME_NAME_ATTRIBUTE_RULE (3, "Attributes with same name rule",  "GFR2", new IRI[]{IRI.create("X1")}, "", "") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLDataFactory dataFactory = ontoHelper.getDataFactory();
@@ -72,13 +97,18 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	private int code;
 	private String description;
 	private String label;
-	private IRI[] iris;
+	private IRI[] variableIris;
+	private String ptExceptionMsg;
+	private String enExceptionMsg;
 	
-	private RulesConstraintsOWLClassTypeEnum(int code, String description, String label, IRI[] iris) {
+	
+	private RulesConstraintsOWLClassTypeEnum(int code, String description, String label, IRI[] variablesIris, String ptExceptionMsg, String enExceptionMsg) {
 		this.code = code;
 		this.description = description;
 		this.label = label;
-		this.iris = iris;
+		this.variableIris = variablesIris;
+		this.ptExceptionMsg = ptExceptionMsg;
+		this.enExceptionMsg = enExceptionMsg;
 	}
 	
 	protected SWRLError buildSWRLError(PelletReasoner pelletReasoner, OWLClass owlClass) {
@@ -126,7 +156,15 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	}
 
 	public IRI[] getIRIs() {
-		return iris;
+		return variableIris;
+	}
+
+	public String getPtExceptionMsg() {
+		return ptExceptionMsg;
+	}
+
+	public String getEnExceptionMsg() {
+		return enExceptionMsg;
 	}
 	
 }

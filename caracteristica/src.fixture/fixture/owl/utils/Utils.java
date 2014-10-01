@@ -34,7 +34,10 @@ public class Utils {
 	public static final String OUTPUT_FOLDER = HOME_FOLDER + FILE_SEPARATOR + "fixtureoutput";
 	public static final String META_ONTOLOGY_TEMP_PATH = TEMP_FOLDER + FILE_SEPARATOR + "MetaOntologyFixture2.owl";
 	public static final String SPLiSEM_OUTPUT_PATH = OUTPUT_FOLDER + FILE_SEPARATOR + "SPLiSEM2.owl";
-	public static final String META_ONTOLOGY_BASE_URL_SHARP = "http://www.semanticweb.org/2014/8/FeaToOntoFixture2"+"#";
+	public static final String SHARP = "#";
+	public static final String META_ONTOLOGY_BASE_URL = "http://www.semanticweb.org/2014/8/FeaToOntoFixture2";
+	public static final String META_ONTOLOGY_BASE_URL_SHARP = META_ONTOLOGY_BASE_URL + SHARP;
+	public static final String FIX_BUILT_IN = META_ONTOLOGY_BASE_URL + "/builtIn/" + SHARP;
 	
 	@Deprecated
 	public static File getOntologyXML(String pathLoad) {

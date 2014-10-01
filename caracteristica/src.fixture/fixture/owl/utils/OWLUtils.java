@@ -348,7 +348,6 @@ public class OWLUtils {
 		
 //		if (collectionLiteralCount != null) {
 			int literalValue = Integer.valueOf(collectionLiteralCount.toArray(new OWLLiteral[1])[0].getLiteral());
-			System.out.println("FOX " + literalValue);
 			removeDataPropertyFromOntology(countIndividual, hasMaxId, literalValue);
 //		}
 		

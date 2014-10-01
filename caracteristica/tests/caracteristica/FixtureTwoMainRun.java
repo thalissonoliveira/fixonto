@@ -21,7 +21,7 @@ public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException {
 		runFeaToOntoFixtureTest();
-//		runRulesAnalyser();
+		runRulesAnalyser();
 //		runCoung();
 		
 	}

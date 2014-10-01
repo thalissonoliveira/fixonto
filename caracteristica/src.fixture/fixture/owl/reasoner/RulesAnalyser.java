@@ -8,9 +8,12 @@ import org.semanticweb.owlapi.reasoner.NodeSet;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
+import com.clarkparsia.pellet.rules.builtins.BuiltInRegistry;
 
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.rules.error.SWRLError;
+import fixture.owl.swrl.FixtureEqualNameSWRLFunction;
+import fixture.owl.swrl.FixtureSWRLBuiltin;
 import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
@@ -19,6 +22,7 @@ public class RulesAnalyser {
 	private OntoHelper ontoHelper;
 	
 	public void run() throws OWLOntologyCreationException {
+		BuiltInRegistry.instance.registerBuiltIn(Utils.FIX_BUILT_IN + "equalname", new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
         
@@ -29,12 +33,15 @@ public class RulesAnalyser {
 	private void checkRules() {
 		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 		SWRLError error = RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY.execute(ontoHelper, reasoner);
+		SWRLError error2 = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);
 		
-		if (error == null) {
+		
+		if (error == null && error2 == null) {
 			System.err.println("RAMMMM! SEM ERRO!");
 		} else {
 			System.out.println("####### CHECK IT OUT! #######");
-			System.out.println(error.getDescription());
+			System.out.println(error == null ? "--- 1 - " : error.getDescription());
+			System.out.println(error2 == null ? "--- 2 - " : error2.getDescription());
 		}
 		
 		

@@ -16,7 +16,7 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      ontologyIRI="http://www.semanticweb.org/2014/8/FeaToOntoFixture2">
-    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="fix" IRI="http://www.semanticweb.org/2014/8/FeaToOntoFixture2/builtIn#"/>
     <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
@@ -70,6 +70,12 @@
         <Class IRI="#Feature"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GFR1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR2"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GroupedFeature"/>
     </Declaration>
     <Declaration>
@@ -83,6 +89,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#MandatoryFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OntologyInconsistences"/>
     </Declaration>
     <Declaration>
         <Class IRI="#OptionalFeature"/>
@@ -205,6 +214,12 @@
         <DataProperty IRI="#hasValueType"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#c1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#c2"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#count"/>
     </Declaration>
     <SubClassOf>
@@ -260,6 +275,14 @@
         <Class IRI="#Element"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#GFR1"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR2"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#GroupedFeature"/>
         <Class IRI="#Feature"/>
     </SubClassOf>
@@ -284,6 +307,10 @@
         <Class IRI="#Feature"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ParentalInconsistency"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RelationalEvent"/>
         <Class IRI="#Event"/>
     </SubClassOf>
@@ -300,9 +327,27 @@
         <Class IRI="#Feature"/>
     </SubClassOf>
     <ClassAssertion>
+        <Class IRI="#MandatoryFeature"/>
+        <NamedIndividual IRI="#c1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#VariationTwo"/>
+        <NamedIndividual IRI="#c2"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Count"/>
         <NamedIndividual IRI="#count"/>
     </ClassAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#c1"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Name</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#hasName"/>
+        <NamedIndividual IRI="#c2"/>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Name</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#hasMaxId"/>
         <NamedIndividual IRI="#count"/>
@@ -420,11 +465,11 @@
         <DataProperty IRI="#hasLogicalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -440,11 +485,11 @@
         <DataProperty IRI="#hasPresence"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -452,11 +497,11 @@
         <DataProperty IRI="#hasRelationalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;integer">5</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;integer">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">5</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -480,5 +525,5 @@
 
 
 
-<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
 

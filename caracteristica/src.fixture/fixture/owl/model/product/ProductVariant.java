@@ -3,31 +3,41 @@ package fixture.owl.model.product;
 import fixture.owl.model.intefaces.Element;
 
 
-public class ProductVariant implements ProductElement
+public class ProductVariant implements ProductElement{
+	
+	private String name;
 
+	private Element originalElement;
 
-{
-
-	@Override
+	private ProductVariation fatherProductVariation;
+	
+	
+	
+	//
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return name;
 	}
 
-	@Override
 	public void setName(String name) {
-		// TODO Auto-generated method stub
-		
+		this.name = name;
 	}
 
-	@Override
 	public Element getOriginalElement() {
-		// TODO Auto-generated method stub
-		return null;
+		return originalElement;
 	}
 
-	@Override
-	public void setOriginalElement(Element element) {
-		// TODO Auto-generated method stub
-		
-	}} // VarianteProduto
+	public void setOriginalElement(Element originalElement) {
+		this.originalElement = originalElement;
+	}
+
+	public ProductVariation getFatherProductVariation() {
+		return fatherProductVariation;
+	}
+
+	public void setFatherProductVariation(ProductVariation fatherProductVariation) {
+		this.fatherProductVariation = fatherProductVariation;
+	}
+
+	
+	
+	} // VarianteProduto

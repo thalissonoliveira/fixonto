@@ -1,5 +1,14 @@
 package fixture.owl.model.product;
 
+import fixture.owl.model.intefaces.Element;
 
-public class ProductElement
-{} // ElementodeProduto
+
+public interface ProductElement {
+	
+	String getName();
+	void setName(String name);
+	Element getOriginalElement();
+	void setOriginalElement(Element element);
+	
+	
+} // ElementodeProduto

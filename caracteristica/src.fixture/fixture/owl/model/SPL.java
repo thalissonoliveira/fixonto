@@ -6,6 +6,8 @@ import java.util.Set;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.intefaces.Element;
 import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.product.Product;
+import fixture.owl.model.product.ProductElement;
 import fixture.owl.model.rule.Rule;
 
 /**
@@ -22,9 +24,15 @@ public class SPL implements Nameable {
 	
 	private Set<Rule> rules;
 	
+	private Set<Product> products;
+	
+	private Set<ProductElement> productElements;
+	
 	public SPL() {
 		elements = new HashSet<Element>();
 		rules = new HashSet<Rule>();
+		products = new HashSet<Product>();
+		productElements = new HashSet<ProductElement>();
 	}
 	
 	public SPL(String name) {
@@ -73,5 +81,23 @@ public class SPL implements Nameable {
 	public void setRules(Set<Rule> rules) {
 		this.rules = rules;
 	}
+
+	public Set<Product> getProducts() {
+		return products;
+	}
+
+	public void setProducts(Set<Product> products) {
+		this.products = products;
+	}
+
+	public Set<ProductElement> getProductElements() {
+		return productElements;
+	}
+
+	public void setProductElements(Set<ProductElement> productElements) {
+		this.productElements = productElements;
+	}
+	
+	
 	
 } // LPS

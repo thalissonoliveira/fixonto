@@ -13,6 +13,7 @@ import com.clarkparsia.pellet.rules.builtins.BuiltInRegistry;
 import fixture.owl.enumeration.FixtureSWRLBuiltinEnum;
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.rules.error.SWRLError;
+import fixture.owl.semanticrules.FixtureBuiltin;
 import fixture.owl.swrl.FixtureEqualNameSWRLFunction;
 import fixture.owl.swrl.FixtureSWRLBuiltin;
 import fixture.owl.utils.OntoHelper;
@@ -23,12 +24,11 @@ public class RulesAnalyser {
 	private OntoHelper ontoHelper;
 	
 	public void run() throws OWLOntologyCreationException {
-		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
+//		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
+		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureBuiltin());
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
-        
     	checkRules();
-	
 	}
 
 	private void checkRules() {

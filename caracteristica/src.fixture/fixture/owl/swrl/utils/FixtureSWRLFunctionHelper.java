@@ -1,6 +1,5 @@
 package fixture.owl.swrl.utils;
 
-import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -35,7 +34,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
      * Constructor. BuiltInAtom describes the SWRL atom as predicate and its arguments, which are variables and constants.
      * A problem is that all variables are of type AtomDVariable i.e. variables for data, no variables for individuals.
      *
-     * @param atom the SWRL atom as written in the rule, like my:func(?x,?y,"1"^^xsd:integer)
+     * @param atom the SWRL atom as written in the rule, like my:func(?x,?y,"m"^^xsd:string,"n"^^xsd:string,)
      * @see AtomDVariable
      */
     public FixtureSWRLFunctionHelper(BuiltInAtom atom, FixtureSWRLFunction function) {
@@ -51,10 +50,13 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
      */
     @Override
     public Collection<? extends AtomVariable> getBindableVars(Collection<AtomVariable> bound) {
-        if (!isApplicable(bound)) return Collections.emptySet();
-        Collection<AtomVariable> vars = VariableUtils.getVars(atom);
-        vars.removeAll(bound);
-        return vars;
+        if (!isApplicable(bound)) {
+        	return Collections.emptySet();
+        } else {
+        	Collection<AtomVariable> vars = VariableUtils.getVars(atom);
+        	vars.removeAll(bound);
+        	return vars;
+        }
     }
 
     /**
@@ -71,7 +73,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
     }
 
     private AtomIVariable d2i(AtomDVariable atomDVariable) {
-        return  new AtomIVariable((atomDVariable.getName()));
+        return new AtomIVariable((atomDVariable.getName()));
     }
 
     /**
@@ -87,17 +89,21 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
             if (atomDObject instanceof AtomDVariable) {
                 AtomDVariable atomDVariable = (AtomDVariable) atomDObject;
                 boolean b = bound.contains(atomDVariable);
-                if (!b) b = bound.contains(d2i(atomDVariable));
+                if (!b) {
+                	b = bound.contains(d2i(atomDVariable));
+                }
                 boundPositions[i] = b;
             } else if (atomDObject instanceof AtomDConstant) {
                 boundPositions[i] = true;
             }
         }
+        
         return function.isApplicable(boundPositions);
     }
 
     @Override
     public void rebind(VariableBinding newBinding) {
+    	System.out.println("rebind");
 
         List<AtomDObject> atomArguments = atom.getAllArguments();
         Node[] arguments = new Node[atomArguments.size()];
@@ -127,8 +133,8 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
             used = false;
             partial = newPartial;
         } else {
-            System.out.println("Function failure: " + atom);
-            System.out.println("Arguments: " + Arrays.toString(arguments));
+//            System.out.println("Function failure: " + atom);
+//            System.out.println("Arguments: " + Arrays.toString(arguments));
         }
     }
 

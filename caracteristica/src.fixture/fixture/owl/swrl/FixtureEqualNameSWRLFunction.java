@@ -13,24 +13,25 @@ public class FixtureEqualNameSWRLFunction implements FixtureSWRLFunction {
 	
     @Override 
     public boolean isApplicable(boolean[] boundPositions) { 
-        //applicable only to 4 arguments, two bound and two unbound 
+        //applicable only to 4 arguments, two bound and two unbound
         return boundPositions.length == 4 && boundPositions[0] && boundPositions[1] && boundPositions[2] && boundPositions[3]; 
     } 
 
     @Override 
     public boolean apply(ABox abox, Node[] args) { 
+    	
+//    	System.out.println("EXECUTANDO A VALIDAÇÃO");
         //accepts FixtureIRIparts(individual, individual, nameOne string, nameTwo string) 
         if (!args[0].isIndividual() || !args[1].isIndividual() || args[2] == null || args[3] == null) {
         	return false; 
         }
         
-        String individualOneName = args[0].getNameStr(); 
-        String individualTwoName = args[1].getNameStr();
+        String individualOneName = args[0].getNameStr().split("#")[1]; 
+        String individualTwoName = args[1].getNameStr().split("#")[1];
         
         String hasNameOne = ATermUtils.getLiteralValue(args[2].getTerm());
         String hasNameTwo = ATermUtils.getLiteralValue(args[3].getTerm());
         
-        System.out.println("RUM....");
         
         if (individualOneName.equalsIgnoreCase(individualTwoName)) {
         	return false;
@@ -38,6 +39,8 @@ public class FixtureEqualNameSWRLFunction implements FixtureSWRLFunction {
         	if (!hasNameOne.equalsIgnoreCase(hasNameTwo)) {
         		return false; 
         	} else {
+        		System.out.println("[" + individualOneName + ", " + individualTwoName + ", " + hasNameOne  + ", " + hasNameTwo + "]");
+        		System.out.println("Rum... É aplicável?");
         		return true; 
         	}
         }

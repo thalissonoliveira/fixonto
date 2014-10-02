@@ -18,13 +18,11 @@ import org.semanticweb.owlapi.model.SWRLBuiltInAtom;
 import org.semanticweb.owlapi.model.SWRLClassAtom;
 import org.semanticweb.owlapi.model.SWRLDArgument;
 import org.semanticweb.owlapi.model.SWRLDataPropertyAtom;
-import org.semanticweb.owlapi.model.SWRLLiteralArgument;
 import org.semanticweb.owlapi.model.SWRLObjectPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.model.SWRLVariable;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
-import org.semanticweb.owlapi.vocab.SWRLBuiltInsVocabulary;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
@@ -51,8 +49,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			SWRLRule rule = dataFactory.getSWRLRule(Collections.singleton(body), Collections.singleton(head));
 
 			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			
-			System.out.println("Agorasssssssss??");
 			ontoHelper.saveOntology();
 			pelletReasoner.flush();
 			ontoHelper.saveOntology();
@@ -79,16 +75,16 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			SWRLVariable variableRule3 = dataFactory.getSWRLVariable(this.getIRIs()[2]);//n
 			SWRLVariable variableRule4 = dataFactory.getSWRLVariable(this.getIRIs()[3]);//m
 			
-//			List<SWRLDArgument> arguments =  new ArrayList<SWRLDArgument>();
-//			arguments.add(variableRule1);
-//			arguments.add(variableRule2);
-//			arguments.add(variableRule3);
-//			arguments.add(variableRule4);
-			
-			SWRLLiteralArgument lit = dataFactory.getSWRLLiteralArgument(ontoHelper.getDataFactory().getOWLLiteral("10"));
 			List<SWRLDArgument> arguments =  new ArrayList<SWRLDArgument>();
+			arguments.add(variableRule1);
+			arguments.add(variableRule2);
 			arguments.add(variableRule3);
-			arguments.add(lit);
+			arguments.add(variableRule4);
+			
+//			SWRLLiteralArgument lit = dataFactory.getSWRLLiteralArgument(ontoHelper.getDataFactory().getOWLLiteral("10"));
+//			List<SWRLDArgument> arguments =  new ArrayList<SWRLDArgument>();
+//			arguments.add(variableRule3);
+//			arguments.add(lit);
 			
 			
 			SWRLClassAtom body1 = dataFactory.getSWRLClassAtom(featureOWLClass, variableRule1);
@@ -96,15 +92,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			SWRLDataPropertyAtom body3 = dataFactory.getSWRLDataPropertyAtom(hasNameProperty, variableRule1, variableRule3);
 			SWRLDataPropertyAtom body4 = dataFactory.getSWRLDataPropertyAtom(hasNameProperty, variableRule2, variableRule4);
 			
-			
-			
-//			SWRLBuiltInAtom body5 = dataFactory.getSWRLBuiltInAtom(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP+"fix:equalname"), arguments);
-			
-			IRI iri = SWRLBuiltInsVocabulary.EQUAL.getIRI();
-			
-			System.out.println("####################### " + iri);
-			
-			SWRLBuiltInAtom body5 = dataFactory.getSWRLBuiltInAtom(iri, arguments);
+			SWRLBuiltInAtom body5 = dataFactory.getSWRLBuiltInAtom(FixtureSWRLBuiltinEnum.EQUAL_NAME.getIri(), arguments);
 			
 			Set<SWRLAtom> bodies = new HashSet<SWRLAtom>();
 			bodies.add(body1);

@@ -10,6 +10,7 @@ import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 import com.clarkparsia.pellet.rules.builtins.BuiltInRegistry;
 
+import fixture.owl.enumeration.FixtureSWRLBuiltinEnum;
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.rules.error.SWRLError;
 import fixture.owl.swrl.FixtureEqualNameSWRLFunction;
@@ -22,7 +23,7 @@ public class RulesAnalyser {
 	private OntoHelper ontoHelper;
 	
 	public void run() throws OWLOntologyCreationException {
-		BuiltInRegistry.instance.registerBuiltIn(Utils.FIX_BUILT_IN + "equalname", new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
+		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
         
@@ -35,7 +36,6 @@ public class RulesAnalyser {
 		SWRLError error = RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY.execute(ontoHelper, reasoner);
 		SWRLError error2 = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);
 		
-		
 		if (error == null && error2 == null) {
 			System.err.println("RAMMMM! SEM ERRO!");
 		} else {
@@ -43,7 +43,6 @@ public class RulesAnalyser {
 			System.out.println(error == null ? "--- 1 - " : error.getDescription());
 			System.out.println(error2 == null ? "--- 2 - " : error2.getDescription());
 		}
-		
 		
 //		OWLClass parentalInconsistencyOWLClass = executeRuleOne();
 //		reasoner.flush();
@@ -69,7 +68,4 @@ public class RulesAnalyser {
 		}
 	}
 	
-
-	
-
 }

@@ -6,7 +6,7 @@ import com.clarkparsia.pellet.rules.model.BuiltInAtom;
 
 public class FixtureBuiltin implements BuiltIn {
 	
-    @Override
+	@Override
     public BindingHelper createHelper(BuiltInAtom atom) {
         return new FixtureEqualNameBuiltinHelper(atom);
     }

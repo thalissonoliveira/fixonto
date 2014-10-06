@@ -20,7 +20,7 @@ import fixture.owl.utils.Utils;
 public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException {
-//		runFeaToOntoFixtureTest();
+		runFeaToOntoFixtureTest();
 		runRulesAnalyser();
 //		runCoung();
 		
@@ -41,23 +41,23 @@ public class FixtureTwoMainRun {
 		Feature f8 = new VariationTwo("VariationTwoC");
 		Feature f9 = new GroupedFeature("GroupedFeatureA");
 		Feature f10 = new GroupedFeature("GroupedFeatureB");
-		Feature f11 = new GroupedFeature("GroupedFeatureC");
+		Feature f11 = new GroupedFeature("GroupedFeaturec");
 		
 		f1.addChild(f3);
 		f1.addChild(f2);
 		
-//		f3.addChild(f6);
+		f3.addChild(f6);
 		
 		f2.addChild(f4);
-//		f2.addChild(f5);
-//		
-//		f4.addChild(f7);
-//		
-//		f7.addChild(f8);
-//		
-//		f8.addChild(f9);
-//		f8.addChild(f10);
-//		f8.addChild(f11);
+		f2.addChild(f5);
+		
+		f4.addChild(f7);
+		
+		f7.addChild(f8);
+		
+		f8.addChild(f9);
+		f8.addChild(f10);
+		f8.addChild(f11);
 		
 		
 		SPL spl = new SPL("TESTE", (RootFeature) f1);
@@ -65,14 +65,13 @@ public class FixtureTwoMainRun {
 		spl.addElement(f2);
 		spl.addElement(f3);
 		spl.addElement(f4);
-//		spl.addElement(f5);
-//		spl.addElement(f6);
-//		spl.addElement(f7);
-//		spl.addElement(f8);
-//		spl.addElement(f9);
-//		spl.addElement(f10);
-//		spl.addElement(f11);
-		
+		spl.addElement(f5);
+		spl.addElement(f6);
+		spl.addElement(f7);
+		spl.addElement(f8);
+		spl.addElement(f9);
+		spl.addElement(f10);
+		spl.addElement(f11);
 		
 		fixture.run(spl);
 	}

@@ -11,7 +11,6 @@ import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.SWRLAtom;
 import org.semanticweb.owlapi.model.SWRLBuiltInAtom;
@@ -21,8 +20,6 @@ import org.semanticweb.owlapi.model.SWRLDataPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLObjectPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.model.SWRLVariable;
-import org.semanticweb.owlapi.reasoner.Node;
-import org.semanticweb.owlapi.reasoner.NodeSet;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
@@ -31,6 +28,7 @@ import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.rules.error.SWRLError;
+import fixture.owl.rules.error.SWRLErrorBuilder;
 import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
@@ -53,11 +51,12 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			pelletReasoner.flush();
 			ontoHelper.saveOntology();
 			
-			return buildSWRLError(pelletReasoner, parentalInconsistencyOWLClass);
+			return SWRLErrorBuilder.buildSWRLError(this, pelletReasoner, parentalInconsistencyOWLClass);
 		}
 	},
+	
 	EQUAL_NAME_FEATURE_RULE (2, "'Features with same name' Rule",  "GFR1", new IRI[]{IRI.create("x"),IRI.create("y"),IRI.create("n"),IRI.create("m")}, "", "") {
-		
+
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			
@@ -66,21 +65,15 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			OWLDataPropertyFactory owlDataPropertyFactory = OWLDataPropertyFactory.getInstance(ontoHelper);
 			OWLObjectPropertyFactory owlObjectPropertyFactory = OWLObjectPropertyFactory.getInstance(ontoHelper);
 			
-			OWLClass parentalInconsistencyOWLClass = owlClassFactory.get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE);
+			OWLClass gfr1OWLClass = owlClassFactory.get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE);
 			OWLClass featureOWLClass = owlClassFactory.get(ModelOWLClassTypeEnum.FEATURE);
 			OWLDataProperty hasNameProperty = owlDataPropertyFactory.get(OWLDataPropertyTypeEnum.HAS_NAME);
-			OWLObjectProperty hasParentalInconsistencyProperty = owlObjectPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_PARENTAL_INCONSISTENCY);
+			OWLObjectProperty hasEqualNameObjectProperty = owlObjectPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
 			
 			SWRLVariable variableRule1 = dataFactory.getSWRLVariable(this.getIRIs()[0]);//x
 			SWRLVariable variableRule2 = dataFactory.getSWRLVariable(this.getIRIs()[1]);//y
 			SWRLVariable variableRule3 = dataFactory.getSWRLVariable(this.getIRIs()[2]);//n
 			SWRLVariable variableRule4 = dataFactory.getSWRLVariable(this.getIRIs()[3]);//m
-			
-			
-//			SWRLLiteralArgument lit = dataFactory.getSWRLLiteralArgument(ontoHelper.getDataFactory().getOWLLiteral("10"));
-//			List<SWRLDArgument> arguments =  new ArrayList<SWRLDArgument>();
-//			arguments.add(variableRule3);
-//			arguments.add(lit);
 			
 			SWRLClassAtom body1 = dataFactory.getSWRLClassAtom(featureOWLClass, variableRule1);
 			SWRLClassAtom body2 = dataFactory.getSWRLClassAtom(featureOWLClass, variableRule2);
@@ -93,27 +86,35 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			arguments.add(variableRule3);
 			arguments.add(variableRule4);
 			
+			
 			SWRLBuiltInAtom body5 = dataFactory.getSWRLBuiltInAtom(FixtureSWRLBuiltinEnum.EQUAL_NAME.getIri(), arguments);
 			
-			Set<SWRLAtom> bodies = new HashSet<SWRLAtom>();
-			bodies.add(body1);
-			bodies.add(body2);
-			bodies.add(body3);
-			bodies.add(body4);
-			bodies.add(body5);
+			Set<SWRLAtom> body = new HashSet<SWRLAtom>();
+			body.add(body1);
+			body.add(body2);
+			body.add(body3);
+			body.add(body4);
+			body.add(body5);
 			
-			SWRLObjectPropertyAtom head = dataFactory.getSWRLObjectPropertyAtom(hasParentalInconsistencyProperty, variableRule1, variableRule2);
-			SWRLRule rule = dataFactory.getSWRLRule(bodies, Collections.singleton(head));
+			SWRLObjectPropertyAtom head1 = dataFactory.getSWRLObjectPropertyAtom(hasEqualNameObjectProperty, variableRule1, variableRule2);
+			SWRLClassAtom head2 = dataFactory.getSWRLClassAtom(gfr1OWLClass, variableRule1);
+			Set<SWRLAtom> head = new HashSet<SWRLAtom>();
+			head.add(head1);
+			head.add(head2);
+			
+//			Collections.singleton(head1)
+			SWRLRule rule = dataFactory.getSWRLRule(body, head);
+			
 			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
 			
+			ontoHelper.saveOntology();
 			pelletReasoner.flush();
-			
 			ontoHelper.saveOntology();
 			
-			return buildSWRLError(pelletReasoner, parentalInconsistencyOWLClass);
+			return SWRLErrorBuilder.buildSWRLError(this, pelletReasoner, gfr1OWLClass, hasEqualNameObjectProperty);
 		}
-
+		
+		
 	},
 	EQUAL_NAME_ATTRIBUTE_RULE (3, "'Attributes with same name' Rule",  "GFR2", new IRI[]{IRI.create("X1")}, "", "") {
 		@Override
@@ -134,7 +135,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			pelletReasoner.flush();
 			ontoHelper.saveOntology();
 			
-			return buildSWRLError(pelletReasoner, parentalInconsistencyOWLClass);
+			return SWRLErrorBuilder.buildSWRLError(this, pelletReasoner, parentalInconsistencyOWLClass);
 		}
 	};
 	
@@ -155,31 +156,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		this.enExceptionMsg = enExceptionMsg;
 	}
 	
-	protected SWRLError buildSWRLError(PelletReasoner pelletReasoner, OWLClass owlClass) {
-		NodeSet<OWLNamedIndividual> individualsError = pelletReasoner.getInstances(owlClass, false);
-		
-		if (individualsError != null && !individualsError.isEmpty()) {
-			SWRLError error = new SWRLError();
-			error.setDescription(this.description);
-			StringBuilder sb = new StringBuilder();
-			sb.append("[RULE BROKE]<" + error.getDescription() + ">: \n");
-			for (Node<OWLNamedIndividual> node : individualsError) {
-				OWLNamedIndividual individual = node.getRepresentativeElement();
-				sb.append("   [INDIVIDUAL]:<" + individual.getIRI().getFragment() + ">\n      [NODES]:");
-				NodeSet<OWLClass> types = pelletReasoner.getTypes(individual, true);
-				for (Node<OWLClass> classNode : types) {
-					sb.append("<" + classNode.getRepresentativeElement().getIRI().getFragment() + ">");
-				}
-				sb.append("\n");
-			}
-			error.setDescription(sb.toString());
-			error.setRulesConstraintsOWLClassTypeEnum(this);
-			return error;
-		}
-		
-		return null;
-	}
-
 	public abstract SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner);
 	
 	public String getIRI() {

@@ -1,8 +1,6 @@
 package fixture.owl.semanticrules;
 
-import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -15,6 +13,7 @@ import org.mindswap.pellet.utils.ATermUtils;
 
 import com.clarkparsia.pellet.rules.BindingHelper;
 import com.clarkparsia.pellet.rules.VariableBinding;
+import com.clarkparsia.pellet.rules.VariableUtils;
 import com.clarkparsia.pellet.rules.model.AtomDConstant;
 import com.clarkparsia.pellet.rules.model.AtomDObject;
 import com.clarkparsia.pellet.rules.model.AtomDVariable;
@@ -35,18 +34,18 @@ public class FixtureEqualNameBuiltinHelper implements BindingHelper {
 
 	@Override
 	public Collection<? extends AtomVariable> getBindableVars(Collection<AtomVariable> atomVariables) {
-//        Collection<AtomVariable> vars = VariableUtils.getVars(atom);
-//        vars.removeAll(vars);
-//        return vars;
-		return Collections.emptySet();
+        Collection<AtomVariable> vars = VariableUtils.getVars(atom);
+        vars.removeAll(vars);
+        return vars;
+//		return Collections.emptySet();
 	}
 
 	@Override
 	public Collection<? extends AtomVariable> getPrerequisiteVars(Collection<AtomVariable> atomVariables) {
-//		Collection<AtomVariable> vars = VariableUtils.getVars(atom);
-//		vars.removeAll(vars);
-//		return vars;
-		return Collections.emptySet();
+		Collection<AtomVariable> vars = VariableUtils.getVars(atom);
+		vars.removeAll(vars);
+		return vars;
+//		return Collections.emptySet();
 	}
 
 	@Override
@@ -79,7 +78,7 @@ public class FixtureEqualNameBuiltinHelper implements BindingHelper {
             used = false;
             partial = newPartial;
         } else {
-            System.out.println("Function failure: " + atom + " | Arguments: " + Arrays.toString(arguments));
+//            System.out.println("Function failure: " + atom + " | Arguments: " + Arrays.toString(arguments));
         }
     }
 

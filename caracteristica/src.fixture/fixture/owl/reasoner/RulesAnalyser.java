@@ -14,8 +14,6 @@ import fixture.owl.enumeration.FixtureSWRLBuiltinEnum;
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.rules.error.SWRLError;
 import fixture.owl.semanticrules.FixtureBuiltin;
-import fixture.owl.swrl.FixtureEqualNameSWRLFunction;
-import fixture.owl.swrl.FixtureSWRLBuiltin;
 import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
@@ -24,24 +22,34 @@ public class RulesAnalyser {
 	private OntoHelper ontoHelper;
 	
 	public void run() throws OWLOntologyCreationException {
-//		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
 		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureBuiltin());
+//		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
     	checkRules();
 	}
 
 	private void checkRules() {
+		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
 		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 		SWRLError error = RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY.execute(ontoHelper, reasoner);
 		SWRLError error2 = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);
 		
 		if (error == null && error2 == null) {
-			System.err.println("RAMMMM! SEM ERRO!");
+			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
 		} else {
 			System.out.println("####### CHECK IT OUT! #######");
-			System.out.println(error == null ? "--- 1 - " : error.getDescription());
-			System.out.println(error2 == null ? "--- 2 - " : error2.getDescription());
+			if (error == null) {
+				System.out.println("RULE 0[OK]");
+			} else {
+				System.err.println(error.getDescription());
+			}
+			if (error2 == null) {
+				System.out.println("GFR 1[OK]");
+			} else {
+				System.err.println(error2.getDescription());
+			}
+			
 		}
 		
 //		OWLClass parentalInconsistencyOWLClass = executeRuleOne();

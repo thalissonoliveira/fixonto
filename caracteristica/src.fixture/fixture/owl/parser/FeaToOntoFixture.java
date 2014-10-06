@@ -66,7 +66,7 @@ public class FeaToOntoFixture {
 			ontoHelper.loadMetaOntology();
 			feaToOntoFixtureUtils = OWLUtils.getInstance(ontoHelper);
 			populateOWL(spl);
-			Utils.printSPLInfo(spl);
+//			Utils.printSPLInfo(spl);
 			ontoHelper.saveAndRemoveOntology();
 			ontoHelper.deleteTempDir();
 		} catch (OWLOntologyCreationException e) {

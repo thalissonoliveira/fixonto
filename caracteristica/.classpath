@@ -25,5 +25,6 @@
 	<classpathentry kind="lib" path="lib/reflections-0.9.9-RC1-uberjar.jar"/>
 	<classpathentry kind="lib" path="lib/guava-17.0.jar"/>
 	<classpathentry kind="lib" path="lib/javassist.jar"/>
+	<classpathentry kind="lib" path="lib/jgrapht-jdk1.5-0.7.3.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

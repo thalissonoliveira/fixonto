@@ -75,8 +75,6 @@ public class OWLUtils {
 		addUnilateralRelationToOntology(currentActionOWL, currentRightSideAction, hasRightSideCompositionProperty);
 	}
 	
-	
-	
 	public void addParentalRelationBetweenAntecedentAndLeftSideComposition(OWLIndividual currentAntecedentRuleOWL, OWLIndividual currentLeftSideComposition) {
 		OWLObjectProperty hasLeftSideCompositionProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_LEFT_SIDE_COMPOSITION);
 		addUnilateralRelationToOntology(currentAntecedentRuleOWL, currentLeftSideComposition, hasLeftSideCompositionProperty);
@@ -340,6 +338,7 @@ public class OWLUtils {
 	
 	@SuppressWarnings("static-access")
 	public void addMaxIdCountToOntology() {
+		
 		OWLIndividual countIndividual = (OWLIndividual) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "count")).toArray(new OWLEntity[1])[0];
 		OWLDataProperty hasMaxId = (OWLDataProperty) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "hasMaxId")).toArray(new OWLDataProperty[1])[0];
 		
@@ -352,7 +351,6 @@ public class OWLUtils {
 //		}
 		
 		addDataPropertyAssertionToOntology(countIndividual, hasMaxId, this.count);
-		
 	}
 	
 

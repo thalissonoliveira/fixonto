@@ -30,18 +30,30 @@ public class FixtureTwoMainRun {
 	public static void runFeaToOntoFixtureTest() {
 		FeaToOntoFixture fixture = new FeaToOntoFixture();
 		
-		Feature f1 = new RootFeature("RootFeatureA");
-		Feature f2 = new VariationTwo("VariationTwoB");
-		Feature f3 = new MandatoryFeature("MandatoryFeatureC");
-		Feature f4 = new OptionalFeature("OptionalFeatureD");
-		Feature f5 = new OptionalFeature("OptionalFeatureE");
-		Feature f6 = new OptionalFeature("OptionalFeatureF");
-		Feature f7 = new OptionalFeature("OptionalFeatureG");
+		Feature f1 = new RootFeature("RF");
+		Feature f2 = new VariationTwo("VT1");
+		Feature f3 = new MandatoryFeature("MF");
+		Feature f4 = new OptionalFeature("OF1");
+		Feature f5 = new OptionalFeature("OF2");
+		Feature f6 = new OptionalFeature("OF3");
+		Feature f7 = new OptionalFeature("OF4");
 		
-		Feature f8 = new VariationTwo("VariationTwoC");
-		Feature f9 = new GroupedFeature("GroupedFeatureA");
-		Feature f10 = new GroupedFeature("GroupedFeatureB");
-		Feature f11 = new GroupedFeature("GroupedFeaturec");
+		Feature f8 = new VariationTwo("VT2");
+		Feature f9 = new GroupedFeature("GF1");
+		Feature f10 = new GroupedFeature("GF2");
+		Feature f11 = new GroupedFeature("GF3");
+//		Feature f1 = new RootFeature("RootFeatureA");
+//		Feature f2 = new VariationTwo("VariationTwoB");
+//		Feature f3 = new MandatoryFeature("MandatoryFeatureC");
+//		Feature f4 = new OptionalFeature("OptionalFeatureD");
+//		Feature f5 = new OptionalFeature("OptionalFeatureE");
+//		Feature f6 = new OptionalFeature("OptionalFeatureF");
+//		Feature f7 = new OptionalFeature("OptionalFeatureG");
+//		
+//		Feature f8 = new VariationTwo("VariationTwoC");
+//		Feature f9 = new GroupedFeature("GroupedFeatureA");
+//		Feature f10 = new GroupedFeature("GroupedFeatureB");
+//		Feature f11 = new GroupedFeature("GroupedFeaturec");
 		
 		f1.addChild(f3);
 		f1.addChild(f2);

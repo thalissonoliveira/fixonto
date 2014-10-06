@@ -295,7 +295,9 @@ public class OWLUtils {
 	
 	private OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
 		if (element != null) {
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName()));
+//			String name = element.getName();
+			String klassName = element.getClass().getSimpleName();
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName));
 			return owlNamedIndividual;
 		}
 		return null;
@@ -311,8 +313,10 @@ public class OWLUtils {
 	public OWLIndividual createNewOWLNamedIndividual(Nameable element) {
 		if (element != null) {
 			count++;
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getName() + "_" + count));
-			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), element.getName());
+			String name = element.getName();
+			String klassName = element.getClass().getSimpleName();
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName + "_" + count));
+			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
 			return owlNamedIndividual;
 		}
 		return null;
@@ -322,7 +326,8 @@ public class OWLUtils {
 		if (element != null) {
 			count++;
 			String name = element.getName();
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + name + "_" + count));
+			String klassName = element.getClass().getSimpleName();
+			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName + "_" + count));
 			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
 			
 			if (!oracle.containsKey(name)) {

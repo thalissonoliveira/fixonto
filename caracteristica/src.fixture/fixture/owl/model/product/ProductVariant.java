@@ -38,6 +38,9 @@ public class ProductVariant implements ProductElement{
 		this.fatherProductVariation = fatherProductVariation;
 	}
 
-	
+	@Override
+	public boolean isProduct() {
+		return false;
+	}
 	
 	} // VarianteProduto

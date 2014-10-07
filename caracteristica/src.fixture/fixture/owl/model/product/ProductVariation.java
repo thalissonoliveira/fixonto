@@ -75,5 +75,10 @@ public class ProductVariation implements ProductElement{
 		this.fatherProductFeature = fatherProductFeature;
 	}
 	
+	@Override
+	public boolean isProduct() {
+		return false;
+	}
+	
 	
 } // VariacaoProduto

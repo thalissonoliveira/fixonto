@@ -135,7 +135,7 @@ public class OWLUtils {
 		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
 	}
 	
-	private void addIndividualClassification(OWLIndividual owlIndividual, FixtureOWLClassTypeEnumInterface fixtureOWLClassTypeEnumInterface) {
+	public void addIndividualClassification(OWLIndividual owlIndividual, FixtureOWLClassTypeEnumInterface fixtureOWLClassTypeEnumInterface) {
 		OWLClass owlClass = owlClassFactory.get(fixtureOWLClassTypeEnumInterface);
 		addEntityClassificationToOntology(owlIndividual, owlClass);
 	}
@@ -340,7 +340,6 @@ public class OWLUtils {
 		return null;
 	}
 
-	
 	@SuppressWarnings("static-access")
 	public void addMaxIdCountToOntology() {
 		

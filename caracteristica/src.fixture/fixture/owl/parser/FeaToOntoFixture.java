@@ -11,6 +11,9 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+import fixture.owl.enumeration.ModelOWLClassTypeEnum;
+import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
+import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;
@@ -22,6 +25,9 @@ import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.enumeration.LogicalOperator;
 import fixture.owl.model.intefaces.Element;
 import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.product.Product;
+import fixture.owl.model.product.ProductElement;
+import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.Antecedent;
@@ -107,8 +113,21 @@ public class FeaToOntoFixture {
 			}
 		}
 		
+		for (ProductElement productElement : spl.getProductElements()) {
+			if (productElement.isProduct()) {
+				buildOntology((Product) productElement);
+			}
+		}
+		
 	}
 	
+	private void buildOntology(ProductFeature productElement) {
+		OWLIndividual currentContextRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(productElement, owlOracle);
+		//owlClassFactory.get(ModelOWLClassTypeEnum.MANDATORY_FEATURE)
+		//feaToOntoFixtureUtils.addIndividualClassification(currentContextRuleOWL, OWLClassFactory.getInstance(this.ontoHelper).get(FixtureOWLClassTypeEnumInterface));
+		
+	}
+
 	private void buildOntology(ContextRule contextRule) {
 	
 		OWLIndividual currentContextRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRule, owlOracle);

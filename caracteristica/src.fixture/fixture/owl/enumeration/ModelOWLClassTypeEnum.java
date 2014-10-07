@@ -1,6 +1,7 @@
 package fixture.owl.enumeration;
 
 import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
+import fixture.owl.model.product.ProductFeature;
 import fixture.owl.utils.Utils;
 
 public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
@@ -34,7 +35,20 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	
 	EVENT(21, "Event", "Event"),
 	LOGICAL_EVENT(22, "LogicalEvent", "LogicalEvent"),
-	RELATIONAL_EVENT(23, "Relational Event", "RelationalEvent");
+	RELATIONAL_EVENT(23, "Relational Event", "RelationalEvent"),
+	
+	PRODUCT(24, "Product", "Product"),
+	PRODUCTELEMENT(25, "Product Elemnt", "ProductElemnt" ),
+	PRODUCTFEATURE(26, "Product Feature", "ProductFeature" ),
+	PRODUCTATTRIBUTE(27, "Product Attribute", "ProductAttribute"),
+	PRODUCTMANDATORYFEATURE(28, "Product Mandatory Feature", "ProductMandatoryFeature"),
+	PRODUCTOPTIONALFEATURE(29, "Product Optional Feature", "ProductOptionalFeature"),
+	PRODUCTVARIATIONTWO(30, "Product Variation Two", "ProductVariationTwo"),
+	PRODUCTVARIATION(31, "Product Variation", "ProductVariation" ),
+	PRODUCTVARIANT(32, "Product Variat", "ProductVariat" );
+	
+	
+	
 	
 	private int code;
 	private String description;

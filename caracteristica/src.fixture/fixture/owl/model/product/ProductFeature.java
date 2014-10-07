@@ -72,7 +72,10 @@ public class ProductFeature implements ProductElement {
 		this.productAttribute = productAttribute;
 	}
 	
-	
+	@Override
+	public boolean isProduct() {
+		return false;
+	}
 	
 	
 	

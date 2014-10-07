@@ -57,6 +57,9 @@ public class ProductAttribute implements ProductElement{
 		this.fatherProductFeature = fatherProductFeature;
 	}
 	
-	
+	@Override
+	public boolean isProduct() {
+		return false;
+	}
 
 } // AtributoProduto

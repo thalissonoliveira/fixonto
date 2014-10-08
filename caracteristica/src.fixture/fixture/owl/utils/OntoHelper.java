@@ -45,6 +45,8 @@ public class OntoHelper {
 		
 		System.out.println("[FIXTURE2][LOG] - temp Meta Ontology deleted? : " + file.delete());
 		
+		
+		
 		Utils.refreshOutputFolder();
 	}
 	

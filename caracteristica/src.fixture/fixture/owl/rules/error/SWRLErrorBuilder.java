@@ -12,13 +12,13 @@ import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 
 public class SWRLErrorBuilder {
 	
-	public static SWRLError buildSWRLError(RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass) {
+	public static SWRLError build(RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass) {
 		NodeSet<OWLNamedIndividual> individualsError = pelletReasoner.getInstances(owlClass, false);
 		boolean hasError = individualsError != null && !individualsError.isEmpty();
 		
 		if (hasError) {
 			SWRLError error = new SWRLError();
-			error.setDescription(rulesConstraintsOWLClassTypeEnum.getDescription());
+			error.setDescription(rulesConstraintsOWLClassTypeEnum.getPtExceptionMsg());
 			StringBuilder sb = new StringBuilder();
 			sb.append("[RULE BROKE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {
@@ -39,12 +39,12 @@ public class SWRLErrorBuilder {
 	}
 	
 	
-	public static SWRLError buildSWRLError(RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass, OWLObjectProperty owlObjectProperty) {
+	public static SWRLError build(RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass, OWLObjectProperty owlObjectProperty) {
 		NodeSet<OWLNamedIndividual> individualsError = pelletReasoner.getInstances(owlClass, false);
 		boolean hasError = individualsError != null && !individualsError.isEmpty();
 		if (hasError) {
 			SWRLError error = new SWRLError();
-			error.setDescription(rulesConstraintsOWLClassTypeEnum.getDescription());
+			error.setDescription(rulesConstraintsOWLClassTypeEnum.getPtExceptionMsg());
 			StringBuilder sb = new StringBuilder();
 			sb.append("[RULE BROKE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {

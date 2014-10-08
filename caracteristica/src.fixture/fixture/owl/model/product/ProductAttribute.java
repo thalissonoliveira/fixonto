@@ -3,7 +3,7 @@ package fixture.owl.model.product;
 import caracteristica.TipoValor;
 import fixture.owl.model.intefaces.Element;
 
-
+//TODO Verificar mistura de português com inglês.
 public class ProductAttribute implements ProductElement{
 
 	private String name;

@@ -37,7 +37,7 @@ public class Utils {
 	public static final String SHARP = "#";
 	public static final String META_ONTOLOGY_BASE_URL = "http://www.semanticweb.org/2014/8/FeaToOntoFixture2";
 	public static final String META_ONTOLOGY_BASE_URL_SHARP = META_ONTOLOGY_BASE_URL + SHARP;
-	public static final String BUILT_IN_BASE_URL = Utils.META_ONTOLOGY_BASE_URL + ":fix:";// + Utils.SHARP;
+	public static final String BUILT_IN_BASE_URL = Utils.META_ONTOLOGY_BASE_URL + "fix:";
 	
 	@Deprecated
 	public static File getOntologyXML(String pathLoad) {

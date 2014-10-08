@@ -17,7 +17,6 @@ public class ProductFeature implements ProductElement {
 	
 	private Set<ProductAttribute> productAttribute;
 	
-	
 	//
 	public ProductFeature() {
 		daugtherProductFeature = new HashSet<ProductFeature>();

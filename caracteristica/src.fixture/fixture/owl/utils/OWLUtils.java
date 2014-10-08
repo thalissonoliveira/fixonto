@@ -242,7 +242,7 @@ public class OWLUtils {
 
 	public void addParentalRelationBetweenFeatureAndAttribute(OWLIndividual currentFeatureOwl, OWLIndividual currentAttributeOwl) {
 		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ATTRIBUTE);
-		addUnilateralRelationToOntology(currentAttributeOwl, currentFeatureOwl, hasAttribute);
+		addUnilateralRelationToOntology(currentFeatureOwl, currentAttributeOwl, hasAttribute);
 	}
 	
 	
@@ -293,31 +293,9 @@ public class OWLUtils {
 		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
 	}
 	
-	private OWLIndividual createOWLNamedIndividualElementAndDataPropertyName(Nameable element) {
-		if (element != null) {
-//			String name = element.getName();
-			String klassName = element.getClass().getSimpleName();
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName));
-			return owlNamedIndividual;
-		}
-		return null;
-	}
-	
-	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature) {
+	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature, Map<String, Set<OWLNamedIndividual>> oracle) {
 		if (feature != null && feature.getFatherFeature() != null) {
-			return createOWLNamedIndividualElementAndDataPropertyName(feature.getFatherFeature());
-		}
-		return null;
-	}
-	
-	public OWLIndividual createNewOWLNamedIndividual(Nameable element) {
-		if (element != null) {
-			count++;
-			String name = element.getName();
-			String klassName = element.getClass().getSimpleName();
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName + "_" + count));
-			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
-			return owlNamedIndividual;
+			return createNewOWLNamedIndividual(feature.getFatherFeature(), oracle);
 		}
 		return null;
 	}
@@ -396,12 +374,11 @@ public class OWLUtils {
 	 * @param objectPropertyOWL
 	 */
 	private void addUnilateralRelationToOntology(OWLIndividual individualOWL1, OWLIndividual individualOWL2, OWLObjectProperty objectPropertyOWL) {
-		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
-		AddAxiom addParentalRelationBetweenFeaturesAxiom;
-		
-		parentalRelationBetweenFeaturesAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL, individualOWL1, individualOWL2);
-		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);
-		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
+		OWLObjectPropertyAssertionAxiom relationAssertion;
+		AddAxiom addRelationAxiom;
+		relationAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL, individualOWL1, individualOWL2);
+		addRelationAxiom = new AddAxiom(ontoHelper.getMetaOntology(), relationAssertion);
+		ontoHelper.getManager().applyChange(addRelationAxiom);
 	}
 
 	/**
@@ -413,8 +390,7 @@ public class OWLUtils {
 	 * @param objectPropertyOWL1
 	 * @param objectPropertyOWL2
 	 */
-	private void addBilateralRelationToOntology(OWLIndividual individualOWL1, OWLIndividual individualOWL2, 
-			OWLObjectProperty objectPropertyOWL1, OWLObjectProperty objectPropertyOWL2) {
+	private void addBilateralRelationToOntology(OWLIndividual individualOWL1, OWLIndividual individualOWL2, OWLObjectProperty objectPropertyOWL1, OWLObjectProperty objectPropertyOWL2) {
 		
 		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
 		AddAxiom addParentalRelationBetweenFeaturesAxiom;

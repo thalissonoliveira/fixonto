@@ -6,7 +6,7 @@ import java.util.Set;
 import fixture.owl.model.intefaces.Element;
 
 
-public class ProductVariation implements ProductElement{	
+public class ProductVariation implements ProductElement {
 
 	private String name;
 	

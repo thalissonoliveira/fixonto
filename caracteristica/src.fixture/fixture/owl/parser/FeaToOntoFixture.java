@@ -285,7 +285,7 @@ public class FeaToOntoFixture {
 	private void buildOntology(Feature feature) {
 		
 		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
-		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature);
+		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature, owlOracle);
 		
 		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);
 		

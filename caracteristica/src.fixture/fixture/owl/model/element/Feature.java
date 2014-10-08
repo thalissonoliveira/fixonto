@@ -29,6 +29,11 @@ public abstract class Feature extends ElementImpl {
 		childFeature.setFatherFeature(this);
 	}
 	
+	public void addAttribute(Attribute attribute) {
+		this.getAttributes().add(attribute);
+		attribute.setFatherFeature(this);
+	}
+	
 	public Feature getFatherFeature() {
 		return fatherFeature;
 	}

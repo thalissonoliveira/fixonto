@@ -62,4 +62,20 @@ public class OWLClassFactory {
 		return owlClass;
 	}
 	
+	public OWLClass get(String owlClassType) {
+		OWLClass owlClass = null;
+		for (FixtureOWLClassTypeEnumInterface element : map.keySet()) {
+			boolean isEqualKey = element.getLabel().equals(owlClassType);
+			if (isEqualKey) {
+				owlClass = map.get(element);
+				break;
+			}
+		}
+		
+		if (owlClass == null) {
+			throw new RuntimeException("Cannot create a OWL Class for " + owlClassType);
+		}
+		return owlClass;
+	}
+	
 }

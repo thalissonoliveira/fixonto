@@ -11,9 +11,6 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
-import fixture.owl.enumeration.ModelOWLClassTypeEnum;
-import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
-import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;
@@ -122,9 +119,11 @@ public class FeaToOntoFixture {
 	}
 	
 	private void buildOntology(ProductFeature productElement) {
+		//TODO Completar esse código.
+		@SuppressWarnings("unused")
 		OWLIndividual currentContextRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(productElement, owlOracle);
-		//owlClassFactory.get(ModelOWLClassTypeEnum.MANDATORY_FEATURE)
-		//feaToOntoFixtureUtils.addIndividualClassification(currentContextRuleOWL, OWLClassFactory.getInstance(this.ontoHelper).get(FixtureOWLClassTypeEnumInterface));
+//		owlClassFactory.get(ModelOWLClassTypeEnum.MANDATORY_FEATURE)
+//		feaToOntoFixtureUtils.addIndividualClassification(currentContextRuleOWL, OWLClassFactory.getInstance(this.ontoHelper).get(FixtureOWLClassTypeEnumInterface));
 		
 	}
 

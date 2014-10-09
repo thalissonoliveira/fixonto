@@ -42,5 +42,18 @@ public class OWLDataPropertyFactory {
 		}
 		return owlDataProperty;
 	}
+
+	public OWLDataProperty get(String owlDataPropertyType) {
+		OWLDataProperty owlDataProperty = null;
+		for (OWLDataPropertyTypeEnum element : map.keySet()) {
+			if (element.getLabel().equals(owlDataPropertyType)) {
+				owlDataProperty = map.get(element);
+			}
+		}
+		
+		if (owlDataProperty == null) {
+		}
+		return owlDataProperty;
+	}
 	
 }

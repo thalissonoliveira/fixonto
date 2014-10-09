@@ -43,6 +43,19 @@ public class OWLObjectPropertyFactory {
 		return owlObjectProperty;
 	}
 
+	public OWLObjectProperty get(String owlObjectPropertyType) {
+		OWLObjectProperty owlObjectProperty = null;
+		for (OWLObjectPropertyTypeEnum element : map.keySet()) {
+			if (element.getLabel().equals(owlObjectPropertyType)) {
+				owlObjectProperty = map.get(element);
+			}
+		}
+		
+		if (owlObjectProperty == null) {
+		}
+		return owlObjectProperty;
+	}
+
 
 		
 }

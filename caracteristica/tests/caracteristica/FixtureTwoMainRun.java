@@ -22,7 +22,7 @@ import fixture.owl.utils.Utils;
 public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException, InstantiationException, IllegalAccessException, ClassNotFoundException {
-		runFeaToOntoFixtureTest();
+//		runFeaToOntoFixtureTest();
 		runRulesAnalyser();
 //		runCoung();
 		

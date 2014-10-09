@@ -1,7 +1,6 @@
 package fixture.owl.enumeration;
 
 import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
-import fixture.owl.model.product.ProductFeature;
 import fixture.owl.utils.Utils;
 
 public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {

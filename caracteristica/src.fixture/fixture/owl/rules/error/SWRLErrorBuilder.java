@@ -9,6 +9,7 @@ import org.semanticweb.owlapi.reasoner.NodeSet;
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
+import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnumOld;
 
 public class SWRLErrorBuilder {
 	
@@ -69,4 +70,13 @@ public class SWRLErrorBuilder {
 		return null;
 	}
 	
+	@Deprecated
+	public static SWRLError build(RulesConstraintsOWLClassTypeEnumOld rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass, OWLObjectProperty owlObjectProperty) {
+		throw new RuntimeException("Só pra não perder o código antigo.");
+	}
+	
+	@Deprecated
+	public static SWRLError build(RulesConstraintsOWLClassTypeEnumOld rulesConstraintsOWLClassTypeEnum, PelletReasoner pelletReasoner, OWLClass owlClass) {
+		throw new RuntimeException("Só pra não perder o código antigo.");
+	}
 }

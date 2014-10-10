@@ -33,7 +33,8 @@ public enum OWLObjectPropertyTypeEnum {
 	HAS_LEFT_SIDE_EVENT (20, "Has Left Side Event", "hasLeftSideEvent"),
 	HAS_RIGHT_SIDE_EVENT (21, "Has Right Side Event", "hasRightSideEvent"),
 	
-	HAS_EQUAL_NAME (22, "Has Equal Name", "hasEqualName");
+	HAS_EQUAL_NAME (22, "Has Equal Name", "hasEqualName"),
+	HAS_CICLE (22, "Has Cicle", "hasCicle");
 	
 	
 	

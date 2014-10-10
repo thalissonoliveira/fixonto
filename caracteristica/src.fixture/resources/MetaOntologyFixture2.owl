@@ -76,6 +76,9 @@
         <Class IRI="#GFR2"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GFR3"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GroupedFeature"/>
     </Declaration>
     <Declaration>
@@ -128,6 +131,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasChildFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasCicle"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasConsequent"/>
@@ -283,6 +289,10 @@
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#GFR3"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#GroupedFeature"/>
         <Class IRI="#Feature"/>
     </SubClassOf>
@@ -350,6 +360,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasChildFeature"/>
         <ObjectProperty IRI="#relatesToElemet"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasCicle"/>
+        <ObjectProperty IRI="#hasInconsistency"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasConsequent"/>

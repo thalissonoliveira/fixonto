@@ -71,6 +71,44 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			
 			return SWRLErrorBuilder.build(this, pelletReasoner, parentalInconsistencyOWLClass);
 		}
+	},
+	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features.",  "GFR3", "Ciclo detectado.", "Cicle detected.") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			String ruleString = "hasFatherFeature(?x, ?y) ^ hasFatherFeature(?y, ?x) -> hasCicle(?x,?y) ^ GFR3(?x)";
+			
+			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
+			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
+			
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			
+			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
+			ontoHelper.saveOntology();
+			pelletReasoner.flush();
+			
+			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
+		}
+	},
+	UNIQUE_ROOT (4, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			//Person(?p),(locatedIn max 0 Room)(?p) -> PersonNotInRoom(?p)
+			//Person(?p), integer[>= 18 , <= 65](?age), hasAge(?p, ?age) -> hasDriverAge(?p, true)
+			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 1 MandatoryFeature(?x) ^ hasFatherFeature max 1 MandatoryFeature(?x) -> GFR4(?x)";
+			
+			
+			
+			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
+			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
+			
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			
+			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
+			ontoHelper.saveOntology();
+			pelletReasoner.flush();
+			
+			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
+		}
 	};
 
 	

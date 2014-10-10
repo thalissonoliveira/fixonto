@@ -9,7 +9,9 @@ import java.util.Set;
 
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
+import org.semanticweb.owlapi.model.OWLClassExpression;
 import org.semanticweb.owlapi.model.OWLDataProperty;
+import org.semanticweb.owlapi.model.OWLObjectMaxCardinality;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.SWRLAtom;
@@ -36,6 +38,10 @@ public class SWRLRuleStringParser {
 		this.ontoHelper = ontoHelper;
 		this.owlClassOracle = new HashMap<String, OWLClass>();
 		this.swrlVariableOracle = new HashMap<String, SWRLVariable>();
+		
+		
+		
+		
 	}
 
 	public SWRLRule parse(String rule) {		
@@ -74,6 +80,7 @@ public class SWRLRuleStringParser {
 		
 		SWRLVariable[] swrlVariables = getSWRLVariables(variables);
 		
+		
 		if (isClassAtom) {
 			if (variables.length != 1) {
 				throw new RuntimeException("Problema no SWRL. Ver log.");
@@ -109,7 +116,7 @@ public class SWRLRuleStringParser {
 					OWLObjectProperty owlDataProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(atomType);
 					return ontoHelper.getDataFactory().getSWRLObjectPropertyAtom(owlDataProperty, swrlVariables[0], swrlVariables[1]);
 				} else {
-					throw new RuntimeException("Não é class, object prop, data prop nem builtin. :/");
+					throw new RuntimeException("Não é class, object prop, data prop nem builtin:  " + atomType + ".. :/");
 				}
 			}
 		}
@@ -141,11 +148,48 @@ public class SWRLRuleStringParser {
 		} 
 		return owlClassOracle.get(atomType);
 	}
+	
+	
+	@Deprecated
+	public void parse2(String rule) {		
+		
+		SWRLRuleString swrlRuleString = new SWRLRuleString(rule);
+		List<AtomString> antecedentAtoms = swrlRuleString.getAntecedentAtoms();
+		List<AtomString> consequentAtoms = swrlRuleString.getConsequentAtoms();
+		
+		for (AtomString atomString : antecedentAtoms) {
+			
+			System.out.print(atomString.getAtomType() + " > ");
+			for (String var : atomString.getVariables()) {
+				System.out.print(var);
+			}
+			
+			System.out.println();
+		}
+		
+		for (AtomString atomString : consequentAtoms) {
+			System.out.print(atomString.getAtomType() + " > ");
+			for (String var : atomString.getVariables()) {
+				System.out.print(var);
+			}
+			
+			System.out.println();
+		}
+		
+	}
 
 	public static void main(String[] args) throws OWLOntologyCreationException {
+		
+		String rum = "MandatoryFeature(?x) ^ hasFatherFeature min 1 MandatoryFeature(?x) ^ hasFatherFeature max 1 MandatoryFeature(?x) -> GFR4(?x)";
 		OntoHelper oh = new OntoHelper();
     	oh.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
-		new SWRLRuleStringParser(oh).parse("P(?x) ^ F(?y) ^ hasSameName(?u) -> builtIn(?a,?b) ^ C(?u)");
+		new SWRLRuleStringParser(oh).parse2(rum);
+		
+		
+//		OntoHelper oh = new OntoHelper();
+//    	oh.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
+//    	String x = "Feature(?x), has";
+//		new SWRLRuleStringParser(oh).parse("P(?x) ^ F(?y) ^ hasSameName(?u) -> builtIn(?a,?b) ^ C(?i)");
 	}
 
 }

@@ -25,7 +25,6 @@ public class FixtureTwoMainRun {
 //		runFeaToOntoFixtureTest();
 		runRulesAnalyser();
 //		runCoung();
-		
 	}
 
 

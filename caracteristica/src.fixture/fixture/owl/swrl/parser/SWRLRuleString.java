@@ -10,9 +10,12 @@ public class SWRLRuleString {
 	private List<AtomString> consequentAtoms;
 	
 	public static class StringCardinality {
+		
 		private String atomType;
 		private String cardinality;
 		private String value;
+		
+		
 		public String getAtomType() {
 			return atomType;
 		}
@@ -70,6 +73,7 @@ public class SWRLRuleString {
 	private void processParts(String rule) {
 //		String ruleTrim = rule.replace(" ", "");
 //		ruleTrim = ruleTrim.replace("\n", "");
+		
 		String[] parts = rule.split("->");
 		
 		String[] antecedent = parts[0].split("\\^");
@@ -84,22 +88,16 @@ public class SWRLRuleString {
 		
 	}
 	
-	public static void main(String[] args) {
-		String atom = "hasFatherFeature min 1 MandatoryFeature(?x) ";
-		
-		boolean isCardinality = atom.matches("^(.*\\s.*[max|min]\\s\\d\\s[\\w]*\\))");
-//		boolean isCardinality = atom.matches("[\\s][min|max][\\s][\\w][(][\\?][\\w][)].");
-		System.out.println(isCardinality);
-	}
-
 	private void processAtom(String atom, List<AtomString> atoms) {
 		
-		boolean isCardinality = atom.matches("\\w\\s[min|max]\\s\\w(\\?\\w)");
+		atom = atom.trim();  
+		boolean isSingleAtom = isSingleAtom(atom);
 		
-		if (!isCardinality) {
+		if (isSingleAtom) {
 			int openPerentesisIndex = atom.indexOf("(");
 			int closePerentesisIndex = atom.indexOf(")");
 			String atomType = atom.substring(0, openPerentesisIndex);
+			
 			atomType = atomType.replace(" ", "");
 			atomType = atomType.replace("\n", "");
 			
@@ -110,9 +108,49 @@ public class SWRLRuleString {
 			atomString.setVariables(variables);
 			atoms.add(atomString);
 		} else {
+			String atomPeaces[] = atom.split(" ");
+			boolean isValidLength = atomPeaces.length == 4;
+			boolean isText = atomPeaces[0].matches("[\\w]*");
+			boolean isMaxMin = atomPeaces[1].matches("max|min");
+			boolean isNumber = atomPeaces[2].matches("[\\d]*");
+			boolean singleAtom = isSingleAtom(atomPeaces[3]);
 			
+			boolean isValidCardinality = !isValidLength ? false : isText && isMaxMin && isNumber && singleAtom;
+			
+			if (isValidCardinality) {
+				atom = atomPeaces[3];
+				
+				int openPerentesisIndex = atom.indexOf("(");
+				int closePerentesisIndex = atom.indexOf(")");
+				String atomType = atom.substring(0, openPerentesisIndex);
+				
+				atomType = atomType.replace(" ", "");
+				atomType = atomType.replace("\n", "");
+				
+				String[] variables = atom.substring(openPerentesisIndex+1, closePerentesisIndex).split(",");
+				
+				AtomString atomString = new AtomString();
+				atomString.setAtomType(atomType);
+				atomString.setVariables(variables);
+				
+				StringCardinality stringCardinality = new StringCardinality();
+				stringCardinality.setAtomType(atomPeaces[0]);
+				stringCardinality.setCardinality(atomPeaces[1]);
+				stringCardinality.setValue(atomPeaces[2]);
+				
+				atomString.setStringCardinality(stringCardinality);
+				
+				atoms.add(atomString);
+			} else {
+				throw new RuntimeException("What?");
+			}
 		}
 		
+	}
+
+
+	private boolean isSingleAtom(String atom) {
+		return atom.split(" ").length == 1;
 	}
 
 

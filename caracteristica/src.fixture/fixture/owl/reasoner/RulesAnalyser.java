@@ -34,11 +34,12 @@ public class RulesAnalyser {
 		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
 		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 
-		SWRLError[] swrlErrors = new SWRLError[4]; 		
+		SWRLError[] swrlErrors = new SWRLError[5]; 		
 		swrlErrors[0] = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);
 		swrlErrors[1] = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_ATTRIBUTE_RULE.execute(ontoHelper, reasoner);
 		swrlErrors[2] = RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY.execute(ontoHelper, reasoner);
 		swrlErrors[3] = RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION.execute(ontoHelper, reasoner);
+		swrlErrors[4] = RulesConstraintsOWLClassTypeEnum.UNIQUE_ROOT.execute(ontoHelper, reasoner);
 		
 		
 		System.out.println("####### CHECK IT OUT! #######");

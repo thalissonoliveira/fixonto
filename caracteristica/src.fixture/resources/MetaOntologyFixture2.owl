@@ -79,6 +79,9 @@
         <Class IRI="#GFR3"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GFR4"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GroupedFeature"/>
     </Declaration>
     <Declaration>
@@ -290,6 +293,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GFR3"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR4"/>
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>

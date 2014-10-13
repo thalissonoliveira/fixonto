@@ -59,7 +59,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	PARENTAL_INCONSISTENCY (3, "'Parental Inconsistency' Rule",  "ParentalInconsistency", "Uma característica não pode ser filha dela mesma.", "A feature can't be child of itself.") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "hasChildFeature(?x, ?x) -> ParentalInconsistency(?x)";
+			String ruleString = "hasChildFeature(?x,?x) -> ParentalInconsistency(?x)";
 			
 			OWLClass parentalInconsistencyOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY);
 			
@@ -75,7 +75,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features.",  "GFR3", "Ciclo detectado.", "Cicle detected.") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "hasFatherFeature(?x, ?y) ^ hasFatherFeature(?y, ?x) -> hasCicle(?x,?y) ^ GFR3(?x)";
+			String ruleString = "hasFatherFeature(?x,?y) ^ hasFatherFeature(?y,?x) -> hasCicle(?x,?y) ^ GFR3(?x)";
 			
 			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
 			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
@@ -89,17 +89,14 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
 		}
 	},
-	UNIQUE_ROOT (4, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", "") {
+	UNIQUE_ROOT (5, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", "") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			//Person(?p),(locatedIn max 0 Room)(?p) -> PersonNotInRoom(?p)
-			//Person(?p), integer[>= 18 , <= 65](?age), hasAge(?p, ?age) -> hasDriverAge(?p, true)
-			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 1 MandatoryFeature(?x) ^ hasFatherFeature max 1 MandatoryFeature(?x) -> GFR4(?x)";
+//			String ruleString = "MandatoryFeature(?x) -> GFR4(?x)";
+			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 2 Feature(?x) -> GFR4(?x)";
+//			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 1 Feature(?x) ^ hasFatherFeature max 1 Feature(?x) -> GFR4(?x)";
 			
-			
-			
-			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
-			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
+			OWLClass uniqueRootClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.UNIQUE_ROOT);
 			
 			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
 			
@@ -107,7 +104,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			ontoHelper.saveOntology();
 			pelletReasoner.flush();
 			
-			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
+			return SWRLErrorBuilder.build(this, pelletReasoner, uniqueRootClass);
 		}
 	};
 

@@ -8,8 +8,8 @@ public class VariationTwo extends Feature implements FeaturedElement {
 		super();
 	}
 
-	public VariationTwo(String name) {
-		super(name);
+	public VariationTwo(String name, int id) {
+		super(name, id);
 	}
 
 	@Override

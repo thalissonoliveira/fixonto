@@ -1,9 +1,7 @@
 package fixture.owl.parser;
 
 import java.net.URISyntaxException;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -54,13 +52,13 @@ public class FeaToOntoFixture {
 	
 	private OntoHelper ontoHelper;
 	private OWLUtils feaToOntoFixtureUtils;
-	private Map<String, Set<OWLNamedIndividual>> owlOracle;
-	private Map<String, Set<Nameable>> fixtureOracle;
+	private Map<Integer, OWLNamedIndividual> owlOracle;
+	private Map<Integer, Nameable> fixtureOracle;
 		
 	public FeaToOntoFixture() {
 		ontoHelper = new OntoHelper();
-		owlOracle = new HashMap<String, Set<OWLNamedIndividual>>();
-		fixtureOracle = new HashMap<String, Set<Nameable>>();
+		owlOracle = new HashMap<Integer, OWLNamedIndividual>();
+		fixtureOracle = new HashMap<Integer, Nameable>();
 	}
 	
 	public void run(SPL spl) {
@@ -152,11 +150,11 @@ public class FeaToOntoFixture {
 			ActionLiteral actionLiteral = (ActionLiteral) action;
 
 			feaToOntoFixtureUtils.addPresenceActionLiteralRelation(currentActionOWL, actionLiteral.getPresence().getValue());
-			feaToOntoFixtureUtils.addRelationBetweenActionLiteralAndFeaturedElement(currentActionOWL, owlOracle.get(actionLiteral.getFeaturedElement().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenActionLiteralAndFeaturedElement(currentActionOWL, owlOracle.get(actionLiteral.getFeaturedElement().getId()));
 			
 		} else if (action.isDesignate()) {
 			Designate designate = (Designate) action;
-			feaToOntoFixtureUtils.addRelationBetweenDesignateAndAttribute(currentActionOWL, owlOracle.get(designate.getAttribute().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenDesignateAndAttribute(currentActionOWL, owlOracle.get(designate.getAttribute().getId()));
 			feaToOntoFixtureUtils.addValueDesignateRelation(currentActionOWL, designate.getValue());
 			feaToOntoFixtureUtils.addValueTypeDesignateRelation(currentActionOWL, designate.getValueType().getValue());
 			
@@ -201,7 +199,7 @@ public class FeaToOntoFixture {
 		} else if (event.isRelationalEvent()) {
 			RelationalEvent relationalEvent = (RelationalEvent) event;
 			
-			feaToOntoFixtureUtils.addRelationBetweenRelationalEventAndContextVariable(currentEventOWL, owlOracle.get(relationalEvent.getContextVariable().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenRelationalEventAndContextVariable(currentEventOWL, owlOracle.get(relationalEvent.getContextVariable().getId()));
 			feaToOntoFixtureUtils.addRelationalOperatorRelationalEventRelation(currentEventOWL, relationalEvent.getRelationalOperator().getValue());
 			feaToOntoFixtureUtils.addValueRelationalEventRelation(currentEventOWL, relationalEvent.getValue());
 		} else {
@@ -232,7 +230,7 @@ public class FeaToOntoFixture {
 		if (antecedent.isCompositionLiteral()) {
 			CompositionLiteral compositionLiteral = (CompositionLiteral) antecedent;
 			feaToOntoFixtureUtils.addPresenceCompositionLiteralRelation(currentAntecedentRuleOWL, compositionLiteral.getPresence().getValue());
-			feaToOntoFixtureUtils.addRelationBetweenCompositionLiteralAndFeaturedElement(currentAntecedentRuleOWL, owlOracle.get(compositionLiteral.getFeaturedElement().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenCompositionLiteralAndFeaturedElement(currentAntecedentRuleOWL, owlOracle.get(compositionLiteral.getFeaturedElement().getId()));
 		} else if (antecedent.isLogicalExpression()) {
 			LogicalExpression logicalExpression = (LogicalExpression) antecedent;
 
@@ -251,7 +249,7 @@ public class FeaToOntoFixture {
 		} else if (antecedent.isRelationalExpression()) {
 			RelationalExpression relationalExpression = (RelationalExpression) antecedent;
 			
-			feaToOntoFixtureUtils.addRelationBetweenRelationalExpressionAndExpressionVariable(currentAntecedentRuleOWL, owlOracle.get(relationalExpression.getExpressionVariable().getName()).toArray(new OWLIndividual[1])[0]);
+			feaToOntoFixtureUtils.addRelationBetweenRelationalExpressionAndExpressionVariable(currentAntecedentRuleOWL, owlOracle.get(relationalExpression.getExpressionVariable().getId()));
 			feaToOntoFixtureUtils.addRelationalOperatorRelationalExpressionRelation(currentAntecedentRuleOWL, relationalExpression.getRelationalOperator().getValue());
 			feaToOntoFixtureUtils.addValueRelationalExpressionRelation(currentAntecedentRuleOWL, relationalExpression.getValue());
 		} else {
@@ -284,11 +282,19 @@ public class FeaToOntoFixture {
 	private void buildOntology(Feature feature) {
 		
 		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
-		OWLIndividual currentFatherFeatureOwl = feaToOntoFixtureUtils.createOWLNamedIndividualFatherFeature(feature, owlOracle);
 		
 		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);
 		
-		if (currentFatherFeatureOwl != null) {
+		Feature fatherFeature = feature.getFatherFeature();
+		if (fatherFeature != null) {
+			OWLIndividual currentFatherFeatureOwl = null;
+			int fatherId = fatherFeature.getId();
+			
+			if (owlOracle.containsKey(fatherId)) {
+				currentFatherFeatureOwl = owlOracle.get(fatherId);
+			} else {
+				currentFatherFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(fatherFeature, owlOracle);
+			}
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(currentFeatureOwl, currentFatherFeatureOwl);
 		}
 		
@@ -322,24 +328,22 @@ public class FeaToOntoFixture {
 		return SPLConceptFactory.getFactory();
 	}
 
-	public Map<String, Set<Nameable>> getOracle() {
+	public Map<Integer, Nameable> getOracle() {
 		return fixtureOracle;
 	}
 	
-	public Nameable getElementByName(String name) {
-		Set<Nameable> set = getOracle().get(name);
-		if (set == null || set.isEmpty()) {
-			return null;
-		}
-		return new ArrayList<Nameable>(set).get(0);
+	public Nameable getElementById(int id) {
+		Nameable element = getOracle().get(id);
+		return element;
 	}
 	
 	public void addToFixtureOracle(Nameable nameable) {
-		String nome = nameable.getName();
-		if (!fixtureOracle.containsKey(nome)) {
-			fixtureOracle.put(nome, new HashSet<Nameable>());
+		int id = nameable.getId();
+		if (!fixtureOracle.containsKey(id)) {
+			fixtureOracle.put(id, nameable);
+		} else {
+			throw new RuntimeException("Problema ao adicionar um elemento ao oráculo.");
 		}
-		fixtureOracle.get(nome).add(nameable);
 	}
 	
 }

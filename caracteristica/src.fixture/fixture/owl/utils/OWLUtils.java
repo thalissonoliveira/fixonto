@@ -1,6 +1,5 @@
 package fixture.owl.utils;
 
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -37,7 +36,7 @@ public class OWLUtils {
 	private OntoHelper ontoHelper;
 	private static OWLClassFactory owlClassFactory;
 	private static OWLObjectPropertyFactory owlObjetcPropertyFactory;
-	public static int count;
+//	public static int count;
 	
 	private OWLUtils() {}
 	
@@ -293,53 +292,70 @@ public class OWLUtils {
 		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
 	}
 	
-	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature, Map<String, Set<OWLNamedIndividual>> oracle) {
+	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature, Map<Integer, OWLNamedIndividual> oracle) {
 		if (feature != null && feature.getFatherFeature() != null) {
 			return createNewOWLNamedIndividual(feature.getFatherFeature(), oracle);
 		}
 		return null;
 	}
 	
-	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<String, Set<OWLNamedIndividual>> oracle) {
+	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<Integer, OWLNamedIndividual> oracle) {
 		if (element != null) {
-			count++;
-			String name = element.getName();
-			String klassName = element.getClass().getSimpleName();
-			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName + "_" + count));
-			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
+			Integer id = element.getId();
 			
-			if (!oracle.containsKey(name)) {
-				oracle.put(name, new HashSet<OWLNamedIndividual>());
+			if (!oracle.containsKey(id)) {
+				String name = element.getName();
+				OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + element.getId()));
+				addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
+				oracle.put(id, owlNamedIndividual);
 			}
-			oracle.get(name).add(owlNamedIndividual);
 			
-			return owlNamedIndividual;
+			return oracle.get(id);
 		}
 		return null;
 	}
-
-	@SuppressWarnings("static-access")
-	public void addMaxIdCountToOntology() {
-		
-		OWLIndividual countIndividual = (OWLIndividual) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "count")).toArray(new OWLEntity[1])[0];
-		OWLDataProperty hasMaxId = (OWLDataProperty) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "hasMaxId")).toArray(new OWLDataProperty[1])[0];
-		
-		Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = countIndividual.getDataPropertyValues(ontoHelper.getMetaOntology());
-		Set<OWLLiteral> collectionLiteralCount = dataPropertyValues.get(hasMaxId);
-		
-//		if (collectionLiteralCount != null) {
-			int literalValue = Integer.valueOf(collectionLiteralCount.toArray(new OWLLiteral[1])[0].getLiteral());
-			removeDataPropertyFromOntology(countIndividual, hasMaxId, literalValue);
+	
+	
+//	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<String, Set<OWLNamedIndividual>> oracle) {
+//		if (element != null) {
+//			count++;
+//			String name = element.getName();
+//			String klassName = element.getClass().getSimpleName();
+//			OWLNamedIndividual owlNamedIndividual = ontoHelper.getDataFactory().getOWLNamedIndividual(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + klassName + "_" + count));
+//			addDataPropertyAssertionToOntology(owlNamedIndividual, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_NAME), name);
+//			
+//			if (!oracle.containsKey(name)) {
+//				oracle.put(name, new HashSet<OWLNamedIndividual>());
+//			}
+//			oracle.get(name).add(owlNamedIndividual);
+//			
+//			return owlNamedIndividual;
 //		}
-		
-		addDataPropertyAssertionToOntology(countIndividual, hasMaxId, this.count);
-	}
+//		return null;
+//	}
+
+//	@SuppressWarnings("static-access")
+//	public void addMaxIdCountToOntology() {
+//		
+//		OWLIndividual countIndividual = (OWLIndividual) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "count")).toArray(new OWLEntity[1])[0];
+//		OWLDataProperty hasMaxId = (OWLDataProperty) ontoHelper.getMetaOntology().getEntitiesInSignature(IRI.create(Utils.META_ONTOLOGY_BASE_URL_SHARP + "hasMaxId")).toArray(new OWLDataProperty[1])[0];
+//		
+//		Map<OWLDataPropertyExpression, Set<OWLLiteral>> dataPropertyValues = countIndividual.getDataPropertyValues(ontoHelper.getMetaOntology());
+//		Set<OWLLiteral> collectionLiteralCount = dataPropertyValues.get(hasMaxId);
+//		
+////		if (collectionLiteralCount != null) {
+//			int literalValue = Integer.valueOf(collectionLiteralCount.toArray(new OWLLiteral[1])[0].getLiteral());
+//			removeDataPropertyFromOntology(countIndividual, hasMaxId, literalValue);
+////		}
+//		
+//		addDataPropertyAssertionToOntology(countIndividual, hasMaxId, this.count);
+//	}
 	
 
-	private void removeDataPropertyFromOntology(OWLIndividual countIndividual, OWLDataProperty hasMaxId, int literalValue) {
-		OWLDataPropertyAssertionAxiom ax = ontoHelper.getDataFactory().getOWLDataPropertyAssertionAxiom(hasMaxId, countIndividual, literalValue);
-		ontoHelper.getManager().removeAxiom(ontoHelper.getMetaOntology(), ax);
-	}
+//	private void removeDataPropertyFromOntology(OWLIndividual countIndividual, OWLDataProperty hasMaxId, int literalValue) {
+//		OWLDataPropertyAssertionAxiom ax = ontoHelper.getDataFactory().getOWLDataPropertyAssertionAxiom(hasMaxId, countIndividual, literalValue);
+//		ontoHelper.getManager().removeAxiom(ontoHelper.getMetaOntology(), ax);
+//	}
 
 	private void addDataPropertyAssertionToOntology(OWLIndividual individual, OWLDataProperty dataProperty, int value) {
 		OWLDataPropertyAssertionAxiom ax = ontoHelper.getDataFactory().getOWLDataPropertyAssertionAxiom(dataProperty, individual, value);

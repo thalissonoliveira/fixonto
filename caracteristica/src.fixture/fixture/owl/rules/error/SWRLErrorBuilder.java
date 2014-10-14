@@ -1,5 +1,6 @@
 package fixture.owl.rules.error;
 
+import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
@@ -24,7 +25,8 @@ public class SWRLErrorBuilder {
 			sb.append("[RULE BROKE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {
 				OWLNamedIndividual individual = node.getRepresentativeElement();
-				sb.append("   [INDIVIDUAL]:<" + individual.getIRI().getFragment() + ">\n      [NODES]:");
+				IRI iri = individual.getIRI();
+				sb.append("   [INDIVIDUAL]:<" + iri.toString().split("#")[1] + ">\n      [NODES]:");
 				NodeSet<OWLClass> types = pelletReasoner.getTypes(individual, true);
 				for (Node<OWLClass> classNode : types) {
 					sb.append("<" + classNode.getRepresentativeElement().getIRI().getFragment() + ">");
@@ -50,7 +52,7 @@ public class SWRLErrorBuilder {
 			sb.append("[RULE BROKE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {
 				OWLNamedIndividual individual = node.getRepresentativeElement();
-				sb.append("   [INDIVIDUAL]:<" + individual.getIRI().getFragment() + ">\n      [NODES]:");
+				sb.append("   [INDIVIDUAL]:<" + individual.getIRI().toString().split("#")[1] + ">\n      [NODES]:");
 				NodeSet<OWLClass> types = pelletReasoner.getTypes(individual, true);
 				for (Node<OWLClass> classNode : types) {
 					sb.append("<" + classNode.getRepresentativeElement().getIRI().getFragment() + ">");

@@ -33,6 +33,8 @@ public class RulesAnalyser {
 	private void checkRules() {
 		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
 		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
+		reasoner.flush();
+		ontoHelper.saveOntology();
 
 		SWRLError[] swrlErrors = new SWRLError[5]; 		
 		swrlErrors[0] = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);

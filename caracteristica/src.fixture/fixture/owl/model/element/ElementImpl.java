@@ -6,10 +6,13 @@ public abstract class ElementImpl implements Element {
 	
 	private String name;
 	
+	private int id;
+	
 	public ElementImpl() {}
 	
-	public ElementImpl(String name) {
+	public ElementImpl(String name, int id) {
 		this.setName(name);
+		this.setId(id);
 	}
 
 
@@ -19,6 +22,14 @@ public abstract class ElementImpl implements Element {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 } // Elemento

@@ -11,8 +11,8 @@ public class ContextRoot extends ElementImpl {
 		contextEntities = new HashSet<ContextEntity>();
 	}
 	
-	public ContextRoot(String name) {
-		super(name);
+	public ContextRoot(String name, int id) {
+		super(name, id);
 		contextEntities = new HashSet<ContextEntity>();
 	}
 

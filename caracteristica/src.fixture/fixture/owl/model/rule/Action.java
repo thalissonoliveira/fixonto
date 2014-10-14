@@ -7,9 +7,10 @@ public abstract class Action extends Expression {
 		super();
 	}
 	
-	public Action(String name) {
+	public Action(String name, int id) {
 		super();
 		this.setName(name);
+		this.setId(id);
 	}
 	
 	public abstract boolean isActionLiteral();

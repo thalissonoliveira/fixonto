@@ -8,6 +8,8 @@ public class ProductAttribute implements ProductElement{
 
 	private String name;
 	
+	private int id;
+	
 	private Element originalElement;
 
 	private String valor;
@@ -23,6 +25,14 @@ public class ProductAttribute implements ProductElement{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Element getOriginalElement() {

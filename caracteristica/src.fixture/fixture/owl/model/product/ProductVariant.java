@@ -6,12 +6,12 @@ import fixture.owl.model.intefaces.Element;
 public class ProductVariant implements ProductElement{
 	
 	private String name;
+	
+	private int id;
 
 	private Element originalElement;
 
 	private ProductVariation fatherProductVariation;
-	
-	
 	
 	//
 	public String getName() {
@@ -20,6 +20,14 @@ public class ProductVariant implements ProductElement{
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Element getOriginalElement() {

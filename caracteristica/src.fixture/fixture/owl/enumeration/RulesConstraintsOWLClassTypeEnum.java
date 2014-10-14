@@ -1,6 +1,5 @@
 package fixture.owl.enumeration;
 
-import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.SWRLRule;
@@ -22,18 +21,19 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "Feature(?x) ^ Feature(?y) ^ hasName(?x,?n) ^ hasName(?y,?m) ^ fix:equalname(?x,?y,?n,?m) -> hasEqualName(?x,?y) ^ GFR1(?x)";
-			
 			OWLClass gfr1OWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE);
 			OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
-
-			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-			
-			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
-			pelletReasoner.flush();
-			
+//			pelletReasoner.flush();
+//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, gfr1OWLClass, hasEqualNameObjectProperty);
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			String ruleString = "Feature(?x) ^ Feature(?y) ^ hasName(?x,?n) ^ hasName(?y,?m) ^ fix:equalname(?x,?y,?n,?m) -> hasEqualName(?x,?y) ^ GFR1(?x)";
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			return rule;
+			
 		}
 		
 		
@@ -41,70 +41,74 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	EQUAL_NAME_ATTRIBUTE_RULE (2, "'Attributes with same name' Rule",  "GFR2", "Atributos diferentes não podem ter o mesmo nome.", "") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "Feature(?x) ^ hasAttribute(?x,?m) ^ hasAttribute(?x,?n) ^ hasName(?m,?k) ^ hasName(?n,?l) ^ fix:equalname(?m,?n,?k,?l) -> hasEqualName(?m,?n) ^ GFR2(?x)";
-			
 			OWLClass gfr2OWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_ATTRIBUTE_RULE);
 			OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
-
-			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-			
-			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
-			pelletReasoner.flush();
-			
+//			pelletReasoner.flush();
+//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, gfr2OWLClass, hasEqualNameObjectProperty);
 
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			String ruleString = "Feature(?x) ^ hasAttribute(?x,?m) ^ hasAttribute(?x,?n) ^ hasName(?m,?k) ^ hasName(?n,?l) ^ fix:equalname(?m,?n,?k,?l) -> hasEqualName(?m,?n) ^ GFR2(?x)";
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+//			ontoHelper.saveOntology();
+//			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
+			return rule;
 		}
 	},
 	PARENTAL_INCONSISTENCY (3, "'Parental Inconsistency' Rule",  "ParentalInconsistency", "Uma característica não pode ser filha dela mesma.", "A feature can't be child of itself.") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "hasChildFeature(?x,?x) -> ParentalInconsistency(?x)";
-			
 			OWLClass parentalInconsistencyOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY);
-			
-			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-
-			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
-			pelletReasoner.flush();
-			
+//			pelletReasoner.flush();
+//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, parentalInconsistencyOWLClass);
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			String ruleString = "hasChildFeature(?x,?x) -> ParentalInconsistency(?x)";
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			return rule;
 		}
 	},
 	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features.",  "GFR3", "Ciclo detectado.", "Cicle detected.") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-			String ruleString = "hasFatherFeature(?x,?y) ^ hasFatherFeature(?y,?x) -> hasCicle(?x,?y) ^ GFR3(?x)";
-			
 			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
 			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
-			
-			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-			
-			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
-			pelletReasoner.flush();
-			
+//			pelletReasoner.flush();
+//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
 		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			String ruleString = "hasFatherFeature(?x,?y) ^ hasFatherFeature(?y,?x) -> hasCicle(?x,?y) ^ GFR3(?x)";
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			return rule;
+		}
+//	};
 	},
 	UNIQUE_ROOT (5, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", "") {
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 //			String ruleString = "MandatoryFeature(?x) -> GFR4(?x)";
-			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 2 Feature(?x) -> GFR4(?x)";
-//			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 1 Feature(?x) ^ hasFatherFeature max 1 Feature(?x) -> GFR4(?x)";
 			
 			OWLClass uniqueRootClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.UNIQUE_ROOT);
-			
-			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-			
-			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
-			ontoHelper.saveOntology();
-			pelletReasoner.flush();
-			
+//			pelletReasoner.flush();
+//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, uniqueRootClass);
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 1 Feature(?x) ^ hasFatherFeature max 1 Feature(?x) -> GFR4(?x)";
+//			String ruleString = "MandatoryFeature(?x) ^ hasFatherFeature min 2 Feature(?x) -> GFR4(?x)";
+			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
+			return rule;
 		}
 	};
 
@@ -125,6 +129,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	}
 	
 	public abstract SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner);
+	public abstract SWRLRule getRule(OntoHelper ontoHelper);
 	
 	public String getIRI() {
 		return Utils.META_ONTOLOGY_BASE_URL_SHARP + this.getLabel();

@@ -10,13 +10,17 @@ import java.util.Formatter;
 
 import org.semanticweb.owlapi.apibinding.OWLManager;
 import org.semanticweb.owlapi.io.OWLXMLOntologyFormat;
+import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import org.semanticweb.owlapi.model.OWLOntologyManager;
 import org.semanticweb.owlapi.model.OWLOntologyStorageException;
+import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
+
+import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 
 /**
  * 
@@ -43,13 +47,22 @@ public class OntoHelper {
 		this.pathSaveOntology = Utils.SPLiSEM_OUTPUT_PATH;
 		this.prefixOWLOntologyFormat = createtPrefixOWLOntologyFormat();
 		
+		loadRules();
+		
 		System.out.println("[FIXTURE2][LOG] - temp Meta Ontology deleted? : " + file.delete());
-		
-		
 		
 		Utils.refreshOutputFolder();
 	}
 	
+	private void loadRules() {
+		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
+		for (RulesConstraintsOWLClassTypeEnum rule : rules) {
+			SWRLRule swrlRule = rule.getRule(this);
+			this.getManager().applyChange(new AddAxiom(this.getMetaOntology(), swrlRule));
+			this.saveOntology();
+		}
+	}
+
 	public synchronized void loadOntology(String pathLoadOntology, String pathSaveOntology) throws OWLOntologyCreationException {
 		File file = new File(pathLoadOntology);
 		this.manager = OWLManager.createOWLOntologyManager();
@@ -61,7 +74,7 @@ public class OntoHelper {
 		
 	public synchronized void saveAndRemoveOntology() {
 		try {
-			OWLUtils.getInstance(this).addMaxIdCountToOntology();
+//			OWLUtils.getInstance(this).addMaxIdCountToOntology();
 			manager.saveOntology(getMetaOntology(), new OWLXMLOntologyFormat(), IRI.create(new File(pathSaveOntology)));
 	        manager.removeOntology(getMetaOntology());
 		} catch (OWLOntologyStorageException e) {
@@ -71,7 +84,7 @@ public class OntoHelper {
 	
 	public synchronized void saveOntology() {
 		try {
-			OWLUtils.getInstance(this).addMaxIdCountToOntology();
+//			OWLUtils.getInstance(this).addMaxIdCountToOntology();
 			manager.saveOntology(getMetaOntology(), new OWLXMLOntologyFormat(), IRI.create(new File(pathSaveOntology)));
 		} catch (OWLOntologyStorageException e) {
 			e.printStackTrace();

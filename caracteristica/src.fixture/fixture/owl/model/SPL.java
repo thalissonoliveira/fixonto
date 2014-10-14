@@ -18,6 +18,8 @@ public class SPL implements Nameable {
 	
 	private String name;
 	
+	private int id;
+	
 	private RootFeature system;
 	
 	private Set<Element> elements;
@@ -35,13 +37,14 @@ public class SPL implements Nameable {
 		productElements = new HashSet<ProductElement>();
 	}
 	
-	public SPL(String name) {
+	public SPL(String name, int id) {
 		this();
 		this.name = name;
+		this.id = id;
 	}
 	
-	public SPL(String name, RootFeature system) {
-		this(name);
+	public SPL(String name, int id, RootFeature system) {
+		this(name, id);
 		this.system = system;
 	}
 	
@@ -49,13 +52,20 @@ public class SPL implements Nameable {
 		getElements().add(element);
 	}
 	
-	
 	public String getName() {
 		return name;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Set<Element> getElements() {
@@ -97,7 +107,5 @@ public class SPL implements Nameable {
 	public void setProductElements(Set<ProductElement> productElements) {
 		this.productElements = productElements;
 	}
-	
-	
 	
 } // LPS

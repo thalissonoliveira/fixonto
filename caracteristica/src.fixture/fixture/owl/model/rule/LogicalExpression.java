@@ -16,8 +16,8 @@ public class LogicalExpression extends Antecedent {
 		super();
 	}
 
-	public LogicalExpression(String name) {
-		super(name);
+	public LogicalExpression(String name, int id) {
+		super(name, id);
 	}
 
 

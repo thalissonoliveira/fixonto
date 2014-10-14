@@ -43,6 +43,7 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixt
 	preecherElementosCaracteristicaLpsFixture(raiz, rootFixture, factoryFixture, splFixture, featToOntoFixture);
 	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
 	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
+	preencherProdutos(lps, factoryFixture, splFixture, featToOntoFixture);
 		
 	var elementoDoModelo;
 	

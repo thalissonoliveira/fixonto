@@ -15,8 +15,8 @@ public class LogicalEvent extends Event {
 		super();
 	}
 
-	public LogicalEvent(String name) {
-		super(name);
+	public LogicalEvent(String name, int id) {
+		super(name, id);
 	}
 
 	public void setLogicalOperator(int logicalOperator) {

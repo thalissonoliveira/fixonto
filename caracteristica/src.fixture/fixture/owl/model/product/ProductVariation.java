@@ -10,6 +10,8 @@ public class ProductVariation implements ProductElement {
 
 	private String name;
 	
+	private int id;
+	
 	private Element originalElement;
 	
 	private int minimumCardinality;
@@ -33,6 +35,14 @@ public class ProductVariation implements ProductElement {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Element getOriginalElement() {

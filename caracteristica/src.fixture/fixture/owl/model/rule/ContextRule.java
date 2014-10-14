@@ -12,8 +12,8 @@ public class ContextRule extends Rule {
 		super();
 	}
 
-	public ContextRule(String name) {
-		super(name);
+	public ContextRule(String name, int id) {
+		super(name, id);
 	}
 
 	public Event getEvent() {

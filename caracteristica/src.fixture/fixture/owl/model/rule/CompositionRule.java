@@ -12,8 +12,8 @@ public class CompositionRule extends Rule {
 		super();
 	}
 
-	public CompositionRule(String name) {
-		super(name);
+	public CompositionRule(String name, int id) {
+		super(name, id);
 	}
 
 	public Antecedent getAntecedent() {

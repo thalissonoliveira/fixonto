@@ -31,95 +31,118 @@ import fixture.owl.model.rule.RelationalExpression;
 public class SPLConceptFactory {
 	
 	private static SPLConceptFactory factory;
+	private int count;
 	
 	private SPLConceptFactory() {}
 	
 	public static SPLConceptFactory getFactory() {
 		if (factory == null) {
-			factory = new SPLConceptFactory(); 
+			factory = new SPLConceptFactory();
+			factory.count = 0;
 		}
 		return factory;
 	}
 
 	public SPL createSpl(String name) {
-		return new SPL(name);
+		count++;
+		return new SPL(name, count);
 	}
 	
 	public MandatoryFeature createMandatoryFeature(String nome) {
-		return new MandatoryFeature(nome);
+		count++;
+		return new MandatoryFeature(nome, count);
 	}
 	
 	public OptionalFeature createOptionalFeature(String nome) {
-		return new OptionalFeature(nome);
+		count++;
+		return new OptionalFeature(nome, count);
 	}
 	
 	public RootFeature createRootFeature(String nome) {
-		return new RootFeature(nome);
+		count++;
+		return new RootFeature(nome, count);
 	}
 	
 	public VariationTwo createVariationTwo(String nome) {
-		return new VariationTwo(nome);
+		count++;
+		return new VariationTwo(nome, count);
 	}
 	
 	public GroupedFeature createGroupedFeature(String nome) {
-		return new GroupedFeature(nome);
+		count++;
+		return new GroupedFeature(nome, count);
 	}
 	
 	public Attribute createAttribute(String name) {
-		return new Attribute(name);
+		count++;
+		return new Attribute(name, count);
 	}
 	
 	public ContextRoot createContextRoot(String name) {
-		return new ContextRoot(name);
+		count++;
+		return new ContextRoot(name, count);
 	}
 	
 	public ContextEntity createContextEntity(String name) {
-		return new ContextEntity(name);
+		count++;
+		return new ContextEntity(name, count);
 	}
 	
 	public ContextInfo createContextInfo(String name) {
-		return new ContextInfo(name);
+		count++;
+		return new ContextInfo(name, count);
 	}
 	
 	public CompositionRule createCompositionRule(String name) {
-		return new CompositionRule(name);
+		count++;
+		return new CompositionRule(name, count);
 	}
 	
 	public ContextRule createContextRule(String name) {
-		return new ContextRule(name);
+		count++;
+		return new ContextRule(name, count);
 	}
 	
 	public LogicalExpression createLogicalExpression(String name) {
-		return new LogicalExpression(name);
+		count++;
+		return new LogicalExpression(name, count);
 	}
 	
 	
 	public CompositionLiteral createCompositionLiteral(String name) {
-		return new CompositionLiteral(name);
+		count++;
+		return new CompositionLiteral(name, count);
 	}
 	
 	public RelationalExpression createRelationalExpression(String name) {
-		return new RelationalExpression(name);
+		count++;
+		return new RelationalExpression(name, count);
 	}
 	
 	public LogicalEvent createLogicalEvent(String name) {
-		return new LogicalEvent(name);
+		count++;
+		return new LogicalEvent(name, count);
 	}
 	
 	public RelationalEvent createRelationalEvent(String name) {
-		return new RelationalEvent(name);
+		count++;
+		return new RelationalEvent(name, count);
 	}
 	
 	public LogicalAction createLogicalAction(String name) {
-		return new LogicalAction(name);
+		count++;
+		return new LogicalAction(name, count);
 	}
 	
 	public ActionLiteral createActionLiteral(String name) {
-		return new ActionLiteral(name);
+		count++;
+		return new ActionLiteral(name, count);
 	}
 	
 	public Designate createDesignate(String name) {
-		return new Designate(name);
+		count++;
+		return new Designate(name, count);
 	}
 
 }
+

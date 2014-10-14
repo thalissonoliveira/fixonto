@@ -6,6 +6,8 @@ public abstract class Rule implements Nameable {
 	
 	private String name;
 	
+	private int id;
+	
 	private String conteudo;
 	
 	public Rule() {
@@ -15,9 +17,10 @@ public abstract class Rule implements Nameable {
 	public abstract boolean isCompositionRule();
 	public abstract boolean isContextRule();
 	
-	public Rule(String name) {
+	public Rule(String name, int id) {
 		super();
 		this.name = name;
+		this.id = id;
 	}
 	
 	public void setName(String name) {
@@ -27,6 +30,14 @@ public abstract class Rule implements Nameable {
 	@Override
 	public String getName() {
 		return this.name;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getConteudo() {

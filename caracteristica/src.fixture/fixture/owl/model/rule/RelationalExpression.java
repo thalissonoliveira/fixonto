@@ -15,8 +15,8 @@ public class RelationalExpression extends Antecedent {
 		super();
 	}
 
-	public RelationalExpression(String name) {
-		super(name);
+	public RelationalExpression(String name, int id) {
+		super(name, id);
 	}
 
 	public void setRelationalOperator(int  relationalOperator) {

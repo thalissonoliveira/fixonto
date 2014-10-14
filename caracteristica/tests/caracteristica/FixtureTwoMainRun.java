@@ -15,54 +15,51 @@ import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.enumeration.ValueType;
 import fixture.owl.parser.FeaToOntoFixture;
 import fixture.owl.reasoner.RulesAnalyser;
-import fixture.owl.utils.OWLUtils;
-import fixture.owl.utils.OntoHelper;
-import fixture.owl.utils.Utils;
 
 public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException, InstantiationException, IllegalAccessException, ClassNotFoundException {
-//		runFeaToOntoFixtureTest();
+		runFeaToOntoFixtureTest();
 		runRulesAnalyser();
 //		runCoung();
 	}
-
-
+	
+	
 	public static void runFeaToOntoFixtureTest() {
 		
 		FeaToOntoFixture fixture = new FeaToOntoFixture();
 		
-		Attribute attribute = new Attribute("ATT1");
+		Attribute attribute = new Attribute("ATT1",1);
 		attribute.setValueType(ValueType.TBOOLEAN);
 		
-		Attribute attribute2 = new Attribute("ATT1");
+		Attribute attribute2 = new Attribute("ATT1",2);
 		attribute2.setValueType(ValueType.TINTEGER);
 		
-		Attribute attribute3 = new Attribute("ATT2");
+		Attribute attribute3 = new Attribute("ATT2",3);
 		attribute3.setValueType(ValueType.TINTEGER);
 		
-		Attribute attribute4 = new Attribute("ATT2");
+		Attribute attribute4 = new Attribute("ATT2",4);
 		attribute4.setValueType(ValueType.TINTEGER);
 		
-		Feature f1 = new RootFeature("RF");
+		Feature f1 = new RootFeature("RF",5);
 		
-		Feature f2 = new VariationTwo("VT1");
-		f2.addAttribute(attribute);
-		f2.addAttribute(attribute2);
+		Feature f2 = new VariationTwo("VT1",6);
+//		f2.addAttribute(attribute);
+//		f2.addAttribute(attribute2);
 		
-		Feature f3 = new MandatoryFeature("MF");
-		f3.addAttribute(attribute3);
-		f3.addAttribute(attribute4);
+		Feature f3 = new MandatoryFeature("MF",7);
+//		f3.addAttribute(attribute3);
+//		f3.addAttribute(attribute4);
 		
-		Feature f4 = new OptionalFeature("OF1");
-		Feature f5 = new OptionalFeature("OF2");
-		Feature f6 = new OptionalFeature("OF3");
-		Feature f7 = new OptionalFeature("OF3");
+		Feature f4 = new OptionalFeature("OF1",8);
+		Feature f5 = new OptionalFeature("OF2",9);
+		Feature f6 = new OptionalFeature("OF3",10);
+		Feature f7 = new OptionalFeature("OF3",11);
 		
-		Feature f8 = new VariationTwo("VT2");
-		Feature f9 = new GroupedFeature("GF1");
-		Feature f10 = new GroupedFeature("GF2");
-		Feature f11 = new GroupedFeature("GF3");
+		Feature f8 = new VariationTwo("VT2",12);
+		Feature f9 = new GroupedFeature("GF1",13);
+		Feature f10 = new GroupedFeature("GF2",14);
+		Feature f11 = new GroupedFeature("GF3",15);
 //		Feature f1 = new RootFeature("RootFeatureA");
 //		Feature f2 = new VariationTwo("VariationTwoB");
 //		Feature f3 = new MandatoryFeature("MandatoryFeatureC");
@@ -92,8 +89,7 @@ public class FixtureTwoMainRun {
 		f8.addChild(f10);
 		f8.addChild(f11);
 		
-		
-		SPL spl = new SPL("TESTE", (RootFeature) f1);
+		SPL spl = new SPL("TESTE", 13, (RootFeature) f1);
 		spl.addElement(f1);
 		spl.addElement(f2);
 		spl.addElement(f3);
@@ -115,13 +111,13 @@ public class FixtureTwoMainRun {
 		analyser.run();
 	}
 	
-	public static void runCoung() throws OWLOntologyCreationException {
-		OntoHelper ontoHelper = new OntoHelper();
-		ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
-		int countFromOntology = OWLUtils.getInstance(ontoHelper).getCountFromOntology();
-		System.out.println("OI? " + countFromOntology);
-		OWLUtils.getInstance(ontoHelper).addMaxIdCountToOntology();
-		ontoHelper.saveAndRemoveOntology();
-	}
+//	public static void runCoung() throws OWLOntologyCreationException {
+//		OntoHelper ontoHelper = new OntoHelper();
+//		ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
+//		int countFromOntology = OWLUtils.getInstance(ontoHelper).getCountFromOntology();
+//		System.out.println("OI? " + countFromOntology);
+//		OWLUtils.getInstance(ontoHelper).addMaxIdCountToOntology();
+//		ontoHelper.saveAndRemoveOntology();
+//	}
 	
 }

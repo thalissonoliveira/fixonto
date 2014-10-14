@@ -14,8 +14,8 @@ public class LogicalAction extends Action {
 		super();
 	}
 
-	public LogicalAction(String name) {
-		super(name);
+	public LogicalAction(String name, int id) {
+		super(name, id);
 	}
 	
 	public void setLogicalActionOperator(int logicalActionOperator) {

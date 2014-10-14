@@ -7,8 +7,12 @@ public class Variant implements VariationPoint, FeaturedElement {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	@Override
+	public int getId() {
+		return 0;
 	}
 
 	@Override

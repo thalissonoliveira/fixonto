@@ -19,7 +19,7 @@ import fixture.owl.reasoner.RulesAnalyser;
 public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException, InstantiationException, IllegalAccessException, ClassNotFoundException {
-		runFeaToOntoFixtureTest();
+//		runFeaToOntoFixtureTest();
 		runRulesAnalyser();
 //		runCoung();
 	}
@@ -44,7 +44,7 @@ public class FixtureTwoMainRun {
 		Feature f1 = new RootFeature("RF",5);
 		
 		Feature f2 = new VariationTwo("VT1",6);
-//		f2.addAttribute(attribute);
+		f2.addAttribute(attribute);
 //		f2.addAttribute(attribute2);
 		
 		Feature f3 = new MandatoryFeature("MF",7);

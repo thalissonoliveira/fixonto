@@ -23,8 +23,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLClass gfr1OWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE);
 			OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
-//			pelletReasoner.flush();
-//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, gfr1OWLClass, hasEqualNameObjectProperty);
 		}
 		
@@ -43,8 +41,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLClass gfr2OWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_ATTRIBUTE_RULE);
 			OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
-//			pelletReasoner.flush();
-//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, gfr2OWLClass, hasEqualNameObjectProperty);
 
 		}
@@ -53,8 +49,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		public SWRLRule getRule(OntoHelper ontoHelper) {
 			String ruleString = "Feature(?x) ^ hasAttribute(?x,?m) ^ hasAttribute(?x,?n) ^ hasName(?m,?k) ^ hasName(?n,?l) ^ fix:equalname(?m,?n,?k,?l) -> hasEqualName(?m,?n) ^ GFR2(?x)";
 			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
-//			ontoHelper.saveOntology();
-//			ontoHelper.getManager().applyChange(new AddAxiom(ontoHelper.getMetaOntology(), rule));
 			return rule;
 		}
 	},
@@ -62,8 +56,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLClass parentalInconsistencyOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY);
-//			pelletReasoner.flush();
-//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, parentalInconsistencyOWLClass);
 		}
 		
@@ -79,8 +71,6 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 			OWLClass cicleOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION);
 			OWLObjectProperty hasCicleObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_CICLE);
-//			pelletReasoner.flush();
-//			ontoHelper.saveOntology();
 			return SWRLErrorBuilder.build(this, pelletReasoner, cicleOWLClass, hasCicleObjectProperty);
 		}
 		

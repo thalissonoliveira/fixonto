@@ -21,6 +21,7 @@ import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
 
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
+import fixture.owl.swrl.parser.SWRLRuleStringParser;
 
 /**
  * 
@@ -47,7 +48,8 @@ public class OntoHelper {
 		this.pathSaveOntology = Utils.SPLiSEM_OUTPUT_PATH;
 		this.prefixOWLOntologyFormat = createtPrefixOWLOntologyFormat();
 		
-		loadRules();
+//		loadRules();
+		loadRulesFromFile();
 		
 		System.out.println("[FIXTURE2][LOG] - temp Meta Ontology deleted? : " + file.delete());
 		
@@ -120,6 +122,39 @@ public class OntoHelper {
 			System.out.println("--> " + exx + "\n");
 		}
 		return file;
+	}
+	
+	private synchronized void loadRulesFromFile() throws URISyntaxException {
+		
+			String name = "/resources/rules.fix";
+
+			InputStream is = getClass().getResourceAsStream(name);
+
+			if (is == null) {
+				System.out.println("UNABLE to load " + name + "\n");
+				return;
+			}
+			
+			
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			System.out.println("## reading rules, please wait ##");
+			String ruleStr;
+
+			try {
+				while ((ruleStr = br.readLine()) != null) {
+					ruleStr = ruleStr.trim();
+					int len = ruleStr.length();
+					if (len > 0) {
+						SWRLRule swrlRule = new SWRLRuleStringParser(this).parse(ruleStr);
+						this.getManager().applyChange(new AddAxiom(this.getMetaOntology(), swrlRule));
+						this.saveOntology();
+					}
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			
 	}
 	
 	private synchronized void load(BufferedReader br, Formatter formatter) {

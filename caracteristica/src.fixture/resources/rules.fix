@@ -1,0 +1,6 @@
+Feature(?x) ^ Feature(?y) ^ hasName(?x,?n) ^ hasName(?y,?m) ^ fix:equalname(?x,?y,?n,?m) -> hasEqualName(?x,?y) ^ GFR1(?x)
+Feature(?x) ^ hasAttribute(?x,?m) ^ hasAttribute(?x,?n) ^ hasName(?m,?k) ^ hasName(?n,?l) ^ fix:equalname(?m,?n,?k,?l) -> hasEqualName(?m,?n) ^ GFR2(?x)
+hasChildFeature(?x,?x) -> ParentalInconsistency(?x)
+hasFatherFeature(?x,?y) ^ hasFatherFeature(?y,?x) -> hasCicle(?x,?y) ^ GFR3(?x)
+MandatoryFeature(?x) ^ hasFatherFeature min 1 Feature(?x) ^ hasFatherFeature max 1 Feature(?x) -> GFR4(?x)
+Attribute(?x) ^ hasChildFeature min 1 Feature(?x) ->  GFR4(?x)

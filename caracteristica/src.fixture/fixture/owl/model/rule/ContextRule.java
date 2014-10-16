@@ -1,7 +1,11 @@
 package fixture.owl.model.rule;
 
 
-
+/**
+ * 
+ * @author thalissonoliveira
+ *
+ */
 public class ContextRule extends Rule {
 	
 	private Event event;

@@ -73,6 +73,9 @@
         <Class IRI="#GFR1"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#GFR10"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#GFR2"/>
     </Declaration>
     <Declaration>
@@ -80,6 +83,21 @@
     </Declaration>
     <Declaration>
         <Class IRI="#GFR4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR6"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR7"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR8"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GFR9"/>
     </Declaration>
     <Declaration>
         <Class IRI="#GroupedFeature"/>
@@ -288,6 +306,10 @@
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#GFR10"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#GFR2"/>
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
@@ -297,6 +319,26 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#GFR4"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR5"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR6"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR7"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR8"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GFR9"/>
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
@@ -520,11 +562,11 @@
         <DataProperty IRI="#hasValueType"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;integer">0</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;integer">3</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>

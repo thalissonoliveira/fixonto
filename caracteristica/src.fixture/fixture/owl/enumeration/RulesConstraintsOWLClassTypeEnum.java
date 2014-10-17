@@ -100,6 +100,75 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			SWRLRule rule = new SWRLRuleStringParser(ontoHelper).parse(ruleString);
 			return rule;
 		}
+	},
+	
+	GFR5 (6, "",  "GFR5", "", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			return null;
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			return null;
+		}
+	},
+	GFR6 (6, "",  "GFR6", "", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			return null;
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			return null;
+		}
+	},
+	GFR7 (6, "",  "GFR7", "", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			return null;
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			return null;
+		}
+	},
+//	GFR8 (6, "",  "GFR8", "", "") {
+//		@Override
+//		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+//			return null;
+//		}
+//		
+//		@Override
+//		public SWRLRule getRule(OntoHelper ontoHelper) {
+//			return null;
+//		}
+//	},
+//	GFR9 (6, "",  "GFR9", "", "") {
+//		@Override
+//		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+//			return null;
+//		}
+//		
+//		@Override
+//		public SWRLRule getRule(OntoHelper ontoHelper) {
+//			return null;
+//		}
+//	},
+	TEST_ERROR (6, "",  "GFR8", "", "") {
+		@Override
+		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+			OWLClass uniqueRootClass = OWLClassFactory.getInstance(ontoHelper).get(this);
+			return SWRLErrorBuilder.build(this, pelletReasoner, uniqueRootClass);
+
+		}
+		
+		@Override
+		public SWRLRule getRule(OntoHelper ontoHelper) {
+			return null;
+		}
 	};
 
 	

@@ -1,4 +1,4 @@
-package caracteristica;
+package examples.code;
 
 import java.util.Map;
 import java.util.Set;

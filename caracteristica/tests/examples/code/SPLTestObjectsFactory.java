@@ -1,4 +1,4 @@
-package caracteristica;
+package examples.code;
 
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;

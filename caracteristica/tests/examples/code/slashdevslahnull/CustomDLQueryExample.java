@@ -1,4 +1,4 @@
-package caracteristica;
+package examples.code.slashdevslahnull;
 
 import java.io.BufferedReader;
 import java.io.IOException;

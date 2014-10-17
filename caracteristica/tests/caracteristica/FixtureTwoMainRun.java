@@ -4,15 +4,8 @@ import java.net.URISyntaxException;
 
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+import examples.code.SPLTestObjectsFactory;
 import fixture.owl.model.SPL;
-import fixture.owl.model.element.Attribute;
-import fixture.owl.model.element.Feature;
-import fixture.owl.model.element.GroupedFeature;
-import fixture.owl.model.element.MandatoryFeature;
-import fixture.owl.model.element.OptionalFeature;
-import fixture.owl.model.element.RootFeature;
-import fixture.owl.model.element.VariationTwo;
-import fixture.owl.model.enumeration.ValueType;
 import fixture.owl.parser.FeaToOntoFixture;
 import fixture.owl.reasoner.RulesAnalyser;
 

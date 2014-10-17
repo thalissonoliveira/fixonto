@@ -7,6 +7,7 @@ import java.util.Set;
 
 import org.coode.dlquery.DLQueryResultsSection;
 import org.coode.dlquery.DLQueryResultsSectionItem;
+import org.coode.dlquery.ResultsList;
 import org.coode.dlquery.ResultsSection;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
@@ -32,9 +33,20 @@ import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
 
-public class DlQueryTest {
+public class DLQueryEngine {
+	
+	public static class DLQueryResult {
+		
+		
+		
+	}
+	
+	
+	
+	
 	
 	public static void main(String[] args) throws OWLOntologyCreationException {
+		
     	OntoHelper ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
     	

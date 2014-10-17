@@ -26,7 +26,7 @@
 	<classpathentry kind="lib" path="lib/guava-17.0.jar"/>
 	<classpathentry kind="lib" path="lib/javassist.jar"/>
 	<classpathentry kind="lib" path="lib/jgrapht-jdk1.5-0.7.3.jar"/>
-	<classpathentry kind="lib" path="lib/org.coode.dlquery.jar"/>
+	<classpathentry kind="lib" path="lib/org.coode.dlquery.jar" sourcepath="C:/Users/thalissonoliveira/Downloads/dlquery-master/dlquery-master"/>
 	<classpathentry kind="lib" path="lib/org.protege.common.jar"/>
 	<classpathentry kind="lib" path="lib/org.protege.editor.core.application.jar"/>
 	<classpathentry kind="lib" path="lib/org.protege.editor.owl.jar"/>

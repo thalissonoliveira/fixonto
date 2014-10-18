@@ -15,13 +15,13 @@ public class ProductFeature implements ProductElement {
 
 	private ProductFeature fatherProductFeature;
 	
-	private Set<ProductFeature> daugtherProductFeature;
+	private Set<ProductFeature> childProductFeature;
 	
 	private Set<ProductAttribute> productAttribute;
 	
 	//
 	public ProductFeature() {
-		daugtherProductFeature = new HashSet<ProductFeature>();
+		childProductFeature = new HashSet<ProductFeature>();
 		productAttribute = new HashSet<ProductAttribute>();
 		
 	}
@@ -64,13 +64,12 @@ public class ProductFeature implements ProductElement {
 	}
 
 
-	public Set<ProductFeature> getDaugtherProductFeature() {
-		return daugtherProductFeature;
+	public Set<ProductFeature> getChildProductFeature() {
+		return childProductFeature;
 	}
 
-
-	public void setDaugtherProductFeature(Set<ProductFeature> daugtherProductFeature) {
-		this.daugtherProductFeature = daugtherProductFeature;
+	public void setChildProductFeature(Set<ProductFeature> childProductFeature) {
+		this.childProductFeature = childProductFeature;
 	}
 
 

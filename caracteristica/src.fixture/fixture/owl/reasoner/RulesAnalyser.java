@@ -18,34 +18,40 @@ import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
 import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
+/**
+ * 
+ * 
+ * @author thalissonoliveira
+ *
+ */
 public class RulesAnalyser {
 	
 	private OntoHelper ontoHelper;
 	
-	public void run() throws InstantiationException, IllegalAccessException, OWLOntologyCreationException, ClassNotFoundException {
+	public String run() throws InstantiationException, IllegalAccessException, OWLOntologyCreationException, ClassNotFoundException {
 		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureBuiltin(new FixtureEqualNameFeatureBuiltinHelper()));
-//		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureSWRLBuiltin(new FixtureEqualNameSWRLFunction()));
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
-    	checkRules();
+    	String message = checkRules();
     	ontoHelper.saveAndRemoveOntology();
+    	return message;
 	}
 
-	private void checkRules() {
+	private String checkRules() {
 		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
 		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 		reasoner.flush();
 		
 		ontoHelper.saveOntology();
+		
+		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
+		SWRLError[] swrlErrors = new SWRLError[rules.length];
+		int indexError = 0;
+		for (RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum : rules) {
+			swrlErrors[indexError] = rulesConstraintsOWLClassTypeEnum.execute(ontoHelper, reasoner);
+			indexError++;
+		}
 
-		SWRLError[] swrlErrors = new SWRLError[5]; 		
-//		swrlErrors[0] = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE.execute(ontoHelper, reasoner);
-//		swrlErrors[1] = RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_ATTRIBUTE_RULE.execute(ontoHelper, reasoner);
-//		swrlErrors[2] = RulesConstraintsOWLClassTypeEnum.PARENTAL_INCONSISTENCY.execute(ontoHelper, reasoner);
-//		swrlErrors[3] = RulesConstraintsOWLClassTypeEnum.CYCLICAL_FEATURE_RELATION.execute(ontoHelper, reasoner);
-		swrlErrors[4] = RulesConstraintsOWLClassTypeEnum.TEST_ERROR.execute(ontoHelper, reasoner);
-		
-		
 		System.out.println("####### CHECK IT OUT! #######");
 		
 		boolean hasError = false;
@@ -56,7 +62,7 @@ public class RulesAnalyser {
 				sb.append(swrlError.getDescription() + "\n");
 				hasError = true;
 			} else {
-				sb.append("GFR" + index +"[OK]" + "\n");
+				sb.append("RULE" + index +"[OK]" + "\n");
 			}
 			sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
 			index++;
@@ -67,14 +73,9 @@ public class RulesAnalyser {
 		} else {
 			System.out.println(sb.toString());
 		}
+		
+		return sb.toString();
 			
-//		OWLClass parentalInconsistencyOWLClass = executeRuleOne();
-//		reasoner.flush();
-//		ontoHelper.saveAndRemoveOntology();
-//		
-//		System.out.println("PRINTING A SIMPLE RULE AFTER");
-//		// get all instances of Person class
-//		printReasoning(reasoner, parentalInconsistencyOWLClass);
 	}
 
 	@SuppressWarnings("unused")
@@ -90,6 +91,13 @@ public class RulesAnalyser {
 			}
 			System.out.println();
 		}
+//		OWLClass parentalInconsistencyOWLClass = executeRuleOne();
+//		reasoner.flush();
+//		ontoHelper.saveAndRemoveOntology();
+//		
+//		System.out.println("PRINTING A SIMPLE RULE AFTER");
+//		// get all instances of Person class
+//		printReasoning(reasoner, parentalInconsistencyOWLClass);
 	}
 	
 }

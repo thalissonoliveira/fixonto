@@ -83,6 +83,8 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 //	};
 	},
 	UNIQUE_ROOT (5, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", "") {
+		//TODO Essa regra não consegui fazer ela funcionar com SWRL.
+		
 		@Override
 		public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
 //			String ruleString = "MandatoryFeature(?x) -> GFR4(?x)";

@@ -153,8 +153,6 @@ public class OntoHelper {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-
-			
 	}
 	
 	private synchronized void load(BufferedReader br, Formatter formatter) {

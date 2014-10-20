@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 
 import fixture.owl.model.SPL;
+import fixture.owl.model.element.Attribute;
 import fixture.owl.model.element.ContextRoot;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.element.MandatoryFeature;
@@ -22,6 +25,8 @@ import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.rule.Antecedent;
+import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
 import fixture.owl.model.rule.ContextRule;
 import fixture.owl.model.rule.Rule;
@@ -210,16 +215,20 @@ public class Utils {
 		System.out.println("Elements:");
 		for (Element element : spl.getElements()) {
 			boolean isFeature = element.isGroupedFeature() || element.isMandatoryFeature() || element.isOptionalFeature() || element.isRootFeature() || element.isVariatioTwoFeature();
-			if (isFeature) { 
-				System.out.println(">> " + element.getName());
+			if (isFeature) {
+				System.out.println(">> " + element.getName() + " " + element.getId());
 				Feature f = (Feature) element;
 				System.out.println(f.getChildrenFeatures().size() != 0 ? "Children:::" : "No children");
 				for (Feature ft : f.getChildrenFeatures()) {
 					System.out.println(ft.getName());
 				}
+				System.out.println(f.getAttributes().size() != 0 ? "Attributes:::" : "No attributes");
+				for (Attribute attribute : f.getAttributes()) {
+					System.out.println(attribute.getName());
+				}
 				System.out.println("---------------------");
 			} else {
-				System.out.println(element);
+				System.out.println("It isn't Feature: " + element.getName());
 				System.out.println("-.-.-.-.-.-.-.-.-.-.-.");
 			}
 		}
@@ -232,8 +241,25 @@ public class Utils {
 			System.out.println(rule.getName() + " - " + rule.isCompositionRule() + " - " + rule.isContextRule());
 			if (rule.isCompositionRule()) {
 				CompositionRule compoRule = (CompositionRule) rule;
-				System.out.println(compoRule.getAntecedent());
-				System.out.println(compoRule.getConsequent());
+				Antecedent antecedent = compoRule.getAntecedent();
+				Antecedent consequent = compoRule.getConsequent();
+				
+				
+//				System.out.println(antecedent);
+//				System.out.println(consequent);
+				
+				if (antecedent.isCompositionLiteral()) {
+					CompositionLiteral compo = (CompositionLiteral) antecedent;
+					System.out.println("[A]Composition LIteral: " + compo.getId() + " " + compo.getName());
+					System.out.println("[A]Featured Element from Compo Lit: " + compo.getFeaturedElement().getId() + " " + compo.getFeaturedElement().getName());
+				}
+				
+				if (consequent.isCompositionLiteral()) {
+					CompositionLiteral compo = (CompositionLiteral) consequent;
+					System.out.println("[C]Composition LIteral: " + compo.getId() + " " + compo.getName());
+					System.out.println("[C]Featured Element from Compo Lit: " + compo.getFeaturedElement().getId() + " " + compo.getFeaturedElement().getName());
+				}
+				
 			} else if(rule.isContextRule()) {
 				ContextRule contRule = (ContextRule) rule;
 				System.out.println(contRule);
@@ -241,5 +267,13 @@ public class Utils {
 			System.out.println("_._._._._._._._._._._._");
 		}
 	}
+	
+    public static String readInput() throws IOException {
+        InputStream is = System.in;
+        InputStreamReader reader;
+        reader = new InputStreamReader(is, "UTF-8");
+        BufferedReader br = new BufferedReader(reader);
+        return br.readLine();
+    }
 
 }

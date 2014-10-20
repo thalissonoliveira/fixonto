@@ -8,8 +8,8 @@ public class OptionalFeature extends Feature implements FeaturedElement {
 		super();
 	}
 
-	public OptionalFeature(String name, int id) {
-		super(name, id);
+	public OptionalFeature(String id, String name) {
+		super(id, name);
 	}
 
 	@Override

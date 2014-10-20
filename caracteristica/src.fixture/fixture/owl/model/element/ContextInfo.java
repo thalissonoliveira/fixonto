@@ -9,8 +9,8 @@ public class ContextInfo extends ElementImpl {
 		super();
 	}
 
-	public ContextInfo(String name, int id) {
-		super(name, id);
+	public ContextInfo(String id, String name) {
+		super(id, name);
 	}
 	
 	public ContextEntity getFatherContextEntity() {

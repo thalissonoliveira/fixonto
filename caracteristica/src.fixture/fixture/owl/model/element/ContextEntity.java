@@ -12,8 +12,8 @@ public class ContextEntity extends ElementImpl {
 		contextInfos = new HashSet<ContextInfo>();
 	}
 
-	public ContextEntity(String name, int id) {
-		super(name, id);
+	public ContextEntity(String id, String name) {
+		super(id, name);
 		contextInfos = new HashSet<ContextInfo>();
 	}
 	

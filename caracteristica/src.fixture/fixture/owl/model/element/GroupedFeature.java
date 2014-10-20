@@ -9,8 +9,8 @@ public class GroupedFeature extends Feature implements FeaturedElement {
 		super();
 	}
 
-	public GroupedFeature(String name, int id) {
-		super(name, id);
+	public GroupedFeature(String id, String name) {
+		super(id, name);
 	}
 
 	@Override

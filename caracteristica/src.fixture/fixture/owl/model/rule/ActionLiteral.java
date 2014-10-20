@@ -13,8 +13,8 @@ public class ActionLiteral extends Action {
 		super();
 	}
 
-	public ActionLiteral(String name, int id) {
-		super(name, id);
+	public ActionLiteral(String id, String name) {
+		super(id, name);
 	}
 	
 	public void setPresence(int presence) {

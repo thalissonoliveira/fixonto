@@ -78,7 +78,7 @@
   <children xmi:type="notation:Shape" xmi:id="_Ta8_8EKCEeSLrqOa0hz7QA" type="2013" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_Ta9nAEKCEeSLrqOa0hz7QA" type="5013"/>
     <element xmi:type="caracteristica:LiteralComposicao" href="default.caracteristica#//@expressoes.3"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ta8_8UKCEeSLrqOa0hz7QA" x="360" y="865"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ta8_8UKCEeSLrqOa0hz7QA" x="375" y="865"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_1Qxq4EKCEeSLrqOa0hz7QA" type="2022" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_1QyR8EKCEeSLrqOa0hz7QA" type="5022"/>

@@ -11,9 +11,9 @@ public class Attribute extends ElementImpl {
 		super();
 	}
 	
-	public Attribute(String name, int id) {
-		super.setName(name);
+	public Attribute(String id, String name) {
 		super.setId(id);
+		super.setName(name);
 	}
 
 	@Override

@@ -7,7 +7,6 @@ import java.util.Set;
 
 import org.coode.dlquery.DLQueryResultsSection;
 import org.coode.dlquery.DLQueryResultsSectionItem;
-import org.coode.dlquery.ResultsList;
 import org.coode.dlquery.ResultsSection;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
@@ -37,13 +36,7 @@ public class DLQueryEngine {
 	
 	public static class DLQueryResult {
 		
-		
-		
 	}
-	
-	
-	
-	
 	
 	public static void main(String[] args) throws OWLOntologyCreationException {
 		

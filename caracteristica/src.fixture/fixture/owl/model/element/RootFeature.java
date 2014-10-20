@@ -7,8 +7,8 @@ public class RootFeature extends Feature {
 		super();
 	}
 
-	public RootFeature(String name, int id) {
-		super(name, id);
+	public RootFeature(String id, String name) {
+		super(id, name);
 	}
 
 	public boolean isMandatoryFeature() {

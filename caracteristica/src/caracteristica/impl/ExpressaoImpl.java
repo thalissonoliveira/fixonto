@@ -28,150 +28,146 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 public class ExpressaoImpl extends EObjectImpl implements Expressao
 {
   /**
-   * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNome()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNome()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNome()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNome()
+	 * @generated
+	 * @ordered
+	 */
   protected String nome = NOME_EDEFAULT;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ExpressaoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.EXPRESSAO;
-  }
+		return CaracteristicaPackage.Literals.EXPRESSAO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getNome()
   {
-    return nome;
-  }
+		return nome;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setNome(String newNome)
   {
-    String oldNome = nome;
-    nome = newNome;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.EXPRESSAO__NOME, oldNome, nome));
-  }
+		String oldNome = nome;
+		nome = newNome;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.EXPRESSAO__NOME, oldNome, nome));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.EXPRESSAO__NOME:
-        return getNome();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.EXPRESSAO__NOME:
+				return getNome();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.EXPRESSAO__NOME:
-        setNome((String)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.EXPRESSAO__NOME:
+				setNome((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.EXPRESSAO__NOME:
-        setNome(NOME_EDEFAULT);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.EXPRESSAO__NOME:
+				setNome(NOME_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.EXPRESSAO__NOME:
-        return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.EXPRESSAO__NOME:
+				return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nome: ");
-    result.append(nome);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nome: ");
+		result.append(nome);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ExpressaoImpl

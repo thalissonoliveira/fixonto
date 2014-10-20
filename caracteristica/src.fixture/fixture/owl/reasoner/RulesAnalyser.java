@@ -28,6 +28,7 @@ public class RulesAnalyser {
     	ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
     	checkRules();
+    	ontoHelper.saveAndRemoveOntology();
 	}
 
 	private void checkRules() {

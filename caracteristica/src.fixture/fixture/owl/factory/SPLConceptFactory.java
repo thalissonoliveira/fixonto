@@ -31,118 +31,98 @@ import fixture.owl.model.rule.RelationalExpression;
 public class SPLConceptFactory {
 	
 	private static SPLConceptFactory factory;
-	private int count;
+	
+	
 	
 	private SPLConceptFactory() {}
 	
 	public static SPLConceptFactory getFactory() {
 		if (factory == null) {
 			factory = new SPLConceptFactory();
-			factory.count = 0;
 		}
 		return factory;
 	}
 
-	public SPL createSpl(String name) {
-		count++;
-		return new SPL(name, count);
+	public SPL createSpl(String id, String name) {
+		return new SPL(id, name);
 	}
 	
-	public MandatoryFeature createMandatoryFeature(String nome) {
-		count++;
-		return new MandatoryFeature(nome, count);
+	public MandatoryFeature createMandatoryFeature(String id, String name) {
+		return new MandatoryFeature(id, name);
 	}
 	
-	public OptionalFeature createOptionalFeature(String nome) {
-		count++;
-		return new OptionalFeature(nome, count);
+	public OptionalFeature createOptionalFeature(String id, String name) {
+		return new OptionalFeature(id, name);
 	}
 	
-	public RootFeature createRootFeature(String nome) {
-		count++;
-		return new RootFeature(nome, count);
+	public RootFeature createRootFeature(String id, String name) {
+		return new RootFeature(id, name);
 	}
 	
-	public VariationTwo createVariationTwo(String nome) {
-		count++;
-		return new VariationTwo(nome, count);
+	public VariationTwo createVariationTwo(String id, String name) {
+		return new VariationTwo(id, name);
 	}
 	
-	public GroupedFeature createGroupedFeature(String nome) {
-		count++;
-		return new GroupedFeature(nome, count);
+	public GroupedFeature createGroupedFeature(String id, String name) {
+		return new GroupedFeature(id, name);
 	}
 	
-	public Attribute createAttribute(String name) {
-		count++;
-		return new Attribute(name, count);
+	public Attribute createAttribute(String id, String name) {
+		return new Attribute(id, name);
 	}
 	
-	public ContextRoot createContextRoot(String name) {
-		count++;
-		return new ContextRoot(name, count);
+	public ContextRoot createContextRoot(String id, String name) {
+		return new ContextRoot(id, name);
 	}
 	
-	public ContextEntity createContextEntity(String name) {
-		count++;
-		return new ContextEntity(name, count);
+	public ContextEntity createContextEntity(String id, String name) {
+		return new ContextEntity(id, name);
 	}
 	
-	public ContextInfo createContextInfo(String name) {
-		count++;
-		return new ContextInfo(name, count);
+	public ContextInfo createContextInfo(String id, String name) {
+		return new ContextInfo(id, name);
 	}
 	
-	public CompositionRule createCompositionRule(String name) {
-		count++;
-		return new CompositionRule(name, count);
+	public CompositionRule createCompositionRule(String id, String name) {
+		return new CompositionRule(id, name);
 	}
 	
-	public ContextRule createContextRule(String name) {
-		count++;
-		return new ContextRule(name, count);
+	public ContextRule createContextRule(String id, String name) {
+		return new ContextRule(id, name);
 	}
 	
-	public LogicalExpression createLogicalExpression(String name) {
-		count++;
-		return new LogicalExpression(name, count);
+	public LogicalExpression createLogicalExpression(String id, String name) {
+		return new LogicalExpression(id, name);
 	}
 	
 	
-	public CompositionLiteral createCompositionLiteral(String name) {
-		count++;
-		return new CompositionLiteral(name, count);
+	public CompositionLiteral createCompositionLiteral(String id, String name) {
+		return new CompositionLiteral(id, name);
 	}
 	
-	public RelationalExpression createRelationalExpression(String name) {
-		count++;
-		return new RelationalExpression(name, count);
+	public RelationalExpression createRelationalExpression(String id, String name) {
+		return new RelationalExpression(id, name);
 	}
 	
-	public LogicalEvent createLogicalEvent(String name) {
-		count++;
-		return new LogicalEvent(name, count);
+	public LogicalEvent createLogicalEvent(String id, String name) {
+		return new LogicalEvent(id, name);
 	}
 	
-	public RelationalEvent createRelationalEvent(String name) {
-		count++;
-		return new RelationalEvent(name, count);
+	public RelationalEvent createRelationalEvent(String id, String name) {
+		return new RelationalEvent(id, name);
 	}
 	
-	public LogicalAction createLogicalAction(String name) {
-		count++;
-		return new LogicalAction(name, count);
+	public LogicalAction createLogicalAction(String id, String name) {
+		return new LogicalAction(id, name);
 	}
 	
-	public ActionLiteral createActionLiteral(String name) {
-		count++;
-		return new ActionLiteral(name, count);
+	public ActionLiteral createActionLiteral(String id, String name) {
+		return new ActionLiteral(id, name);
 	}
 	
-	public Designate createDesignate(String name) {
-		count++;
-		return new Designate(name, count);
+	public Designate createDesignate(String id, String name) {
+		return new Designate(id, name);
 	}
-
+	
 }
 

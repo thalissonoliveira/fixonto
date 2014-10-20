@@ -7,8 +7,8 @@ public class MandatoryFeature extends Feature {
 		super();
 	}
 	
-	public MandatoryFeature(String name, int id) {
-		super(name, id);
+	public MandatoryFeature(String id, String name) {
+		super(id, name);
 	}
 
 	@Override

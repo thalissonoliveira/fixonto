@@ -9,10 +9,10 @@ public abstract class Antecedent extends Expression {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Antecedent(String name, int id) {
+	public Antecedent(String id, String name) {
 		super();
-		this.setName(name);
 		this.setId(id);
+		this.setName(name);
 	}
 	
 	public abstract boolean isCompositionLiteral();

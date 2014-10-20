@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CaracteristicaOpcionalImpl extends CaracteristicaImpl implements CaracteristicaOpcional
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaracteristicaOpcionalImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL;
-  }
+		return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL;
+	}
 
 } //CaracteristicaOpcionalImpl

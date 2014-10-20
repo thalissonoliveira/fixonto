@@ -15,8 +15,8 @@ public class RelationalEvent extends Event {
 		super();
 	}
 
-	public RelationalEvent(String name, int id) {
-		super(name, id);
+	public RelationalEvent(String id, String name) {
+		super(id, name);
 	}
 
 	public void setRelationalOperator(int relationalOperator) {

@@ -16,8 +16,8 @@ public class CompositionLiteral extends Antecedent {
 		super();
 	}
 
-	public CompositionLiteral(String name, int id) {
-		super(name, id);
+	public CompositionLiteral(String id, String name) {
+		super(id, name);
 	}
 	
 	public void setFeaturedElement(Nameable featuredElement) {

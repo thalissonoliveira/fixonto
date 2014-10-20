@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<caracteristica:LPS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:caracteristica="caracteristica" sistema="//@elementos.0" nome="">
+<caracteristica:LPS xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:caracteristica="caracteristica" sistema="//@elementos.0" nome="SPL">
   <elementos xsi:type="caracteristica:CaracteristicaRaiz" nome="Root" caracteristicaFilha="//@elementos.1 //@elementos.2" LpsDoSistema="/"/>
   <elementos xsi:type="caracteristica:CaracteristicaMandatoria" nome="MobileDevice" caracteristicaPai="//@elementos.0" caracteristicaFilha="//@elementos.3 //@elementos.4"/>
   <elementos xsi:type="caracteristica:CaracteristicaMandatoria" nome="ContexManager" caracteristicaPai="//@elementos.0" atributo="//@elementos.10"/>

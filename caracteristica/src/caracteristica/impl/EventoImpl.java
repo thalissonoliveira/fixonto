@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class EventoImpl extends ExpressaoImpl implements Evento
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected EventoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.EVENTO;
-  }
+		return CaracteristicaPackage.Literals.EVENTO;
+	}
 
 } //EventoImpl

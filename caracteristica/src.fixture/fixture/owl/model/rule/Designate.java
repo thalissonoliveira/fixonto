@@ -15,8 +15,8 @@ public class Designate extends Action {
 		super();
 	}
 
-	public Designate(String name, int id) {
-		super(name, id);
+	public Designate(String id, String name) {
+		super(id, name);
 	}
 	
 	public void setValueType(int valueType) {

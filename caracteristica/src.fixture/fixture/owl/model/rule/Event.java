@@ -6,10 +6,10 @@ public abstract class Event extends Expression {
 		super();
 	}
 	
-	public Event(String name, int id) {
+	public Event(String id, String name) {
 		super();
-		this.setName(name);
 		this.setId(id);
+		this.setName(name);
 	}
 	public abstract boolean isLogicalEvent();
 	public abstract boolean isRelationalEvent();

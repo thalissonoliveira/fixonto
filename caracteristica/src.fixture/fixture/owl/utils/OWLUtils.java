@@ -36,7 +36,6 @@ public class OWLUtils {
 	private OntoHelper ontoHelper;
 	private static OWLClassFactory owlClassFactory;
 	private static OWLObjectPropertyFactory owlObjetcPropertyFactory;
-//	public static int count;
 	
 	private OWLUtils() {}
 	
@@ -292,16 +291,16 @@ public class OWLUtils {
 		addDataPropertyAssertionToOntology(currentEventOWL, OWLDataPropertyFactory.getInstance(ontoHelper).get(OWLDataPropertyTypeEnum.HAS_VALUE), value);
 	}
 	
-	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature, Map<Integer, OWLNamedIndividual> oracle) {
+	public OWLIndividual createOWLNamedIndividualFatherFeature(Feature feature, Map<String, OWLNamedIndividual> oracle) {
 		if (feature != null && feature.getFatherFeature() != null) {
 			return createNewOWLNamedIndividual(feature.getFatherFeature(), oracle);
 		}
 		return null;
 	}
 	
-	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<Integer, OWLNamedIndividual> oracle) {
+	public OWLIndividual createNewOWLNamedIndividual(Nameable element, Map<String, OWLNamedIndividual> oracle) {
 		if (element != null) {
-			Integer id = element.getId();
+			String id = element.getId();
 			
 			if (!oracle.containsKey(id)) {
 				String name = element.getName();

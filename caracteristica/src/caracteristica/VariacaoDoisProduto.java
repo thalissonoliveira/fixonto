@@ -22,32 +22,32 @@ package caracteristica;
 public interface VariacaoDoisProduto extends ElementoDeProduto, CaracteristicaProduto
 {
   /**
-   * Returns the value of the '<em><b>Cardinalidade Maxima</b></em>' attribute.
-   * The literals are from the enumeration {@link caracteristica.CardinalidadeMaxima}.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Cardinalidade Maxima</b></em>' attribute.
+	 * The literals are from the enumeration {@link caracteristica.CardinalidadeMaxima}.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Cardinalidade Maxima</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Cardinalidade Maxima</em>' attribute.
-   * @see caracteristica.CardinalidadeMaxima
-   * @see #setCardinalidadeMaxima(CardinalidadeMaxima)
-   * @see caracteristica.CaracteristicaPackage#getVariacaoDoisProduto_CardinalidadeMaxima()
-   * @model
-   * @generated
-   */
+	 * @return the value of the '<em>Cardinalidade Maxima</em>' attribute.
+	 * @see caracteristica.CardinalidadeMaxima
+	 * @see #setCardinalidadeMaxima(CardinalidadeMaxima)
+	 * @see caracteristica.CaracteristicaPackage#getVariacaoDoisProduto_CardinalidadeMaxima()
+	 * @model
+	 * @generated
+	 */
   CardinalidadeMaxima getCardinalidadeMaxima();
 
   /**
-   * Sets the value of the '{@link caracteristica.VariacaoDoisProduto#getCardinalidadeMaxima <em>Cardinalidade Maxima</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link caracteristica.VariacaoDoisProduto#getCardinalidadeMaxima <em>Cardinalidade Maxima</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Cardinalidade Maxima</em>' attribute.
-   * @see caracteristica.CardinalidadeMaxima
-   * @see #getCardinalidadeMaxima()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Cardinalidade Maxima</em>' attribute.
+	 * @see caracteristica.CardinalidadeMaxima
+	 * @see #getCardinalidadeMaxima()
+	 * @generated
+	 */
   void setCardinalidadeMaxima(CardinalidadeMaxima value);
 
 } // VariacaoDoisProduto

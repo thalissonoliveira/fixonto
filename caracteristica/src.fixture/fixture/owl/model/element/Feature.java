@@ -19,10 +19,10 @@ public abstract class Feature extends ElementImpl {
 		this.attributes = new HashSet<Attribute>();
 	}
 	
-	public Feature(String name, int id) {
+	public Feature(String id, String name) {
 		this();
-		setName(name);
 		setId(id);
+		setName(name);
 	}
 	
 	public void addChild(Feature childFeature) {

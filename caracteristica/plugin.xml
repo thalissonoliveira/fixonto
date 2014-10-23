@@ -72,5 +72,12 @@
             defaultName="RulesAnalyser">
       </tool>
    </extension>
+   <extension
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="fixture.owl.dlquery.DLQueryEngine"
+            defaultName="DLQueryEngine">
+      </tool>
+   </extension>
 
 </plugin>

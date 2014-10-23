@@ -34,13 +34,10 @@ public class FixtureTwoMainRun {
                 break;
             }
             
-        	OntoHelper ontoHelper = new OntoHelper();
-        	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
 
-            DLQueryEngine.executeDLQuery(classExpression, ontoHelper);
+            new DLQueryEngine().executeDLQuery(classExpression);
             System.out.println();
             System.out.println();
-            ontoHelper.saveAndRemoveOntology();
         }
     }
 	

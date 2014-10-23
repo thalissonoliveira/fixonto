@@ -10,6 +10,7 @@ import org.coode.dlquery.DLQueryResultsSectionItem;
 import org.coode.dlquery.ResultsSection;
 import org.coode.owlapi.manchesterowlsyntax.ManchesterOWLSyntaxEditorParser;
 import org.semanticweb.owlapi.expression.OWLEntityChecker;
+import org.semanticweb.owlapi.expression.ParserException;
 import org.semanticweb.owlapi.expression.ShortFormEntityChecker;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassExpression;
@@ -34,37 +35,16 @@ import fixture.owl.utils.Utils;
 
 public class DLQueryEngine {
 	
-	public static class DLQueryResult {
-		
-	}
 	
 	public static void main(String[] args) throws OWLOntologyCreationException {
 		
-    	OntoHelper ontoHelper = new OntoHelper();
-    	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
+		String resultDLQuery = new DLQueryEngine().executeDLQuery("Feature and hasFatherFeature some RootFeature");
+    	System.out.println(resultDLQuery);
     	
-    	List<Object> setOWLClassExpression = executeDLQuery("Feature and hasFatherFeature some RootFeature", ontoHelper);
-    	
-    	for (Object object : setOWLClassExpression) {
-    		
-    		if (object instanceof DLQueryResultsSectionItem) {
-    			DLQueryResultsSectionItem resultado = (DLQueryResultsSectionItem) object;
-    			
-    			OWLObject owlObject = resultado.getOWLObject();
-    			System.out.println("1: " + owlObject.getSignature());
-    			
-    		} else if (object instanceof DLQueryResultsSection) {
-    			DLQueryResultsSection resultado = (DLQueryResultsSection) object;
-    			System.out.println("2: " + resultado.getName());
-    			
-    		}
-    		
-			System.out.println(object);
-		}
 	}
 	
 	
-	public static List<Object> setOWLClassExpression(String classExpressionString, OntoHelper ontoHelper) {
+	public List<Object> setOWLClassExpression(String classExpressionString, OntoHelper ontoHelper) {
 		
 		OWLClassExpression description = parseClassExpression(classExpressionString, ontoHelper);
 		
@@ -122,7 +102,7 @@ public class DLQueryEngine {
         return data;
     }
 	
-	public static List<Object> executeDLQuery(String classExpressionString, OntoHelper ontoHelper) {
+	private List<Object> executeDLQuery(String classExpressionString, OntoHelper ontoHelper) {
 		
 		OWLClassExpression description = parseClassExpression(classExpressionString, ontoHelper);
 		
@@ -141,6 +121,52 @@ public class DLQueryEngine {
     }
 	
 	
+	
+	public String executeDLQuery(String classExpressionString) throws OWLOntologyCreationException {
+    	OntoHelper ontoHelper = new OntoHelper();
+    	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
+    	
+    	try {
+	    	List<Object> setOWLClassExpression = executeDLQuery(classExpressionString, ontoHelper);
+	    	
+	    	StringBuilder result = null;
+	    	
+	    	if (!setOWLClassExpression.isEmpty()) {
+	    		result = new StringBuilder();
+	    	}
+	    	
+	    	
+	    	for (Object object : setOWLClassExpression) {
+	    		
+	    		if (object instanceof DLQueryResultsSectionItem) {
+	    			DLQueryResultsSectionItem resultado = (DLQueryResultsSectionItem) object;
+	    			
+	    			OWLObject owlObject = resultado.getOWLObject();
+	    			result.append("1: " + owlObject.getSignature());
+	    			result.append("\n");
+//	    			System.out.println("1: " + owlObject.getSignature());
+	    			
+	    		} else if (object instanceof DLQueryResultsSection) {
+	    			DLQueryResultsSection resultado = (DLQueryResultsSection) object;
+	    			result.append("2: " + resultado.getName());
+	    			result.append("\n");
+//	    			System.out.println("2: " + resultado.getName());
+	    			
+	    		}
+	    		
+//				System.out.println(object);
+			}
+	
+	    	ontoHelper.saveAndRemoveOntology();
+	    	
+	    	return result == null ? null : result.toString();
+    	} catch (ParserException e) {
+    		return "Erro ao executar a DL Query. Verificar se a sintaxe está incorreta ou se foi informado algum elemento (classe, propriedade, indivíduo) errado.";
+    	}
+    	
+	}
+	
+	
 	/**
 	 * Thanks Google and thanks Matthew Horridge  
 	 * 
@@ -151,7 +177,7 @@ public class DLQueryEngine {
 	 * @param ontoHelper
 	 * @return
 	 */
-	private static OWLClassExpression parseClassExpression(String classExpressionString, OntoHelper ontoHelper) {
+	private OWLClassExpression parseClassExpression(String classExpressionString, OntoHelper ontoHelper) {
 		Set<OWLOntology> importsClosure = ontoHelper.getMetaOntology().getImportsClosure();
 		
 		ShortFormProvider shortFormProvider = new SimpleShortFormProvider();

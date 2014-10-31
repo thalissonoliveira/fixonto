@@ -74,5 +74,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.epsilon.common.dt;bundle-version="0.9.1",
  org.sat4j.core;bundle-version="2.3.0",
  org.eclipse.draw2d;bundle-version="3.7.0",
- org.eclipse.gmf.runtime.draw2d.ui;bundle-version="1.5.0"
+ org.eclipse.gmf.runtime.draw2d.ui;bundle-version="1.5.0",
+ org.eclipse.emf.ecore.xmi
 Bundle-ActivationPolicy: lazy

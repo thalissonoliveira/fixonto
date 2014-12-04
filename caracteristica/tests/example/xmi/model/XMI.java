@@ -3,7 +3,7 @@ package example.xmi.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class XMI {
+public class XMI implements XMIModel {
 
 	private Set<XMIContent> xmiContents;
 

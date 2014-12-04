@@ -1,6 +1,6 @@
 package example.xmi.model;
 
-public class UMLTaggedValue {
+public class UMLTaggedValue implements XMIModel {
 	
 	private String xmiId;
 	private String name;

@@ -3,7 +3,7 @@ package example.xmi.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UMLNode {
+public class UMLNode implements XMIModel {
 	
 	private String xmiId;
 	private String name;
@@ -70,8 +70,7 @@ public class UMLNode {
 		return elementTaggedValues;
 	}
 
-	public void setElementTaggedValues(
-			Set<UMLModelElementTaggedValue> elementTaggedValues) {
+	public void setElementTaggedValues(Set<UMLModelElementTaggedValue> elementTaggedValues) {
 		this.elementTaggedValues = elementTaggedValues;
 	}
 

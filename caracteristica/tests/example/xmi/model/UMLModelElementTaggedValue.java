@@ -3,7 +3,7 @@ package example.xmi.model;
 import java.util.HashSet;
 import java.util.Set;
 
-public class UMLModelElementTaggedValue {
+public class UMLModelElementTaggedValue implements XMIModel {
 
 	private Set<UMLTaggedValue> taggedValues;
 

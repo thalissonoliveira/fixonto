@@ -19,4 +19,34 @@ public class XMI implements XMIModel {
 		this.xmiContents = xmiContents;
 	}
 	
+	@Override
+	public boolean isUmlModelElementTaggedValue() {
+		return false;
+	}
+
+	@Override
+	public boolean isUmlNode() {
+		return false;
+	}
+
+	@Override
+	public boolean isUmlTaggedValue() {
+		return false;
+	}
+
+	@Override
+	public boolean isUmlTaggedValueDataValue() {
+		return false;
+	}
+
+	@Override
+	public boolean isXmi() {
+		return true;
+	}
+
+	@Override
+	public boolean isXmiContent() {
+		return false;
+	}
+
 }

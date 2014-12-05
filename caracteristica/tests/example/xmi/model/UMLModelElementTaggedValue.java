@@ -18,6 +18,35 @@ public class UMLModelElementTaggedValue implements XMIModel {
 	public void setTaggedValues(Set<UMLTaggedValue> taggedValues) {
 		this.taggedValues = taggedValues;
 	}
-	
-	
+
+	@Override
+	public boolean isUmlModelElementTaggedValue() {
+		return true;
+	}
+
+	@Override
+	public boolean isUmlNode() {
+		return false;
+	}
+
+	@Override
+	public boolean isUmlTaggedValue() {
+		return false;
+	}
+
+	@Override
+	public boolean isUmlTaggedValueDataValue() {
+		return false;
+	}
+
+	@Override
+	public boolean isXmi() {
+		return false;
+	}
+
+	@Override
+	public boolean isXmiContent() {
+		return false;
+	}
+
 }

@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
+import java.util.TreeSet;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -24,77 +26,66 @@ import example.xmi.model.XMIModel;
 
 public class UbifexXMIReader {
 	
-	private Map<XMIContent, Map<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>> xmiMap;
-	
-	private class ParentNode {
-		
-		private Node node;
-		private XMIModel xmiModel;
-		
-		public ParentNode(Node node, XMIModel xmiModel) {
-			this.node = node;
-			this.xmiModel = xmiModel;
-		}
-
-		public Node getNode() {
-			return node;
-		}
-
-		public XMIModel getXmiModel() {
-			return xmiModel;
-		}
-		
-	}
-	
+	private Map<XMI, Map<XMIContent, Map<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>>> xmiMap; 
 	
 	private XMI xmi;
 	
-	public static void main(String[] args) throws Exception {
-		new UbifexXMIReader().read(XMIUtils.FEATURE_MODEL_PATH);
+	public UbifexXMIReader() {
+		TreeMap<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>> treeMap3 = new TreeMap<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>();
+		TreeMap<UMLTaggedValue, Set<UMLTaggedValueDataValue>> treeMap4 = new TreeMap<UMLTaggedValue, Set<UMLTaggedValueDataValue>>();
+		LinkedHashSet<UMLTaggedValueDataValue> linkedHashSet = new LinkedHashSet<UMLTaggedValueDataValue>();
+		
+		xmiMap = new TreeMap<XMI, Map<XMIContent, Map<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>>>();
 	}
-	
-	private void processNode(Node node, ParentNode xmiParentNode) {
+
+	private void processUmlTaggedValudeDataValue(Node umlTaggedValudeDataValueNode) {
+		Node umlTaggedValueNode = umlTaggedValudeDataValueNode.getParentNode();
+		Node umLModelElementTaggedValueNode = umlTaggedValueNode.getParentNode();
+		Node umLNode = umLModelElementTaggedValueNode.getParentNode();
+		Node xmiContentNode = umLNode.getParentNode();
+		Node xmiNode = xmiContentNode.getParentNode();
 		
-		XMIModel xmiModel = XMIModelFactory.newXmiModel(node.getNodeName());
-		
-		if (xmiParentNode != null) {
-			refreshMap(xmiModel, xmiParentNode);
-		} else {
-			if (xmiModel.isXmi()) {
-				xmi = (XMI) xmiModel;
-			} else {
-				throw new RuntimeException();
-			}
-		}
-		
-		NodeList childNodes = node.getChildNodes();
-		int nodeLength = childNodes.getLength();
-		
-		if (nodeLength > 0) {
-			for (int i = 0; i < nodeLength; i++) {
-				Node childNode = childNodes.item(i);
-				String nodeName = childNode.getNodeName();
-				XMIModel newXmiModel = XMIModelFactory.newXmiModel(nodeName);
-				processNode(childNode, new ParentNode(childNode, xmiModel));
-			}
-		} else {
-			Set<UMLTaggedValueDataValue> values = new LinkedHashSet<UMLTaggedValueDataValue>();
-			UMLTaggedValueDataValue value = new UMLTaggedValueDataValue();
-			value.setValue(node.getTextContent());
-			values.add(value);
-		}
+//		refreshMap(xmiModel);
 		
 	}
 
-	private void refreshMap(XMIModel xmiModel, ParentNode xmiParentNode) {
-		if (xmiModel.isXmi()) {
-			if (xmiParentNode == null) {
-				
-			}
-		} else if (xmiModel.isXmiContent()) {
-			
-		}
-	}
+//	private void refreshMap(XMIModel xmiModel) {
+//		
+//		if (xmiModel.isXmi()) {
+//			xmi = (XMI) xmiModel;
+//			if (!xmiMap.containsKey(xmi)) {
+//				xmiMap.put(xmi, new TreeMap<XMIContent, Map<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>>());
+//			} else {
+//				throw new RuntimeException();
+//			}
+//		} else if (xmiModel.isXmiContent()) {
+//			XMIContent xmiContext = (XMIContent) xmiModel;
+//			boolean containsXmi = xmiMap.containsKey(xmiContext.getParent());
+//			if (containsXmi) {
+//				boolean containsXmiContext = xmiMap.get(xmiContext.getParent()).containsKey(xmiContext);
+//				if (!containsXmiContext) {
+//					xmiMap.get(xmiContext.getParent()).put(xmiContext, new TreeMap<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>());
+//				} else {
+//					throw new RuntimeException();
+//				}
+//			} else {
+//				throw new RuntimeException();
+//			}
+//		} else if (xmiModel.isUmlNode()) {
+//			UMLNode xmiContext = (UMLNode) xmiModel;
+//			boolean containsXmi = xmiMap.containsKey(xmiContext.getParent());
+//			if (containsXmi) {
+//				boolean containsXmiContext = xmiMap.get(xmiContext.getParent()).containsKey(xmiContext);
+//				if (!containsXmiContext) {
+//					xmiMap.get(xmiContext.getParent()).put(xmiContext, new TreeMap<UMLNode, Map<UMLModelElementTaggedValue, Map<UMLTaggedValue, Set<UMLTaggedValueDataValue>>>>());
+//				} else {
+//					throw new RuntimeException();
+//				}
+//			} else {
+//				throw new RuntimeException();
+//			}
+//		}
+//	}
 
 	public void read(String fileAddress) throws Exception {
 		DocumentBuilderFactory docBuilderFactory = DocumentBuilderFactory.newInstance();
@@ -105,7 +96,11 @@ public class UbifexXMIReader {
 		documentElement.normalize();
 		
 		
-		processNode(documentElement, null);
+		NodeList elementsUMLTaggedValueDataValue = doc.getElementsByTagName(XMIFeatureModelTags.UML_TAGGED_VALUE_DATA_VALUE.getTagName());
+		for (int i = 0; i < elementsUMLTaggedValueDataValue.getLength(); i++) {
+			processUmlTaggedValudeDataValue(elementsUMLTaggedValueDataValue.item(i));
+		}
+		
 		
 		
 		//Build Node
@@ -113,7 +108,6 @@ public class UbifexXMIReader {
 //		NodeList elementsXMIContent = doc.getElementsByTagName(XMIFeatureModelTags.XMI_CONTENT.getTagName());
 //		NodeList elementsUMLTaggedValue = doc.getElementsByTagName(XMIFeatureModelTags.UML_TAGGED_VALUE.getTagName());
 //		NodeList elementsUMLModelElementTaggedValue = doc.getElementsByTagName(XMIFeatureModelTags.UML_MODEL_ELEMENT_TAGGED_VALUE.getTagName());
-//		NodeList elementsUMLTaggedValueDataValue = doc.getElementsByTagName(XMIFeatureModelTags.UML_TAGGED_VALUE_DATA_VALUE.getTagName());
 //		
 //		Set<UMLTaggedValueDataValue> processDataValue = processDataValue(elementsUMLTaggedValueDataValue);
 		

@@ -5,10 +5,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+import fixture.owl.enumeration.ModelOWLClassTypeEnum;
+import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;
@@ -48,16 +51,18 @@ import fixture.owl.utils.Utils;
  * @author thalissonoliveira
  *
  */
-public class FeaToOntoFixture {
+public class ParserFeaToOntoFixture {
 	
 	private OntoHelper ontoHelper;
 	private OWLUtils feaToOntoFixtureUtils;
 	private Map<String, OWLNamedIndividual> owlOracle;
+	private Map<String, OWLClass> owlClassOracle;
 	private Map<String, Nameable> fixtureOracle;
 		
-	public FeaToOntoFixture() {
+	public ParserFeaToOntoFixture() {
 		ontoHelper = new OntoHelper();
 		owlOracle = new HashMap<String, OWLNamedIndividual>();
+		owlClassOracle = new HashMap<String, OWLClass>();
 		fixtureOracle = new HashMap<String, Nameable>();
 	}
 	
@@ -88,6 +93,8 @@ public class FeaToOntoFixture {
 		ContextRule contextRule;
 		
 		buildOntology(feature);
+		refreshFeatures();
+		
 		
 		for (Element element : spl.getElements()) {
 			if (element.isContextRoot()) {
@@ -115,6 +122,10 @@ public class FeaToOntoFixture {
 		
 	}
 	
+	private void refreshFeatures() {
+		
+	}
+
 	private void buildOntology(ProductFeature productElement) {
 		//TODO Completar esse código.
 		@SuppressWarnings("unused")
@@ -281,22 +292,26 @@ public class FeaToOntoFixture {
 	}
 
 	private void buildOntology(Feature feature) {
-
-		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
-		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);
 		
+		
+		OWLClass createNewOLWClass = feaToOntoFixtureUtils.createNewOLWClass(feature, owlClassOracle);
+		feaToOntoFixtureUtils.addSubClassOfClassification(feature, createNewOLWClass);
+
+
+
 		Feature fatherFeature = feature.getFatherFeature();
 		if (fatherFeature != null) {
-			OWLIndividual currentFatherFeatureOwl = null;
+			
+			OWLClass currentFatherFeatureOwl = null;
 			String fatherId = fatherFeature.getId();
 			
-			if (owlOracle.containsKey(fatherId)) {
-				currentFatherFeatureOwl = owlOracle.get(fatherId);
+			if (owlClassOracle.containsKey(fatherId)) {
+				currentFatherFeatureOwl = owlClassOracle.get(fatherId);
 			} else {
-				//TODO Acho que esse código está errado, pois não há classificação da feature nesse ponto. Verificar se esse pedaço de código é chamado. Se for, ver o comportamento.
-				currentFatherFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(fatherFeature, owlOracle);
+				currentFatherFeatureOwl = feaToOntoFixtureUtils.createNewOLWClass(fatherFeature, owlClassOracle);
 			}
-			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(currentFeatureOwl, currentFatherFeatureOwl);
+			
+			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(createNewOLWClass, currentFatherFeatureOwl);
 		}
 		
 		Set<Attribute> attributes = feature.getAttributes();
@@ -305,7 +320,8 @@ public class FeaToOntoFixture {
 		for (Attribute attribute : attributes) {
 			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
 			feaToOntoFixtureUtils.addAttributeClassification(currentAttributeOwl);
-			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
+			//TODO Continuar
+//			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
 		}
 		
 		Set<Feature> childrenFeatures = feature.getChildrenFeatures();

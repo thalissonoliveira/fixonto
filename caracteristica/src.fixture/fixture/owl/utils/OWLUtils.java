@@ -16,6 +16,7 @@ import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 import fixture.owl.enumeration.ModelOWLClassTypeEnum;
 import fixture.owl.enumeration.OWLDataPropertyTypeEnum;
@@ -34,8 +35,8 @@ public class OWLUtils {
 	
 	private static OWLUtils owlUtils;
 	private OntoHelper ontoHelper;
-	private static OWLClassFactory owlClassFactory;
 	private static OWLObjectPropertyFactory owlObjetcPropertyFactory;
+	private static OWLClassFactory owlClassFactory;
 	
 	private OWLUtils() {}
 	
@@ -133,6 +134,21 @@ public class OWLUtils {
 		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
 	}
 	
+	public void addParentalRelationBetweenFeatures(OWLClass createNewOLWClass, OWLClass currentFatherFeatureOwl) {
+		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
+		
+		//TODO Continuar
+//		ontoHelper.getDataFactory().getowlobject
+		
+		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
+		AddAxiom addParentalRelationBetweenFeaturesAxiom;
+		
+//		parentalRelationBetweenFeaturesAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL1, individualOWL1, individualOWL2);
+//		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);
+//		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
+
+	}
+	
 	public void addIndividualClassification(OWLIndividual owlIndividual, FixtureOWLClassTypeEnumInterface fixtureOWLClassTypeEnumInterface) {
 		OWLClass owlClass = owlClassFactory.get(fixtureOWLClassTypeEnumInterface);
 		addEntityClassificationToOntology(owlIndividual, owlClass);
@@ -225,6 +241,22 @@ public class OWLUtils {
 			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
 		}
 	}
+	
+	public void addSubClassOfClassification(Feature feature, OWLClass owlClassFeature) {
+		if (feature.isGroupedFeature()) {
+			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.GROUPED_FEATURE));
+		} else if (feature.isOptionalFeature()) {
+			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.OPTIONAL_FEATURE));
+		} else if (feature.isRootFeature()) {
+			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.ROOT_FEATURE));
+		} else if (feature.isVariatioTwoFeature()) {
+			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.VARIATION_TWO));
+		} else if (feature.isMandatoryFeature()) {
+			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.MANDATORY_FEATURE));
+		} else {
+			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
+		}
+	}
 
 	public void addParentalRelationBetweenContextRootAndEntity(OWLIndividual currentContextRootOWL, OWLIndividual currentContextEntityOWL) {
 		OWLObjectProperty hasContextEntityProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CONTEXT_ENTITY);
@@ -312,6 +344,27 @@ public class OWLUtils {
 			return oracle.get(id);
 		}
 		return null;
+	}
+	
+	public void addSubClassOfClassification(OWLClass owlClass, OWLClass owlClass2) {
+		OWLSubClassOfAxiom owlSubClassOfAxiom = ontoHelper.getDataFactory().getOWLSubClassOfAxiom(owlClass, owlClass2);
+		ontoHelper.getManager().addAxiom(ontoHelper.getMetaOntology(), owlSubClassOfAxiom);
+	}
+
+	public OWLClass createNewOLWClass(Feature feature, Map<String, OWLClass> owlClassOracle) {
+		
+		if (feature != null) {
+			String id = feature.getId();
+			if (!owlClassOracle.containsKey(id)) {
+				OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(feature.getId(), ontoHelper.getPrefixOWLOntologyFormat());
+				owlClassOracle.put(id, owlClass);
+			}
+			
+			return owlClassOracle.get(id);
+		}
+		
+		return null;
+				
 	}
 	
 	

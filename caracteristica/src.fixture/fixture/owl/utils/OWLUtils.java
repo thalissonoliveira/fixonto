@@ -138,7 +138,7 @@ public class OWLUtils {
 		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
 		
 		//TODO Continuar
-//		ontoHelper.getDataFactory().getowlobject
+//		ontoHelper.getDataFactory().getOWLObjectAllValuesFrom(arg0, arg1);
 		
 		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
 		AddAxiom addParentalRelationBetweenFeaturesAxiom;

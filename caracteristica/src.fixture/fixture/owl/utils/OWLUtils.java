@@ -14,6 +14,7 @@ import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectAllValuesFrom;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
@@ -136,16 +137,12 @@ public class OWLUtils {
 	
 	public void addParentalRelationBetweenFeatures(OWLClass createNewOLWClass, OWLClass currentFatherFeatureOwl) {
 		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
+		OWLObjectAllValuesFrom hasFatherFeatureOwlObjectAllValuesFrom = ontoHelper.getDataFactory().getOWLObjectAllValuesFrom(hasFatherFeatureProperty, currentFatherFeatureOwl);
+		//OWLObjectAllValuesFrom = restriction type: only (universal)
+		OWLSubClassOfAxiom owlSubClassOfAxiom = ontoHelper.getDataFactory().getOWLSubClassOfAxiom(createNewOLWClass, hasFatherFeatureOwlObjectAllValuesFrom);
 		
-		//TODO Continuar
-//		ontoHelper.getDataFactory().getOWLObjectAllValuesFrom(arg0, arg1);
-		
-		OWLObjectPropertyAssertionAxiom parentalRelationBetweenFeaturesAssertion;
-		AddAxiom addParentalRelationBetweenFeaturesAxiom;
-		
-//		parentalRelationBetweenFeaturesAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL1, individualOWL1, individualOWL2);
-//		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);
-//		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
+		AddAxiom addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), owlSubClassOfAxiom);
+		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
 
 	}
 	

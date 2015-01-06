@@ -79,5 +79,12 @@
             defaultName="DLQueryEngine">
       </tool>
    </extension>
+   <extension
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="fixture.owl.parser.ParserFeaToOntoFixture"
+            defaultName="ParserFeaToOntoFixture">
+      </tool>
+   </extension>
 
 </plugin>

@@ -281,7 +281,7 @@ operation criarElementoFixture(elemento: Elemento, factoryFixture) {
 	} else if (elemento.isTypeOf(CaracteristicaOpcional)) {
 		return factoryFixture.createOptionalFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(VariacaoDois)) {
-		return factoryFixture.createVariationTwo(elemento.id, elemento.nome);
+		return factoryFixture.createVariationTwo(elemento.id, elemento.nome, elemento.cardinalidadeMaxima, elemento.cardinalidadeMinimaOr, elemento.cardinalidadeMaximaOr);
 	} else if (elemento.isTypeOf(CaracteristicaAgrupada)) {
 		return factoryFixture.createGroupedFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(RaizDeContexto)) {

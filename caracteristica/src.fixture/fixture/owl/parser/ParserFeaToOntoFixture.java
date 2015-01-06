@@ -10,8 +10,6 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
-import fixture.owl.enumeration.ModelOWLClassTypeEnum;
-import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;

@@ -8,12 +8,11 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 import examples.code.SPLTestObjectsFactory;
 import fixture.owl.dlquery.DLQueryEngine;
 import fixture.owl.model.SPL;
-import fixture.owl.parser.FeaToOntoFixture;
+import fixture.owl.parser.ParserFeaToOntoFixture;
 import fixture.owl.reasoner.RulesAnalyser;
-import fixture.owl.utils.OntoHelper;
 import fixture.owl.utils.Utils;
 
-public class FixtureTwoMainRun {
+public class FixtureTwoMainRunNewParser {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException, InstantiationException, IllegalAccessException, ClassNotFoundException, IOException {
 		runFeaToOntoFixtureTest();
@@ -43,10 +42,10 @@ public class FixtureTwoMainRun {
 	
 	public static void runFeaToOntoFixtureTest() {
 		
-		FeaToOntoFixture fixture = new FeaToOntoFixture();
+		ParserFeaToOntoFixture fixture = new ParserFeaToOntoFixture();
 		SPL spl = new SPL("100","TESTE");
 		
-		SPLTestObjectsFactory.inserirFeaturesAndCompositionRuleNaLPS(spl);
+		SPLTestObjectsFactory.inserirFeaturesAndCompositionRuleNaLPSNewParser(spl, fixture);
 		
 		fixture.run(spl);
 		

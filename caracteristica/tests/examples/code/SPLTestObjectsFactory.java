@@ -1,10 +1,10 @@
 package examples.code;
 
-import java.util.ArrayList;
-
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;
+import fixture.owl.model.element.ContextEntity;
 import fixture.owl.model.element.ContextInfo;
+import fixture.owl.model.element.ContextRoot;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.element.GroupedFeature;
 import fixture.owl.model.element.MandatoryFeature;
@@ -14,14 +14,10 @@ import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.enumeration.Presence;
 import fixture.owl.model.enumeration.RelationalOperator;
 import fixture.owl.model.enumeration.ValueType;
-import fixture.owl.model.intefaces.Element;
-import fixture.owl.model.intefaces.FeaturedElement;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
 import fixture.owl.model.rule.ContextRule;
-import fixture.owl.model.rule.Designate;
-import fixture.owl.model.rule.Event;
 import fixture.owl.model.rule.RelationalEvent;
 import fixture.owl.parser.ParserFeaToOntoFixture;
 
@@ -117,6 +113,7 @@ public class SPLTestObjectsFactory {
 	
 	public static void inserirFeaturesAndCompositionRuleNaLPSNewParser(SPL spl, ParserFeaToOntoFixture parserFeaToOntoFixture) {
 		
+		//####################### FEATURES ########################################
 		
 		Feature f1 = new RootFeature("@elementos.1","RF");
 		
@@ -151,6 +148,7 @@ public class SPLTestObjectsFactory {
 		f5.addChild(f10);
 		f5.addChild(f11);
 		
+		
 		spl.setSystem((RootFeature) f1);
 		spl.addElement(f1);
 		spl.addElement(f2);
@@ -164,6 +162,24 @@ public class SPLTestObjectsFactory {
 		spl.addElement(f10);
 		spl.addElement(f11);
 		
+
+		//####################### CONTEXT ROOT ####################################
+		
+		ContextRoot contextRoot = new ContextRoot("@contextroot","Context Root");
+		
+		ContextEntity contextEntity = new ContextEntity("@entity", "Context Entity");
+		contextEntity.setFatherContextRoot(contextRoot);
+		contextRoot.getContextEntities().add(contextEntity);
+		
+		ContextInfo contextInfo = new ContextInfo("@info", "Context Info");
+		contextInfo.setFatherContextEntity(contextEntity);
+		contextEntity.getContextInfos().add(contextInfo);
+		
+		spl.addElement(contextRoot);
+		spl.addElement(contextEntity);
+		spl.addElement(contextInfo);
+		
+		//######################## COMPOSITION RULE ################################
 		
 		CompositionLiteral antecedent = new CompositionLiteral("@elementos.21","Literal Composição");
 		antecedent.setPresence(Presence.PRESENTE);
@@ -174,32 +190,29 @@ public class SPLTestObjectsFactory {
 		consequent.setFeaturedElement(f11);
 		
 		CompositionRule compositionRule = new CompositionRule("@elementos.23","Regra de Composicao 1");
-		
 		compositionRule.setAntecedent(antecedent);
 		compositionRule.setConsequent(consequent);
 		
+		//######################## CONTEXT RULE #####################################
 		
-		ActionLiteral d = new ActionLiteral("@action1", "Action 1");
+		ActionLiteral actionLiteral = new ActionLiteral("@action1", "Action 1");
+		actionLiteral.setFeaturedElement((GroupedFeature)f11);
+		actionLiteral.setPresence(Presence.AUSENTE);
 		
-		d.setFeaturedElement((GroupedFeature)f11);
-		d.setPresence(Presence.AUSENTE);
+		RelationalEvent relationalEvent = new RelationalEvent("@event", "Event");
+		relationalEvent.setContextVariable(contextInfo);
+		relationalEvent.setRelationalOperator(RelationalOperator.IGUAL);
+		relationalEvent.setValue("2");
 		
-		RelationalEvent r = new RelationalEvent("@event", "Event");
+		ContextRule contextRule = new ContextRule("@rule.2", "Context Rule");
+		contextRule.setEvent(relationalEvent);
+		contextRule.setAction(actionLiteral);
 		
-		ContextInfo contextVariable = new ContextInfo("@infor", "");
+		spl.addRule(compositionRule);
+		spl.addRule(contextRule);
 		
+		//###########################################################################
 		
-		r.setContextVariable(contextVariable);
-		r.setRelationalOperator(RelationalOperator.IGUAL);
-		r.setValue("2");
-		Event e;
-		
-		ContextRule rule2 = new ContextRule("@rule.2", "Context Rule");
-		rule2.setEvent(r);
-		rule2.setAction(d);
-		
-		spl.getRules().add(compositionRule);
-		spl.getRules().add(rule2);
 		
 		parserFeaToOntoFixture.addToFixtureOracle(f1);
 		parserFeaToOntoFixture.addToFixtureOracle(f2);
@@ -213,8 +226,15 @@ public class SPLTestObjectsFactory {
 		parserFeaToOntoFixture.addToFixtureOracle(f10);
 		parserFeaToOntoFixture.addToFixtureOracle(f11);
 		
-		parserFeaToOntoFixture.addToFixtureOracle(contextVariable);
-		
+		parserFeaToOntoFixture.addToFixtureOracle(contextRoot);
+		parserFeaToOntoFixture.addToFixtureOracle(contextEntity);
+		parserFeaToOntoFixture.addToFixtureOracle(contextInfo);
+		parserFeaToOntoFixture.addToFixtureOracle(antecedent);
+		parserFeaToOntoFixture.addToFixtureOracle(consequent);
+		parserFeaToOntoFixture.addToFixtureOracle(compositionRule);
+		parserFeaToOntoFixture.addToFixtureOracle(actionLiteral);
+		parserFeaToOntoFixture.addToFixtureOracle(relationalEvent);
+		parserFeaToOntoFixture.addToFixtureOracle(contextRule);
 		
 	}
 

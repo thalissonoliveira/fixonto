@@ -52,6 +52,12 @@ public class SPL implements Nameable {
 		getElements().add(element);
 	}
 	
+	public void addRule(Rule compositionRule) {
+		this.getRules().add(compositionRule);
+	}
+	
+	/* Getters and setters */
+
 	public String getId() {
 		return id;
 	}
@@ -107,5 +113,5 @@ public class SPL implements Nameable {
 	public void setProductElements(Set<ProductElement> productElements) {
 		this.productElements = productElements;
 	}
-	
+
 } // LPS

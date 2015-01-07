@@ -10,6 +10,10 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
+import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
+import fixture.owl.enumeration.ObjectRestrictionType;
+import fixture.owl.factory.OWLClassFactory;
+import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Attribute;
@@ -91,15 +95,13 @@ public class ParserFeaToOntoFixture {
 		ContextRule contextRule;
 		
 		buildOntology(feature);
-		refreshFeatures();
-		
+		refreshOWLClassFactoryFeatures();
 		
 		for (Element element : spl.getElements()) {
 			if (element.isContextRoot()) {
 				contextRoot = Utils.getContextRootOf(element);
 				buildOntology(contextRoot);
 			}
-			
 		}
 		
 		for (Rule rule : spl.getRules()) {
@@ -120,7 +122,7 @@ public class ParserFeaToOntoFixture {
 		
 	}
 	
-	private void refreshFeatures() {
+	private void refreshOWLClassFactoryFeatures() {
 		
 	}
 
@@ -157,9 +159,12 @@ public class ParserFeaToOntoFixture {
 		if (action.isActionLiteral()) {
 			ActionLiteral actionLiteral = (ActionLiteral) action;
 			feaToOntoFixtureUtils.addPresenceActionLiteralRelation(currentActionOWL, actionLiteral.getPresence().getValue());
-			OWLNamedIndividual currentFeaturedElementOwl = owlOracle.get(actionLiteral.getFeaturedElement().getId());
-			feaToOntoFixtureUtils.addRelationBetweenActionLiteralAndFeaturedElement(currentActionOWL, currentFeaturedElementOwl);
+			//TODO Nesse momento não há indivíduos de features
 			
+			String actionLiteralFeaturedElementId = actionLiteral.getFeaturedElement().getId();
+			Nameable currentFeatureElement = fixtureOracle.get(actionLiteralFeaturedElementId);
+			String simpleName = currentFeatureElement.getClass().getSimpleName();
+			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentActionOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(actionLiteralFeaturedElementId));
 		} else if (action.isDesignate()) {
 			Designate designate = (Designate) action;
 			feaToOntoFixtureUtils.addRelationBetweenDesignateAndAttribute(currentActionOWL, owlOracle.get(designate.getAttribute().getId()));
@@ -238,9 +243,11 @@ public class ParserFeaToOntoFixture {
 			CompositionLiteral compositionLiteral = (CompositionLiteral) antecedent;
 			feaToOntoFixtureUtils.addPresenceCompositionLiteralRelation(currentAntecedentRuleOWL, compositionLiteral.getPresence().getValue());
 			
-			String id = compositionLiteral.getFeaturedElement().getId();
-			OWLNamedIndividual currentFeaturedElementOwl = owlOracle.get(id);
-			feaToOntoFixtureUtils.addRelationBetweenCompositionLiteralAndFeaturedElement(currentAntecedentRuleOWL, currentFeaturedElementOwl);
+			
+			String compositionLiteralFeaturedElementId = compositionLiteral.getFeaturedElement().getId();
+			Nameable currentFeatureElement = fixtureOracle.get(compositionLiteralFeaturedElementId);
+			String simpleName = currentFeatureElement.getClass().getSimpleName();
+			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentAntecedentRuleOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(compositionLiteralFeaturedElementId));
 		} else if (antecedent.isLogicalExpression()) {
 			LogicalExpression logicalExpression = (LogicalExpression) antecedent;
 
@@ -291,11 +298,8 @@ public class ParserFeaToOntoFixture {
 
 	private void buildOntology(Feature feature) {
 		
-		
 		OWLClass createNewOLWClass = feaToOntoFixtureUtils.createNewOLWClass(feature, owlClassOracle);
 		feaToOntoFixtureUtils.addSubClassOfClassification(feature, createNewOLWClass);
-
-
 
 		Feature fatherFeature = feature.getFatherFeature();
 		if (fatherFeature != null) {

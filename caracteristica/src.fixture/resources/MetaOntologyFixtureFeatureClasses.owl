@@ -718,8 +718,8 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
-        <ObjectProperty IRI="#hasFatherFeature"/>
         <ObjectProperty IRI="#hasChildFeature"/>
+        <ObjectProperty IRI="#hasFatherFeature"/>
     </InverseObjectProperties>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasLogicalOperator"/>
@@ -733,10 +733,10 @@
         <DataProperty IRI="#hasLogicalActionOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
+            <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
             </FacetRestriction>
-            <FacetRestriction facet="&xsd;minInclusive">
+            <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
@@ -777,11 +777,11 @@
         <DataProperty IRI="#hasRelationalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;integer">5</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;integer">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">5</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>

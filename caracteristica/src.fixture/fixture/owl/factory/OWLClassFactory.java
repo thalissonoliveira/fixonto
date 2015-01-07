@@ -3,6 +3,7 @@ package fixture.owl.factory;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 
 import org.semanticweb.owlapi.model.OWLClass;
 
@@ -14,6 +15,7 @@ import fixture.owl.utils.Utils;
 public class OWLClassFactory {
 	
 	private Map<FixtureOWLClassTypeEnumInterface, OWLClass> map;
+	private Map<String, OWLClass> mapFeatureSubclass;
 	private OntoHelper ontoHelper;
 	
 	private static OWLClassFactory owlClassFactory;
@@ -76,6 +78,27 @@ public class OWLClassFactory {
 			throw new RuntimeException("Cannot create a OWL Class for " + owlClassType);
 		}
 		return owlClass;
+	}
+	
+	public OWLClass getFeatureSubclass(String owlClassType) {
+		OWLClass owlClass = map.get(owlClassType);
+		
+		if (owlClass == null) {
+			throw new RuntimeException("Cannot create a OWL Class (Feature) for " + owlClassType);
+		}
+		return owlClass;
+	}
+	
+	public void putFeatureSubclass(String className, OWLClass owlClass) {
+		if (mapFeatureSubclass == null) {
+			mapFeatureSubclass = new TreeMap<String, OWLClass>();
+		}
+		
+		if (!map.containsKey(className)) {
+			mapFeatureSubclass.put(className, owlClass);
+		} else {
+			throw new RuntimeException("Class  " + className + " is alread inserted");
+		}
 	}
 	
 }

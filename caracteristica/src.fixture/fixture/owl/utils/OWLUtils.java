@@ -22,6 +22,7 @@ import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 import fixture.owl.enumeration.ModelOWLClassTypeEnum;
 import fixture.owl.enumeration.OWLDataPropertyTypeEnum;
 import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
+import fixture.owl.enumeration.ObjectRestrictionType;
 import fixture.owl.enumeration.interfaces.FixtureOWLClassTypeEnumInterface;
 import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLDataPropertyFactory;
@@ -135,10 +136,19 @@ public class OWLUtils {
 		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
 	}
 	
+	
+	/**
+	 * 
+	 * Restricts object creation.
+	 * 
+	 * <strong>Info</strong> </br> OWLObjectAllValuesFrom = restriction type: only (universal)
+	 * 
+	 * @param createNewOLWClass
+	 * @param currentFatherFeatureOwl
+	 */
 	public void addParentalRelationBetweenFeatures(OWLClass createNewOLWClass, OWLClass currentFatherFeatureOwl) {
 		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_FEATURE);
 		OWLObjectAllValuesFrom hasFatherFeatureOwlObjectAllValuesFrom = ontoHelper.getDataFactory().getOWLObjectAllValuesFrom(hasFatherFeatureProperty, currentFatherFeatureOwl);
-		//OWLObjectAllValuesFrom = restriction type: only (universal)
 		OWLSubClassOfAxiom owlSubClassOfAxiom = ontoHelper.getDataFactory().getOWLSubClassOfAxiom(createNewOLWClass, hasFatherFeatureOwlObjectAllValuesFrom);
 		
 		AddAxiom addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), owlSubClassOfAxiom);
@@ -348,6 +358,7 @@ public class OWLUtils {
 		ontoHelper.getManager().addAxiom(ontoHelper.getMetaOntology(), owlSubClassOfAxiom);
 	}
 
+	@SuppressWarnings("static-access")
 	public OWLClass createNewOLWClass(Feature feature, Map<String, OWLClass> owlClassOracle) {
 		
 		if (feature != null) {
@@ -355,6 +366,7 @@ public class OWLUtils {
 			if (!owlClassOracle.containsKey(id)) {
 				OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(feature.getId(), ontoHelper.getPrefixOWLOntologyFormat());
 				owlClassOracle.put(id, owlClass);
+				owlClassFactory.getInstance(ontoHelper).putFeatureSubclass(id, owlClass);
 			}
 			
 			return owlClassOracle.get(id);
@@ -418,6 +430,15 @@ public class OWLUtils {
 		ontoHelper.getManager().applyChange(addAx);
 	}
 
+	public void addEntityClassificationRestrictionToOntology(OWLIndividual OWLIndividual, OWLObjectProperty owlObjectProperty, ObjectRestrictionType objectRestrictionType, OWLClass owlClass) {
+		
+		if (objectRestrictionType.equals(ObjectRestrictionType.ONLY_UNIVERSAL)) {
+			OWLObjectAllValuesFrom hasFatherFeatureOwlObjectAllValuesFrom = ontoHelper.getDataFactory().getOWLObjectAllValuesFrom(owlObjectProperty, owlClass);
+			OWLClassAssertionAxiom featureClassificationAxiom = ontoHelper.getDataFactory().getOWLClassAssertionAxiom(hasFatherFeatureOwlObjectAllValuesFrom, OWLIndividual);
+			ontoHelper.getManager().addAxiom(ontoHelper.getMetaOntology(), featureClassificationAxiom);
+		}
+		
+	}
 	
 	//###### PRIVATE UTILS METHODS CALLED BY PROXIES METHODS #########//
 	private static void initializeAttributes() {
@@ -429,6 +450,8 @@ public class OWLUtils {
 		OWLClassAssertionAxiom featureClassificationAxiom = ontoHelper.getDataFactory().getOWLClassAssertionAxiom(OWLClass, OWLIndividual);
 		ontoHelper.getManager().addAxiom(ontoHelper.getMetaOntology(), featureClassificationAxiom);
 	}
+	
+	
 	
 	/**
 	 * 

@@ -46,9 +46,6 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	PRODUCTVARIATION(31, "Product Variation", "ProductVariation" ),
 	PRODUCTVARIANT(32, "Product Variat", "ProductVariat" );
 	
-	
-	
-	
 	private int code;
 	private String description;
 	private String label;

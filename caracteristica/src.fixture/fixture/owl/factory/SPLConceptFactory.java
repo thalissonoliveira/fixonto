@@ -10,6 +10,13 @@ import fixture.owl.model.element.MandatoryFeature;
 import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.product.Product;
+import fixture.owl.model.product.ProductAttribute;
+import fixture.owl.model.product.ProductMandatoryFeature;
+import fixture.owl.model.product.ProductOptionalFeature;
+import fixture.owl.model.product.ProductVariant;
+import fixture.owl.model.product.ProductVariation;
+import fixture.owl.model.product.ProductVariationTwo;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
@@ -128,6 +135,38 @@ public class SPLConceptFactory {
 	public Designate createDesignate(String id, String name) {
 		return new Designate(id, name);
 	}
+	
+
+	public Product createProduct(String id, String name) {
+		return new Product(id, name);
+	}
+	
+	public ProductMandatoryFeature createProductMandatoryFeature(String id, String name) {
+		return new ProductMandatoryFeature(id, name);
+	}
+	
+	public ProductOptionalFeature createProductOptionalFeature(String id, String name) {
+		return new ProductOptionalFeature(id, name);
+	}
+	
+	public ProductVariationTwo createProductVariationTwo(String id, String name) {
+		return new ProductVariationTwo(id, name);
+	}
+	
+	public ProductVariation createProductVariation(String id, String name) {
+		return new ProductVariation(id, name);
+	}
+	
+	public ProductVariant createProductVariant(String id, String name) {
+		return new ProductVariant(id, name);
+	}
+	
+	public ProductAttribute createProductAttribute(String id, String name) {
+		return new ProductAttribute(id, name);
+	}
+	
+	
+	
 	
 }
 

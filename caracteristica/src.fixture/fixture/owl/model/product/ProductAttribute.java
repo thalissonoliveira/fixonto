@@ -4,7 +4,7 @@ import caracteristica.TipoValor;
 import fixture.owl.model.intefaces.Element;
 
 //TODO Verificar mistura de português com inglês.
-public class ProductAttribute implements ProductElement{
+public class ProductAttribute implements ProductElement {
 
 	private String name;
 	
@@ -18,6 +18,17 @@ public class ProductAttribute implements ProductElement{
 	
 	private ProductFeature fatherProductFeature;
 	
+	
+	public ProductAttribute() {
+		super();
+	}
+	
+	public ProductAttribute(String id, String name) {
+		this();
+		this.id = id;
+		this.name = name;
+	}
+
 	//
 	public String getName() {
 		return name;
@@ -69,6 +80,36 @@ public class ProductAttribute implements ProductElement{
 	
 	@Override
 	public boolean isProduct() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductAttribute() {
+		return true;
+	}
+
+	@Override
+	public boolean isProductMandatoryFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductOptionalFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariationTwoFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariant() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariation() {
 		return false;
 	}
 

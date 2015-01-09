@@ -4,7 +4,6 @@ import fixture.owl.model.intefaces.FeaturedElement;
 
 public class GroupedFeature extends Feature implements FeaturedElement {
 
-
 	public GroupedFeature() {
 		super();
 	}

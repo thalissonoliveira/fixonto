@@ -3,7 +3,7 @@ package fixture.owl.model.product;
 import fixture.owl.model.intefaces.Element;
 
 
-public class ProductVariant implements ProductElement{
+public class ProductVariant implements ProductElement {
 	
 	private String name;
 	
@@ -12,6 +12,16 @@ public class ProductVariant implements ProductElement{
 	private Element originalElement;
 
 	private ProductVariation fatherProductVariation;
+	
+	public ProductVariant() {
+		super();
+	}
+	
+	public ProductVariant(String id, String name) {
+		this();
+		this.id = id;
+		this.name = name;
+	}
 	
 	//
 	public String getName() {
@@ -48,6 +58,36 @@ public class ProductVariant implements ProductElement{
 
 	@Override
 	public boolean isProduct() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductAttribute() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductMandatoryFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductOptionalFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariationTwoFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariant() {
+		return true;
+	}
+
+	@Override
+	public boolean isProductVariation() {
 		return false;
 	}
 	

@@ -12,7 +12,6 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
 import fixture.owl.enumeration.ObjectRestrictionType;
-import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;

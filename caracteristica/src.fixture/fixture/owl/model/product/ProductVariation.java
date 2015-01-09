@@ -8,6 +8,18 @@ import fixture.owl.model.intefaces.Element;
 
 public class ProductVariation implements ProductElement {
 
+	
+	public ProductVariation() {
+		super();
+		productVariations = new  HashSet<ProductVariation>();
+	}
+	
+	public ProductVariation(String id, String name) {
+		this();
+		this.id = id;
+		this.name = name;
+	}
+	
 	private String name;
 	
 	private String id;
@@ -22,12 +34,6 @@ public class ProductVariation implements ProductElement {
 	
 	private ProductFeature fatherProductFeature;
 	
-	//
-	public ProductVariation() {
-		productVariations = new  HashSet<ProductVariation>();
-			
-	}
-
 	//
 	public String getName() {
 		return name;
@@ -88,6 +94,36 @@ public class ProductVariation implements ProductElement {
 	@Override
 	public boolean isProduct() {
 		return false;
+	}
+
+	@Override
+	public boolean isProductAttribute() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductMandatoryFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductOptionalFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariationTwoFeature() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariant() {
+		return false;
+	}
+
+	@Override
+	public boolean isProductVariation() {
+		return true;
 	}
 	
 	

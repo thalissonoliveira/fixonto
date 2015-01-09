@@ -5,7 +5,7 @@ import java.util.Set;
 
 import fixture.owl.model.intefaces.Element;
 
-public class ProductFeature implements ProductElement {
+public abstract class ProductFeature implements ProductElement {
 	
 	private String name;
 	
@@ -23,9 +23,14 @@ public class ProductFeature implements ProductElement {
 	public ProductFeature() {
 		childProductFeature = new HashSet<ProductFeature>();
 		productAttribute = new HashSet<ProductAttribute>();
-		
 	}
 	
+	
+	public ProductFeature(String id, String name) {
+		this();
+		this.id = id;
+		this.name = name;
+	}
 	
 	//Gets e Sets
 	
@@ -81,12 +86,5 @@ public class ProductFeature implements ProductElement {
 	public void setProductAttribute(Set<ProductAttribute> productAttribute) {
 		this.productAttribute = productAttribute;
 	}
-	
-	@Override
-	public boolean isProduct() {
-		return false;
-	}
-	
-	
 	
 } // CaracteristicaProduto

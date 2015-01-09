@@ -11,6 +11,12 @@ public interface ProductElement extends Nameable {
 	void setOriginalElement(Element element);
 	
 	boolean isProduct();
+	boolean isProductAttribute();
+	boolean isProductMandatoryFeature();
+	boolean isProductOptionalFeature();
+	boolean isProductVariationTwoFeature();
+	boolean isProductVariant();
+	boolean isProductVariation();
 	
 	
 } // ElementodeProduto

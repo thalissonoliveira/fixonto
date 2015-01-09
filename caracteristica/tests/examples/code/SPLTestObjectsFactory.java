@@ -213,7 +213,6 @@ public class SPLTestObjectsFactory {
 		
 		//###########################################################################
 		
-		
 		parserFeaToOntoFixture.addToFixtureOracle(f1);
 		parserFeaToOntoFixture.addToFixtureOracle(f2);
 		parserFeaToOntoFixture.addToFixtureOracle(f3);

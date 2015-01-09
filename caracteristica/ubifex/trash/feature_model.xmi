@@ -14,33 +14,33 @@
           <UML:TaggedValue.dataValue>true</UML:TaggedValue.dataValue>
         </UML:TaggedValue>
         <UML:TaggedValue xmi.id = 'a3' name = 'featureNodes' isSpecification = 'false'>
-          <UML:TaggedValue.dataValue>Interaction</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Labeling</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Pack Layout</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Positioning</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Information Visualization</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Highlighting</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Semantic Zoom</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Layout</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Geometric Zoom</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Pie</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Overview</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Selection</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Histogram</UML:TaggedValue.dataValue>
+          <UML:TaggedValue.dataValue>Interaction</UML:TaggedValue.dataValue> - 1A
+          <UML:TaggedValue.dataValue>Labeling</UML:TaggedValue.dataValue> - 2A
+          <UML:TaggedValue.dataValue>Pack Layout</UML:TaggedValue.dataValue> - 3A
+          <UML:TaggedValue.dataValue>Positioning</UML:TaggedValue.dataValue> - 4A
+          <UML:TaggedValue.dataValue>Information Visualization</UML:TaggedValue.dataValue> - 5A
+          <UML:TaggedValue.dataValue>Highlighting</UML:TaggedValue.dataValue> - 6A
+          <UML:TaggedValue.dataValue>Semantic Zoom</UML:TaggedValue.dataValue> - 7A
+          <UML:TaggedValue.dataValue>Layout</UML:TaggedValue.dataValue> - 8A
+          <UML:TaggedValue.dataValue>Geometric Zoom</UML:TaggedValue.dataValue> - 9A
+          <UML:TaggedValue.dataValue>Pie</UML:TaggedValue.dataValue> - 10A
+          <UML:TaggedValue.dataValue>Overview</UML:TaggedValue.dataValue> - 11A
+          <UML:TaggedValue.dataValue>Selection</UML:TaggedValue.dataValue> - 12A
+          <UML:TaggedValue.dataValue>Histogram</UML:TaggedValue.dataValue> - 13A
         </UML:TaggedValue>
         <UML:TaggedValue xmi.id = 'a4' name = 'associationEdges' isSpecification = 'false'>
-          <UML:TaggedValue.dataValue>Alternative_2</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Alternative_1</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_1</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_3</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_2</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_5</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_4</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_7</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_6</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Alternative</UML:TaggedValue.dataValue>
-          <UML:TaggedValue.dataValue>Association_8</UML:TaggedValue.dataValue>
+          <UML:TaggedValue.dataValue>Alternative_2</UML:TaggedValue.dataValue> - 1B
+          <UML:TaggedValue.dataValue>Association</UML:TaggedValue.dataValue> - 2B
+          <UML:TaggedValue.dataValue>Alternative_1</UML:TaggedValue.dataValue> - 3B
+          <UML:TaggedValue.dataValue>Association_1</UML:TaggedValue.dataValue> - 4B
+          <UML:TaggedValue.dataValue>Association_3</UML:TaggedValue.dataValue> - 5B
+          <UML:TaggedValue.dataValue>Association_2</UML:TaggedValue.dataValue> - 6B
+          <UML:TaggedValue.dataValue>Association_5</UML:TaggedValue.dataValue> - 7B
+          <UML:TaggedValue.dataValue>Association_4</UML:TaggedValue.dataValue> - 8B
+          <UML:TaggedValue.dataValue>Association_7</UML:TaggedValue.dataValue> - 9B
+          <UML:TaggedValue.dataValue>Association_6</UML:TaggedValue.dataValue> - 10B
+          <UML:TaggedValue.dataValue>Alternative</UML:TaggedValue.dataValue> - 11B
+          <UML:TaggedValue.dataValue>Association_8</UML:TaggedValue.dataValue> - 12B
         </UML:TaggedValue>
       </UML:ModelElement.taggedValue>
     </UML:Node>

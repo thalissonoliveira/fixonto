@@ -21,16 +21,17 @@ wizard OntoAnalyser
 }
 
 
+
+//####### OPERATION WIZARD 1 #########
 operation fixTure2(lps:LPS) {
 	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
-	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
+	var featToOntoFixture := new Native('fixture.owl.parser.ParserFeaToOntoFixture');
 	var factoryFixture := featToOntoFixture.getSplConceptFactory();
 	var splFixture = factoryFixture.createSpl(lps.id, lps.nome);
 	
 	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, featToOntoFixture);
 	featToOntoFixture.run(splFixture);
 }
-
 
 operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixture) {
 	
@@ -65,11 +66,67 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixt
 		featToOntoFixture.addToFixtureOracle(expressionFixture);
 	}
 	
+	
+	var productFixture;
+	for (produto in lps.produtos) {
+		productFixture = criarProdutoFixture(produto, factoryFixture);
+		featToOntoFixture.addToFixtureOracle(productFixture);
+	}
+	
+	var productElementFixture;
+	for (elemento in lps.elementosDeProduto) {
+		productElementFixture = criarElementoDeProdutoFixture(elemento, factoryFixture);
+		featToOntoFixture.addToFixtureOracle(productElementFixture);
+	}
+	
 	preencherElementosCaracteristicaLpsFixture(raiz, factoryFixture, splFixture, featToOntoFixture);
 	preencherElementosContextuaisLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
 	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
+	
+	preencherProdutosLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
+	preencherElementosDeProdutoLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
 		
 	return splFixture;
+}
+
+operation preencherElementosDeProdutoLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
+	var productFixture = null;
+	
+	for (regra in lps.produtos) {
+		if (regra.isTypeOf(RegraDeComposicao)) {
+			ruleFixture = preencherRegraDeComposicao(regra, factoryFixture, splFixture, featToOntoFixture);
+		} else if (regra.isTypeOf(RegraDeContexto)) {
+			ruleFixture = preencherRegraDeContexto(regra, factoryFixture, splFixture, featToOntoFixture);
+		} else {
+			'[ERROR] - Erro ao criar nova Regra pela Fixture: regra do modelo é inválida.'.println();
+			return;
+		}
+		
+		splFixture.getRules.add(ruleFixture);
+	}
+}
+
+operation preencherProdutosLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
+	var productFixture = null;
+	
+	for (produto in lps.produtos) {
+		if (produto.isTypeOf(Produto)) {
+			productFixture.setOriginalElement(produto.elementoOriginal);
+			productFixture.setFatherProductFeature(produto.caracteristicaProdutoPai);
+			
+			for (caracteristicaProdutoFilha in produto.caracteristicaProdutoFilha) {
+			
+			}
+			productFixture.getChildProductFeature().add(caracteristicaProdutoFilha);
+
+			//productFixture = preencherProdutos(regra, factoryFixture, splFixture, featToOntoFixture);
+		} else {
+			'[ERROR] - Erro ao criar novo Produto pela Fixture: produto do modelo é inválido.'.println();
+			return;
+		}
+		
+		splFixture.getProducts().add(productFixture);
+	}
 }
 
 operation preencherRegrasLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
@@ -88,7 +145,6 @@ operation preencherRegrasLpsFixture(lps : LPS, factoryFixture, splFixture, featT
 		splFixture.getRules.add(ruleFixture);
 	}
 }
-
 
 operation preencherElementosCaracteristicaLpsFixture(caracteristicaRaiz : Caracteristica, factoryFixture, splFixture, featToOntoFixture) {
 		
@@ -240,6 +296,7 @@ operation preencherAntecedente(antecedente : Antecedente, factoryFixture, splFix
 }
 
 //#### Método que realiza a análise da ontologia gerada a partir do MMSC
+//####### OPERATION WIZARD 2 #########
 operation ontoAnalyserFixture() {
 	var rulesAnalyser := new Native('fixture.owl.reasoner.RulesAnalyser');
 	rulesAnalyser.run();
@@ -281,7 +338,7 @@ operation criarElementoFixture(elemento: Elemento, factoryFixture) {
 	} else if (elemento.isTypeOf(CaracteristicaOpcional)) {
 		return factoryFixture.createOptionalFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(VariacaoDois)) {
-		return factoryFixture.createVariationTwo(elemento.id, elemento.nome, elemento.cardinalidadeMaxima, elemento.cardinalidadeMinimaOr, elemento.cardinalidadeMaximaOr);
+		return factoryFixture.createVariationTwo(elemento.id, elemento.nome, elemento.cardinalidadeMaxima.getValue(), elemento.cardinalidadeMinimaOr, elemento.cardinalidadeMaximaOr);
 	} else if (elemento.isTypeOf(CaracteristicaAgrupada)) {
 		return factoryFixture.createGroupedFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(RaizDeContexto)) {
@@ -313,4 +370,40 @@ operation criarRegraFixture(elemento: Regra, factoryFixture) {
 		return null;
 	}
 
+}
+
+
+operation criarProdutoFixture(elemento: Produto, factoryFixture) {
+	if (elemento.isTypeOf(Produto)) {
+		return factoryFixture.createProduct(elemento.id, elemento.nome);
+	} else {
+		'[ERROR] - Erro ao criar novo Produto pela Fixture: produto do modelo é inválido.'.println();
+		'[ERRO DETAIL]: '.print();
+		elemento.nome.print();
+		"".println();
+		return null;
+	}
+}
+
+operation criarElementoDeProdutoFixture(elemento: ElementoDeProduto, factoryFixture) {
+
+	if (elemento.isTypeOf(AtributoProduto)) {
+		return factoryFixture.createProductAttribute(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(CaracteristicaMandatoriaProduto)) {
+		return factoryFixture.createProductMandatoryFeature(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(CaracteristicaOpcionalProduto)) {
+		return factoryFixture.createProductOptionalFeature(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(VariacaoDoisProduto)) {
+		return factoryFixture.createProductVariationTwo(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(VariacaoProduto)) {
+		return factoryFixture.createProductVariation(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(VarianteProduto)) {
+		return factoryFixture.createProductVariant(elemento.id, elemento.nome);
+	} else {
+		'[ERROR] - Erro ao criar novo Elemento de Produto pela Fixture: elemento de produto do modelo é inválido.'.println();
+		'[ERRO DETAIL]: '.print();
+		elemento.nome.print();
+		"".println();
+		return null;
+	}
 }

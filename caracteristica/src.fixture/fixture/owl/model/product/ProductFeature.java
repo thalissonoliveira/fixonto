@@ -32,6 +32,16 @@ public abstract class ProductFeature implements ProductElement {
 		this.name = name;
 	}
 	
+	public void addChild(ProductFeature productFeature) {
+		this.getChildProductFeature().add(productFeature);
+		productFeature.setFatherProductFeature(this);
+	}
+	
+	public void addAttribute(ProductAttribute productAttribute) {
+		this.getProductAttribute().add(productAttribute);
+		productAttribute.setFatherProductFeature(this);
+	}
+	
 	//Gets e Sets
 	
 	public String getName() {

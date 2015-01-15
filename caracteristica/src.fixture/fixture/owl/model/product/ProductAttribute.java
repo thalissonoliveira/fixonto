@@ -28,8 +28,16 @@ public class ProductAttribute implements ProductElement {
 		this.id = id;
 		this.name = name;
 	}
+	
+	
+	
+	public void setTipoValor(int tv) {
+		TipoValor tipoValor = TipoValor.get(tv);
+		setTipoValor(tipoValor);
+	}
+	
 
-	//
+	//G 'n S
 	public String getName() {
 		return name;
 	}

@@ -84,40 +84,79 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixt
 	preencherRegrasLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
 	
 	preencherProdutosLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
-	preencherElementosDeProdutoLpsFixture(lps, factoryFixture, splFixture, featToOntoFixture);
 		
 	return splFixture;
 }
 
-operation preencherElementosDeProdutoLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
-	var productFixture = null;
+operation preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoRaiz : CaracteristicaProduto, factoryFixture, splFixture, featToOntoFixture) {
+		
+	var productFeatureFixture = featToOntoFixture.getOracle().get(caracteristicaProdutoRaiz.id);
+	var childProductFeatureFixture = null;
+	var productAttributeFixture = null;
 	
-	for (regra in lps.produtos) {
-		if (regra.isTypeOf(RegraDeComposicao)) {
-			ruleFixture = preencherRegraDeComposicao(regra, factoryFixture, splFixture, featToOntoFixture);
-		} else if (regra.isTypeOf(RegraDeContexto)) {
-			ruleFixture = preencherRegraDeContexto(regra, factoryFixture, splFixture, featToOntoFixture);
-		} else {
-			'[ERROR] - Erro ao criar nova Regra pela Fixture: regra do modelo é inválida.'.println();
-			return;
+	
+	
+	//productFixture.setFatherProductFeature(fatherProductFeatureFixture);	
+	
+	for (atributoProduto in caracteristicaProdutoRaiz.atributoProduto) {
+		productAttributeFixture = featToOntoFixture.getOracle().get(atributoProduto.id);
+		productFeatureFixture.addAttribute(productAttributeFixture);
+	}
+	
+	for (caracteristicaProdutoFilha in caracteristicaProdutoRaiz.caracteristicaProdutoFilha) {
+		childFeatureFixture = featToOntoFixture.getOracle().get(caracteristicaFilha.id);
+		productFeatureFixture.addChild(childFeatureFixture);
+		
+		for (atributoProduto in caracteristicaProdutoFilha.atributoProduto) {
+			productAttributeFixture = featToOntoFixture.getOracle().get(atributoProduto.id);
+			productFeatureFixture.addAttribute(productAttributeFixture);
 		}
 		
-		splFixture.getRules.add(ruleFixture);
+		if (not caracteristicaProdutoFilha.caracteristicaProdutoFilha.isEmpty()) {
+			splFixture = preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoFilha, factoryFixture, splFixture, featToOntoFixture);
+		}
+		
 	}
+	return splFixture;
 }
 
 operation preencherProdutosLpsFixture(lps : LPS, factoryFixture, splFixture, featToOntoFixture) {
 	var productFixture = null;
+	var attributeFixture = null;
+	var childProductFeatureFixture = null;
+	
+	var productLineFixture = null;
+	var originalElementFixture = null;
 	
 	for (produto in lps.produtos) {
 		if (produto.isTypeOf(Produto)) {
-			productFixture.setOriginalElement(produto.elementoOriginal);
-			productFixture.setFatherProductFeature(produto.caracteristicaProdutoPai);
+			produto.println();
+			productFixture = featToOntoFixture.getOracle().get(produto.id);
+			productLineFixture = featToOntoFixture.getOracle().get(produto.LinhaDoProduto.id);
+			originalElementFixture = featToOntoFixture.getOracle().get(produto.elementoOriginal.id);
+			
+			
+			productFixture.setProductLine(productLineFixture);
+			productFixture.setOriginalElement(originalElementFixture);
+		
+			
+			for (atributoProduto in produto.atributoProduto) {
+				//TODO Verificar se é aqui o local de preencher todo o atributo
+				attributeFixture = featToOntoFixture.getOracle().get(atributoProduto.id);
+				productFixture.addAttribute(attributeFixture);
+				
+				attributeFixture.setValor(atributoProduto.valor);
+				attributeFixture.setValor(atributoProduto.tipoValor.getValue());
+			}
 			
 			for (caracteristicaProdutoFilha in produto.caracteristicaProdutoFilha) {
-			
+				childProductFeatureFixture = featToOntoFixture.getOracle().get(caracteristicaProdutoFilha.id);
+				//TODO Invocar 	preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoRaiz : CaracteristicaProduto, factoryFixture, splFixture, featToOntoFixture)			
 			}
-			productFixture.getChildProductFeature().add(caracteristicaProdutoFilha);
+			
+			
+			
+			//productFixture.getChildProductFeatures().add(caracteristicaProdutoFilha);
 
 			//productFixture = preencherProdutos(regra, factoryFixture, splFixture, featToOntoFixture);
 		} else {

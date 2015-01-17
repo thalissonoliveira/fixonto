@@ -14,12 +14,15 @@ import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.enumeration.Presence;
 import fixture.owl.model.enumeration.RelationalOperator;
 import fixture.owl.model.enumeration.ValueType;
+import fixture.owl.model.product.Product;
+import fixture.owl.model.product.ProductMandatoryFeature;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
 import fixture.owl.model.rule.ContextRule;
 import fixture.owl.model.rule.RelationalEvent;
 import fixture.owl.parser.ParserFeaToOntoFixture;
+import fixture.owl.utils.Utils;
 
 public class SPLTestObjectsFactory {
 
@@ -234,6 +237,37 @@ public class SPLTestObjectsFactory {
 		parserFeaToOntoFixture.addToFixtureOracle(actionLiteral);
 		parserFeaToOntoFixture.addToFixtureOracle(relationalEvent);
 		parserFeaToOntoFixture.addToFixtureOracle(contextRule);
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		SPL spl = new SPL("SPL", "SPL");
+		spl.setSystem(new RootFeature("HAH", "HIEHISAF"));
+		
+		Product p = new Product("2", "Produto");
+		
+		ProductMandatoryFeature m = new ProductMandatoryFeature("3", "m");
+		ProductMandatoryFeature m1 = new ProductMandatoryFeature("4", "m1");
+		ProductMandatoryFeature m2 = new ProductMandatoryFeature("5", "m2");
+		ProductMandatoryFeature m3 = new ProductMandatoryFeature("6", "m3");
+		ProductMandatoryFeature m4 = new ProductMandatoryFeature("7", "m4");
+		
+		p.addChild(m);
+		p.addChild(m1);
+		
+		m1.addChild(m2);
+		m1.addChild(m3);
+		
+		m2.addChild(m4);
+		
+		spl.addProduct(p);
+		spl.addProductElement(m);
+		spl.addProductElement(m1);
+		spl.addProductElement(m2);
+		spl.addProductElement(m3);
+		
+		Utils.printSPLInfo(spl);
 		
 	}
 

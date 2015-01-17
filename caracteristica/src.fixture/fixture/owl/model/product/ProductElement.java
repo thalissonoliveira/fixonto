@@ -7,6 +7,7 @@ import fixture.owl.model.intefaces.Nameable;
 public interface ProductElement extends Nameable {
 	
 	void setName(String name);
+	
 	Element getOriginalElement();
 	void setOriginalElement(Element element);
 	

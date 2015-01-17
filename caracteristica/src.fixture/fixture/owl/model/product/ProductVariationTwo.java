@@ -3,13 +3,11 @@ package fixture.owl.model.product;
 import fixture.owl.model.enumeration.MaximalCardinality;
 import fixture.owl.model.intefaces.Element;
 
-public class ProductVariationTwo extends ProductFeature implements ProductElement {
+public class ProductVariationTwo extends ProductFeature {
 
-	private String name;
-	
 	private Element originalElement;
 	
-	MaximalCardinality maximalCardinality;
+	private MaximalCardinality maximalCardinality;
 	
 	public ProductVariationTwo() {
 		super();
@@ -20,14 +18,6 @@ public class ProductVariationTwo extends ProductFeature implements ProductElemen
 	}
 
 	//
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Element getOriginalElement() {
 		return originalElement;
 	}

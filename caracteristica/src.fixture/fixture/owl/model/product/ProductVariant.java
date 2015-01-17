@@ -13,6 +13,8 @@ public class ProductVariant implements ProductElement {
 
 	private ProductVariation fatherProductVariation;
 	
+	private boolean selected;
+	
 	public ProductVariant() {
 		super();
 	}
@@ -54,6 +56,14 @@ public class ProductVariant implements ProductElement {
 
 	public void setFatherProductVariation(ProductVariation fatherProductVariation) {
 		this.fatherProductVariation = fatherProductVariation;
+	}
+	
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 
 	@Override

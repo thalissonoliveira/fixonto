@@ -127,6 +127,30 @@
         <Class IRI="#ParentalInconsistency"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#ProductAttribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductMandatoryFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductOptionalFeature"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductVariant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductVariation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ProductVariationTwo"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#RelationalEvent"/>
     </Declaration>
     <Declaration>
@@ -158,6 +182,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasChildFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasChildProductFeature"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasCicle"/>
@@ -193,6 +220,12 @@
         <ObjectProperty IRI="#hasFatherFeature"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasFatherProductFeature"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasFatherProductVariation"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasFeaturedElement"/>
     </Declaration>
     <Declaration>
@@ -208,7 +241,16 @@
         <ObjectProperty IRI="#hasLeftSideEvent"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasOriginalElement"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasParentalInconsistency"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProductAttribute"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasProductVariations"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#hasRightSideAction"/>
@@ -224,6 +266,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#relatesToExpression"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#relatesToProductElement"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasContent"/>
@@ -251,6 +296,9 @@
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasValueType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isSelected"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#count"/>
@@ -376,6 +424,34 @@
         <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#ProductAttribute"/>
+        <Class IRI="#ProductElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductFeature"/>
+        <Class IRI="#ProductElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductMandatoryFeature"/>
+        <Class IRI="#ProductFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductOptionalFeature"/>
+        <Class IRI="#ProductFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductVariant"/>
+        <Class IRI="#ProductFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductVariation"/>
+        <Class IRI="#ProductFeature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ProductVariationTwo"/>
+        <Class IRI="#ProductFeature"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#RelationalEvent"/>
         <Class IRI="#Event"/>
     </SubClassOf>
@@ -419,6 +495,10 @@
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasChildFeature"/>
         <ObjectProperty IRI="#relatesToElemet"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasChildProductFeature"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasCicle"/>
@@ -465,6 +545,14 @@
         <ObjectProperty IRI="#relatesToElemet"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFatherProductFeature"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasFatherProductVariation"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasFeaturedElement"/>
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
@@ -481,8 +569,20 @@
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasOriginalElement"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasParentalInconsistency"/>
         <ObjectProperty IRI="#hasInconsistency"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProductAttribute"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasProductVariations"/>
+        <ObjectProperty IRI="#relatesToProductElement"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasRightSideAction"/>
@@ -516,10 +616,10 @@
         <DataProperty IRI="#hasLogicalActionOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
+            <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
             </FacetRestriction>
-            <FacetRestriction facet="&xsd;minInclusive">
+            <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
@@ -528,11 +628,11 @@
         <DataProperty IRI="#hasLogicalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -548,11 +648,11 @@
         <DataProperty IRI="#hasPresence"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -560,11 +660,11 @@
         <DataProperty IRI="#hasRelationalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;integer">5</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;integer">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">5</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -576,13 +676,17 @@
         <DataProperty IRI="#hasValueType"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;integer">3</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;integer">3</Literal>
+            </FacetRestriction>
         </DatatypeRestriction>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isSelected"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
 </Ontology>
 

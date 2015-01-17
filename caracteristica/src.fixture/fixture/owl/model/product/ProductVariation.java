@@ -7,7 +7,14 @@ import fixture.owl.model.intefaces.Element;
 
 
 public class ProductVariation implements ProductElement {
-
+	
+	private String name;
+	private String id;
+	private Element originalElement;
+	private int minimumCardinality;
+	private int maximalCardinality;
+	private Set<ProductVariation> productVariations;
+	private ProductFeature fatherProductFeature;
 	
 	public ProductVariation() {
 		super();
@@ -19,20 +26,6 @@ public class ProductVariation implements ProductElement {
 		this.id = id;
 		this.name = name;
 	}
-	
-	private String name;
-	
-	private String id;
-	
-	private Element originalElement;
-	
-	private int minimumCardinality;
-	
-	private int maximalCardinality;
-	
-	private Set<ProductVariation> productVariations;
-	
-	private ProductFeature fatherProductFeature;
 	
 	//
 	public String getName() {

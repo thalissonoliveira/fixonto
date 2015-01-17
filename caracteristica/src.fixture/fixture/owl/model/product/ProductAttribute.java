@@ -1,6 +1,6 @@
 package fixture.owl.model.product;
 
-import caracteristica.TipoValor;
+import fixture.owl.model.enumeration.ValueType;
 import fixture.owl.model.intefaces.Element;
 
 //TODO Verificar mistura de português com inglês.
@@ -12,9 +12,9 @@ public class ProductAttribute implements ProductElement {
 	
 	private Element originalElement;
 
-	private String valor;
+	private String value;
 	
-	private TipoValor tipoValor;
+	private ValueType valueType;
 	
 	private ProductFeature fatherProductFeature;
 	
@@ -30,12 +30,10 @@ public class ProductAttribute implements ProductElement {
 	}
 	
 	
-	
-	public void setTipoValor(int tv) {
-		TipoValor tipoValor = TipoValor.get(tv);
-		setTipoValor(tipoValor);
+	public void setValueType(int tv) {
+		ValueType type = ValueType.get(tv);
+		setValueType(type);
 	}
-	
 
 	//G 'n S
 	public String getName() {
@@ -61,21 +59,21 @@ public class ProductAttribute implements ProductElement {
 	public void setOriginalElement(Element originalElement) {
 		this.originalElement = originalElement;
 	}
-
-	public String getValor() {
-		return valor;
+	
+	public String getValue() {
+		return value;
 	}
 
-	public void setValor(String valor) {
-		this.valor = valor;
+	public void setValue(String value) {
+		this.value = value;
 	}
 
-	public TipoValor getTipoValor() {
-		return tipoValor;
+	public ValueType getValueType() {
+		return valueType;
 	}
 
-	public void setTipoValor(TipoValor tipoValor) {
-		this.tipoValor = tipoValor;
+	public void setValueType(ValueType valueType) {
+		this.valueType = valueType;
 	}
 
 	public ProductFeature getFatherProductFeature() {

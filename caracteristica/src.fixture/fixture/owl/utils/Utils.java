@@ -25,6 +25,8 @@ import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.product.Product;
+import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Antecedent;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
@@ -266,6 +268,37 @@ public class Utils {
 				System.out.println(contRule);
 			}
 			System.out.println("_._._._._._._._._._._._");
+		}
+		
+		
+		
+		System.out.println("########## PRODUCT INFO #############");
+		
+		Set<Product> products = spl.getProducts();
+		
+		int i = 0;
+		for (Product product : products) {
+			i++;
+			System.out.println("Product["+ i +"]: " + product.getName());
+			
+			if (product.getChildProductFeature().size() > 0) {
+				for (ProductFeature child : product.getChildProductFeature()) {
+					showProductFeature(child, product);
+				}
+			} else {
+				System.out.println("PRODUCT["+ i +"] DOESN'T HAVE CHILDREN");
+			}
+		}
+		
+	}
+	
+	private static void showProductFeature(ProductFeature root, ProductFeature parent) {
+		System.out.println(root.getName() + " - parent: " + (parent == null ? "NO PARENT." : parent.getName()));
+		
+		if (!root.getChildProductFeature().isEmpty()) {
+			for (ProductFeature productFeature : root.getChildProductFeature()) {
+				showProductFeature(productFeature, root);
+			}
 		}
 	}
 	

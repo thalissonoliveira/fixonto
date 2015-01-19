@@ -34,7 +34,15 @@ public enum OWLObjectPropertyTypeEnum {
 	HAS_RIGHT_SIDE_EVENT (21, "Has Right Side Event", "hasRightSideEvent"),
 	
 	HAS_EQUAL_NAME (22, "Has Equal Name", "hasEqualName"),
-	HAS_CICLE (22, "Has Cicle", "hasCicle");
+	HAS_CICLE (22, "Has Cicle", "hasCicle"),
+	
+	HAS_CHILD_PRODUCT_FEATURE (23, "Has Child Product Feature", "hasChildProductFeature"),
+	HAS_FATHER_PRODUCT_FEATURE (24, "Has Father Product Feature", "hasFatherProductFeature"),
+	HAS_FATHER_PRODUCT_VARIATION (25, "Has Father Product Variation", "hasFatherProductVariation"),
+	HAS_ORIGINAL_ELEMENT (26, "Has Original Elemento", "hasOriginalElement"),
+	HAS_PRODUCT_ATTRIBUTE (27, "Has Product Attribute", "hasProductAttribute"),
+	HAS_PRODUCT_VARIATIONS (28, "Has Product Variations", "hasProductVariations");
+	
 	
 	
 	

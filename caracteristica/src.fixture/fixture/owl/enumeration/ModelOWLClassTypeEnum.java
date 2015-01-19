@@ -37,14 +37,14 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	RELATIONAL_EVENT(23, "Relational Event", "RelationalEvent"),
 	
 	PRODUCT(24, "Product", "Product"),
-	PRODUCTELEMENT(25, "Product Elemnt", "ProductElemnt" ),
-	PRODUCTFEATURE(26, "Product Feature", "ProductFeature" ),
-	PRODUCTATTRIBUTE(27, "Product Attribute", "ProductAttribute"),
-	PRODUCTMANDATORYFEATURE(28, "Product Mandatory Feature", "ProductMandatoryFeature"),
-	PRODUCTOPTIONALFEATURE(29, "Product Optional Feature", "ProductOptionalFeature"),
-	PRODUCTVARIATIONTWO(30, "Product Variation Two", "ProductVariationTwo"),
-	PRODUCTVARIATION(31, "Product Variation", "ProductVariation" ),
-	PRODUCTVARIANT(32, "Product Variat", "ProductVariat" );
+	PRODUCT_ELEMENT(25, "Product Elemnt", "ProductElemnt" ),
+	PRODUCT_FEATURE(26, "Product Feature", "ProductFeature" ),
+	PRODUCT_ATTRIBUTE(27, "Product Attribute", "ProductAttribute"),
+	PRODUCT_MANDATORY_FEATURE(28, "Product Mandatory Feature", "ProductMandatoryFeature"),
+	PRODUCT_OPTIONAL_FEATURE(29, "Product Optional Feature", "ProductOptionalFeature"),
+	PRODUCT_VARIATION_TWO(30, "Product Variation Two", "ProductVariationTwo"),
+	PRODUCT_VARIATION(31, "Product Variation", "ProductVariation" ),
+	PRODUCT_VARIANT(32, "Product Variat", "ProductVariat" );
 	
 	private int code;
 	private String description;

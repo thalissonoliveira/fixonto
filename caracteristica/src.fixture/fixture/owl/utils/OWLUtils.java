@@ -15,6 +15,7 @@ import org.semanticweb.owlapi.model.OWLIndividual;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectAllValuesFrom;
+import org.semanticweb.owlapi.model.OWLObjectMaxCardinality;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
@@ -28,7 +29,9 @@ import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.model.element.Feature;
+import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.intefaces.Nameable;
+import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.Antecedent;
 import fixture.owl.model.rule.Event;
@@ -136,6 +139,12 @@ public class OWLUtils {
 		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
 	}
 	
+	public void addParentalRelationBetweenProductFeatures(OWLIndividual currentFeatureOwl, OWLIndividual currentFatherFeatureOwl) {
+		OWLObjectProperty hasFatherFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_FATHER_PRODUCT_FEATURE);
+		OWLObjectProperty hasChildFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CHILD_PRODUCT_FEATURE);
+		addBilateralRelationToOntology(currentFeatureOwl, currentFatherFeatureOwl, hasFatherFeatureProperty, hasChildFeatureProperty);
+	}
+	
 	
 	/**
 	 * 
@@ -188,6 +197,10 @@ public class OWLUtils {
 	
 	public void addAttributeClassification(OWLIndividual currentAttributeOWL) {
 		addIndividualClassification(currentAttributeOWL, ModelOWLClassTypeEnum.ATTRIBUTE);
+	}
+	
+	public void addProductAttributeClassification(OWLIndividual currentAttributeOWL) {
+		addIndividualClassification(currentAttributeOWL, ModelOWLClassTypeEnum.PRODUCT_ATTRIBUTE);
 	}
 
 	public void addCompositionRuleClassification(OWLIndividual currentCompotionRuleOWL) {
@@ -249,6 +262,24 @@ public class OWLUtils {
 		}
 	}
 	
+	public void addProductFeatureClassification(ProductFeature productFeature, OWLIndividual currentFeatureOwl) {
+		if (productFeature.isProduct()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT));
+		} else if (productFeature.isProductMandatoryFeature()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_MANDATORY_FEATURE));
+		} else if (productFeature.isProductOptionalFeature()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_OPTIONAL_FEATURE));
+		} else if (productFeature.isProductVariant()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_VARIANT));
+		} else if (productFeature.isProductVariation()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_VARIATION));
+		} else if (productFeature.isProductVariationTwoFeature()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_VARIATION_TWO));
+		} else {
+			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
+		}
+	}
+	
 	public void addSubClassOfClassification(Feature feature, OWLClass owlClassFeature) {
 		if (feature.isGroupedFeature()) {
 			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.GROUPED_FEATURE));
@@ -258,11 +289,21 @@ public class OWLUtils {
 			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.ROOT_FEATURE));
 		} else if (feature.isVariatioTwoFeature()) {
 			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.VARIATION_TWO));
+			addMaxCardinalityOfVariationTwo((VariationTwo) feature, owlClassFeature);
 		} else if (feature.isMandatoryFeature()) {
 			addSubClassOfClassification(owlClassFeature, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.MANDATORY_FEATURE));
 		} else {
 			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
 		}
+	}
+
+	private void addMaxCardinalityOfVariationTwo(VariationTwo variationTwoFeature, OWLClass owlClassFeature) {
+		OWLObjectProperty hasChildFeatureProperty = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_CHILD_FEATURE);
+		OWLObjectMaxCardinality hasChildFeatureOwlObjectMaxCardinality = ontoHelper.getDataFactory().getOWLObjectMaxCardinality(variationTwoFeature.getOrMaximalCardinality(), hasChildFeatureProperty, OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.GROUPED_FEATURE));
+		OWLSubClassOfAxiom owlSubClassOfAxiom = ontoHelper.getDataFactory().getOWLSubClassOfAxiom(owlClassFeature, hasChildFeatureOwlObjectMaxCardinality);
+		
+		AddAxiom owlSubClassMaximalCardinalityAxiom = new AddAxiom(ontoHelper.getMetaOntology(), owlSubClassOfAxiom);
+		ontoHelper.getManager().applyChange(owlSubClassMaximalCardinalityAxiom);
 	}
 
 	public void addParentalRelationBetweenContextRootAndEntity(OWLIndividual currentContextRootOWL, OWLIndividual currentContextEntityOWL) {
@@ -279,6 +320,11 @@ public class OWLUtils {
 
 	public void addParentalRelationBetweenFeatureAndAttribute(OWLIndividual currentFeatureOwl, OWLIndividual currentAttributeOwl) {
 		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_ATTRIBUTE);
+		addUnilateralRelationToOntology(currentFeatureOwl, currentAttributeOwl, hasAttribute);
+	}
+	
+	public void addParentalRelationBetweenProductFeatureAndProductAttribute(OWLIndividual currentFeatureOwl, OWLIndividual currentAttributeOwl) {
+		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_PRODUCT_ATTRIBUTE);
 		addUnilateralRelationToOntology(currentFeatureOwl, currentAttributeOwl, hasAttribute);
 	}
 	

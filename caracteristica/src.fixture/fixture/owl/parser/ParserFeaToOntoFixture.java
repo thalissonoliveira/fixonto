@@ -25,7 +25,7 @@ import fixture.owl.model.enumeration.LogicalOperator;
 import fixture.owl.model.intefaces.Element;
 import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.model.product.Product;
-import fixture.owl.model.product.ProductElement;
+import fixture.owl.model.product.ProductAttribute;
 import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.ActionLiteral;
@@ -94,7 +94,6 @@ public class ParserFeaToOntoFixture {
 		ContextRule contextRule;
 		
 		buildOntology(feature);
-		refreshOWLClassFactoryFeatures();
 		
 		for (Element element : spl.getElements()) {
 			if (element.isContextRoot()) {
@@ -113,24 +112,48 @@ public class ParserFeaToOntoFixture {
 			}
 		}
 		
-		for (ProductElement productElement : spl.getProductElements()) {
-			if (productElement.isProduct()) {
-				buildOntology((Product) productElement);
-			}
+		for (Product product : spl.getProducts()) {
+			buildOntology(product);
 		}
 		
 	}
 	
-	private void refreshOWLClassFactoryFeatures() {
-		
-	}
+	private void buildOntology(ProductFeature productFeature) {
 
-	private void buildOntology(ProductFeature productElement) {
-		//TODO Completar esse código.
-		@SuppressWarnings("unused")
-		OWLIndividual currentContextRuleOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(productElement, owlOracle);
-//		owlClassFactory.get(ModelOWLClassTypeEnum.MANDATORY_FEATURE)
-//		feaToOntoFixtureUtils.addIndividualClassification(currentContextRuleOWL, OWLClassFactory.getInstance(this.ontoHelper).get(FixtureOWLClassTypeEnumInterface));
+		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(productFeature, owlOracle);
+		feaToOntoFixtureUtils.addProductFeatureClassification(productFeature, currentFeatureOwl);
+		
+		ProductFeature fatherProductFeature = productFeature.getFatherProductFeature();
+		if (fatherProductFeature != null) {
+			OWLIndividual currentFatherFeatureOwl = null;
+			String fatherId = fatherProductFeature.getId();
+			
+			if (owlOracle.containsKey(fatherId)) {
+				currentFatherFeatureOwl = owlOracle.get(fatherId);
+			} else {
+				//TODO Acho que esse código está errado, pois não há classificação da feature nesse ponto. Verificar se esse pedaço de código é chamado. Se for, ver o comportamento.
+				currentFatherFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(fatherProductFeature, owlOracle);
+			}
+			feaToOntoFixtureUtils.addParentalRelationBetweenProductFeatures(currentFeatureOwl, currentFatherFeatureOwl);
+		}
+		
+		Set<ProductAttribute> attributes = productFeature.getProductAttribute();
+
+		OWLIndividual currentAttributeOwl;
+		for (ProductAttribute attribute : attributes) {
+			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
+			feaToOntoFixtureUtils.addProductAttributeClassification(currentAttributeOwl);
+			feaToOntoFixtureUtils.addParentalRelationBetweenProductFeatureAndProductAttribute(currentFeatureOwl, currentAttributeOwl);
+		}
+		
+		Set<ProductFeature> childrenFeatures = productFeature.getChildProductFeature();
+		if (!childrenFeatures.isEmpty()) {
+			for (ProductFeature childFeature : childrenFeatures) {
+				buildOntology(childFeature);
+			}
+		} else {
+			return;
+		}
 		
 	}
 

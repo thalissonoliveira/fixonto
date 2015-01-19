@@ -15,7 +15,9 @@ public enum OWLDataPropertyTypeEnum {
 	
 	HAS_PRESENCE (8, "Has Presence", "hasPresence"),
 	
-	HAS_LOGICAL_ACTION_OPERATOR (9, "Has Logical Action Operator", "hasLogicalActionOperator");
+	HAS_LOGICAL_ACTION_OPERATOR (9, "Has Logical Action Operator", "hasLogicalActionOperator"),
+	
+	IS_SELECTED (10, "Is Selected", "isSelected");
 	
 	
 	

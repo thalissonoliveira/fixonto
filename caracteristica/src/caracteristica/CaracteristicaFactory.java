@@ -221,6 +221,15 @@ public interface CaracteristicaFactory extends EFactory
   VariacaoDoisProduto createVariacaoDoisProduto();
 
   /**
+	 * Returns a new object of class '<em>Agrupada Produto</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Agrupada Produto</em>'.
+	 * @generated
+	 */
+	CaracteristicaAgrupadaProduto createCaracteristicaAgrupadaProduto();
+
+		/**
 	 * Returns a new object of class '<em>Variacao Produto</em>'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

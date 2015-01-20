@@ -119,5 +119,9 @@ public class ProductVariation implements ProductElement {
 		return true;
 	}
 	
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
 	
 } // VariacaoProduto

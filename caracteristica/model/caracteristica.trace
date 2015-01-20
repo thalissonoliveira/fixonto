@@ -181,6 +181,13 @@
         visualID="5034"
         queryText="true"/>
   </nodeTraces>
+  <nodeTraces
+      visualID="2035"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'CaracteristicaAgrupadaProduto') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'LPS') and _containmentMF_.name = 'elementosDeProduto')">
+    <nodeLabelTraces
+        visualID="5036"
+        queryText="true"/>
+  </nodeTraces>
   <childNodeTraces
       visualID="3001"
       queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Estado') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Simulacao') and _containmentMF_.name = 'estados')">

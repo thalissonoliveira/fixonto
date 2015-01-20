@@ -1,12 +1,17 @@
 package fixture.owl.utils;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.semanticweb.owlapi.MakeClassesMutuallyDisjoint;
 import org.semanticweb.owlapi.model.AddAxiom;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLClassAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLClassExpression;
+import org.semanticweb.owlapi.model.OWLDataFactory;
 import org.semanticweb.owlapi.model.OWLDataProperty;
 import org.semanticweb.owlapi.model.OWLDataPropertyAssertionAxiom;
 import org.semanticweb.owlapi.model.OWLDataPropertyExpression;
@@ -18,6 +23,8 @@ import org.semanticweb.owlapi.model.OWLObjectAllValuesFrom;
 import org.semanticweb.owlapi.model.OWLObjectMaxCardinality;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLObjectPropertyAssertionAxiom;
+import org.semanticweb.owlapi.model.OWLOntology;
+import org.semanticweb.owlapi.model.OWLOntologyChange;
 import org.semanticweb.owlapi.model.OWLSubClassOfAxiom;
 
 import fixture.owl.enumeration.ModelOWLClassTypeEnum;
@@ -275,6 +282,8 @@ public class OWLUtils {
 			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_VARIATION));
 		} else if (productFeature.isProductVariationTwoFeature()) {
 			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_VARIATION_TWO));
+		} else if (productFeature.isProductGroupedFeature()) {
+			addEntityClassificationToOntology(currentFeatureOwl, owlClassFactory.get(ModelOWLClassTypeEnum.PRODUCT_GROUPED_FEATURE));
 		} else {
 			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
 		}
@@ -536,6 +545,57 @@ public class OWLUtils {
 		parentalRelationBetweenFeaturesAssertion = ontoHelper.getDataFactory().getOWLObjectPropertyAssertionAxiom(objectPropertyOWL2, individualOWL2, individualOWL1);
 		addParentalRelationBetweenFeaturesAxiom = new AddAxiom(ontoHelper.getMetaOntology(), parentalRelationBetweenFeaturesAssertion);
 		ontoHelper.getManager().applyChange(addParentalRelationBetweenFeaturesAxiom);
+	}
+
+	public void addDisjuctionBetweenFeatureOWLClasses()  {
+//		if (feature.isGroupedFeature()) {
+//			addSubClassOfClassification(owlClassFeature, );
+//		} else if (feature.isOptionalFeature()) {
+//			addSubClassOfClassification(owlClassFeature, );
+//		} else if (feature.isRootFeature()) {
+//			addSubClassOfClassification(owlClassFeature, );
+//		} else if (feature.isVariatioTwoFeature()) {
+//			addSubClassOfClassification(owlClassFeature, );
+//			addMaxCardinalityOfVariationTwo((VariationTwo) feature, owlClassFeature);
+//		} else if (feature.isMandatoryFeature()) {
+//			addSubClassOfClassification(owlClassFeature, );
+		
+		
+		OWLOntology targetOntology = ontoHelper.getMetaOntology();
+		OWLDataFactory dataFactory = ontoHelper.getDataFactory();
+		
+		OWLClass[] parentClasses = {
+				OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.GROUPED_FEATURE),
+				OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.OPTIONAL_FEATURE),
+				OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.ROOT_FEATURE),
+				OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.VARIATION_TWO),
+				OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.MANDATORY_FEATURE)
+				};
+		
+		Set<OWLClassExpression> classExpressions = new HashSet<OWLClassExpression>();
+		
+		for (OWLClass owlClass : parentClasses) {
+			Set<OWLClassExpression> subClasses = owlClass.getSubClasses(targetOntology);
+			classExpressions.addAll(subClasses);
+		}
+		
+		
+		MakeClassesMutuallyDisjoint makeClassesMutuallyDisjoint = new MakeClassesMutuallyDisjoint(dataFactory, classExpressions, true, targetOntology);
+		List<OWLOntologyChange> changes = makeClassesMutuallyDisjoint.getChanges();
+		
+		for (OWLOntologyChange owlOntologyChange : changes) {
+			ontoHelper.getManager().applyChange(owlOntologyChange);
+		}
+		
+	}
+
+	public void addFeatureFromProductClassification(Feature feature, OWLIndividual currentFeatureOwl) {
+		System.out.println("FEATURE: " + feature);
+		String id = feature.getId();
+		System.out.println("FEATURE ID: " + id);
+		OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(id, ontoHelper.getPrefixOWLOntologyFormat());
+		System.out.println("DIUAH " + feature + " " + currentFeatureOwl + " " + owlClass);
+		addEntityClassificationToOntology(currentFeatureOwl, owlClass);
 	}
 
 }

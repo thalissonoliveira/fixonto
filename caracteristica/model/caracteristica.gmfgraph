@@ -245,13 +245,16 @@
       <accessors accessor="getFigureCaracteristicaOpcionalProdutoLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="VariacaoDoisProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="VariacaoDoisProdutoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="VariacaoDoisProdutoFigure" qualifiedClassName="utils.DiamondFigure">
         <children xsi:type="gmfgraph:Label" name="VariacaoDoisProdutoLabelFigure" text="VariacaoDoisProduto"/>
       </actualFigure>
       <accessors accessor="getFigureVariacaoDoisProdutoLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="CaracteristicaAgrupadaProdutoFigure">
+      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CaracteristicaAgrupadaProdutoFigure" qualifiedClassName="TriangleFigure">
+        <children xsi:type="gmfgraph:Label" name="CaracteristicaAgrupadaProdutoLabelFigure" text="CaracteristicaAgrupadaProduto"/>
+      </actualFigure>
+      <accessors accessor="getFigureCaracteristicaAgrupadaProdutoLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="ProdutoFigure">
       <actualFigure xsi:type="gmfgraph:Ellipse" name="ProdutoFigure">
@@ -260,7 +263,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="ProdutoLabelFigure" text="Produto"/>
       </actualFigure>
-      <accessors accessor="getFigureProdutoLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureProdutoLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="RegraDeComposicaoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RegraDeComposicaoFigure">
@@ -269,7 +272,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="RegraDeComposicaoLabelFigure" text="RegraDeComposicao"/>
       </actualFigure>
-      <accessors accessor="getFigureRegraDeComposicaoLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureRegraDeComposicaoLabelFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="RegraDeContextoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RegraDeContextoFigure">
@@ -278,7 +281,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="RegraDeContextoLabelFigure" text="RegraDeContexto"/>
       </actualFigure>
-      <accessors accessor="getFigureRegraDeContextoLabelFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureRegraDeContextoLabelFigure" figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="EventoLogicoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventoLogicoFigure">
@@ -287,7 +290,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="EventoLogicoLabelFigure" text="EventoLogico"/>
       </actualFigure>
-      <accessors accessor="getFigureEventoLogicoLabelFigure" figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureEventoLogicoLabelFigure" figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="EventoRelacionalFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventoRelacionalFigure">
@@ -296,7 +299,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="EventoRelacionalLabelFigure" text="EventoRelacional"/>
       </actualFigure>
-      <accessors accessor="getFigureEventoRelacionalLabelFigure" figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureEventoRelacionalLabelFigure" figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="AcaoLogicoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AcaoLogicoFigure">
@@ -305,7 +308,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="AcaoLogicoLabelFigure" text="AcaoLogico"/>
       </actualFigure>
-      <accessors accessor="getFigureAcaoLogicoLabelFigure" figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureAcaoLogicoLabelFigure" figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="LiteralAcaoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LiteralAcaoFigure">
@@ -314,7 +317,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="LiteralAcaoLabelFigure" text="LiteralAcao"/>
       </actualFigure>
-      <accessors accessor="getFigureLiteralAcaoLabelFigure" figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureLiteralAcaoLabelFigure" figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="DesignarFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DesignarFigure">
@@ -323,7 +326,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="DesignarLabelFigure" text="Designar"/>
       </actualFigure>
-      <accessors accessor="getFigureDesignarLabelFigure" figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureDesignarLabelFigure" figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="ExpressaoLogicaFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoLogicaFigure">
@@ -332,7 +335,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="ExpressaoLogicaLabelFigure" text="ExpressaoLogica"/>
       </actualFigure>
-      <accessors accessor="getFigureExpressaoLogicaLabelFigure" figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureExpressaoLogicaLabelFigure" figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="ExpressaoRelacionalFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoRelacionalFigure">
@@ -341,7 +344,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="ExpressaoRelacionalLabelFigure" text="ExpressaoRelacional"/>
       </actualFigure>
-      <accessors accessor="getFigureExpressaoRelacionalLabelFigure" figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureExpressaoRelacionalLabelFigure" figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="LiteralComposicaoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LiteralComposicaoFigure">
@@ -350,7 +353,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="LiteralComposicaoLabelFigure" text="LiteralComposicao"/>
       </actualFigure>
-      <accessors accessor="getFigureLiteralComposicaoLabelFigure" figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureLiteralComposicaoLabelFigure" figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="SimulacaoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SimulacaoFigure">
@@ -362,8 +365,8 @@
         </children>
         <children xsi:type="gmfgraph:Rectangle" name="SimulacaoEstadosCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureSimulacaoLabelFigure" figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
-      <accessors accessor="getSimulacaoEstadosCompartmentFigure" figure="//@figures.0/@descriptors.24/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureSimulacaoLabelFigure" figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
+      <accessors accessor="getSimulacaoEstadosCompartmentFigure" figure="//@figures.0/@descriptors.25/@actualFigure/@children.1"/>
     </descriptors>
     <descriptors name="EstadoFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EstadoFigure">
@@ -372,7 +375,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="EstadoLabelFigure" text="Estado"/>
       </actualFigure>
-      <accessors accessor="getFigureEstadoLabelFigure" figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureEstadoLabelFigure" figure="//@figures.0/@descriptors.26/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="TransicaoFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TransicaoFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0"/>
@@ -554,6 +557,7 @@
   <nodes name="CaracteristicaMandatoriaProduto" figure="CaracteristicaMandatoriaProdutoFigure"/>
   <nodes name="CaracteristicaOpcionalProduto" figure="CaracteristicaOpcionalProdutoFigure"/>
   <nodes name="VariacaoDoisProduto" figure="VariacaoDoisProdutoFigure"/>
+  <nodes name="CaracteristicaAgrupadaProduto" figure="CaracteristicaAgrupadaProdutoFigure"/>
   <nodes name="Produto" figure="ProdutoFigure"/>
   <nodes name="RegraDeComposicao" figure="RegraDeComposicaoFigure"/>
   <nodes name="RegraDeContexto" figure="RegraDeContextoFigure"/>
@@ -588,7 +592,7 @@
   <connections name="AcaoLogicoLadoDireitoAcao" figure="AcaoLogicoLadoDireitoAcaoFigure"/>
   <connections name="ExpressaoLogicaLadoDireitoComposicao" figure="ExpressaoLogicaLadoDireitoComposicaoFigure"/>
   <connections name="ExpressaoLogicaLadoEsquerdoComposicao" figure="ExpressaoLogicaLadoEsquerdoComposicaoFigure"/>
-  <compartments name="SimulacaoEstadosCompartment" figure="SimulacaoFigure" collapsible="true" accessor="//@figures.0/@descriptors.24/@accessors.1"/>
+  <compartments name="SimulacaoEstadosCompartment" figure="SimulacaoFigure" collapsible="true" accessor="//@figures.0/@descriptors.25/@accessors.1"/>
   <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels name="CaracteristicaRaizLabel" figure="CaracteristicaRaizFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="CaracteristicaOpcionalLabel" figure="CaracteristicaOpcionalFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
@@ -602,19 +606,20 @@
   <labels name="CaracteristicaMandatoriaProdutoLabel" figure="CaracteristicaMandatoriaProdutoFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
   <labels name="CaracteristicaOpcionalProdutoLabel" figure="CaracteristicaOpcionalProdutoFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
   <labels name="VariacaoDoisProdutoLabel" figure="VariacaoDoisProdutoFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
-  <labels name="ProdutoLabel" figure="ProdutoFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
-  <labels name="RegraDeComposicaoLabel" figure="RegraDeComposicaoFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
-  <labels name="RegraDeContextoLabel" figure="RegraDeContextoFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
-  <labels name="EventoLogicoLabel" figure="EventoLogicoFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
-  <labels name="EventoRelacionalLabel" figure="EventoRelacionalFigure" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
-  <labels name="AcaoLogicoLabel" figure="AcaoLogicoFigure" accessor="//@figures.0/@descriptors.18/@accessors.0"/>
-  <labels name="LiteralAcaoLabel" figure="LiteralAcaoFigure" accessor="//@figures.0/@descriptors.19/@accessors.0"/>
-  <labels name="DesignarLabel" figure="DesignarFigure" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
-  <labels name="ExpressaoLogicaLabel" figure="ExpressaoLogicaFigure" accessor="//@figures.0/@descriptors.21/@accessors.0"/>
-  <labels name="ExpressaoRelacionalLabel" figure="ExpressaoRelacionalFigure" accessor="//@figures.0/@descriptors.22/@accessors.0"/>
-  <labels name="LiteralComposicaoLabel" figure="LiteralComposicaoFigure" accessor="//@figures.0/@descriptors.23/@accessors.0"/>
-  <labels name="SimulacaoLabel" figure="SimulacaoFigure" accessor="//@figures.0/@descriptors.24/@accessors.0"/>
-  <labels name="EstadoLabel" figure="EstadoFigure" accessor="//@figures.0/@descriptors.25/@accessors.0"/>
+  <labels name="CaracteristicaAgrupadaProdutoLabel" figure="CaracteristicaAgrupadaProdutoFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels name="ProdutoLabel" figure="ProdutoFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels name="RegraDeComposicaoLabel" figure="RegraDeComposicaoFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+  <labels name="RegraDeContextoLabel" figure="RegraDeContextoFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+  <labels name="EventoLogicoLabel" figure="EventoLogicoFigure" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+  <labels name="EventoRelacionalLabel" figure="EventoRelacionalFigure" accessor="//@figures.0/@descriptors.18/@accessors.0"/>
+  <labels name="AcaoLogicoLabel" figure="AcaoLogicoFigure" accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+  <labels name="LiteralAcaoLabel" figure="LiteralAcaoFigure" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
+  <labels name="DesignarLabel" figure="DesignarFigure" accessor="//@figures.0/@descriptors.21/@accessors.0"/>
+  <labels name="ExpressaoLogicaLabel" figure="ExpressaoLogicaFigure" accessor="//@figures.0/@descriptors.22/@accessors.0"/>
+  <labels name="ExpressaoRelacionalLabel" figure="ExpressaoRelacionalFigure" accessor="//@figures.0/@descriptors.23/@accessors.0"/>
+  <labels name="LiteralComposicaoLabel" figure="LiteralComposicaoFigure" accessor="//@figures.0/@descriptors.24/@accessors.0"/>
+  <labels name="SimulacaoLabel" figure="SimulacaoFigure" accessor="//@figures.0/@descriptors.25/@accessors.0"/>
+  <labels name="EstadoLabel" figure="EstadoFigure" accessor="//@figures.0/@descriptors.26/@accessors.0"/>
   <labels name="TransicaoLabel" figure="TransicaoLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaCaracteristicaFilhaExternalLabel" figure="CaracteristicaCaracteristicaFilhaExternalLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaVariacoesExternalLabel" figure="CaracteristicaVariacoesExternalLabelFigure" elementIcon="false"/>

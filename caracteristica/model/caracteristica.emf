@@ -139,10 +139,18 @@ class CaracteristicaMandatoriaProduto extends CaracteristicaProduto {
 class CaracteristicaOpcionalProduto extends CaracteristicaProduto {
 }
 
-@gmf.node(label="nome", figure="ellipse")
-class VariacaoDoisProduto extends ElementoDeProduto, CaracteristicaProduto {
+@gmf.node(label="nome,cardinalidadeMaxima", label.pattern="Variation {0} : {1} ", figure="utils.DiamondFigure")
+class VariacaoDoisProduto extends CaracteristicaProduto {
   attr CardinalidadeMaxima cardinalidadeMaxima;
+  attr Integer cardinalidadeMinimaOr;
+  attr Integer cardinalidadeMaximaOr;
 }
+
+
+@gmf.node(label="nome", figure="TriangleFigure")
+class CaracteristicaAgrupadaProduto extends CaracteristicaProduto {
+}
+
 
 class VariacaoProduto extends ElementoDeProduto {
   attr Integer cardinalidadeMinima;

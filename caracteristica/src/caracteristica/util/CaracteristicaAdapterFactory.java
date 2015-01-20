@@ -159,6 +159,10 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
 				return createVariacaoDoisProdutoAdapter();
 			}
 			@Override
+			public Adapter caseCaracteristicaAgrupadaProduto(CaracteristicaAgrupadaProduto object) {
+				return createCaracteristicaAgrupadaProdutoAdapter();
+			}
+			@Override
 			public Adapter caseVariacaoProduto(VariacaoProduto object) {
 				return createVariacaoProdutoAdapter();
 			}
@@ -598,6 +602,20 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
 	}
 
   /**
+	 * Creates a new adapter for an object of class '{@link caracteristica.CaracteristicaAgrupadaProduto <em>Agrupada Produto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see caracteristica.CaracteristicaAgrupadaProduto
+	 * @generated
+	 */
+	public Adapter createCaracteristicaAgrupadaProdutoAdapter() {
+		return null;
+	}
+
+		/**
 	 * Creates a new adapter for an object of class '{@link caracteristica.VariacaoProduto <em>Variacao Produto</em>}'.
 	 * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;

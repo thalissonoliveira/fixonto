@@ -235,6 +235,14 @@ public class CaracteristicaSwitch<T> extends Switch<T>
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case CaracteristicaPackage.CARACTERISTICA_AGRUPADA_PRODUTO: {
+				CaracteristicaAgrupadaProduto caracteristicaAgrupadaProduto = (CaracteristicaAgrupadaProduto)theEObject;
+				T result = caseCaracteristicaAgrupadaProduto(caracteristicaAgrupadaProduto);
+				if (result == null) result = caseCaracteristicaProduto(caracteristicaAgrupadaProduto);
+				if (result == null) result = caseElementoDeProduto(caracteristicaAgrupadaProduto);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case CaracteristicaPackage.VARIACAO_PRODUTO: {
 				VariacaoProduto variacaoProduto = (VariacaoProduto)theEObject;
 				T result = caseVariacaoProduto(variacaoProduto);
@@ -749,6 +757,21 @@ public class CaracteristicaSwitch<T> extends Switch<T>
 	}
 
   /**
+	 * Returns the result of interpreting the object as an instance of '<em>Agrupada Produto</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Agrupada Produto</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCaracteristicaAgrupadaProduto(CaracteristicaAgrupadaProduto object) {
+		return null;
+	}
+
+		/**
 	 * Returns the result of interpreting the object as an instance of '<em>Variacao Produto</em>'.
 	 * <!-- begin-user-doc -->
    * This implementation returns null;

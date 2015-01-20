@@ -231,12 +231,23 @@
       <details key="figure" value="ellipse"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VariacaoDoisProduto" eSuperTypes="#//ElementoDeProduto #//CaracteristicaProduto">
+  <eClassifiers xsi:type="ecore:EClass" name="VariacaoDoisProduto" eSuperTypes="#//CaracteristicaProduto">
     <eAnnotations source="gmf.node">
-      <details key="label" value="nome"/>
-      <details key="figure" value="ellipse"/>
+      <details key="label" value="nome,cardinalidadeMaxima"/>
+      <details key="label.pattern" value="Variation {0} : {1} "/>
+      <details key="figure" value="utils.DiamondFigure"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinalidadeMaxima" eType="#//CardinalidadeMaxima"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinalidadeMinimaOr"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinalidadeMaximaOr"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CaracteristicaAgrupadaProduto" eSuperTypes="#//CaracteristicaProduto">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nome"/>
+      <details key="figure" value="TriangleFigure"/>
+    </eAnnotations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="VariacaoProduto" eSuperTypes="#//ElementoDeProduto">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="cardinalidadeMinima" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>

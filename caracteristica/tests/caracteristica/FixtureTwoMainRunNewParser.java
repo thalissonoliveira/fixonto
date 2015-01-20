@@ -7,6 +7,7 @@ import org.semanticweb.owlapi.model.OWLOntologyCreationException;
 
 import examples.code.SPLTestObjectsFactory;
 import fixture.owl.model.SPL;
+import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.parser.ParserFeaToOntoFixture;
 
 public class FixtureTwoMainRunNewParser {

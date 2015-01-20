@@ -83,6 +83,7 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
 			case CaracteristicaPackage.CARACTERISTICA_MANDATORIA_PRODUTO: return createCaracteristicaMandatoriaProduto();
 			case CaracteristicaPackage.CARACTERISTICA_OPCIONAL_PRODUTO: return createCaracteristicaOpcionalProduto();
 			case CaracteristicaPackage.VARIACAO_DOIS_PRODUTO: return createVariacaoDoisProduto();
+			case CaracteristicaPackage.CARACTERISTICA_AGRUPADA_PRODUTO: return createCaracteristicaAgrupadaProduto();
 			case CaracteristicaPackage.VARIACAO_PRODUTO: return createVariacaoProduto();
 			case CaracteristicaPackage.VARIANTE_PRODUTO: return createVarianteProduto();
 			case CaracteristicaPackage.PRODUTO: return createProduto();
@@ -417,6 +418,16 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
 	}
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CaracteristicaAgrupadaProduto createCaracteristicaAgrupadaProduto() {
+		CaracteristicaAgrupadaProdutoImpl caracteristicaAgrupadaProduto = new CaracteristicaAgrupadaProdutoImpl();
+		return caracteristicaAgrupadaProduto;
+	}
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated

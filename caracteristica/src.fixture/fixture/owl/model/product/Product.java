@@ -58,4 +58,9 @@ public class Product extends ProductFeature {
 		return false;
 	}
 	
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
+	
 } // Produto

@@ -12,6 +12,7 @@ import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.product.Product;
 import fixture.owl.model.product.ProductAttribute;
+import fixture.owl.model.product.ProductGroupedFeature;
 import fixture.owl.model.product.ProductMandatoryFeature;
 import fixture.owl.model.product.ProductOptionalFeature;
 import fixture.owl.model.product.ProductVariant;
@@ -151,6 +152,10 @@ public class SPLConceptFactory {
 	
 	public ProductVariationTwo createProductVariationTwo(String id, String name) {
 		return new ProductVariationTwo(id, name);
+	}
+	
+	public ProductGroupedFeature createProductGroupedFeature(String id, String name) {
+		return new ProductGroupedFeature(id, name);
 	}
 	
 	public ProductVariation createProductVariation(String id, String name) {

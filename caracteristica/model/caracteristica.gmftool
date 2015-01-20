@@ -39,6 +39,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="CaracteristicaAgrupadaProduto"
+          description="Create new CaracteristicaAgrupadaProduto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="CaracteristicaMandatoria"
           description="Create new CaracteristicaMandatoria">
         <smallIcon

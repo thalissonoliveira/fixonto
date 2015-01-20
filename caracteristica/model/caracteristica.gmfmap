@@ -21,7 +21,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.4"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.5"/>
       <diagramNode
           href="caracteristica.gmfgraph#CaracteristicaOpcional"/>
     </ownedChild>
@@ -66,7 +66,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.21"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.22"/>
       <diagramNode
           href="caracteristica.gmfgraph#VariacaoDois"/>
     </ownedChild>
@@ -86,7 +86,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.5"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.6"/>
       <diagramNode
           href="caracteristica.gmfgraph#CaracteristicaRaiz"/>
     </ownedChild>
@@ -106,7 +106,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.3"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.4"/>
       <diagramNode
           href="caracteristica.gmfgraph#CaracteristicaMandatoria"/>
     </ownedChild>
@@ -129,7 +129,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.16"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.17"/>
       <diagramNode
           href="caracteristica.gmfgraph#Produto"/>
     </ownedChild>
@@ -149,7 +149,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.9"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.10"/>
       <diagramNode
           href="caracteristica.gmfgraph#EventoLogico"/>
     </ownedChild>
@@ -169,7 +169,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.10"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.11"/>
       <diagramNode
           href="caracteristica.gmfgraph#EventoRelacional"/>
     </ownedChild>
@@ -209,7 +209,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.14"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.15"/>
       <diagramNode
           href="caracteristica.gmfgraph#LiteralAcao"/>
     </ownedChild>
@@ -229,7 +229,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.6"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.7"/>
       <diagramNode
           href="caracteristica.gmfgraph#Designar"/>
     </ownedChild>
@@ -249,7 +249,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.11"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.12"/>
       <diagramNode
           href="caracteristica.gmfgraph#ExpressaoLogica"/>
     </ownedChild>
@@ -269,7 +269,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.12"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.13"/>
       <diagramNode
           href="caracteristica.gmfgraph#ExpressaoRelacional"/>
     </ownedChild>
@@ -289,7 +289,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.15"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.16"/>
       <diagramNode
           href="caracteristica.gmfgraph#LiteralComposicao"/>
     </ownedChild>
@@ -335,17 +335,42 @@
       <domainMetaElement
           href="caracteristica.ecore#//VariacaoDoisProduto"/>
       <labelMappings
-          xsi:type="gmfmap:FeatureLabelMapping">
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="Variation {0} : {1} "
+          editorPattern="Variation {0} : {1} "
+          editPattern="Variation {0} : {1} ">
         <diagramLabel
             href="caracteristica.gmfgraph#VariacaoDoisProdutoLabel"/>
+        <features
+            href="caracteristica.ecore#//ElementoDeProduto/nome"/>
+        <features
+            href="caracteristica.ecore#//VariacaoDoisProduto/cardinalidadeMaxima"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.23"/>
+      <diagramNode
+          href="caracteristica.gmfgraph#VariacaoDoisProduto"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="caracteristica.ecore#//LPS/elementosDeProduto"/>
+    <ownedChild>
+      <domainMetaElement
+          href="caracteristica.ecore#//CaracteristicaAgrupadaProduto"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="caracteristica.gmfgraph#CaracteristicaAgrupadaProdutoLabel"/>
         <features
             href="caracteristica.ecore#//ElementoDeProduto/nome"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.22"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.3"/>
       <diagramNode
-          href="caracteristica.gmfgraph#VariacaoDoisProduto"/>
+          href="caracteristica.gmfgraph#CaracteristicaAgrupadaProduto"/>
     </ownedChild>
   </nodes>
   <nodes>
@@ -386,7 +411,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.17"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.18"/>
       <diagramNode
           href="caracteristica.gmfgraph#RaizDeContexto"/>
     </ownedChild>
@@ -409,7 +434,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.8"/>
       <diagramNode
           href="caracteristica.gmfgraph#EntidadeDeContexto"/>
     </ownedChild>
@@ -434,7 +459,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.13"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.14"/>
       <diagramNode
           href="caracteristica.gmfgraph#InformacaoDeContexto"/>
     </ownedChild>
@@ -457,7 +482,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.18"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.19"/>
       <diagramNode
           href="caracteristica.gmfgraph#RegraDeComposicao"/>
     </ownedChild>
@@ -480,7 +505,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.19"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.20"/>
       <diagramNode
           href="caracteristica.gmfgraph#RegraDeContexto"/>
     </ownedChild>
@@ -526,11 +551,11 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.20"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.21"/>
       <diagramNode
           href="caracteristica.gmfgraph#Simulacao"/>
       <children
-          compartment="//@nodes.24/@ownedChild/@compartments.0">
+          compartment="//@nodes.25/@ownedChild/@compartments.0">
         <containmentFeature
             href="caracteristica.ecore#//Simulacao/estados"/>
         <ownedChild>
@@ -545,13 +570,13 @@
           </labelMappings>
           <tool
               xsi:type="gmftool:CreationTool"
-              href="caracteristica.gmftool#//@palette/@tools.0/@tools.8"/>
+              href="caracteristica.gmftool#//@palette/@tools.0/@tools.9"/>
           <diagramNode
               href="caracteristica.gmfgraph#Estado"/>
         </ownedChild>
       </children>
       <compartments
-          children="//@nodes.24/@ownedChild/@children.0">
+          children="//@nodes.25/@ownedChild/@children.0">
         <compartment
             href="caracteristica.gmfgraph#SimulacaoEstadosCompartment"/>
       </compartments>

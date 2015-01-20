@@ -1,16 +1,19 @@
 package fixture.owl.model.product;
 
-public class ProductMandatoryFeature extends ProductFeature {
+
+public class ProductGroupedFeature extends ProductFeature {
+
 	
-	
-	public ProductMandatoryFeature() {
+	public ProductGroupedFeature() {
 		super();
 	}
 
-	public ProductMandatoryFeature(String id, String name) {
+	public ProductGroupedFeature(String id, String name) {
 		super(id, name);
 	}
 
+	//
+	
 	@Override
 	public boolean isProduct() {
 		return false;
@@ -23,7 +26,7 @@ public class ProductMandatoryFeature extends ProductFeature {
 
 	@Override
 	public boolean isProductMandatoryFeature() {
-		return true;
+		return false;
 	}
 
 	@Override
@@ -48,7 +51,7 @@ public class ProductMandatoryFeature extends ProductFeature {
 	
 	@Override
 	public boolean isProductGroupedFeature() {
-		return false;
+		return true;
 	}
-	
-} // CaracteristicaMandatoriaProduto
+
+} // VariacaoDoisProduto

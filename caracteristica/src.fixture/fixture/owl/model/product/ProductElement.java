@@ -16,6 +16,7 @@ public interface ProductElement extends Nameable {
 	boolean isProductMandatoryFeature();
 	boolean isProductOptionalFeature();
 	boolean isProductVariationTwoFeature();
+	boolean isProductGroupedFeature();
 	boolean isProductVariant();
 	boolean isProductVariation();
 	

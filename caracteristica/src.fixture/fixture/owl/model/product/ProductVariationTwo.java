@@ -68,5 +68,10 @@ public class ProductVariationTwo extends ProductFeature {
 	public boolean isProductVariation() {
 		return false;
 	}
+	
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
 
 } // VariacaoDoisProduto

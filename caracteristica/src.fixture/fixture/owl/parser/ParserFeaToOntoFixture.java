@@ -74,6 +74,7 @@ public class ParserFeaToOntoFixture {
 			feaToOntoFixtureUtils = OWLUtils.getInstance(ontoHelper);
 //			Utils.printSPLInfo(spl);
 			populateOWL(spl);
+			instatiateProducts(spl.getProducts());
 			ontoHelper.saveAndRemoveOntology();
 			ontoHelper.deleteTempDir();
 		} catch (OWLOntologyCreationException e) {
@@ -85,6 +86,53 @@ public class ParserFeaToOntoFixture {
 		}
 	}
 	
+	private void instatiateProducts(Set<Product> products) {
+		for (Product product : products) {
+			Feature feature = getFeatureByName(product.getName());
+			buildOntologyFromProduct(feature);
+		}
+		
+	}
+	
+	private void buildOntologyFromProduct(Feature feature) {
+
+		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
+		feaToOntoFixtureUtils.addFeatureFromProductClassification(feature, currentFeatureOwl);
+		
+		Feature fatherFeature = feature.getFatherFeature();
+		if (fatherFeature != null) {
+			OWLIndividual currentFatherFeatureOwl = null;
+			String fatherId = fatherFeature.getId();
+			
+			if (owlOracle.containsKey(fatherId)) {
+				currentFatherFeatureOwl = owlOracle.get(fatherId);
+			} else {
+				//TODO Acho que esse código está errado, pois não há classificação da feature nesse ponto. Verificar se esse pedaço de código é chamado. Se for, ver o comportamento.
+				currentFatherFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(fatherFeature, owlOracle);
+			}
+			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(currentFeatureOwl, currentFatherFeatureOwl);
+		}
+		
+		Set<Attribute> attributes = feature.getAttributes();
+
+		OWLIndividual currentAttributeOwl;
+		for (Attribute attribute : attributes) {
+			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
+			feaToOntoFixtureUtils.addAttributeClassification(currentAttributeOwl);
+			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
+		}
+		
+		Set<Feature> childrenFeatures = feature.getChildrenFeatures();
+		if (!childrenFeatures.isEmpty()) {
+			for (Feature childFeature : childrenFeatures) {
+				buildOntology(childFeature);
+			}
+		} else {
+			return;
+		}
+		
+	}
+
 	private void populateOWL(SPL spl) {
 		//Declarar todos os conceitos (classes) que vou construir a ontologia
 		RootFeature feature = Utils.getRootFeatureOf(spl.getSystem());;
@@ -94,6 +142,8 @@ public class ParserFeaToOntoFixture {
 		ContextRule contextRule;
 		
 		buildOntology(feature);
+		feaToOntoFixtureUtils.addDisjuctionBetweenFeatureOWLClasses();
+		
 		
 		for (Element element : spl.getElements()) {
 			if (element.isContextRoot()) {
@@ -376,6 +426,15 @@ public class ParserFeaToOntoFixture {
 	public Nameable getElementById(String id) {
 		Nameable element = getOracle().get(id);
 		return element;
+	}
+	
+	public Feature getFeatureByName(String name) {
+		for (Nameable nameable : getOracle().values()) {
+			if (nameable.getName().equals(name) && nameable instanceof Feature) {
+				return (Feature) nameable;
+			}
+		}
+		return null;
 	}
 	
 	public void addToFixtureOracle(Nameable nameable) {

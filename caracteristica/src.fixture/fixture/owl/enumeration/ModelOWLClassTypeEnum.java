@@ -44,7 +44,8 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	PRODUCT_OPTIONAL_FEATURE(29, "Product Optional Feature", "ProductOptionalFeature"),
 	PRODUCT_VARIATION_TWO(30, "Product Variation Two", "ProductVariationTwo"),
 	PRODUCT_VARIATION(31, "Product Variation", "ProductVariation" ),
-	PRODUCT_VARIANT(32, "Product Variat", "ProductVariat" );
+	PRODUCT_VARIANT(32, "Product Variat", "ProductVariat" ), 
+	PRODUCT_GROUPED_FEATURE(33, "Product Grouped Feature", "ProductGroupedFeature" );
 	
 	private int code;
 	private String description;

@@ -46,4 +46,9 @@ public class ProductOptionalFeature extends ProductFeature {
 		return false;
 	}
 	
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
+	
 } // CaracteristicaOpcionalProduto

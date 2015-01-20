@@ -16,6 +16,8 @@ import fixture.owl.model.enumeration.RelationalOperator;
 import fixture.owl.model.enumeration.ValueType;
 import fixture.owl.model.product.Product;
 import fixture.owl.model.product.ProductMandatoryFeature;
+import fixture.owl.model.product.ProductOptionalFeature;
+import fixture.owl.model.product.ProductVariationTwo;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
@@ -214,6 +216,30 @@ public class SPLTestObjectsFactory {
 		spl.addRule(compositionRule);
 		spl.addRule(contextRule);
 		
+		//###############################  PRODUCTS ####################################
+		
+		Product p = new Product("@prod.1", "RF");
+		
+		ProductMandatoryFeature m = new ProductMandatoryFeature("@prodele.1", "MF1");
+		ProductOptionalFeature m1 = new ProductOptionalFeature("@prodele.2", "OF1");
+		ProductVariationTwo m2 = new ProductVariationTwo("@prodele.3", "VT1");
+		ProductVariationTwo m3 = new ProductVariationTwo("@prodele.4", "VT2");
+		ProductOptionalFeature m4 = new ProductOptionalFeature("@prodele.5", "OF2");
+		
+		p.addChild(m);
+		p.addChild(m1);
+		
+		m1.addChild(m2);
+		m1.addChild(m3);
+		
+		m2.addChild(m4);
+		
+		spl.addProduct(p);
+		spl.addProductElement(m);
+		spl.addProductElement(m1);
+		spl.addProductElement(m2);
+		spl.addProductElement(m3);
+		
 		//###########################################################################
 		
 		parserFeaToOntoFixture.addToFixtureOracle(f1);
@@ -237,6 +263,14 @@ public class SPLTestObjectsFactory {
 		parserFeaToOntoFixture.addToFixtureOracle(actionLiteral);
 		parserFeaToOntoFixture.addToFixtureOracle(relationalEvent);
 		parserFeaToOntoFixture.addToFixtureOracle(contextRule);
+		
+		parserFeaToOntoFixture.addToFixtureOracle(p);
+		parserFeaToOntoFixture.addToFixtureOracle(m);
+		parserFeaToOntoFixture.addToFixtureOracle(m1);
+		parserFeaToOntoFixture.addToFixtureOracle(m2);
+		parserFeaToOntoFixture.addToFixtureOracle(m3);
+		parserFeaToOntoFixture.addToFixtureOracle(m4);
+		
 		
 	}
 	

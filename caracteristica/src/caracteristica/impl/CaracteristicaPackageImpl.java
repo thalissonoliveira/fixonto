@@ -9,6 +9,7 @@ import caracteristica.Atributo;
 import caracteristica.AtributoProduto;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaAgrupada;
+import caracteristica.CaracteristicaAgrupadaProduto;
 import caracteristica.CaracteristicaFactory;
 import caracteristica.CaracteristicaMandatoria;
 import caracteristica.CaracteristicaMandatoriaProduto;
@@ -232,6 +233,13 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
   private EClass variacaoDoisProdutoEClass = null;
 
   /**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass caracteristicaAgrupadaProdutoEClass = null;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -1203,6 +1211,33 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVariacaoDoisProduto_CardinalidadeMinimaOr() {
+		return (EAttribute)variacaoDoisProdutoEClass.getEStructuralFeatures().get(1);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getVariacaoDoisProduto_CardinalidadeMaximaOr() {
+		return (EAttribute)variacaoDoisProdutoEClass.getEStructuralFeatures().get(2);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getCaracteristicaAgrupadaProduto() {
+		return caracteristicaAgrupadaProdutoEClass;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -2141,6 +2176,10 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
 		variacaoDoisProdutoEClass = createEClass(VARIACAO_DOIS_PRODUTO);
 		createEAttribute(variacaoDoisProdutoEClass, VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA);
+		createEAttribute(variacaoDoisProdutoEClass, VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MINIMA_OR);
+		createEAttribute(variacaoDoisProdutoEClass, VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA_OR);
+
+		caracteristicaAgrupadaProdutoEClass = createEClass(CARACTERISTICA_AGRUPADA_PRODUTO);
 
 		variacaoProdutoEClass = createEClass(VARIACAO_PRODUTO);
 		createEAttribute(variacaoProdutoEClass, VARIACAO_PRODUTO__CARDINALIDADE_MINIMA);
@@ -2301,8 +2340,8 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		atributoProdutoEClass.getESuperTypes().add(this.getElementoDeProduto());
 		caracteristicaMandatoriaProdutoEClass.getESuperTypes().add(this.getCaracteristicaProduto());
 		caracteristicaOpcionalProdutoEClass.getESuperTypes().add(this.getCaracteristicaProduto());
-		variacaoDoisProdutoEClass.getESuperTypes().add(this.getElementoDeProduto());
 		variacaoDoisProdutoEClass.getESuperTypes().add(this.getCaracteristicaProduto());
+		caracteristicaAgrupadaProdutoEClass.getESuperTypes().add(this.getCaracteristicaProduto());
 		variacaoProdutoEClass.getESuperTypes().add(this.getElementoDeProduto());
 		varianteProdutoEClass.getESuperTypes().add(this.getElementoDeProduto());
 		produtoEClass.getESuperTypes().add(this.getCaracteristicaProduto());
@@ -2411,6 +2450,10 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
 		initEClass(variacaoDoisProdutoEClass, VariacaoDoisProduto.class, "VariacaoDoisProduto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariacaoDoisProduto_CardinalidadeMaxima(), this.getCardinalidadeMaxima(), "cardinalidadeMaxima", null, 0, 1, VariacaoDoisProduto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariacaoDoisProduto_CardinalidadeMinimaOr(), ecorePackage.getEIntegerObject(), "cardinalidadeMinimaOr", null, 0, 1, VariacaoDoisProduto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getVariacaoDoisProduto_CardinalidadeMaximaOr(), ecorePackage.getEIntegerObject(), "cardinalidadeMaximaOr", null, 0, 1, VariacaoDoisProduto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(caracteristicaAgrupadaProdutoEClass, CaracteristicaAgrupadaProduto.class, "CaracteristicaAgrupadaProduto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(variacaoProdutoEClass, VariacaoProduto.class, "VariacaoProduto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariacaoProduto_CardinalidadeMinima(), ecorePackage.getEIntegerObject(), "cardinalidadeMinima", null, 0, 1, VariacaoProduto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2688,8 +2731,16 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		  (variacaoDoisProdutoEClass, 
 		   source, 
 		   new String[] {
+			 "label", "nome,cardinalidadeMaxima",
+			 "label.pattern", "Variation {0} : {1} ",
+			 "figure", "utils.DiamondFigure"
+		   });	
+		addAnnotation
+		  (caracteristicaAgrupadaProdutoEClass, 
+		   source, 
+		   new String[] {
 			 "label", "nome",
-			 "figure", "ellipse"
+			 "figure", "TriangleFigure"
 		   });	
 		addAnnotation
 		  (produtoEClass, 

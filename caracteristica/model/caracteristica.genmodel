@@ -3,7 +3,7 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/caracteristica/src" modelPluginID="caracteristica"
     modelName="Caracteristica" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
     copyrightFields="false">
-  <foreignModel>caracteristica.ecore</foreignModel>
+  <foreignModel>caracteristica.emf</foreignModel>
   <genPackages prefix="Caracteristica" disposableProviderFactory="true" ecorePackage="caracteristica.ecore#/">
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="caracteristica.ecore#//Origem">
       <genEnumLiterals ecoreEnumLiteral="caracteristica.ecore#//Origem/Sentida"/>
@@ -133,7 +133,10 @@
     <genClasses ecoreClass="caracteristica.ecore#//CaracteristicaOpcionalProduto"/>
     <genClasses ecoreClass="caracteristica.ecore#//VariacaoDoisProduto">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caracteristica.ecore#//VariacaoDoisProduto/cardinalidadeMaxima"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caracteristica.ecore#//VariacaoDoisProduto/cardinalidadeMinimaOr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caracteristica.ecore#//VariacaoDoisProduto/cardinalidadeMaximaOr"/>
     </genClasses>
+    <genClasses ecoreClass="caracteristica.ecore#//CaracteristicaAgrupadaProduto"/>
     <genClasses ecoreClass="caracteristica.ecore#//VariacaoProduto">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caracteristica.ecore#//VariacaoProduto/cardinalidadeMinima"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute caracteristica.ecore#//VariacaoProduto/cardinalidadeMaxima"/>

@@ -118,5 +118,10 @@ public class ProductAttribute implements ProductElement {
 	public boolean isProductVariation() {
 		return false;
 	}
+	
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
 
 } // AtributoProduto

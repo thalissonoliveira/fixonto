@@ -101,4 +101,9 @@ public class ProductVariant implements ProductElement {
 		return false;
 	}
 	
-	} // VarianteProduto
+	@Override
+	public boolean isProductGroupedFeature() {
+		return false;
+	}
+	
+} // VarianteProduto

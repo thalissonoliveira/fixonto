@@ -1346,7 +1346,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__NOME = ELEMENTO_DE_PRODUTO__NOME;
+  int VARIACAO_DOIS_PRODUTO__NOME = CARACTERISTICA_PRODUTO__NOME;
 
   /**
 	 * The feature id for the '<em><b>Elemento Original</b></em>' reference.
@@ -1355,7 +1355,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__ELEMENTO_ORIGINAL = ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL;
+  int VARIACAO_DOIS_PRODUTO__ELEMENTO_ORIGINAL = CARACTERISTICA_PRODUTO__ELEMENTO_ORIGINAL;
 
   /**
 	 * The feature id for the '<em><b>Caracteristica Produto Pai</b></em>' reference.
@@ -1364,7 +1364,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__CARACTERISTICA_PRODUTO_PAI = ELEMENTO_DE_PRODUTO_FEATURE_COUNT + 0;
+  int VARIACAO_DOIS_PRODUTO__CARACTERISTICA_PRODUTO_PAI = CARACTERISTICA_PRODUTO__CARACTERISTICA_PRODUTO_PAI;
 
   /**
 	 * The feature id for the '<em><b>Caracteristica Produto Filha</b></em>' reference list.
@@ -1373,7 +1373,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__CARACTERISTICA_PRODUTO_FILHA = ELEMENTO_DE_PRODUTO_FEATURE_COUNT + 1;
+  int VARIACAO_DOIS_PRODUTO__CARACTERISTICA_PRODUTO_FILHA = CARACTERISTICA_PRODUTO__CARACTERISTICA_PRODUTO_FILHA;
 
   /**
 	 * The feature id for the '<em><b>Atributo Produto</b></em>' reference list.
@@ -1382,7 +1382,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__ATRIBUTO_PRODUTO = ELEMENTO_DE_PRODUTO_FEATURE_COUNT + 2;
+  int VARIACAO_DOIS_PRODUTO__ATRIBUTO_PRODUTO = CARACTERISTICA_PRODUTO__ATRIBUTO_PRODUTO;
 
   /**
 	 * The feature id for the '<em><b>Cardinalidade Maxima</b></em>' attribute.
@@ -1391,18 +1391,100 @@ public interface CaracteristicaPackage extends EPackage
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA = ELEMENTO_DE_PRODUTO_FEATURE_COUNT + 3;
+  int VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA = CARACTERISTICA_PRODUTO_FEATURE_COUNT + 0;
 
   /**
+	 * The feature id for the '<em><b>Cardinalidade Minima Or</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MINIMA_OR = CARACTERISTICA_PRODUTO_FEATURE_COUNT + 1;
+
+		/**
+	 * The feature id for the '<em><b>Cardinalidade Maxima Or</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA_OR = CARACTERISTICA_PRODUTO_FEATURE_COUNT + 2;
+
+		/**
 	 * The number of structural features of the '<em>Variacao Dois Produto</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int VARIACAO_DOIS_PRODUTO_FEATURE_COUNT = ELEMENTO_DE_PRODUTO_FEATURE_COUNT + 4;
+  int VARIACAO_DOIS_PRODUTO_FEATURE_COUNT = CARACTERISTICA_PRODUTO_FEATURE_COUNT + 3;
 
   /**
+	 * The meta object id for the '{@link caracteristica.impl.CaracteristicaAgrupadaProdutoImpl <em>Agrupada Produto</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see caracteristica.impl.CaracteristicaAgrupadaProdutoImpl
+	 * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaAgrupadaProduto()
+	 * @generated
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO = 22;
+
+		/**
+	 * The feature id for the '<em><b>Nome</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO__NOME = CARACTERISTICA_PRODUTO__NOME;
+
+		/**
+	 * The feature id for the '<em><b>Elemento Original</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO__ELEMENTO_ORIGINAL = CARACTERISTICA_PRODUTO__ELEMENTO_ORIGINAL;
+
+		/**
+	 * The feature id for the '<em><b>Caracteristica Produto Pai</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO__CARACTERISTICA_PRODUTO_PAI = CARACTERISTICA_PRODUTO__CARACTERISTICA_PRODUTO_PAI;
+
+		/**
+	 * The feature id for the '<em><b>Caracteristica Produto Filha</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO__CARACTERISTICA_PRODUTO_FILHA = CARACTERISTICA_PRODUTO__CARACTERISTICA_PRODUTO_FILHA;
+
+		/**
+	 * The feature id for the '<em><b>Atributo Produto</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO__ATRIBUTO_PRODUTO = CARACTERISTICA_PRODUTO__ATRIBUTO_PRODUTO;
+
+		/**
+	 * The number of structural features of the '<em>Agrupada Produto</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CARACTERISTICA_AGRUPADA_PRODUTO_FEATURE_COUNT = CARACTERISTICA_PRODUTO_FEATURE_COUNT + 0;
+
+		/**
 	 * The meta object id for the '{@link caracteristica.impl.VariacaoProdutoImpl <em>Variacao Produto</em>}' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1410,7 +1492,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacaoProduto()
 	 * @generated
 	 */
-  int VARIACAO_PRODUTO = 22;
+  int VARIACAO_PRODUTO = 23;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1483,7 +1565,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getVarianteProduto()
 	 * @generated
 	 */
-  int VARIANTE_PRODUTO = 23;
+  int VARIANTE_PRODUTO = 24;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1538,7 +1620,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getProduto()
 	 * @generated
 	 */
-  int PRODUTO = 24;
+  int PRODUTO = 25;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1611,7 +1693,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getRegra()
 	 * @generated
 	 */
-  int REGRA = 25;
+  int REGRA = 26;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1648,7 +1730,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeComposicao()
 	 * @generated
 	 */
-  int REGRA_DE_COMPOSICAO = 26;
+  int REGRA_DE_COMPOSICAO = 27;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1703,7 +1785,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeContexto()
 	 * @generated
 	 */
-  int REGRA_DE_CONTEXTO = 27;
+  int REGRA_DE_CONTEXTO = 28;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1758,7 +1840,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressao()
 	 * @generated
 	 */
-  int EXPRESSAO = 35;
+  int EXPRESSAO = 36;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1786,7 +1868,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getEvento()
 	 * @generated
 	 */
-  int EVENTO = 28;
+  int EVENTO = 29;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1814,7 +1896,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getEventoLogico()
 	 * @generated
 	 */
-  int EVENTO_LOGICO = 29;
+  int EVENTO_LOGICO = 30;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1869,7 +1951,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getEventoRelacional()
 	 * @generated
 	 */
-  int EVENTO_RELACIONAL = 30;
+  int EVENTO_RELACIONAL = 31;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1924,7 +2006,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getAcao()
 	 * @generated
 	 */
-  int ACAO = 31;
+  int ACAO = 32;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1952,7 +2034,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getAcaoLogico()
 	 * @generated
 	 */
-  int ACAO_LOGICO = 32;
+  int ACAO_LOGICO = 33;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2007,7 +2089,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralAcao()
 	 * @generated
 	 */
-  int LITERAL_ACAO = 33;
+  int LITERAL_ACAO = 34;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2053,7 +2135,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getDesignar()
 	 * @generated
 	 */
-  int DESIGNAR = 34;
+  int DESIGNAR = 35;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2108,7 +2190,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getAntecedente()
 	 * @generated
 	 */
-  int ANTECEDENTE = 36;
+  int ANTECEDENTE = 37;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2136,7 +2218,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoLogica()
 	 * @generated
 	 */
-  int EXPRESSAO_LOGICA = 37;
+  int EXPRESSAO_LOGICA = 38;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2191,7 +2273,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoRelacional()
 	 * @generated
 	 */
-  int EXPRESSAO_RELACIONAL = 38;
+  int EXPRESSAO_RELACIONAL = 39;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2246,7 +2328,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralComposicao()
 	 * @generated
 	 */
-  int LITERAL_COMPOSICAO = 39;
+  int LITERAL_COMPOSICAO = 40;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2292,7 +2374,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getSimulacao()
 	 * @generated
 	 */
-  int SIMULACAO = 40;
+  int SIMULACAO = 41;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2338,7 +2420,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getTransicao()
 	 * @generated
 	 */
-  int TRANSICAO = 41;
+  int TRANSICAO = 42;
 
   /**
 	 * The feature id for the '<em><b>EAntigo</b></em>' reference.
@@ -2411,7 +2493,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getEstado()
 	 * @generated
 	 */
-  int ESTADO = 42;
+  int ESTADO = 43;
 
   /**
 	 * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2457,7 +2539,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getInconsistenciaRegraAdaptacao()
 	 * @generated
 	 */
-  int INCONSISTENCIA_REGRA_ADAPTACAO = 43;
+  int INCONSISTENCIA_REGRA_ADAPTACAO = 44;
 
   /**
 	 * The feature id for the '<em><b>Regras Inconsistentes</b></em>' reference list.
@@ -2503,7 +2585,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getOrigem()
 	 * @generated
 	 */
-  int ORIGEM = 44;
+  int ORIGEM = 45;
 
   /**
 	 * The meta object id for the '{@link caracteristica.Validade <em>Validade</em>}' enum.
@@ -2513,7 +2595,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getValidade()
 	 * @generated
 	 */
-  int VALIDADE = 45;
+  int VALIDADE = 46;
 
   /**
 	 * The meta object id for the '{@link caracteristica.Qualidade <em>Qualidade</em>}' enum.
@@ -2523,7 +2605,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getQualidade()
 	 * @generated
 	 */
-  int QUALIDADE = 46;
+  int QUALIDADE = 47;
 
   /**
 	 * The meta object id for the '{@link caracteristica.TipoValor <em>Tipo Valor</em>}' enum.
@@ -2533,7 +2615,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getTipoValor()
 	 * @generated
 	 */
-  int TIPO_VALOR = 47;
+  int TIPO_VALOR = 48;
 
   /**
 	 * The meta object id for the '{@link caracteristica.OperadorLogico <em>Operador Logico</em>}' enum.
@@ -2543,7 +2625,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorLogico()
 	 * @generated
 	 */
-  int OPERADOR_LOGICO = 48;
+  int OPERADOR_LOGICO = 49;
 
   /**
 	 * The meta object id for the '{@link caracteristica.OperadorAcaoLogico <em>Operador Acao Logico</em>}' enum.
@@ -2553,7 +2635,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorAcaoLogico()
 	 * @generated
 	 */
-  int OPERADOR_ACAO_LOGICO = 49;
+  int OPERADOR_ACAO_LOGICO = 50;
 
   /**
 	 * The meta object id for the '{@link caracteristica.CardinalidadeMaxima <em>Cardinalidade Maxima</em>}' enum.
@@ -2563,7 +2645,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getCardinalidadeMaxima()
 	 * @generated
 	 */
-  int CARDINALIDADE_MAXIMA = 50;
+  int CARDINALIDADE_MAXIMA = 51;
 
   /**
 	 * The meta object id for the '{@link caracteristica.OperadorRelacional <em>Operador Relacional</em>}' enum.
@@ -2573,7 +2655,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorRelacional()
 	 * @generated
 	 */
-  int OPERADOR_RELACIONAL = 51;
+  int OPERADOR_RELACIONAL = 52;
 
   /**
 	 * The meta object id for the '{@link caracteristica.Presenca <em>Presenca</em>}' enum.
@@ -2583,7 +2665,7 @@ public interface CaracteristicaPackage extends EPackage
 	 * @see caracteristica.impl.CaracteristicaPackageImpl#getPresenca()
 	 * @generated
 	 */
-  int PRESENCA = 52;
+  int PRESENCA = 53;
 
 
   /**
@@ -3324,6 +3406,38 @@ public interface CaracteristicaPackage extends EPackage
   EAttribute getVariacaoDoisProduto_CardinalidadeMaxima();
 
   /**
+	 * Returns the meta object for the attribute '{@link caracteristica.VariacaoDoisProduto#getCardinalidadeMinimaOr <em>Cardinalidade Minima Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cardinalidade Minima Or</em>'.
+	 * @see caracteristica.VariacaoDoisProduto#getCardinalidadeMinimaOr()
+	 * @see #getVariacaoDoisProduto()
+	 * @generated
+	 */
+	EAttribute getVariacaoDoisProduto_CardinalidadeMinimaOr();
+
+		/**
+	 * Returns the meta object for the attribute '{@link caracteristica.VariacaoDoisProduto#getCardinalidadeMaximaOr <em>Cardinalidade Maxima Or</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Cardinalidade Maxima Or</em>'.
+	 * @see caracteristica.VariacaoDoisProduto#getCardinalidadeMaximaOr()
+	 * @see #getVariacaoDoisProduto()
+	 * @generated
+	 */
+	EAttribute getVariacaoDoisProduto_CardinalidadeMaximaOr();
+
+		/**
+	 * Returns the meta object for class '{@link caracteristica.CaracteristicaAgrupadaProduto <em>Agrupada Produto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Agrupada Produto</em>'.
+	 * @see caracteristica.CaracteristicaAgrupadaProduto
+	 * @generated
+	 */
+	EClass getCaracteristicaAgrupadaProduto();
+
+		/**
 	 * Returns the meta object for class '{@link caracteristica.VariacaoProduto <em>Variacao Produto</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4814,6 +4928,32 @@ public interface CaracteristicaPackage extends EPackage
     EAttribute VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA = eINSTANCE.getVariacaoDoisProduto_CardinalidadeMaxima();
 
     /**
+		 * The meta object literal for the '<em><b>Cardinalidade Minima Or</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MINIMA_OR = eINSTANCE.getVariacaoDoisProduto_CardinalidadeMinimaOr();
+
+				/**
+		 * The meta object literal for the '<em><b>Cardinalidade Maxima Or</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VARIACAO_DOIS_PRODUTO__CARDINALIDADE_MAXIMA_OR = eINSTANCE.getVariacaoDoisProduto_CardinalidadeMaximaOr();
+
+				/**
+		 * The meta object literal for the '{@link caracteristica.impl.CaracteristicaAgrupadaProdutoImpl <em>Agrupada Produto</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see caracteristica.impl.CaracteristicaAgrupadaProdutoImpl
+		 * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaAgrupadaProduto()
+		 * @generated
+		 */
+		EClass CARACTERISTICA_AGRUPADA_PRODUTO = eINSTANCE.getCaracteristicaAgrupadaProduto();
+
+				/**
 		 * The meta object literal for the '{@link caracteristica.impl.VariacaoProdutoImpl <em>Variacao Produto</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

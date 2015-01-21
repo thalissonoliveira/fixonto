@@ -31,208 +31,214 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class LiteralAcaoImpl extends AcaoImpl implements LiteralAcao
 {
   /**
-	 * The default value of the '{@link #getPresenca() <em>Presenca</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getPresenca() <em>Presenca</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getPresenca()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getPresenca()
+   * @generated
+   * @ordered
+   */
   protected static final Presenca PRESENCA_EDEFAULT = Presenca.PRESENTE;
 
   /**
-	 * The cached value of the '{@link #getPresenca() <em>Presenca</em>}' attribute.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getPresenca() <em>Presenca</em>}' attribute.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getPresenca()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getPresenca()
+   * @generated
+   * @ordered
+   */
   protected Presenca presenca = PRESENCA_EDEFAULT;
 
   /**
-	 * The cached value of the '{@link #getElemento() <em>Elemento</em>}' reference.
-	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getElemento() <em>Elemento</em>}' reference.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #getElemento()
-	 * @generated
-	 * @ordered
-	 */
+   * @see #getElemento()
+   * @generated
+   * @ordered
+   */
   protected ElementoCaracteristico elemento;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected LiteralAcaoImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.LITERAL_ACAO;
-	}
+    return CaracteristicaPackage.Literals.LITERAL_ACAO;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public Presenca getPresenca()
   {
-		return presenca;
-	}
+    return presenca;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setPresenca(Presenca newPresenca)
   {
-		Presenca oldPresenca = presenca;
-		presenca = newPresenca == null ? PRESENCA_EDEFAULT : newPresenca;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LITERAL_ACAO__PRESENCA, oldPresenca, presenca));
-	}
+    Presenca oldPresenca = presenca;
+    presenca = newPresenca == null ? PRESENCA_EDEFAULT : newPresenca;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LITERAL_ACAO__PRESENCA, oldPresenca, presenca));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ElementoCaracteristico getElemento()
   {
-		if (elemento != null && elemento.eIsProxy()) {
-			InternalEObject oldElemento = (InternalEObject)elemento;
-			elemento = (ElementoCaracteristico)eResolveProxy(oldElemento);
-			if (elemento != oldElemento) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.LITERAL_ACAO__ELEMENTO, oldElemento, elemento));
-			}
-		}
-		return elemento;
-	}
+    if (elemento != null && elemento.eIsProxy())
+    {
+      InternalEObject oldElemento = (InternalEObject)elemento;
+      elemento = (ElementoCaracteristico)eResolveProxy(oldElemento);
+      if (elemento != oldElemento)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.LITERAL_ACAO__ELEMENTO, oldElemento, elemento));
+      }
+    }
+    return elemento;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public ElementoCaracteristico basicGetElemento()
   {
-		return elemento;
-	}
+    return elemento;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public void setElemento(ElementoCaracteristico newElemento)
   {
-		ElementoCaracteristico oldElemento = elemento;
-		elemento = newElemento;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LITERAL_ACAO__ELEMENTO, oldElemento, elemento));
-	}
+    ElementoCaracteristico oldElemento = elemento;
+    elemento = newElemento;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LITERAL_ACAO__ELEMENTO, oldElemento, elemento));
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-		switch (featureID) {
-			case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
-				return getPresenca();
-			case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
-				if (resolve) return getElemento();
-				return basicGetElemento();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    switch (featureID)
+    {
+      case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
+        return getPresenca();
+      case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
+        if (resolve) return getElemento();
+        return basicGetElemento();
+    }
+    return super.eGet(featureID, resolve, coreType);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-		switch (featureID) {
-			case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
-				setPresenca((Presenca)newValue);
-				return;
-			case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
-				setElemento((ElementoCaracteristico)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    switch (featureID)
+    {
+      case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
+        setPresenca((Presenca)newValue);
+        return;
+      case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
+        setElemento((ElementoCaracteristico)newValue);
+        return;
+    }
+    super.eSet(featureID, newValue);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public void eUnset(int featureID)
   {
-		switch (featureID) {
-			case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
-				setPresenca(PRESENCA_EDEFAULT);
-				return;
-			case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
-				setElemento((ElementoCaracteristico)null);
-				return;
-		}
-		super.eUnset(featureID);
-	}
+    switch (featureID)
+    {
+      case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
+        setPresenca(PRESENCA_EDEFAULT);
+        return;
+      case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
+        setElemento((ElementoCaracteristico)null);
+        return;
+    }
+    super.eUnset(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public boolean eIsSet(int featureID)
   {
-		switch (featureID) {
-			case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
-				return presenca != PRESENCA_EDEFAULT;
-			case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
-				return elemento != null;
-		}
-		return super.eIsSet(featureID);
-	}
+    switch (featureID)
+    {
+      case CaracteristicaPackage.LITERAL_ACAO__PRESENCA:
+        return presenca != PRESENCA_EDEFAULT;
+      case CaracteristicaPackage.LITERAL_ACAO__ELEMENTO:
+        return elemento != null;
+    }
+    return super.eIsSet(featureID);
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		if (eIsProxy()) return super.toString();
+    if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (presenca: ");
-		result.append(presenca);
-		result.append(')');
-		return result.toString();
-	}
+    StringBuffer result = new StringBuffer(super.toString());
+    result.append(" (presenca: ");
+    result.append(presenca);
+    result.append(')');
+    return result.toString();
+  }
 
 } //LiteralAcaoImpl

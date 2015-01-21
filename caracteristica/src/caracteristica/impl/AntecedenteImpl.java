@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class AntecedenteImpl extends ExpressaoImpl implements Antecedente
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AntecedenteImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.ANTECEDENTE;
-	}
+    return CaracteristicaPackage.Literals.ANTECEDENTE;
+  }
 
 } //AntecedenteImpl

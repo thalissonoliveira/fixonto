@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CaracteristicaOpcionalProdutoImpl extends CaracteristicaProdutoImpl implements CaracteristicaOpcionalProduto
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected CaracteristicaOpcionalProdutoImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL_PRODUTO;
-	}
+    return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL_PRODUTO;
+  }
 
 } //CaracteristicaOpcionalProdutoImpl

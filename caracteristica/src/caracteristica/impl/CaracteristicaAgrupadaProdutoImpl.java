@@ -33,22 +33,22 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CaracteristicaAgrupadaProdutoImpl extends CaracteristicaProdutoImpl implements CaracteristicaAgrupadaProduto {
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	protected CaracteristicaAgrupadaProdutoImpl() {
-		super();
-	}
+    super();
+  }
 
 	/**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
 	@Override
 	protected EClass eStaticClass() {
-		return CaracteristicaPackage.Literals.CARACTERISTICA_AGRUPADA_PRODUTO;
-	}
+    return CaracteristicaPackage.Literals.CARACTERISTICA_AGRUPADA_PRODUTO;
+  }
 
 } //CaracteristicaAgrupadaProdutoImpl

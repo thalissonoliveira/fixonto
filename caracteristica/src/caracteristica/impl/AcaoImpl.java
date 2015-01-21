@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class AcaoImpl extends ExpressaoImpl implements Acao
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected AcaoImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.ACAO;
-	}
+    return CaracteristicaPackage.Literals.ACAO;
+  }
 
 } //AcaoImpl

@@ -21,24 +21,24 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
 public class PontoDeVariacaoImpl extends EObjectImpl implements PontoDeVariacao
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected PontoDeVariacaoImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.PONTO_DE_VARIACAO;
-	}
+    return CaracteristicaPackage.Literals.PONTO_DE_VARIACAO;
+  }
 
 } //PontodeVariacaoImpl

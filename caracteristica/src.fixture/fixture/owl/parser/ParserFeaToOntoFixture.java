@@ -88,18 +88,25 @@ public class ParserFeaToOntoFixture {
 	
 	private void instatiateProducts(Set<Product> products) {
 		for (Product product : products) {
-			Feature feature = getFeatureByName(product.getName());
-			buildOntologyFromProduct(feature);
+			buildOntologyFromProduct(product);
 		}
 		
 	}
 	
-	private void buildOntologyFromProduct(Feature feature) {
+	private void buildOntologyFromProduct(ProductFeature product) {
+		
+		
+		System.out.println("### " + product.getName());
+		System.out.println("  >>> " + product.getOriginalElement());
+		
+		Feature feature = (Feature) getElementById(product.getOriginalElement().getId());
 
 		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
 		feaToOntoFixtureUtils.addFeatureFromProductClassification(feature, currentFeatureOwl);
 		
-		Feature fatherFeature = feature.getFatherFeature();
+		
+		ProductFeature fatherProductFeature = product.getFatherProductFeature();
+		Feature fatherFeature = fatherProductFeature != null ? feature.getFatherFeature() : null;
 		if (fatherFeature != null) {
 			OWLIndividual currentFatherFeatureOwl = null;
 			String fatherId = fatherFeature.getId();
@@ -122,10 +129,11 @@ public class ParserFeaToOntoFixture {
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
 		}
 		
-		Set<Feature> childrenFeatures = feature.getChildrenFeatures();
+		
+		Set<ProductFeature> childrenFeatures = product.getChildProductFeature();
 		if (!childrenFeatures.isEmpty()) {
-			for (Feature childFeature : childrenFeatures) {
-				buildOntology(childFeature);
+			for (ProductFeature childProductFeature : childrenFeatures) {
+				buildOntologyFromProduct(childProductFeature);
 			}
 		} else {
 			return;

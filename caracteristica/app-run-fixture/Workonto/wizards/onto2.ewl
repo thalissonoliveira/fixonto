@@ -152,7 +152,7 @@ operation preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoRaiz : C
 		}
 		
 		if (not caracteristicaProdutoFilha.caracteristicaProdutoFilha.isEmpty()) {
-			splFixture = preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoFilha, productFeatureFixture, splFixture, featToOntoFixture);
+			splFixture = preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoFilha, productFeatureFixture, factoryFixture, splFixture, featToOntoFixture);
 		}
 		
 	}
@@ -425,6 +425,8 @@ operation criarElementoDeProdutoFixture(elemento: ElementoDeProduto, factoryFixt
 		return factoryFixture.createProductOptionalFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(VariacaoDoisProduto)) {
 		return factoryFixture.createProductVariationTwo(elemento.id, elemento.nome);
+	} else if (elemento.isTypeOf(CaracteristicaAgrupadaProduto)) {
+		return factoryFixture.createProductGroupedFeature(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(VariacaoProduto)) {
 		return factoryFixture.createProductVariation(elemento.id, elemento.nome);
 	} else if (elemento.isTypeOf(VarianteProduto)) {

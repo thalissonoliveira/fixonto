@@ -86,18 +86,46 @@ public class ParserFeaToOntoFixture {
 		}
 	}
 	
-	private void instatiateProducts(Set<Product> products) {
-		for (Product product : products) {
-			buildOntologyFromProduct(product);
+	
+
+	private void populateOWL(SPL spl) {
+		//Declarar todos os conceitos (classes) que vou construir a ontologia
+		RootFeature feature = Utils.getRootFeatureOf(spl.getSystem());;
+		
+		ContextRoot contextRoot;
+		CompositionRule compositionRule;
+		ContextRule contextRule;
+		
+		buildOntology(feature);
+		System.out.println("E agora?");
+		feaToOntoFixtureUtils.addDisjuctionBetweenFeatureOWLClasses();
+		System.out.println("E agora?");
+		
+		
+		for (Element element : spl.getElements()) {
+			if (element.isContextRoot()) {
+				contextRoot = Utils.getContextRootOf(element);
+				buildOntology(contextRoot);
+			}
+		}
+		
+		for (Rule rule : spl.getRules()) {
+			if (rule.isCompositionRule()) {
+				compositionRule = Utils.getCompositionRuleOf(rule);
+				buildOntology(compositionRule);
+			} else if(rule.isContextRule()) {
+				contextRule = Utils.getContextRuleOf(rule);
+				buildOntology(contextRule);
+			}
+		}
+		
+		for (Product product : spl.getProducts()) {
+			buildOntology(product);
 		}
 		
 	}
 	
 	private void buildOntologyFromProduct(ProductFeature product) {
-		
-		
-		System.out.println("### " + product.getName());
-		System.out.println("  >>> " + product.getOriginalElement());
 		
 		Feature feature = (Feature) getElementById(product.getOriginalElement().getId());
 
@@ -140,38 +168,10 @@ public class ParserFeaToOntoFixture {
 		}
 		
 	}
-
-	private void populateOWL(SPL spl) {
-		//Declarar todos os conceitos (classes) que vou construir a ontologia
-		RootFeature feature = Utils.getRootFeatureOf(spl.getSystem());;
-		
-		ContextRoot contextRoot;
-		CompositionRule compositionRule;
-		ContextRule contextRule;
-		
-		buildOntology(feature);
-		feaToOntoFixtureUtils.addDisjuctionBetweenFeatureOWLClasses();
-		
-		
-		for (Element element : spl.getElements()) {
-			if (element.isContextRoot()) {
-				contextRoot = Utils.getContextRootOf(element);
-				buildOntology(contextRoot);
-			}
-		}
-		
-		for (Rule rule : spl.getRules()) {
-			if (rule.isCompositionRule()) {
-				compositionRule = Utils.getCompositionRuleOf(rule);
-				buildOntology(compositionRule);
-			} else if(rule.isContextRule()) {
-				contextRule = Utils.getContextRuleOf(rule);
-				buildOntology(contextRule);
-			}
-		}
-		
-		for (Product product : spl.getProducts()) {
-			buildOntology(product);
+	
+	private void instatiateProducts(Set<Product> products) {
+		for (Product product : products) {
+			buildOntologyFromProduct(product);
 		}
 		
 	}
@@ -241,10 +241,8 @@ public class ParserFeaToOntoFixture {
 			feaToOntoFixtureUtils.addPresenceActionLiteralRelation(currentActionOWL, actionLiteral.getPresence().getValue());
 			//TODO Nesse momento não há indivíduos de features
 			
-			String actionLiteralFeaturedElementId = actionLiteral.getFeaturedElement().getId();
-			Nameable currentFeatureElement = fixtureOracle.get(actionLiteralFeaturedElementId);
-			String simpleName = currentFeatureElement.getClass().getSimpleName();
-			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentActionOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(actionLiteralFeaturedElementId));
+			String actionLiteralFeaturedElementName = actionLiteral.getFeaturedElement().getName();
+			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentActionOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(actionLiteralFeaturedElementName));
 		} else if (action.isDesignate()) {
 			Designate designate = (Designate) action;
 			feaToOntoFixtureUtils.addRelationBetweenDesignateAndAttribute(currentActionOWL, owlOracle.get(designate.getAttribute().getId()));
@@ -324,10 +322,9 @@ public class ParserFeaToOntoFixture {
 			feaToOntoFixtureUtils.addPresenceCompositionLiteralRelation(currentAntecedentRuleOWL, compositionLiteral.getPresence().getValue());
 			
 			
-			String compositionLiteralFeaturedElementId = compositionLiteral.getFeaturedElement().getId();
-			Nameable currentFeatureElement = fixtureOracle.get(compositionLiteralFeaturedElementId);
-			String simpleName = currentFeatureElement.getClass().getSimpleName();
-			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentAntecedentRuleOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(compositionLiteralFeaturedElementId));
+			String compositionLiteralFeaturedElementName = compositionLiteral.getFeaturedElement().getName();
+			
+			feaToOntoFixtureUtils.addEntityClassificationRestrictionToOntology(currentAntecedentRuleOWL, OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_FEAUTURED_ELEMENT), ObjectRestrictionType.ONLY_UNIVERSAL,  owlClassOracle.get(compositionLiteralFeaturedElementName));
 		} else if (antecedent.isLogicalExpression()) {
 			LogicalExpression logicalExpression = (LogicalExpression) antecedent;
 
@@ -377,6 +374,8 @@ public class ParserFeaToOntoFixture {
 	}
 
 	private void buildOntology(Feature feature) {
+		
+		System.out.println("### " + feature.getId() + " - " + feature.getName()); 
 		
 		OWLClass createNewOLWClass = feaToOntoFixtureUtils.createNewOLWClass(feature, owlClassOracle);
 		feaToOntoFixtureUtils.addSubClassOfClassification(feature, createNewOLWClass);

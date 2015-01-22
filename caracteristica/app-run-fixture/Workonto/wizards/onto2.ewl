@@ -134,8 +134,11 @@ operation preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoRaiz : C
 	var childProductFeatureFixture = null;
 	var productAttributeFixture = null;
 	
+	var originalElementFixture = featToOntoFixture.getOracle().get(caracteristicaProdutoRaiz.elementoOriginal.id);
+	
 	fatherProductFeatureFixture.addChild(productFeatureFixture);
 	splFixture.addProductElement(productFeatureFixture);
+	productFeatureFixture.setOriginalElement(originalElementFixture); 
 	
 	for (atributoProduto in caracteristicaProdutoRaiz.atributoProduto) {
 		productAttributeFixture = featToOntoFixture.getOracle().get(atributoProduto.id);
@@ -153,6 +156,21 @@ operation preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoRaiz : C
 		
 		if (not caracteristicaProdutoFilha.caracteristicaProdutoFilha.isEmpty()) {
 			splFixture = preencherCaracteristicaProdutoLpsFixture(caracteristicaProdutoFilha, productFeatureFixture, factoryFixture, splFixture, featToOntoFixture);
+		} else {
+				var leafProductFeatureFixture = featToOntoFixture.getOracle().get(caracteristicaProdutoFilha.id);
+				var leafChildProductFeatureFixture = null;
+				var leafProductAttributeFixture = null;
+				var leafOriginalElementFixture = featToOntoFixture.getOracle().get(caracteristicaProdutoFilha.elementoOriginal.id);
+				
+				productFeatureFixture.addChild(leafProductFeatureFixture);
+				splFixture.addProductElement(leafProductFeatureFixture);
+				leafProductFeatureFixture.setOriginalElement(leafOriginalElementFixture); 
+				
+				for (atributoProduto in caracteristicaProdutoRaiz.atributoProduto) {
+					leafProductAttributeFixture = featToOntoFixture.getOracle().get(atributoProduto.id);
+					leafProductFeatureFixture.addAttribute(productAttributeFixture);
+				}
+			
 		}
 		
 	}

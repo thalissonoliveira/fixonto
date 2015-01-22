@@ -419,7 +419,7 @@ public class OWLUtils {
 		if (feature != null) {
 			String name = feature.getName();
 			if (!owlClassOracle.containsKey(name)) {
-				OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(feature.getId(), ontoHelper.getPrefixOWLOntologyFormat());
+				OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(feature.getName(), ontoHelper.getPrefixOWLOntologyFormat());
 				owlClassOracle.put(name, owlClass);
 				owlClassFactory.getInstance(ontoHelper).putFeatureSubclass(name, owlClass);
 			}
@@ -590,8 +590,8 @@ public class OWLUtils {
 	}
 
 	public void addFeatureFromProductClassification(Feature feature, OWLIndividual currentFeatureOwl) {
-		String id = feature.getId();
-		OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(id, ontoHelper.getPrefixOWLOntologyFormat());
+		String name = feature.getName();
+		OWLClass owlClass = ontoHelper.getDataFactory().getOWLClass(name, ontoHelper.getPrefixOWLOntologyFormat());
 		addEntityClassificationToOntology(currentFeatureOwl, owlClass);
 	}
 

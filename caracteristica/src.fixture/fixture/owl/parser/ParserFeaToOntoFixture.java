@@ -97,9 +97,7 @@ public class ParserFeaToOntoFixture {
 		ContextRule contextRule;
 		
 		buildOntology(feature);
-		System.out.println("E agora?");
 		feaToOntoFixtureUtils.addDisjuctionBetweenFeatureOWLClasses();
-		System.out.println("E agora?");
 		
 		
 		for (Element element : spl.getElements()) {

@@ -40,11 +40,11 @@ public class DLQueryEngine {
 		
 		String resultDLQuery = new DLQueryEngine().executeDLQuery("Feature and hasFatherFeature some RootFeature");
     	System.out.println(resultDLQuery);
-    	
 	}
 	
 	
-	public List<Object> setOWLClassExpression(String classExpressionString, OntoHelper ontoHelper) {
+	@SuppressWarnings("unused")
+	private List<Object> setOWLClassExpression(String classExpressionString, OntoHelper ontoHelper) {
 		
 		OWLClassExpression description = parseClassExpression(classExpressionString, ontoHelper);
 		
@@ -128,6 +128,7 @@ public class DLQueryEngine {
     	
     	try {
 	    	List<Object> setOWLClassExpression = executeDLQuery(classExpressionString, ontoHelper);
+	    	
 	    	
 	    	StringBuilder result = null;
 	    	

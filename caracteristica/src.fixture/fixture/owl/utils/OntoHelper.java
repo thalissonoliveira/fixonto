@@ -48,8 +48,10 @@ public class OntoHelper {
 		this.pathSaveOntology = Utils.SPLiSEM_OUTPUT_PATH;
 		this.prefixOWLOntologyFormat = createtPrefixOWLOntologyFormat();
 		
+		
+		//TODO Algumas regras que estão sendo geradas estão inconsistentes. Visitar essa etapa de geração para deixar correta.
 //		loadRules();
-		loadRulesFromFile();
+//		loadRulesFromFile();
 		
 		System.out.println("[FIXTURE2][LOG] - temp Meta Ontology deleted? : " + file.delete());
 		

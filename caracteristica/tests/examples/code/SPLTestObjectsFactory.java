@@ -11,6 +11,7 @@ import fixture.owl.model.element.MandatoryFeature;
 import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.enumeration.MaximalCardinality;
 import fixture.owl.model.enumeration.Presence;
 import fixture.owl.model.enumeration.RelationalOperator;
 import fixture.owl.model.enumeration.ValueType;
@@ -137,6 +138,12 @@ public class SPLTestObjectsFactory {
 		Feature f10 = new GroupedFeature("@elementos.10","GF4");
 		Feature f11 = new GroupedFeature("@elementos.11","GF5");
 		
+		((VariationTwo) f4).setOrMininalCardinality(1);
+		((VariationTwo) f4).setOrMaximalCardinality(1);
+		
+		((VariationTwo) f5).setOrMininalCardinality(1);
+		((VariationTwo) f5).setOrMaximalCardinality(1);
+		
 		
 		f1.addChild(f2);
 		f1.addChild(f3);
@@ -225,6 +232,18 @@ public class SPLTestObjectsFactory {
 		ProductVariationTwo m2 = new ProductVariationTwo("@prodele.3", "VT1");
 		ProductVariationTwo m3 = new ProductVariationTwo("@prodele.4", "VT2");
 		ProductOptionalFeature m4 = new ProductOptionalFeature("@prodele.5", "OF2");
+		
+		
+		p.setOriginalElement(f1);
+		m.setOriginalElement(f2);
+		m1.setOriginalElement(f3);
+		m2.setOriginalElement(f4);
+		m2.setMaximalCardinality(MaximalCardinality.OR);
+		m3.setOriginalElement(f5);
+		m3.setMaximalCardinality(MaximalCardinality.OR);
+		m4.setOriginalElement(f6);
+		
+
 		
 		p.addChild(m);
 		p.addChild(m1);

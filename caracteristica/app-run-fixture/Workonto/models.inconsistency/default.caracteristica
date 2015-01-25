@@ -26,10 +26,11 @@
   <expressoes xsi:type="caracteristica:LiteralAcao" nome="LA1" elemento="//@elementos.6"/>
   <elementosDeProduto xsi:type="caracteristica:CaracteristicaMandatoriaProduto" nome="MobileDevice" elementoOriginal="//@elementos.1" caracteristicaProdutoPai="//@produtos.0" caracteristicaProdutoFilha="//@elementosDeProduto.1 //@elementosDeProduto.2"/>
   <elementosDeProduto xsi:type="caracteristica:CaracteristicaOpcionalProduto" nome="GPS" elementoOriginal="//@elementos.3" caracteristicaProdutoPai="//@elementosDeProduto.0"/>
-  <elementosDeProduto xsi:type="caracteristica:VariacaoDoisProduto" nome="PV1" elementoOriginal="//@elementos.4" caracteristicaProdutoPai="//@elementosDeProduto.0" caracteristicaProdutoFilha="//@elementosDeProduto.5" cardinalidadeMinimaOr="1" cardinalidadeMaximaOr="1"/>
+  <elementosDeProduto xsi:type="caracteristica:VariacaoDoisProduto" nome="PV1" elementoOriginal="//@elementos.4" caracteristicaProdutoPai="//@elementosDeProduto.0" caracteristicaProdutoFilha="//@elementosDeProduto.5 //@elementosDeProduto.6" cardinalidadeMinimaOr="1" cardinalidadeMaximaOr="1"/>
   <elementosDeProduto xsi:type="caracteristica:CaracteristicaMandatoriaProduto" nome="ContexManager" elementoOriginal="//@elementos.2" caracteristicaProdutoPai="//@produtos.0" atributoProduto="//@elementosDeProduto.4"/>
   <elementosDeProduto xsi:type="caracteristica:AtributoProduto" nome="Attribute1" elementoOriginal="//@elementos.10" caracteristicaProdutoPai="//@elementosDeProduto.3"/>
   <elementosDeProduto xsi:type="caracteristica:CaracteristicaAgrupadaProduto" nome="TemperatureSensor" elementoOriginal="//@elementos.6" caracteristicaProdutoPai="//@elementosDeProduto.2"/>
+  <elementosDeProduto xsi:type="caracteristica:CaracteristicaAgrupadaProduto" nome="Accelerometer" elementoOriginal="//@elementos.5" caracteristicaProdutoPai="//@elementosDeProduto.2"/>
   <simulacoes/>
   <simulacoes nome="Simulacao"/>
   <simulacoes/>

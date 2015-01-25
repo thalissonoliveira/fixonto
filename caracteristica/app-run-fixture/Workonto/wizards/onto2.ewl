@@ -20,6 +20,15 @@ wizard OntoAnalyser
 	}
 }
 
+//####### WIZARD 3. DLQUERY ENGINE #########
+wizard OntoAnalyser
+{
+	guard: self.isTypeOf(LPS)
+	title: 'DLQuery Search'
+	do {
+		dlQueryEngine();
+	}
+}
 
 
 //####### OPERATION WIZARD 1 #########
@@ -348,6 +357,20 @@ operation preencherAntecedente(antecedente : Antecedente, factoryFixture, splFix
 operation ontoAnalyserFixture() {
 	var rulesAnalyser := new Native('fixture.owl.reasoner.RulesAnalyser');
 	rulesAnalyser.run();
+}
+
+//Método que realiza uma busca semântica utilizando DLQuery
+//####### OPERATION WIZARD 3 #########
+operation dlQueryEngine() {
+	var dlQueryString = UserInput.prompt('Semantic Search - DL Query (OWL class expression)').asString();
+	dlQueryString.println();
+	
+	var dlQueryEngine := new Native('fixture.owl.dlquery.DLQueryEngine');
+	var dlQueryEngineResult := dlQueryEngine.executeDLQuery(dlQueryString);
+	var mensagem:= new Native('utils.FxDialog');
+	
+	mensagem.ShowMessage("DL Query Result", dlQueryEngineResult);
+	
 }
 
 //############## MÉTODOS AUXILIARES AOS MÉTODOS PRINCIPAIS DO PARSER #####################

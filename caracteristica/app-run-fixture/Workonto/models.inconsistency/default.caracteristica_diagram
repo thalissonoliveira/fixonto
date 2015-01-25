@@ -171,6 +171,11 @@
     <element xmi:type="caracteristica:CaracteristicaAgrupadaProduto" href="default.caracteristica#//@elementosDeProduto.5"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fCTrQaAREeSuRticoU6X4A" x="1055" y="645"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_c7xRoKSoEeSTH6BAQcaKSg" type="2035" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_c7yfwKSoEeSTH6BAQcaKSg" type="5036"/>
+    <element xmi:type="caracteristica:CaracteristicaAgrupadaProduto" href="default.caracteristica#//@elementosDeProduto.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_c7xRoaSoEeSTH6BAQcaKSg" x="885" y="640"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_mUD-0TdcEeSxOerLmHfNCg"/>
   <element xmi:type="caracteristica:LPS" href="default.caracteristica#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_UFzCIDddEeSxOerLmHfNCg" type="4002" source="_rZN6wDdcEeSxOerLmHfNCg" target="_wCXQIDdcEeSxOerLmHfNCg">
@@ -440,5 +445,16 @@
     <element xsi:nil="true"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_5kl3I6AREeSuRticoU6X4A" points="[0, 0, -102, -120]$[26, 30, -76, -90]$[85, 100, -17, -20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_5kvBEKAREeSuRticoU6X4A" id="(0.4628099173553719,1.0)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_f5VO8KSoEeSTH6BAQcaKSg" type="4008" source="_R18KUFPjEeSGR8QHZA2fbA" target="_c7xRoKSoEeSTH6BAQcaKSg">
+    <children xmi:type="notation:DecorationNode" xmi:id="_f5WdEKSoEeSTH6BAQcaKSg" type="6008">
+      <styles xmi:type="notation:DescriptionStyle" xmi:id="_f5WdEaSoEeSTH6BAQcaKSg"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_f5WdEqSoEeSTH6BAQcaKSg" y="40"/>
+    </children>
+    <styles xmi:type="notation:RoutingStyle" xmi:id="_f5V2AKSoEeSTH6BAQcaKSg"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_f5V2AaSoEeSTH6BAQcaKSg" fontName="Segoe UI"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_f5V2AqSoEeSTH6BAQcaKSg" points="[0, 0, 64, -115]$[-58, 135, 6, 20]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_f5dKwKSoEeSTH6BAQcaKSg" id="(0.3135593220338983,1.0)"/>
   </edges>
 </notation:Diagram>

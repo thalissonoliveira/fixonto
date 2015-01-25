@@ -2,6 +2,8 @@ package fixture.owl.utils;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -51,7 +53,7 @@ public class OntoHelper {
 		
 		//TODO Algumas regras que estão sendo geradas estão inconsistentes. Visitar essa etapa de geração para deixar correta.
 //		loadRules();
-//		loadRulesFromFile();
+		loadRulesFromFile();
 		
 		System.out.println("[FIXTURE2][LOG] - temp Meta Ontology deleted? : " + file.delete());
 		
@@ -124,6 +126,20 @@ public class OntoHelper {
 			System.out.println("--> " + exx + "\n");
 		}
 		return file;
+	}
+	
+	public InputStream getSPLiSEM() {
+		//SE FOR MEXER AQUI, TEM QUE FAZER O PARSER PARA RDF PARA O JENA PODER TRABALHAR.
+		String name = Utils.SPLiSEM_OUTPUT_PATH;
+		try {
+			FileInputStream fis = new FileInputStream(name);
+			return fis;
+		} catch (FileNotFoundException e) {
+			System.out.println("UNABLE to load " + name + "\n");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 	private synchronized void loadRulesFromFile() throws URISyntaxException {

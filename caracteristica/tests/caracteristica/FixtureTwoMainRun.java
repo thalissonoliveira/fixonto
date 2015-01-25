@@ -20,7 +20,7 @@ public class FixtureTwoMainRun {
 	
 	public static void main(String[] args) throws OWLOntologyCreationException, URISyntaxException, InstantiationException, IllegalAccessException, ClassNotFoundException, IOException {
 //		runFeaToOntoFixtureTest();
-//		runRulesAnalyser();
+		runRulesAnalyser();
 //		runDlRule();
 //		runCoung();
 	}

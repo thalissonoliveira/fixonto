@@ -1,12 +1,22 @@
 //####### EXTENSÃO DA FIXTURE COM FEA2ONTO 2.O ##########
 
-//####### WIZARD 1. FEA2ONTO 2.0 #########
+//####### WIZARD 1.1 FEA2ONTO 2.0 #########
 wizard FeaToOntoFixtureParser
 {
 	guard: self.isTypeOf(LPS)
-	title: 'Fixture - Fea2Onto 2.0'
+	title: 'Fixture - Fea2Onto 2.0 [Feature as Individual]'
 	do {
-		fixTure2(self);	
+		fixTure2_1(self);	
+	}
+}
+
+//####### WIZARD 1.2 FEA2ONTO 2.0 #########
+wizard FeaToOntoFixtureParser
+{
+	guard: self.isTypeOf(LPS)
+	title: 'Fixture - Fea2Onto 2.0 [Feature as Subclass]'
+	do {
+		fixTure2_2(self);	
 	}
 }
 
@@ -31,7 +41,21 @@ wizard OntoAnalyser
 }
 
 
-//####### OPERATION WIZARD 1 #########
+//####### OPERATION WIZARD 1.1 #########
+operation fixTure2(lps:LPS) {
+	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
+	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
+	var factoryFixture := featToOntoFixture.getSplConceptFactory();
+	var splFixture = factoryFixture.createSpl(lps.id, lps.nome);
+	
+	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, featToOntoFixture);
+	featToOntoFixture.run(splFixture);
+	
+	var mensagem:= new Native('utils.FxDialog');
+	mensagem.ShowMessage("Fixture 2.0", "Fea2Onto executed successfully.");
+}
+
+//####### OPERATION WIZARD 1.2 #########
 operation fixTure2(lps:LPS) {
 	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
 	var featToOntoFixture := new Native('fixture.owl.parser.ParserFeaToOntoFixture');
@@ -40,6 +64,8 @@ operation fixTure2(lps:LPS) {
 	
 	splFixture = construirObjetoSPL(lps, factoryFixture, splFixture, featToOntoFixture);
 	featToOntoFixture.run(splFixture);
+	var mensagem:= new Native('utils.FxDialog');
+	mensagem.ShowMessage("Fixture 2.0", "Fea2Onto executed successfully.");
 }
 
 operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixture) {

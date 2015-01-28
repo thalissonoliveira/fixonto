@@ -271,6 +271,12 @@
         <ObjectProperty IRI="#hasRightSideEvent"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#hasTestCase"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementsUseCase"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#relatesToElemet"/>
     </Declaration>
     <Declaration>
@@ -334,7 +340,7 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#CompositionRule"/>
-        <Class IRI="#Rule"/>
+        <Class IRI="#ContextRule"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ContextEntity"/>
@@ -614,6 +620,14 @@
         <ObjectProperty IRI="#relatesToExpression"/>
     </SubObjectPropertyOf>
     <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasTestCase"/>
+        <ObjectProperty IRI="#external"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#implementsUseCase"/>
+        <ObjectProperty IRI="#external"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
         <ObjectProperty IRI="#relatesToElemet"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -677,11 +691,11 @@
         <DataProperty IRI="#hasRelationalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;integer">0</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;integer">5</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -693,11 +707,11 @@
         <DataProperty IRI="#hasValueType"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;minInclusive">
-                <Literal datatypeIRI="&xsd;integer">0</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;maxInclusive">
                 <Literal datatypeIRI="&xsd;integer">3</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;minInclusive">
+                <Literal datatypeIRI="&xsd;integer">0</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>

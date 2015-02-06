@@ -8,6 +8,7 @@ import caracteristica.CaracteristicaRaiz;
 import caracteristica.Elemento;
 import caracteristica.ElementoDeProduto;
 import caracteristica.ElementoDeProduto;
+import caracteristica.ElementoExterno;
 import caracteristica.Expressao;
 import caracteristica.InconsistenciaRegraAdaptacao;
 import caracteristica.LPS;
@@ -43,6 +44,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link caracteristica.impl.LPSImpl#getPontosDeVariacao <em>Pontos De Variacao</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link caracteristica.impl.LPSImpl#getExternos <em>Externos</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getRegras <em>Regras</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getProdutos <em>Produtos</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getExpressoes <em>Expressoes</em>}</li>
@@ -80,6 +82,16 @@ public class LPSImpl extends EObjectImpl implements LPS
    * @ordered
    */
   protected EList<Elemento> elementos;
+
+  /**
+   * The cached value of the '{@link #getExternos() <em>Externos</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExternos()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementoExterno> externos;
 
   /**
    * The cached value of the '{@link #getRegras() <em>Regras</em>}' containment reference list.
@@ -248,6 +260,20 @@ public class LPSImpl extends EObjectImpl implements LPS
       elementos = new EObjectContainmentEList<Elemento>(Elemento.class, this, CaracteristicaPackage.LPS__ELEMENTOS);
     }
     return elementos;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementoExterno> getExternos()
+  {
+    if (externos == null)
+    {
+      externos = new EObjectContainmentEList<ElementoExterno>(ElementoExterno.class, this, CaracteristicaPackage.LPS__EXTERNOS);
+    }
+    return externos;
   }
 
   /**
@@ -499,6 +525,8 @@ public class LPSImpl extends EObjectImpl implements LPS
         return ((InternalEList<?>)getPontosDeVariacao()).basicRemove(otherEnd, msgs);
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return ((InternalEList<?>)getElementos()).basicRemove(otherEnd, msgs);
+      case CaracteristicaPackage.LPS__EXTERNOS:
+        return ((InternalEList<?>)getExternos()).basicRemove(otherEnd, msgs);
       case CaracteristicaPackage.LPS__REGRAS:
         return ((InternalEList<?>)getRegras()).basicRemove(otherEnd, msgs);
       case CaracteristicaPackage.LPS__PRODUTOS:
@@ -533,6 +561,8 @@ public class LPSImpl extends EObjectImpl implements LPS
         return getPontosDeVariacao();
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return getElementos();
+      case CaracteristicaPackage.LPS__EXTERNOS:
+        return getExternos();
       case CaracteristicaPackage.LPS__REGRAS:
         return getRegras();
       case CaracteristicaPackage.LPS__PRODUTOS:
@@ -578,6 +608,10 @@ public class LPSImpl extends EObjectImpl implements LPS
       case CaracteristicaPackage.LPS__ELEMENTOS:
         getElementos().clear();
         getElementos().addAll((Collection<? extends Elemento>)newValue);
+        return;
+      case CaracteristicaPackage.LPS__EXTERNOS:
+        getExternos().clear();
+        getExternos().addAll((Collection<? extends ElementoExterno>)newValue);
         return;
       case CaracteristicaPackage.LPS__REGRAS:
         getRegras().clear();
@@ -641,6 +675,9 @@ public class LPSImpl extends EObjectImpl implements LPS
       case CaracteristicaPackage.LPS__ELEMENTOS:
         getElementos().clear();
         return;
+      case CaracteristicaPackage.LPS__EXTERNOS:
+        getExternos().clear();
+        return;
       case CaracteristicaPackage.LPS__REGRAS:
         getRegras().clear();
         return;
@@ -692,6 +729,8 @@ public class LPSImpl extends EObjectImpl implements LPS
         return pontosDeVariacao != null && !pontosDeVariacao.isEmpty();
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return elementos != null && !elementos.isEmpty();
+      case CaracteristicaPackage.LPS__EXTERNOS:
+        return externos != null && !externos.isEmpty();
       case CaracteristicaPackage.LPS__REGRAS:
         return regras != null && !regras.isEmpty();
       case CaracteristicaPackage.LPS__PRODUTOS:

@@ -7,6 +7,7 @@ import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaPackage;
 import caracteristica.Elemento;
 import caracteristica.ElementoCaracteristico;
+import caracteristica.ElementoExterno;
 import caracteristica.Variacao;
 import caracteristica.Variante;
 
@@ -19,6 +20,8 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -30,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link caracteristica.impl.VarianteImpl#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.impl.VarianteImpl#getElementosExternos <em>Elementos Externos</em>}</li>
  *   <li>{@link caracteristica.impl.VarianteImpl#getCaracteristicaPai <em>Caracteristica Pai</em>}</li>
  *   <li>{@link caracteristica.impl.VarianteImpl#getCaracteristicaFilha <em>Caracteristica Filha</em>}</li>
  *   <li>{@link caracteristica.impl.VarianteImpl#getVariacoes <em>Variacoes</em>}</li>
@@ -61,6 +65,16 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
    * @ordered
    */
   protected String nome = NOME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElementosExternos() <em>Elementos Externos</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElementosExternos()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementoExterno> elementosExternos;
 
   /**
    * The cached value of the '{@link #getCaracteristicaPai() <em>Caracteristica Pai</em>}' reference.
@@ -154,6 +168,20 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     nome = newNome;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.VARIANTE__NOME, oldNome, nome));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementoExterno> getElementosExternos()
+  {
+    if (elementosExternos == null)
+    {
+      elementosExternos = new EObjectResolvingEList<ElementoExterno>(ElementoExterno.class, this, CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS);
+    }
+    return elementosExternos;
   }
 
   /**
@@ -399,6 +427,8 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       case CaracteristicaPackage.VARIANTE__NOME:
         return getNome();
+      case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS:
+        return getElementosExternos();
       case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI:
         if (resolve) return getCaracteristicaPai();
         return basicGetCaracteristicaPai();
@@ -428,6 +458,10 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       case CaracteristicaPackage.VARIANTE__NOME:
         setNome((String)newValue);
+        return;
+      case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        getElementosExternos().addAll((Collection<? extends ElementoExterno>)newValue);
         return;
       case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI:
         setCaracteristicaPai((Caracteristica)newValue);
@@ -464,6 +498,9 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
       case CaracteristicaPackage.VARIANTE__NOME:
         setNome(NOME_EDEFAULT);
         return;
+      case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        return;
       case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI:
         setCaracteristicaPai((Caracteristica)null);
         return;
@@ -495,6 +532,8 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       case CaracteristicaPackage.VARIANTE__NOME:
         return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+      case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS:
+        return elementosExternos != null && !elementosExternos.isEmpty();
       case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI:
         return caracteristicaPai != null;
       case CaracteristicaPackage.VARIANTE__CARACTERISTICA_FILHA:
@@ -536,6 +575,7 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       switch (derivedFeatureID)
       {
+        case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS;
         case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI: return CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI;
         case CaracteristicaPackage.VARIANTE__CARACTERISTICA_FILHA: return CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_FILHA;
         case CaracteristicaPackage.VARIANTE__VARIACOES: return CaracteristicaPackage.CARACTERISTICA__VARIACOES;
@@ -573,6 +613,7 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       switch (baseFeatureID)
       {
+        case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS;
         case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI: return CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI;
         case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_FILHA: return CaracteristicaPackage.VARIANTE__CARACTERISTICA_FILHA;
         case CaracteristicaPackage.CARACTERISTICA__VARIACOES: return CaracteristicaPackage.VARIANTE__VARIACOES;

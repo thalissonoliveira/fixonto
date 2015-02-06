@@ -85,6 +85,21 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
         return createElementoAdapter();
       }
       @Override
+      public Adapter caseElementoExterno(ElementoExterno object)
+      {
+        return createElementoExternoAdapter();
+      }
+      @Override
+      public Adapter caseCasoDeUso(CasoDeUso object)
+      {
+        return createCasoDeUsoAdapter();
+      }
+      @Override
+      public Adapter caseCasoDeTeste(CasoDeTeste object)
+      {
+        return createCasoDeTesteAdapter();
+      }
+      @Override
       public Adapter caseElementoCaracteristico(ElementoCaracteristico object)
       {
         return createElementoCaracteristicoAdapter();
@@ -347,6 +362,51 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElementoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.ElementoExterno <em>Elemento Externo</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.ElementoExterno
+   * @generated
+   */
+  public Adapter createElementoExternoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.CasoDeUso <em>Caso De Uso</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.CasoDeUso
+   * @generated
+   */
+  public Adapter createCasoDeUsoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.CasoDeTeste <em>Caso De Teste</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.CasoDeTeste
+   * @generated
+   */
+  public Adapter createCasoDeTesteAdapter()
   {
     return null;
   }

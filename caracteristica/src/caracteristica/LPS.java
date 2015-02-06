@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link caracteristica.LPS#getPontosDeVariacao <em>Pontos De Variacao</em>}</li>
  *   <li>{@link caracteristica.LPS#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link caracteristica.LPS#getExternos <em>Externos</em>}</li>
  *   <li>{@link caracteristica.LPS#getRegras <em>Regras</em>}</li>
  *   <li>{@link caracteristica.LPS#getProdutos <em>Produtos</em>}</li>
  *   <li>{@link caracteristica.LPS#getExpressoes <em>Expressoes</em>}</li>
@@ -67,6 +68,22 @@ public interface LPS extends EObject
    * @generated
    */
   EList<Elemento> getElementos();
+
+  /**
+   * Returns the value of the '<em><b>Externos</b></em>' containment reference list.
+   * The list contents are of type {@link caracteristica.ElementoExterno}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Externos</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Externos</em>' containment reference list.
+   * @see caracteristica.CaracteristicaPackage#getLPS_Externos()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ElementoExterno> getExternos();
 
   /**
    * Returns the value of the '<em><b>Regras</b></em>' containment reference list.

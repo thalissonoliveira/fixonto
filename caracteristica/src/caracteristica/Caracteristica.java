@@ -12,6 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
+ *   <li>{@link caracteristica.Caracteristica#getElementosExternos <em>Elementos Externos</em>}</li>
  *   <li>{@link caracteristica.Caracteristica#getCaracteristicaPai <em>Caracteristica Pai</em>}</li>
  *   <li>{@link caracteristica.Caracteristica#getCaracteristicaFilha <em>Caracteristica Filha</em>}</li>
  *   <li>{@link caracteristica.Caracteristica#getVariacoes <em>Variacoes</em>}</li>
@@ -25,6 +26,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Caracteristica extends Elemento
 {
+  /**
+   * Returns the value of the '<em><b>Elementos Externos</b></em>' reference list.
+   * The list contents are of type {@link caracteristica.ElementoExterno}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Elementos Externos</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elementos Externos</em>' reference list.
+   * @see caracteristica.CaracteristicaPackage#getCaracteristica_ElementosExternos()
+   * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   * @generated
+   */
+  EList<ElementoExterno> getElementosExternos();
+
   /**
    * Returns the value of the '<em><b>Caracteristica Pai</b></em>' reference.
    * It is bidirectional and its opposite is '{@link caracteristica.Caracteristica#getCaracteristicaFilha <em>Caracteristica Filha</em>}'.

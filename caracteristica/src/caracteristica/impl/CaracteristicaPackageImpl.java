@@ -19,11 +19,14 @@ import caracteristica.CaracteristicaPackage;
 import caracteristica.CaracteristicaProduto;
 import caracteristica.CaracteristicaRaiz;
 import caracteristica.CardinalidadeMaxima;
+import caracteristica.CasoDeTeste;
+import caracteristica.CasoDeUso;
 import caracteristica.Designar;
 import caracteristica.Elemento;
 import caracteristica.ElementoCaracteristico;
 import caracteristica.ElementoDeProduto;
 import caracteristica.ElementoDeProduto;
+import caracteristica.ElementoExterno;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.Estado;
@@ -91,6 +94,27 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * @generated
    */
   private EClass elementoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass elementoExternoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass casoDeUsoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass casoDeTesteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -554,7 +578,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_Regras()
+  public EReference getLPS_Externos()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(2);
   }
@@ -564,7 +588,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_Produtos()
+  public EReference getLPS_Regras()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(3);
   }
@@ -574,7 +598,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_Expressoes()
+  public EReference getLPS_Produtos()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(4);
   }
@@ -584,7 +608,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_ElementosDeProduto()
+  public EReference getLPS_Expressoes()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(5);
   }
@@ -594,7 +618,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_Sistema()
+  public EReference getLPS_ElementosDeProduto()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(6);
   }
@@ -604,7 +628,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getLPS_Atributos()
+  public EReference getLPS_Sistema()
   {
     return (EReference)lpsEClass.getEStructuralFeatures().get(7);
   }
@@ -614,9 +638,19 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLPS_Atributos()
+  {
+    return (EReference)lpsEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getLPS_ValoresContextuais()
   {
-    return (EAttribute)lpsEClass.getEStructuralFeatures().get(8);
+    return (EAttribute)lpsEClass.getEStructuralFeatures().get(9);
   }
 
   /**
@@ -626,7 +660,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   public EReference getLPS_Simulacoes()
   {
-    return (EReference)lpsEClass.getEStructuralFeatures().get(9);
+    return (EReference)lpsEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -636,7 +670,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   public EReference getLPS_InconsistenciaERA()
   {
-    return (EReference)lpsEClass.getEStructuralFeatures().get(10);
+    return (EReference)lpsEClass.getEStructuralFeatures().get(11);
   }
 
   /**
@@ -646,7 +680,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   public EAttribute getLPS_Erro()
   {
-    return (EAttribute)lpsEClass.getEStructuralFeatures().get(11);
+    return (EAttribute)lpsEClass.getEStructuralFeatures().get(12);
   }
 
   /**
@@ -656,7 +690,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   public EAttribute getLPS_Nome()
   {
-    return (EAttribute)lpsEClass.getEStructuralFeatures().get(12);
+    return (EAttribute)lpsEClass.getEStructuralFeatures().get(13);
   }
 
   /**
@@ -677,6 +711,46 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
   public EAttribute getElemento_Nome()
   {
     return (EAttribute)elementoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getElementoExterno()
+  {
+    return elementoExternoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getElementoExterno_Nome()
+  {
+    return (EAttribute)elementoExternoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCasoDeUso()
+  {
+    return casoDeUsoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getCasoDeTeste()
+  {
+    return casoDeTesteEClass;
   }
 
   /**
@@ -734,7 +808,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaPai()
+  public EReference getCaracteristica_ElementosExternos()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(0);
   }
@@ -744,7 +818,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaFilha()
+  public EReference getCaracteristica_CaracteristicaPai()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(1);
   }
@@ -754,7 +828,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_Variacoes()
+  public EReference getCaracteristica_CaracteristicaFilha()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(2);
   }
@@ -764,9 +838,19 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_Atributo()
+  public EReference getCaracteristica_Variacoes()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getCaracteristica_Atributo()
+  {
+    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -2089,6 +2173,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     lpsEClass = createEClass(LPS);
     createEReference(lpsEClass, LPS__PONTOS_DE_VARIACAO);
     createEReference(lpsEClass, LPS__ELEMENTOS);
+    createEReference(lpsEClass, LPS__EXTERNOS);
     createEReference(lpsEClass, LPS__REGRAS);
     createEReference(lpsEClass, LPS__PRODUTOS);
     createEReference(lpsEClass, LPS__EXPRESSOES);
@@ -2104,6 +2189,13 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     elementoEClass = createEClass(ELEMENTO);
     createEAttribute(elementoEClass, ELEMENTO__NOME);
 
+    elementoExternoEClass = createEClass(ELEMENTO_EXTERNO);
+    createEAttribute(elementoExternoEClass, ELEMENTO_EXTERNO__NOME);
+
+    casoDeUsoEClass = createEClass(CASO_DE_USO);
+
+    casoDeTesteEClass = createEClass(CASO_DE_TESTE);
+
     elementoCaracteristicoEClass = createEClass(ELEMENTO_CARACTERISTICO);
 
     atributoEClass = createEClass(ATRIBUTO);
@@ -2111,6 +2203,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     createEReference(atributoEClass, ATRIBUTO__CARACTERISTICA_PAI);
 
     caracteristicaEClass = createEClass(CARACTERISTICA);
+    createEReference(caracteristicaEClass, CARACTERISTICA__ELEMENTOS_EXTERNOS);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_PAI);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_FILHA);
     createEReference(caracteristicaEClass, CARACTERISTICA__VARIACOES);
@@ -2317,6 +2410,8 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    casoDeUsoEClass.getESuperTypes().add(this.getElementoExterno());
+    casoDeTesteEClass.getESuperTypes().add(this.getElementoExterno());
     elementoCaracteristicoEClass.getESuperTypes().add(this.getElemento());
     atributoEClass.getESuperTypes().add(this.getElemento());
     caracteristicaEClass.getESuperTypes().add(this.getElemento());
@@ -2363,6 +2458,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEClass(lpsEClass, caracteristica.LPS.class, "LPS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLPS_PontosDeVariacao(), this.getPontoDeVariacao(), null, "pontosDeVariacao", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLPS_Elementos(), this.getElemento(), null, "elementos", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLPS_Externos(), this.getElementoExterno(), null, "externos", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLPS_Regras(), this.getRegra(), null, "regras", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLPS_Produtos(), this.getProduto(), null, "produtos", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLPS_Expressoes(), this.getExpressao(), null, "expressoes", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2378,6 +2474,13 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEClass(elementoEClass, Elemento.class, "Elemento", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElemento_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Elemento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(elementoExternoEClass, ElementoExterno.class, "ElementoExterno", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getElementoExterno_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, ElementoExterno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(casoDeUsoEClass, CasoDeUso.class, "CasoDeUso", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(casoDeTesteEClass, CasoDeTeste.class, "CasoDeTeste", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(elementoCaracteristicoEClass, ElementoCaracteristico.class, "ElementoCaracteristico", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(atributoEClass, Atributo.class, "Atributo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2385,6 +2488,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEReference(getAtributo_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_Atributo(), "caracteristicaPai", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caracteristicaEClass, Caracteristica.class, "Caracteristica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getCaracteristica_ElementosExternos(), this.getElementoExterno(), null, "elementosExternos", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaFilha(), "caracteristicaPai", null, 0, 1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaFilha(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaPai(), "caracteristicaFilha", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_Variacoes(), this.getVariacao(), this.getVariacao_CaracteristicaPai(), "variacoes", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2625,7 +2729,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "foo", "bar"
-       });																																																	
+       });																																																				
   }
 
   /**
@@ -2638,6 +2742,24 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
   {
     String source = "gmf.node";			
     addAnnotation
+      (casoDeUsoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Externo {0}"
+       });		
+    addAnnotation
+      (casoDeTesteEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Externo {0}"
+       });		
+    addAnnotation
       (atributoEClass, 
        source, 
        new String[] 
@@ -2645,7 +2767,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "label", "nome",
        "figure", "utils.TriangleFigure",
        "label.pattern", "Attribute {0}"
-       });					
+       });						
     addAnnotation
       (caracteristicaRaizEClass, 
        source, 
@@ -2863,7 +2985,17 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   protected void createGmf_2Annotations()
   {
-    String source = "gmf.link";				
+    String source = "gmf.link";						
+    addAnnotation
+      (getCaracteristica_ElementosExternos(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });		
     addAnnotation
       (getCaracteristica_CaracteristicaFilha(), 
        source, 
@@ -3086,7 +3218,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   protected void createGmf_3Annotations()
   {
-    String source = "gmf.compartment";																																																	
+    String source = "gmf.compartment";																																																				
     addAnnotation
       (getSimulacao_Estados(), 
        source, 

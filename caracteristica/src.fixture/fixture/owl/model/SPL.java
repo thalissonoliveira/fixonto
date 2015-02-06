@@ -5,6 +5,7 @@ import java.util.Set;
 
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.intefaces.ExternalElement;
 import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.model.product.Product;
 import fixture.owl.model.product.ProductElement;
@@ -24,6 +25,8 @@ public class SPL implements Nameable {
 	
 	private Set<Element> elements;
 	
+	private Set<ExternalElement> externals;
+	
 	private Set<Rule> rules;
 	
 	private Set<Product> products;
@@ -32,6 +35,7 @@ public class SPL implements Nameable {
 	
 	public SPL() {
 		elements = new HashSet<Element>();
+		externals = new HashSet<ExternalElement>();
 		rules = new HashSet<Rule>();
 		products = new HashSet<Product>();
 		productElements = new HashSet<ProductElement>();
@@ -88,6 +92,14 @@ public class SPL implements Nameable {
 
 	public void setElements(Set<Element> elements) {
 		this.elements = elements;
+	}
+	
+	public Set<ExternalElement> getExternals() {
+		return externals;
+	}
+
+	public void setExternals(Set<ExternalElement> externals) {
+		this.externals = externals;
 	}
 
 	public RootFeature getSystem() {

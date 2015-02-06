@@ -86,13 +86,22 @@ public interface CaracteristicaPackage extends EPackage
   int LPS__ELEMENTOS = 1;
 
   /**
+   * The feature id for the '<em><b>Externos</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LPS__EXTERNOS = 2;
+
+  /**
    * The feature id for the '<em><b>Regras</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LPS__REGRAS = 2;
+  int LPS__REGRAS = 3;
 
   /**
    * The feature id for the '<em><b>Produtos</b></em>' containment reference list.
@@ -101,7 +110,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__PRODUTOS = 3;
+  int LPS__PRODUTOS = 4;
 
   /**
    * The feature id for the '<em><b>Expressoes</b></em>' containment reference list.
@@ -110,7 +119,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__EXPRESSOES = 4;
+  int LPS__EXPRESSOES = 5;
 
   /**
    * The feature id for the '<em><b>Elementos De Produto</b></em>' containment reference list.
@@ -119,7 +128,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__ELEMENTOS_DE_PRODUTO = 5;
+  int LPS__ELEMENTOS_DE_PRODUTO = 6;
 
   /**
    * The feature id for the '<em><b>Sistema</b></em>' reference.
@@ -128,7 +137,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__SISTEMA = 6;
+  int LPS__SISTEMA = 7;
 
   /**
    * The feature id for the '<em><b>Atributos</b></em>' containment reference list.
@@ -137,7 +146,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__ATRIBUTOS = 7;
+  int LPS__ATRIBUTOS = 8;
 
   /**
    * The feature id for the '<em><b>Valores Contextuais</b></em>' attribute list.
@@ -146,7 +155,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__VALORES_CONTEXTUAIS = 8;
+  int LPS__VALORES_CONTEXTUAIS = 9;
 
   /**
    * The feature id for the '<em><b>Simulacoes</b></em>' containment reference list.
@@ -155,7 +164,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__SIMULACOES = 9;
+  int LPS__SIMULACOES = 10;
 
   /**
    * The feature id for the '<em><b>Inconsistencia ERA</b></em>' containment reference list.
@@ -164,7 +173,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__INCONSISTENCIA_ERA = 10;
+  int LPS__INCONSISTENCIA_ERA = 11;
 
   /**
    * The feature id for the '<em><b>Erro</b></em>' attribute list.
@@ -173,7 +182,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__ERRO = 11;
+  int LPS__ERRO = 12;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -182,7 +191,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS__NOME = 12;
+  int LPS__NOME = 13;
 
   /**
    * The number of structural features of the '<em>LPS</em>' class.
@@ -191,7 +200,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS_FEATURE_COUNT = 13;
+  int LPS_FEATURE_COUNT = 14;
 
   /**
    * The meta object id for the '{@link caracteristica.impl.ElementoImpl <em>Elemento</em>}' class.
@@ -222,6 +231,90 @@ public interface CaracteristicaPackage extends EPackage
   int ELEMENTO_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link caracteristica.impl.ElementoExternoImpl <em>Elemento Externo</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.ElementoExternoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoExterno()
+   * @generated
+   */
+  int ELEMENTO_EXTERNO = 2;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENTO_EXTERNO__NOME = 0;
+
+  /**
+   * The number of structural features of the '<em>Elemento Externo</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ELEMENTO_EXTERNO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.CasoDeUsoImpl <em>Caso De Uso</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.CasoDeUsoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeUso()
+   * @generated
+   */
+  int CASO_DE_USO = 3;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASO_DE_USO__NOME = ELEMENTO_EXTERNO__NOME;
+
+  /**
+   * The number of structural features of the '<em>Caso De Uso</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASO_DE_USO_FEATURE_COUNT = ELEMENTO_EXTERNO_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.CasoDeTesteImpl <em>Caso De Teste</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.CasoDeTesteImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeTeste()
+   * @generated
+   */
+  int CASO_DE_TESTE = 4;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASO_DE_TESTE__NOME = ELEMENTO_EXTERNO__NOME;
+
+  /**
+   * The number of structural features of the '<em>Caso De Teste</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CASO_DE_TESTE_FEATURE_COUNT = ELEMENTO_EXTERNO_FEATURE_COUNT + 0;
+
+  /**
    * The meta object id for the '{@link caracteristica.impl.ElementoCaracteristicoImpl <em>Elemento Caracteristico</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -229,7 +322,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoCaracteristico()
    * @generated
    */
-  int ELEMENTO_CARACTERISTICO = 2;
+  int ELEMENTO_CARACTERISTICO = 5;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -257,7 +350,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAtributo()
    * @generated
    */
-  int ATRIBUTO = 3;
+  int ATRIBUTO = 6;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -303,7 +396,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristica()
    * @generated
    */
-  int CARACTERISTICA = 4;
+  int CARACTERISTICA = 7;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -315,13 +408,22 @@ public interface CaracteristicaPackage extends EPackage
   int CARACTERISTICA__NOME = ELEMENTO__NOME;
 
   /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARACTERISTICA__ELEMENTOS_EXTERNOS = ELEMENTO_FEATURE_COUNT + 0;
+
+  /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__CARACTERISTICA_PAI = ELEMENTO_FEATURE_COUNT + 0;
+  int CARACTERISTICA__CARACTERISTICA_PAI = ELEMENTO_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Caracteristica Filha</b></em>' reference list.
@@ -330,7 +432,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__CARACTERISTICA_FILHA = ELEMENTO_FEATURE_COUNT + 1;
+  int CARACTERISTICA__CARACTERISTICA_FILHA = ELEMENTO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Variacoes</b></em>' reference list.
@@ -339,7 +441,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__VARIACOES = ELEMENTO_FEATURE_COUNT + 2;
+  int CARACTERISTICA__VARIACOES = ELEMENTO_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Atributo</b></em>' reference list.
@@ -348,7 +450,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__ATRIBUTO = ELEMENTO_FEATURE_COUNT + 3;
+  int CARACTERISTICA__ATRIBUTO = ELEMENTO_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Caracteristica</em>' class.
@@ -357,7 +459,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA_FEATURE_COUNT = ELEMENTO_FEATURE_COUNT + 4;
+  int CARACTERISTICA_FEATURE_COUNT = ELEMENTO_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link caracteristica.impl.CaracteristicaRaizImpl <em>Raiz</em>}' class.
@@ -367,7 +469,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaRaiz()
    * @generated
    */
-  int CARACTERISTICA_RAIZ = 5;
+  int CARACTERISTICA_RAIZ = 8;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -377,6 +479,15 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_RAIZ__NOME = CARACTERISTICA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARACTERISTICA_RAIZ__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -440,7 +551,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaOpcional()
    * @generated
    */
-  int CARACTERISTICA_OPCIONAL = 6;
+  int CARACTERISTICA_OPCIONAL = 9;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -450,6 +561,15 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_OPCIONAL__NOME = CARACTERISTICA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARACTERISTICA_OPCIONAL__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -504,7 +624,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaAgrupada()
    * @generated
    */
-  int CARACTERISTICA_AGRUPADA = 7;
+  int CARACTERISTICA_AGRUPADA = 10;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -514,6 +634,15 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_AGRUPADA__NOME = CARACTERISTICA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARACTERISTICA_AGRUPADA__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -568,7 +697,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaMandatoria()
    * @generated
    */
-  int CARACTERISTICA_MANDATORIA = 8;
+  int CARACTERISTICA_MANDATORIA = 11;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -578,6 +707,15 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_MANDATORIA__NOME = CARACTERISTICA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CARACTERISTICA_MANDATORIA__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -632,7 +770,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacaoDois()
    * @generated
    */
-  int VARIACAO_DOIS = 9;
+  int VARIACAO_DOIS = 12;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -642,6 +780,15 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int VARIACAO_DOIS__NOME = CARACTERISTICA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIACAO_DOIS__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -723,7 +870,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getPontoDeVariacao()
    * @generated
    */
-  int PONTO_DE_VARIACAO = 10;
+  int PONTO_DE_VARIACAO = 13;
 
   /**
    * The number of structural features of the '<em>Ponto De Variacao</em>' class.
@@ -742,7 +889,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacao()
    * @generated
    */
-  int VARIACAO = 11;
+  int VARIACAO = 14;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -806,7 +953,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariante()
    * @generated
    */
-  int VARIANTE = 12;
+  int VARIANTE = 15;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -818,13 +965,22 @@ public interface CaracteristicaPackage extends EPackage
   int VARIANTE__NOME = PONTO_DE_VARIACAO_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIANTE__ELEMENTOS_EXTERNOS = PONTO_DE_VARIACAO_FEATURE_COUNT + 1;
+
+  /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIANTE__CARACTERISTICA_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 1;
+  int VARIANTE__CARACTERISTICA_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Caracteristica Filha</b></em>' reference list.
@@ -833,7 +989,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__CARACTERISTICA_FILHA = PONTO_DE_VARIACAO_FEATURE_COUNT + 2;
+  int VARIANTE__CARACTERISTICA_FILHA = PONTO_DE_VARIACAO_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Variacoes</b></em>' reference list.
@@ -842,7 +998,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__VARIACOES = PONTO_DE_VARIACAO_FEATURE_COUNT + 3;
+  int VARIANTE__VARIACOES = PONTO_DE_VARIACAO_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Atributo</b></em>' reference list.
@@ -851,7 +1007,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__ATRIBUTO = PONTO_DE_VARIACAO_FEATURE_COUNT + 4;
+  int VARIANTE__ATRIBUTO = PONTO_DE_VARIACAO_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Variacao Pai</b></em>' reference.
@@ -860,7 +1016,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__VARIACAO_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 5;
+  int VARIANTE__VARIACAO_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 6;
 
   /**
    * The number of structural features of the '<em>Variante</em>' class.
@@ -869,7 +1025,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE_FEATURE_COUNT = PONTO_DE_VARIACAO_FEATURE_COUNT + 6;
+  int VARIANTE_FEATURE_COUNT = PONTO_DE_VARIACAO_FEATURE_COUNT + 7;
 
   /**
    * The meta object id for the '{@link caracteristica.impl.RaizDeContextoImpl <em>Raiz De Contexto</em>}' class.
@@ -879,7 +1035,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getRaizDeContexto()
    * @generated
    */
-  int RAIZ_DE_CONTEXTO = 13;
+  int RAIZ_DE_CONTEXTO = 16;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -916,7 +1072,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getEntidadeDeContexto()
    * @generated
    */
-  int ENTIDADE_DE_CONTEXTO = 14;
+  int ENTIDADE_DE_CONTEXTO = 17;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -962,7 +1118,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getInformacaoDeContexto()
    * @generated
    */
-  int INFORMACAO_DE_CONTEXTO = 15;
+  int INFORMACAO_DE_CONTEXTO = 18;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1044,7 +1200,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoDeProduto()
    * @generated
    */
-  int ELEMENTO_DE_PRODUTO = 16;
+  int ELEMENTO_DE_PRODUTO = 19;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1081,7 +1237,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaProduto()
    * @generated
    */
-  int CARACTERISTICA_PRODUTO = 17;
+  int CARACTERISTICA_PRODUTO = 20;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1145,7 +1301,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAtributoProduto()
    * @generated
    */
-  int ATRIBUTO_PRODUTO = 18;
+  int ATRIBUTO_PRODUTO = 21;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1209,7 +1365,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaMandatoriaProduto()
    * @generated
    */
-  int CARACTERISTICA_MANDATORIA_PRODUTO = 19;
+  int CARACTERISTICA_MANDATORIA_PRODUTO = 22;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1273,7 +1429,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaOpcionalProduto()
    * @generated
    */
-  int CARACTERISTICA_OPCIONAL_PRODUTO = 20;
+  int CARACTERISTICA_OPCIONAL_PRODUTO = 23;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1337,7 +1493,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacaoDoisProduto()
    * @generated
    */
-  int VARIACAO_DOIS_PRODUTO = 21;
+  int VARIACAO_DOIS_PRODUTO = 24;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1428,7 +1584,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaAgrupadaProduto()
    * @generated
    */
-	int CARACTERISTICA_AGRUPADA_PRODUTO = 22;
+	int CARACTERISTICA_AGRUPADA_PRODUTO = 25;
 
 		/**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1492,7 +1648,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacaoProduto()
    * @generated
    */
-  int VARIACAO_PRODUTO = 23;
+  int VARIACAO_PRODUTO = 26;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1565,7 +1721,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVarianteProduto()
    * @generated
    */
-  int VARIANTE_PRODUTO = 24;
+  int VARIANTE_PRODUTO = 27;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1620,7 +1776,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getProduto()
    * @generated
    */
-  int PRODUTO = 25;
+  int PRODUTO = 28;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1693,7 +1849,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getRegra()
    * @generated
    */
-  int REGRA = 26;
+  int REGRA = 29;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1730,7 +1886,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeComposicao()
    * @generated
    */
-  int REGRA_DE_COMPOSICAO = 27;
+  int REGRA_DE_COMPOSICAO = 30;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1785,7 +1941,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeContexto()
    * @generated
    */
-  int REGRA_DE_CONTEXTO = 28;
+  int REGRA_DE_CONTEXTO = 31;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1840,7 +1996,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressao()
    * @generated
    */
-  int EXPRESSAO = 36;
+  int EXPRESSAO = 39;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1868,7 +2024,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getEvento()
    * @generated
    */
-  int EVENTO = 29;
+  int EVENTO = 32;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1896,7 +2052,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getEventoLogico()
    * @generated
    */
-  int EVENTO_LOGICO = 30;
+  int EVENTO_LOGICO = 33;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -1951,7 +2107,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getEventoRelacional()
    * @generated
    */
-  int EVENTO_RELACIONAL = 31;
+  int EVENTO_RELACIONAL = 34;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2006,7 +2162,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAcao()
    * @generated
    */
-  int ACAO = 32;
+  int ACAO = 35;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2034,7 +2190,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAcaoLogico()
    * @generated
    */
-  int ACAO_LOGICO = 33;
+  int ACAO_LOGICO = 36;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2089,7 +2245,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralAcao()
    * @generated
    */
-  int LITERAL_ACAO = 34;
+  int LITERAL_ACAO = 37;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2135,7 +2291,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getDesignar()
    * @generated
    */
-  int DESIGNAR = 35;
+  int DESIGNAR = 38;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2190,7 +2346,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAntecedente()
    * @generated
    */
-  int ANTECEDENTE = 37;
+  int ANTECEDENTE = 40;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2218,7 +2374,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoLogica()
    * @generated
    */
-  int EXPRESSAO_LOGICA = 38;
+  int EXPRESSAO_LOGICA = 41;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2273,7 +2429,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoRelacional()
    * @generated
    */
-  int EXPRESSAO_RELACIONAL = 39;
+  int EXPRESSAO_RELACIONAL = 42;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2328,7 +2484,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralComposicao()
    * @generated
    */
-  int LITERAL_COMPOSICAO = 40;
+  int LITERAL_COMPOSICAO = 43;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2374,7 +2530,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getSimulacao()
    * @generated
    */
-  int SIMULACAO = 41;
+  int SIMULACAO = 44;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2420,7 +2576,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getTransicao()
    * @generated
    */
-  int TRANSICAO = 42;
+  int TRANSICAO = 45;
 
   /**
    * The feature id for the '<em><b>EAntigo</b></em>' reference.
@@ -2493,7 +2649,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getEstado()
    * @generated
    */
-  int ESTADO = 43;
+  int ESTADO = 46;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -2539,7 +2695,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getInconsistenciaRegraAdaptacao()
    * @generated
    */
-  int INCONSISTENCIA_REGRA_ADAPTACAO = 44;
+  int INCONSISTENCIA_REGRA_ADAPTACAO = 47;
 
   /**
    * The feature id for the '<em><b>Regras Inconsistentes</b></em>' reference list.
@@ -2585,7 +2741,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOrigem()
    * @generated
    */
-  int ORIGEM = 45;
+  int ORIGEM = 48;
 
   /**
    * The meta object id for the '{@link caracteristica.Validade <em>Validade</em>}' enum.
@@ -2595,7 +2751,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getValidade()
    * @generated
    */
-  int VALIDADE = 46;
+  int VALIDADE = 49;
 
   /**
    * The meta object id for the '{@link caracteristica.Qualidade <em>Qualidade</em>}' enum.
@@ -2605,7 +2761,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getQualidade()
    * @generated
    */
-  int QUALIDADE = 47;
+  int QUALIDADE = 50;
 
   /**
    * The meta object id for the '{@link caracteristica.TipoValor <em>Tipo Valor</em>}' enum.
@@ -2615,7 +2771,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getTipoValor()
    * @generated
    */
-  int TIPO_VALOR = 48;
+  int TIPO_VALOR = 51;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorLogico <em>Operador Logico</em>}' enum.
@@ -2625,7 +2781,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorLogico()
    * @generated
    */
-  int OPERADOR_LOGICO = 49;
+  int OPERADOR_LOGICO = 52;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorAcaoLogico <em>Operador Acao Logico</em>}' enum.
@@ -2635,7 +2791,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorAcaoLogico()
    * @generated
    */
-  int OPERADOR_ACAO_LOGICO = 50;
+  int OPERADOR_ACAO_LOGICO = 53;
 
   /**
    * The meta object id for the '{@link caracteristica.CardinalidadeMaxima <em>Cardinalidade Maxima</em>}' enum.
@@ -2645,7 +2801,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCardinalidadeMaxima()
    * @generated
    */
-  int CARDINALIDADE_MAXIMA = 51;
+  int CARDINALIDADE_MAXIMA = 54;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorRelacional <em>Operador Relacional</em>}' enum.
@@ -2655,7 +2811,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorRelacional()
    * @generated
    */
-  int OPERADOR_RELACIONAL = 52;
+  int OPERADOR_RELACIONAL = 55;
 
   /**
    * The meta object id for the '{@link caracteristica.Presenca <em>Presenca</em>}' enum.
@@ -2665,7 +2821,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getPresenca()
    * @generated
    */
-  int PRESENCA = 53;
+  int PRESENCA = 56;
 
 
   /**
@@ -2699,6 +2855,17 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    */
   EReference getLPS_Elementos();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link caracteristica.LPS#getExternos <em>Externos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Externos</em>'.
+   * @see caracteristica.LPS#getExternos()
+   * @see #getLPS()
+   * @generated
+   */
+  EReference getLPS_Externos();
 
   /**
    * Returns the meta object for the containment reference list '{@link caracteristica.LPS#getRegras <em>Regras</em>}'.
@@ -2843,6 +3010,47 @@ public interface CaracteristicaPackage extends EPackage
   EAttribute getElemento_Nome();
 
   /**
+   * Returns the meta object for class '{@link caracteristica.ElementoExterno <em>Elemento Externo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Elemento Externo</em>'.
+   * @see caracteristica.ElementoExterno
+   * @generated
+   */
+  EClass getElementoExterno();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.ElementoExterno#getNome <em>Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nome</em>'.
+   * @see caracteristica.ElementoExterno#getNome()
+   * @see #getElementoExterno()
+   * @generated
+   */
+  EAttribute getElementoExterno_Nome();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.CasoDeUso <em>Caso De Uso</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Caso De Uso</em>'.
+   * @see caracteristica.CasoDeUso
+   * @generated
+   */
+  EClass getCasoDeUso();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.CasoDeTeste <em>Caso De Teste</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Caso De Teste</em>'.
+   * @see caracteristica.CasoDeTeste
+   * @generated
+   */
+  EClass getCasoDeTeste();
+
+  /**
    * Returns the meta object for class '{@link caracteristica.ElementoCaracteristico <em>Elemento Caracteristico</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2893,6 +3101,17 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    */
   EClass getCaracteristica();
+
+  /**
+   * Returns the meta object for the reference list '{@link caracteristica.Caracteristica#getElementosExternos <em>Elementos Externos</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Elementos Externos</em>'.
+   * @see caracteristica.Caracteristica#getElementosExternos()
+   * @see #getCaracteristica()
+   * @generated
+   */
+  EReference getCaracteristica_ElementosExternos();
 
   /**
    * Returns the meta object for the reference '{@link caracteristica.Caracteristica#getCaracteristicaPai <em>Caracteristica Pai</em>}'.
@@ -4358,6 +4577,14 @@ public interface CaracteristicaPackage extends EPackage
     EReference LPS__ELEMENTOS = eINSTANCE.getLPS_Elementos();
 
     /**
+     * The meta object literal for the '<em><b>Externos</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LPS__EXTERNOS = eINSTANCE.getLPS_Externos();
+
+    /**
      * The meta object literal for the '<em><b>Regras</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4464,6 +4691,44 @@ public interface CaracteristicaPackage extends EPackage
     EAttribute ELEMENTO__NOME = eINSTANCE.getElemento_Nome();
 
     /**
+     * The meta object literal for the '{@link caracteristica.impl.ElementoExternoImpl <em>Elemento Externo</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.ElementoExternoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoExterno()
+     * @generated
+     */
+    EClass ELEMENTO_EXTERNO = eINSTANCE.getElementoExterno();
+
+    /**
+     * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ELEMENTO_EXTERNO__NOME = eINSTANCE.getElementoExterno_Nome();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.CasoDeUsoImpl <em>Caso De Uso</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.CasoDeUsoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeUso()
+     * @generated
+     */
+    EClass CASO_DE_USO = eINSTANCE.getCasoDeUso();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.CasoDeTesteImpl <em>Caso De Teste</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.CasoDeTesteImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeTeste()
+     * @generated
+     */
+    EClass CASO_DE_TESTE = eINSTANCE.getCasoDeTeste();
+
+    /**
      * The meta object literal for the '{@link caracteristica.impl.ElementoCaracteristicoImpl <em>Elemento Caracteristico</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4508,6 +4773,14 @@ public interface CaracteristicaPackage extends EPackage
      * @generated
      */
     EClass CARACTERISTICA = eINSTANCE.getCaracteristica();
+
+    /**
+     * The meta object literal for the '<em><b>Elementos Externos</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CARACTERISTICA__ELEMENTOS_EXTERNOS = eINSTANCE.getCaracteristica_ElementosExternos();
 
     /**
      * The meta object literal for the '<em><b>Caracteristica Pai</b></em>' reference feature.

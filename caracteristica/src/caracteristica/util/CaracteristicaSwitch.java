@@ -86,6 +86,29 @@ public class CaracteristicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CaracteristicaPackage.ELEMENTO_EXTERNO:
+      {
+        ElementoExterno elementoExterno = (ElementoExterno)theEObject;
+        T result = caseElementoExterno(elementoExterno);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.CASO_DE_USO:
+      {
+        CasoDeUso casoDeUso = (CasoDeUso)theEObject;
+        T result = caseCasoDeUso(casoDeUso);
+        if (result == null) result = caseElementoExterno(casoDeUso);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.CASO_DE_TESTE:
+      {
+        CasoDeTeste casoDeTeste = (CasoDeTeste)theEObject;
+        T result = caseCasoDeTeste(casoDeTeste);
+        if (result == null) result = caseElementoExterno(casoDeTeste);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CaracteristicaPackage.ELEMENTO_CARACTERISTICO:
       {
         ElementoCaracteristico elementoCaracteristico = (ElementoCaracteristico)theEObject;
@@ -479,6 +502,54 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseElemento(Elemento object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Elemento Externo</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Elemento Externo</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseElementoExterno(ElementoExterno object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Caso De Uso</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Caso De Uso</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCasoDeUso(CasoDeUso object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Caso De Teste</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Caso De Teste</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCasoDeTeste(CasoDeTeste object)
   {
     return null;
   }

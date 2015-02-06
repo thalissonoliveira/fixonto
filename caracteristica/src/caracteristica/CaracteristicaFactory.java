@@ -41,6 +41,33 @@ public interface CaracteristicaFactory extends EFactory
   Elemento createElemento();
 
   /**
+   * Returns a new object of class '<em>Elemento Externo</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Elemento Externo</em>'.
+   * @generated
+   */
+  ElementoExterno createElementoExterno();
+
+  /**
+   * Returns a new object of class '<em>Caso De Uso</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Caso De Uso</em>'.
+   * @generated
+   */
+  CasoDeUso createCasoDeUso();
+
+  /**
+   * Returns a new object of class '<em>Caso De Teste</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Caso De Teste</em>'.
+   * @generated
+   */
+  CasoDeTeste createCasoDeTeste();
+
+  /**
    * Returns a new object of class '<em>Elemento Caracteristico</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

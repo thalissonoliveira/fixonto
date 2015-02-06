@@ -67,6 +67,9 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
     {
       case CaracteristicaPackage.LPS: return createLPS();
       case CaracteristicaPackage.ELEMENTO: return createElemento();
+      case CaracteristicaPackage.ELEMENTO_EXTERNO: return createElementoExterno();
+      case CaracteristicaPackage.CASO_DE_USO: return createCasoDeUso();
+      case CaracteristicaPackage.CASO_DE_TESTE: return createCasoDeTeste();
       case CaracteristicaPackage.ELEMENTO_CARACTERISTICO: return createElementoCaracteristico();
       case CaracteristicaPackage.ATRIBUTO: return createAtributo();
       case CaracteristicaPackage.CARACTERISTICA: return createCaracteristica();
@@ -201,6 +204,39 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
   {
     ElementoImpl elemento = new ElementoImpl();
     return elemento;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ElementoExterno createElementoExterno()
+  {
+    ElementoExternoImpl elementoExterno = new ElementoExternoImpl();
+    return elementoExterno;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CasoDeUso createCasoDeUso()
+  {
+    CasoDeUsoImpl casoDeUso = new CasoDeUsoImpl();
+    return casoDeUso;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public CasoDeTeste createCasoDeTeste()
+  {
+    CasoDeTesteImpl casoDeTeste = new CasoDeTesteImpl();
+    return casoDeTeste;
   }
 
   /**

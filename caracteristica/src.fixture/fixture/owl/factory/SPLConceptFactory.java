@@ -10,6 +10,8 @@ import fixture.owl.model.element.MandatoryFeature;
 import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.externalelement.TestCase;
+import fixture.owl.model.externalelement.UseCase;
 import fixture.owl.model.product.Product;
 import fixture.owl.model.product.ProductAttribute;
 import fixture.owl.model.product.ProductGroupedFeature;
@@ -170,8 +172,13 @@ public class SPLConceptFactory {
 		return new ProductAttribute(id, name);
 	}
 	
+	public UseCase createUseCase(String id, String name) {
+		return new UseCase(id, name);
+	}
 	
-	
+	public TestCase createTestCase(String id, String name) {
+		return new TestCase(id, name);
+	}
 	
 }
 

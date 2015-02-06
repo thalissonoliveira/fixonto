@@ -75,6 +75,24 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="CasoDeTeste"
+          description="Create new CasoDeTeste">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="CasoDeUso"
+          description="Create new CasoDeUso">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="Designar"
           description="Create new Designar">
         <smallIcon
@@ -271,6 +289,15 @@
           xsi:type="gmftool:CreationTool"
           title="Consequente"
           description="Create new Consequente">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ElementosExternos"
+          description="Create new ElementosExternos">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

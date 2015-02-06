@@ -42,7 +42,7 @@ wizard OntoAnalyser
 
 
 //####### OPERATION WIZARD 1.1 #########
-operation fixTure2(lps:LPS) {
+operation fixTure2_1(lps:LPS) {
 	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
 	var featToOntoFixture := new Native('fixture.owl.parser.FeaToOntoFixture');
 	var factoryFixture := featToOntoFixture.getSplConceptFactory();
@@ -56,7 +56,7 @@ operation fixTure2(lps:LPS) {
 }
 
 //####### OPERATION WIZARD 1.2 #########
-operation fixTure2(lps:LPS) {
+operation fixTure2_2(lps:LPS) {
 	//#### Nessa etapa será montada a estrutura da LPS para que seja possível traduzir em ontologia ########\\
 	var featToOntoFixture := new Native('fixture.owl.parser.ParserFeaToOntoFixture');
 	var factoryFixture := featToOntoFixture.getSplConceptFactory();
@@ -86,6 +86,13 @@ operation construirObjetoSPL(lps:LPS, factoryFixture, splFixture, featToOntoFixt
 		elementFixture = criarElementoFixture(elemento, factoryFixture);
 		splFixture.getElements().add(elementFixture);
 		featToOntoFixture.addToFixtureOracle(elementFixture);
+	}
+	
+	var externalElementFixture;
+	for (externo in lps.externos) {
+		externalElementFixture = criarElementoExternoFixture(externo, factoryFixture);
+		splFixture.getExternals().add(externalElementFixture);
+		featToOntoFixture.addToFixtureOracle(externalElementFixture);
 	}
 	
 	var ruleFixture;
@@ -234,6 +241,12 @@ operation preencherElementosCaracteristicaLpsFixture(caracteristicaRaiz : Caract
 	var featureFixture = featToOntoFixture.getOracle().get(caracteristicaRaiz.id);
 	var childFeatureFixture = null;
 	var attributeFixture = null;
+	var externalElementFixture = null;
+	
+	for (externo in caracteristicaRaiz.elementosExternos) {
+		externalElementFixture = featToOntoFixture.getOracle().get(externo.id);
+		featureFixture.addExternalElement(externalElementFixture);
+	}
 	
 	for (atributo in caracteristicaRaiz.atributo) {
 		attributeFixture = featToOntoFixture.getOracle().get(atributo.id);
@@ -247,6 +260,11 @@ operation preencherElementosCaracteristicaLpsFixture(caracteristicaRaiz : Caract
 		for (atributo in caracteristicaFilha.atributo) {
 			attributeFixture = featToOntoFixture.getOracle().get(atributo.id);
 			featureFixture.addAttribute(attributeFixture);
+		}
+		
+		for (externo in caracteristicaFilha.elementosExternos) {
+			externalElementFixture = featToOntoFixture.getOracle().get(externo.id);
+			featureFixture.addExternalElement(externalElementFixture);
 		}
 		
 		if (not caracteristicaFilha.caracteristicaFilha.isEmpty()) {
@@ -446,6 +464,21 @@ operation criarElementoFixture(elemento: Elemento, factoryFixture) {
 		return factoryFixture.createContextInfo(elemento.id, elemento.nome);
 	} else {
 		'[ERROR] - Erro ao criar novo Elemento pela Fixture: elemento do modelo é inválido.'.println();
+		'[ERRO DETAIL]: '.print();
+		elemento.nome.print();
+		"".println(); 
+		return null;
+	}
+		
+}
+
+operation criarElementoExternoFixture(externo: ElementoExterno, factoryFixture) {
+	if (externo.isTypeOf(CasoDeUso)) {
+		return factoryFixture.createUseCase(externo.id, externo.nome);
+	} else if (externo.isTypeOf(CasoDeTeste)) {
+		return factoryFixture.createTestCase(externo.id, externo.nome);
+	} else {
+		'[ERROR] - Erro ao criar novo Elemento Externo pela Fixture: elemento do modelo é inválido.'.println();
 		'[ERRO DETAIL]: '.print();
 		elemento.nome.print();
 		"".println(); 

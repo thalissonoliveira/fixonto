@@ -5,6 +5,7 @@ package caracteristica;
 class LPS {
   val PontoDeVariacao[*] pontosDeVariacao;
   val Elemento[*] elementos;
+  val ElementoExterno[*] externos;
   val Regra[*] regras;
   val Produto[*] produtos;
   val Expressao[*] expressoes;
@@ -22,6 +23,19 @@ class Elemento {
   attr String nome;
 }
 
+class ElementoExterno {
+  attr String nome;
+    
+}
+
+@gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Externo {0}")
+class CasoDeUso extends ElementoExterno {
+}
+
+@gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Externo {0}")
+class CasoDeTeste extends ElementoExterno {
+}
+
 class ElementoCaracteristico extends Elemento {
 }
 
@@ -32,6 +46,9 @@ class Atributo extends Elemento {
 }
 
 class Caracteristica extends Elemento {
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref ElementoExterno[*] elementosExternos;
+  
   ref Caracteristica#caracteristicaFilha caracteristicaPai;
 
   @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
@@ -42,6 +59,7 @@ class Caracteristica extends Elemento {
 
   @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
   ref Atributo[*]#caracteristicaPai atributo;
+  
 }
 
 @gmf.node(label="nome")

@@ -25,6 +25,7 @@ import fixture.owl.model.element.OptionalFeature;
 import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.element.VariationTwo;
 import fixture.owl.model.intefaces.Element;
+import fixture.owl.model.intefaces.ExternalElement;
 import fixture.owl.model.product.Product;
 import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Antecedent;
@@ -229,6 +230,17 @@ public class Utils {
 				for (Attribute attribute : f.getAttributes()) {
 					System.out.println(attribute.getName());
 				}
+				
+				
+				if (f.getExternalElements().isEmpty()) {
+					System.out.println("######## EXTERNAL ELEMENTS FROM FEATURE #########");
+					Set<ExternalElement> externals = f.getExternalElements();
+					for (ExternalElement externalElement : externals) {
+						System.out.println("[EXTERNAL][FROM FEATURE]: " + externalElement.getId() + " " + externalElement.getName());
+					}
+				} else {
+					System.out.println("Sem elementos externos.");
+				}
 				System.out.println("---------------------");
 			} else {
 				System.out.println("It isn't Feature: " + element.getName());
@@ -270,7 +282,12 @@ public class Utils {
 			System.out.println("_._._._._._._._._._._._");
 		}
 		
+		System.out.println("######## EXTERNAL ELEMENTS FROM SPL #########");
 		
+		Set<ExternalElement> externals = spl.getExternals();
+		for (ExternalElement externalElement : externals) {
+			System.out.println("[EXTERNAL][FROM SPL]: " + externalElement.getId() + " " + externalElement.getName());
+		}
 		
 		System.out.println("########## PRODUCT INFO #############");
 		

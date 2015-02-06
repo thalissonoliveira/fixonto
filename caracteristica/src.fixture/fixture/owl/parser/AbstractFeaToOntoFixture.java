@@ -60,7 +60,7 @@ public abstract class AbstractFeaToOntoFixture {
 		try {
 			ontoHelper.loadMetaOntology();
 			feaToOntoFixtureUtils = OWLUtils.getInstance(ontoHelper);
-//			Utils.printSPLInfo(spl);
+			Utils.printSPLInfo(spl);
 			populateOWL(spl);
 			instatiateProducts(spl.getProducts());
 			ontoHelper.saveAndRemoveOntology();

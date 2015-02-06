@@ -9,6 +9,8 @@
         eType="#//PontoDeVariacao" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="elementos" upperBound="-1"
         eType="#//Elemento" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externos" upperBound="-1"
+        eType="#//ElementoExterno" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="regras" upperBound="-1"
         eType="#//Regra" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="produtos" upperBound="-1"
@@ -33,6 +35,23 @@
   <eClassifiers xsi:type="ecore:EClass" name="Elemento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementoExterno">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CasoDeUso" eSuperTypes="#//ElementoExterno">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nome"/>
+      <details key="figure" value="utils.TriangleFigure"/>
+      <details key="label.pattern" value="Externo {0}"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CasoDeTeste" eSuperTypes="#//ElementoExterno">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nome"/>
+      <details key="figure" value="utils.TriangleFigure"/>
+      <details key="label.pattern" value="Externo {0}"/>
+    </eAnnotations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ElementoCaracteristico" eSuperTypes="#//Elemento"/>
   <eClassifiers xsi:type="ecore:EClass" name="Atributo" eSuperTypes="#//Elemento">
     <eAnnotations source="gmf.node">
@@ -45,6 +64,15 @@
         eOpposite="#//Caracteristica/atributo"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Caracteristica" eSuperTypes="#//Elemento">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementosExternos" upperBound="-1"
+        eType="#//ElementoExterno">
+      <eAnnotations source="gmf.link">
+        <details key="target.decoration" value="closedarrow"/>
+        <details key="color" value="0,0,0"/>
+        <details key="style" value="solid"/>
+        <details key="width" value="3"/>
+      </eAnnotations>
+    </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caracteristicaPai" eType="#//Caracteristica"
         eOpposite="#//Caracteristica/caracteristicaFilha"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="caracteristicaFilha" upperBound="-1"

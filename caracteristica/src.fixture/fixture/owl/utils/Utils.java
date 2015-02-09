@@ -231,11 +231,10 @@ public class Utils {
 					System.out.println(attribute.getName());
 				}
 				
-				
-				if (f.getExternalElements().isEmpty()) {
+				Set<ExternalElement> externalElements = f.getExternalElements();
+				if (!externalElements.isEmpty()) {
 					System.out.println("######## EXTERNAL ELEMENTS FROM FEATURE #########");
-					Set<ExternalElement> externals = f.getExternalElements();
-					for (ExternalElement externalElement : externals) {
+					for (ExternalElement externalElement : externalElements) {
 						System.out.println("[EXTERNAL][FROM FEATURE]: " + externalElement.getId() + " " + externalElement.getName());
 					}
 				} else {

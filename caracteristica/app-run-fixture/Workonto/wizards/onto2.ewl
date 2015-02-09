@@ -259,12 +259,12 @@ operation preencherElementosCaracteristicaLpsFixture(caracteristicaRaiz : Caract
 		
 		for (atributo in caracteristicaFilha.atributo) {
 			attributeFixture = featToOntoFixture.getOracle().get(atributo.id);
-			featureFixture.addAttribute(attributeFixture);
+			childFeatureFixture.addAttribute(attributeFixture);
 		}
 		
 		for (externo in caracteristicaFilha.elementosExternos) {
 			externalElementFixture = featToOntoFixture.getOracle().get(externo.id);
-			featureFixture.addExternalElement(externalElementFixture);
+			childFeatureFixture.addExternalElement(externalElementFixture);
 		}
 		
 		if (not caracteristicaFilha.caracteristicaFilha.isEmpty()) {

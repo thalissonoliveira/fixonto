@@ -37,6 +37,7 @@ import fixture.owl.factory.OWLDataPropertyFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.model.element.Feature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.intefaces.ExternalElement;
 import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.model.product.ProductFeature;
 import fixture.owl.model.rule.Action;
@@ -206,6 +207,17 @@ public class OWLUtils {
 		addIndividualClassification(currentAttributeOWL, ModelOWLClassTypeEnum.ATTRIBUTE);
 	}
 	
+	public void addExternalElementClassification(OWLIndividual currentExternalElementOWL, ExternalElement externalElement) {
+		if (externalElement.isTestCase()) {
+			addIndividualClassification(currentExternalElementOWL, ModelOWLClassTypeEnum.TEST_CASE);
+		} else if (externalElement.isUseCase()) {
+			addIndividualClassification(currentExternalElementOWL, ModelOWLClassTypeEnum.USE_CASE);
+		} else {
+			throw new RuntimeException("Classifying external element error. Element: " + externalElement.getName());
+		}
+		
+	}
+	
 	public void addProductAttributeClassification(OWLIndividual currentAttributeOWL) {
 		addIndividualClassification(currentAttributeOWL, ModelOWLClassTypeEnum.PRODUCT_ATTRIBUTE);
 	}
@@ -332,6 +344,20 @@ public class OWLUtils {
 		addUnilateralRelationToOntology(currentFeatureOwl, currentAttributeOwl, hasAttribute);
 	}
 	
+	public void addParentalRelationBetweenFeatureAndExternalElement(OWLIndividual currentFeatureOwl, OWLIndividual currentExternalElementOwl, ExternalElement externalElement) {
+		OWLObjectProperty external = null;
+		if (externalElement.isTestCase()) {
+			external = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_TEST_CASE);
+		} else if (externalElement.isUseCase()) {
+			external = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.IMPLEMENTS_USE_CASE);
+		} else {
+			throw new RuntimeException("Relating Feature and External Element error. External: " + externalElement.getName());
+		}
+		
+		addUnilateralRelationToOntology(currentFeatureOwl, currentExternalElementOwl, external);
+	}
+
+	
 	public void addParentalRelationBetweenProductFeatureAndProductAttribute(OWLIndividual currentFeatureOwl, OWLIndividual currentAttributeOwl) {
 		OWLObjectProperty hasAttribute = owlObjetcPropertyFactory.get(OWLObjectPropertyTypeEnum.HAS_PRODUCT_ATTRIBUTE);
 		addUnilateralRelationToOntology(currentFeatureOwl, currentAttributeOwl, hasAttribute);
@@ -415,7 +441,6 @@ public class OWLUtils {
 
 	@SuppressWarnings("static-access")
 	public OWLClass createNewOLWClass(Feature feature, Map<String, OWLClass> owlClassOracle) {
-		
 		if (feature != null) {
 			String name = feature.getName();
 			if (!owlClassOracle.containsKey(name)) {

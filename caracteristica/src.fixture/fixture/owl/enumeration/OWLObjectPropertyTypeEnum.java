@@ -41,8 +41,10 @@ public enum OWLObjectPropertyTypeEnum {
 	HAS_FATHER_PRODUCT_VARIATION (25, "Has Father Product Variation", "hasFatherProductVariation"),
 	HAS_ORIGINAL_ELEMENT (26, "Has Original Elemento", "hasOriginalElement"),
 	HAS_PRODUCT_ATTRIBUTE (27, "Has Product Attribute", "hasProductAttribute"),
-	HAS_PRODUCT_VARIATIONS (28, "Has Product Variations", "hasProductVariations");
+	HAS_PRODUCT_VARIATIONS (28, "Has Product Variations", "hasProductVariations"),
 	
+	HAS_TEST_CASE (29, "Has Test Case", "hasTestCase"),
+	IMPLEMENTS_USE_CASE (30, "Implements Use Case", "implementsUseCase");
 	
 	
 	

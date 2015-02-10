@@ -7,6 +7,7 @@ import org.semanticweb.owlapi.model.OWLNamedIndividual;
 
 import fixture.owl.model.element.Attribute;
 import fixture.owl.model.element.Feature;
+import fixture.owl.model.intefaces.ExternalElement;
 import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.Antecedent;
@@ -24,7 +25,6 @@ import fixture.owl.model.rule.RelationalExpression;
  *
  */
 public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
-	
 	
 	protected void buildOntology(Action action, OWLIndividual currentActionOWL) {
 		if (action.isActionLiteral()) {
@@ -115,8 +115,17 @@ public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(currentFeatureOwl, currentFatherFeatureOwl);
 		}
 		
-		Set<Attribute> attributes = feature.getAttributes();
+		Set<ExternalElement> externalElements = feature.getExternalElements();
 
+		OWLIndividual currentExternalElementOwl;
+		for (ExternalElement externalElement : externalElements) {
+			currentExternalElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(externalElement, owlOracle);
+			feaToOntoFixtureUtils.addExternalElementClassification(currentExternalElementOwl, externalElement);
+			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndExternalElement(currentFeatureOwl, currentExternalElementOwl, externalElement);
+		}
+		
+		Set<Attribute> attributes = feature.getAttributes();
+		
 		OWLIndividual currentAttributeOwl;
 		for (Attribute attribute : attributes) {
 			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
@@ -128,7 +137,7 @@ public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
 		if (!childrenFeatures.isEmpty()) {
 			for (Feature childFeature : childrenFeatures) {
 				buildOntology(childFeature);
-			}
+			} 
 		} else {
 			return;
 		}

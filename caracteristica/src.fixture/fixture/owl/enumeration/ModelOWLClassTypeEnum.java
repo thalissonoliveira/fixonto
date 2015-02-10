@@ -45,7 +45,12 @@ public enum ModelOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	PRODUCT_VARIATION_TWO(30, "Product Variation Two", "ProductVariationTwo"),
 	PRODUCT_VARIATION(31, "Product Variation", "ProductVariation" ),
 	PRODUCT_VARIANT(32, "Product Variat", "ProductVariat" ), 
-	PRODUCT_GROUPED_FEATURE(33, "Product Grouped Feature", "ProductGroupedFeature" );
+	PRODUCT_GROUPED_FEATURE(33, "Product Grouped Feature", "ProductGroupedFeature" ),
+	
+	EXTERNAL_CONCEPT(34, "External Concept", "ExternalConcept" ),
+	TEST_CASE(35, "Test Case", "TestCase" ),
+	USE_CASE(36, "Use Case", "UseCase" );
+	
 	
 	private int code;
 	private String description;

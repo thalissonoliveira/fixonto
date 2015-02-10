@@ -12,6 +12,7 @@ import fixture.owl.enumeration.ObjectRestrictionType;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.model.element.Attribute;
 import fixture.owl.model.element.Feature;
+import fixture.owl.model.intefaces.ExternalElement;
 import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.model.rule.Action;
 import fixture.owl.model.rule.ActionLiteral;
@@ -135,13 +136,22 @@ public class ParserFeaToOntoFixture extends AbstractFeaToOntoFixture {
 			feaToOntoFixtureUtils.addParentalRelationBetweenFeatures(createNewOLWClass, currentFatherFeatureOwl);
 		}
 		
-		Set<Attribute> attributes = feature.getAttributes();
+		Set<ExternalElement> externalElements = feature.getExternalElements();
 
+		OWLIndividual currentExternaElementOwl;
+		for (ExternalElement externalElement : externalElements) {
+			currentExternaElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(externalElement, owlOracle);
+			feaToOntoFixtureUtils.addExternalElementClassification(currentExternaElementOwl, externalElement);
+			//TODO Ver como fazer a restrição aqui. Ver se tem como restringir associação de elementos de uma classes a indivíduos específicos. Se não der, que triste.
+		}
+		
+		Set<Attribute> attributes = feature.getAttributes();
+		
 		OWLIndividual currentAttributeOwl;
 		for (Attribute attribute : attributes) {
 			currentAttributeOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(attribute, owlOracle);
 			feaToOntoFixtureUtils.addAttributeClassification(currentAttributeOwl);
-			//TODO Continuar
+			//TODO Continuar (Vide TODO de external elements)
 //			feaToOntoFixtureUtils.addParentalRelationBetweenFeatureAndAttribute(currentFeatureOwl, currentAttributeOwl);
 		}
 		

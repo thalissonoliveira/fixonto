@@ -74,10 +74,9 @@ public abstract class AbstractFeaToOntoFixture {
 		}
 	}
 	
-	
-
 	private void populateOWL(SPL spl) {
 		//Declarar todos os conceitos (classes) que vou construir a ontologia
+		//TODO é necessário representar a associação da LPS com os conceitos? (e.g elementos externos e atributos)
 		RootFeature feature = Utils.getRootFeatureOf(spl.getSystem());;
 		
 		ContextRoot contextRoot;
@@ -157,9 +156,14 @@ public abstract class AbstractFeaToOntoFixture {
 	}
 	
 	private void instatiateProducts(Set<Product> products) {
-		for (Product product : products) {
-			buildOntologyFromProduct(product);
+		if (addDisjuctionBetweenFeatureOWLClasses()) {
+			for (Product product : products) {
+				buildOntologyFromProduct(product);
+			}
+		} else {
+			System.out.println("////TODO: Ainda tenho que implementar a verificação de produto como subconjunto de indivíduos.");
 		}
+		
 		
 	}
 	

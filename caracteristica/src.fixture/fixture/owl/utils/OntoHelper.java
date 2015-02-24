@@ -22,7 +22,6 @@ import org.semanticweb.owlapi.model.OWLOntologyStorageException;
 import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.vocab.PrefixOWLOntologyFormat;
 
-import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.swrl.parser.SWRLRuleStringParser;
 
 /**
@@ -60,15 +59,6 @@ public class OntoHelper {
 		Utils.refreshOutputFolder();
 	}
 	
-	private void loadRules() {
-		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
-		for (RulesConstraintsOWLClassTypeEnum rule : rules) {
-			SWRLRule swrlRule = rule.getRule(this);
-			this.getManager().applyChange(new AddAxiom(this.getMetaOntology(), swrlRule));
-			this.saveOntology();
-		}
-	}
-
 	public synchronized void loadOntology(String pathLoadOntology, String pathSaveOntology) throws OWLOntologyCreationException {
 		File file = new File(pathLoadOntology);
 		this.manager = OWLManager.createOWLOntologyManager();

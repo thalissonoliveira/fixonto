@@ -2,8 +2,6 @@ package fixture.owl.enumeration.interfaces;
 
 import org.semanticweb.owlapi.model.OWLClass;
 
-import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
-
 /**
  * 
  * Interface to markup {@link Enum} representing possible instances of {@link OWLClass}.

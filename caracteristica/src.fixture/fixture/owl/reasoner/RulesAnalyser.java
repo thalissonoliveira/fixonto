@@ -61,6 +61,10 @@ public class RulesAnalyser {
 		//TODO Ver uma maneira de fazer essa verificação sem jena (sem parser de owl pra rdf)
 //		verifyOntologyConsistency(ontoHelper.getMetaOntology(), reasoner);
 		
+		//TODO Ler o arquivo e fazer a verificação. Trazer os dados e colocar em um objeto que trabalha com 
+		//     objetos (vide código que não contenha )
+		
+		
 		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
 		SWRLError[] swrlErrors = new SWRLError[rules.length];
 		int indexError = 0;

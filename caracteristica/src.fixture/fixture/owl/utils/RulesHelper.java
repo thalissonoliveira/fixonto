@@ -1,5 +1,6 @@
 package fixture.owl.utils;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import org.semanticweb.owlapi.model.AxiomType;
@@ -28,44 +29,45 @@ import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
 public class RulesHelper {
 	
 	private PelletReasoner pelletReasoner;
+	private OntoHelper ontoHelper;
 	
-	public RulesHelper(PelletReasoner pelletReasoner) {
+	
+	public RulesHelper(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
+		this.ontoHelper = ontoHelper;
 		this.pelletReasoner = pelletReasoner;
 	}
 
 
 
 	@SuppressWarnings("unchecked")
-	public void mapRules(OntoHelper ontoHelper) {
+	public Set<SWRLError> processRules() {
+		Set<SWRLError> errors = new HashSet<SWRLError>();
 		AxiomType<?> type = AxiomType.getAxiomType("Rule");
 		OWLOntology metaOntology = ontoHelper.getMetaOntology();
 		Set<OWLAxiom> ruleAxioms = (Set<OWLAxiom>) metaOntology.getAxioms(type);
 		SWRLRule rule = null;
+		SWRLError error;
 		for (OWLAxiom ruleAxiom : ruleAxioms) {
 			rule = (SWRLRule) ruleAxiom;
-			System.out.println(rule);
 			Set<SWRLAtom> head = rule.getHead();
-			System.out.println(head.size());
-//			System.out.println(head);
-			for (SWRLAtom swrlAtom : head) {
-				System.out.println(swrlAtom);
-				Set<OWLClass> classesInSignature = swrlAtom.getClassesInSignature();
-				if (classesInSignature.size() == 1) {
-//					System.out.println(head);
-//					System.out.println(classesInSignature);
-//					throw new RuntimeException("SWRL Typo.");
-//					execute(ontoHelper, pelletReasoner);
-				}
+			error = execute(ontoHelper, pelletReasoner, head);
+			if (error != null) {
+				errors.add(error);
 			}
-			System.out.println("------------");
 		}
+		return errors;
 	}
 	
-	public SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner) {
-		RulesConstraintsOWLClassTypeEnum ruleEnum = RulesConstraintsOWLClassTypeEnum.valueOf("string que vem do axioma");
+	private SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner, Set<SWRLAtom> head) {
 		
-		OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(RulesConstraintsOWLClassTypeEnum.EQUAL_NAME_FEATURE_RULE);
-		OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME);
+		//TODO PEGAR O HEAD E VERIFICAR SE TEM UM HEAD (CLASS) OU DOIS (CLASS, OBJECT PROPERTY). SE TIVER OBJECT PROPERTY CHAMA O MÉTODO ABAIXO. SENÃO TEM OUTRO MÉTODO NO ERROR BUILDER SÓ COM OWL CLASS
+		
+		RulesConstraintsOWLClassTypeEnum ruleEnum = RulesConstraintsOWLClassTypeEnum.valueOf("string que vem do axioma");
+		OWLObjectPropertyTypeEnum objectPropertyEnum = OWLObjectPropertyTypeEnum.valueOf("string que vem do axioma");
+		//Exemplo: OWLObjectPropertyTypeEnum.HAS_EQUAL_NAME
+		
+		OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
+		OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(objectPropertyEnum);
 		return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty);
 	}
 
@@ -79,7 +81,7 @@ public class RulesHelper {
 		ontoHelper.saveOntology();
 		
 		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureBuiltin(new FixtureEqualNameFeatureBuiltinHelper()));
-		new RulesHelper(reasoner).mapRules(ontoHelper);
+		new RulesHelper(ontoHelper, reasoner).processRules();
 	}
 
 

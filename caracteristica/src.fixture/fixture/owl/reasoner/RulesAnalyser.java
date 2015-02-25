@@ -1,6 +1,7 @@
 package fixture.owl.reasoner;
 
 import java.io.InputStream;
+import java.util.Set;
 
 import org.mindswap.pellet.PelletOptions;
 import org.mindswap.pellet.jena.PelletInfGraph;
@@ -30,6 +31,7 @@ import fixture.owl.rules.error.SWRLError;
 import fixture.owl.swrl.FixtureBuiltin;
 import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
 import fixture.owl.utils.OntoHelper;
+import fixture.owl.utils.RulesHelper;
 import fixture.owl.utils.Utils;
 
 /**
@@ -67,38 +69,44 @@ public class RulesAnalyser {
 		
 		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
 		SWRLError[] swrlErrors = new SWRLError[rules.length];
-		int indexError = 0;
-		for (RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum : rules) {
-			swrlErrors[indexError] = rulesConstraintsOWLClassTypeEnum.execute(ontoHelper, reasoner);
-			indexError++;
-		}
-
-		System.out.println("####### CHECK IT OUT! #######");
 		
-		boolean hasError = false;
-		StringBuilder sb = new StringBuilder();
-		int index = 0;
-		for (SWRLError swrlError : swrlErrors) {
-			if (swrlError != null) {
-				sb.append(swrlError.getDescription() + "\n");
-				hasError = true;
-			} else {
-				sb.append("RULE" + index +"[OK]" + "\n");
-			}
-			sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
-			index++;
-		}
+		Set<SWRLError> brokenRules = new RulesHelper(ontoHelper, reasoner).processRules();
 		
-		if (!hasError) {
-			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
-		} else {
-			System.out.println(sb.toString());
-		}
+		//TODO VER OUTRA STRING RESULTANTE, POIS DO JEITO QUE ESTÁ TÁ F. MOSTRAR APENAS OS ERROS. NÃO PRECISA MOSTRAR QUE REGRA X DEU CERTO. >>> ITERAR NAS BROKEN RULES
 		
-		return sb.toString();
+//		int indexError = 0;
+//		for (RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum : rules) {
+//			swrlErrors[indexError] = rulesConstraintsOWLClassTypeEnum.execute(ontoHelper, reasoner);
+//			indexError++;
+//		}
+//
+//		System.out.println("####### CHECK IT OUT! #######");
+//		
+//		boolean hasError = false;
+//		StringBuilder sb = new StringBuilder();
+//		int index = 0;
+//		for (SWRLError swrlError : swrlErrors) {
+//			if (swrlError != null) {
+//				sb.append(swrlError.getDescription() + "\n");
+//				hasError = true;
+//			} else {
+//				sb.append("RULE" + index +"[OK]" + "\n");
+//			}
+//			sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
+//			index++;
+//		}
+//		
+//		if (!hasError) {
+//			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
+//		} else {
+//			System.out.println(sb.toString());
+//		}
+//		
+//		return sb.toString();
+		return "";
 			
 	}
-
+	
 	@SuppressWarnings("unused")
 	private void verifyOntologyConsistency(OWLOntology ontology, PelletReasoner reasoner) {
 		System.out.println("?????????????????");

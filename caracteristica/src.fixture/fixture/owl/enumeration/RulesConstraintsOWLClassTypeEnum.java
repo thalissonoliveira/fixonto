@@ -6,7 +6,7 @@ import fixture.owl.utils.Utils;
 public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumInterface {
 	
 	EQUAL_NAME_FEATURE_RULE (1, "'Features with same name' Rule",  "GFR1", "Características diferentes não podem ter o mesmo nome", ""),
-	EQUAL_NAME_ATTRIBUTE_RULE (2, "'Attributes with same name' Rule",  "GFR2", "Atributos diferentes não podem ter o mesmo nome.", ""),
+	EQUAL_NAME_ATTRIBUTE_RULE (2, "'Attributes with same name' Rule",  "GFR1", "Atributos diferentes não podem ter o mesmo nome.", ""),
 	PARENTAL_INCONSISTENCY (3, "'Parental Inconsistency' Rule",  "ParentalInconsistency", "Uma característica não pode ser filha dela mesma.", "A feature can't be child of itself."),
 	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features.",  "GFR3", "Ciclo detectado.", "Cicle detected."),
 	UNIQUE_ROOT (5, "Unique root.",  "GFR4", "Uma característica só pode ter uma raíz.", ""),

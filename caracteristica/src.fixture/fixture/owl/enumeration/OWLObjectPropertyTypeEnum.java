@@ -1,8 +1,9 @@
 package fixture.owl.enumeration;
 
+import fixture.owl.enumeration.interfaces.FixtureOWLConceptEnumInterface;
 import fixture.owl.utils.Utils;
 
-public enum OWLObjectPropertyTypeEnum {
+public enum OWLObjectPropertyTypeEnum implements FixtureOWLConceptEnumInterface {
 	
 	HAS_FATHER_FEATURE (1, "Has Father Feature", "hasFatherFeature"),
 	HAS_CHILD_FEATURE (2, "Has Child Feature", "hasChildFeature"),

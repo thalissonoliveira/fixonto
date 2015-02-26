@@ -36,6 +36,7 @@ public class OWLClassFactory {
 		return owlClassFactory;
 	}
 	
+	//TODO No futuro refatorar isso pra ficar na classe EnumHelper
 	@SuppressWarnings({ "unchecked", "rawtypes" })
 	private static void populateMap() {
 		owlClassFactory.map = new HashMap<FixtureOWLClassTypeEnumInterface, OWLClass>();

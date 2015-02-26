@@ -1,14 +1,23 @@
 package fixture.owl.reasoner;
 
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Set;
 
 import org.mindswap.pellet.PelletOptions;
 import org.mindswap.pellet.jena.PelletInfGraph;
+import org.semanticweb.owlapi.model.AxiomType;
+import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
 import org.semanticweb.owlapi.model.OWLNamedIndividual;
+import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
+import org.semanticweb.owlapi.model.SWRLAtom;
+import org.semanticweb.owlapi.model.SWRLClassAtom;
+import org.semanticweb.owlapi.model.SWRLObjectPropertyAtom;
+import org.semanticweb.owlapi.model.SWRLRule;
 import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
 import org.semanticweb.owlapi.reasoner.Node;
 import org.semanticweb.owlapi.reasoner.NodeSet;
@@ -25,13 +34,16 @@ import com.hp.hpl.jena.reasoner.Reasoner;
 
 import fixture.owl.enumeration.FixtureSWRLBuiltinEnum;
 import fixture.owl.enumeration.ModelOWLClassTypeEnum;
+import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.factory.OWLClassFactory;
+import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.rules.error.SWRLError;
+import fixture.owl.rules.error.SWRLErrorBuilder;
 import fixture.owl.swrl.FixtureBuiltin;
 import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
+import fixture.owl.utils.EnumHelper;
 import fixture.owl.utils.OntoHelper;
-import fixture.owl.utils.RulesHelper;
 import fixture.owl.utils.Utils;
 
 /**
@@ -43,6 +55,7 @@ import fixture.owl.utils.Utils;
 public class RulesAnalyser {
 	
 	private OntoHelper ontoHelper;
+	private PelletReasoner reasoner;
 	
 	public String run() throws InstantiationException, IllegalAccessException, OWLOntologyCreationException, ClassNotFoundException {
 		BuiltInRegistry.instance.registerBuiltIn(FixtureSWRLBuiltinEnum.EQUAL_NAME.getPathUri(), new FixtureBuiltin(new FixtureEqualNameFeatureBuiltinHelper()));
@@ -55,7 +68,7 @@ public class RulesAnalyser {
 
 	private String checkRules() {
 		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
-		PelletReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
+		reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 		reasoner.flush();
 		
 		ontoHelper.saveOntology();
@@ -66,20 +79,25 @@ public class RulesAnalyser {
 		//TODO Ler o arquivo e fazer a verificação. Trazer os dados e colocar em um objeto que trabalha com 
 		//     objetos (vide código que não contenha )
 		
+		Set<SWRLError> brokenRules = processRules();
+		StringBuilder sb = new StringBuilder();
+		if (brokenRules != null && !brokenRules.isEmpty()) {
+			for (SWRLError swrlError : brokenRules) {
+				sb.append(swrlError.getDescription() + "\n");
+				sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
+			}
+			System.out.println("####### CHECK IT OUT! #######");
+			System.out.println(sb.toString());
+		} else {
+			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
+		}
 		
-		RulesConstraintsOWLClassTypeEnum[] rules = RulesConstraintsOWLClassTypeEnum.values();
-		SWRLError[] swrlErrors = new SWRLError[rules.length];
 		
-		Set<SWRLError> brokenRules = new RulesHelper(ontoHelper, reasoner).processRules();
+		return sb.toString();
 		
 		//TODO VER OUTRA STRING RESULTANTE, POIS DO JEITO QUE ESTÁ TÁ F. MOSTRAR APENAS OS ERROS. NÃO PRECISA MOSTRAR QUE REGRA X DEU CERTO. >>> ITERAR NAS BROKEN RULES
 		
-//		int indexError = 0;
-//		for (RulesConstraintsOWLClassTypeEnum rulesConstraintsOWLClassTypeEnum : rules) {
-//			swrlErrors[indexError] = rulesConstraintsOWLClassTypeEnum.execute(ontoHelper, reasoner);
-//			indexError++;
-//		}
-//
+
 //		System.out.println("####### CHECK IT OUT! #######");
 //		
 //		boolean hasError = false;
@@ -103,8 +121,6 @@ public class RulesAnalyser {
 //		}
 //		
 //		return sb.toString();
-		return "";
-			
 	}
 	
 	@SuppressWarnings("unused")
@@ -178,6 +194,73 @@ public class RulesAnalyser {
 //		System.out.println("PRINTING A SIMPLE RULE AFTER");
 //		// get all instances of Person class
 //		printReasoning(reasoner, parentalInconsistencyOWLClass);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Set<SWRLError> processRules() {
+		Set<SWRLError> errors = new HashSet<SWRLError>();
+		AxiomType<?> type = AxiomType.getAxiomType("Rule");
+		OWLOntology metaOntology = ontoHelper.getMetaOntology();
+		Set<OWLAxiom> ruleAxioms = (Set<OWLAxiom>) metaOntology.getAxioms(type);
+		SWRLRule rule = null;
+		SWRLError error;
+		for (OWLAxiom ruleAxiom : ruleAxioms) {
+			rule = (SWRLRule) ruleAxiom;
+			Set<SWRLAtom> head = rule.getHead();
+			error = execute(ontoHelper, reasoner, head);
+			if (error != null) {
+				errors.add(error);
+			}
+		}
+		return errors;
+	}
+	
+	private SWRLError execute(OntoHelper ontoHelper, PelletReasoner pelletReasoner, Set<SWRLAtom> head) {
+		String typeRuleString = null;
+		String objectPropertyRuleString = null;
+		
+		for (SWRLAtom swrlAtom : head) {
+			if (swrlAtom instanceof SWRLClassAtom) {
+				Set<OWLClass> classesInSignature = swrlAtom.getClassesInSignature();
+				if (classesInSignature.size() == 1) {
+					OWLClass ruleOwlClass = new ArrayList<OWLClass>(classesInSignature).get(0);
+					typeRuleString = ruleOwlClass.getIRI().getFragment();
+				} else  {
+					throw new RuntimeException("Inconsistent rule head [SWRLClassAtom]!");
+				}
+			} else if (swrlAtom instanceof SWRLObjectPropertyAtom) {
+				Set<OWLObjectProperty> objectPropertiesInSignature = swrlAtom.getObjectPropertiesInSignature();
+				if (objectPropertiesInSignature.size() == 1) {
+					OWLObjectProperty ruleObjectProperty = new ArrayList<OWLObjectProperty>(objectPropertiesInSignature).get(0);
+					objectPropertyRuleString = ruleObjectProperty.getIRI().getFragment();
+				} else  {
+					throw new RuntimeException("Inconsistent rule head [SWRLObjectPropertyAtom]!");
+				}
+			} else {
+				throw new RuntimeException("Inconsistent rule head [SWRLAtom]!");
+			}
+		}
+		
+		RulesConstraintsOWLClassTypeEnum ruleEnum = typeRuleString == null ? null : EnumHelper.findByLabel(RulesConstraintsOWLClassTypeEnum.class, typeRuleString);
+		OWLObjectPropertyTypeEnum objectPropertyEnum = objectPropertyRuleString == null ? null : EnumHelper.findByLabel(OWLObjectPropertyTypeEnum.class, objectPropertyRuleString);//OWLObjectPropertyTypeEnum.valueOf(objectPropertyRuleString);
+		
+		if (ruleEnum != null) {
+			if (objectPropertyEnum != null) {
+				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
+				OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(objectPropertyEnum);
+				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty);
+			} else {
+				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
+				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass);
+			}
+		} else {
+			throw new RuntimeException("Invalid Rule");
+		}
+		
+	}
+	
+	public static void main(String[] args) throws InstantiationException, IllegalAccessException, OWLOntologyCreationException, ClassNotFoundException {
+		new RulesAnalyser().run();
 	}
 	
 }

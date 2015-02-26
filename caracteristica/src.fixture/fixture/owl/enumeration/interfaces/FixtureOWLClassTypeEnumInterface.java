@@ -11,11 +11,6 @@ import org.semanticweb.owlapi.model.OWLClass;
  * @author thalissonoliveira
  *
  */
-public interface FixtureOWLClassTypeEnumInterface {
+public interface FixtureOWLClassTypeEnumInterface extends FixtureOWLConceptEnumInterface {
 
-	String getIRI();
-	int getCode();
-	String getDescription();
-	String getLabel();
-	
 }

@@ -39,7 +39,7 @@ public class SWRLRuleStringParser {
 		this.swrlVariableOracle = new HashMap<String, SWRLVariable>();
 		
 	}
-
+	
 	public SWRLRule parse(String rule) {
 		SWRLRuleString swrlRuleString = new SWRLRuleString(rule);
 		List<AtomString> antecedentAtoms = swrlRuleString.getAntecedentAtoms();
@@ -127,7 +127,7 @@ public class SWRLRuleStringParser {
 					OWLObjectProperty owlDataProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(atomType);
 					return ontoHelper.getDataFactory().getSWRLObjectPropertyAtom(owlDataProperty, swrlVariables[0], swrlVariables[1]);
 				} else {
-					throw new RuntimeException("Não é class, object prop, data prop nem builtin:  " + atomType + ".. :/");
+					throw new RuntimeException("Nao eh class, object prop, data prop nem builtin:  " + atomType + ".. :/");
 				}
 			}
 		}
@@ -147,7 +147,7 @@ public class SWRLRuleStringParser {
 		}
 		
 		if (variables.length != swrlVariables.length) {
-			throw new RuntimeException("Ver Log nessa lógica aqui.");
+			throw new RuntimeException("Ver Log nessa lï¿½gica aqui.");
 		}
 		
 		return swrlVariables;

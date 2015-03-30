@@ -69,7 +69,6 @@ public class SWRLRuleString {
 		processParts(rule);
 	}
 	
-	
 	private void processParts(String rule) {
 //		String ruleTrim = rule.replace(" ", "");
 //		ruleTrim = ruleTrim.replace("\n", "");
@@ -85,7 +84,6 @@ public class SWRLRuleString {
 		for (String atom : consequent) {
 			processAtom(atom, consequentAtoms);
 		}
-		
 	}
 	
 	private void processAtom(String atom, List<AtomString> atoms) {
@@ -108,17 +106,17 @@ public class SWRLRuleString {
 			atomString.setVariables(variables);
 			atoms.add(atomString);
 		} else {
-			String atomPeaces[] = atom.split(" ");
-			boolean isValidLength = atomPeaces.length == 4;
-			boolean isText = atomPeaces[0].matches("[\\w]*");
-			boolean isMaxMin = atomPeaces[1].matches("max|min");
-			boolean isNumber = atomPeaces[2].matches("[\\d]*");
-			boolean singleAtom = isSingleAtom(atomPeaces[3]);
+			String atomPieces[] = atom.split(" ");
+			boolean isValidLength = atomPieces.length == 4;
+			boolean isText = atomPieces[0].matches("[\\w]*");
+			boolean isMaxMin = atomPieces[1].matches("max|min");
+			boolean isNumber = atomPieces[2].matches("[\\d]*");
+			boolean singleAtom = isSingleAtom(atomPieces[3]);
 			
 			boolean isValidCardinality = !isValidLength ? false : isText && isMaxMin && isNumber && singleAtom;
 			
 			if (isValidCardinality) {
-				atom = atomPeaces[3];
+				atom = atomPieces[3];
 				
 				int openPerentesisIndex = atom.indexOf("(");
 				int closePerentesisIndex = atom.indexOf(")");
@@ -134,9 +132,9 @@ public class SWRLRuleString {
 				atomString.setVariables(variables);
 				
 				StringCardinality stringCardinality = new StringCardinality();
-				stringCardinality.setAtomType(atomPeaces[0]);
-				stringCardinality.setCardinality(atomPeaces[1]);
-				stringCardinality.setValue(atomPeaces[2]);
+				stringCardinality.setAtomType(atomPieces[0]);
+				stringCardinality.setCardinality(atomPieces[1]);
+				stringCardinality.setValue(atomPieces[2]);
 				
 				atomString.setStringCardinality(stringCardinality);
 				

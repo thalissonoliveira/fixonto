@@ -30,208 +30,200 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class RegraDeComposicaoImpl extends RegraImpl implements RegraDeComposicao
 {
   /**
-   * The cached value of the '{@link #getAntecedente() <em>Antecedente</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAntecedente() <em>Antecedente</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAntecedente()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAntecedente()
+	 * @generated
+	 * @ordered
+	 */
   protected Antecedente antecedente;
 
   /**
-   * The cached value of the '{@link #getConsequente() <em>Consequente</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getConsequente() <em>Consequente</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConsequente()
-   * @generated
-   * @ordered
-   */
+	 * @see #getConsequente()
+	 * @generated
+	 * @ordered
+	 */
   protected Antecedente consequente;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RegraDeComposicaoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.REGRA_DE_COMPOSICAO;
-  }
+		return CaracteristicaPackage.Literals.REGRA_DE_COMPOSICAO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Antecedente getAntecedente()
   {
-    if (antecedente != null && antecedente.eIsProxy())
-    {
-      InternalEObject oldAntecedente = (InternalEObject)antecedente;
-      antecedente = (Antecedente)eResolveProxy(oldAntecedente);
-      if (antecedente != oldAntecedente)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE, oldAntecedente, antecedente));
-      }
-    }
-    return antecedente;
-  }
+		if (antecedente != null && antecedente.eIsProxy()) {
+			InternalEObject oldAntecedente = (InternalEObject)antecedente;
+			antecedente = (Antecedente)eResolveProxy(oldAntecedente);
+			if (antecedente != oldAntecedente) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE, oldAntecedente, antecedente));
+			}
+		}
+		return antecedente;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Antecedente basicGetAntecedente()
   {
-    return antecedente;
-  }
+		return antecedente;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAntecedente(Antecedente newAntecedente)
   {
-    Antecedente oldAntecedente = antecedente;
-    antecedente = newAntecedente;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE, oldAntecedente, antecedente));
-  }
+		Antecedente oldAntecedente = antecedente;
+		antecedente = newAntecedente;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE, oldAntecedente, antecedente));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Antecedente getConsequente()
   {
-    if (consequente != null && consequente.eIsProxy())
-    {
-      InternalEObject oldConsequente = (InternalEObject)consequente;
-      consequente = (Antecedente)eResolveProxy(oldConsequente);
-      if (consequente != oldConsequente)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE, oldConsequente, consequente));
-      }
-    }
-    return consequente;
-  }
+		if (consequente != null && consequente.eIsProxy()) {
+			InternalEObject oldConsequente = (InternalEObject)consequente;
+			consequente = (Antecedente)eResolveProxy(oldConsequente);
+			if (consequente != oldConsequente) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE, oldConsequente, consequente));
+			}
+		}
+		return consequente;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Antecedente basicGetConsequente()
   {
-    return consequente;
-  }
+		return consequente;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setConsequente(Antecedente newConsequente)
   {
-    Antecedente oldConsequente = consequente;
-    consequente = newConsequente;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE, oldConsequente, consequente));
-  }
+		Antecedente oldConsequente = consequente;
+		consequente = newConsequente;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE, oldConsequente, consequente));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
-        if (resolve) return getAntecedente();
-        return basicGetAntecedente();
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
-        if (resolve) return getConsequente();
-        return basicGetConsequente();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
+				if (resolve) return getAntecedente();
+				return basicGetAntecedente();
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
+				if (resolve) return getConsequente();
+				return basicGetConsequente();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
-        setAntecedente((Antecedente)newValue);
-        return;
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
-        setConsequente((Antecedente)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
+				setAntecedente((Antecedente)newValue);
+				return;
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
+				setConsequente((Antecedente)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
-        setAntecedente((Antecedente)null);
-        return;
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
-        setConsequente((Antecedente)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
+				setAntecedente((Antecedente)null);
+				return;
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
+				setConsequente((Antecedente)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
-        return antecedente != null;
-      case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
-        return consequente != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__ANTECEDENTE:
+				return antecedente != null;
+			case CaracteristicaPackage.REGRA_DE_COMPOSICAO__CONSEQUENTE:
+				return consequente != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //RegraDeComposicaoImpl

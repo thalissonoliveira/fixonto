@@ -73,36 +73,6 @@
         <Class IRI="#Feature"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#GFR1"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR10"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR2"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR3"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR4"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR5"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR6"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR7"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR8"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#GFR9"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#GroupedFeature"/>
     </Declaration>
     <Declaration>
@@ -122,9 +92,6 @@
     </Declaration>
     <Declaration>
         <Class IRI="#OptionalFeature"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ParentalInconsistency"/>
     </Declaration>
     <Declaration>
         <Class IRI="#ProductAttribute"/>
@@ -176,6 +143,30 @@
     </Declaration>
     <Declaration>
         <Class IRI="#VariationTwo"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR4"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR5"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR6"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR7"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WFSMR8"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#external"/>
@@ -371,46 +362,6 @@
         <Class IRI="#Element"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#GFR1"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR10"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR2"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR3"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR4"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR5"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR6"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR7"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR8"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#GFR9"/>
-        <Class IRI="#OntologyInconsistences"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#GroupedFeature"/>
         <Class IRI="#Feature"/>
     </SubClassOf>
@@ -433,10 +384,6 @@
     <SubClassOf>
         <Class IRI="#OptionalFeature"/>
         <Class IRI="#Feature"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ParentalInconsistency"/>
-        <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#ProductAttribute"/>
@@ -493,6 +440,38 @@
     <SubClassOf>
         <Class IRI="#VariationTwo"/>
         <Class IRI="#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR1"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR2"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR3"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR4"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR5"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR6"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR7"/>
+        <Class IRI="#OntologyInconsistences"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMR8"/>
+        <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <ClassAssertion>
         <Class IRI="#Count"/>
@@ -659,11 +638,11 @@
         <DataProperty IRI="#hasLogicalOperator"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>
@@ -679,11 +658,11 @@
         <DataProperty IRI="#hasPresence"/>
         <DatatypeRestriction>
             <Datatype abbreviatedIRI="xsd:integer"/>
-            <FacetRestriction facet="&xsd;maxInclusive">
-                <Literal datatypeIRI="&xsd;int">1</Literal>
-            </FacetRestriction>
             <FacetRestriction facet="&xsd;minInclusive">
                 <Literal datatypeIRI="&xsd;int">0</Literal>
+            </FacetRestriction>
+            <FacetRestriction facet="&xsd;maxInclusive">
+                <Literal datatypeIRI="&xsd;int">1</Literal>
             </FacetRestriction>
         </DatatypeRestriction>
     </DataPropertyRange>

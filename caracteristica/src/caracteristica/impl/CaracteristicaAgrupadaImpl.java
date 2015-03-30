@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CaracteristicaAgrupadaImpl extends CaracteristicaImpl implements CaracteristicaAgrupada
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaracteristicaAgrupadaImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.CARACTERISTICA_AGRUPADA;
-  }
+		return CaracteristicaPackage.Literals.CARACTERISTICA_AGRUPADA;
+	}
 
 } //CaracteristicaAgrupadaImpl

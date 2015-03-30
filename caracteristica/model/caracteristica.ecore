@@ -200,7 +200,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="InformacaoDeContexto" eSuperTypes="#//Elemento">
     <eAnnotations source="gmf.node">
       <details key="label" value="nome,valor"/>
-      <details key="label.pattern" value="Informação de Contexto: {0} Valor {1}"/>
+      <details key="label.pattern" value="Informa��o de Contexto: {0} Valor {1}"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="origem" eType="#//Origem"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="validade" eType="#//Validade"/>
@@ -378,7 +378,7 @@
         <details key="target.decoration" value="closedarrow"/>
         <details key="color" value="0,0,0"/>
         <details key="style" value="solid"/>
-        <details key="label" value="ação"/>
+        <details key="label" value="a��o"/>
         <details key="width" value="3"/>
       </eAnnotations>
     </eStructuralFeatures>

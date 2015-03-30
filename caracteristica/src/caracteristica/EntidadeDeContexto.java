@@ -24,50 +24,50 @@ import org.eclipse.emf.common.util.EList;
 public interface EntidadeDeContexto extends Elemento
 {
   /**
-   * Returns the value of the '<em><b>Raiz</b></em>' reference.
-   * It is bidirectional and its opposite is '{@link caracteristica.RaizDeContexto#getEntidadesDeContexto <em>Entidades De Contexto</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Raiz</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link caracteristica.RaizDeContexto#getEntidadesDeContexto <em>Entidades De Contexto</em>}'.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Raiz</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Raiz</em>' reference.
-   * @see #setRaiz(RaizDeContexto)
-   * @see caracteristica.CaracteristicaPackage#getEntidadeDeContexto_Raiz()
-   * @see caracteristica.RaizDeContexto#getEntidadesDeContexto
-   * @model opposite="entidadesDeContexto"
-   * @generated
-   */
+	 * @return the value of the '<em>Raiz</em>' reference.
+	 * @see #setRaiz(RaizDeContexto)
+	 * @see caracteristica.CaracteristicaPackage#getEntidadeDeContexto_Raiz()
+	 * @see caracteristica.RaizDeContexto#getEntidadesDeContexto
+	 * @model opposite="entidadesDeContexto"
+	 * @generated
+	 */
   RaizDeContexto getRaiz();
 
   /**
-   * Sets the value of the '{@link caracteristica.EntidadeDeContexto#getRaiz <em>Raiz</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * Sets the value of the '{@link caracteristica.EntidadeDeContexto#getRaiz <em>Raiz</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Raiz</em>' reference.
-   * @see #getRaiz()
-   * @generated
-   */
+	 * @param value the new value of the '<em>Raiz</em>' reference.
+	 * @see #getRaiz()
+	 * @generated
+	 */
   void setRaiz(RaizDeContexto value);
 
   /**
-   * Returns the value of the '<em><b>Informacoes De Contexto</b></em>' reference list.
-   * The list contents are of type {@link caracteristica.InformacaoDeContexto}.
-   * It is bidirectional and its opposite is '{@link caracteristica.InformacaoDeContexto#getElementoPai <em>Elemento Pai</em>}'.
-   * <!-- begin-user-doc -->
+	 * Returns the value of the '<em><b>Informacoes De Contexto</b></em>' reference list.
+	 * The list contents are of type {@link caracteristica.InformacaoDeContexto}.
+	 * It is bidirectional and its opposite is '{@link caracteristica.InformacaoDeContexto#getElementoPai <em>Elemento Pai</em>}'.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Informacoes De Contexto</em>' reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Informacoes De Contexto</em>' reference list.
-   * @see caracteristica.CaracteristicaPackage#getEntidadeDeContexto_InformacoesDeContexto()
-   * @see caracteristica.InformacaoDeContexto#getElementoPai
-   * @model opposite="elementoPai"
-   *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
-   * @generated
-   */
+	 * @return the value of the '<em>Informacoes De Contexto</em>' reference list.
+	 * @see caracteristica.CaracteristicaPackage#getEntidadeDeContexto_InformacoesDeContexto()
+	 * @see caracteristica.InformacaoDeContexto#getElementoPai
+	 * @model opposite="elementoPai"
+	 *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+	 * @generated
+	 */
   EList<InformacaoDeContexto> getInformacoesDeContexto();
 
 } // EntidadedeContexto

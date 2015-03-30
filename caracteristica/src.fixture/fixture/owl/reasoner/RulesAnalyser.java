@@ -67,17 +67,17 @@ public class RulesAnalyser {
 	}
 
 	private String checkRules() {
-		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATÓRIO DE ERROS GENÉRICO.
+		//TODO REFAZER ESSA ESTRUTURA PARA GERAR UM RELATORIO DE ERROS GENERICO.
 		reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
 		reasoner.flush();
 		
 		ontoHelper.saveOntology();
 	
-		//TODO Ver uma maneira de fazer essa verificação sem jena (sem parser de owl pra rdf)
+		//TODO Ver uma maneira de fazer essa verificacao sem jena (sem parser de owl pra rdf)
 //		verifyOntologyConsistency(ontoHelper.getMetaOntology(), reasoner);
 		
-		//TODO Ler o arquivo e fazer a verificação. Trazer os dados e colocar em um objeto que trabalha com 
-		//     objetos (vide código que não contenha )
+		//TODO Ler o arquivo e fazer a verificacao. Trazer os dados e colocar em um objeto que trabalha com 
+		//     objetos (vide codigo que nao contenha )
 		
 		Set<SWRLError> brokenRules = processRules();
 		StringBuilder sb = new StringBuilder();
@@ -89,13 +89,13 @@ public class RulesAnalyser {
 			System.out.println("####### CHECK IT OUT! #######");
 			System.out.println(sb.toString());
 		} else {
-			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
+			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICACAO DO MCSC!");
 		}
 		
 		
 		return sb.toString();
 		
-		//TODO VER OUTRA STRING RESULTANTE, POIS DO JEITO QUE ESTÁ TÁ F. MOSTRAR APENAS OS ERROS. NÃO PRECISA MOSTRAR QUE REGRA X DEU CERTO. >>> ITERAR NAS BROKEN RULES
+		//TODO VER OUTRA STRING RESULTANTE, POIS DO JEITO QUE ESTAH TAH F. MOSTRAR APENAS OS ERROS. NAO PRECISA MOSTRAR QUE REGRA X DEU CERTO. >>> ITERAR NAS BROKEN RULES
 		
 
 //		System.out.println("####### CHECK IT OUT! #######");
@@ -115,7 +115,7 @@ public class RulesAnalyser {
 //		}
 //		
 //		if (!hasError) {
-//			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICAÇÃO DO MCSC!");
+//			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICACAO DO MCSC!");
 //		} else {
 //			System.out.println(sb.toString());
 //		}

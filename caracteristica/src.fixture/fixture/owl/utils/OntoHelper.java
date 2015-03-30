@@ -50,7 +50,7 @@ public class OntoHelper {
 		this.prefixOWLOntologyFormat = createtPrefixOWLOntologyFormat();
 		
 		
-		//TODO Algumas regras que estão sendo geradas estão inconsistentes. Visitar essa etapa de geração para deixar correta.
+		//TODO Algumas regras que estï¿½o sendo geradas estï¿½o inconsistentes. Visitar essa etapa de geraï¿½ï¿½o para deixar correta.
 //		loadRules();
 		loadRulesFromFile();
 		
@@ -153,6 +153,10 @@ public class OntoHelper {
 					ruleStr = ruleStr.trim();
 					int len = ruleStr.length();
 					if (len > 0) {
+						if (ruleStr.startsWith("\\\\")) {
+							continue;
+						}
+						
 						SWRLRule swrlRule = new SWRLRuleStringParser(this).parse(ruleStr);
 						this.getManager().applyChange(new AddAxiom(this.getMetaOntology(), swrlRule));
 						this.saveOntology();

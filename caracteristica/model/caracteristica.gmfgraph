@@ -520,7 +520,7 @@
       </actualFigure>
     </descriptors>
     <descriptors name="RegraDeContextoAcaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeContextoAcaoExternalLabel" text="a&#xfffd;&#xfffd;o"/>
+      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeContextoAcaoExternalLabel" text="a&#xe7;&#xe3;o"/>
     </descriptors>
     <descriptors name="EventoLogicoLadoDireitoEventoFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EventoLogicoLadoDireitoEventoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.16">

@@ -59,7 +59,7 @@ public interface RegraDeContexto extends Regra
 	 * @return the value of the '<em>Acao</em>' reference.
 	 * @see #setAcao(Acao)
 	 * @see caracteristica.CaracteristicaPackage#getRegraDeContexto_Acao()
-	 * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' label='a\ufffd\ufffdo' width='3'"
+	 * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' label='a\347\343o' width='3'"
 	 * @generated
 	 */
   Acao getAcao();

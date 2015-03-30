@@ -2823,7 +2823,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		   source, 
 		   new String[] {
 			 "label", "nome,valor",
-			 "label.pattern", "Informa\ufffd\ufffdo de Contexto: {0} Valor {1}"
+			 "label.pattern", "Informa\u00e7\u00e3o de Contexto: {0} Valor {1}"
 		   });	
 		addAnnotation
 		  (atributoProdutoEClass, 
@@ -3089,7 +3089,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 			 "target.decoration", "closedarrow",
 			 "color", "0,0,0",
 			 "style", "solid",
-			 "label", "a\ufffd\ufffdo",
+			 "label", "a\u00e7\u00e3o",
 			 "width", "3"
 		   });	
 		addAnnotation

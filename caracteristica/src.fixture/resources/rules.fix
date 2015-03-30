@@ -7,9 +7,7 @@ Attribute(?x) ^ hasChildFeature min 1 Feature(?x) ->  WFSMR6(?x)
 MandatoryFeature(?x) ^ OptionalFeature(?y) ^ hasFatherFeature(?x,?y) -> WFSMR7(?x)
 MandatoryFeature(?x) ^ VariationTwo(?y) ^ hasFatherFeature(?x,?y) -> WFSMR7(?x)
 MandatoryFeature(?x) ^ GroupedFeature(?y) ^ hasFatherFeature(?x,?y) -> WFSMR7(?x)
-
 OptionalFeature(?x) ^ MandatoryFeature(?y) ^ hasChildFeature(?x,?y) -> WFSMR8(?x)
-
-//##### BOA FORMAÇÃO DAS REGRAS DE COMPOSIÇÃO
-//CompositionRule(?x) ^ MandatoryFeature(?y) ^ hasAntecedent(?x,?y) -> WFCR9(?x)
-//CompositionRule(?x) ^ MandatoryFeature(?y) ^ hasConsequent(?x,?y) -> WFCR9(?x)
+-- ##### BOA FORMAÇÃO DAS REGRAS DE COMPOSIÇÃO
+-- CompositionRule(?x) ^ MandatoryFeature(?y) ^ hasAntecedent(?x,?y) -> WFCR9(?x)
+-- CompositionRule(?x) ^ MandatoryFeature(?y) ^ hasConsequent(?x,?y) -> WFCR9(?x)

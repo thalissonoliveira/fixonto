@@ -153,7 +153,9 @@ public class OntoHelper {
 					ruleStr = ruleStr.trim();
 					int len = ruleStr.length();
 					if (len > 0) {
-						if (ruleStr.startsWith("\\\\")) {
+						if (ruleStr.startsWith("--") || ruleStr.trim().equals("")) {
+							System.out.println("Pulou?");
+							System.out.println(ruleStr);
 							continue;
 						}
 						

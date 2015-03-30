@@ -447,9 +447,9 @@
           href="caracteristica.ecore#//InformacaoDeContexto"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping"
-          viewPattern="Informa&#xfffd;&#xfffd;o de Contexto: {0} Valor {1}"
-          editorPattern="Informa&#xfffd;&#xfffd;o de Contexto: {0} Valor {1}"
-          editPattern="Informa&#xfffd;&#xfffd;o de Contexto: {0} Valor {1}">
+          viewPattern="Informa&#xe7;&#xe3;o de Contexto: {0} Valor {1}"
+          editorPattern="Informa&#xe7;&#xe3;o de Contexto: {0} Valor {1}"
+          editPattern="Informa&#xe7;&#xe3;o de Contexto: {0} Valor {1}">
         <diagramLabel
             href="caracteristica.gmfgraph#InformacaoDeContextoLabel"/>
         <features

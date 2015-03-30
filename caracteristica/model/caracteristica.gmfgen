@@ -395,7 +395,7 @@
       <labels visualID="5030" editPartClassName="InformacaoDeContextoNomeValorEditPart" itemSemanticEditPolicyClassName="InformacaoDeContextoNomeValorItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
         <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureInformacaoDeContextoLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
-        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="Informa��o de Contexto: {0} Valor {1}" editorPattern="Informa��o de Contexto: {0} Valor {1}" editPattern="Informa��o de Contexto: {0} Valor {1}">
+        <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0" viewPattern="Informação de Contexto: {0} Valor {1}" editorPattern="Informação de Contexto: {0} Valor {1}" editPattern="Informação de Contexto: {0} Valor {1}">
           <metaFeatures href="caracteristica.genmodel#//caracteristica/Elemento/nome"/>
           <metaFeatures href="caracteristica.genmodel#//caracteristica/InformacaoDeContexto/valor"/>
         </modelFacet>
@@ -775,7 +775,7 @@
       </modelFacet>
       <labels visualID="6015" editPartClassName="RegraDeContextoAcaoExternalLabelEditPart" itemSemanticEditPolicyClassName="RegraDeContextoAcaoExternalLabelItemSemanticEditPolicy" readOnly="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RegraDeContextoAcaoExternalLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegraDeContextoAcaoExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegraDeContextoAcaoExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;a��o&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
+        <viewmap xsi:type="gmfgen:InnerClassViewmap" className="RegraDeContextoAcaoExternalLabelFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class RegraDeContextoAcaoExternalLabelFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public RegraDeContextoAcaoExternalLabelFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setText(&quot;ação&quot;);&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;">
           <attributes xsi:type="gmfgen:LabelOffsetAttributes" y="40"/>
         </viewmap>
         <modelFacet xsi:type="gmfgen:DesignLabelModelFacet" parser="//@labelParsers/@implementations.2"/>

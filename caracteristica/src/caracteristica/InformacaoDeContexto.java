@@ -21,7 +21,7 @@ package caracteristica;
  * </p>
  *
  * @see caracteristica.CaracteristicaPackage#getInformacaoDeContexto()
- * @model annotation="gmf.node label='nome,valor' label.pattern='Informa\ufffd\ufffdo de Contexto: {0} Valor {1}'"
+ * @model annotation="gmf.node label='nome,valor' label.pattern='Informa\347\343o de Contexto: {0} Valor {1}'"
  * @generated
  */
 public interface InformacaoDeContexto extends Elemento

@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CasoDeTesteImpl extends ElementoExternoImpl implements CasoDeTeste
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected CasoDeTesteImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.CASO_DE_TESTE;
-	}
+    return CaracteristicaPackage.Literals.CASO_DE_TESTE;
+  }
 
 } //CasoDeTesteImpl

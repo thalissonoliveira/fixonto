@@ -1,677 +1,1650 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="caracteristica">
-  <figures name="Default">
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+<gmfgraph:Canvas
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition"
+    name="caracteristica">
+  <figures
+      name="Default">
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
       <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
       <template/>
     </figures>
-    <descriptors name="CasoDeUsoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CasoDeUsoFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CasoDeUsoLabelFigure" text="CasoDeUso"/>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <figures
+        xsi:type="gmfgraph:PolygonDecoration"
+        name="ClosedArrow">
+      <backgroundColor
+          xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template
+          x="-2"
+          y="2"/>
+      <template
+          x="-2"
+          y="-2"/>
+      <template/>
+    </figures>
+    <descriptors
+        name="CasoDeUsoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="CasoDeUsoFigure"
+          qualifiedClassName="utils.TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CasoDeUsoLabelFigure"
+            text="CasoDeUso"/>
       </actualFigure>
-      <accessors accessor="getFigureCasoDeUsoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCasoDeUsoLabelFigure"
+          figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CasoDeTesteFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CasoDeTesteFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CasoDeTesteLabelFigure" text="CasoDeTeste"/>
+    <descriptors
+        name="CasoDeTesteFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="CasoDeTesteFigure"
+          qualifiedClassName="utils.TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CasoDeTesteLabelFigure"
+            text="CasoDeTeste"/>
       </actualFigure>
-      <accessors accessor="getFigureCasoDeTesteLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCasoDeTesteLabelFigure"
+          figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="AtributoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="AtributoFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="AtributoLabelFigure" text="Atributo"/>
+    <descriptors
+        name="AtributoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="AtributoFigure"
+          qualifiedClassName="utils.TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AtributoLabelFigure"
+            text="Atributo"/>
       </actualFigure>
-      <accessors accessor="getFigureAtributoLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureAtributoLabelFigure"
+          figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaRaizFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CaracteristicaRaizFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="CaracteristicaRaizFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="CaracteristicaRaizFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaRaizLabelFigure" text="CaracteristicaRaiz"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaRaizLabelFigure"
+            text="CaracteristicaRaiz"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaRaizLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaRaizLabelFigure"
+          figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaOpcionalFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="CaracteristicaOpcionalFigure" lineWidth="2" lineKind="LINE_DASH">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="CaracteristicaOpcionalFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="CaracteristicaOpcionalFigure"
+          lineWidth="2"
+          lineKind="LINE_DASH">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaOpcionalLabelFigure" text="CaracteristicaOpcional"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaOpcionalLabelFigure"
+            text="CaracteristicaOpcional"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaOpcionalLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaOpcionalLabelFigure"
+          figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaAgrupadaFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CaracteristicaAgrupadaFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaAgrupadaLabelFigure" text="CaracteristicaAgrupada"/>
+    <descriptors
+        name="CaracteristicaAgrupadaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="CaracteristicaAgrupadaFigure"
+          qualifiedClassName="utils.TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaAgrupadaLabelFigure"
+            text="CaracteristicaAgrupada"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaAgrupadaLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaAgrupadaLabelFigure"
+          figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaMandatoriaFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="CaracteristicaMandatoriaFigure" lineWidth="2">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="CaracteristicaMandatoriaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Rectangle"
+          name="CaracteristicaMandatoriaFigure"
+          lineWidth="2">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaMandatoriaLabelFigure" text="CaracteristicaMandatoria"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaMandatoriaLabelFigure"
+            text="CaracteristicaMandatoria"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaMandatoriaLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaMandatoriaLabelFigure"
+          figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="VariacaoDoisFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="VariacaoDoisFigure" qualifiedClassName="utils.DiamondFigure">
-        <children xsi:type="gmfgraph:Label" name="VariacaoDoisLabelFigure" text="VariacaoDois"/>
+    <descriptors
+        name="VariacaoDoisFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="VariacaoDoisFigure"
+          qualifiedClassName="utils.DiamondFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="VariacaoDoisLabelFigure"
+            text="VariacaoDois"/>
       </actualFigure>
-      <accessors accessor="getFigureVariacaoDoisLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureVariacaoDoisLabelFigure"
+          figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="RaizDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RaizDeContextoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="RaizDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="RaizDeContextoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="RaizDeContextoLabelFigure" text="RaizDeContexto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RaizDeContextoLabelFigure"
+            text="RaizDeContexto"/>
       </actualFigure>
-      <accessors accessor="getFigureRaizDeContextoLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureRaizDeContextoLabelFigure"
+          figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="EntidadeDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EntidadeDeContextoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="EntidadeDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="EntidadeDeContextoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EntidadeDeContextoLabelFigure" text="EntidadeDeContexto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="EntidadeDeContextoLabelFigure"
+            text="EntidadeDeContexto"/>
       </actualFigure>
-      <accessors accessor="getFigureEntidadeDeContextoLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureEntidadeDeContextoLabelFigure"
+          figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="InformacaoDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="InformacaoDeContextoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="InformacaoDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="InformacaoDeContextoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="InformacaoDeContextoLabelFigure" text="InformacaoDeContexto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="InformacaoDeContextoLabelFigure"
+            text="InformacaoDeContexto"/>
       </actualFigure>
-      <accessors accessor="getFigureInformacaoDeContextoLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureInformacaoDeContextoLabelFigure"
+          figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="AtributoProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="AtributoProdutoFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="AtributoProdutoLabelFigure" text="AtributoProduto"/>
+    <descriptors
+        name="AtributoProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="AtributoProdutoFigure"
+          qualifiedClassName="utils.TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AtributoProdutoLabelFigure"
+            text="AtributoProduto"/>
       </actualFigure>
-      <accessors accessor="getFigureAtributoProdutoLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureAtributoProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaMandatoriaProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="CaracteristicaMandatoriaProdutoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="CaracteristicaMandatoriaProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="CaracteristicaMandatoriaProdutoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaMandatoriaProdutoLabelFigure" text="CaracteristicaMandatoriaProduto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaMandatoriaProdutoLabelFigure"
+            text="CaracteristicaMandatoriaProduto"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaMandatoriaProdutoLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaMandatoriaProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaOpcionalProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="CaracteristicaOpcionalProdutoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="CaracteristicaOpcionalProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="CaracteristicaOpcionalProdutoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaOpcionalProdutoLabelFigure" text="CaracteristicaOpcionalProduto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaOpcionalProdutoLabelFigure"
+            text="CaracteristicaOpcionalProduto"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaOpcionalProdutoLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaOpcionalProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="VariacaoDoisProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="VariacaoDoisProdutoFigure" qualifiedClassName="utils.DiamondFigure">
-        <children xsi:type="gmfgraph:Label" name="VariacaoDoisProdutoLabelFigure" text="VariacaoDoisProduto"/>
+    <descriptors
+        name="VariacaoDoisProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="VariacaoDoisProdutoFigure"
+          qualifiedClassName="utils.DiamondFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="VariacaoDoisProdutoLabelFigure"
+            text="VariacaoDoisProduto"/>
       </actualFigure>
-      <accessors accessor="getFigureVariacaoDoisProdutoLabelFigure" figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureVariacaoDoisProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.14/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaAgrupadaProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CaracteristicaAgrupadaProdutoFigure" qualifiedClassName="TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CaracteristicaAgrupadaProdutoLabelFigure" text="CaracteristicaAgrupadaProduto"/>
+    <descriptors
+        name="CaracteristicaAgrupadaProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:CustomFigure"
+          name="CaracteristicaAgrupadaProdutoFigure"
+          qualifiedClassName="TriangleFigure">
+        <children
+            xsi:type="gmfgraph:Label"
+            name="CaracteristicaAgrupadaProdutoLabelFigure"
+            text="CaracteristicaAgrupadaProduto"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaAgrupadaProdutoLabelFigure" figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureCaracteristicaAgrupadaProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.15/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:Ellipse" name="ProdutoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="ProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Ellipse"
+          name="ProdutoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ProdutoLabelFigure" text="Produto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ProdutoLabelFigure"
+            text="Produto"/>
       </actualFigure>
-      <accessors accessor="getFigureProdutoLabelFigure" figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureProdutoLabelFigure"
+          figure="//@figures.0/@descriptors.16/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="RegraDeComposicaoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RegraDeComposicaoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="RegraDeComposicaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="RegraDeComposicaoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="RegraDeComposicaoLabelFigure" text="RegraDeComposicao"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RegraDeComposicaoLabelFigure"
+            text="RegraDeComposicao"/>
       </actualFigure>
-      <accessors accessor="getFigureRegraDeComposicaoLabelFigure" figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureRegraDeComposicaoLabelFigure"
+          figure="//@figures.0/@descriptors.17/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="RegraDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RegraDeContextoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="RegraDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="RegraDeContextoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="RegraDeContextoLabelFigure" text="RegraDeContexto"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="RegraDeContextoLabelFigure"
+            text="RegraDeContexto"/>
       </actualFigure>
-      <accessors accessor="getFigureRegraDeContextoLabelFigure" figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureRegraDeContextoLabelFigure"
+          figure="//@figures.0/@descriptors.18/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="EventoLogicoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventoLogicoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="EventoLogicoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="EventoLogicoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EventoLogicoLabelFigure" text="EventoLogico"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="EventoLogicoLabelFigure"
+            text="EventoLogico"/>
       </actualFigure>
-      <accessors accessor="getFigureEventoLogicoLabelFigure" figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureEventoLogicoLabelFigure"
+          figure="//@figures.0/@descriptors.19/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="EventoRelacionalFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EventoRelacionalFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="EventoRelacionalFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="EventoRelacionalFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EventoRelacionalLabelFigure" text="EventoRelacional"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="EventoRelacionalLabelFigure"
+            text="EventoRelacional"/>
       </actualFigure>
-      <accessors accessor="getFigureEventoRelacionalLabelFigure" figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureEventoRelacionalLabelFigure"
+          figure="//@figures.0/@descriptors.20/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="AcaoLogicoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="AcaoLogicoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="AcaoLogicoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="AcaoLogicoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="AcaoLogicoLabelFigure" text="AcaoLogico"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="AcaoLogicoLabelFigure"
+            text="AcaoLogico"/>
       </actualFigure>
-      <accessors accessor="getFigureAcaoLogicoLabelFigure" figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureAcaoLogicoLabelFigure"
+          figure="//@figures.0/@descriptors.21/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="LiteralAcaoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LiteralAcaoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="LiteralAcaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="LiteralAcaoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="LiteralAcaoLabelFigure" text="LiteralAcao"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="LiteralAcaoLabelFigure"
+            text="LiteralAcao"/>
       </actualFigure>
-      <accessors accessor="getFigureLiteralAcaoLabelFigure" figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureLiteralAcaoLabelFigure"
+          figure="//@figures.0/@descriptors.22/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="DesignarFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="DesignarFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="DesignarFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="DesignarFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="DesignarLabelFigure" text="Designar"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="DesignarLabelFigure"
+            text="Designar"/>
       </actualFigure>
-      <accessors accessor="getFigureDesignarLabelFigure" figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureDesignarLabelFigure"
+          figure="//@figures.0/@descriptors.23/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ExpressaoLogicaFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoLogicaFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="ExpressaoLogicaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ExpressaoLogicaFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ExpressaoLogicaLabelFigure" text="ExpressaoLogica"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ExpressaoLogicaLabelFigure"
+            text="ExpressaoLogica"/>
       </actualFigure>
-      <accessors accessor="getFigureExpressaoLogicaLabelFigure" figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureExpressaoLogicaLabelFigure"
+          figure="//@figures.0/@descriptors.24/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="ExpressaoRelacionalFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoRelacionalFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="ExpressaoRelacionalFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="ExpressaoRelacionalFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ExpressaoRelacionalLabelFigure" text="ExpressaoRelacional"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="ExpressaoRelacionalLabelFigure"
+            text="ExpressaoRelacional"/>
       </actualFigure>
-      <accessors accessor="getFigureExpressaoRelacionalLabelFigure" figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureExpressaoRelacionalLabelFigure"
+          figure="//@figures.0/@descriptors.25/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="LiteralComposicaoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LiteralComposicaoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="LiteralComposicaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="LiteralComposicaoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="LiteralComposicaoLabelFigure" text="LiteralComposicao"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="LiteralComposicaoLabelFigure"
+            text="LiteralComposicao"/>
       </actualFigure>
-      <accessors accessor="getFigureLiteralComposicaoLabelFigure" figure="//@figures.0/@descriptors.26/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureLiteralComposicaoLabelFigure"
+          figure="//@figures.0/@descriptors.26/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="SimulacaoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="SimulacaoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="SimulacaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="SimulacaoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="SimulacaoLabelFigure" text="Simulacao">
-          <maximumSize dx="10000" dy="50"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="SimulacaoLabelFigure"
+            text="Simulacao">
+          <maximumSize
+              dx="10000"
+              dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="SimulacaoEstadosCompartmentFigure" outline="false"/>
+        <children
+            xsi:type="gmfgraph:Rectangle"
+            name="SimulacaoEstadosCompartmentFigure"
+            outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigureSimulacaoLabelFigure" figure="//@figures.0/@descriptors.27/@actualFigure/@children.0"/>
-      <accessors accessor="getSimulacaoEstadosCompartmentFigure" figure="//@figures.0/@descriptors.27/@actualFigure/@children.1"/>
+      <accessors
+          accessor="getFigureSimulacaoLabelFigure"
+          figure="//@figures.0/@descriptors.27/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getSimulacaoEstadosCompartmentFigure"
+          figure="//@figures.0/@descriptors.27/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors name="EstadoFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EstadoFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
+    <descriptors
+        name="EstadoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:RoundedRectangle"
+          name="EstadoFigure">
+        <border
+            xsi:type="gmfgraph:MarginBorder">
+          <insets
+              top="5"
+              left="5"
+              bottom="5"
+              right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="EstadoLabelFigure" text="Estado"/>
+        <children
+            xsi:type="gmfgraph:Label"
+            name="EstadoLabelFigure"
+            text="Estado"/>
       </actualFigure>
-      <accessors accessor="getFigureEstadoLabelFigure" figure="//@figures.0/@descriptors.28/@actualFigure/@children.0"/>
+      <accessors
+          accessor="getFigureEstadoLabelFigure"
+          figure="//@figures.0/@descriptors.28/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="TransicaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="TransicaoFigure" lineWidth="2" targetDecoration="//@figures.0/@figures.0"/>
+    <descriptors
+        name="TransicaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="TransicaoFigure"
+          lineWidth="2"
+          targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
-    <descriptors name="TransicaoLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="TransicaoLabelLabel" text="Transicao"/>
+    <descriptors
+        name="TransicaoLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="TransicaoLabelLabel"
+          text="Transicao"/>
     </descriptors>
-    <descriptors name="CaracteristicaElementosExternosFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaElementosExternosFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors name="CaracteristicaElementosExternosExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaElementosExternosExternalLabel"/>
-    </descriptors>
-    <descriptors name="CaracteristicaCaracteristicaFilhaFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaCaracteristicaFilhaFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.2">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors name="CaracteristicaCaracteristicaFilhaExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaCaracteristicaFilhaExternalLabel"/>
-    </descriptors>
-    <descriptors name="CaracteristicaVariacoesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaVariacoesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.3">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-      </actualFigure>
-    </descriptors>
-    <descriptors name="CaracteristicaVariacoesExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaVariacoesExternalLabel"/>
-    </descriptors>
-    <descriptors name="CaracteristicaAtributoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaAtributoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.4">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaElementosExternosFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaElementosExternosFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.1">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="CaracteristicaAtributoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaAtributoExternalLabel"/>
+    <descriptors
+        name="CaracteristicaElementosExternosExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaElementosExternosExternalLabel"/>
     </descriptors>
-    <descriptors name="VariacaoVariantesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoVariantesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.5">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaCaracteristicaFilhaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaCaracteristicaFilhaFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.2">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="VariacaoVariantesExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="VariacaoVariantesExternalLabel"/>
+    <descriptors
+        name="CaracteristicaCaracteristicaFilhaExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaCaracteristicaFilhaExternalLabel"/>
     </descriptors>
-    <descriptors name="RaizDeContextoEntidadesDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RaizDeContextoEntidadesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.6">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaVariacoesFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaVariacoesFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.3">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="RaizDeContextoEntidadesDeContextoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RaizDeContextoEntidadesDeContextoExternalLabel"/>
+    <descriptors
+        name="CaracteristicaVariacoesExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaVariacoesExternalLabel"/>
     </descriptors>
-    <descriptors name="EntidadeDeContextoInformacoesDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EntidadeDeContextoInformacoesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.7">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaAtributoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaAtributoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="EntidadeDeContextoInformacoesDeContextoExternalLabel"/>
+    <descriptors
+        name="CaracteristicaAtributoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaAtributoExternalLabel"/>
     </descriptors>
-    <descriptors name="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.8">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="VariacaoVariantesFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="VariacaoVariantesFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.5">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabel"/>
+    <descriptors
+        name="VariacaoVariantesExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="VariacaoVariantesExternalLabel"/>
     </descriptors>
-    <descriptors name="CaracteristicaProdutoAtributoProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaProdutoAtributoProdutoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.9">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="RaizDeContextoEntidadesDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RaizDeContextoEntidadesDeContextoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="CaracteristicaProdutoAtributoProdutoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaProdutoAtributoProdutoExternalLabel"/>
+    <descriptors
+        name="RaizDeContextoEntidadesDeContextoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="RaizDeContextoEntidadesDeContextoExternalLabel"/>
     </descriptors>
-    <descriptors name="VariacaoProdutoVariantesProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoProdutoVariantesProdutoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.10">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="EntidadeDeContextoInformacoesDeContextoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="EntidadeDeContextoInformacoesDeContextoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.7">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="VariacaoProdutoVariantesProdutoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="VariacaoProdutoVariantesProdutoExternalLabel"/>
+    <descriptors
+        name="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="EntidadeDeContextoInformacoesDeContextoExternalLabel"/>
     </descriptors>
-    <descriptors name="ProdutoLinhaDoProdutoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ProdutoLinhaDoProdutoFigure" targetDecoration="//@figures.0/@figures.11">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.8">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="ProdutoLinhaDoProdutoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="ProdutoLinhaDoProdutoExternalLabel"/>
+    <descriptors
+        name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabel"/>
     </descriptors>
-    <descriptors name="RegraDeComposicaoAntecedenteFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeComposicaoAntecedenteFigure" targetDecoration="//@figures.0/@figures.12">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="CaracteristicaProdutoAtributoProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="CaracteristicaProdutoAtributoProdutoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.9">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="RegraDeComposicaoAntecedenteExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeComposicaoAntecedenteExternalLabel" text="antecedent"/>
+    <descriptors
+        name="CaracteristicaProdutoAtributoProdutoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="CaracteristicaProdutoAtributoProdutoExternalLabel"/>
     </descriptors>
-    <descriptors name="RegraDeComposicaoConsequenteFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeComposicaoConsequenteFigure" targetDecoration="//@figures.0/@figures.13">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="VariacaoProdutoVariantesProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="VariacaoProdutoVariantesProdutoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.10">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="RegraDeComposicaoConsequenteExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeComposicaoConsequenteExternalLabel" text="consequent"/>
+    <descriptors
+        name="VariacaoProdutoVariantesProdutoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="VariacaoProdutoVariantesProdutoExternalLabel"/>
     </descriptors>
-    <descriptors name="RegraDeContextoEventoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeContextoEventoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.14">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="ProdutoLinhaDoProdutoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ProdutoLinhaDoProdutoFigure"
+          targetDecoration="//@figures.0/@figures.11">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="RegraDeContextoEventoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeContextoEventoExternalLabel" text="evento"/>
+    <descriptors
+        name="ProdutoLinhaDoProdutoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ProdutoLinhaDoProdutoExternalLabel"/>
     </descriptors>
-    <descriptors name="RegraDeContextoAcaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeContextoAcaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.15">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="RegraDeComposicaoAntecedenteFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RegraDeComposicaoAntecedenteFigure"
+          targetDecoration="//@figures.0/@figures.12">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="RegraDeContextoAcaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeContextoAcaoExternalLabel" text="a&#xe7;&#xe3;o"/>
+    <descriptors
+        name="RegraDeComposicaoAntecedenteExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="RegraDeComposicaoAntecedenteExternalLabel"
+          text="antecedent"/>
     </descriptors>
-    <descriptors name="EventoLogicoLadoDireitoEventoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EventoLogicoLadoDireitoEventoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.16">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="RegraDeComposicaoConsequenteFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RegraDeComposicaoConsequenteFigure"
+          targetDecoration="//@figures.0/@figures.13">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="EventoLogicoLadoDireitoEventoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="EventoLogicoLadoDireitoEventoExternalLabel"/>
+    <descriptors
+        name="RegraDeComposicaoConsequenteExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="RegraDeComposicaoConsequenteExternalLabel"
+          text="consequent"/>
     </descriptors>
-    <descriptors name="EventoLogicoLadoEsquerdoEventoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EventoLogicoLadoEsquerdoEventoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.17">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="RegraDeContextoEventoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RegraDeContextoEventoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.14">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="EventoLogicoLadoEsquerdoEventoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="EventoLogicoLadoEsquerdoEventoExternalLabel"/>
+    <descriptors
+        name="RegraDeContextoEventoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="RegraDeContextoEventoExternalLabel"
+          text="evento"/>
     </descriptors>
-    <descriptors name="AcaoLogicoLadoEsquerdoAcaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AcaoLogicoLadoEsquerdoAcaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.18">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="RegraDeContextoAcaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="RegraDeContextoAcaoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.15">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="AcaoLogicoLadoEsquerdoAcaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="AcaoLogicoLadoEsquerdoAcaoExternalLabel"/>
+    <descriptors
+        name="RegraDeContextoAcaoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="RegraDeContextoAcaoExternalLabel"
+          text="a&#xe7;&#xe3;o"/>
     </descriptors>
-    <descriptors name="AcaoLogicoLadoDireitoAcaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AcaoLogicoLadoDireitoAcaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.19">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="EventoLogicoLadoDireitoEventoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="EventoLogicoLadoDireitoEventoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.16">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="AcaoLogicoLadoDireitoAcaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="AcaoLogicoLadoDireitoAcaoExternalLabel"/>
+    <descriptors
+        name="EventoLogicoLadoDireitoEventoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="EventoLogicoLadoDireitoEventoExternalLabel"/>
     </descriptors>
-    <descriptors name="ExpressaoLogicaLadoDireitoComposicaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExpressaoLogicaLadoDireitoComposicaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.20">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="EventoLogicoLadoEsquerdoEventoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="EventoLogicoLadoEsquerdoEventoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.17">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel"/>
+    <descriptors
+        name="EventoLogicoLadoEsquerdoEventoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="EventoLogicoLadoEsquerdoEventoExternalLabel"/>
     </descriptors>
-    <descriptors name="ExpressaoLogicaLadoEsquerdoComposicaoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExpressaoLogicaLadoEsquerdoComposicaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.21">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors
+        name="AcaoLogicoLadoEsquerdoAcaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="AcaoLogicoLadoEsquerdoAcaoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.18">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
-    <descriptors name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel"/>
+    <descriptors
+        name="AcaoLogicoLadoEsquerdoAcaoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="AcaoLogicoLadoEsquerdoAcaoExternalLabel"/>
+    </descriptors>
+    <descriptors
+        name="AcaoLogicoLadoDireitoAcaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="AcaoLogicoLadoDireitoAcaoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.19">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="AcaoLogicoLadoDireitoAcaoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="AcaoLogicoLadoDireitoAcaoExternalLabel"/>
+    </descriptors>
+    <descriptors
+        name="ExpressaoLogicaLadoDireitoComposicaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ExpressaoLogicaLadoDireitoComposicaoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.20">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel"/>
+    </descriptors>
+    <descriptors
+        name="ExpressaoLogicaLadoEsquerdoComposicaoFigure">
+      <actualFigure
+          xsi:type="gmfgraph:PolylineConnection"
+          name="ExpressaoLogicaLadoEsquerdoComposicaoFigure"
+          lineWidth="3"
+          targetDecoration="//@figures.0/@figures.21">
+        <foregroundColor
+            xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors
+        name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure">
+      <actualFigure
+          xsi:type="gmfgraph:Label"
+          name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel"/>
     </descriptors>
   </figures>
-  <nodes name="CasoDeUso" figure="CasoDeUsoFigure"/>
-  <nodes name="CasoDeTeste" figure="CasoDeTesteFigure"/>
-  <nodes name="Atributo" figure="AtributoFigure"/>
-  <nodes name="CaracteristicaRaiz" figure="CaracteristicaRaizFigure"/>
-  <nodes name="CaracteristicaOpcional" figure="CaracteristicaOpcionalFigure"/>
-  <nodes name="CaracteristicaAgrupada" figure="CaracteristicaAgrupadaFigure"/>
-  <nodes name="CaracteristicaMandatoria" figure="CaracteristicaMandatoriaFigure"/>
-  <nodes name="VariacaoDois" figure="VariacaoDoisFigure"/>
-  <nodes name="RaizDeContexto" figure="RaizDeContextoFigure"/>
-  <nodes name="EntidadeDeContexto" figure="EntidadeDeContextoFigure"/>
-  <nodes name="InformacaoDeContexto" figure="InformacaoDeContextoFigure"/>
-  <nodes name="AtributoProduto" figure="AtributoProdutoFigure"/>
-  <nodes name="CaracteristicaMandatoriaProduto" figure="CaracteristicaMandatoriaProdutoFigure"/>
-  <nodes name="CaracteristicaOpcionalProduto" figure="CaracteristicaOpcionalProdutoFigure"/>
-  <nodes name="VariacaoDoisProduto" figure="VariacaoDoisProdutoFigure"/>
-  <nodes name="CaracteristicaAgrupadaProduto" figure="CaracteristicaAgrupadaProdutoFigure"/>
-  <nodes name="Produto" figure="ProdutoFigure"/>
-  <nodes name="RegraDeComposicao" figure="RegraDeComposicaoFigure"/>
-  <nodes name="RegraDeContexto" figure="RegraDeContextoFigure"/>
-  <nodes name="EventoLogico" figure="EventoLogicoFigure"/>
-  <nodes name="EventoRelacional" figure="EventoRelacionalFigure"/>
-  <nodes name="AcaoLogico" figure="AcaoLogicoFigure"/>
-  <nodes name="LiteralAcao" figure="LiteralAcaoFigure"/>
-  <nodes name="Designar" figure="DesignarFigure"/>
-  <nodes name="ExpressaoLogica" figure="ExpressaoLogicaFigure"/>
-  <nodes name="ExpressaoRelacional" figure="ExpressaoRelacionalFigure"/>
-  <nodes name="LiteralComposicao" figure="LiteralComposicaoFigure"/>
-  <nodes name="Simulacao" figure="SimulacaoFigure"/>
-  <nodes name="Estado" figure="EstadoFigure"/>
-  <connections name="Transicao" figure="TransicaoFigure"/>
-  <connections name="CaracteristicaElementosExternos" figure="CaracteristicaElementosExternosFigure"/>
-  <connections name="CaracteristicaCaracteristicaFilha" figure="CaracteristicaCaracteristicaFilhaFigure"/>
-  <connections name="CaracteristicaVariacoes" figure="CaracteristicaVariacoesFigure"/>
-  <connections name="CaracteristicaAtributo" figure="CaracteristicaAtributoFigure"/>
-  <connections name="VariacaoVariantes" figure="VariacaoVariantesFigure"/>
-  <connections name="RaizDeContextoEntidadesDeContexto" figure="RaizDeContextoEntidadesDeContextoFigure"/>
-  <connections name="EntidadeDeContextoInformacoesDeContexto" figure="EntidadeDeContextoInformacoesDeContextoFigure"/>
-  <connections name="CaracteristicaProdutoCaracteristicaProdutoFilha" figure="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure"/>
-  <connections name="CaracteristicaProdutoAtributoProduto" figure="CaracteristicaProdutoAtributoProdutoFigure"/>
-  <connections name="VariacaoProdutoVariantesProduto" figure="VariacaoProdutoVariantesProdutoFigure"/>
-  <connections name="ProdutoLinhaDoProduto" figure="ProdutoLinhaDoProdutoFigure"/>
-  <connections name="RegraDeComposicaoAntecedente" figure="RegraDeComposicaoAntecedenteFigure"/>
-  <connections name="RegraDeComposicaoConsequente" figure="RegraDeComposicaoConsequenteFigure"/>
-  <connections name="RegraDeContextoEvento" figure="RegraDeContextoEventoFigure"/>
-  <connections name="RegraDeContextoAcao" figure="RegraDeContextoAcaoFigure"/>
-  <connections name="EventoLogicoLadoDireitoEvento" figure="EventoLogicoLadoDireitoEventoFigure"/>
-  <connections name="EventoLogicoLadoEsquerdoEvento" figure="EventoLogicoLadoEsquerdoEventoFigure"/>
-  <connections name="AcaoLogicoLadoEsquerdoAcao" figure="AcaoLogicoLadoEsquerdoAcaoFigure"/>
-  <connections name="AcaoLogicoLadoDireitoAcao" figure="AcaoLogicoLadoDireitoAcaoFigure"/>
-  <connections name="ExpressaoLogicaLadoDireitoComposicao" figure="ExpressaoLogicaLadoDireitoComposicaoFigure"/>
-  <connections name="ExpressaoLogicaLadoEsquerdoComposicao" figure="ExpressaoLogicaLadoEsquerdoComposicaoFigure"/>
-  <compartments name="SimulacaoEstadosCompartment" figure="SimulacaoFigure" collapsible="true" accessor="//@figures.0/@descriptors.27/@accessors.1"/>
-  <labels name="CasoDeUsoLabel" figure="CasoDeUsoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="CasoDeTesteLabel" figure="CasoDeTesteFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="CaracteristicaRaizLabel" figure="CaracteristicaRaizFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels name="CaracteristicaOpcionalLabel" figure="CaracteristicaOpcionalFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
-  <labels name="CaracteristicaAgrupadaLabel" figure="CaracteristicaAgrupadaFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <labels name="CaracteristicaMandatoriaLabel" figure="CaracteristicaMandatoriaFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
-  <labels name="VariacaoDoisLabel" figure="VariacaoDoisFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
-  <labels name="RaizDeContextoLabel" figure="RaizDeContextoFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
-  <labels name="EntidadeDeContextoLabel" figure="EntidadeDeContextoFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
-  <labels name="InformacaoDeContextoLabel" figure="InformacaoDeContextoFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
-  <labels name="AtributoProdutoLabel" figure="AtributoProdutoFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
-  <labels name="CaracteristicaMandatoriaProdutoLabel" figure="CaracteristicaMandatoriaProdutoFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
-  <labels name="CaracteristicaOpcionalProdutoLabel" figure="CaracteristicaOpcionalProdutoFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
-  <labels name="VariacaoDoisProdutoLabel" figure="VariacaoDoisProdutoFigure" accessor="//@figures.0/@descriptors.14/@accessors.0"/>
-  <labels name="CaracteristicaAgrupadaProdutoLabel" figure="CaracteristicaAgrupadaProdutoFigure" accessor="//@figures.0/@descriptors.15/@accessors.0"/>
-  <labels name="ProdutoLabel" figure="ProdutoFigure" accessor="//@figures.0/@descriptors.16/@accessors.0"/>
-  <labels name="RegraDeComposicaoLabel" figure="RegraDeComposicaoFigure" accessor="//@figures.0/@descriptors.17/@accessors.0"/>
-  <labels name="RegraDeContextoLabel" figure="RegraDeContextoFigure" accessor="//@figures.0/@descriptors.18/@accessors.0"/>
-  <labels name="EventoLogicoLabel" figure="EventoLogicoFigure" accessor="//@figures.0/@descriptors.19/@accessors.0"/>
-  <labels name="EventoRelacionalLabel" figure="EventoRelacionalFigure" accessor="//@figures.0/@descriptors.20/@accessors.0"/>
-  <labels name="AcaoLogicoLabel" figure="AcaoLogicoFigure" accessor="//@figures.0/@descriptors.21/@accessors.0"/>
-  <labels name="LiteralAcaoLabel" figure="LiteralAcaoFigure" accessor="//@figures.0/@descriptors.22/@accessors.0"/>
-  <labels name="DesignarLabel" figure="DesignarFigure" accessor="//@figures.0/@descriptors.23/@accessors.0"/>
-  <labels name="ExpressaoLogicaLabel" figure="ExpressaoLogicaFigure" accessor="//@figures.0/@descriptors.24/@accessors.0"/>
-  <labels name="ExpressaoRelacionalLabel" figure="ExpressaoRelacionalFigure" accessor="//@figures.0/@descriptors.25/@accessors.0"/>
-  <labels name="LiteralComposicaoLabel" figure="LiteralComposicaoFigure" accessor="//@figures.0/@descriptors.26/@accessors.0"/>
-  <labels name="SimulacaoLabel" figure="SimulacaoFigure" accessor="//@figures.0/@descriptors.27/@accessors.0"/>
-  <labels name="EstadoLabel" figure="EstadoFigure" accessor="//@figures.0/@descriptors.28/@accessors.0"/>
-  <labels name="TransicaoLabel" figure="TransicaoLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaElementosExternosExternalLabel" figure="CaracteristicaElementosExternosExternalLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaCaracteristicaFilhaExternalLabel" figure="CaracteristicaCaracteristicaFilhaExternalLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaVariacoesExternalLabel" figure="CaracteristicaVariacoesExternalLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaAtributoExternalLabel" figure="CaracteristicaAtributoExternalLabelFigure" elementIcon="false"/>
-  <labels name="VariacaoVariantesExternalLabel" figure="VariacaoVariantesExternalLabelFigure" elementIcon="false"/>
-  <labels name="RaizDeContextoEntidadesDeContextoExternalLabel" figure="RaizDeContextoEntidadesDeContextoExternalLabelFigure" elementIcon="false"/>
-  <labels name="EntidadeDeContextoInformacoesDeContextoExternalLabel" figure="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabel" figure="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabelFigure" elementIcon="false"/>
-  <labels name="CaracteristicaProdutoAtributoProdutoExternalLabel" figure="CaracteristicaProdutoAtributoProdutoExternalLabelFigure" elementIcon="false"/>
-  <labels name="VariacaoProdutoVariantesProdutoExternalLabel" figure="VariacaoProdutoVariantesProdutoExternalLabelFigure" elementIcon="false"/>
-  <labels name="ProdutoLinhaDoProdutoExternalLabel" figure="ProdutoLinhaDoProdutoExternalLabelFigure" elementIcon="false"/>
-  <labels name="RegraDeComposicaoAntecedenteExternalLabel" figure="RegraDeComposicaoAntecedenteExternalLabelFigure" elementIcon="false"/>
-  <labels name="RegraDeComposicaoConsequenteExternalLabel" figure="RegraDeComposicaoConsequenteExternalLabelFigure" elementIcon="false"/>
-  <labels name="RegraDeContextoEventoExternalLabel" figure="RegraDeContextoEventoExternalLabelFigure" elementIcon="false"/>
-  <labels name="RegraDeContextoAcaoExternalLabel" figure="RegraDeContextoAcaoExternalLabelFigure" elementIcon="false"/>
-  <labels name="EventoLogicoLadoDireitoEventoExternalLabel" figure="EventoLogicoLadoDireitoEventoExternalLabelFigure" elementIcon="false"/>
-  <labels name="EventoLogicoLadoEsquerdoEventoExternalLabel" figure="EventoLogicoLadoEsquerdoEventoExternalLabelFigure" elementIcon="false"/>
-  <labels name="AcaoLogicoLadoEsquerdoAcaoExternalLabel" figure="AcaoLogicoLadoEsquerdoAcaoExternalLabelFigure" elementIcon="false"/>
-  <labels name="AcaoLogicoLadoDireitoAcaoExternalLabel" figure="AcaoLogicoLadoDireitoAcaoExternalLabelFigure" elementIcon="false"/>
-  <labels name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel" figure="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure" elementIcon="false"/>
-  <labels name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel" figure="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure" elementIcon="false"/>
+  <nodes
+      name="CasoDeUso"
+      figure="CasoDeUsoFigure"/>
+  <nodes
+      name="CasoDeTeste"
+      figure="CasoDeTesteFigure"/>
+  <nodes
+      name="Atributo"
+      figure="AtributoFigure"/>
+  <nodes
+      name="CaracteristicaRaiz"
+      figure="CaracteristicaRaizFigure"/>
+  <nodes
+      name="CaracteristicaOpcional"
+      figure="CaracteristicaOpcionalFigure"/>
+  <nodes
+      name="CaracteristicaAgrupada"
+      figure="CaracteristicaAgrupadaFigure"/>
+  <nodes
+      name="CaracteristicaMandatoria"
+      figure="CaracteristicaMandatoriaFigure"/>
+  <nodes
+      name="VariacaoDois"
+      figure="VariacaoDoisFigure"/>
+  <nodes
+      name="RaizDeContexto"
+      figure="RaizDeContextoFigure"/>
+  <nodes
+      name="EntidadeDeContexto"
+      figure="EntidadeDeContextoFigure"/>
+  <nodes
+      name="InformacaoDeContexto"
+      figure="InformacaoDeContextoFigure"/>
+  <nodes
+      name="AtributoProduto"
+      figure="AtributoProdutoFigure"/>
+  <nodes
+      name="CaracteristicaMandatoriaProduto"
+      figure="CaracteristicaMandatoriaProdutoFigure"/>
+  <nodes
+      name="CaracteristicaOpcionalProduto"
+      figure="CaracteristicaOpcionalProdutoFigure"/>
+  <nodes
+      name="VariacaoDoisProduto"
+      figure="VariacaoDoisProdutoFigure"/>
+  <nodes
+      name="CaracteristicaAgrupadaProduto"
+      figure="CaracteristicaAgrupadaProdutoFigure"/>
+  <nodes
+      name="Produto"
+      figure="ProdutoFigure"/>
+  <nodes
+      name="RegraDeComposicao"
+      figure="RegraDeComposicaoFigure"/>
+  <nodes
+      name="RegraDeContexto"
+      figure="RegraDeContextoFigure"/>
+  <nodes
+      name="EventoLogico"
+      figure="EventoLogicoFigure"/>
+  <nodes
+      name="EventoRelacional"
+      figure="EventoRelacionalFigure"/>
+  <nodes
+      name="AcaoLogico"
+      figure="AcaoLogicoFigure"/>
+  <nodes
+      name="LiteralAcao"
+      figure="LiteralAcaoFigure"/>
+  <nodes
+      name="Designar"
+      figure="DesignarFigure"/>
+  <nodes
+      name="ExpressaoLogica"
+      figure="ExpressaoLogicaFigure"/>
+  <nodes
+      name="ExpressaoRelacional"
+      figure="ExpressaoRelacionalFigure"/>
+  <nodes
+      name="LiteralComposicao"
+      figure="LiteralComposicaoFigure"/>
+  <nodes
+      name="Simulacao"
+      figure="SimulacaoFigure"/>
+  <nodes
+      name="Estado"
+      figure="EstadoFigure"/>
+  <connections
+      name="Transicao"
+      figure="TransicaoFigure"/>
+  <connections
+      name="CaracteristicaElementosExternos"
+      figure="CaracteristicaElementosExternosFigure"/>
+  <connections
+      name="CaracteristicaCaracteristicaFilha"
+      figure="CaracteristicaCaracteristicaFilhaFigure"/>
+  <connections
+      name="CaracteristicaVariacoes"
+      figure="CaracteristicaVariacoesFigure"/>
+  <connections
+      name="CaracteristicaAtributo"
+      figure="CaracteristicaAtributoFigure"/>
+  <connections
+      name="VariacaoVariantes"
+      figure="VariacaoVariantesFigure"/>
+  <connections
+      name="RaizDeContextoEntidadesDeContexto"
+      figure="RaizDeContextoEntidadesDeContextoFigure"/>
+  <connections
+      name="EntidadeDeContextoInformacoesDeContexto"
+      figure="EntidadeDeContextoInformacoesDeContextoFigure"/>
+  <connections
+      name="CaracteristicaProdutoCaracteristicaProdutoFilha"
+      figure="CaracteristicaProdutoCaracteristicaProdutoFilhaFigure"/>
+  <connections
+      name="CaracteristicaProdutoAtributoProduto"
+      figure="CaracteristicaProdutoAtributoProdutoFigure"/>
+  <connections
+      name="VariacaoProdutoVariantesProduto"
+      figure="VariacaoProdutoVariantesProdutoFigure"/>
+  <connections
+      name="ProdutoLinhaDoProduto"
+      figure="ProdutoLinhaDoProdutoFigure"/>
+  <connections
+      name="RegraDeComposicaoAntecedente"
+      figure="RegraDeComposicaoAntecedenteFigure"/>
+  <connections
+      name="RegraDeComposicaoConsequente"
+      figure="RegraDeComposicaoConsequenteFigure"/>
+  <connections
+      name="RegraDeContextoEvento"
+      figure="RegraDeContextoEventoFigure"/>
+  <connections
+      name="RegraDeContextoAcao"
+      figure="RegraDeContextoAcaoFigure"/>
+  <connections
+      name="EventoLogicoLadoDireitoEvento"
+      figure="EventoLogicoLadoDireitoEventoFigure"/>
+  <connections
+      name="EventoLogicoLadoEsquerdoEvento"
+      figure="EventoLogicoLadoEsquerdoEventoFigure"/>
+  <connections
+      name="AcaoLogicoLadoEsquerdoAcao"
+      figure="AcaoLogicoLadoEsquerdoAcaoFigure"/>
+  <connections
+      name="AcaoLogicoLadoDireitoAcao"
+      figure="AcaoLogicoLadoDireitoAcaoFigure"/>
+  <connections
+      name="ExpressaoLogicaLadoDireitoComposicao"
+      figure="ExpressaoLogicaLadoDireitoComposicaoFigure"/>
+  <connections
+      name="ExpressaoLogicaLadoEsquerdoComposicao"
+      figure="ExpressaoLogicaLadoEsquerdoComposicaoFigure"/>
+  <compartments
+      name="SimulacaoEstadosCompartment"
+      figure="SimulacaoFigure"
+      collapsible="true"
+      accessor="//@figures.0/@descriptors.27/@accessors.1"/>
+  <labels
+      name="CasoDeUsoLabel"
+      figure="CasoDeUsoFigure"
+      accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels
+      name="CasoDeTesteLabel"
+      figure="CasoDeTesteFigure"
+      accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels
+      name="AtributoLabel"
+      figure="AtributoFigure"
+      accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels
+      name="CaracteristicaRaizLabel"
+      figure="CaracteristicaRaizFigure"
+      accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels
+      name="CaracteristicaOpcionalLabel"
+      figure="CaracteristicaOpcionalFigure"
+      accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels
+      name="CaracteristicaAgrupadaLabel"
+      figure="CaracteristicaAgrupadaFigure"
+      accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels
+      name="CaracteristicaMandatoriaLabel"
+      figure="CaracteristicaMandatoriaFigure"
+      accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels
+      name="VariacaoDoisLabel"
+      figure="VariacaoDoisFigure"
+      accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels
+      name="RaizDeContextoLabel"
+      figure="RaizDeContextoFigure"
+      accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels
+      name="EntidadeDeContextoLabel"
+      figure="EntidadeDeContextoFigure"
+      accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels
+      name="InformacaoDeContextoLabel"
+      figure="InformacaoDeContextoFigure"
+      accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels
+      name="AtributoProdutoLabel"
+      figure="AtributoProdutoFigure"
+      accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels
+      name="CaracteristicaMandatoriaProdutoLabel"
+      figure="CaracteristicaMandatoriaProdutoFigure"
+      accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels
+      name="CaracteristicaOpcionalProdutoLabel"
+      figure="CaracteristicaOpcionalProdutoFigure"
+      accessor="//@figures.0/@descriptors.13/@accessors.0"/>
+  <labels
+      name="VariacaoDoisProdutoLabel"
+      figure="VariacaoDoisProdutoFigure"
+      accessor="//@figures.0/@descriptors.14/@accessors.0"/>
+  <labels
+      name="CaracteristicaAgrupadaProdutoLabel"
+      figure="CaracteristicaAgrupadaProdutoFigure"
+      accessor="//@figures.0/@descriptors.15/@accessors.0"/>
+  <labels
+      name="ProdutoLabel"
+      figure="ProdutoFigure"
+      accessor="//@figures.0/@descriptors.16/@accessors.0"/>
+  <labels
+      name="RegraDeComposicaoLabel"
+      figure="RegraDeComposicaoFigure"
+      accessor="//@figures.0/@descriptors.17/@accessors.0"/>
+  <labels
+      name="RegraDeContextoLabel"
+      figure="RegraDeContextoFigure"
+      accessor="//@figures.0/@descriptors.18/@accessors.0"/>
+  <labels
+      name="EventoLogicoLabel"
+      figure="EventoLogicoFigure"
+      accessor="//@figures.0/@descriptors.19/@accessors.0"/>
+  <labels
+      name="EventoRelacionalLabel"
+      figure="EventoRelacionalFigure"
+      accessor="//@figures.0/@descriptors.20/@accessors.0"/>
+  <labels
+      name="AcaoLogicoLabel"
+      figure="AcaoLogicoFigure"
+      accessor="//@figures.0/@descriptors.21/@accessors.0"/>
+  <labels
+      name="LiteralAcaoLabel"
+      figure="LiteralAcaoFigure"
+      accessor="//@figures.0/@descriptors.22/@accessors.0"/>
+  <labels
+      name="DesignarLabel"
+      figure="DesignarFigure"
+      accessor="//@figures.0/@descriptors.23/@accessors.0"/>
+  <labels
+      name="ExpressaoLogicaLabel"
+      figure="ExpressaoLogicaFigure"
+      accessor="//@figures.0/@descriptors.24/@accessors.0"/>
+  <labels
+      name="ExpressaoRelacionalLabel"
+      figure="ExpressaoRelacionalFigure"
+      accessor="//@figures.0/@descriptors.25/@accessors.0"/>
+  <labels
+      name="LiteralComposicaoLabel"
+      figure="LiteralComposicaoFigure"
+      accessor="//@figures.0/@descriptors.26/@accessors.0"/>
+  <labels
+      name="SimulacaoLabel"
+      figure="SimulacaoFigure"
+      accessor="//@figures.0/@descriptors.27/@accessors.0"/>
+  <labels
+      name="EstadoLabel"
+      figure="EstadoFigure"
+      accessor="//@figures.0/@descriptors.28/@accessors.0"/>
+  <labels
+      name="TransicaoLabel"
+      figure="TransicaoLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaElementosExternosExternalLabel"
+      figure="CaracteristicaElementosExternosExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaCaracteristicaFilhaExternalLabel"
+      figure="CaracteristicaCaracteristicaFilhaExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaVariacoesExternalLabel"
+      figure="CaracteristicaVariacoesExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaAtributoExternalLabel"
+      figure="CaracteristicaAtributoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="VariacaoVariantesExternalLabel"
+      figure="VariacaoVariantesExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="RaizDeContextoEntidadesDeContextoExternalLabel"
+      figure="RaizDeContextoEntidadesDeContextoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="EntidadeDeContextoInformacoesDeContextoExternalLabel"
+      figure="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabel"
+      figure="CaracteristicaProdutoCaracteristicaProdutoFilhaExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="CaracteristicaProdutoAtributoProdutoExternalLabel"
+      figure="CaracteristicaProdutoAtributoProdutoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="VariacaoProdutoVariantesProdutoExternalLabel"
+      figure="VariacaoProdutoVariantesProdutoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="ProdutoLinhaDoProdutoExternalLabel"
+      figure="ProdutoLinhaDoProdutoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="RegraDeComposicaoAntecedenteExternalLabel"
+      figure="RegraDeComposicaoAntecedenteExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="RegraDeComposicaoConsequenteExternalLabel"
+      figure="RegraDeComposicaoConsequenteExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="RegraDeContextoEventoExternalLabel"
+      figure="RegraDeContextoEventoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="RegraDeContextoAcaoExternalLabel"
+      figure="RegraDeContextoAcaoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="EventoLogicoLadoDireitoEventoExternalLabel"
+      figure="EventoLogicoLadoDireitoEventoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="EventoLogicoLadoEsquerdoEventoExternalLabel"
+      figure="EventoLogicoLadoEsquerdoEventoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="AcaoLogicoLadoEsquerdoAcaoExternalLabel"
+      figure="AcaoLogicoLadoEsquerdoAcaoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="AcaoLogicoLadoDireitoAcaoExternalLabel"
+      figure="AcaoLogicoLadoDireitoAcaoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel"
+      figure="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure"
+      elementIcon="false"/>
+  <labels
+      name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel"
+      figure="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure"
+      elementIcon="false"/>
 </gmfgraph:Canvas>

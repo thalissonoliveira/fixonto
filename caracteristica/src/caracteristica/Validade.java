@@ -20,252 +20,258 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum Validade implements Enumerator
 {
   /**
-	 * The '<em><b>Volatil</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Volatil</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #VOLATIL_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #VOLATIL_VALUE
+   * @generated
+   * @ordered
+   */
   VOLATIL(0, "Volatil", "Volatil"),
 
   /**
-	 * The '<em><b>Frequente</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Frequente</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #FREQUENTE_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #FREQUENTE_VALUE
+   * @generated
+   * @ordered
+   */
   FREQUENTE(1, "Frequente", "Frequente"),
 
   /**
-	 * The '<em><b>Raramente</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Raramente</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #RARAMENTE_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #RARAMENTE_VALUE
+   * @generated
+   * @ordered
+   */
   RARAMENTE(2, "Raramente", "Raramente"),
 
   /**
-	 * The '<em><b>Permanente</b></em>' literal object.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Permanente</b></em>' literal object.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @see #PERMANENTE_VALUE
-	 * @generated
-	 * @ordered
-	 */
+   * @see #PERMANENTE_VALUE
+   * @generated
+   * @ordered
+   */
   PERMANENTE(3, "Permanente", "Permanente");
 
   /**
-	 * The '<em><b>Volatil</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Volatil</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Volatil</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #VOLATIL
-	 * @model name="Volatil"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #VOLATIL
+   * @model name="Volatil"
+   * @generated
+   * @ordered
+   */
   public static final int VOLATIL_VALUE = 0;
 
   /**
-	 * The '<em><b>Frequente</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Frequente</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Frequente</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #FREQUENTE
-	 * @model name="Frequente"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #FREQUENTE
+   * @model name="Frequente"
+   * @generated
+   * @ordered
+   */
   public static final int FREQUENTE_VALUE = 1;
 
   /**
-	 * The '<em><b>Raramente</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Raramente</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Raramente</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #RARAMENTE
-	 * @model name="Raramente"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #RARAMENTE
+   * @model name="Raramente"
+   * @generated
+   * @ordered
+   */
   public static final int RARAMENTE_VALUE = 2;
 
   /**
-	 * The '<em><b>Permanente</b></em>' literal value.
-	 * <!-- begin-user-doc -->
+   * The '<em><b>Permanente</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>Permanente</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-	 * @see #PERMANENTE
-	 * @model name="Permanente"
-	 * @generated
-	 * @ordered
-	 */
+   * @see #PERMANENTE
+   * @model name="Permanente"
+   * @generated
+   * @ordered
+   */
   public static final int PERMANENTE_VALUE = 3;
 
   /**
-	 * An array of all the '<em><b>Validade</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * An array of all the '<em><b>Validade</b></em>' enumerators.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private static final Validade[] VALUES_ARRAY =
-    new Validade[] {
-			VOLATIL,
-			FREQUENTE,
-			RARAMENTE,
-			PERMANENTE,
-		};
+    new Validade[]
+    {
+      VOLATIL,
+      FREQUENTE,
+      RARAMENTE,
+      PERMANENTE,
+    };
 
   /**
-	 * A public read-only list of all the '<em><b>Validade</b></em>' enumerators.
-	 * <!-- begin-user-doc -->
+   * A public read-only list of all the '<em><b>Validade</b></em>' enumerators.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static final List<Validade> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-	 * Returns the '<em><b>Validade</b></em>' literal with the specified literal value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Validade</b></em>' literal with the specified literal value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static Validade get(String literal)
   {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Validade result = VALUES_ARRAY[i];
-			if (result.toString().equals(literal)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      Validade result = VALUES_ARRAY[i];
+      if (result.toString().equals(literal))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
   /**
-	 * Returns the '<em><b>Validade</b></em>' literal with the specified name.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Validade</b></em>' literal with the specified name.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static Validade getByName(String name)
   {
-		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			Validade result = VALUES_ARRAY[i];
-			if (result.getName().equals(name)) {
-				return result;
-			}
-		}
-		return null;
-	}
+    for (int i = 0; i < VALUES_ARRAY.length; ++i)
+    {
+      Validade result = VALUES_ARRAY[i];
+      if (result.getName().equals(name))
+      {
+        return result;
+      }
+    }
+    return null;
+  }
 
   /**
-	 * Returns the '<em><b>Validade</b></em>' literal with the specified integer value.
-	 * <!-- begin-user-doc -->
+   * Returns the '<em><b>Validade</b></em>' literal with the specified integer value.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public static Validade get(int value)
   {
-		switch (value) {
-			case VOLATIL_VALUE: return VOLATIL;
-			case FREQUENTE_VALUE: return FREQUENTE;
-			case RARAMENTE_VALUE: return RARAMENTE;
-			case PERMANENTE_VALUE: return PERMANENTE;
-		}
-		return null;
-	}
+    switch (value)
+    {
+      case VOLATIL_VALUE: return VOLATIL;
+      case FREQUENTE_VALUE: return FREQUENTE;
+      case RARAMENTE_VALUE: return RARAMENTE;
+      case PERMANENTE_VALUE: return PERMANENTE;
+    }
+    return null;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final int value;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final String name;
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private final String literal;
 
   /**
-	 * Only this class can construct instances.
-	 * <!-- begin-user-doc -->
+   * Only this class can construct instances.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   private Validade(int value, String name, String literal)
   {
-		this.value = value;
-		this.name = name;
-		this.literal = literal;
-	}
+    this.value = value;
+    this.name = name;
+    this.literal = literal;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public int getValue()
   {
-	  return value;
-	}
+    return value;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getName()
   {
-	  return name;
-	}
+    return name;
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   public String getLiteral()
   {
-	  return literal;
-	}
+    return literal;
+  }
 
   /**
-	 * Returns the literal value of the enumerator, which is its string representation.
-	 * <!-- begin-user-doc -->
+   * Returns the literal value of the enumerator, which is its string representation.
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   public String toString()
   {
-		return literal;
-	}
+    return literal;
+  }
   
 } //Validade

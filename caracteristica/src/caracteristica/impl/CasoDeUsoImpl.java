@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.EClass;
 public class CasoDeUsoImpl extends ElementoExternoImpl implements CasoDeUso
 {
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   protected CasoDeUsoImpl()
   {
-		super();
-	}
+    super();
+  }
 
   /**
-	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-	 * @generated
-	 */
+   * @generated
+   */
   @Override
   protected EClass eStaticClass()
   {
-		return CaracteristicaPackage.Literals.CASO_DE_USO;
-	}
+    return CaracteristicaPackage.Literals.CASO_DE_USO;
+  }
 
 } //CasoDeUsoImpl

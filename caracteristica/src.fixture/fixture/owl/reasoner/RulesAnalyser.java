@@ -1,16 +1,12 @@
 package fixture.owl.reasoner;
 
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.mindswap.pellet.PelletOptions;
-import org.mindswap.pellet.jena.PelletInfGraph;
 import org.semanticweb.owlapi.model.AxiomType;
 import org.semanticweb.owlapi.model.OWLAxiom;
 import org.semanticweb.owlapi.model.OWLClass;
-import org.semanticweb.owlapi.model.OWLNamedIndividual;
 import org.semanticweb.owlapi.model.OWLObjectProperty;
 import org.semanticweb.owlapi.model.OWLOntology;
 import org.semanticweb.owlapi.model.OWLOntologyCreationException;
@@ -18,22 +14,12 @@ import org.semanticweb.owlapi.model.SWRLAtom;
 import org.semanticweb.owlapi.model.SWRLClassAtom;
 import org.semanticweb.owlapi.model.SWRLObjectPropertyAtom;
 import org.semanticweb.owlapi.model.SWRLRule;
-import org.semanticweb.owlapi.reasoner.InconsistentOntologyException;
-import org.semanticweb.owlapi.reasoner.Node;
-import org.semanticweb.owlapi.reasoner.NodeSet;
 
 import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 import com.clarkparsia.pellet.rules.builtins.BuiltInRegistry;
-import com.hp.hpl.jena.ontology.OntModel;
-import com.hp.hpl.jena.rdf.model.InfModel;
-import com.hp.hpl.jena.rdf.model.Model;
-import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.reasoner.Reasoner;
 
 import fixture.owl.enumeration.FixtureSWRLBuiltinEnum;
-import fixture.owl.enumeration.ModelOWLClassTypeEnum;
 import fixture.owl.enumeration.OWLObjectPropertyTypeEnum;
 import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.factory.OWLClassFactory;
@@ -123,79 +109,6 @@ public class RulesAnalyser {
 //		return sb.toString();
 	}
 	
-	@SuppressWarnings("unused")
-	private void verifyOntologyConsistency(OWLOntology ontology, PelletReasoner reasoner) {
-		System.out.println("?????????????????");
-		
-		Resource resource = null;
-		
-		// create Pellet reasoner
-		Reasoner r = org.mindswap.pellet.jena.PelletReasonerFactory.theInstance().create(resource);
-		
-		// create an empty non-inferencing model
-		OntModel rawModel = ModelFactory.createOntologyModel(org.mindswap.pellet.jena.PelletReasonerFactory.THE_SPEC);
-		
-		PelletOptions.USE_TRACING = true;
-		InfModel model = ModelFactory.createInfModel(r, rawModel);
-		InputStream spLiSEM = ontoHelper.getSPLiSEM();
-		model.read(spLiSEM, null);
-		
-		PelletInfGraph pellet = (PelletInfGraph) model.getGraph();
-		
-		
-		if( !pellet.isConsistent() ) {
-		 Model explanation = pellet.explainInconsistency();
-		 explanation.write( System.out );
-		}
-		// check for inconsistency
-		boolean consistent = pellet.isConsistent();
-		boolean empty = pellet.isEmpty();
-		System.out.println(consistent);
-		System.out.println(empty);
-		System.out.println("?????????????????");
-
-		
-		
-		// check for inconsistency
-		try {
-			
-			OWLClass parentalInconsistencyOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ModelOWLClassTypeEnum.GROUPED_FEATURE);
-			
-			 
-//	        reasoner.getInstances(parentalInconsistencyOWLClass, false).getFlattened();
-			
-			
-		} catch (InconsistentOntologyException e) {
-			System.out.println("ADENTROU?");
-			System.out.println(e.getMessage());
-			e.printStackTrace();
-			
-		}
-		
-	}
-
-	@SuppressWarnings("unused")
-	private void printReasoning(PelletReasoner reasoner, OWLClass featureOWLClass) {
-		NodeSet<OWLNamedIndividual> individualsMandatoryFeature = reasoner.getInstances(featureOWLClass, false);
-		for(Node<OWLNamedIndividual> sameInd : individualsMandatoryFeature) {
-			// sameInd contains information about the individual (and all other individuals that were inferred to be the same)
-			OWLNamedIndividual ind =  sameInd.getRepresentativeElement();
-			System.out.println("> " + ind);
-			NodeSet<OWLClass> types = reasoner.getTypes(ind, true);		
-			for (Node<OWLClass> node : types) {
-				System.out.println("node: " + node.getRepresentativeElement().toString());
-			}
-			System.out.println();
-		}
-//		OWLClass parentalInconsistencyOWLClass = executeRuleOne();
-//		reasoner.flush();
-//		ontoHelper.saveAndRemoveOntology();
-//		
-//		System.out.println("PRINTING A SIMPLE RULE AFTER");
-//		// get all instances of Person class
-//		printReasoning(reasoner, parentalInconsistencyOWLClass);
-	}
-	
 	@SuppressWarnings("unchecked")
 	public Set<SWRLError> processRules() {
 		Set<SWRLError> errors = new HashSet<SWRLError>();
@@ -248,10 +161,10 @@ public class RulesAnalyser {
 			if (objectPropertyEnum != null) {
 				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
 				OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(objectPropertyEnum);
-				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty);
+				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty, ontoHelper);
 			} else {
 				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
-				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass);
+				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, ontoHelper);
 			}
 		} else {
 			throw new RuntimeException("Invalid Rule");

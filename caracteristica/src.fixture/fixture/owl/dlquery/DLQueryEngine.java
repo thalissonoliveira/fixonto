@@ -27,9 +27,11 @@ import org.semanticweb.owlapi.util.BidirectionalShortFormProviderAdapter;
 import org.semanticweb.owlapi.util.ShortFormProvider;
 import org.semanticweb.owlapi.util.SimpleShortFormProvider;
 
+import com.clarkparsia.pellet.owlapiv3.PelletReasoner;
 import com.clarkparsia.pellet.owlapiv3.PelletReasonerFactory;
 
 import fixture.owl.utils.OntoHelper;
+import fixture.owl.utils.OntoUtils;
 import fixture.owl.utils.Utils;
 
 
@@ -102,12 +104,10 @@ public class DLQueryEngine {
         return data;
     }
 	
-	private List<Object> executeDLQuery(String classExpressionString, OntoHelper ontoHelper) {
+	private List<Object> executeDLQuery(OWLReasoner reasoner, String classExpressionString, OntoHelper ontoHelper) {
 		
 		OWLClassExpression description = parseClassExpression(classExpressionString, ontoHelper);
 		
-		OWLReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
-	   
         List<Object> data = new ArrayList<Object>();
         OWLDataFactory factory = ontoHelper.getDataFactory();
         
@@ -125,10 +125,10 @@ public class DLQueryEngine {
 	public String executeDLQuery(String classExpressionString) throws OWLOntologyCreationException {
     	OntoHelper ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
+    	OWLReasoner reasoner = PelletReasonerFactory.getInstance().createReasoner(ontoHelper.getMetaOntology());
     	
     	try {
-	    	List<Object> setOWLClassExpression = executeDLQuery(classExpressionString, ontoHelper);
-	    	
+	    	List<Object> setOWLClassExpression = executeDLQuery(reasoner, classExpressionString, ontoHelper);
 	    	
 	    	StringBuilder result = null;
 	    	
@@ -143,7 +143,14 @@ public class DLQueryEngine {
 	    			DLQueryResultsSectionItem resultado = (DLQueryResultsSectionItem) object;
 	    			
 	    			OWLObject owlObject = resultado.getOWLObject();
-	    			result.append("1: " + owlObject.getSignature());
+	    			Set<OWLNamedIndividual> individualsInSignature = owlObject.getIndividualsInSignature();
+					String relatedName = OntoUtils.getRelatedName((PelletReasoner) reasoner,
+							new ArrayList<OWLNamedIndividual>(
+									individualsInSignature).get(0), ontoHelper);
+	    			
+//	    			result.append("1: " + owlObject.getSignature());
+	    			result.append("1: " + relatedName);
+	    			
 	    			result.append("\n");
 //	    			System.out.println("1: " + owlObject.getSignature());
 	    			
@@ -160,7 +167,7 @@ public class DLQueryEngine {
 	
 	    	ontoHelper.saveAndRemoveOntology();
 	    	
-	    	return result == null ? null : result.toString();
+	    	return result == null ? "Query did not return any result." : result.toString();
     	} catch (ParserException e) {
     		return "Erro ao executar a DL Query. Verificar se a sintaxe está incorreta ou se foi informado algum elemento (classe, propriedade, indivíduo) errado.";
     	}

@@ -50,7 +50,7 @@ public class OntoHelper {
 		this.prefixOWLOntologyFormat = createtPrefixOWLOntologyFormat();
 		
 		
-		//TODO Algumas regras que est�o sendo geradas est�o inconsistentes. Visitar essa etapa de gera��o para deixar correta.
+		//TODO Algumas regras que estao sendo geradas estao inconsistentes. Visitar essa etapa de geracao para deixar correta.
 //		loadRules();
 		loadRulesFromFile();
 		

@@ -212,8 +212,8 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 			case TransicaoEtiquetaEditPart.VISUAL_ID:
 				return new TransicaoEtiquetaEditPart(view);
 
-			case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-				return new CaracteristicaElementosExternosEditPart(view);
+			case ElementoElementosExternosEditPart.VISUAL_ID:
+				return new ElementoElementosExternosEditPart(view);
 
 			case WrappingLabelEditPart.VISUAL_ID:
 				return new WrappingLabelEditPart(view);

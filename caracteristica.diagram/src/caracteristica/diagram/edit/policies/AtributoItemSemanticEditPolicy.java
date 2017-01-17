@@ -20,7 +20,10 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoReorientCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -56,6 +59,17 @@ public class AtributoItemSemanticEditPolicy extends
 				continue;
 			}
 		}
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ElementoElementosExternosEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+		}
 		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
 		if (annotation == null) {
 			// there are indirectly referenced children, need extra commands: false
@@ -83,6 +97,11 @@ public class AtributoItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.ElementoElementosExternos_4027 == req
+				.getElementType()) {
+			return getGEFWrapper(new ElementoElementosExternosCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
 		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req
 				.getElementType()) {
 			return null;
@@ -95,6 +114,10 @@ public class AtributoItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.ElementoElementosExternos_4027 == req
+				.getElementType()) {
+			return null;
+		}
 		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req
 				.getElementType()) {
 			return getGEFWrapper(new CaracteristicaAtributoCreateCommand(req,
@@ -112,6 +135,9 @@ public class AtributoItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getGEFWrapper(new ElementoElementosExternosReorientCommand(
+					req));
 		case CaracteristicaAtributoEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaAtributoReorientCommand(req));
 		}

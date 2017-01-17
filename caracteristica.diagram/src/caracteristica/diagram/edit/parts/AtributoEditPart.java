@@ -260,6 +260,42 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 	/**
 	 * @generated
 	 */
+	public List<IElementType> getMARelTypesOnSource() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMARelTypesOnSourceAndTarget(
+			IGraphicalEditPart targetEditPart) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof CasoDeUsoEditPart) {
+			types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
+		}
+		if (targetEditPart instanceof CasoDeTesteEditPart) {
+			types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
+	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
+		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (relationshipType == CaracteristicaElementTypes.ElementoElementosExternos_4027) {
+			types.add(CaracteristicaElementTypes.CasoDeUso_2038);
+			types.add(CaracteristicaElementTypes.CasoDeTeste_2039);
+		}
+		return types;
+	}
+
+	/**
+	 * @generated
+	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
 		types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);

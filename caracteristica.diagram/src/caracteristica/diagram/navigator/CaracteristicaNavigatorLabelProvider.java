@@ -35,7 +35,6 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
@@ -55,6 +54,7 @@ import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
 import caracteristica.diagram.edit.parts.CasoDeUsoNomeEditPart;
 import caracteristica.diagram.edit.parts.DesignarEditPart;
 import caracteristica.diagram.edit.parts.DesignarNomeEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
@@ -328,9 +328,9 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?caracteristica?EntidadeDeContexto?informacoesDeContexto", CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4023); //$NON-NLS-1$
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
+		case ElementoElementosExternosEditPart.VISUAL_ID:
 			return getImage(
-					"Navigator?Link?caracteristica?Caracteristica?elementosExternos", CaracteristicaElementTypes.CaracteristicaElementosExternos_4024); //$NON-NLS-1$
+					"Navigator?Link?caracteristica?Elemento?elementosExternos", CaracteristicaElementTypes.ElementoElementosExternos_4027); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -493,8 +493,8 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 			return getExpressaoLogicaLadoEsquerdoComposicao_4021Text(view);
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getEntidadeDeContextoInformacoesDeContexto_4023Text(view);
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getCaracteristicaElementosExternos_4024Text(view);
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getElementoElementosExternos_4027Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -1515,19 +1515,18 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
-	private String getCaracteristicaElementosExternos_4024Text(View view) {
-		IParser parser = CaracteristicaParserProvider
-				.getParser(
-						CaracteristicaElementTypes.CaracteristicaElementosExternos_4024,
-						view.getElement() != null ? view.getElement() : view,
-						CommonParserHint.DESCRIPTION);
+	private String getElementoElementosExternos_4027Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.ElementoElementosExternos_4027,
+				view.getElement() != null ? view.getElement() : view,
+				CommonParserHint.DESCRIPTION);
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
 					view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			CaracteristicaDiagramEditorPlugin.getInstance().logError(
-					"Parser was not found for label " + 6024); //$NON-NLS-1$
+					"Parser was not found for label " + 6027); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

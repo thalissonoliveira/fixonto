@@ -372,9 +372,9 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		case TransicaoEditPart.VISUAL_ID:
 			return createTransicao_4001(getSemanticElement(semanticAdapter),
 					containerView, index, persisted, preferencesHint);
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return createCaracteristicaElementosExternos_4024(containerView,
-					index, persisted, preferencesHint);
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return createElementoElementosExternos_4027(containerView, index,
+					persisted, preferencesHint);
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return createCaracteristicaCaracteristicaFilha_4002(containerView,
 					index, persisted, preferencesHint);
@@ -1875,7 +1875,7 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
-	public Edge createCaracteristicaElementosExternos_4024(View containerView,
+	public Edge createElementoElementosExternos_4027(View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Edge edge = NotationFactory.eINSTANCE.createEdge();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
@@ -1890,7 +1890,7 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
 		edge.setType(CaracteristicaVisualIDRegistry
-				.getType(CaracteristicaElementosExternosEditPart.VISUAL_ID));
+				.getType(ElementoElementosExternosEditPart.VISUAL_ID));
 		edge.setElement(null);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
@@ -1916,16 +1916,16 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
 					routing);
 		}
-		Node label6024 = createLabel(edge,
+		Node label6027 = createLabel(edge,
 				CaracteristicaVisualIDRegistry
 						.getType(WrappingLabelEditPart.VISUAL_ID));
-		label6024.getStyles().add(
+		label6027.getStyles().add(
 				NotationFactory.eINSTANCE.createDescriptionStyle());
-		label6024.setLayoutConstraint(NotationFactory.eINSTANCE
+		label6027.setLayoutConstraint(NotationFactory.eINSTANCE
 				.createLocation());
-		Location location6024 = (Location) label6024.getLayoutConstraint();
-		location6024.setX(0);
-		location6024.setY(40);
+		Location location6027 = (Location) label6027.getLayoutConstraint();
+		location6027.setX(0);
+		location6027.setY(40);
 		return edge;
 	}
 

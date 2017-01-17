@@ -927,10 +927,10 @@
           text="Transicao"/>
     </descriptors>
     <descriptors
-        name="CaracteristicaElementosExternosFigure">
+        name="ElementoElementosExternosFigure">
       <actualFigure
           xsi:type="gmfgraph:PolylineConnection"
-          name="CaracteristicaElementosExternosFigure"
+          name="ElementoElementosExternosFigure"
           lineWidth="3"
           targetDecoration="//@figures.0/@figures.1">
         <foregroundColor
@@ -938,10 +938,10 @@
       </actualFigure>
     </descriptors>
     <descriptors
-        name="CaracteristicaElementosExternosExternalLabelFigure">
+        name="ElementoElementosExternosExternalLabelFigure">
       <actualFigure
           xsi:type="gmfgraph:Label"
-          name="CaracteristicaElementosExternosExternalLabel"/>
+          name="ElementoElementosExternosExternalLabel"/>
     </descriptors>
     <descriptors
         name="CaracteristicaCaracteristicaFilhaFigure">
@@ -1376,8 +1376,8 @@
       name="Transicao"
       figure="TransicaoFigure"/>
   <connections
-      name="CaracteristicaElementosExternos"
-      figure="CaracteristicaElementosExternosFigure"/>
+      name="ElementoElementosExternos"
+      figure="ElementoElementosExternosFigure"/>
   <connections
       name="CaracteristicaCaracteristicaFilha"
       figure="CaracteristicaCaracteristicaFilhaFigure"/>
@@ -1564,8 +1564,8 @@
       figure="TransicaoLabelFigure"
       elementIcon="false"/>
   <labels
-      name="CaracteristicaElementosExternosExternalLabel"
-      figure="CaracteristicaElementosExternosExternalLabelFigure"
+      name="ElementoElementosExternosExternalLabel"
+      figure="ElementoElementosExternosExternalLabelFigure"
       elementIcon="false"/>
   <labels
       name="CaracteristicaCaracteristicaFilhaExternalLabel"

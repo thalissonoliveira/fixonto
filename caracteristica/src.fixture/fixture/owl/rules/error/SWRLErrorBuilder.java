@@ -20,7 +20,7 @@ public class SWRLErrorBuilder {
 		
 		if (hasError) {
 			SWRLError error = new SWRLError();
-			error.setDescription(rulesConstraintsOWLClassTypeEnum.getPtExceptionMsg());
+			error.setDescription(rulesConstraintsOWLClassTypeEnum.getEnExceptionMsg());
 			StringBuilder sb = new StringBuilder();
 			sb.append("[BROKEN RULE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {
@@ -48,7 +48,7 @@ public class SWRLErrorBuilder {
 		boolean hasError = individualsError != null && !individualsError.isEmpty();
 		if (hasError) {
 			SWRLError error = new SWRLError();
-			error.setDescription(rulesConstraintsOWLClassTypeEnum.getPtExceptionMsg());
+			error.setDescription(rulesConstraintsOWLClassTypeEnum.getEnExceptionMsg());
 			StringBuilder sb = new StringBuilder();
 			sb.append("[BROKEN RULE]<" + error.getDescription() + ">: \n");
 			for (Node<OWLNamedIndividual> node : individualsError) {

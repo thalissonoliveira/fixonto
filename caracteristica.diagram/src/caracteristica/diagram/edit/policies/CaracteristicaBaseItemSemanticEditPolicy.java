@@ -43,6 +43,7 @@ import caracteristica.AtributoProduto;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaProduto;
 import caracteristica.CaracteristicaRaiz;
+import caracteristica.Elemento;
 import caracteristica.ElementoExterno;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.Estado;
@@ -359,15 +360,15 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCaracteristicaElementosExternos_4024(
-				Caracteristica source, ElementoExterno target) {
+		public boolean canCreateElementoElementosExternos_4027(Elemento source,
+				ElementoExterno target) {
 			if (source != null) {
 				if (source.getElementosExternos().contains(target)) {
 					return false;
 				}
 			}
 
-			return canExistCaracteristicaElementosExternos_4024(source, target);
+			return canExistElementoElementosExternos_4027(source, target);
 		}
 
 		/**
@@ -697,8 +698,8 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canExistCaracteristicaElementosExternos_4024(
-				Caracteristica source, ElementoExterno target) {
+		public boolean canExistElementoElementosExternos_4027(Elemento source,
+				ElementoExterno target) {
 			return true;
 		}
 

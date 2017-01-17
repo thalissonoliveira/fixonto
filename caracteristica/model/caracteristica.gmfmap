@@ -657,16 +657,16 @@
         xsi:type="gmfmap:DesignLabelMapping"
         readOnly="true">
       <diagramLabel
-          href="caracteristica.gmfgraph#CaracteristicaElementosExternosExternalLabel"/>
+          href="caracteristica.gmfgraph#ElementoElementosExternosExternalLabel"/>
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
         href="caracteristica.gmftool#//@palette/@tools.1/@tools.5"/>
     <diagramLink
-        href="caracteristica.gmfgraph#CaracteristicaElementosExternos"/>
+        href="caracteristica.gmfgraph#ElementoElementosExternos"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="caracteristica.ecore#//Caracteristica/elementosExternos"/>
+        href="caracteristica.ecore#//Elemento/elementosExternos"/>
   </links>
   <links>
     <labelMappings

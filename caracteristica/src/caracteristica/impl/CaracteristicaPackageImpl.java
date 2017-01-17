@@ -718,6 +718,16 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getElemento_ElementosExternos()
+  {
+    return (EReference)elementoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getElementoExterno()
   {
     return elementoExternoEClass;
@@ -808,7 +818,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_ElementosExternos()
+  public EReference getCaracteristica_CaracteristicaPai()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(0);
   }
@@ -818,7 +828,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaPai()
+  public EReference getCaracteristica_CaracteristicaFilha()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(1);
   }
@@ -828,7 +838,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaFilha()
+  public EReference getCaracteristica_Variacoes()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(2);
   }
@@ -838,19 +848,9 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_Variacoes()
-  {
-    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getCaracteristica_Atributo()
   {
-    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(4);
+    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -2188,6 +2188,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     elementoEClass = createEClass(ELEMENTO);
     createEAttribute(elementoEClass, ELEMENTO__NOME);
+    createEReference(elementoEClass, ELEMENTO__ELEMENTOS_EXTERNOS);
 
     elementoExternoEClass = createEClass(ELEMENTO_EXTERNO);
     createEAttribute(elementoExternoEClass, ELEMENTO_EXTERNO__NOME);
@@ -2203,7 +2204,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     createEReference(atributoEClass, ATRIBUTO__CARACTERISTICA_PAI);
 
     caracteristicaEClass = createEClass(CARACTERISTICA);
-    createEReference(caracteristicaEClass, CARACTERISTICA__ELEMENTOS_EXTERNOS);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_PAI);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_FILHA);
     createEReference(caracteristicaEClass, CARACTERISTICA__VARIACOES);
@@ -2473,6 +2473,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     initEClass(elementoEClass, Elemento.class, "Elemento", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElemento_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Elemento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getElemento_ElementosExternos(), this.getElementoExterno(), null, "elementosExternos", null, 0, -1, Elemento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementoExternoEClass, ElementoExterno.class, "ElementoExterno", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElementoExterno_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, ElementoExterno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2488,7 +2489,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEReference(getAtributo_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_Atributo(), "caracteristicaPai", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caracteristicaEClass, Caracteristica.class, "Caracteristica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCaracteristica_ElementosExternos(), this.getElementoExterno(), null, "elementosExternos", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaFilha(), "caracteristicaPai", null, 0, 1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaFilha(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaPai(), "caracteristicaFilha", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_Variacoes(), this.getVariacao(), this.getVariacao_CaracteristicaPai(), "variacoes", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2706,9 +2706,9 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     // Create annotations
     // gmf.diagram
     createGmfAnnotations();
-    // gmf.node
-    createGmf_1Annotations();
     // gmf.link
+    createGmf_1Annotations();
+    // gmf.node
     createGmf_2Annotations();
     // gmf.compartment
     createGmf_3Annotations();
@@ -2733,261 +2733,16 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
   }
 
   /**
-   * Initializes the annotations for <b>gmf.node</b>.
+   * Initializes the annotations for <b>gmf.link</b>.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   protected void createGmf_1Annotations()
   {
-    String source = "gmf.node";			
+    String source = "gmf.link";			
     addAnnotation
-      (casoDeUsoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Externo {0}"
-       });		
-    addAnnotation
-      (casoDeTesteEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Externo {0}"
-       });		
-    addAnnotation
-      (atributoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Attribute {0}"
-       });						
-    addAnnotation
-      (caracteristicaRaizEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (caracteristicaOpcionalEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "ellipse",
-       "border.style", "dash",
-       "border.width", "2"
-       });		
-    addAnnotation
-      (caracteristicaAgrupadaEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "border.style", "dash",
-       "border.width", "2"
-       });		
-    addAnnotation
-      (caracteristicaMandatoriaEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "rectangle",
-       "border.style", "solid",
-       "border.width", "2"
-       });		
-    addAnnotation
-      (variacaoDoisEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome,cardinalidadeMaxima",
-       "label.pattern", "Variation {0} : {1} ",
-       "figure", "utils.DiamondFigure"
-       });			
-    addAnnotation
-      (raizDeContextoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });			
-    addAnnotation
-      (entidadeDeContextoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "label.pattern", "Entidade de Contexto {0}"
-       });			
-    addAnnotation
-      (informacaoDeContextoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome,valor",
-       "label.pattern", "Informa\u00e7\u00e3o de Contexto: {0} Valor {1}"
-       });				
-    addAnnotation
-      (atributoProdutoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome,valor",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Attribute {0}:{1}"
-       });		
-    addAnnotation
-      (caracteristicaMandatoriaProdutoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "ellipse"
-       });		
-    addAnnotation
-      (caracteristicaOpcionalProdutoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "ellipse"
-       });		
-    addAnnotation
-      (variacaoDoisProdutoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome,cardinalidadeMaxima",
-       "label.pattern", "Variation {0} : {1} ",
-       "figure", "utils.DiamondFigure"
-       });		
-    addAnnotation
-      (caracteristicaAgrupadaProdutoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "TriangleFigure"
-       });			
-    addAnnotation
-      (produtoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "label.pattern", "Product: {0}",
-       "figure", "ellipse"
-       });			
-    addAnnotation
-      (regraDeComposicaoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "label.pattern", "Composition Rule {0}"
-       });				
-    addAnnotation
-      (regraDeContextoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "label.pattern", "Regra de Contexto {0}"
-       });				
-    addAnnotation
-      (eventoLogicoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "operadorLogico"
-       });				
-    addAnnotation
-      (eventoRelacionalEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (acaoLogicoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "operadorAcaoLogico"
-       });				
-    addAnnotation
-      (literalAcaoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (designarEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (expressaoLogicaEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "operadorLogico"
-       });				
-    addAnnotation
-      (expressaoRelacionalEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (literalComposicaoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });		
-    addAnnotation
-      (simulacaoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "label.pattern", "Simulation {0}"
-       });				
-    addAnnotation
-      (estadoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome"
-       });
-  }
-
-  /**
-   * Initializes the annotations for <b>gmf.link</b>.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void createGmf_2Annotations()
-  {
-    String source = "gmf.link";						
-    addAnnotation
-      (getCaracteristica_ElementosExternos(), 
+      (getElemento_ElementosExternos(), 
        source, 
        new String[] 
        {
@@ -2995,7 +2750,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
-       });		
+       });					
     addAnnotation
       (getCaracteristica_CaracteristicaFilha(), 
        source, 
@@ -3208,6 +2963,251 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "width", "2",
        "label", "etiqueta"
        });	
+  }
+
+  /**
+   * Initializes the annotations for <b>gmf.node</b>.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void createGmf_2Annotations()
+  {
+    String source = "gmf.node";				
+    addAnnotation
+      (casoDeUsoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Externo {0}"
+       });		
+    addAnnotation
+      (casoDeTesteEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Externo {0}"
+       });		
+    addAnnotation
+      (atributoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Attribute {0}"
+       });					
+    addAnnotation
+      (caracteristicaRaizEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (caracteristicaOpcionalEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "ellipse",
+       "border.style", "dash",
+       "border.width", "2"
+       });		
+    addAnnotation
+      (caracteristicaAgrupadaEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "utils.TriangleFigure",
+       "border.style", "dash",
+       "border.width", "2"
+       });		
+    addAnnotation
+      (caracteristicaMandatoriaEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "rectangle",
+       "border.style", "solid",
+       "border.width", "2"
+       });		
+    addAnnotation
+      (variacaoDoisEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome,cardinalidadeMaxima",
+       "label.pattern", "Variation {0} : {1} ",
+       "figure", "utils.DiamondFigure"
+       });			
+    addAnnotation
+      (raizDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });			
+    addAnnotation
+      (entidadeDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Entidade de Contexto {0}"
+       });			
+    addAnnotation
+      (informacaoDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome,valor",
+       "label.pattern", "Informa\u00e7\u00e3o de Contexto: {0} Valor {1}"
+       });				
+    addAnnotation
+      (atributoProdutoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome,valor",
+       "figure", "utils.TriangleFigure",
+       "label.pattern", "Attribute {0}:{1}"
+       });		
+    addAnnotation
+      (caracteristicaMandatoriaProdutoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "ellipse"
+       });		
+    addAnnotation
+      (caracteristicaOpcionalProdutoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "ellipse"
+       });		
+    addAnnotation
+      (variacaoDoisProdutoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome,cardinalidadeMaxima",
+       "label.pattern", "Variation {0} : {1} ",
+       "figure", "utils.DiamondFigure"
+       });		
+    addAnnotation
+      (caracteristicaAgrupadaProdutoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "figure", "TriangleFigure"
+       });			
+    addAnnotation
+      (produtoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Product: {0}",
+       "figure", "ellipse"
+       });			
+    addAnnotation
+      (regraDeComposicaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Composition Rule {0}"
+       });				
+    addAnnotation
+      (regraDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Regra de Contexto {0}"
+       });				
+    addAnnotation
+      (eventoLogicoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "operadorLogico"
+       });				
+    addAnnotation
+      (eventoRelacionalEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (acaoLogicoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "operadorAcaoLogico"
+       });				
+    addAnnotation
+      (literalAcaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (designarEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (expressaoLogicaEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "operadorLogico"
+       });				
+    addAnnotation
+      (expressaoRelacionalEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (literalComposicaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (simulacaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Simulation {0}"
+       });				
+    addAnnotation
+      (estadoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });
   }
 
   /**

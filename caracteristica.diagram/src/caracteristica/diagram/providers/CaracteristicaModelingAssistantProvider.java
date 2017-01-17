@@ -166,12 +166,19 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof AtributoEditPart) {
+			return ((AtributoEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof RaizDeContextoEditPart) {
 			return ((RaizDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
 			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
 		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
@@ -353,12 +360,20 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof AtributoEditPart) {
+			return ((AtributoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof RaizDeContextoEditPart) {
 			return ((RaizDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
 			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
@@ -545,12 +560,20 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
+		if (sourceEditPart instanceof AtributoEditPart) {
+			return ((AtributoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof RaizDeContextoEditPart) {
 			return ((RaizDeContextoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
 			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {

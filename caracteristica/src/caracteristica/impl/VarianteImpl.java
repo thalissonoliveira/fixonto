@@ -561,6 +561,7 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
       switch (derivedFeatureID)
       {
         case CaracteristicaPackage.VARIANTE__NOME: return CaracteristicaPackage.ELEMENTO__NOME;
+        case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS;
         default: return -1;
       }
     }
@@ -575,7 +576,6 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       switch (derivedFeatureID)
       {
-        case CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS;
         case CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI: return CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI;
         case CaracteristicaPackage.VARIANTE__CARACTERISTICA_FILHA: return CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_FILHA;
         case CaracteristicaPackage.VARIANTE__VARIACOES: return CaracteristicaPackage.CARACTERISTICA__VARIACOES;
@@ -599,6 +599,7 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
       switch (baseFeatureID)
       {
         case CaracteristicaPackage.ELEMENTO__NOME: return CaracteristicaPackage.VARIANTE__NOME;
+        case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS;
         default: return -1;
       }
     }
@@ -613,7 +614,6 @@ public class VarianteImpl extends PontoDeVariacaoImpl implements Variante
     {
       switch (baseFeatureID)
       {
-        case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.VARIANTE__ELEMENTOS_EXTERNOS;
         case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI: return CaracteristicaPackage.VARIANTE__CARACTERISTICA_PAI;
         case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_FILHA: return CaracteristicaPackage.VARIANTE__CARACTERISTICA_FILHA;
         case CaracteristicaPackage.CARACTERISTICA__VARIACOES: return CaracteristicaPackage.VARIANTE__VARIACOES;

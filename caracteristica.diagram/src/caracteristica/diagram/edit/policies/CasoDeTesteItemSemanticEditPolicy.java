@@ -18,9 +18,9 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosCreateCommand;
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosReorientCommand;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -47,7 +47,7 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
+			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ElementoElementosExternosEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -83,7 +83,7 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
+		if (CaracteristicaElementTypes.ElementoElementosExternos_4027 == req
 				.getElementType()) {
 			return null;
 		}
@@ -95,9 +95,9 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
+		if (CaracteristicaElementTypes.ElementoElementosExternos_4027 == req
 				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaElementosExternosCreateCommand(
+			return getGEFWrapper(new ElementoElementosExternosCreateCommand(
 					req, req.getSource(), req.getTarget()));
 		}
 		return null;
@@ -112,8 +112,8 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getGEFWrapper(new ElementoElementosExternosReorientCommand(
 					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);

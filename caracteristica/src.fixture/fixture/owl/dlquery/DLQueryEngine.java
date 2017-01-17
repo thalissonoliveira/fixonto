@@ -39,7 +39,6 @@ public class DLQueryEngine {
 	
 	
 	public static void main(String[] args) throws OWLOntologyCreationException {
-		
 		String resultDLQuery = new DLQueryEngine().executeDLQuery("Feature and hasFatherFeature some RootFeature");
     	System.out.println(resultDLQuery);
 	}
@@ -121,7 +120,6 @@ public class DLQueryEngine {
     }
 	
 	
-	
 	public String executeDLQuery(String classExpressionString) throws OWLOntologyCreationException {
     	OntoHelper ontoHelper = new OntoHelper();
     	ontoHelper.loadOntology(Utils.SPLiSEM_OUTPUT_PATH, Utils.SPLiSEM_OUTPUT_PATH);
@@ -149,14 +147,14 @@ public class DLQueryEngine {
 									individualsInSignature).get(0), ontoHelper);
 	    			
 //	    			result.append("1: " + owlObject.getSignature());
-	    			result.append("1: " + relatedName);
+	    			result.append(" ->" + relatedName);
 	    			
 	    			result.append("\n");
 //	    			System.out.println("1: " + owlObject.getSignature());
 	    			
 	    		} else if (object instanceof DLQueryResultsSection) {
 	    			DLQueryResultsSection resultado = (DLQueryResultsSection) object;
-	    			result.append("2: " + resultado.getName());
+	    			result.append("Return Type: " + resultado.getName());
 	    			result.append("\n");
 //	    			System.out.println("2: " + resultado.getName());
 	    			

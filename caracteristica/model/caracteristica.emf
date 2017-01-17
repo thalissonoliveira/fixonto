@@ -21,6 +21,8 @@ class LPS {
 
 class Elemento {
   attr String nome;
+    @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref ElementoExterno[*] elementosExternos;
 }
 
 class ElementoExterno {
@@ -46,8 +48,6 @@ class Atributo extends Elemento {
 }
 
 class Caracteristica extends Elemento {
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref ElementoExterno[*] elementosExternos;
   
   ref Caracteristica#caracteristicaFilha caracteristicaPai;
 

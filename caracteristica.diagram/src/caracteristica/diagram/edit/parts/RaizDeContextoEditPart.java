@@ -264,7 +264,8 @@ public class RaizDeContextoEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
 		types.add(CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4006);
 		return types;
 	}
@@ -275,6 +276,12 @@ public class RaizDeContextoEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof CasoDeUsoEditPart) {
+			types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
+		}
+		if (targetEditPart instanceof CasoDeTesteEditPart) {
+			types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
+		}
 		if (targetEditPart instanceof EntidadeDeContextoEditPart) {
 			types.add(CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4006);
 		}
@@ -286,7 +293,10 @@ public class RaizDeContextoEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4006) {
+		if (relationshipType == CaracteristicaElementTypes.ElementoElementosExternos_4027) {
+			types.add(CaracteristicaElementTypes.CasoDeUso_2038);
+			types.add(CaracteristicaElementTypes.CasoDeTeste_2039);
+		} else if (relationshipType == CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4006) {
 			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2028);
 		}
 		return types;

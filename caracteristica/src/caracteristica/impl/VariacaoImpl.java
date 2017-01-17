@@ -6,6 +6,7 @@ import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaPackage;
 import caracteristica.CardinalidadeMaxima;
 import caracteristica.Elemento;
+import caracteristica.ElementoExterno;
 import caracteristica.Variacao;
 import caracteristica.Variante;
 
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,6 +34,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link caracteristica.impl.VariacaoImpl#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.impl.VariacaoImpl#getElementosExternos <em>Elementos Externos</em>}</li>
  *   <li>{@link caracteristica.impl.VariacaoImpl#getCardinalidadeMinima <em>Cardinalidade Minima</em>}</li>
  *   <li>{@link caracteristica.impl.VariacaoImpl#getCardinalidadeMaxima <em>Cardinalidade Maxima</em>}</li>
  *   <li>{@link caracteristica.impl.VariacaoImpl#getVariantes <em>Variantes</em>}</li>
@@ -62,6 +65,16 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
    * @ordered
    */
   protected String nome = NOME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElementosExternos() <em>Elementos Externos</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElementosExternos()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementoExterno> elementosExternos;
 
   /**
    * The default value of the '{@link #getCardinalidadeMinima() <em>Cardinalidade Minima</em>}' attribute.
@@ -165,6 +178,20 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
     nome = newNome;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.VARIACAO__NOME, oldNome, nome));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<ElementoExterno> getElementosExternos()
+  {
+    if (elementosExternos == null)
+    {
+      elementosExternos = new EObjectResolvingEList<ElementoExterno>(ElementoExterno.class, this, CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS);
+    }
+    return elementosExternos;
   }
 
   /**
@@ -346,6 +373,8 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
     {
       case CaracteristicaPackage.VARIACAO__NOME:
         return getNome();
+      case CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS:
+        return getElementosExternos();
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MINIMA:
         return getCardinalidadeMinima();
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MAXIMA:
@@ -372,6 +401,10 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
     {
       case CaracteristicaPackage.VARIACAO__NOME:
         setNome((String)newValue);
+        return;
+      case CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        getElementosExternos().addAll((Collection<? extends ElementoExterno>)newValue);
         return;
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MINIMA:
         setCardinalidadeMinima((Integer)newValue);
@@ -403,6 +436,9 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
       case CaracteristicaPackage.VARIACAO__NOME:
         setNome(NOME_EDEFAULT);
         return;
+      case CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        return;
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MINIMA:
         setCardinalidadeMinima(CARDINALIDADE_MINIMA_EDEFAULT);
         return;
@@ -431,6 +467,8 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
     {
       case CaracteristicaPackage.VARIACAO__NOME:
         return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+      case CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS:
+        return elementosExternos != null && !elementosExternos.isEmpty();
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MINIMA:
         return CARDINALIDADE_MINIMA_EDEFAULT == null ? cardinalidadeMinima != null : !CARDINALIDADE_MINIMA_EDEFAULT.equals(cardinalidadeMinima);
       case CaracteristicaPackage.VARIACAO__CARDINALIDADE_MAXIMA:
@@ -456,6 +494,7 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
       switch (derivedFeatureID)
       {
         case CaracteristicaPackage.VARIACAO__NOME: return CaracteristicaPackage.ELEMENTO__NOME;
+        case CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS;
         default: return -1;
       }
     }
@@ -475,6 +514,7 @@ public class VariacaoImpl extends PontoDeVariacaoImpl implements Variacao
       switch (baseFeatureID)
       {
         case CaracteristicaPackage.ELEMENTO__NOME: return CaracteristicaPackage.VARIACAO__NOME;
+        case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS: return CaracteristicaPackage.VARIACAO__ELEMENTOS_EXTERNOS;
         default: return -1;
       }
     }

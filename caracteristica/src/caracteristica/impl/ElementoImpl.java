@@ -5,12 +5,16 @@ package caracteristica.impl;
 import caracteristica.CaracteristicaPackage;
 import caracteristica.Elemento;
 
+import caracteristica.ElementoExterno;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,6 +24,7 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link caracteristica.impl.ElementoImpl#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.impl.ElementoImpl#getElementosExternos <em>Elementos Externos</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,6 +51,16 @@ public class ElementoImpl extends EObjectImpl implements Elemento
    * @ordered
    */
   protected String nome = NOME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getElementosExternos() <em>Elementos Externos</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getElementosExternos()
+   * @generated
+   * @ordered
+   */
+  protected EList<ElementoExterno> elementosExternos;
 
   /**
    * <!-- begin-user-doc -->
@@ -96,6 +111,20 @@ public class ElementoImpl extends EObjectImpl implements Elemento
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<ElementoExterno> getElementosExternos()
+  {
+    if (elementosExternos == null)
+    {
+      elementosExternos = new EObjectResolvingEList<ElementoExterno>(ElementoExterno.class, this, CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS);
+    }
+    return elementosExternos;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -103,6 +132,8 @@ public class ElementoImpl extends EObjectImpl implements Elemento
     {
       case CaracteristicaPackage.ELEMENTO__NOME:
         return getNome();
+      case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS:
+        return getElementosExternos();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -112,6 +143,7 @@ public class ElementoImpl extends EObjectImpl implements Elemento
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -119,6 +151,10 @@ public class ElementoImpl extends EObjectImpl implements Elemento
     {
       case CaracteristicaPackage.ELEMENTO__NOME:
         setNome((String)newValue);
+        return;
+      case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        getElementosExternos().addAll((Collection<? extends ElementoExterno>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -137,6 +173,9 @@ public class ElementoImpl extends EObjectImpl implements Elemento
       case CaracteristicaPackage.ELEMENTO__NOME:
         setNome(NOME_EDEFAULT);
         return;
+      case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS:
+        getElementosExternos().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -153,6 +192,8 @@ public class ElementoImpl extends EObjectImpl implements Elemento
     {
       case CaracteristicaPackage.ELEMENTO__NOME:
         return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+      case CaracteristicaPackage.ELEMENTO__ELEMENTOS_EXTERNOS:
+        return elementosExternos != null && !elementosExternos.isEmpty();
     }
     return super.eIsSet(featureID);
   }

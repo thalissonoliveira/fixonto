@@ -263,7 +263,7 @@ public class CasoDeTesteEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
+		types.add(CaracteristicaElementTypes.ElementoElementosExternos_4027);
 		return types;
 	}
 
@@ -272,12 +272,16 @@ public class CasoDeTesteEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaElementosExternos_4024) {
+		if (relationshipType == CaracteristicaElementTypes.ElementoElementosExternos_4027) {
 			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
 			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
 			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
 			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
+			types.add(CaracteristicaElementTypes.Atributo_2017);
+			types.add(CaracteristicaElementTypes.RaizDeContexto_2018);
+			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2028);
+			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2029);
 		}
 		return types;
 	}

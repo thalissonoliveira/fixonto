@@ -20,7 +20,10 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoReorientCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -50,6 +53,17 @@ public class AtributoItemSemanticEditPolicy extends CaracteristicaBaseItemSemant
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+		}
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ElementoElementosExternosEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
 		}
@@ -102,6 +116,9 @@ public class AtributoItemSemanticEditPolicy extends CaracteristicaBaseItemSemant
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getGEFWrapper(new ElementoElementosExternosReorientCommand(
+					req));
 		case CaracteristicaAtributoEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaAtributoReorientCommand(req));
 		}

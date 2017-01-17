@@ -18,8 +18,11 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
 import caracteristica.diagram.edit.commands.EntidadeDeContextoInformacoesDeContextoCreateCommand;
 import caracteristica.diagram.edit.commands.EntidadeDeContextoInformacoesDeContextoReorientCommand;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
@@ -51,6 +54,17 @@ public class InformacaoDeContextoItemSemanticEditPolicy extends CaracteristicaBa
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+		}
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ElementoElementosExternosEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						outgoingLink.getSource().getElement(), null,
+						outgoingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
 		}
@@ -104,6 +118,9 @@ public class InformacaoDeContextoItemSemanticEditPolicy extends CaracteristicaBa
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getGEFWrapper(new ElementoElementosExternosReorientCommand(
+					req));
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getGEFWrapper(new EntidadeDeContextoInformacoesDeContextoReorientCommand(req));
 		}

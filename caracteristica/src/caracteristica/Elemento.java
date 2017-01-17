@@ -2,6 +2,7 @@
  */
 package caracteristica;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -14,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link caracteristica.Elemento#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.Elemento#getElementosExternos <em>Elementos Externos</em>}</li>
  * </ul>
  *
  * @see caracteristica.CaracteristicaPackage#getElemento()
@@ -47,5 +49,21 @@ public interface Elemento extends EObject
 	 * @generated
 	 */
   void setNome(String value);
+
+  /**
+   * Returns the value of the '<em><b>Elementos Externos</b></em>' reference list.
+   * The list contents are of type {@link caracteristica.ElementoExterno}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Elementos Externos</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Elementos Externos</em>' reference list.
+   * @see caracteristica.CaracteristicaPackage#getElemento_ElementosExternos()
+   * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   * @generated
+   */
+  EList<ElementoExterno> getElementosExternos();
 
 } // Elemento

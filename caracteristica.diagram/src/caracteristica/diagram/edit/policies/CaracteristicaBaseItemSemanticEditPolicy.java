@@ -43,6 +43,7 @@ import caracteristica.AtributoProduto;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaProduto;
 import caracteristica.CaracteristicaRaiz;
+import caracteristica.Elemento;
 import caracteristica.ElementoExterno;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.Estado;
@@ -347,7 +348,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends SemanticEditPolicy
 				}
 			}
 
-			return canExistCaracteristicaElementosExternos_4024(source, target);
+			return canExistElementoElementosExternos_4027(source, target);
 		}
 
 		/**

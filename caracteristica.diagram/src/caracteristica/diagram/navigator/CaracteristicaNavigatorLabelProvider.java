@@ -35,7 +35,6 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
@@ -55,6 +54,7 @@ import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
 import caracteristica.diagram.edit.parts.CasoDeUsoNomeEditPart;
 import caracteristica.diagram.edit.parts.DesignarEditPart;
 import caracteristica.diagram.edit.parts.DesignarNomeEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
@@ -317,7 +317,7 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?caracteristica?EntidadeDeContexto?informacoesDeContexto", //$NON-NLS-1$
 					CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4023);
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
+		case ElementoElementosExternosEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?caracteristica?Caracteristica?elementosExternos", //$NON-NLS-1$
 					CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
 		}
@@ -480,8 +480,8 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 			return getExpressaoLogicaLadoEsquerdoComposicao_4021Text(view);
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getEntidadeDeContextoInformacoesDeContexto_4023Text(view);
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getCaracteristicaElementosExternos_4024Text(view);
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getElementoElementosExternos_4027Text(view);
 		}
 		return getUnknownElementText(view);
 	}

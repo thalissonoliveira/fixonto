@@ -22,14 +22,14 @@ import caracteristica.diagram.edit.commands.CaracteristicaAtributoCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoReorientCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaCaracteristicaFilhaCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaCaracteristicaFilhaReorientCommand;
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosCreateCommand;
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosReorientCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesReorientCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 

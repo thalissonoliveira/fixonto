@@ -259,7 +259,7 @@
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Caracteristica"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2033,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2025,2026,2027,2035,2017,2018,2028,2029,2038,2039,2021,2022,2030,2024,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4024,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4027,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
       </viewProvider>
    </extension>
 
@@ -274,7 +274,7 @@
             <method name="getType()" value="2001,2033,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2025,2026,2027,2035,2017,2018,2028,2029,2038,2039,2021,2022,2030,2024,3001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4024,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
+            <method name="getType()" value="4001,4027,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
             <method name="getType()" value="5001,5034,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013,5026,5027,5028,5036,5017,5018,5029,5030,5039,5040,5021,5022,5031,5025,5024"/>
@@ -780,11 +780,11 @@
       </metamodel>
       <metamodel nsURI="caracteristica">
          <specializationType
-               id="caracteristica.diagram.CaracteristicaElementosExternos_4024"
-               name="%metatype.name.CaracteristicaElementosExternos_4024"
+               id="caracteristica.diagram.ElementoElementosExternos_4027"
+               name="%metatype.name.ElementoElementosExternos_4027"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
             <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4024"/>
+            <param name="semanticHint" value="4027"/>
          </specializationType>
       </metamodel>
       <metamodel nsURI="caracteristica">
@@ -1010,7 +1010,7 @@
          <elementType ref="caracteristica.diagram.Simulacao_2024"/>
          <elementType ref="caracteristica.diagram.Estado_3001"/>
          <elementType ref="caracteristica.diagram.Transicao_4001"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaElementosExternos_4024"/>
+         <elementType ref="caracteristica.diagram.ElementoElementosExternos_4027"/>
          <elementType ref="caracteristica.diagram.CaracteristicaCaracteristicaFilha_4002"/>
          <elementType ref="caracteristica.diagram.CaracteristicaVariacoes_4003"/>
          <elementType ref="caracteristica.diagram.CaracteristicaAtributo_4004"/>

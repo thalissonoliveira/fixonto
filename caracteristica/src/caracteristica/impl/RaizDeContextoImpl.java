@@ -3,6 +3,7 @@
 package caracteristica.impl;
 
 import caracteristica.CaracteristicaPackage;
+import caracteristica.ElementoExterno;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.EntidadeDeContexto;
 import caracteristica.RaizDeContexto;
@@ -16,6 +17,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 

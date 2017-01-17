@@ -37,7 +37,6 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
@@ -49,6 +48,7 @@ import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
 import caracteristica.diagram.edit.parts.CasoDeTesteEditPart;
 import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
 import caracteristica.diagram.edit.parts.DesignarEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EstadoEditPart;
@@ -832,13 +832,25 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 		case AtributoEditPart.VISUAL_ID: {
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Node sv = (Node) view;
+			CaracteristicaNavigatorGroup outgoinglinks = new CaracteristicaNavigatorGroup(
+					Messages.NavigatorGroupName_Atributo_2017_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CaracteristicaNavigatorGroup incominglinks = new CaracteristicaNavigatorGroup(
 					Messages.NavigatorGroupName_Atributo_2017_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
+			connectedViews = getOutgoingLinksByType(
+					Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry
+							.getType(ElementoElementosExternosEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
+					outgoinglinks, true));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -998,12 +1010,12 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 		case EntidadeDeContextoEditPart.VISUAL_ID: {
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Node sv = (Node) view;
-			CaracteristicaNavigatorGroup incominglinks = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_EntidadeDeContexto_2028_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CaracteristicaNavigatorGroup outgoinglinks = new CaracteristicaNavigatorGroup(
 					Messages.NavigatorGroupName_EntidadeDeContexto_2028_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+			CaracteristicaNavigatorGroup incominglinks = new CaracteristicaNavigatorGroup(
+					Messages.NavigatorGroupName_EntidadeDeContexto_2028_incominglinks,
+					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
@@ -1011,11 +1023,11 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
 					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
+			}
+			if (!incominglinks.isEmpty()) {
+				result.add(incominglinks);
 			}
 			return result.toArray();
 		}
@@ -1023,6 +1035,9 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 		case InformacaoDeContextoEditPart.VISUAL_ID: {
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Node sv = (Node) view;
+			CaracteristicaNavigatorGroup outgoinglinks = new CaracteristicaNavigatorGroup(
+					Messages.NavigatorGroupName_InformacaoDeContexto_2029_outgoinglinks,
+					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CaracteristicaNavigatorGroup incominglinks = new CaracteristicaNavigatorGroup(
 					Messages.NavigatorGroupName_InformacaoDeContexto_2029_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
@@ -1030,6 +1045,9 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			if (!outgoinglinks.isEmpty()) {
+				result.add(outgoinglinks);
+			}
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -1772,14 +1790,14 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 			return result.toArray();
 		}
 
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID: {
+		case ElementoElementosExternosEditPart.VISUAL_ID: {
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Edge sv = (Edge) view;
 			CaracteristicaNavigatorGroup target = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_CaracteristicaElementosExternos_4024_target,
+					Messages.NavigatorGroupName_ElementoElementosExternos_4027_target,
 					"icons/linkTargetNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			CaracteristicaNavigatorGroup source = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_CaracteristicaElementosExternos_4024_source,
+					Messages.NavigatorGroupName_ElementoElementosExternos_4027_source,
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
@@ -1803,6 +1821,26 @@ public class CaracteristicaNavigatorContentProvider implements ICommonContentPro
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry
+							.getType(AtributoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry
+							.getType(RaizDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry
+							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry
+							.getType(InformacaoDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source,
+					true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}

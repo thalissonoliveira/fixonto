@@ -1541,9 +1541,9 @@ public class CaracteristicaViewProvider extends AbstractProvider implements IVie
 		Node label6024 = createLabel(edge, CaracteristicaVisualIDRegistry.getType(WrappingLabelEditPart.VISUAL_ID));
 		label6024.getStyles().add(NotationFactory.eINSTANCE.createDescriptionStyle());
 		label6024.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
-		Location location6024 = (Location) label6024.getLayoutConstraint();
-		location6024.setX(0);
-		location6024.setY(40);
+		Location location6027 = (Location) label6027.getLayoutConstraint();
+		location6027.setX(0);
+		location6027.setY(40);
 		return edge;
 	}
 

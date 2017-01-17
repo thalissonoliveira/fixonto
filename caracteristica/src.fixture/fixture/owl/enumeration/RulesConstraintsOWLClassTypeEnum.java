@@ -8,7 +8,7 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	EQUAL_NAME_FEATURE (1, "'Features with same name' Rule",  "WFSMR1", "Caracteristicas diferentes nao podem ter o mesmo nome", ""),
 	EQUAL_NAME_ATTRIBUTE (2, "'Attributes with same name' Rule",  "WFSMR2", "Atributos diferentes nao podem ter o mesmo nome.", ""),
 	PARENTAL_INCONSISTENCY (3, "'Parental Inconsistency' Rule",  "WFSMR3", "Uma caracteristica nao pode ser filha dela mesma.", "A feature can't be child of itself."),
-	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features",  "WFSMR4", "Ciclo detectado.", "Cicle detected."),
+	CYCLICAL_FEATURE_RELATION (4, "Cyclical relation between features",  "WFSMR4", "Ciclo detectado.", "Cycle detected."),
 	UNIQUE_ROOT (5, "Unique root.",  "WFSMR5", "Uma caracteristica so pode ter uma raiz", ""),
 	ATTRIBULES_WITH_DESCENDANT (6, "Attributes with descendant",  "WFSMR6", "", ""),
 	MANDATORY_ELEMENT_PRECEDENT (7, "Mandatory element with no mandatory precedent",  "WFSMR7", "", ""),

@@ -27,7 +27,6 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
@@ -39,6 +38,7 @@ import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
 import caracteristica.diagram.edit.parts.CasoDeTesteEditPart;
 import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
 import caracteristica.diagram.edit.parts.DesignarEditPart;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EstadoEditPart;
@@ -449,7 +449,7 @@ public class CaracteristicaElementTypes {
 
 			elements.put(Transicao_4001, CaracteristicaPackage.eINSTANCE.getTransicao());
 
-			elements.put(CaracteristicaElementosExternos_4024,
+			elements.put(ElementoElementosExternos_4027,
 					CaracteristicaPackage.eINSTANCE.getCaracteristica_ElementosExternos());
 
 			elements.put(CaracteristicaCaracteristicaFilha_4002,
@@ -553,7 +553,7 @@ public class CaracteristicaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(Simulacao_2024);
 			KNOWN_ELEMENT_TYPES.add(Estado_3001);
 			KNOWN_ELEMENT_TYPES.add(Transicao_4001);
-			KNOWN_ELEMENT_TYPES.add(CaracteristicaElementosExternos_4024);
+			KNOWN_ELEMENT_TYPES.add(ElementoElementosExternos_4027);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaCaracteristicaFilha_4002);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaVariacoes_4003);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaAtributo_4004);
@@ -645,8 +645,8 @@ public class CaracteristicaElementTypes {
 			return Estado_3001;
 		case TransicaoEditPart.VISUAL_ID:
 			return Transicao_4001;
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return CaracteristicaElementosExternos_4024;
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return ElementoElementosExternos_4027;
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return CaracteristicaCaracteristicaFilha_4002;
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:

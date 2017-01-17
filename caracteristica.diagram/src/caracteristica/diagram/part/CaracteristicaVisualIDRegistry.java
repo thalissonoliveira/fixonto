@@ -475,7 +475,7 @@ public class CaracteristicaVisualIDRegistry {
 				return true;
 			}
 			break;
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
+		case ElementoElementosExternosEditPart.VISUAL_ID:
 			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}

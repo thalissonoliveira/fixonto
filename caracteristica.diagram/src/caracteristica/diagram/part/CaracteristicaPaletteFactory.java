@@ -528,7 +528,7 @@ public class CaracteristicaPaletteFactory {
 				Collections.singletonList(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024));
 		entry.setId("createElementosExternos6CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(CaracteristicaElementTypes
-				.getImageDescriptor(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024));
+				.getImageDescriptor(CaracteristicaElementTypes.ElementoElementosExternos_4027));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

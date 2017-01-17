@@ -18,10 +18,13 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.ReorientReferenceRelations
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.View;
 
+import caracteristica.diagram.edit.commands.ElementoElementosExternosCreateCommand;
+import caracteristica.diagram.edit.commands.ElementoElementosExternosReorientCommand;
 import caracteristica.diagram.edit.commands.EntidadeDeContextoInformacoesDeContextoCreateCommand;
 import caracteristica.diagram.edit.commands.EntidadeDeContextoInformacoesDeContextoReorientCommand;
 import caracteristica.diagram.edit.commands.RaizDeContextoEntidadesDeContextoCreateCommand;
 import caracteristica.diagram.edit.commands.RaizDeContextoEntidadesDeContextoReorientCommand;
+import caracteristica.diagram.edit.parts.ElementoElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
@@ -125,6 +128,9 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends CaracteristicaBase
 	 */
 	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
+		case ElementoElementosExternosEditPart.VISUAL_ID:
+			return getGEFWrapper(new ElementoElementosExternosReorientCommand(
+					req));
 		case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
 			return getGEFWrapper(new RaizDeContextoEntidadesDeContextoReorientCommand(req));
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:

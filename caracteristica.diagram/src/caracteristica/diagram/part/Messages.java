@@ -826,6 +826,11 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_Atributo_2017_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Atributo_2017_incominglinks;
 
 	/**
@@ -876,12 +881,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_EntidadeDeContexto_2028_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_EntidadeDeContexto_2028_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_EntidadeDeContexto_2028_outgoinglinks;
+	public static String NavigatorGroupName_InformacaoDeContexto_2029_outgoinglinks;
 
 	/**
 	 * @generated
@@ -1121,12 +1131,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaElementosExternos_4024_target;
+	public static String NavigatorGroupName_ElementoElementosExternos_4027_target;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaElementosExternos_4024_source;
+	public static String NavigatorGroupName_ElementoElementosExternos_4027_source;
 
 	/**
 	 * @generated

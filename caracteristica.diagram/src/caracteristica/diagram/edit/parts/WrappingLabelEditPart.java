@@ -63,7 +63,7 @@ public class WrappingLabelEditPart extends LabelEditPart implements ITextAwareEd
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6024;
+	public static final int VISUAL_ID = 6027;
 
 	/**
 	 * @generated

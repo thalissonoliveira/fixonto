@@ -44,10 +44,12 @@ public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
 			
 			Action leftSideAction = logicalAction.getLeftSideAction();
 			OWLIndividual currentLeftSideAction = feaToOntoFixtureUtils.createNewOWLNamedIndividual(leftSideAction, owlOracle);
+			feaToOntoFixtureUtils.addActionClassification(leftSideAction, currentLeftSideAction);
 			feaToOntoFixtureUtils.addParentalRelationBetweenActionAndLeftSideAction(currentActionOWL, currentLeftSideAction);
 			
 			Action rightSideAction = logicalAction.getRightSideAction();
 			OWLIndividual currentRightSideAction = feaToOntoFixtureUtils.createNewOWLNamedIndividual(rightSideAction, owlOracle);
+			feaToOntoFixtureUtils.addActionClassification(rightSideAction, currentRightSideAction);
 			feaToOntoFixtureUtils.addParentalRelationBetweenActionAndRightSideAction(currentActionOWL, currentRightSideAction);
 			buildOntology(leftSideAction, currentLeftSideAction);
 			buildOntology(rightSideAction, currentRightSideAction);

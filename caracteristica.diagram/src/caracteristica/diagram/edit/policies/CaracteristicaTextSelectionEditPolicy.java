@@ -193,7 +193,6 @@ public class CaracteristicaTextSelectionEditPolicy extends SelectionEditPolicy
 	/**
 	 * @generated
 	 */
-	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();

@@ -2495,7 +2495,6 @@ public class CaracteristicaDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<CaracteristicaNodeDescriptor> getSemanticChildren(View view) {
 			return CaracteristicaDiagramUpdater.getSemanticChildren(view);
 		}
@@ -2503,7 +2502,6 @@ public class CaracteristicaDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<CaracteristicaLinkDescriptor> getContainedLinks(View view) {
 			return CaracteristicaDiagramUpdater.getContainedLinks(view);
 		}
@@ -2511,7 +2509,6 @@ public class CaracteristicaDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<CaracteristicaLinkDescriptor> getIncomingLinks(View view) {
 			return CaracteristicaDiagramUpdater.getIncomingLinks(view);
 		}
@@ -2519,7 +2516,6 @@ public class CaracteristicaDiagramUpdater {
 		/**
 		 * @generated
 		 */
-		@Override
 		public List<CaracteristicaLinkDescriptor> getOutgoingLinks(View view) {
 			return CaracteristicaDiagramUpdater.getOutgoingLinks(view);
 		}

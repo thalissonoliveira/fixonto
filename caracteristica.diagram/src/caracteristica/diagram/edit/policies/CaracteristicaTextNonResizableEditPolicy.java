@@ -199,7 +199,6 @@ public class CaracteristicaTextNonResizableEditPolicy extends
 	/**
 	 * @generated
 	 */
-	@Override
 	public void refreshFeedback() {
 		refreshSelectionFeedback();
 		refreshFocusFeedback();

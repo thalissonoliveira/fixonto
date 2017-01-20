@@ -26,6 +26,7 @@ import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.rules.error.SWRLError;
 import fixture.owl.rules.error.SWRLErrorBuilder;
+import fixture.owl.rules.error.SWRLErrorBuilderV2;
 import fixture.owl.swrl.FixtureBuiltin;
 import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
 import fixture.owl.utils.EnumHelper;
@@ -67,14 +68,17 @@ public class RulesAnalyser {
 		
 		Set<SWRLError> brokenRules = processRules();
 		StringBuilder sb = new StringBuilder();
+		sb.append("               FixOnto Analysis Result\n");
+		sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.\n");
 		if (brokenRules != null && !brokenRules.isEmpty()) {
 			for (SWRLError swrlError : brokenRules) {
-				sb.append(swrlError.getDescription() + "\n");
-				sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-\n");
+				sb.append(swrlError.getDescription());
+				sb.append(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.\n");
 			}
 			System.out.println("####### CHECK IT OUT! #######");
 			System.out.println(sb.toString());
 		} else {
+			sb.append("[FIXONTO] - There are no broken rules");
 			System.err.println("[FIXTURE2][LOG] - NENHUMA REGRA FOI VIOLADA NA VERIFICACAO DO MCSC!");
 		}
 		
@@ -161,10 +165,10 @@ public class RulesAnalyser {
 			if (objectPropertyEnum != null) {
 				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
 				OWLObjectProperty hasEqualNameObjectProperty = OWLObjectPropertyFactory.getInstance(ontoHelper).get(objectPropertyEnum);
-				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty, ontoHelper);
+				return SWRLErrorBuilderV2.build(ruleEnum, pelletReasoner, gfrOWLClass, hasEqualNameObjectProperty, ontoHelper);
 			} else {
 				OWLClass gfrOWLClass = OWLClassFactory.getInstance(ontoHelper).get(ruleEnum);
-				return SWRLErrorBuilder.build(ruleEnum, pelletReasoner, gfrOWLClass, ontoHelper);
+				return SWRLErrorBuilderV2.build(ruleEnum, pelletReasoner, gfrOWLClass, ontoHelper);
 			}
 		} else {
 			throw new RuntimeException("Invalid Rule");

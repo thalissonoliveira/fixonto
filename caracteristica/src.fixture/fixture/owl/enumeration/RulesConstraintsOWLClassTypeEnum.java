@@ -13,7 +13,17 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 	ATTRIBULES_WITH_DESCENDANT (6, "Attributes with descendant",  "WFSMR6", "", ""),
 	MANDATORY_ELEMENT_PRECEDENT (7, "Mandatory element with no mandatory precedent",  "WFSMR7", "", ""),
 	OPTIONAL_DESCENDANT (8, "",  "WFSMR8", "", ""),
-	TEST_ERROR (6, "",  "GFR8", "", "");
+	TEST_ERROR (9, "",  "GFR8", "", ""),
+	COMPOSITION_RULE_ (10, 
+			"Features referenced in a CR should be\n either an optional feature or an attribute feature.",  
+			"WFCR1", 
+			"Features referenced in a CR should be\n either an optional feature or an attribute feature.", 
+			"Features referenced in a CR should be\n either an optional feature or an attribute feature."),
+	ADAPTATIOM_RULE_ (11, 
+			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM",  
+			"WFAR1", 
+			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM", 
+			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM");
 
 	
 	private int code;

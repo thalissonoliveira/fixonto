@@ -146,7 +146,7 @@ public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
 		
 	}
 	
-	@Override
+	
 	protected boolean addDisjuctionBetweenFeatureOWLClasses() {
 		return false;
 	}

@@ -210,7 +210,7 @@ public class OntoHelper {
 		return prefixOWLOntologyFormat;
 	}
 	
-	@Override
+	
 	public boolean equals(Object obj) {
 		return this.getDataFactory().equals(((OntoHelper) obj).getDataFactory());
 	}

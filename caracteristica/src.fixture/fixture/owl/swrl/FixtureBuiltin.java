@@ -13,7 +13,7 @@ public class FixtureBuiltin implements BuiltIn {
 		this.fixtureBuiltinHelper = fixtureBuiltinHelper;
 	}
 
-	@Override
+	
     public BindingHelper createHelper(BuiltInAtom atom) {
 		this.fixtureBuiltinHelper.setAtom(atom);
         return this.fixtureBuiltinHelper;

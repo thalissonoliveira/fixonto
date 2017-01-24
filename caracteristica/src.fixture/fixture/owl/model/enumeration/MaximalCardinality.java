@@ -196,7 +196,7 @@ public enum MaximalCardinality {
 	   * <!-- end-user-doc -->
 		 * @generated
 		 */
-	  @Override
+	  
 	  public String toString()
 	  {
 			return literal;

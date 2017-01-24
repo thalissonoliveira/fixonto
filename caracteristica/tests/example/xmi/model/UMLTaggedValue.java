@@ -40,32 +40,32 @@ public class UMLTaggedValue implements XMIModel {
 		this.dataValue = dataValue;
 	}
 	
-	@Override
+	
 	public boolean isUmlModelElementTaggedValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlNode() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValue() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValueDataValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmi() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmiContent() {
 		return false;
 	}

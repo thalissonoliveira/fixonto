@@ -47,12 +47,12 @@ public class LogicalEvent extends Event {
 		this.logicalOperator = logicalOperator;
 	}
 
-	@Override
+	
 	public boolean isLogicalEvent() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isRelationalEvent() {
 		return false;
 	}

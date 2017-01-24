@@ -176,7 +176,7 @@ public class ParserFeaToOntoFixture extends AbstractFeaToOntoFixture {
 		return null;
 	}
 	
-	@Override
+	
 	protected boolean addDisjuctionBetweenFeatureOWLClasses() {
 		return true;
 	}

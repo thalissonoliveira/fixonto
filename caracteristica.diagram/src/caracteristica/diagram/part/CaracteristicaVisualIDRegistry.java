@@ -11,7 +11,29 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import caracteristica.CaracteristicaPackage;
-import caracteristica.diagram.edit.parts.*;
+import caracteristica.diagram.edit.parts.AtributoEditPart;
+import caracteristica.diagram.edit.parts.AtributoNomeEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaNomeEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaNomeEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaOpcionalNomeEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaRaizNomeEditPart;
+import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
+import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
+import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
+import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel2EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel3EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel4EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel5EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
  * This registry is used to determine which type of visual object should be
@@ -142,106 +164,9 @@ public class CaracteristicaVisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaMandatoriaEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getProduto().isSuperTypeOf(
-					domainElement.eClass())) {
-				return ProdutoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getEventoLogico()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return EventoLogicoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getEventoRelacional()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return EventoRelacionalEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getAcaoLogico().isSuperTypeOf(
-					domainElement.eClass())) {
-				return AcaoLogicoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getLiteralAcao().isSuperTypeOf(
-					domainElement.eClass())) {
-				return LiteralAcaoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getDesignar().isSuperTypeOf(
-					domainElement.eClass())) {
-				return DesignarEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getExpressaoLogica()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return ExpressaoLogicaEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getExpressaoRelacional()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return ExpressaoRelacionalEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getLiteralComposicao()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return LiteralComposicaoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaMandatoriaProduto().isSuperTypeOf(
-							domainElement.eClass())) {
-				return CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaOpcionalProduto().isSuperTypeOf(
-							domainElement.eClass())) {
-				return CaracteristicaOpcionalProdutoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return VariacaoDoisProdutoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaAgrupadaProduto().isSuperTypeOf(
-							domainElement.eClass())) {
-				return CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID;
-			}
 			if (CaracteristicaPackage.eINSTANCE.getAtributo().isSuperTypeOf(
 					domainElement.eClass())) {
 				return AtributoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getRaizDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return RaizDeContextoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return EntidadeDeContextoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return InformacaoDeContextoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getCasoDeUso().isSuperTypeOf(
-					domainElement.eClass())) {
-				return CasoDeUsoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getCasoDeTeste().isSuperTypeOf(
-					domainElement.eClass())) {
-				return CasoDeTesteEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getRegraDeComposicao()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return RegraDeComposicaoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getRegraDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return RegraDeContextoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getAtributoProduto()
-					.isSuperTypeOf(domainElement.eClass())) {
-				return AtributoProdutoEditPart.VISUAL_ID;
-			}
-			if (CaracteristicaPackage.eINSTANCE.getSimulacao().isSuperTypeOf(
-					domainElement.eClass())) {
-				return SimulacaoEditPart.VISUAL_ID;
-			}
-			break;
-		case SimulacaoSimulacaoEstadosCompartmentEditPart.VISUAL_ID:
-			if (CaracteristicaPackage.eINSTANCE.getEstado().isSuperTypeOf(
-					domainElement.eClass())) {
-				return EstadoEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -286,73 +211,7 @@ public class CaracteristicaVisualIDRegistry {
 			if (CaracteristicaMandatoriaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (ProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (EventoLogicoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (EventoRelacionalEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AcaoLogicoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (LiteralAcaoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (DesignarEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ExpressaoLogicaEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (ExpressaoRelacionalEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (LiteralComposicaoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CaracteristicaOpcionalProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (VariacaoDoisProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (AtributoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (RaizDeContextoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (EntidadeDeContextoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (InformacaoDeContextoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CasoDeUsoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (CasoDeTesteEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (RegraDeComposicaoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (RegraDeContextoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AtributoProdutoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (SimulacaoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -381,136 +240,8 @@ public class CaracteristicaVisualIDRegistry {
 				return true;
 			}
 			break;
-		case ProdutoEditPart.VISUAL_ID:
-			if (ProdutoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EventoLogicoEditPart.VISUAL_ID:
-			if (EventoLogicoOperadorLogicoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EventoRelacionalEditPart.VISUAL_ID:
-			if (EventoRelacionalNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AcaoLogicoEditPart.VISUAL_ID:
-			if (AcaoLogicoOperadorAcaoLogicoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case LiteralAcaoEditPart.VISUAL_ID:
-			if (LiteralAcaoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case DesignarEditPart.VISUAL_ID:
-			if (DesignarNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExpressaoLogicaEditPart.VISUAL_ID:
-			if (ExpressaoLogicaOperadorLogicoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExpressaoRelacionalEditPart.VISUAL_ID:
-			if (ExpressaoRelacionalNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case LiteralComposicaoEditPart.VISUAL_ID:
-			if (LiteralComposicaoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID:
-			if (CaracteristicaMandatoriaProdutoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CaracteristicaOpcionalProdutoEditPart.VISUAL_ID:
-			if (CaracteristicaOpcionalProdutoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case VariacaoDoisProdutoEditPart.VISUAL_ID:
-			if (VariacaoDoisProdutoNomeCardinalidadeMaximaEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID:
-			if (CaracteristicaAgrupadaProdutoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case AtributoEditPart.VISUAL_ID:
 			if (AtributoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RaizDeContextoEditPart.VISUAL_ID:
-			if (RaizDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EntidadeDeContextoEditPart.VISUAL_ID:
-			if (EntidadeDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case InformacaoDeContextoEditPart.VISUAL_ID:
-			if (InformacaoDeContextoNomeValorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CasoDeUsoEditPart.VISUAL_ID:
-			if (CasoDeUsoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CasoDeTesteEditPart.VISUAL_ID:
-			if (CasoDeTesteNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeComposicaoEditPart.VISUAL_ID:
-			if (RegraDeComposicaoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeContextoEditPart.VISUAL_ID:
-			if (RegraDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AtributoProdutoEditPart.VISUAL_ID:
-			if (AtributoProdutoNomeValorEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SimulacaoEditPart.VISUAL_ID:
-			if (SimulacaoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (SimulacaoSimulacaoEstadosCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EstadoEditPart.VISUAL_ID:
-			if (EstadoNomeEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case SimulacaoSimulacaoEstadosCompartmentEditPart.VISUAL_ID:
-			if (EstadoEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case TransicaoEditPart.VISUAL_ID:
-			if (TransicaoEtiquetaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -539,86 +270,6 @@ public class CaracteristicaVisualIDRegistry {
 				return true;
 			}
 			break;
-		case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
-			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
-			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart.VISUAL_ID:
-			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case CaracteristicaProdutoAtributoProdutoEditPart.VISUAL_ID:
-			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case VariacaoProdutoVariantesProdutoEditPart.VISUAL_ID:
-			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ProdutoLinhaDoProdutoEditPart.VISUAL_ID:
-			if (WrappingLabel11EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
-			if (RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
-			if (RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeContextoEventoEditPart.VISUAL_ID:
-			if (RegraDeContextoEventoExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case RegraDeContextoAcaoEditPart.VISUAL_ID:
-			if (RegraDeContextoAcaoExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EventoLogicoLadoDireitoEventoEditPart.VISUAL_ID:
-			if (WrappingLabel12EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case EventoLogicoLadoEsquerdoEventoEditPart.VISUAL_ID:
-			if (WrappingLabel13EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AcaoLogicoLadoEsquerdoAcaoEditPart.VISUAL_ID:
-			if (WrappingLabel14EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case AcaoLogicoLadoDireitoAcaoEditPart.VISUAL_ID:
-			if (WrappingLabel15EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
-			if (WrappingLabel16EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
-			if (WrappingLabel17EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		}
 		return false;
 	}
@@ -629,10 +280,6 @@ public class CaracteristicaVisualIDRegistry {
 	public static int getLinkWithClassVisualID(EObject domainElement) {
 		if (domainElement == null) {
 			return -1;
-		}
-		if (CaracteristicaPackage.eINSTANCE.getTransicao().isSuperTypeOf(
-				domainElement.eClass())) {
-			return TransicaoEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -664,12 +311,6 @@ public class CaracteristicaVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean isCompartmentVisualID(int visualID) {
-		switch (visualID) {
-		case SimulacaoSimulacaoEstadosCompartmentEditPart.VISUAL_ID:
-			return true;
-		default:
-			break;
-		}
 		return false;
 	}
 
@@ -684,30 +325,8 @@ public class CaracteristicaVisualIDRegistry {
 		case VariacaoDoisEditPart.VISUAL_ID:
 		case CaracteristicaRaizEditPart.VISUAL_ID:
 		case CaracteristicaMandatoriaEditPart.VISUAL_ID:
-		case ProdutoEditPart.VISUAL_ID:
-		case EventoLogicoEditPart.VISUAL_ID:
-		case EventoRelacionalEditPart.VISUAL_ID:
-		case AcaoLogicoEditPart.VISUAL_ID:
-		case LiteralAcaoEditPart.VISUAL_ID:
-		case DesignarEditPart.VISUAL_ID:
-		case ExpressaoLogicaEditPart.VISUAL_ID:
-		case ExpressaoRelacionalEditPart.VISUAL_ID:
-		case LiteralComposicaoEditPart.VISUAL_ID:
 		case AtributoEditPart.VISUAL_ID:
-		case RaizDeContextoEditPart.VISUAL_ID:
-		case RegraDeComposicaoEditPart.VISUAL_ID:
-		case RegraDeContextoEditPart.VISUAL_ID:
-		case CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID:
-		case CaracteristicaOpcionalProdutoEditPart.VISUAL_ID:
-		case VariacaoDoisProdutoEditPart.VISUAL_ID:
-		case EntidadeDeContextoEditPart.VISUAL_ID:
-		case InformacaoDeContextoEditPart.VISUAL_ID:
-		case AtributoProdutoEditPart.VISUAL_ID:
 		case CaracteristicaAgrupadaEditPart.VISUAL_ID:
-		case CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID:
-		case CasoDeUsoEditPart.VISUAL_ID:
-		case CasoDeTesteEditPart.VISUAL_ID:
-		case EstadoEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -722,7 +341,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public int getVisualID(View view) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getVisualID(view);
@@ -731,7 +350,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public String getModelID(View view) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getModelID(view);
@@ -740,7 +359,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
@@ -749,7 +368,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public boolean checkNodeVisualID(View containerView,
 				EObject domainElement, int candidate) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
@@ -759,7 +378,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public boolean isCompartmentVisualID(int visualID) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.isCompartmentVisualID(visualID);
@@ -768,7 +387,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		@Override
+		
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

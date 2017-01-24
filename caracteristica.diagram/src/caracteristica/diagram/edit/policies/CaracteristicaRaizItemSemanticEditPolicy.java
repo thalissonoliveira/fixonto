@@ -26,13 +26,10 @@ import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosCreat
 import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosReorientCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesReorientCommand;
-import caracteristica.diagram.edit.commands.ProdutoLinhaDoProdutoCreateCommand;
-import caracteristica.diagram.edit.commands.ProdutoLinhaDoProdutoReorientCommand;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
-import caracteristica.diagram.edit.parts.ProdutoLinhaDoProdutoEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -60,14 +57,6 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
-						incomingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
-				continue;
-			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ProdutoLinhaDoProdutoEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
@@ -158,10 +147,6 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 			return getGEFWrapper(new CaracteristicaAtributoCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req
-				.getElementType()) {
-			return null;
-		}
 		return null;
 	}
 
@@ -187,11 +172,6 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req
-				.getElementType()) {
-			return getGEFWrapper(new ProdutoLinhaDoProdutoCreateCommand(req,
-					req.getSource(), req.getTarget()));
-		}
 		return null;
 	}
 
@@ -214,8 +194,6 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 			return getGEFWrapper(new CaracteristicaVariacoesReorientCommand(req));
 		case CaracteristicaAtributoEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaAtributoReorientCommand(req));
-		case ProdutoLinhaDoProdutoEditPart.VISUAL_ID:
-			return getGEFWrapper(new ProdutoLinhaDoProdutoReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

@@ -35,7 +35,8 @@ public class PontoDeVariacaoImpl extends EObjectImpl implements PontoDeVariacao
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.PONTO_DE_VARIACAO;

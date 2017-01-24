@@ -10,12 +10,12 @@ public class UseCase extends ExternalElementImpl {
 		super(id, name);
 	}
 
-	@Override
+	
 	public boolean isTestCase() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUseCase() {
 		return true;
 	}

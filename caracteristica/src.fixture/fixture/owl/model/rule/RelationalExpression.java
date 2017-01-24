@@ -47,17 +47,17 @@ public class RelationalExpression extends Antecedent {
 		this.value = value;
 	}
 
-	@Override
+	
 	public boolean isCompositionLiteral() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isLogicalExpression() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isRelationalExpression() {
 		return true;
 	}

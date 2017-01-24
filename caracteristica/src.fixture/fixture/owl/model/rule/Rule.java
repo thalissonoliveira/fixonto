@@ -27,7 +27,7 @@ public abstract class Rule implements Nameable {
 		this.name = name;
 	}
 
-	@Override
+	
 	public String getName() {
 		return this.name;
 	}

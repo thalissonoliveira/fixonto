@@ -9,7 +9,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
 public class TriangleFigure extends Figure {
 	
-	@Override
+	
 	public void paint(Graphics graphics) {
 		
 		Rectangle r = getBounds();

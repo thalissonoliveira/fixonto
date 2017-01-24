@@ -23,42 +23,42 @@ public class Product extends ProductFeature {
 		this.productLine = productLine;
 	}
 
-	@Override
+	
 	public boolean isProduct() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isProductAttribute() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductMandatoryFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductOptionalFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariationTwoFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariant() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariation() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isProductGroupedFeature() {
 		return false;
 	}

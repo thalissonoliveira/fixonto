@@ -262,8 +262,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
 		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
 		types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
 		return types;
@@ -275,12 +274,6 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	public List<IElementType> getMARelTypesOnSourceAndTarget(
 			IGraphicalEditPart targetEditPart) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof CasoDeUsoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
-		}
-		if (targetEditPart instanceof CasoDeTesteEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
-		}
 		if (targetEditPart instanceof CaracteristicaOpcionalEditPart) {
 			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
 		}
@@ -307,10 +300,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	 */
 	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
 		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaElementosExternos_4024) {
-			types.add(CaracteristicaElementTypes.CasoDeUso_2038);
-			types.add(CaracteristicaElementTypes.CasoDeTeste_2039);
-		} else if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
+		if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
 			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
 			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);

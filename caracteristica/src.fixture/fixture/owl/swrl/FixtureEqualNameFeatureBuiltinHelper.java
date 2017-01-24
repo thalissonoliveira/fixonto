@@ -25,7 +25,7 @@ public class FixtureEqualNameFeatureBuiltinHelper extends FixtureBuiltinHelper {
     private VariableBinding partial;
     private boolean used;
 	
-	@Override
+	
 	public Collection<? extends AtomVariable> getBindableVars(Collection<AtomVariable> atomVariables) {
         Collection<AtomVariable> vars = VariableUtils.getVars(getAtom());
         vars.removeAll(vars);
@@ -33,7 +33,7 @@ public class FixtureEqualNameFeatureBuiltinHelper extends FixtureBuiltinHelper {
 //		return Collections.emptySet();
 	}
 
-	@Override
+	
 	public Collection<? extends AtomVariable> getPrerequisiteVars(Collection<AtomVariable> atomVariables) {
 		Collection<AtomVariable> vars = VariableUtils.getVars(getAtom());
 		vars.removeAll(vars);
@@ -41,7 +41,7 @@ public class FixtureEqualNameFeatureBuiltinHelper extends FixtureBuiltinHelper {
 //		return Collections.emptySet();
 	}
 
-	@Override
+	
 	public void rebind(VariableBinding newBinding) {
         List<AtomDObject> atomArguments = getAtom().getAllArguments();
         Node[] arguments = new Node[atomArguments.size()];
@@ -79,7 +79,7 @@ public class FixtureEqualNameFeatureBuiltinHelper extends FixtureBuiltinHelper {
 		return new AtomIVariable(((AtomDVariable)arg).getName());
 	}
 
-	@Override
+	
 	public boolean selectNextBinding() {
         if (partial != null && !used) {
             used = true;
@@ -88,7 +88,7 @@ public class FixtureEqualNameFeatureBuiltinHelper extends FixtureBuiltinHelper {
         return false;
 	}
 
-	@Override
+	
 	public void setCurrentBinding(VariableBinding currentBinding) {
         for (Map.Entry<? extends AtomVariable, ? extends Node> entry : partial.entrySet()) {
             AtomVariable atomVariable = entry.getKey();

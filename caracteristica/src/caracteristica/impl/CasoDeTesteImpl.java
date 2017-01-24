@@ -33,7 +33,8 @@ public class CasoDeTesteImpl extends ElementoExternoImpl implements CasoDeTeste
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CASO_DE_TESTE;

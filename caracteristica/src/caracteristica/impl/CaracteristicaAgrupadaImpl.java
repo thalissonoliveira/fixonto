@@ -33,7 +33,8 @@ public class CaracteristicaAgrupadaImpl extends CaracteristicaImpl implements Ca
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CARACTERISTICA_AGRUPADA;

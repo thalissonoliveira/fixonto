@@ -24,36 +24,13 @@ import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
-import caracteristica.diagram.edit.parts.AcaoLogicoEditPart;
 import caracteristica.diagram.edit.parts.AtributoEditPart;
-import caracteristica.diagram.edit.parts.AtributoProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaOpcionalProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
-import caracteristica.diagram.edit.parts.CasoDeTesteEditPart;
-import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
-import caracteristica.diagram.edit.parts.DesignarEditPart;
-import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
-import caracteristica.diagram.edit.parts.EstadoEditPart;
-import caracteristica.diagram.edit.parts.EventoLogicoEditPart;
-import caracteristica.diagram.edit.parts.EventoRelacionalEditPart;
-import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
-import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
-import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
-import caracteristica.diagram.edit.parts.LiteralAcaoEditPart;
-import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
-import caracteristica.diagram.edit.parts.ProdutoEditPart;
-import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
-import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
-import caracteristica.diagram.edit.parts.RegraDeContextoEditPart;
-import caracteristica.diagram.edit.parts.SimulacaoSimulacaoEstadosCompartmentEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
-import caracteristica.diagram.edit.parts.VariacaoDoisProdutoEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
 import caracteristica.diagram.part.Messages;
 
@@ -70,40 +47,13 @@ public class CaracteristicaModelingAssistantProvider extends
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof LPSEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(28);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
 			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
 			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
 			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
 			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-			types.add(CaracteristicaElementTypes.Produto_2005);
-			types.add(CaracteristicaElementTypes.EventoLogico_2006);
-			types.add(CaracteristicaElementTypes.EventoRelacional_2007);
-			types.add(CaracteristicaElementTypes.AcaoLogico_2008);
-			types.add(CaracteristicaElementTypes.LiteralAcao_2009);
-			types.add(CaracteristicaElementTypes.Designar_2010);
-			types.add(CaracteristicaElementTypes.ExpressaoLogica_2011);
-			types.add(CaracteristicaElementTypes.ExpressaoRelacional_2012);
-			types.add(CaracteristicaElementTypes.LiteralComposicao_2013);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoriaProduto_2025);
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcionalProduto_2026);
-			types.add(CaracteristicaElementTypes.VariacaoDoisProduto_2027);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupadaProduto_2035);
 			types.add(CaracteristicaElementTypes.Atributo_2017);
-			types.add(CaracteristicaElementTypes.RaizDeContexto_2018);
-			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2028);
-			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2029);
-			types.add(CaracteristicaElementTypes.CasoDeUso_2038);
-			types.add(CaracteristicaElementTypes.CasoDeTeste_2039);
-			types.add(CaracteristicaElementTypes.RegraDeComposicao_2021);
-			types.add(CaracteristicaElementTypes.RegraDeContexto_2022);
-			types.add(CaracteristicaElementTypes.AtributoProduto_2030);
-			types.add(CaracteristicaElementTypes.Simulacao_2024);
-			return types;
-		}
-		if (editPart instanceof SimulacaoSimulacaoEstadosCompartmentEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-			types.add(CaracteristicaElementTypes.Estado_3001);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -135,56 +85,6 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
-		if (sourceEditPart instanceof ProdutoEditPart) {
-			return ((ProdutoEditPart) sourceEditPart).getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof EventoLogicoEditPart) {
-			return ((EventoLogicoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof AcaoLogicoEditPart) {
-			return ((AcaoLogicoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
-			return ((ExpressaoLogicaEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			return ((CaracteristicaMandatoriaProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			return ((CaracteristicaOpcionalProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof VariacaoDoisProdutoEditPart) {
-			return ((VariacaoDoisProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof CaracteristicaAgrupadaProdutoEditPart) {
-			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof RaizDeContextoEditPart) {
-			return ((RaizDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
-			return ((EntidadeDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
-			return ((RegraDeComposicaoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof RegraDeContextoEditPart) {
-			return ((RegraDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSource();
-		}
-		if (sourceEditPart instanceof EstadoEditPart) {
-			return ((EstadoEditPart) sourceEditPart).getMARelTypesOnSource();
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -214,80 +114,8 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
-		if (targetEditPart instanceof ProdutoEditPart) {
-			return ((ProdutoEditPart) targetEditPart).getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof EventoLogicoEditPart) {
-			return ((EventoLogicoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof EventoRelacionalEditPart) {
-			return ((EventoRelacionalEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof AcaoLogicoEditPart) {
-			return ((AcaoLogicoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof LiteralAcaoEditPart) {
-			return ((LiteralAcaoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof DesignarEditPart) {
-			return ((DesignarEditPart) targetEditPart).getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof ExpressaoLogicaEditPart) {
-			return ((ExpressaoLogicaEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof ExpressaoRelacionalEditPart) {
-			return ((ExpressaoRelacionalEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof LiteralComposicaoEditPart) {
-			return ((LiteralComposicaoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			return ((CaracteristicaMandatoriaProdutoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			return ((CaracteristicaOpcionalProdutoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof VariacaoDoisProdutoEditPart) {
-			return ((VariacaoDoisProdutoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof CaracteristicaAgrupadaProdutoEditPart) {
-			return ((CaracteristicaAgrupadaProdutoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
 		if (targetEditPart instanceof AtributoEditPart) {
 			return ((AtributoEditPart) targetEditPart).getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof EntidadeDeContextoEditPart) {
-			return ((EntidadeDeContextoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
-			return ((InformacaoDeContextoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof CasoDeUsoEditPart) {
-			return ((CasoDeUsoEditPart) targetEditPart).getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof CasoDeTesteEditPart) {
-			return ((CasoDeTesteEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof AtributoProdutoEditPart) {
-			return ((AtributoProdutoEditPart) targetEditPart)
-					.getMARelTypesOnTarget();
-		}
-		if (targetEditPart instanceof EstadoEditPart) {
-			return ((EstadoEditPart) targetEditPart).getMARelTypesOnTarget();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -321,58 +149,6 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
-		if (sourceEditPart instanceof ProdutoEditPart) {
-			return ((ProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof EventoLogicoEditPart) {
-			return ((EventoLogicoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof AcaoLogicoEditPart) {
-			return ((AcaoLogicoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
-			return ((ExpressaoLogicaEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			return ((CaracteristicaMandatoriaProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			return ((CaracteristicaOpcionalProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof VariacaoDoisProdutoEditPart) {
-			return ((VariacaoDoisProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof CaracteristicaAgrupadaProdutoEditPart) {
-			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof RaizDeContextoEditPart) {
-			return ((RaizDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
-			return ((EntidadeDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
-			return ((RegraDeComposicaoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof RegraDeContextoEditPart) {
-			return ((RegraDeContextoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
-		if (sourceEditPart instanceof EstadoEditPart) {
-			return ((EstadoEditPart) sourceEditPart)
-					.getMARelTypesOnSourceAndTarget(targetEditPart);
-		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -403,84 +179,8 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
-		if (targetEditPart instanceof ProdutoEditPart) {
-			return ((ProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof EventoLogicoEditPart) {
-			return ((EventoLogicoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof EventoRelacionalEditPart) {
-			return ((EventoRelacionalEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof AcaoLogicoEditPart) {
-			return ((AcaoLogicoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof LiteralAcaoEditPart) {
-			return ((LiteralAcaoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof DesignarEditPart) {
-			return ((DesignarEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof ExpressaoLogicaEditPart) {
-			return ((ExpressaoLogicaEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof ExpressaoRelacionalEditPart) {
-			return ((ExpressaoRelacionalEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof LiteralComposicaoEditPart) {
-			return ((LiteralComposicaoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			return ((CaracteristicaMandatoriaProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			return ((CaracteristicaOpcionalProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof VariacaoDoisProdutoEditPart) {
-			return ((VariacaoDoisProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof CaracteristicaAgrupadaProdutoEditPart) {
-			return ((CaracteristicaAgrupadaProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
 		if (targetEditPart instanceof AtributoEditPart) {
 			return ((AtributoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof EntidadeDeContextoEditPart) {
-			return ((EntidadeDeContextoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
-			return ((InformacaoDeContextoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof CasoDeUsoEditPart) {
-			return ((CasoDeUsoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof CasoDeTesteEditPart) {
-			return ((CasoDeTesteEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof AtributoProdutoEditPart) {
-			return ((AtributoProdutoEditPart) targetEditPart)
-					.getMATypesForSource(relationshipType);
-		}
-		if (targetEditPart instanceof EstadoEditPart) {
-			return ((EstadoEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		return Collections.EMPTY_LIST;
@@ -511,58 +211,6 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (sourceEditPart instanceof CaracteristicaMandatoriaEditPart) {
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof ProdutoEditPart) {
-			return ((ProdutoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof EventoLogicoEditPart) {
-			return ((EventoLogicoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof AcaoLogicoEditPart) {
-			return ((AcaoLogicoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
-			return ((ExpressaoLogicaEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			return ((CaracteristicaMandatoriaProdutoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			return ((CaracteristicaOpcionalProdutoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof VariacaoDoisProdutoEditPart) {
-			return ((VariacaoDoisProdutoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof CaracteristicaAgrupadaProdutoEditPart) {
-			return ((CaracteristicaAgrupadaProdutoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof RaizDeContextoEditPart) {
-			return ((RaizDeContextoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
-			return ((EntidadeDeContextoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
-			return ((RegraDeComposicaoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof RegraDeContextoEditPart) {
-			return ((RegraDeContextoEditPart) sourceEditPart)
-					.getMATypesForTarget(relationshipType);
-		}
-		if (sourceEditPart instanceof EstadoEditPart) {
-			return ((EstadoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

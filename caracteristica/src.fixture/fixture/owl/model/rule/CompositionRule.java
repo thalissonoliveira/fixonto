@@ -32,12 +32,12 @@ public class CompositionRule extends Rule {
 		this.consequent = consequent;
 	}
 
-	@Override
+	
 	public boolean isCompositionRule() {
 		return true;
 	}
 	
-	@Override
+	
 	public boolean isContextRule() {
 		return false;
 	}

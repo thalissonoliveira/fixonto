@@ -245,7 +245,7 @@ public enum Origin
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
   public String toString()
   {
     return literal;

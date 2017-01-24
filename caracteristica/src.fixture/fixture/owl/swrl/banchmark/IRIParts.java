@@ -11,13 +11,13 @@ public class IRIParts implements CustomSWRLBuiltin.CustomSWRLFunction {
 	
 	private final String XSD = "http://www.w3.org/2001/XMLSchema#";
 
-    @Override 
+     
     public boolean isApplicable(boolean[] boundPositions) { 
         //applicable only to 4 arguments, two bound and two unbound 
         return boundPositions.length == 4 && boundPositions[0] && boundPositions[1] && !boundPositions[2] && !boundPositions[3]; 
     } 
 
-    @Override 
+     
     public boolean apply(ABox abox, Node[] args) { 
         //accepts IRIparts(individual,separator string,unbound variable,unbound variable) 
         if (!args[0].isIndividual() || !args[1].isLiteral() || args[2] != null || args[3] != null) return false; 

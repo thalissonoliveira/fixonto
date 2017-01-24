@@ -258,8 +258,8 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Caracteristica"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2033,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2025,2026,2027,2035,2017,2018,2028,2029,2038,2039,2021,2022,2030,2024,3001"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4024,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2033,2002,2003,2004,2017"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4024,4002,4003,4004,4005"/>
       </viewProvider>
    </extension>
 
@@ -271,16 +271,16 @@
             <method name="getType()" value="Caracteristica"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2033,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2025,2026,2027,2035,2017,2018,2028,2029,2038,2039,2021,2022,2030,2024,3001"/>
+            <method name="getType()" value="2001,2033,2002,2003,2004,2017"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4024,4002,4003,4004,4005,4006,4023,4008,4009,4010,4011,4012,4013,4014,4015,4016,4017,4018,4019,4020,4021"/>
+            <method name="getType()" value="4024,4002,4003,4004,4005"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5034,5002,5003,5004,5005,5006,5007,5008,5009,5010,5011,5012,5013,5026,5027,5028,5036,5017,5018,5029,5030,5039,5040,5021,5022,5031,5025,5024"/>
+            <method name="getType()" value="5001,5034,5002,5003,5004,5017"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001"/>
+            <method name="getType()" value=""/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -296,31 +296,8 @@
          <object class="caracteristica.diagram.edit.parts.VariacaoDoisEditPart" id="VariacaoDois_2002"/>
          <object class="caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart" id="CaracteristicaRaiz_2003"/>
          <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart" id="CaracteristicaMandatoria_2004"/>
-         <object class="caracteristica.diagram.edit.parts.ProdutoEditPart" id="Produto_2005"/>
-         <object class="caracteristica.diagram.edit.parts.EventoLogicoEditPart" id="EventoLogico_2006"/>
-         <object class="caracteristica.diagram.edit.parts.EventoRelacionalEditPart" id="EventoRelacional_2007"/>
-         <object class="caracteristica.diagram.edit.parts.AcaoLogicoEditPart" id="AcaoLogico_2008"/>
-         <object class="caracteristica.diagram.edit.parts.LiteralAcaoEditPart" id="LiteralAcao_2009"/>
-         <object class="caracteristica.diagram.edit.parts.DesignarEditPart" id="Designar_2010"/>
-         <object class="caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart" id="ExpressaoLogica_2011"/>
-         <object class="caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart" id="ExpressaoRelacional_2012"/>
-         <object class="caracteristica.diagram.edit.parts.LiteralComposicaoEditPart" id="LiteralComposicao_2013"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart" id="CaracteristicaMandatoriaProduto_2025"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaOpcionalProdutoEditPart" id="CaracteristicaOpcionalProduto_2026"/>
-         <object class="caracteristica.diagram.edit.parts.VariacaoDoisProdutoEditPart" id="VariacaoDoisProduto_2027"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart" id="CaracteristicaAgrupadaProduto_2035"/>
          <object class="caracteristica.diagram.edit.parts.AtributoEditPart" id="Atributo_2017"/>
-         <object class="caracteristica.diagram.edit.parts.RaizDeContextoEditPart" id="RaizDeContexto_2018"/>
-         <object class="caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart" id="EntidadeDeContexto_2028"/>
-         <object class="caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart" id="InformacaoDeContexto_2029"/>
-         <object class="caracteristica.diagram.edit.parts.CasoDeUsoEditPart" id="CasoDeUso_2038"/>
-         <object class="caracteristica.diagram.edit.parts.CasoDeTesteEditPart" id="CasoDeTeste_2039"/>
-         <object class="caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart" id="RegraDeComposicao_2021"/>
-         <object class="caracteristica.diagram.edit.parts.RegraDeContextoEditPart" id="RegraDeContexto_2022"/>
-         <object class="caracteristica.diagram.edit.parts.AtributoProdutoEditPart" id="AtributoProduto_2030"/>
-         <object class="caracteristica.diagram.edit.parts.SimulacaoEditPart" id="Simulacao_2024"/>
-         <object class="caracteristica.diagram.edit.parts.EstadoEditPart" id="Estado_3001"/>
-         <context elements="LPS_1000,CaracteristicaOpcional_2001,CaracteristicaAgrupada_2033,VariacaoDois_2002,CaracteristicaRaiz_2003,CaracteristicaMandatoria_2004,Produto_2005,EventoLogico_2006,EventoRelacional_2007,AcaoLogico_2008,LiteralAcao_2009,Designar_2010,ExpressaoLogica_2011,ExpressaoRelacional_2012,LiteralComposicao_2013,CaracteristicaMandatoriaProduto_2025,CaracteristicaOpcionalProduto_2026,VariacaoDoisProduto_2027,CaracteristicaAgrupadaProduto_2035,Atributo_2017,RaizDeContexto_2018,EntidadeDeContexto_2028,InformacaoDeContexto_2029,CasoDeUso_2038,CasoDeTeste_2039,RegraDeComposicao_2021,RegraDeContexto_2022,AtributoProduto_2030,Simulacao_2024,Estado_3001"/>
+         <context elements="LPS_1000,CaracteristicaOpcional_2001,CaracteristicaAgrupada_2033,VariacaoDois_2002,CaracteristicaRaiz_2003,CaracteristicaMandatoria_2004,Atributo_2017,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -343,7 +320,7 @@
       <decoratorProvider class="caracteristica.diagram.providers.CaracteristicaShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2033,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2025,2026,2027,2035,2017,2018,2028,2029,2038,2039,2021,2022,2030,2024"/>
+            <method name="getType()" value="2001,2033,2002,2003,2004,2017"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -413,252 +390,12 @@
       </metamodel>
       <metamodel nsURI="caracteristica">
          <metamodelType
-               id="caracteristica.diagram.Produto_2005"
-               name="%metatype.name.Produto_2005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Produto"
-               edithelper="caracteristica.diagram.edit.helpers.ProdutoEditHelper">
-            <param name="semanticHint" value="2005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.EventoLogico_2006"
-               name="%metatype.name.EventoLogico_2006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="EventoLogico"
-               edithelper="caracteristica.diagram.edit.helpers.EventoLogicoEditHelper">
-            <param name="semanticHint" value="2006"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.EventoRelacional_2007"
-               name="%metatype.name.EventoRelacional_2007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="EventoRelacional"
-               edithelper="caracteristica.diagram.edit.helpers.EventoRelacionalEditHelper">
-            <param name="semanticHint" value="2007"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.AcaoLogico_2008"
-               name="%metatype.name.AcaoLogico_2008"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AcaoLogico"
-               edithelper="caracteristica.diagram.edit.helpers.AcaoLogicoEditHelper">
-            <param name="semanticHint" value="2008"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.LiteralAcao_2009"
-               name="%metatype.name.LiteralAcao_2009"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="LiteralAcao"
-               edithelper="caracteristica.diagram.edit.helpers.LiteralAcaoEditHelper">
-            <param name="semanticHint" value="2009"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.Designar_2010"
-               name="%metatype.name.Designar_2010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Designar"
-               edithelper="caracteristica.diagram.edit.helpers.DesignarEditHelper">
-            <param name="semanticHint" value="2010"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.ExpressaoLogica_2011"
-               name="%metatype.name.ExpressaoLogica_2011"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExpressaoLogica"
-               edithelper="caracteristica.diagram.edit.helpers.ExpressaoLogicaEditHelper">
-            <param name="semanticHint" value="2011"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.ExpressaoRelacional_2012"
-               name="%metatype.name.ExpressaoRelacional_2012"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="ExpressaoRelacional"
-               edithelper="caracteristica.diagram.edit.helpers.ExpressaoRelacionalEditHelper">
-            <param name="semanticHint" value="2012"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.LiteralComposicao_2013"
-               name="%metatype.name.LiteralComposicao_2013"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="LiteralComposicao"
-               edithelper="caracteristica.diagram.edit.helpers.LiteralComposicaoEditHelper">
-            <param name="semanticHint" value="2013"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.CaracteristicaMandatoriaProduto_2025"
-               name="%metatype.name.CaracteristicaMandatoriaProduto_2025"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CaracteristicaMandatoriaProduto"
-               edithelper="caracteristica.diagram.edit.helpers.CaracteristicaMandatoriaProdutoEditHelper">
-            <param name="semanticHint" value="2025"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.CaracteristicaOpcionalProduto_2026"
-               name="%metatype.name.CaracteristicaOpcionalProduto_2026"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CaracteristicaOpcionalProduto"
-               edithelper="caracteristica.diagram.edit.helpers.CaracteristicaOpcionalProdutoEditHelper">
-            <param name="semanticHint" value="2026"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.VariacaoDoisProduto_2027"
-               name="%metatype.name.VariacaoDoisProduto_2027"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="VariacaoDoisProduto"
-               edithelper="caracteristica.diagram.edit.helpers.VariacaoDoisProdutoEditHelper">
-            <param name="semanticHint" value="2027"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.CaracteristicaAgrupadaProduto_2035"
-               name="%metatype.name.CaracteristicaAgrupadaProduto_2035"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CaracteristicaAgrupadaProduto"
-               edithelper="caracteristica.diagram.edit.helpers.CaracteristicaAgrupadaProdutoEditHelper">
-            <param name="semanticHint" value="2035"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
                id="caracteristica.diagram.Atributo_2017"
                name="%metatype.name.Atributo_2017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Atributo"
                edithelper="caracteristica.diagram.edit.helpers.AtributoEditHelper">
             <param name="semanticHint" value="2017"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.RaizDeContexto_2018"
-               name="%metatype.name.RaizDeContexto_2018"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RaizDeContexto"
-               edithelper="caracteristica.diagram.edit.helpers.RaizDeContextoEditHelper">
-            <param name="semanticHint" value="2018"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.EntidadeDeContexto_2028"
-               name="%metatype.name.EntidadeDeContexto_2028"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="EntidadeDeContexto"
-               edithelper="caracteristica.diagram.edit.helpers.EntidadeDeContextoEditHelper">
-            <param name="semanticHint" value="2028"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.InformacaoDeContexto_2029"
-               name="%metatype.name.InformacaoDeContexto_2029"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="InformacaoDeContexto"
-               edithelper="caracteristica.diagram.edit.helpers.InformacaoDeContextoEditHelper">
-            <param name="semanticHint" value="2029"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.CasoDeUso_2038"
-               name="%metatype.name.CasoDeUso_2038"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CasoDeUso"
-               edithelper="caracteristica.diagram.edit.helpers.CasoDeUsoEditHelper">
-            <param name="semanticHint" value="2038"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.CasoDeTeste_2039"
-               name="%metatype.name.CasoDeTeste_2039"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="CasoDeTeste"
-               edithelper="caracteristica.diagram.edit.helpers.CasoDeTesteEditHelper">
-            <param name="semanticHint" value="2039"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.RegraDeComposicao_2021"
-               name="%metatype.name.RegraDeComposicao_2021"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RegraDeComposicao"
-               edithelper="caracteristica.diagram.edit.helpers.RegraDeComposicaoEditHelper">
-            <param name="semanticHint" value="2021"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.RegraDeContexto_2022"
-               name="%metatype.name.RegraDeContexto_2022"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="RegraDeContexto"
-               edithelper="caracteristica.diagram.edit.helpers.RegraDeContextoEditHelper">
-            <param name="semanticHint" value="2022"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.AtributoProduto_2030"
-               name="%metatype.name.AtributoProduto_2030"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="AtributoProduto"
-               edithelper="caracteristica.diagram.edit.helpers.AtributoProdutoEditHelper">
-            <param name="semanticHint" value="2030"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.Simulacao_2024"
-               name="%metatype.name.Simulacao_2024"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Simulacao"
-               edithelper="caracteristica.diagram.edit.helpers.SimulacaoEditHelper">
-            <param name="semanticHint" value="2024"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.Estado_3001"
-               name="%metatype.name.Estado_3001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Estado"
-               edithelper="caracteristica.diagram.edit.helpers.EstadoEditHelper">
-            <param name="semanticHint" value="3001"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <metamodelType
-               id="caracteristica.diagram.Transicao_4001"
-               name="%metatype.name.Transicao_4001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Transicao"
-               edithelper="caracteristica.diagram.edit.helpers.TransicaoEditHelper">
-            <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="caracteristica">
@@ -706,150 +443,6 @@
             <param name="semanticHint" value="4005"/>
          </specializationType>
       </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4006"
-               name="%metatype.name.RaizDeContextoEntidadesDeContexto_4006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4006"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4023"
-               name="%metatype.name.EntidadeDeContextoInformacoesDeContexto_4023"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4023"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.CaracteristicaProdutoCaracteristicaProdutoFilha_4008"
-               name="%metatype.name.CaracteristicaProdutoCaracteristicaProdutoFilha_4008"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4008"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.CaracteristicaProdutoAtributoProduto_4009"
-               name="%metatype.name.CaracteristicaProdutoAtributoProduto_4009"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4009"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.VariacaoProdutoVariantesProduto_4010"
-               name="%metatype.name.VariacaoProdutoVariantesProduto_4010"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4010"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.ProdutoLinhaDoProduto_4011"
-               name="%metatype.name.ProdutoLinhaDoProduto_4011"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4011"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.RegraDeComposicaoAntecedente_4012"
-               name="%metatype.name.RegraDeComposicaoAntecedente_4012"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4012"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.RegraDeComposicaoConsequente_4013"
-               name="%metatype.name.RegraDeComposicaoConsequente_4013"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4013"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.RegraDeContextoEvento_4014"
-               name="%metatype.name.RegraDeContextoEvento_4014"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4014"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.RegraDeContextoAcao_4015"
-               name="%metatype.name.RegraDeContextoAcao_4015"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4015"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.EventoLogicoLadoDireitoEvento_4016"
-               name="%metatype.name.EventoLogicoLadoDireitoEvento_4016"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4016"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.EventoLogicoLadoEsquerdoEvento_4017"
-               name="%metatype.name.EventoLogicoLadoEsquerdoEvento_4017"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4017"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.AcaoLogicoLadoEsquerdoAcao_4018"
-               name="%metatype.name.AcaoLogicoLadoEsquerdoAcao_4018"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4018"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.AcaoLogicoLadoDireitoAcao_4019"
-               name="%metatype.name.AcaoLogicoLadoDireitoAcao_4019"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4019"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4020"
-               name="%metatype.name.ExpressaoLogicaLadoDireitoComposicao_4020"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4020"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="caracteristica">
-         <specializationType
-               id="caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4021"
-               name="%metatype.name.ExpressaoLogicaLadoEsquerdoComposicao_4021"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
-            <param name="semanticHint" value="4021"/>
-         </specializationType>
-      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -868,52 +461,12 @@
          <elementType ref="caracteristica.diagram.VariacaoDois_2002"/>
          <elementType ref="caracteristica.diagram.CaracteristicaRaiz_2003"/>
          <elementType ref="caracteristica.diagram.CaracteristicaMandatoria_2004"/>
-         <elementType ref="caracteristica.diagram.Produto_2005"/>
-         <elementType ref="caracteristica.diagram.EventoLogico_2006"/>
-         <elementType ref="caracteristica.diagram.EventoRelacional_2007"/>
-         <elementType ref="caracteristica.diagram.AcaoLogico_2008"/>
-         <elementType ref="caracteristica.diagram.LiteralAcao_2009"/>
-         <elementType ref="caracteristica.diagram.Designar_2010"/>
-         <elementType ref="caracteristica.diagram.ExpressaoLogica_2011"/>
-         <elementType ref="caracteristica.diagram.ExpressaoRelacional_2012"/>
-         <elementType ref="caracteristica.diagram.LiteralComposicao_2013"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaMandatoriaProduto_2025"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaOpcionalProduto_2026"/>
-         <elementType ref="caracteristica.diagram.VariacaoDoisProduto_2027"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaAgrupadaProduto_2035"/>
          <elementType ref="caracteristica.diagram.Atributo_2017"/>
-         <elementType ref="caracteristica.diagram.RaizDeContexto_2018"/>
-         <elementType ref="caracteristica.diagram.EntidadeDeContexto_2028"/>
-         <elementType ref="caracteristica.diagram.InformacaoDeContexto_2029"/>
-         <elementType ref="caracteristica.diagram.CasoDeUso_2038"/>
-         <elementType ref="caracteristica.diagram.CasoDeTeste_2039"/>
-         <elementType ref="caracteristica.diagram.RegraDeComposicao_2021"/>
-         <elementType ref="caracteristica.diagram.RegraDeContexto_2022"/>
-         <elementType ref="caracteristica.diagram.AtributoProduto_2030"/>
-         <elementType ref="caracteristica.diagram.Simulacao_2024"/>
-         <elementType ref="caracteristica.diagram.Estado_3001"/>
-         <elementType ref="caracteristica.diagram.Transicao_4001"/>
          <elementType ref="caracteristica.diagram.CaracteristicaElementosExternos_4024"/>
          <elementType ref="caracteristica.diagram.CaracteristicaCaracteristicaFilha_4002"/>
          <elementType ref="caracteristica.diagram.CaracteristicaVariacoes_4003"/>
          <elementType ref="caracteristica.diagram.CaracteristicaAtributo_4004"/>
          <elementType ref="caracteristica.diagram.VariacaoVariantes_4005"/>
-         <elementType ref="caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4006"/>
-         <elementType ref="caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4023"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaProdutoCaracteristicaProdutoFilha_4008"/>
-         <elementType ref="caracteristica.diagram.CaracteristicaProdutoAtributoProduto_4009"/>
-         <elementType ref="caracteristica.diagram.VariacaoProdutoVariantesProduto_4010"/>
-         <elementType ref="caracteristica.diagram.ProdutoLinhaDoProduto_4011"/>
-         <elementType ref="caracteristica.diagram.RegraDeComposicaoAntecedente_4012"/>
-         <elementType ref="caracteristica.diagram.RegraDeComposicaoConsequente_4013"/>
-         <elementType ref="caracteristica.diagram.RegraDeContextoEvento_4014"/>
-         <elementType ref="caracteristica.diagram.RegraDeContextoAcao_4015"/>
-         <elementType ref="caracteristica.diagram.EventoLogicoLadoDireitoEvento_4016"/>
-         <elementType ref="caracteristica.diagram.EventoLogicoLadoEsquerdoEvento_4017"/>
-         <elementType ref="caracteristica.diagram.AcaoLogicoLadoEsquerdoAcao_4018"/>
-         <elementType ref="caracteristica.diagram.AcaoLogicoLadoDireitoAcao_4019"/>
-         <elementType ref="caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4020"/>
-         <elementType ref="caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4021"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

@@ -33,7 +33,8 @@ public class CasoDeUsoImpl extends ElementoExternoImpl implements CasoDeUso
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CASO_DE_USO;

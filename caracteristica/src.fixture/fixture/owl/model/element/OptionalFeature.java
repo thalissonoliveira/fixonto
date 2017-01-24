@@ -12,37 +12,37 @@ public class OptionalFeature extends Feature implements FeaturedElement {
 		super(id, name);
 	}
 
-	@Override
+	
 	public boolean isMandatoryFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isOptionalFeature() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isVariatioTwoFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isRootFeature() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isAttribute() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isContextRoot() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isGroupedFeature() {
 		return false;
 	}

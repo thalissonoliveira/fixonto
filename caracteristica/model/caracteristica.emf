@@ -3,37 +3,12 @@ package caracteristica;
 
 @gmf.diagram(foo="bar")
 class LPS {
-  val PontoDeVariacao[*] pontosDeVariacao;
   val Elemento[*] elementos;
-  val ElementoExterno[*] externos;
-  val Regra[*] regras;
-  val Produto[*] produtos;
-  val Expressao[*] expressoes;
-  val ElementoDeProduto[*] elementosDeProduto;
-  ref CaracteristicaRaiz#LpsDoSistema sistema;
-  val Atributo[*] atributos;
-  attr String[*] valoresContextuais;
-  val Simulacao[*] simulacoes;
-  val InconsistenciaRegraAdaptacao[*] inconsistenciaERA;
-  attr Boolean[*] erro;
   attr String nome;
 }
 
 class Elemento {
   attr String nome;
-}
-
-class ElementoExterno {
-  attr String nome;
-    
-}
-
-@gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Externo {0}")
-class CasoDeUso extends ElementoExterno {
-}
-
-@gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Externo {0}")
-class CasoDeTeste extends ElementoExterno {
 }
 
 class ElementoCaracteristico extends Elemento {
@@ -46,9 +21,6 @@ class Atributo extends Elemento {
 }
 
 class Caracteristica extends Elemento {
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref ElementoExterno[*] elementosExternos;
-  
   ref Caracteristica#caracteristicaFilha caracteristicaPai;
 
   @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
@@ -102,95 +74,6 @@ class Variante extends PontoDeVariacao, ElementoCaracteristico, Caracteristica {
   ref Variacao#variantes variacaoPai;
 }
 
-@gmf.node(label="nome")
-class RaizDeContexto extends Elemento {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref EntidadeDeContexto[*]#raiz entidadesDeContexto;
-}
-
-@gmf.node(label="nome", label.pattern="Entidade de Contexto {0}")
-class EntidadeDeContexto extends Elemento {
-  ref RaizDeContexto#entidadesDeContexto raiz;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref InformacaoDeContexto[*]#elementoPai informacoesDeContexto;
-}
-
-@gmf.node(label="nome,valor", label.pattern="Informação de Contexto: {0} Valor {1}")
-class InformacaoDeContexto extends Elemento {
-  attr Origem origem;
-  attr Validade validade;
-  attr Qualidade qualidade;
-  attr TipoValor tipoValor;
-  attr String valor;
-  ref EntidadeDeContexto[1]#informacoesDeContexto elementoPai;
-}
-
-class ElementoDeProduto {
-  attr String nome;
-  ref Elemento elementoOriginal;
-}
-
-class CaracteristicaProduto extends ElementoDeProduto {
-  ref CaracteristicaProduto#caracteristicaProdutoFilha caracteristicaProdutoPai;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref CaracteristicaProduto[*]#caracteristicaProdutoPai caracteristicaProdutoFilha;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref AtributoProduto[*]#caracteristicaProdutoPai atributoProduto;
-}
-
-@gmf.node(label="nome,valor", figure="utils.TriangleFigure", label.pattern="Attribute {0}:{1}")
-class AtributoProduto extends ElementoDeProduto {
-  attr String valor;
-  attr TipoValor tipoValor;
-  ref CaracteristicaProduto#atributoProduto caracteristicaProdutoPai;
-}
-
-@gmf.node(label="nome", figure="ellipse")
-class CaracteristicaMandatoriaProduto extends CaracteristicaProduto {
-}
-
-@gmf.node(label="nome", figure="ellipse")
-class CaracteristicaOpcionalProduto extends CaracteristicaProduto {
-}
-
-@gmf.node(label="nome,cardinalidadeMaxima", label.pattern="Variation {0} : {1} ", figure="utils.DiamondFigure")
-class VariacaoDoisProduto extends CaracteristicaProduto {
-  attr CardinalidadeMaxima cardinalidadeMaxima;
-  attr Integer cardinalidadeMinimaOr;
-  attr Integer cardinalidadeMaximaOr;
-}
-
-
-@gmf.node(label="nome", figure="TriangleFigure")
-class CaracteristicaAgrupadaProduto extends CaracteristicaProduto {
-}
-
-
-class VariacaoProduto extends ElementoDeProduto {
-  attr Integer cardinalidadeMinima;
-  attr Integer cardinalidadeMaxima;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref VarianteProduto[*]#variacaoProdutoPai variantesProduto;
-  ref CaracteristicaProduto caracteristicaProdutoPai;
-}
-
-class VarianteProduto extends ElementoDeProduto {
-  ref VariacaoProduto[1]#variantesProduto variacaoProdutoPai;
-  attr Boolean selecionado;
-}
-
-@gmf.node(label="nome", label.pattern="Product: {0}", figure="ellipse")
-class Produto extends CaracteristicaProduto {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid")
-  ref CaracteristicaRaiz LinhaDoProduto;
-}
-
 enum Origem {
   Sentida = 0;
   Usuario = 1;
@@ -215,110 +98,6 @@ enum TipoValor {
   TString = 1;
   TFloat = 2;
   TBoolean = 3;
-}
-
-class Regra {
-  attr String nome;
-  attr String conteudo;
-}
-
-@gmf.node(label="nome", label.pattern="Composition Rule {0}")
-class RegraDeComposicao extends Regra {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="antecedent")
-  ref Antecedente antecedente;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="consequent")
-  ref Antecedente consequente;
-}
-
-@gmf.node(label="nome", label.pattern="Regra de Contexto {0}")
-class RegraDeContexto extends Regra {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="evento", width="3")
-  ref Evento evento;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="ação", width="3")
-  ref Acao acao;
-}
-
-class Evento extends Expressao {
-}
-
-@gmf.node(label="operadorLogico")
-class EventoLogico extends Evento {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Evento ladoDireitoEvento;
-  attr OperadorLogico[1] operadorLogico;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Evento ladoEsquerdoEvento;
-}
-
-@gmf.node(label="nome")
-class EventoRelacional extends Evento {
-  ref InformacaoDeContexto variavelDeContexto;
-  attr OperadorRelacional operadorRelacional;
-  attr String valor;
-}
-
-class Acao extends Expressao {
-}
-
-@gmf.node(label="operadorAcaoLogico")
-class AcaoLogico extends Acao {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Acao[1] ladoEsquerdoAcao;
-  attr OperadorAcaoLogico operadorAcaoLogico;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Acao[1] ladoDireitoAcao;
-}
-
-@gmf.node(label="nome")
-class LiteralAcao extends Acao {
-  attr Presenca presenca;
-  ref ElementoCaracteristico elemento;
-}
-
-@gmf.node(label="nome")
-class Designar extends Acao {
-  attr String valor;
-  ref Atributo atributo;
-  attr TipoValor tipoValor;
-}
-
-class Expressao {
-  attr String nome;
-}
-
-class Antecedente extends Expressao {
-}
-
-@gmf.node(label="operadorLogico")
-class ExpressaoLogica extends Antecedente {
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Antecedente ladoDireitoComposicao;
-  attr OperadorLogico operadorLogico;
-
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref Antecedente ladoEsquerdoComposicao;
-}
-
-@gmf.node(label="nome")
-class ExpressaoRelacional extends Antecedente {
-  ref Atributo variaveldaExpressao;
-  attr OperadorRelacional operadorRelacional;
-  attr String valor;
-}
-
-@gmf.node(label="nome")
-class LiteralComposicao extends Antecedente {
-  attr Presenca presenca;
-  ref ElementoCaracteristico elemento;
 }
 
 enum OperadorLogico {
@@ -347,37 +126,5 @@ enum OperadorRelacional {
 enum Presenca {
   PRESENTE = 1;
   AUSENTE = 0;
-}
-
-@gmf.node(label="nome", label.pattern="Simulation {0}")
-class Simulacao {
-  attr String nome;
-  val Transicao[*] transicoes;
-
-  @gmf.compartment(foo="bar")
-  val Estado[*] estados;
-}
-
-@gmf.link(source="eAntigo", target="eNovo", target.decoration="closedarrow", width="2", label="etiqueta")
-class Transicao {
-  ref Estado eAntigo;
-  ref Estado eNovo;
-  ref RegraDeComposicao[*] regrasQuebradas;
-  ref Acao[*] acoes;
-  attr boolean safe;
-  attr String etiqueta;
-}
-
-@gmf.node(label="nome")
-class Estado {
-  attr String nome;
-  ref CaracteristicaProduto produto;
-  attr boolean safe;
-}
-
-class InconsistenciaRegraAdaptacao {
-  ref RegraDeContexto[*] regrasInconsistentes;
-  ref LiteralAcao[*] literaisInconsistentes;
-  ref Designar[*] atribuicoesInconsistentes;
 }
 

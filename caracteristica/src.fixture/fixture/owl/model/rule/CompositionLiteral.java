@@ -44,17 +44,17 @@ public class CompositionLiteral extends Antecedent {
 		this.featuredElement = featuredElement;
 	}
 
-	@Override
+	
 	public boolean isCompositionLiteral() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isLogicalExpression() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isRelationalExpression() {
 		return false;
 	}

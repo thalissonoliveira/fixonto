@@ -50,17 +50,17 @@ public class LogicalExpression extends Antecedent {
 		this.rightSideComposition = rightSideComposition;
 	}
 
-	@Override
+	
 	public boolean isCompositionLiteral() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isLogicalExpression() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isRelationalExpression() {
 		return false;
 	}

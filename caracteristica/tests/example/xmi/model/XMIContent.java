@@ -19,32 +19,32 @@ public class XMIContent implements XMIModel {
 		this.umlNodes = umlNodes;
 	}
 	
-	@Override
+	
 	public boolean isUmlModelElementTaggedValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlNode() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValueDataValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmi() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmiContent() {
 		return true;
 	}

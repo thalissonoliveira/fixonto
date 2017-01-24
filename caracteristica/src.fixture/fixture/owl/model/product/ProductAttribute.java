@@ -84,42 +84,42 @@ public class ProductAttribute implements ProductElement {
 		this.fatherProductFeature = fatherProductFeature;
 	}
 	
-	@Override
+	
 	public boolean isProduct() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductAttribute() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isProductMandatoryFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductOptionalFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariationTwoFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariant() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariation() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isProductGroupedFeature() {
 		return false;
 	}

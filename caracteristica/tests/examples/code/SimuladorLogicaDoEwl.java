@@ -88,22 +88,22 @@ public class SimuladorLogicaDoEwl {
 		public void setPai(Caracteristica pai) {
 			this.pai = pai;
 		}
-		@Override
+		
 		public boolean isAtributo() {
 			// TODO Auto-generated method stub
 			return true;
 		}
-		@Override
+		
 		public boolean isCaracteristicaMandatoria() {
 			// TODO Auto-generated method stub
 			return false;
 		}
-		@Override
+		
 		public boolean isCaracteristicaOpcional() {
 			// TODO Auto-generated method stub
 			return false;
 		}
-		@Override
+		
 		public boolean isCaracteristicaRaiz() {
 			// TODO Auto-generated method stub
 			return false;
@@ -169,22 +169,22 @@ public class SimuladorLogicaDoEwl {
 			super(id, name);
 		}
 
-		@Override
+		
 		public boolean isAtributo() {
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaMandatoria() {
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaOpcional() {
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaRaiz() {
 			return true;
 		}
@@ -195,24 +195,24 @@ public class SimuladorLogicaDoEwl {
 			super(id, name);
 		}
 
-		@Override
+		
 		public boolean isAtributo() {
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaMandatoria() {
 			// TODO Auto-generated method stub
 			return true;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaOpcional() {
 			// TODO Auto-generated method stub
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaRaiz() {
 			// TODO Auto-generated method stub
 			return false;
@@ -224,25 +224,25 @@ public class SimuladorLogicaDoEwl {
 			super(id, name);
 		}
 
-		@Override
+		
 		public boolean isAtributo() {
 			// TODO Auto-generated method stub
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaMandatoria() {
 			// TODO Auto-generated method stub
 			return false;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaOpcional() {
 			// TODO Auto-generated method stub
 			return true;
 		}
 
-		@Override
+		
 		public boolean isCaracteristicaRaiz() {
 			// TODO Auto-generated method stub
 			return false;

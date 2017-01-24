@@ -23,7 +23,6 @@ public interface CaracteristicaRaiz extends Caracteristica
 {
   /**
    * Returns the value of the '<em><b>Lps Do Sistema</b></em>' reference.
-   * It is bidirectional and its opposite is '{@link caracteristica.LPS#getSistema <em>Sistema</em>}'.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Lps Do Sistema</em>' reference isn't clear,
@@ -33,8 +32,7 @@ public interface CaracteristicaRaiz extends Caracteristica
    * @return the value of the '<em>Lps Do Sistema</em>' reference.
    * @see #setLpsDoSistema(LPS)
    * @see caracteristica.CaracteristicaPackage#getCaracteristicaRaiz_LpsDoSistema()
-   * @see caracteristica.LPS#getSistema
-   * @model opposite="sistema" required="true"
+   * @model required="true"
    * @generated
    */
   LPS getLpsDoSistema();

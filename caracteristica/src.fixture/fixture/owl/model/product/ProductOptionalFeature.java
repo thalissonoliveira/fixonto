@@ -11,42 +11,42 @@ public class ProductOptionalFeature extends ProductFeature {
 		super(id, name);
 	}
 
-	@Override
+	
 	public boolean isProduct() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductAttribute() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductMandatoryFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductOptionalFeature() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isProductVariationTwoFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariant() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariation() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isProductGroupedFeature() {
 		return false;
 	}

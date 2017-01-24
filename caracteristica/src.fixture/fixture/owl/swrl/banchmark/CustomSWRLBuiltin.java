@@ -45,7 +45,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
         this.function = function;
     }
 
-    @Override
+    
     public BindingHelper createHelper(BuiltInAtom atom) {
         return new CustomSWRLFunctionHelper(atom);
     }
@@ -73,7 +73,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
          * @param bound variables that are bound to values
          * @return variables from the atom that the build would additionally bind
          */
-        @Override
+        
         public Collection<? extends AtomVariable> getBindableVars(Collection<AtomVariable> bound) {
             if (!isApplicable(bound)) return Collections.emptySet();
             Collection<AtomVariable> vars = VariableUtils.getVars(atom);
@@ -87,7 +87,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
          * @param bound variables that are bound to values
          * @return variables that must be also bound before the builtin can be invoked
          */
-        @Override
+        
         public Collection<? extends AtomVariable> getPrerequisiteVars(Collection<AtomVariable> bound) {
             Collection<AtomVariable> vars = VariableUtils.getVars(atom);
             vars.removeAll(getBindableVars(bound));
@@ -120,7 +120,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
             return function.isApplicable(boundPositions);
         }
 
-        @Override
+        
         public void rebind(VariableBinding newBinding) {
 
             List<AtomDObject> atomArguments = atom.getAllArguments();
@@ -168,7 +168,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
             }
         }
 
-        @Override
+        
         public boolean selectNextBinding() {
             if (partial != null && !used) {
                 used = true;
@@ -178,7 +178,7 @@ public class CustomSWRLBuiltin implements BuiltIn {
         }
 
 
-        @Override
+        
         public void setCurrentBinding(VariableBinding currentBinding) {
             for (Map.Entry<? extends AtomVariable, ? extends Node> entry : partial.entrySet()) {
                 AtomVariable atomVariable = entry.getKey();

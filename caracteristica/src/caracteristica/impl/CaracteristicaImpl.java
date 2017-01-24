@@ -109,7 +109,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CARACTERISTICA;
@@ -245,7 +246,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * @generated
    */
   @SuppressWarnings("unchecked")
-  @Override
+  
+  
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -269,7 +271,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -291,7 +294,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -317,7 +321,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * @generated
    */
   @SuppressWarnings("unchecked")
-  @Override
+  
+  
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
@@ -350,7 +355,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   public void eUnset(int featureID)
   {
     switch (featureID)
@@ -379,7 +385,8 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
+  
   public boolean eIsSet(int featureID)
   {
     switch (featureID)

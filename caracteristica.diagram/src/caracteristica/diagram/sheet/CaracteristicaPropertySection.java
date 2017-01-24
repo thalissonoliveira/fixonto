@@ -16,7 +16,7 @@ public class CaracteristicaPropertySection extends DefaultPropertySection
 	 * Modify/unwrap selection.
 	 * @generated
 	 */
-	@Override
+	
 	protected Object transformSelection(Object selected) {
 		selected = /*super.*/transformSelectionToDomain(selected);
 		return selected;

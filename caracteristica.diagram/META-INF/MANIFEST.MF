@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: caracteristica.diagram.edit.parts,
+Export-Package: caracteristica.diagram.edit.parts, 
  caracteristica.diagram.part,
  caracteristica.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,

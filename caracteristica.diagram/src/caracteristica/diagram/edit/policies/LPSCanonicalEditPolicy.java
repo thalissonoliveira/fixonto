@@ -7,11 +7,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
@@ -35,37 +33,13 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import caracteristica.CaracteristicaPackage;
-import caracteristica.diagram.edit.parts.AcaoLogicoEditPart;
 import caracteristica.diagram.edit.parts.AtributoEditPart;
-import caracteristica.diagram.edit.parts.AtributoProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaOpcionalProdutoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
-import caracteristica.diagram.edit.parts.CasoDeTesteEditPart;
-import caracteristica.diagram.edit.parts.CasoDeUsoEditPart;
-import caracteristica.diagram.edit.parts.DesignarEditPart;
-import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
-import caracteristica.diagram.edit.parts.EstadoEditPart;
-import caracteristica.diagram.edit.parts.EventoLogicoEditPart;
-import caracteristica.diagram.edit.parts.EventoRelacionalEditPart;
-import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
-import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
-import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
-import caracteristica.diagram.edit.parts.LiteralAcaoEditPart;
-import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
-import caracteristica.diagram.edit.parts.ProdutoEditPart;
-import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
-import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
-import caracteristica.diagram.edit.parts.RegraDeContextoEditPart;
-import caracteristica.diagram.edit.parts.SimulacaoEditPart;
-import caracteristica.diagram.edit.parts.TransicaoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
-import caracteristica.diagram.edit.parts.VariacaoDoisProdutoEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramUpdater;
 import caracteristica.diagram.part.CaracteristicaLinkDescriptor;
 import caracteristica.diagram.part.CaracteristicaNodeDescriptor;
@@ -75,11 +49,6 @@ import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
  * @generated
  */
 public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
-
-	/**
-	 * @generated
-	 */
-	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
 	 * @generated
@@ -96,25 +65,8 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected Set getFeaturesToSynchronize() {
-		if (myFeaturesToSynchronize == null) {
-			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Elementos());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Produtos());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Expressoes());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_ElementosDeProduto());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Externos());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Regras());
-			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
-					.getLPS_Simulacoes());
-		}
-		return myFeaturesToSynchronize;
+	protected EStructuralFeature getFeatureToSynchronize() {
+		return CaracteristicaPackage.eINSTANCE.getLPS_Elementos();
 	}
 
 	/**
@@ -155,29 +107,7 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 		case VariacaoDoisEditPart.VISUAL_ID:
 		case CaracteristicaRaizEditPart.VISUAL_ID:
 		case CaracteristicaMandatoriaEditPart.VISUAL_ID:
-		case ProdutoEditPart.VISUAL_ID:
-		case EventoLogicoEditPart.VISUAL_ID:
-		case EventoRelacionalEditPart.VISUAL_ID:
-		case AcaoLogicoEditPart.VISUAL_ID:
-		case LiteralAcaoEditPart.VISUAL_ID:
-		case DesignarEditPart.VISUAL_ID:
-		case ExpressaoLogicaEditPart.VISUAL_ID:
-		case ExpressaoRelacionalEditPart.VISUAL_ID:
-		case LiteralComposicaoEditPart.VISUAL_ID:
-		case CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID:
-		case CaracteristicaOpcionalProdutoEditPart.VISUAL_ID:
-		case VariacaoDoisProdutoEditPart.VISUAL_ID:
-		case CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID:
 		case AtributoEditPart.VISUAL_ID:
-		case RaizDeContextoEditPart.VISUAL_ID:
-		case EntidadeDeContextoEditPart.VISUAL_ID:
-		case InformacaoDeContextoEditPart.VISUAL_ID:
-		case CasoDeUsoEditPart.VISUAL_ID:
-		case CasoDeTesteEditPart.VISUAL_ID:
-		case RegraDeComposicaoEditPart.VISUAL_ID:
-		case RegraDeContextoEditPart.VISUAL_ID:
-		case AtributoProdutoEditPart.VISUAL_ID:
-		case SimulacaoEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -391,202 +321,10 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getProduto_2005ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case EventoLogicoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getEventoLogico_2006ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case EventoRelacionalEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getEventoRelacional_2007ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AcaoLogicoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getAcaoLogico_2008ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case LiteralAcaoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getLiteralAcao_2009ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case DesignarEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getDesignar_2010ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ExpressaoLogicaEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getExpressaoLogica_2011ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case ExpressaoRelacionalEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getExpressaoRelacional_2012ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case LiteralComposicaoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getLiteralComposicao_2013ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getCaracteristicaMandatoriaProduto_2025ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CaracteristicaOpcionalProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getCaracteristicaOpcionalProduto_2026ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case VariacaoDoisProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getVariacaoDoisProduto_2027ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getCaracteristicaAgrupadaProduto_2035ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
 		case AtributoEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(CaracteristicaDiagramUpdater
 						.getAtributo_2017ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case RaizDeContextoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getRaizDeContexto_2018ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case EntidadeDeContextoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getEntidadeDeContexto_2028ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case InformacaoDeContextoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getInformacaoDeContexto_2029ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CasoDeUsoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getCasoDeUso_2038ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case CasoDeTesteEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getCasoDeTeste_2039ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case RegraDeComposicaoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getRegraDeComposicao_2021ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case RegraDeContextoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getRegraDeContexto_2022ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AtributoProdutoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getAtributoProduto_2030ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case SimulacaoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getSimulacao_2024ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case EstadoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getEstado_3001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case TransicaoEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(CaracteristicaDiagramUpdater
-						.getTransicao_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

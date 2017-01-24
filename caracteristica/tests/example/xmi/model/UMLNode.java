@@ -74,32 +74,32 @@ public class UMLNode implements XMIModel {
 		this.elementTaggedValues = elementTaggedValues;
 	}
 	
-	@Override
+	
 	public boolean isUmlModelElementTaggedValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlNode() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isUmlTaggedValueDataValue() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmi() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isXmiContent() {
 		return false;
 	}

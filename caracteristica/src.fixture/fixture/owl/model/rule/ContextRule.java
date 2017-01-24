@@ -36,12 +36,12 @@ public class ContextRule extends Rule {
 		this.action = action;
 	}
 
-	@Override
+	
 	public boolean isCompositionRule() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isContextRule() {
 		return true;
 	}

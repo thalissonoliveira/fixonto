@@ -48,7 +48,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
      * @param bound variables that are bound to values
      * @return variables from the atom that the build would additionally bind
      */
-    @Override
+    
     public Collection<? extends AtomVariable> getBindableVars(Collection<AtomVariable> bound) {
         if (!isApplicable(bound)) {
         	return Collections.emptySet();
@@ -65,7 +65,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
      * @param bound variables that are bound to values
      * @return variables that must be also bound before the builtin can be invoked
      */
-    @Override
+    
     public Collection<? extends AtomVariable> getPrerequisiteVars(Collection<AtomVariable> bound) {
         Collection<AtomVariable> vars = VariableUtils.getVars(atom);
         vars.removeAll(getBindableVars(bound));
@@ -101,7 +101,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
         return function.isApplicable(boundPositions);
     }
 
-    @Override
+    
     public void rebind(VariableBinding newBinding) {
     	System.out.println("rebind");
 
@@ -150,7 +150,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
         }
     }
 
-    @Override
+    
     public boolean selectNextBinding() {
         if (partial != null && !used) {
             used = true;
@@ -160,7 +160,7 @@ public class FixtureSWRLFunctionHelper implements BindingHelper {
     }
 
 
-    @Override
+    
     public void setCurrentBinding(VariableBinding currentBinding) {
         for (Map.Entry<? extends AtomVariable, ? extends Node> entry : partial.entrySet()) {
             AtomVariable atomVariable = entry.getKey();

@@ -6,7 +6,7 @@ import org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel;
 
 public class SquareFigure extends RectangleFigure {
 	
-	@Override
+	
 	public void paint(Graphics graphics) {
 		// Fill shape and draw outline
 		super.paint(graphics);

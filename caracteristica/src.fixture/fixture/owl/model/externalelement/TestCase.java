@@ -11,12 +11,12 @@ public class TestCase extends ExternalElementImpl {
 		super(id, name);
 	}
 
-	@Override
+	
 	public boolean isTestCase() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isUseCase() {
 		return false;
 	}

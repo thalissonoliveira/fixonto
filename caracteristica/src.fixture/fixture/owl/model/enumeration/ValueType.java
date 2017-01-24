@@ -243,7 +243,7 @@ public enum ValueType
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
+  
   public String toString()
   {
     return literal;

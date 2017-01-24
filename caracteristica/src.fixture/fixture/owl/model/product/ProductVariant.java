@@ -66,42 +66,42 @@ public class ProductVariant implements ProductElement {
 		this.selected = selected;
 	}
 
-	@Override
+	
 	public boolean isProduct() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductAttribute() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductMandatoryFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductOptionalFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariationTwoFeature() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isProductVariant() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isProductVariation() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isProductGroupedFeature() {
 		return false;
 	}

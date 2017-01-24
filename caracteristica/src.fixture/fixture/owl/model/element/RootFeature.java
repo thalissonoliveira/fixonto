@@ -27,17 +27,17 @@ public class RootFeature extends Feature {
 		return true;
 	}
 	
-	@Override
+	
 	public boolean isAttribute() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isContextRoot() {
 		return false;
 	}
 	
-	@Override
+	
 	public boolean isGroupedFeature() {
 		return false;
 	}

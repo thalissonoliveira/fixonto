@@ -47,17 +47,17 @@ public class Designate extends Action {
 		this.value = value;
 	}
 	
-	@Override
+	
 	public boolean isActionLiteral() {
 		return false;
 	}
 
-	@Override
+	
 	public boolean isDesignate() {
 		return true;
 	}
 
-	@Override
+	
 	public boolean isLogicalAction() {
 		return false;
 	}

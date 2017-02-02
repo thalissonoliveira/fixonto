@@ -22,14 +22,17 @@ import caracteristica.diagram.edit.commands.CaracteristicaAtributoCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaAtributoReorientCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaCaracteristicaFilhaCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaCaracteristicaFilhaReorientCommand;
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosCreateCommand;
-import caracteristica.diagram.edit.commands.CaracteristicaElementosExternosReorientCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaVariacoesReorientCommand;
+import caracteristica.diagram.edit.commands.ContextoCaracteristicasExcluirCreateCommand;
+import caracteristica.diagram.edit.commands.ContextoCaracteristicasExcluirReorientCommand;
+import caracteristica.diagram.edit.commands.ContextoCaracteristicasIncluirCreateCommand;
+import caracteristica.diagram.edit.commands.ContextoCaracteristicasIncluirReorientCommand;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasExcluirEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasIncluirEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -64,17 +67,25 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
+			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ContextoCaracteristicasIncluirEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ContextoCaracteristicasExcluirEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(
+						incomingLink.getSource().getElement(), null,
+						incomingLink.getTarget().getElement(), false);
+				cmd.add(new DestroyReferenceCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
-						outgoingLink.getTarget().getElement(), false);
-				cmd.add(new DestroyReferenceCommand(r));
-				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
-				continue;
-			}
 			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
 				DestroyReferenceRequest r = new DestroyReferenceRequest(
 						outgoingLink.getSource().getElement(), null,
@@ -127,11 +138,6 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 	 */
 	protected Command getStartCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaElementosExternosCreateCommand(
-					req, req.getSource(), req.getTarget()));
-		}
 		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaCreateCommand(
@@ -147,6 +153,14 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 			return getGEFWrapper(new CaracteristicaAtributoCreateCommand(req,
 					req.getSource(), req.getTarget()));
 		}
+		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req
+				.getElementType()) {
+			return null;
+		}
+		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req
+				.getElementType()) {
+			return null;
+		}
 		return null;
 	}
 
@@ -155,10 +169,6 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 	 */
 	protected Command getCompleteCreateRelationshipCommand(
 			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
-			return null;
-		}
 		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req
 				.getElementType()) {
 			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaCreateCommand(
@@ -172,6 +182,16 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 				.getElementType()) {
 			return null;
 		}
+		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req
+				.getElementType()) {
+			return getGEFWrapper(new ContextoCaracteristicasIncluirCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
+		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req
+				.getElementType()) {
+			return getGEFWrapper(new ContextoCaracteristicasExcluirCreateCommand(
+					req, req.getSource(), req.getTarget()));
+		}
 		return null;
 	}
 
@@ -184,9 +204,6 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 	protected Command getReorientReferenceRelationshipCommand(
 			ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(
-					req));
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaReorientCommand(
 					req));
@@ -194,6 +211,12 @@ public class CaracteristicaAgrupadaItemSemanticEditPolicy extends
 			return getGEFWrapper(new CaracteristicaVariacoesReorientCommand(req));
 		case CaracteristicaAtributoEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaAtributoReorientCommand(req));
+		case ContextoCaracteristicasIncluirEditPart.VISUAL_ID:
+			return getGEFWrapper(new ContextoCaracteristicasIncluirReorientCommand(
+					req));
+		case ContextoCaracteristicasExcluirEditPart.VISUAL_ID:
+			return getGEFWrapper(new ContextoCaracteristicasExcluirReorientCommand(
+					req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

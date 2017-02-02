@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.node label='nome'"
  * @generated
  */
-public interface RaizDeContexto extends Elemento
+public interface RaizDeContexto extends Contexto
 {
   /**
    * Returns the value of the '<em><b>Entidades De Contexto</b></em>' reference list.

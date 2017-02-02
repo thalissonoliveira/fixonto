@@ -58,41 +58,83 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 			case CaracteristicaMandatoriaNomeEditPart.VISUAL_ID:
 				return new CaracteristicaMandatoriaNomeEditPart(view);
 
+			case RaizDeContextoEditPart.VISUAL_ID:
+				return new RaizDeContextoEditPart(view);
+
+			case RaizDeContextoNomeEditPart.VISUAL_ID:
+				return new RaizDeContextoNomeEditPart(view);
+
+			case EntidadeDeContextoEditPart.VISUAL_ID:
+				return new EntidadeDeContextoEditPart(view);
+
+			case EntidadeDeContextoNomeEditPart.VISUAL_ID:
+				return new EntidadeDeContextoNomeEditPart(view);
+
+			case InformacaoDeContextoEditPart.VISUAL_ID:
+				return new InformacaoDeContextoEditPart(view);
+
+			case InformacaoDeContextoNomeEditPart.VISUAL_ID:
+				return new InformacaoDeContextoNomeEditPart(view);
+
 			case AtributoEditPart.VISUAL_ID:
 				return new AtributoEditPart(view);
 
 			case AtributoNomeEditPart.VISUAL_ID:
 				return new AtributoNomeEditPart(view);
 
-			case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-				return new CaracteristicaElementosExternosEditPart(view);
+			case ContextoEditPart.VISUAL_ID:
+				return new ContextoEditPart(view);
 
-			case WrappingLabelEditPart.VISUAL_ID:
-				return new WrappingLabelEditPart(view);
+			case ContextoNomeEditPart.VISUAL_ID:
+				return new ContextoNomeEditPart(view);
 
 			case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 				return new CaracteristicaCaracteristicaFilhaEditPart(view);
 
-			case WrappingLabel2EditPart.VISUAL_ID:
-				return new WrappingLabel2EditPart(view);
+			case WrappingLabelEditPart.VISUAL_ID:
+				return new WrappingLabelEditPart(view);
 
 			case CaracteristicaVariacoesEditPart.VISUAL_ID:
 				return new CaracteristicaVariacoesEditPart(view);
 
-			case WrappingLabel3EditPart.VISUAL_ID:
-				return new WrappingLabel3EditPart(view);
+			case WrappingLabel2EditPart.VISUAL_ID:
+				return new WrappingLabel2EditPart(view);
 
 			case CaracteristicaAtributoEditPart.VISUAL_ID:
 				return new CaracteristicaAtributoEditPart(view);
 
-			case WrappingLabel4EditPart.VISUAL_ID:
-				return new WrappingLabel4EditPart(view);
+			case WrappingLabel3EditPart.VISUAL_ID:
+				return new WrappingLabel3EditPart(view);
 
 			case VariacaoVariantesEditPart.VISUAL_ID:
 				return new VariacaoVariantesEditPart(view);
 
+			case WrappingLabel4EditPart.VISUAL_ID:
+				return new WrappingLabel4EditPart(view);
+
+			case ContextoCaracteristicasIncluirEditPart.VISUAL_ID:
+				return new ContextoCaracteristicasIncluirEditPart(view);
+
 			case WrappingLabel5EditPart.VISUAL_ID:
 				return new WrappingLabel5EditPart(view);
+
+			case ContextoCaracteristicasExcluirEditPart.VISUAL_ID:
+				return new ContextoCaracteristicasExcluirEditPart(view);
+
+			case WrappingLabel6EditPart.VISUAL_ID:
+				return new WrappingLabel6EditPart(view);
+
+			case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
+				return new RaizDeContextoEntidadesDeContextoEditPart(view);
+
+			case WrappingLabel7EditPart.VISUAL_ID:
+				return new WrappingLabel7EditPart(view);
+
+			case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
+				return new EntidadeDeContextoInformacoesDeContextoEditPart(view);
+
+			case WrappingLabel8EditPart.VISUAL_ID:
+				return new WrappingLabel8EditPart(view);
 
 			}
 		}

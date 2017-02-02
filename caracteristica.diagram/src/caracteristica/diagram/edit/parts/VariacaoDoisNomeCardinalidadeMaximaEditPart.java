@@ -557,7 +557,7 @@ public class VariacaoDoisNomeCardinalidadeMaximaEditPart extends
 	/**
 	 * @generated
 	 */
-	
+	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {
 			return getLabelDelegate();

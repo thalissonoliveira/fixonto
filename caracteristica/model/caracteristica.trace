@@ -45,6 +45,34 @@
         visualID="5034"
         queryText="true"/>
   </nodeTraces>
+  <nodeTraces
+      visualID="2034"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'RaizDeContexto') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'LPS') and _containmentMF_.name = 'elementos')">
+    <nodeLabelTraces
+        visualID="5035"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2035"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'EntidadeDeContexto') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'LPS') and _containmentMF_.name = 'elementos')">
+    <nodeLabelTraces
+        visualID="5036"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2036"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'InformacaoDeContexto') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'LPS') and _containmentMF_.name = 'elementos')">
+    <nodeLabelTraces
+        visualID="5037"
+        queryText="true"/>
+  </nodeTraces>
+  <nodeTraces
+      visualID="2037"
+      queryText="(let _eClass_:ecore::EClass = modelFacet.metaClass.ecoreClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Contexto') and (let _containmentMF_:ecore::EStructuralFeature = modelFacet.containmentMetaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _containmentMF_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'LPS') and _containmentMF_.name = 'elementos')">
+    <nodeLabelTraces
+        visualID="5038"
+        queryText="true"/>
+  </nodeTraces>
   <linkTraces
       visualID="4002"
       queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Caracteristica') and _feature_.name = 'caracteristicaFilha')">
@@ -74,10 +102,31 @@
         queryText="true"/>
   </linkTraces>
   <linkTraces
-      visualID="4024"
-      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Caracteristica') and _feature_.name = 'elementosExternos')">
+      visualID="4025"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Contexto') and _feature_.name = 'caracteristicasIncluir')">
     <linkLabelTraces
-        visualID="6024"
+        visualID="6025"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4026"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'Contexto') and _feature_.name = 'caracteristicasExcluir')">
+    <linkLabelTraces
+        visualID="6026"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4027"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'RaizDeContexto') and _feature_.name = 'entidadesDeContexto')">
+    <linkLabelTraces
+        visualID="6027"
+        queryText="true"/>
+  </linkTraces>
+  <linkTraces
+      visualID="4028"
+      queryText="modelFacet.oclIsKindOf(gmfgen::FeatureLinkModelFacet) and (let _feature_:ecore::EStructuralFeature = modelFacet.oclAsType(gmfgen::FeatureLinkModelFacet).metaFeature.ecoreFeature in (let _eClass_:ecore::EClass = _feature_.eContainingClass in _eClass_.ePackage.nsURI = 'caracteristica' and _eClass_.name = 'EntidadeDeContexto') and _feature_.name = 'informacoesDeContexto')">
+    <linkLabelTraces
+        visualID="6028"
         queryText="true"/>
   </linkTraces>
 </trace:TraceModel>

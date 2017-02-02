@@ -41,33 +41,6 @@ public interface CaracteristicaFactory extends EFactory
   Elemento createElemento();
 
   /**
-   * Returns a new object of class '<em>Elemento Externo</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elemento Externo</em>'.
-   * @generated
-   */
-  ElementoExterno createElementoExterno();
-
-  /**
-   * Returns a new object of class '<em>Caso De Uso</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Caso De Uso</em>'.
-   * @generated
-   */
-  CasoDeUso createCasoDeUso();
-
-  /**
-   * Returns a new object of class '<em>Caso De Teste</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Caso De Teste</em>'.
-   * @generated
-   */
-  CasoDeTeste createCasoDeTeste();
-
-  /**
    * Returns a new object of class '<em>Elemento Caracteristico</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -165,6 +138,42 @@ public interface CaracteristicaFactory extends EFactory
    * @generated
    */
   Variante createVariante();
+
+  /**
+   * Returns a new object of class '<em>Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Contexto</em>'.
+   * @generated
+   */
+  Contexto createContexto();
+
+  /**
+   * Returns a new object of class '<em>Raiz De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Raiz De Contexto</em>'.
+   * @generated
+   */
+  RaizDeContexto createRaizDeContexto();
+
+  /**
+   * Returns a new object of class '<em>Entidade De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entidade De Contexto</em>'.
+   * @generated
+   */
+  EntidadeDeContexto createEntidadeDeContexto();
+
+  /**
+   * Returns a new object of class '<em>Informacao De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Informacao De Contexto</em>'.
+   * @generated
+   */
+  InformacaoDeContexto createInformacaoDeContexto();
 
   /**
    * Returns the package supported by this factory.

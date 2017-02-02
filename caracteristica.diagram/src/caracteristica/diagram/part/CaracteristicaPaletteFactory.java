@@ -43,9 +43,11 @@ public class CaracteristicaPaletteFactory {
 		paletteContainer.add(createCaracteristicaMandatoria3CreationTool());
 		paletteContainer.add(createCaracteristicaOpcional4CreationTool());
 		paletteContainer.add(createCaracteristicaRaiz5CreationTool());
-		paletteContainer.add(createCasoDeTeste6CreationTool());
-		paletteContainer.add(createCasoDeUso7CreationTool());
-		paletteContainer.add(createVariacaoDois8CreationTool());
+		paletteContainer.add(createContexto6CreationTool());
+		paletteContainer.add(createEntidadeDeContexto7CreationTool());
+		paletteContainer.add(createInformacaoDeContexto8CreationTool());
+		paletteContainer.add(createRaizDeContexto9CreationTool());
+		paletteContainer.add(createVariacaoDois10CreationTool());
 		return paletteContainer;
 	}
 
@@ -59,10 +61,29 @@ public class CaracteristicaPaletteFactory {
 		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
 		paletteContainer.add(createAtributo1CreationTool());
 		paletteContainer.add(createCaracteristicaFilha2CreationTool());
-		paletteContainer.add(createElementosExternos3CreationTool());
-		paletteContainer.add(createVariacoes4CreationTool());
-		paletteContainer.add(createVariantes5CreationTool());
+		paletteContainer.add(createCaracteristicasExcluir3CreationTool());
+		paletteContainer.add(createCaracteristicasIncluir4CreationTool());
+		paletteContainer.add(createEntidadesDeContexto5CreationTool());
+		paletteContainer.add(createInformacoesDeContexto6CreationTool());
+		paletteContainer.add(createVariacoes7CreationTool());
+		paletteContainer.add(createVariantes8CreationTool());
 		return paletteContainer;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createAtributo1CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.Atributo1CreationTool_title,
+				Messages.Atributo1CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.Atributo_2017));
+		entry.setId("createAtributo1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.Atributo_2017));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
 	}
 
 	/**
@@ -132,57 +153,98 @@ public class CaracteristicaPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createCasoDeTeste6CreationTool() {
-		ToolEntry entry = new ToolEntry(
-				Messages.CasoDeTeste6CreationTool_title,
-				Messages.CasoDeTeste6CreationTool_desc, null, null) {
-		};
-		entry.setId("createCasoDeTeste6CreationTool"); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createCasoDeUso7CreationTool() {
-		ToolEntry entry = new ToolEntry(Messages.CasoDeUso7CreationTool_title,
-				Messages.CasoDeUso7CreationTool_desc, null, null) {
-		};
-		entry.setId("createCasoDeUso7CreationTool"); //$NON-NLS-1$
-		return entry;
-	}
-
-	/**
-	 * @generated
-	 */
-	private ToolEntry createVariacaoDois8CreationTool() {
+	private ToolEntry createContexto6CreationTool() {
 		NodeToolEntry entry = new NodeToolEntry(
-				Messages.VariacaoDois8CreationTool_title,
-				Messages.VariacaoDois8CreationTool_desc,
+				Messages.Contexto6CreationTool_title,
+				Messages.Contexto6CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.Contexto_2037));
+		entry.setId("createContexto6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.Contexto_2037));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEntidadeDeContexto7CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.EntidadeDeContexto7CreationTool_title,
+				Messages.EntidadeDeContexto7CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.EntidadeDeContexto_2035));
+		entry.setId("createEntidadeDeContexto7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.EntidadeDeContexto_2035));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createInformacaoDeContexto8CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.InformacaoDeContexto8CreationTool_title,
+				Messages.InformacaoDeContexto8CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.InformacaoDeContexto_2036));
+		entry.setId("createInformacaoDeContexto8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.InformacaoDeContexto_2036));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createRaizDeContexto9CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.RaizDeContexto9CreationTool_title,
+				Messages.RaizDeContexto9CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.RaizDeContexto_2034));
+		entry.setId("createRaizDeContexto9CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.RaizDeContexto_2034));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createVariacaoDois10CreationTool() {
+		NodeToolEntry entry = new NodeToolEntry(
+				Messages.VariacaoDois10CreationTool_title,
+				Messages.VariacaoDois10CreationTool_desc,
 				Collections
 						.singletonList(CaracteristicaElementTypes.VariacaoDois_2002));
-		entry.setId("createVariacaoDois8CreationTool"); //$NON-NLS-1$
+		entry.setId("createVariacaoDois10CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(CaracteristicaElementTypes
 				.getImageDescriptor(CaracteristicaElementTypes.VariacaoDois_2002));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
 
-	/**
-	 * @generated
-	 */
-	private ToolEntry createAtributo1CreationTool() {
-		LinkToolEntry entry = new LinkToolEntry(
-				Messages.Atributo1CreationTool_title,
-				Messages.Atributo1CreationTool_desc,
-				Collections
-						.singletonList(CaracteristicaElementTypes.CaracteristicaAtributo_4004));
-		entry.setId("createAtributo1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(CaracteristicaElementTypes
-				.getImageDescriptor(CaracteristicaElementTypes.CaracteristicaAtributo_4004));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
+//	/**
+//	 * @generated
+//	 */
+//	private ToolEntry createAtributo1CreationTool() {
+//		LinkToolEntry entry = new LinkToolEntry(
+//				Messages.Atributo1CreationTool_title,
+//				Messages.Atributo1CreationTool_desc,
+//				Collections
+//						.singletonList(CaracteristicaElementTypes.CaracteristicaAtributo_4004));
+//		entry.setId("createAtributo1CreationTool"); //$NON-NLS-1$
+//		entry.setSmallIcon(CaracteristicaElementTypes
+//				.getImageDescriptor(CaracteristicaElementTypes.CaracteristicaAtributo_4004));
+//		entry.setLargeIcon(entry.getSmallIcon());
+//		return entry;
+//	}
 
 	/**
 	 * @generated
@@ -203,15 +265,15 @@ public class CaracteristicaPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createElementosExternos3CreationTool() {
+	private ToolEntry createCaracteristicasExcluir3CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.ElementosExternos3CreationTool_title,
-				Messages.ElementosExternos3CreationTool_desc,
+				Messages.CaracteristicasExcluir3CreationTool_title,
+				Messages.CaracteristicasExcluir3CreationTool_desc,
 				Collections
-						.singletonList(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024));
-		entry.setId("createElementosExternos3CreationTool"); //$NON-NLS-1$
+						.singletonList(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026));
+		entry.setId("createCaracteristicasExcluir3CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(CaracteristicaElementTypes
-				.getImageDescriptor(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024));
+				.getImageDescriptor(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -219,13 +281,61 @@ public class CaracteristicaPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createVariacoes4CreationTool() {
+	private ToolEntry createCaracteristicasIncluir4CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.Variacoes4CreationTool_title,
-				Messages.Variacoes4CreationTool_desc,
+				Messages.CaracteristicasIncluir4CreationTool_title,
+				Messages.CaracteristicasIncluir4CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025));
+		entry.setId("createCaracteristicasIncluir4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createEntidadesDeContexto5CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.EntidadesDeContexto5CreationTool_title,
+				Messages.EntidadesDeContexto5CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027));
+		entry.setId("createEntidadesDeContexto5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createInformacoesDeContexto6CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.InformacoesDeContexto6CreationTool_title,
+				Messages.InformacoesDeContexto6CreationTool_desc,
+				Collections
+						.singletonList(CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028));
+		entry.setId("createInformacoesDeContexto6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(CaracteristicaElementTypes
+				.getImageDescriptor(CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	 * @generated
+	 */
+	private ToolEntry createVariacoes7CreationTool() {
+		LinkToolEntry entry = new LinkToolEntry(
+				Messages.Variacoes7CreationTool_title,
+				Messages.Variacoes7CreationTool_desc,
 				Collections
 						.singletonList(CaracteristicaElementTypes.CaracteristicaVariacoes_4003));
-		entry.setId("createVariacoes4CreationTool"); //$NON-NLS-1$
+		entry.setId("createVariacoes7CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(CaracteristicaElementTypes
 				.getImageDescriptor(CaracteristicaElementTypes.CaracteristicaVariacoes_4003));
 		entry.setLargeIcon(entry.getSmallIcon());
@@ -235,13 +345,13 @@ public class CaracteristicaPaletteFactory {
 	/**
 	 * @generated
 	 */
-	private ToolEntry createVariantes5CreationTool() {
+	private ToolEntry createVariantes8CreationTool() {
 		LinkToolEntry entry = new LinkToolEntry(
-				Messages.Variantes5CreationTool_title,
-				Messages.Variantes5CreationTool_desc,
+				Messages.Variantes8CreationTool_title,
+				Messages.Variantes8CreationTool_desc,
 				Collections
 						.singletonList(CaracteristicaElementTypes.VariacaoVariantes_4005));
-		entry.setId("createVariantes5CreationTool"); //$NON-NLS-1$
+		entry.setId("createVariantes8CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(CaracteristicaElementTypes
 				.getImageDescriptor(CaracteristicaElementTypes.VariacaoVariantes_4005));
 		entry.setLargeIcon(entry.getSmallIcon());

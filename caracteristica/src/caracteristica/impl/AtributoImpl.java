@@ -76,8 +76,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.ATRIBUTO;
@@ -179,8 +178,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -198,8 +196,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -215,8 +212,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -235,8 +231,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
@@ -256,8 +251,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eUnset(int featureID)
   {
     switch (featureID)
@@ -277,8 +271,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public boolean eIsSet(int featureID)
   {
     switch (featureID)
@@ -296,8 +289,7 @@ public class AtributoImpl extends ElementoImpl implements Atributo
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();

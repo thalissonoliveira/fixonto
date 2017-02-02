@@ -17,7 +17,6 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
@@ -25,7 +24,19 @@ import caracteristica.diagram.edit.parts.CaracteristicaOpcionalNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasExcluirEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasIncluirEditPart;
+import caracteristica.diagram.edit.parts.ContextoEditPart;
+import caracteristica.diagram.edit.parts.ContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
@@ -33,6 +44,9 @@ import caracteristica.diagram.edit.parts.WrappingLabel2EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel3EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel4EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel5EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel6EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel7EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel8EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -164,9 +178,25 @@ public class CaracteristicaVisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaMandatoriaEditPart.VISUAL_ID;
 			}
+			if (CaracteristicaPackage.eINSTANCE.getRaizDeContexto()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return RaizDeContextoEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return EntidadeDeContextoEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return InformacaoDeContextoEditPart.VISUAL_ID;
+			}
 			if (CaracteristicaPackage.eINSTANCE.getAtributo().isSuperTypeOf(
 					domainElement.eClass())) {
 				return AtributoEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getContexto().isSuperTypeOf(
+					domainElement.eClass())) {
+				return ContextoEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -211,7 +241,19 @@ public class CaracteristicaVisualIDRegistry {
 			if (CaracteristicaMandatoriaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (RaizDeContextoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (EntidadeDeContextoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (InformacaoDeContextoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (AtributoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ContextoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -240,33 +282,68 @@ public class CaracteristicaVisualIDRegistry {
 				return true;
 			}
 			break;
+		case RaizDeContextoEditPart.VISUAL_ID:
+			if (RaizDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EntidadeDeContextoEditPart.VISUAL_ID:
+			if (EntidadeDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case InformacaoDeContextoEditPart.VISUAL_ID:
+			if (InformacaoDeContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case AtributoEditPart.VISUAL_ID:
 			if (AtributoNomeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
+		case ContextoEditPart.VISUAL_ID:
+			if (ContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
-			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabelEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:
-			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case CaracteristicaAtributoEditPart.VISUAL_ID:
-			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+			if (WrappingLabel3EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
 		case VariacaoVariantesEditPart.VISUAL_ID:
+			if (WrappingLabel4EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ContextoCaracteristicasIncluirEditPart.VISUAL_ID:
 			if (WrappingLabel5EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ContextoCaracteristicasExcluirEditPart.VISUAL_ID:
+			if (WrappingLabel6EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
+			if (WrappingLabel7EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
+			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -327,6 +404,10 @@ public class CaracteristicaVisualIDRegistry {
 		case CaracteristicaMandatoriaEditPart.VISUAL_ID:
 		case AtributoEditPart.VISUAL_ID:
 		case CaracteristicaAgrupadaEditPart.VISUAL_ID:
+		case RaizDeContextoEditPart.VISUAL_ID:
+		case EntidadeDeContextoEditPart.VISUAL_ID:
+		case InformacaoDeContextoEditPart.VISUAL_ID:
+		case ContextoEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -341,7 +422,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public int getVisualID(View view) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getVisualID(view);
@@ -350,7 +431,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public String getModelID(View view) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getModelID(view);
@@ -359,7 +440,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public int getNodeVisualID(View containerView, EObject domainElement) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.getNodeVisualID(containerView, domainElement);
@@ -368,7 +449,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public boolean checkNodeVisualID(View containerView,
 				EObject domainElement, int candidate) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
@@ -378,7 +459,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public boolean isCompartmentVisualID(int visualID) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.isCompartmentVisualID(visualID);
@@ -387,7 +468,7 @@ public class CaracteristicaVisualIDRegistry {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public boolean isSemanticLeafVisualID(int visualID) {
 			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
 					.isSemanticLeafVisualID(visualID);

@@ -15,12 +15,12 @@ public class CaracteristicaNavigatorSorter extends ViewerSorter {
 	/**
 	 * @generated
 	 */
-	private static final int GROUP_CATEGORY = 4026;
+	private static final int GROUP_CATEGORY = 4030;
 
 	/**
 	 * @generated
 	 */
-	private static final int SHORTCUTS_CATEGORY = 4025;
+	private static final int SHORTCUTS_CATEGORY = 4029;
 
 	/**
 	 * @generated

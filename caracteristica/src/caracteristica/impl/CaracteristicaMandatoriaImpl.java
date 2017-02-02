@@ -33,8 +33,7 @@ public class CaracteristicaMandatoriaImpl extends CaracteristicaImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CARACTERISTICA_MANDATORIA;

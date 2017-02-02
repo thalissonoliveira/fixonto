@@ -51,8 +51,7 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @return whether this factory is applicable for the type of the object.
    * @generated
    */
-  
-  
+  @Override
   public boolean isFactoryForType(Object object)
   {
     if (object == modelPackage)
@@ -75,87 +74,92 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
   protected CaracteristicaSwitch<Adapter> modelSwitch =
     new CaracteristicaSwitch<Adapter>()
     {
-      
+      @Override
       public Adapter caseLPS(LPS object)
       {
         return createLPSAdapter();
       }
-      
+      @Override
       public Adapter caseElemento(Elemento object)
       {
         return createElementoAdapter();
       }
-      
-      public Adapter caseElementoExterno(ElementoExterno object)
-      {
-        return createElementoExternoAdapter();
-      }
-      
-      public Adapter caseCasoDeUso(CasoDeUso object)
-      {
-        return createCasoDeUsoAdapter();
-      }
-      
-      public Adapter caseCasoDeTeste(CasoDeTeste object)
-      {
-        return createCasoDeTesteAdapter();
-      }
-      
+      @Override
       public Adapter caseElementoCaracteristico(ElementoCaracteristico object)
       {
         return createElementoCaracteristicoAdapter();
       }
-      
+      @Override
       public Adapter caseAtributo(Atributo object)
       {
         return createAtributoAdapter();
       }
-      
+      @Override
       public Adapter caseCaracteristica(Caracteristica object)
       {
         return createCaracteristicaAdapter();
       }
-      
+      @Override
       public Adapter caseCaracteristicaRaiz(CaracteristicaRaiz object)
       {
         return createCaracteristicaRaizAdapter();
       }
-      
+      @Override
       public Adapter caseCaracteristicaOpcional(CaracteristicaOpcional object)
       {
         return createCaracteristicaOpcionalAdapter();
       }
-      
+      @Override
       public Adapter caseCaracteristicaAgrupada(CaracteristicaAgrupada object)
       {
         return createCaracteristicaAgrupadaAdapter();
       }
-      
+      @Override
       public Adapter caseCaracteristicaMandatoria(CaracteristicaMandatoria object)
       {
         return createCaracteristicaMandatoriaAdapter();
       }
-      
+      @Override
       public Adapter caseVariacaoDois(VariacaoDois object)
       {
         return createVariacaoDoisAdapter();
       }
-      
+      @Override
       public Adapter casePontoDeVariacao(PontoDeVariacao object)
       {
         return createPontoDeVariacaoAdapter();
       }
-      
+      @Override
       public Adapter caseVariacao(Variacao object)
       {
         return createVariacaoAdapter();
       }
-      
+      @Override
       public Adapter caseVariante(Variante object)
       {
         return createVarianteAdapter();
       }
-      
+      @Override
+      public Adapter caseContexto(Contexto object)
+      {
+        return createContextoAdapter();
+      }
+      @Override
+      public Adapter caseRaizDeContexto(RaizDeContexto object)
+      {
+        return createRaizDeContextoAdapter();
+      }
+      @Override
+      public Adapter caseEntidadeDeContexto(EntidadeDeContexto object)
+      {
+        return createEntidadeDeContextoAdapter();
+      }
+      @Override
+      public Adapter caseInformacaoDeContexto(InformacaoDeContexto object)
+      {
+        return createInformacaoDeContextoAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -170,8 +174,7 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @return the adapter for the <code>target</code>.
    * @generated
    */
-  
-  
+  @Override
   public Adapter createAdapter(Notifier target)
   {
     return modelSwitch.doSwitch((EObject)target);
@@ -204,51 +207,6 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createElementoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link caracteristica.ElementoExterno <em>Elemento Externo</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see caracteristica.ElementoExterno
-   * @generated
-   */
-  public Adapter createElementoExternoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link caracteristica.CasoDeUso <em>Caso De Uso</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see caracteristica.CasoDeUso
-   * @generated
-   */
-  public Adapter createCasoDeUsoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link caracteristica.CasoDeTeste <em>Caso De Teste</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see caracteristica.CasoDeTeste
-   * @generated
-   */
-  public Adapter createCasoDeTesteAdapter()
   {
     return null;
   }
@@ -414,6 +372,66 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVarianteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.Contexto <em>Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.Contexto
+   * @generated
+   */
+  public Adapter createContextoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.RaizDeContexto <em>Raiz De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.RaizDeContexto
+   * @generated
+   */
+  public Adapter createRaizDeContextoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.EntidadeDeContexto <em>Entidade De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.EntidadeDeContexto
+   * @generated
+   */
+  public Adapter createEntidadeDeContextoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.InformacaoDeContexto <em>Informacao De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.InformacaoDeContexto
+   * @generated
+   */
+  public Adapter createInformacaoDeContextoAdapter()
   {
     return null;
   }

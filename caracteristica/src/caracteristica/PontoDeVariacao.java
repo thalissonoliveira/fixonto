@@ -6,7 +6,7 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Pontode Variacao</b></em>'.
+ * A representation of the model object '<em><b>Ponto De Variacao</b></em>'.
  * <!-- end-user-doc -->
  *
  *
@@ -16,4 +16,4 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface PontoDeVariacao extends EObject
 {
-} // PontodeVariacao
+} // PontoDeVariacao

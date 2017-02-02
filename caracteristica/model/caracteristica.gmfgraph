@@ -36,23 +36,32 @@
       <template x="-2" y="-2"/>
       <template/>
     </figures>
-    <descriptors name="CasoDeUsoFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CasoDeUsoFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CasoDeUsoLabelFigure" text="CasoDeUso"/>
-      </actualFigure>
-      <accessors accessor="getFigureCasoDeUsoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors name="CasoDeTesteFigure">
-      <actualFigure xsi:type="gmfgraph:CustomFigure" name="CasoDeTesteFigure" qualifiedClassName="utils.TriangleFigure">
-        <children xsi:type="gmfgraph:Label" name="CasoDeTesteLabelFigure" text="CasoDeTeste"/>
-      </actualFigure>
-      <accessors accessor="getFigureCasoDeTesteLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-    </descriptors>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
     <descriptors name="AtributoFigure">
       <actualFigure xsi:type="gmfgraph:CustomFigure" name="AtributoFigure" qualifiedClassName="utils.TriangleFigure">
         <children xsi:type="gmfgraph:Label" name="AtributoLabelFigure" text="Atributo"/>
       </actualFigure>
-      <accessors accessor="getFigureAtributoLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureAtributoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CaracteristicaRaizFigure">
       <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="CaracteristicaRaizFigure">
@@ -61,7 +70,7 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="CaracteristicaRaizLabelFigure" text="CaracteristicaRaiz"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaRaizLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureCaracteristicaRaizLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CaracteristicaOpcionalFigure">
       <actualFigure xsi:type="gmfgraph:Ellipse" name="CaracteristicaOpcionalFigure" lineWidth="2" lineKind="LINE_DASH">
@@ -70,13 +79,13 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="CaracteristicaOpcionalLabelFigure" text="CaracteristicaOpcional"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaOpcionalLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureCaracteristicaOpcionalLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CaracteristicaAgrupadaFigure">
       <actualFigure xsi:type="gmfgraph:CustomFigure" name="CaracteristicaAgrupadaFigure" qualifiedClassName="utils.TriangleFigure">
         <children xsi:type="gmfgraph:Label" name="CaracteristicaAgrupadaLabelFigure" text="CaracteristicaAgrupada"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaAgrupadaLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureCaracteristicaAgrupadaLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CaracteristicaMandatoriaFigure">
       <actualFigure xsi:type="gmfgraph:Rectangle" name="CaracteristicaMandatoriaFigure" lineWidth="2">
@@ -85,24 +94,52 @@
         </border>
         <children xsi:type="gmfgraph:Label" name="CaracteristicaMandatoriaLabelFigure" text="CaracteristicaMandatoria"/>
       </actualFigure>
-      <accessors accessor="getFigureCaracteristicaMandatoriaLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureCaracteristicaMandatoriaLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="VariacaoDoisFigure">
       <actualFigure xsi:type="gmfgraph:CustomFigure" name="VariacaoDoisFigure" qualifiedClassName="utils.DiamondFigure">
         <children xsi:type="gmfgraph:Label" name="VariacaoDoisLabelFigure" text="VariacaoDois"/>
       </actualFigure>
-      <accessors accessor="getFigureVariacaoDoisLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureVariacaoDoisLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaElementosExternosFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaElementosExternosFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.0">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="ContextoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ContextoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ContextoLabelFigure" text="Contexto"/>
       </actualFigure>
+      <accessors accessor="getFigureContextoLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="CaracteristicaElementosExternosExternalLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaElementosExternosExternalLabel"/>
+    <descriptors name="RaizDeContextoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RaizDeContextoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="RaizDeContextoLabelFigure" text="RaizDeContexto"/>
+      </actualFigure>
+      <accessors accessor="getFigureRaizDeContextoLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="EntidadeDeContextoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EntidadeDeContextoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="EntidadeDeContextoLabelFigure" text="EntidadeDeContexto"/>
+      </actualFigure>
+      <accessors accessor="getFigureEntidadeDeContextoLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="InformacaoDeContextoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="InformacaoDeContextoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="InformacaoDeContextoLabelFigure" text="InformacaoDeContexto"/>
+      </actualFigure>
+      <accessors accessor="getFigureInformacaoDeContextoLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
     <descriptors name="CaracteristicaCaracteristicaFilhaFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaCaracteristicaFilhaFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaCaracteristicaFilhaFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.0">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -110,7 +147,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaCaracteristicaFilhaExternalLabel"/>
     </descriptors>
     <descriptors name="CaracteristicaVariacoesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaVariacoesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.2">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaVariacoesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -118,7 +155,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaVariacoesExternalLabel"/>
     </descriptors>
     <descriptors name="CaracteristicaAtributoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaAtributoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.3">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaAtributoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.2">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -126,38 +163,80 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaAtributoExternalLabel"/>
     </descriptors>
     <descriptors name="VariacaoVariantesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoVariantesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.4">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoVariantesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.3">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
     <descriptors name="VariacaoVariantesExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="VariacaoVariantesExternalLabel"/>
     </descriptors>
+    <descriptors name="ContextoCaracteristicasIncluirFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasIncluirFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.4">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ContextoCaracteristicasIncluirExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContextoCaracteristicasIncluirExternalLabel"/>
+    </descriptors>
+    <descriptors name="ContextoCaracteristicasExcluirFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasExcluirFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.5">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ContextoCaracteristicasExcluirExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ContextoCaracteristicasExcluirExternalLabel"/>
+    </descriptors>
+    <descriptors name="RaizDeContextoEntidadesDeContextoFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RaizDeContextoEntidadesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="RaizDeContextoEntidadesDeContextoExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="RaizDeContextoEntidadesDeContextoExternalLabel"/>
+    </descriptors>
+    <descriptors name="EntidadeDeContextoInformacoesDeContextoFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EntidadeDeContextoInformacoesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.7">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EntidadeDeContextoInformacoesDeContextoExternalLabel"/>
+    </descriptors>
   </figures>
-  <nodes name="CasoDeUso" figure="CasoDeUsoFigure"/>
-  <nodes name="CasoDeTeste" figure="CasoDeTesteFigure"/>
   <nodes name="Atributo" figure="AtributoFigure"/>
   <nodes name="CaracteristicaRaiz" figure="CaracteristicaRaizFigure"/>
   <nodes name="CaracteristicaOpcional" figure="CaracteristicaOpcionalFigure"/>
   <nodes name="CaracteristicaAgrupada" figure="CaracteristicaAgrupadaFigure"/>
   <nodes name="CaracteristicaMandatoria" figure="CaracteristicaMandatoriaFigure"/>
   <nodes name="VariacaoDois" figure="VariacaoDoisFigure"/>
-  <connections name="CaracteristicaElementosExternos" figure="CaracteristicaElementosExternosFigure"/>
+  <nodes name="Contexto" figure="ContextoFigure"/>
+  <nodes name="RaizDeContexto" figure="RaizDeContextoFigure"/>
+  <nodes name="EntidadeDeContexto" figure="EntidadeDeContextoFigure"/>
+  <nodes name="InformacaoDeContexto" figure="InformacaoDeContextoFigure"/>
   <connections name="CaracteristicaCaracteristicaFilha" figure="CaracteristicaCaracteristicaFilhaFigure"/>
   <connections name="CaracteristicaVariacoes" figure="CaracteristicaVariacoesFigure"/>
   <connections name="CaracteristicaAtributo" figure="CaracteristicaAtributoFigure"/>
   <connections name="VariacaoVariantes" figure="VariacaoVariantesFigure"/>
-  <labels name="CasoDeUsoLabel" figure="CasoDeUsoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="CasoDeTesteLabel" figure="CasoDeTesteFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="CaracteristicaRaizLabel" figure="CaracteristicaRaizFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels name="CaracteristicaOpcionalLabel" figure="CaracteristicaOpcionalFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
-  <labels name="CaracteristicaAgrupadaLabel" figure="CaracteristicaAgrupadaFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <labels name="CaracteristicaMandatoriaLabel" figure="CaracteristicaMandatoriaFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
-  <labels name="VariacaoDoisLabel" figure="VariacaoDoisFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
-  <labels name="CaracteristicaElementosExternosExternalLabel" figure="CaracteristicaElementosExternosExternalLabelFigure" elementIcon="false"/>
+  <connections name="ContextoCaracteristicasIncluir" figure="ContextoCaracteristicasIncluirFigure"/>
+  <connections name="ContextoCaracteristicasExcluir" figure="ContextoCaracteristicasExcluirFigure"/>
+  <connections name="RaizDeContextoEntidadesDeContexto" figure="RaizDeContextoEntidadesDeContextoFigure"/>
+  <connections name="EntidadeDeContextoInformacoesDeContexto" figure="EntidadeDeContextoInformacoesDeContextoFigure"/>
+  <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="CaracteristicaRaizLabel" figure="CaracteristicaRaizFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="CaracteristicaOpcionalLabel" figure="CaracteristicaOpcionalFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
+  <labels name="CaracteristicaAgrupadaLabel" figure="CaracteristicaAgrupadaFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="CaracteristicaMandatoriaLabel" figure="CaracteristicaMandatoriaFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
+  <labels name="VariacaoDoisLabel" figure="VariacaoDoisFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
+  <labels name="ContextoLabel" figure="ContextoFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
+  <labels name="RaizDeContextoLabel" figure="RaizDeContextoFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
+  <labels name="EntidadeDeContextoLabel" figure="EntidadeDeContextoFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
+  <labels name="InformacaoDeContextoLabel" figure="InformacaoDeContextoFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
   <labels name="CaracteristicaCaracteristicaFilhaExternalLabel" figure="CaracteristicaCaracteristicaFilhaExternalLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaVariacoesExternalLabel" figure="CaracteristicaVariacoesExternalLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaAtributoExternalLabel" figure="CaracteristicaAtributoExternalLabelFigure" elementIcon="false"/>
   <labels name="VariacaoVariantesExternalLabel" figure="VariacaoVariantesExternalLabelFigure" elementIcon="false"/>
+  <labels name="ContextoCaracteristicasIncluirExternalLabel" figure="ContextoCaracteristicasIncluirExternalLabelFigure" elementIcon="false"/>
+  <labels name="ContextoCaracteristicasExcluirExternalLabel" figure="ContextoCaracteristicasExcluirExternalLabelFigure" elementIcon="false"/>
+  <labels name="RaizDeContextoEntidadesDeContextoExternalLabel" figure="RaizDeContextoEntidadesDeContextoExternalLabelFigure" elementIcon="false"/>
+  <labels name="EntidadeDeContextoInformacoesDeContextoExternalLabel" figure="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

@@ -7,7 +7,6 @@ import caracteristica.CaracteristicaRaiz;
 import caracteristica.LPS;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -54,8 +53,7 @@ public class CaracteristicaRaizImpl extends CaracteristicaImpl implements Caract
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CARACTERISTICA_RAIZ;
@@ -109,8 +107,7 @@ public class CaracteristicaRaizImpl extends CaracteristicaImpl implements Caract
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -127,8 +124,7 @@ public class CaracteristicaRaizImpl extends CaracteristicaImpl implements Caract
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
@@ -145,8 +141,7 @@ public class CaracteristicaRaizImpl extends CaracteristicaImpl implements Caract
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eUnset(int featureID)
   {
     switch (featureID)
@@ -163,8 +158,7 @@ public class CaracteristicaRaizImpl extends CaracteristicaImpl implements Caract
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public boolean eIsSet(int featureID)
   {
     switch (featureID)

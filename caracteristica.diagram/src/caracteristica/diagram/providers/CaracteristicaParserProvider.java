@@ -22,6 +22,10 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalNomeEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizNomeEditPart;
+import caracteristica.diagram.edit.parts.ContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
 import caracteristica.diagram.parsers.MessageFormatParser;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
@@ -130,6 +134,66 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser raizDeContextoNome_5035Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getRaizDeContextoNome_5035Parser() {
+		if (raizDeContextoNome_5035Parser == null) {
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
+					.getElemento_Nome() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			raizDeContextoNome_5035Parser = parser;
+		}
+		return raizDeContextoNome_5035Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser entidadeDeContextoNome_5036Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getEntidadeDeContextoNome_5036Parser() {
+		if (entidadeDeContextoNome_5036Parser == null) {
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
+					.getElemento_Nome() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			parser.setViewPattern("Entidade de Contexto {0}"); //$NON-NLS-1$
+			parser.setEditorPattern("Entidade de Contexto {0}"); //$NON-NLS-1$
+			parser.setEditPattern("Entidade de Contexto {0}"); //$NON-NLS-1$
+			entidadeDeContextoNome_5036Parser = parser;
+		}
+		return entidadeDeContextoNome_5036Parser;
+	}
+
+	/**
+	 * @generated
+	 */
+	private IParser informacaoDeContextoNome_5037Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getInformacaoDeContextoNome_5037Parser() {
+		if (informacaoDeContextoNome_5037Parser == null) {
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
+					.getElemento_Nome() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			parser.setViewPattern("Informação de Contexto: {0}"); //$NON-NLS-1$
+			parser.setEditorPattern("Informação de Contexto: {0}"); //$NON-NLS-1$
+			parser.setEditPattern("Informação de Contexto: {0}"); //$NON-NLS-1$
+			informacaoDeContextoNome_5037Parser = parser;
+		}
+		return informacaoDeContextoNome_5037Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	private IParser atributoNome_5017Parser;
 
 	/**
@@ -151,6 +215,24 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	private IParser contextoNome_5038Parser;
+
+	/**
+	 * @generated
+	 */
+	private IParser getContextoNome_5038Parser() {
+		if (contextoNome_5038Parser == null) {
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
+					.getElemento_Nome() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			contextoNome_5038Parser = parser;
+		}
+		return contextoNome_5038Parser;
+	}
+
+	/**
+	 * @generated
+	 */
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case CaracteristicaOpcionalNomeEditPart.VISUAL_ID:
@@ -163,8 +245,16 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 			return getCaracteristicaRaizNome_5003Parser();
 		case CaracteristicaMandatoriaNomeEditPart.VISUAL_ID:
 			return getCaracteristicaMandatoriaNome_5004Parser();
+		case RaizDeContextoNomeEditPart.VISUAL_ID:
+			return getRaizDeContextoNome_5035Parser();
+		case EntidadeDeContextoNomeEditPart.VISUAL_ID:
+			return getEntidadeDeContextoNome_5036Parser();
+		case InformacaoDeContextoNomeEditPart.VISUAL_ID:
+			return getInformacaoDeContextoNome_5037Parser();
 		case AtributoNomeEditPart.VISUAL_ID:
 			return getAtributoNome_5017Parser();
+		case ContextoNomeEditPart.VISUAL_ID:
+			return getContextoNome_5038Parser();
 		}
 		return null;
 	}

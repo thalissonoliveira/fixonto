@@ -74,6 +74,34 @@ class Variante extends PontoDeVariacao, ElementoCaracteristico, Caracteristica {
   ref Variacao#variantes variacaoPai;
 }
 
+@gmf.node(label="nome")
+class Contexto extends Elemento {
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref Caracteristica[*] caracteristicasIncluir;
+  
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref Caracteristica[*] caracteristicasExcluir;
+}
+
+@gmf.node(label="nome")
+class RaizDeContexto extends Contexto {
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref EntidadeDeContexto[*]#raiz entidadesDeContexto;
+}
+
+@gmf.node(label="nome", label.pattern="Entidade de Contexto {0}")
+class EntidadeDeContexto extends Contexto {
+  ref RaizDeContexto#entidadesDeContexto raiz;
+
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref InformacaoDeContexto[*]#elementoPai informacoesDeContexto;
+}
+
+@gmf.node(label="nome", label.pattern="Informação de Contexto: {0}")
+class InformacaoDeContexto extends Contexto {
+  ref EntidadeDeContexto[1]#informacoesDeContexto elementoPai;
+}
+
 enum Origem {
   Sentida = 0;
   Usuario = 1;

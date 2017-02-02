@@ -37,7 +37,10 @@ import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
 import caracteristica.Atributo;
 import caracteristica.Caracteristica;
-import caracteristica.ElementoExterno;
+import caracteristica.Contexto;
+import caracteristica.EntidadeDeContexto;
+import caracteristica.InformacaoDeContexto;
+import caracteristica.RaizDeContexto;
 import caracteristica.Variacao;
 import caracteristica.Variante;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
@@ -331,20 +334,6 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCaracteristicaElementosExternos_4024(
-				Caracteristica source, ElementoExterno target) {
-			if (source != null) {
-				if (source.getElementosExternos().contains(target)) {
-					return false;
-				}
-			}
-
-			return canExistCaracteristicaElementosExternos_4024(source, target);
-		}
-
-		/**
-		 * @generated
-		 */
 		public boolean canCreateCaracteristicaCaracteristicaFilha_4002(
 				Caracteristica source, Caracteristica target) {
 			if (source != null) {
@@ -414,9 +403,65 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canExistCaracteristicaElementosExternos_4024(
-				Caracteristica source, ElementoExterno target) {
-			return true;
+		public boolean canCreateContextoCaracteristicasIncluir_4025(
+				Contexto source, Caracteristica target) {
+			if (source != null) {
+				if (source.getCaracteristicasIncluir().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistContextoCaracteristicasIncluir_4025(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateContextoCaracteristicasExcluir_4026(
+				Contexto source, Caracteristica target) {
+			if (source != null) {
+				if (source.getCaracteristicasExcluir().contains(target)) {
+					return false;
+				}
+			}
+
+			return canExistContextoCaracteristicasExcluir_4026(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRaizDeContextoEntidadesDeContexto_4027(
+				RaizDeContexto source, EntidadeDeContexto target) {
+			if (source != null) {
+				if (source.getEntidadesDeContexto().contains(target)) {
+					return false;
+				}
+			}
+			if (target != null && (target.getRaiz() != null)) {
+				return false;
+			}
+
+			return canExistRaizDeContextoEntidadesDeContexto_4027(source,
+					target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateEntidadeDeContextoInformacoesDeContexto_4028(
+				EntidadeDeContexto source, InformacaoDeContexto target) {
+			if (source != null) {
+				if (source.getInformacoesDeContexto().contains(target)) {
+					return false;
+				}
+			}
+			if (target != null && (target.getElementoPai() != null)) {
+				return false;
+			}
+
+			return canExistEntidadeDeContextoInformacoesDeContexto_4028(source,
+					target);
 		}
 
 		/**
@@ -448,6 +493,38 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		 */
 		public boolean canExistVariacaoVariantes_4005(Variacao source,
 				Variante target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistContextoCaracteristicasIncluir_4025(
+				Contexto source, Caracteristica target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistContextoCaracteristicasExcluir_4026(
+				Contexto source, Caracteristica target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRaizDeContextoEntidadesDeContexto_4027(
+				RaizDeContexto source, EntidadeDeContexto target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistEntidadeDeContextoInformacoesDeContexto_4028(
+				EntidadeDeContexto source, InformacaoDeContexto target) {
 			return true;
 		}
 	}

@@ -60,17 +60,13 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public EObject create(EClass eClass)
   {
     switch (eClass.getClassifierID())
     {
       case CaracteristicaPackage.LPS: return createLPS();
       case CaracteristicaPackage.ELEMENTO: return createElemento();
-      case CaracteristicaPackage.ELEMENTO_EXTERNO: return createElementoExterno();
-      case CaracteristicaPackage.CASO_DE_USO: return createCasoDeUso();
-      case CaracteristicaPackage.CASO_DE_TESTE: return createCasoDeTeste();
       case CaracteristicaPackage.ELEMENTO_CARACTERISTICO: return createElementoCaracteristico();
       case CaracteristicaPackage.ATRIBUTO: return createAtributo();
       case CaracteristicaPackage.CARACTERISTICA: return createCaracteristica();
@@ -82,6 +78,10 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
       case CaracteristicaPackage.PONTO_DE_VARIACAO: return createPontoDeVariacao();
       case CaracteristicaPackage.VARIACAO: return createVariacao();
       case CaracteristicaPackage.VARIANTE: return createVariante();
+      case CaracteristicaPackage.CONTEXTO: return createContexto();
+      case CaracteristicaPackage.RAIZ_DE_CONTEXTO: return createRaizDeContexto();
+      case CaracteristicaPackage.ENTIDADE_DE_CONTEXTO: return createEntidadeDeContexto();
+      case CaracteristicaPackage.INFORMACAO_DE_CONTEXTO: return createInformacaoDeContexto();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -92,8 +92,7 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public Object createFromString(EDataType eDataType, String initialValue)
   {
     switch (eDataType.getClassifierID())
@@ -126,8 +125,7 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public String convertToString(EDataType eDataType, Object instanceValue)
   {
     switch (eDataType.getClassifierID())
@@ -175,39 +173,6 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
   {
     ElementoImpl elemento = new ElementoImpl();
     return elemento;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ElementoExterno createElementoExterno()
-  {
-    ElementoExternoImpl elementoExterno = new ElementoExternoImpl();
-    return elementoExterno;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CasoDeUso createCasoDeUso()
-  {
-    CasoDeUsoImpl casoDeUso = new CasoDeUsoImpl();
-    return casoDeUso;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public CasoDeTeste createCasoDeTeste()
-  {
-    CasoDeTesteImpl casoDeTeste = new CasoDeTesteImpl();
-    return casoDeTeste;
   }
 
   /**
@@ -329,6 +294,50 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
   {
     VarianteImpl variante = new VarianteImpl();
     return variante;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Contexto createContexto()
+  {
+    ContextoImpl contexto = new ContextoImpl();
+    return contexto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RaizDeContexto createRaizDeContexto()
+  {
+    RaizDeContextoImpl raizDeContexto = new RaizDeContextoImpl();
+    return raizDeContexto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntidadeDeContexto createEntidadeDeContexto()
+  {
+    EntidadeDeContextoImpl entidadeDeContexto = new EntidadeDeContextoImpl();
+    return entidadeDeContexto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InformacaoDeContexto createInformacaoDeContexto()
+  {
+    InformacaoDeContextoImpl informacaoDeContexto = new InformacaoDeContextoImpl();
+    return informacaoDeContexto;
   }
 
   /**

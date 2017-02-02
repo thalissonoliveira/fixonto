@@ -38,7 +38,11 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
+import caracteristica.diagram.edit.parts.ContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramUpdater;
 import caracteristica.diagram.part.CaracteristicaLinkDescriptor;
@@ -107,7 +111,11 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 		case VariacaoDoisEditPart.VISUAL_ID:
 		case CaracteristicaRaizEditPart.VISUAL_ID:
 		case CaracteristicaMandatoriaEditPart.VISUAL_ID:
+		case RaizDeContextoEditPart.VISUAL_ID:
+		case EntidadeDeContextoEditPart.VISUAL_ID:
+		case InformacaoDeContextoEditPart.VISUAL_ID:
 		case AtributoEditPart.VISUAL_ID:
+		case ContextoEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -321,10 +329,42 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case RaizDeContextoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getRaizDeContexto_2034ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case EntidadeDeContextoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getEntidadeDeContexto_2035ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case InformacaoDeContextoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getInformacaoDeContexto_2036ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case AtributoEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(CaracteristicaDiagramUpdater
 						.getAtributo_2017ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ContextoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getContexto_2037ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

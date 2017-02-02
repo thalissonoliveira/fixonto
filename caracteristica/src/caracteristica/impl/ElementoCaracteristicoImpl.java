@@ -33,8 +33,7 @@ public class ElementoCaracteristicoImpl extends ElementoImpl implements Elemento
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.ELEMENTO_CARACTERISTICO;

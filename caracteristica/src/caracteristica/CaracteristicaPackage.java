@@ -123,90 +123,6 @@ public interface CaracteristicaPackage extends EPackage
   int ELEMENTO_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link caracteristica.impl.ElementoExternoImpl <em>Elemento Externo</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see caracteristica.impl.ElementoExternoImpl
-   * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoExterno()
-   * @generated
-   */
-  int ELEMENTO_EXTERNO = 2;
-
-  /**
-   * The feature id for the '<em><b>Nome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTO_EXTERNO__NOME = 0;
-
-  /**
-   * The number of structural features of the '<em>Elemento Externo</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ELEMENTO_EXTERNO_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link caracteristica.impl.CasoDeUsoImpl <em>Caso De Uso</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see caracteristica.impl.CasoDeUsoImpl
-   * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeUso()
-   * @generated
-   */
-  int CASO_DE_USO = 3;
-
-  /**
-   * The feature id for the '<em><b>Nome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASO_DE_USO__NOME = ELEMENTO_EXTERNO__NOME;
-
-  /**
-   * The number of structural features of the '<em>Caso De Uso</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASO_DE_USO_FEATURE_COUNT = ELEMENTO_EXTERNO_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link caracteristica.impl.CasoDeTesteImpl <em>Caso De Teste</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see caracteristica.impl.CasoDeTesteImpl
-   * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeTeste()
-   * @generated
-   */
-  int CASO_DE_TESTE = 4;
-
-  /**
-   * The feature id for the '<em><b>Nome</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASO_DE_TESTE__NOME = ELEMENTO_EXTERNO__NOME;
-
-  /**
-   * The number of structural features of the '<em>Caso De Teste</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CASO_DE_TESTE_FEATURE_COUNT = ELEMENTO_EXTERNO_FEATURE_COUNT + 0;
-
-  /**
    * The meta object id for the '{@link caracteristica.impl.ElementoCaracteristicoImpl <em>Elemento Caracteristico</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -214,7 +130,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoCaracteristico()
    * @generated
    */
-  int ELEMENTO_CARACTERISTICO = 5;
+  int ELEMENTO_CARACTERISTICO = 2;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -242,7 +158,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getAtributo()
    * @generated
    */
-  int ATRIBUTO = 6;
+  int ATRIBUTO = 3;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -288,7 +204,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristica()
    * @generated
    */
-  int CARACTERISTICA = 7;
+  int CARACTERISTICA = 4;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -300,22 +216,13 @@ public interface CaracteristicaPackage extends EPackage
   int CARACTERISTICA__NOME = ELEMENTO__NOME;
 
   /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CARACTERISTICA__ELEMENTOS_EXTERNOS = ELEMENTO_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__CARACTERISTICA_PAI = ELEMENTO_FEATURE_COUNT + 1;
+  int CARACTERISTICA__CARACTERISTICA_PAI = ELEMENTO_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Caracteristica Filha</b></em>' reference list.
@@ -324,7 +231,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__CARACTERISTICA_FILHA = ELEMENTO_FEATURE_COUNT + 2;
+  int CARACTERISTICA__CARACTERISTICA_FILHA = ELEMENTO_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variacoes</b></em>' reference list.
@@ -333,7 +240,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__VARIACOES = ELEMENTO_FEATURE_COUNT + 3;
+  int CARACTERISTICA__VARIACOES = ELEMENTO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Atributo</b></em>' reference list.
@@ -342,7 +249,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA__ATRIBUTO = ELEMENTO_FEATURE_COUNT + 4;
+  int CARACTERISTICA__ATRIBUTO = ELEMENTO_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Caracteristica</em>' class.
@@ -351,7 +258,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CARACTERISTICA_FEATURE_COUNT = ELEMENTO_FEATURE_COUNT + 5;
+  int CARACTERISTICA_FEATURE_COUNT = ELEMENTO_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link caracteristica.impl.CaracteristicaRaizImpl <em>Raiz</em>}' class.
@@ -361,7 +268,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaRaiz()
    * @generated
    */
-  int CARACTERISTICA_RAIZ = 8;
+  int CARACTERISTICA_RAIZ = 5;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -371,15 +278,6 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_RAIZ__NOME = CARACTERISTICA__NOME;
-
-  /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CARACTERISTICA_RAIZ__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -443,7 +341,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaOpcional()
    * @generated
    */
-  int CARACTERISTICA_OPCIONAL = 9;
+  int CARACTERISTICA_OPCIONAL = 6;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -453,15 +351,6 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_OPCIONAL__NOME = CARACTERISTICA__NOME;
-
-  /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CARACTERISTICA_OPCIONAL__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -516,7 +405,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaAgrupada()
    * @generated
    */
-  int CARACTERISTICA_AGRUPADA = 10;
+  int CARACTERISTICA_AGRUPADA = 7;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -526,15 +415,6 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_AGRUPADA__NOME = CARACTERISTICA__NOME;
-
-  /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CARACTERISTICA_AGRUPADA__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -589,7 +469,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCaracteristicaMandatoria()
    * @generated
    */
-  int CARACTERISTICA_MANDATORIA = 11;
+  int CARACTERISTICA_MANDATORIA = 8;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -599,15 +479,6 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int CARACTERISTICA_MANDATORIA__NOME = CARACTERISTICA__NOME;
-
-  /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CARACTERISTICA_MANDATORIA__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -662,7 +533,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacaoDois()
    * @generated
    */
-  int VARIACAO_DOIS = 12;
+  int VARIACAO_DOIS = 9;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -672,15 +543,6 @@ public interface CaracteristicaPackage extends EPackage
    * @ordered
    */
   int VARIACAO_DOIS__NOME = CARACTERISTICA__NOME;
-
-  /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIACAO_DOIS__ELEMENTOS_EXTERNOS = CARACTERISTICA__ELEMENTOS_EXTERNOS;
 
   /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
@@ -762,7 +624,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getPontoDeVariacao()
    * @generated
    */
-  int PONTO_DE_VARIACAO = 13;
+  int PONTO_DE_VARIACAO = 10;
 
   /**
    * The number of structural features of the '<em>Ponto De Variacao</em>' class.
@@ -781,7 +643,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariacao()
    * @generated
    */
-  int VARIACAO = 14;
+  int VARIACAO = 11;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -845,7 +707,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getVariante()
    * @generated
    */
-  int VARIANTE = 15;
+  int VARIANTE = 12;
 
   /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
@@ -857,22 +719,13 @@ public interface CaracteristicaPackage extends EPackage
   int VARIANTE__NOME = PONTO_DE_VARIACAO_FEATURE_COUNT + 0;
 
   /**
-   * The feature id for the '<em><b>Elementos Externos</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIANTE__ELEMENTOS_EXTERNOS = PONTO_DE_VARIACAO_FEATURE_COUNT + 1;
-
-  /**
    * The feature id for the '<em><b>Caracteristica Pai</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIANTE__CARACTERISTICA_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 2;
+  int VARIANTE__CARACTERISTICA_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Caracteristica Filha</b></em>' reference list.
@@ -881,7 +734,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__CARACTERISTICA_FILHA = PONTO_DE_VARIACAO_FEATURE_COUNT + 3;
+  int VARIANTE__CARACTERISTICA_FILHA = PONTO_DE_VARIACAO_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Variacoes</b></em>' reference list.
@@ -890,7 +743,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__VARIACOES = PONTO_DE_VARIACAO_FEATURE_COUNT + 4;
+  int VARIANTE__VARIACOES = PONTO_DE_VARIACAO_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Atributo</b></em>' reference list.
@@ -899,7 +752,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__ATRIBUTO = PONTO_DE_VARIACAO_FEATURE_COUNT + 5;
+  int VARIANTE__ATRIBUTO = PONTO_DE_VARIACAO_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Variacao Pai</b></em>' reference.
@@ -908,7 +761,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE__VARIACAO_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 6;
+  int VARIANTE__VARIACAO_PAI = PONTO_DE_VARIACAO_FEATURE_COUNT + 5;
 
   /**
    * The number of structural features of the '<em>Variante</em>' class.
@@ -917,7 +770,227 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int VARIANTE_FEATURE_COUNT = PONTO_DE_VARIACAO_FEATURE_COUNT + 7;
+  int VARIANTE_FEATURE_COUNT = PONTO_DE_VARIACAO_FEATURE_COUNT + 6;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.ContextoImpl <em>Contexto</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.ContextoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getContexto()
+   * @generated
+   */
+  int CONTEXTO = 13;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXTO__NOME = ELEMENTO__NOME;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Incluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXTO__CARACTERISTICAS_INCLUIR = ELEMENTO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Excluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXTO__CARACTERISTICAS_EXCLUIR = ELEMENTO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Contexto</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXTO_FEATURE_COUNT = ELEMENTO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.RaizDeContextoImpl <em>Raiz De Contexto</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.RaizDeContextoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getRaizDeContexto()
+   * @generated
+   */
+  int RAIZ_DE_CONTEXTO = 14;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RAIZ_DE_CONTEXTO__NOME = CONTEXTO__NOME;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Incluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RAIZ_DE_CONTEXTO__CARACTERISTICAS_INCLUIR = CONTEXTO__CARACTERISTICAS_INCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Excluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RAIZ_DE_CONTEXTO__CARACTERISTICAS_EXCLUIR = CONTEXTO__CARACTERISTICAS_EXCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Entidades De Contexto</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RAIZ_DE_CONTEXTO__ENTIDADES_DE_CONTEXTO = CONTEXTO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Raiz De Contexto</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RAIZ_DE_CONTEXTO_FEATURE_COUNT = CONTEXTO_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.EntidadeDeContextoImpl <em>Entidade De Contexto</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.EntidadeDeContextoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getEntidadeDeContexto()
+   * @generated
+   */
+  int ENTIDADE_DE_CONTEXTO = 15;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO__NOME = CONTEXTO__NOME;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Incluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO__CARACTERISTICAS_INCLUIR = CONTEXTO__CARACTERISTICAS_INCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Excluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO__CARACTERISTICAS_EXCLUIR = CONTEXTO__CARACTERISTICAS_EXCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Raiz</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO__RAIZ = CONTEXTO_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Informacoes De Contexto</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO__INFORMACOES_DE_CONTEXTO = CONTEXTO_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Entidade De Contexto</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTIDADE_DE_CONTEXTO_FEATURE_COUNT = CONTEXTO_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.InformacaoDeContextoImpl <em>Informacao De Contexto</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.InformacaoDeContextoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getInformacaoDeContexto()
+   * @generated
+   */
+  int INFORMACAO_DE_CONTEXTO = 16;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFORMACAO_DE_CONTEXTO__NOME = CONTEXTO__NOME;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Incluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFORMACAO_DE_CONTEXTO__CARACTERISTICAS_INCLUIR = CONTEXTO__CARACTERISTICAS_INCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Caracteristicas Excluir</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFORMACAO_DE_CONTEXTO__CARACTERISTICAS_EXCLUIR = CONTEXTO__CARACTERISTICAS_EXCLUIR;
+
+  /**
+   * The feature id for the '<em><b>Elemento Pai</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFORMACAO_DE_CONTEXTO__ELEMENTO_PAI = CONTEXTO_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Informacao De Contexto</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INFORMACAO_DE_CONTEXTO_FEATURE_COUNT = CONTEXTO_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link caracteristica.Origem <em>Origem</em>}' enum.
@@ -927,7 +1000,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOrigem()
    * @generated
    */
-  int ORIGEM = 16;
+  int ORIGEM = 17;
 
   /**
    * The meta object id for the '{@link caracteristica.Validade <em>Validade</em>}' enum.
@@ -937,7 +1010,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getValidade()
    * @generated
    */
-  int VALIDADE = 17;
+  int VALIDADE = 18;
 
   /**
    * The meta object id for the '{@link caracteristica.Qualidade <em>Qualidade</em>}' enum.
@@ -947,7 +1020,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getQualidade()
    * @generated
    */
-  int QUALIDADE = 18;
+  int QUALIDADE = 19;
 
   /**
    * The meta object id for the '{@link caracteristica.TipoValor <em>Tipo Valor</em>}' enum.
@@ -957,7 +1030,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getTipoValor()
    * @generated
    */
-  int TIPO_VALOR = 19;
+  int TIPO_VALOR = 20;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorLogico <em>Operador Logico</em>}' enum.
@@ -967,7 +1040,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorLogico()
    * @generated
    */
-  int OPERADOR_LOGICO = 20;
+  int OPERADOR_LOGICO = 21;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorAcaoLogico <em>Operador Acao Logico</em>}' enum.
@@ -977,7 +1050,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorAcaoLogico()
    * @generated
    */
-  int OPERADOR_ACAO_LOGICO = 21;
+  int OPERADOR_ACAO_LOGICO = 22;
 
   /**
    * The meta object id for the '{@link caracteristica.CardinalidadeMaxima <em>Cardinalidade Maxima</em>}' enum.
@@ -987,7 +1060,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCardinalidadeMaxima()
    * @generated
    */
-  int CARDINALIDADE_MAXIMA = 22;
+  int CARDINALIDADE_MAXIMA = 23;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorRelacional <em>Operador Relacional</em>}' enum.
@@ -997,7 +1070,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorRelacional()
    * @generated
    */
-  int OPERADOR_RELACIONAL = 23;
+  int OPERADOR_RELACIONAL = 24;
 
   /**
    * The meta object id for the '{@link caracteristica.Presenca <em>Presenca</em>}' enum.
@@ -1007,7 +1080,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getPresenca()
    * @generated
    */
-  int PRESENCA = 24;
+  int PRESENCA = 25;
 
 
   /**
@@ -1064,47 +1137,6 @@ public interface CaracteristicaPackage extends EPackage
   EAttribute getElemento_Nome();
 
   /**
-   * Returns the meta object for class '{@link caracteristica.ElementoExterno <em>Elemento Externo</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Elemento Externo</em>'.
-   * @see caracteristica.ElementoExterno
-   * @generated
-   */
-  EClass getElementoExterno();
-
-  /**
-   * Returns the meta object for the attribute '{@link caracteristica.ElementoExterno#getNome <em>Nome</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Nome</em>'.
-   * @see caracteristica.ElementoExterno#getNome()
-   * @see #getElementoExterno()
-   * @generated
-   */
-  EAttribute getElementoExterno_Nome();
-
-  /**
-   * Returns the meta object for class '{@link caracteristica.CasoDeUso <em>Caso De Uso</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Caso De Uso</em>'.
-   * @see caracteristica.CasoDeUso
-   * @generated
-   */
-  EClass getCasoDeUso();
-
-  /**
-   * Returns the meta object for class '{@link caracteristica.CasoDeTeste <em>Caso De Teste</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Caso De Teste</em>'.
-   * @see caracteristica.CasoDeTeste
-   * @generated
-   */
-  EClass getCasoDeTeste();
-
-  /**
    * Returns the meta object for class '{@link caracteristica.ElementoCaracteristico <em>Elemento Caracteristico</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1155,17 +1187,6 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    */
   EClass getCaracteristica();
-
-  /**
-   * Returns the meta object for the reference list '{@link caracteristica.Caracteristica#getElementosExternos <em>Elementos Externos</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Elementos Externos</em>'.
-   * @see caracteristica.Caracteristica#getElementosExternos()
-   * @see #getCaracteristica()
-   * @generated
-   */
-  EReference getCaracteristica_ElementosExternos();
 
   /**
    * Returns the meta object for the reference '{@link caracteristica.Caracteristica#getCaracteristicaPai <em>Caracteristica Pai</em>}'.
@@ -1391,6 +1412,112 @@ public interface CaracteristicaPackage extends EPackage
   EReference getVariante_VariacaoPai();
 
   /**
+   * Returns the meta object for class '{@link caracteristica.Contexto <em>Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Contexto</em>'.
+   * @see caracteristica.Contexto
+   * @generated
+   */
+  EClass getContexto();
+
+  /**
+   * Returns the meta object for the reference list '{@link caracteristica.Contexto#getCaracteristicasIncluir <em>Caracteristicas Incluir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Caracteristicas Incluir</em>'.
+   * @see caracteristica.Contexto#getCaracteristicasIncluir()
+   * @see #getContexto()
+   * @generated
+   */
+  EReference getContexto_CaracteristicasIncluir();
+
+  /**
+   * Returns the meta object for the reference list '{@link caracteristica.Contexto#getCaracteristicasExcluir <em>Caracteristicas Excluir</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Caracteristicas Excluir</em>'.
+   * @see caracteristica.Contexto#getCaracteristicasExcluir()
+   * @see #getContexto()
+   * @generated
+   */
+  EReference getContexto_CaracteristicasExcluir();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.RaizDeContexto <em>Raiz De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Raiz De Contexto</em>'.
+   * @see caracteristica.RaizDeContexto
+   * @generated
+   */
+  EClass getRaizDeContexto();
+
+  /**
+   * Returns the meta object for the reference list '{@link caracteristica.RaizDeContexto#getEntidadesDeContexto <em>Entidades De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Entidades De Contexto</em>'.
+   * @see caracteristica.RaizDeContexto#getEntidadesDeContexto()
+   * @see #getRaizDeContexto()
+   * @generated
+   */
+  EReference getRaizDeContexto_EntidadesDeContexto();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.EntidadeDeContexto <em>Entidade De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entidade De Contexto</em>'.
+   * @see caracteristica.EntidadeDeContexto
+   * @generated
+   */
+  EClass getEntidadeDeContexto();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.EntidadeDeContexto#getRaiz <em>Raiz</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Raiz</em>'.
+   * @see caracteristica.EntidadeDeContexto#getRaiz()
+   * @see #getEntidadeDeContexto()
+   * @generated
+   */
+  EReference getEntidadeDeContexto_Raiz();
+
+  /**
+   * Returns the meta object for the reference list '{@link caracteristica.EntidadeDeContexto#getInformacoesDeContexto <em>Informacoes De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Informacoes De Contexto</em>'.
+   * @see caracteristica.EntidadeDeContexto#getInformacoesDeContexto()
+   * @see #getEntidadeDeContexto()
+   * @generated
+   */
+  EReference getEntidadeDeContexto_InformacoesDeContexto();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.InformacaoDeContexto <em>Informacao De Contexto</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Informacao De Contexto</em>'.
+   * @see caracteristica.InformacaoDeContexto
+   * @generated
+   */
+  EClass getInformacaoDeContexto();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.InformacaoDeContexto#getElementoPai <em>Elemento Pai</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Elemento Pai</em>'.
+   * @see caracteristica.InformacaoDeContexto#getElementoPai()
+   * @see #getInformacaoDeContexto()
+   * @generated
+   */
+  EReference getInformacaoDeContexto_ElementoPai();
+
+  /**
    * Returns the meta object for enum '{@link caracteristica.Origem <em>Origem</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1548,44 +1675,6 @@ public interface CaracteristicaPackage extends EPackage
     EAttribute ELEMENTO__NOME = eINSTANCE.getElemento_Nome();
 
     /**
-     * The meta object literal for the '{@link caracteristica.impl.ElementoExternoImpl <em>Elemento Externo</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see caracteristica.impl.ElementoExternoImpl
-     * @see caracteristica.impl.CaracteristicaPackageImpl#getElementoExterno()
-     * @generated
-     */
-    EClass ELEMENTO_EXTERNO = eINSTANCE.getElementoExterno();
-
-    /**
-     * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ELEMENTO_EXTERNO__NOME = eINSTANCE.getElementoExterno_Nome();
-
-    /**
-     * The meta object literal for the '{@link caracteristica.impl.CasoDeUsoImpl <em>Caso De Uso</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see caracteristica.impl.CasoDeUsoImpl
-     * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeUso()
-     * @generated
-     */
-    EClass CASO_DE_USO = eINSTANCE.getCasoDeUso();
-
-    /**
-     * The meta object literal for the '{@link caracteristica.impl.CasoDeTesteImpl <em>Caso De Teste</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see caracteristica.impl.CasoDeTesteImpl
-     * @see caracteristica.impl.CaracteristicaPackageImpl#getCasoDeTeste()
-     * @generated
-     */
-    EClass CASO_DE_TESTE = eINSTANCE.getCasoDeTeste();
-
-    /**
      * The meta object literal for the '{@link caracteristica.impl.ElementoCaracteristicoImpl <em>Elemento Caracteristico</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1630,14 +1719,6 @@ public interface CaracteristicaPackage extends EPackage
      * @generated
      */
     EClass CARACTERISTICA = eINSTANCE.getCaracteristica();
-
-    /**
-     * The meta object literal for the '<em><b>Elementos Externos</b></em>' reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CARACTERISTICA__ELEMENTOS_EXTERNOS = eINSTANCE.getCaracteristica_ElementosExternos();
 
     /**
      * The meta object literal for the '<em><b>Caracteristica Pai</b></em>' reference feature.
@@ -1822,6 +1903,94 @@ public interface CaracteristicaPackage extends EPackage
      * @generated
      */
     EReference VARIANTE__VARIACAO_PAI = eINSTANCE.getVariante_VariacaoPai();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.ContextoImpl <em>Contexto</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.ContextoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getContexto()
+     * @generated
+     */
+    EClass CONTEXTO = eINSTANCE.getContexto();
+
+    /**
+     * The meta object literal for the '<em><b>Caracteristicas Incluir</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTEXTO__CARACTERISTICAS_INCLUIR = eINSTANCE.getContexto_CaracteristicasIncluir();
+
+    /**
+     * The meta object literal for the '<em><b>Caracteristicas Excluir</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTEXTO__CARACTERISTICAS_EXCLUIR = eINSTANCE.getContexto_CaracteristicasExcluir();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.RaizDeContextoImpl <em>Raiz De Contexto</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.RaizDeContextoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getRaizDeContexto()
+     * @generated
+     */
+    EClass RAIZ_DE_CONTEXTO = eINSTANCE.getRaizDeContexto();
+
+    /**
+     * The meta object literal for the '<em><b>Entidades De Contexto</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RAIZ_DE_CONTEXTO__ENTIDADES_DE_CONTEXTO = eINSTANCE.getRaizDeContexto_EntidadesDeContexto();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.EntidadeDeContextoImpl <em>Entidade De Contexto</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.EntidadeDeContextoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getEntidadeDeContexto()
+     * @generated
+     */
+    EClass ENTIDADE_DE_CONTEXTO = eINSTANCE.getEntidadeDeContexto();
+
+    /**
+     * The meta object literal for the '<em><b>Raiz</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTIDADE_DE_CONTEXTO__RAIZ = eINSTANCE.getEntidadeDeContexto_Raiz();
+
+    /**
+     * The meta object literal for the '<em><b>Informacoes De Contexto</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTIDADE_DE_CONTEXTO__INFORMACOES_DE_CONTEXTO = eINSTANCE.getEntidadeDeContexto_InformacoesDeContexto();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.InformacaoDeContextoImpl <em>Informacao De Contexto</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.InformacaoDeContextoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getInformacaoDeContexto()
+     * @generated
+     */
+    EClass INFORMACAO_DE_CONTEXTO = eINSTANCE.getInformacaoDeContexto();
+
+    /**
+     * The meta object literal for the '<em><b>Elemento Pai</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference INFORMACAO_DE_CONTEXTO__ELEMENTO_PAI = eINSTANCE.getInformacaoDeContexto_ElementoPai();
 
     /**
      * The meta object literal for the '{@link caracteristica.Origem <em>Origem</em>}' enum.

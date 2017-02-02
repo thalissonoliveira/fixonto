@@ -57,8 +57,8 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="CasoDeTeste"
-          description="Create new CasoDeTeste">
+          title="Contexto"
+          description="Create new Contexto">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -66,8 +66,26 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="CasoDeUso"
-          description="Create new CasoDeUso">
+          title="EntidadeDeContexto"
+          description="Create new EntidadeDeContexto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="InformacaoDeContexto"
+          description="Create new InformacaoDeContexto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="RaizDeContexto"
+          description="Create new RaizDeContexto">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -107,8 +125,35 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
-          title="ElementosExternos"
-          description="Create new ElementosExternos">
+          title="CaracteristicasExcluir"
+          description="Create new CaracteristicasExcluir">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="CaracteristicasIncluir"
+          description="Create new CaracteristicasIncluir">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="EntidadesDeContexto"
+          description="Create new EntidadesDeContexto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="InformacoesDeContexto"
+          description="Create new InformacoesDeContexto">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

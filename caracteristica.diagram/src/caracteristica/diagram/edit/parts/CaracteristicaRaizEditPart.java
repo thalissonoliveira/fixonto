@@ -318,8 +318,10 @@ public class CaracteristicaRaizEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
+		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
 		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
+		types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
+		types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
 		return types;
 	}
 
@@ -334,6 +336,16 @@ public class CaracteristicaRaizEditPart extends ShapeNodeEditPart {
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
 			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
 			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
+		} else if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025) {
+			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
+			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
+			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
+			types.add(CaracteristicaElementTypes.Contexto_2037);
+		} else if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026) {
+			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
+			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
+			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
+			types.add(CaracteristicaElementTypes.Contexto_2037);
 		}
 		return types;
 	}

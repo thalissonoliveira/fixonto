@@ -54,8 +54,7 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @return whether this is a switch for the given package.
    * @generated
    */
-  
-  
+  @Override
   protected boolean isSwitchFor(EPackage ePackage)
   {
     return ePackage == modelPackage;
@@ -68,8 +67,7 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @return the first non-null result returned by a <code>caseXXX</code> call.
    * @generated
    */
-  
-  
+  @Override
   protected T doSwitch(int classifierID, EObject theEObject)
   {
     switch (classifierID)
@@ -85,29 +83,6 @@ public class CaracteristicaSwitch<T> extends Switch<T>
       {
         Elemento elemento = (Elemento)theEObject;
         T result = caseElemento(elemento);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CaracteristicaPackage.ELEMENTO_EXTERNO:
-      {
-        ElementoExterno elementoExterno = (ElementoExterno)theEObject;
-        T result = caseElementoExterno(elementoExterno);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CaracteristicaPackage.CASO_DE_USO:
-      {
-        CasoDeUso casoDeUso = (CasoDeUso)theEObject;
-        T result = caseCasoDeUso(casoDeUso);
-        if (result == null) result = caseElementoExterno(casoDeUso);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CaracteristicaPackage.CASO_DE_TESTE:
-      {
-        CasoDeTeste casoDeTeste = (CasoDeTeste)theEObject;
-        T result = caseCasoDeTeste(casoDeTeste);
-        if (result == null) result = caseElementoExterno(casoDeTeste);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -210,6 +185,41 @@ public class CaracteristicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CaracteristicaPackage.CONTEXTO:
+      {
+        Contexto contexto = (Contexto)theEObject;
+        T result = caseContexto(contexto);
+        if (result == null) result = caseElemento(contexto);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.RAIZ_DE_CONTEXTO:
+      {
+        RaizDeContexto raizDeContexto = (RaizDeContexto)theEObject;
+        T result = caseRaizDeContexto(raizDeContexto);
+        if (result == null) result = caseContexto(raizDeContexto);
+        if (result == null) result = caseElemento(raizDeContexto);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.ENTIDADE_DE_CONTEXTO:
+      {
+        EntidadeDeContexto entidadeDeContexto = (EntidadeDeContexto)theEObject;
+        T result = caseEntidadeDeContexto(entidadeDeContexto);
+        if (result == null) result = caseContexto(entidadeDeContexto);
+        if (result == null) result = caseElemento(entidadeDeContexto);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.INFORMACAO_DE_CONTEXTO:
+      {
+        InformacaoDeContexto informacaoDeContexto = (InformacaoDeContexto)theEObject;
+        T result = caseInformacaoDeContexto(informacaoDeContexto);
+        if (result == null) result = caseContexto(informacaoDeContexto);
+        if (result == null) result = caseElemento(informacaoDeContexto);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -242,54 +252,6 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseElemento(Elemento object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Elemento Externo</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Elemento Externo</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseElementoExterno(ElementoExterno object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Caso De Uso</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Caso De Uso</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCasoDeUso(CasoDeUso object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Caso De Teste</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Caso De Teste</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseCasoDeTeste(CasoDeTeste object)
   {
     return null;
   }
@@ -471,6 +433,70 @@ public class CaracteristicaSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Contexto</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseContexto(Contexto object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Raiz De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Raiz De Contexto</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRaizDeContexto(RaizDeContexto object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entidade De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entidade De Contexto</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntidadeDeContexto(EntidadeDeContexto object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Informacao De Contexto</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Informacao De Contexto</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseInformacaoDeContexto(InformacaoDeContexto object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>EObject</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -481,8 +507,7 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @see #doSwitch(org.eclipse.emf.ecore.EObject)
    * @generated
    */
-  
-  
+  @Override
   public T defaultCase(EObject object)
   {
     return null;

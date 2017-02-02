@@ -253,6 +253,16 @@ public class Messages extends NLS {
 	 */
 	public static String Connections2Group_title;
 
+//	/**
+//	 * @generated
+//	 */
+//	public static String Atributo1CreationTool_title;
+//
+//	/**
+//	 * @generated
+//	 */
+//	public static String Atributo1CreationTool_desc;
+
 	/**
 	 * @generated
 	 */
@@ -296,32 +306,52 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String CasoDeTeste6CreationTool_title;
+	public static String Contexto6CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CasoDeTeste6CreationTool_desc;
+	public static String Contexto6CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String CasoDeUso7CreationTool_title;
+	public static String EntidadeDeContexto7CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String CasoDeUso7CreationTool_desc;
+	public static String EntidadeDeContexto7CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String VariacaoDois8CreationTool_title;
+	public static String InformacaoDeContexto8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String VariacaoDois8CreationTool_desc;
+	public static String InformacaoDeContexto8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String RaizDeContexto9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String RaizDeContexto9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String VariacaoDois10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String VariacaoDois10CreationTool_desc;
 
 	/**
 	 * @generated
@@ -346,32 +376,62 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String ElementosExternos3CreationTool_title;
+	public static String CaracteristicasExcluir3CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String ElementosExternos3CreationTool_desc;
+	public static String CaracteristicasExcluir3CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Variacoes4CreationTool_title;
+	public static String CaracteristicasIncluir4CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Variacoes4CreationTool_desc;
+	public static String CaracteristicasIncluir4CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String Variantes5CreationTool_title;
+	public static String EntidadesDeContexto5CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String Variantes5CreationTool_desc;
+	public static String EntidadesDeContexto5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String InformacoesDeContexto6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InformacoesDeContexto6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Variacoes7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Variacoes7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Variantes8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Variantes8CreationTool_desc;
 
 	/**
 	 * @generated
@@ -386,17 +446,12 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaOpcional_2001_outgoinglinks;
-
-	/**
-	 * @generated
-	 */
 	public static String NavigatorGroupName_CaracteristicaOpcional_2001_incominglinks;
 
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_VariacaoDois_2002_outgoinglinks;
+	public static String NavigatorGroupName_CaracteristicaOpcional_2001_outgoinglinks;
 
 	/**
 	 * @generated
@@ -406,7 +461,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaRaiz_2003_outgoinglinks;
+	public static String NavigatorGroupName_VariacaoDois_2002_outgoinglinks;
 
 	/**
 	 * @generated
@@ -416,7 +471,7 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaMandatoria_2004_outgoinglinks;
+	public static String NavigatorGroupName_CaracteristicaRaiz_2003_outgoinglinks;
 
 	/**
 	 * @generated
@@ -426,7 +481,17 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_CaracteristicaMandatoria_2004_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_Atributo_2017_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_CaracteristicaAgrupada_2033_incominglinks;
 
 	/**
 	 * @generated
@@ -436,7 +501,32 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaAgrupada_2033_incominglinks;
+	public static String NavigatorGroupName_RaizDeContexto_2034_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntidadeDeContexto_2035_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntidadeDeContexto_2035_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InformacaoDeContexto_2036_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_InformacaoDeContexto_2036_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_Contexto_2037_outgoinglinks;
 
 	/**
 	 * @generated
@@ -466,7 +556,42 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String NavigatorGroupName_CaracteristicaElementosExternos_4024_source;
+	public static String NavigatorGroupName_ContextoCaracteristicasIncluir_4025_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContextoCaracteristicasIncluir_4025_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContextoCaracteristicasExcluir_4026_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ContextoCaracteristicasExcluir_4026_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RaizDeContextoEntidadesDeContexto_4027_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RaizDeContextoEntidadesDeContexto_4027_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntidadeDeContextoInformacoesDeContexto_4028_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_EntidadeDeContextoInformacoesDeContexto_4028_source;
 
 	/**
 	 * @generated

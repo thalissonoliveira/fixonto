@@ -15,6 +15,10 @@ import caracteristica.diagram.edit.commands.CaracteristicaAgrupadaCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaMandatoriaCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaOpcionalCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaRaizCreateCommand;
+import caracteristica.diagram.edit.commands.ContextoCreateCommand;
+import caracteristica.diagram.edit.commands.EntidadeDeContextoCreateCommand;
+import caracteristica.diagram.edit.commands.InformacaoDeContextoCreateCommand;
+import caracteristica.diagram.edit.commands.RaizDeContextoCreateCommand;
 import caracteristica.diagram.edit.commands.VariacaoDoisCreateCommand;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -55,8 +59,23 @@ public class LPSItemSemanticEditPolicy extends
 				.getElementType()) {
 			return getGEFWrapper(new CaracteristicaMandatoriaCreateCommand(req));
 		}
+		if (CaracteristicaElementTypes.RaizDeContexto_2034 == req
+				.getElementType()) {
+			return getGEFWrapper(new RaizDeContextoCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.EntidadeDeContexto_2035 == req
+				.getElementType()) {
+			return getGEFWrapper(new EntidadeDeContextoCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.InformacaoDeContexto_2036 == req
+				.getElementType()) {
+			return getGEFWrapper(new InformacaoDeContextoCreateCommand(req));
+		}
 		if (CaracteristicaElementTypes.Atributo_2017 == req.getElementType()) {
 			return getGEFWrapper(new AtributoCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.Contexto_2037 == req.getElementType()) {
+			return getGEFWrapper(new ContextoCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

@@ -64,7 +64,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	public static final int VISUAL_ID = 6002;
+	public static final int VISUAL_ID = 6003;
 
 	/**
 	 * @generated
@@ -325,10 +325,9 @@ public class WrappingLabel2EditPart extends LabelEditPart implements
 	 */
 	public IParser getParser() {
 		if (parser == null) {
-			parser = CaracteristicaParserProvider
-					.getParser(
-							CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002,
-							getParserElement(), CommonParserHint.DESCRIPTION);
+			parser = CaracteristicaParserProvider.getParser(
+					CaracteristicaElementTypes.CaracteristicaVariacoes_4003,
+					getParserElement(), CommonParserHint.DESCRIPTION);
 		}
 		return parser;
 	}
@@ -570,7 +569,7 @@ public class WrappingLabel2EditPart extends LabelEditPart implements
 	/**
 	 * @generated
 	 */
-	
+	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {
 			return getLabelDelegate();

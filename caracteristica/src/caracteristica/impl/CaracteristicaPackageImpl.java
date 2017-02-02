@@ -2,68 +2,33 @@
  */
 package caracteristica.impl;
 
-import caracteristica.Acao;
-import caracteristica.AcaoLogico;
-import caracteristica.Antecedente;
 import caracteristica.Atributo;
-import caracteristica.AtributoProduto;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaAgrupada;
-import caracteristica.CaracteristicaAgrupadaProduto;
 import caracteristica.CaracteristicaFactory;
 import caracteristica.CaracteristicaMandatoria;
-import caracteristica.CaracteristicaMandatoriaProduto;
 import caracteristica.CaracteristicaOpcional;
-import caracteristica.CaracteristicaOpcionalProduto;
 import caracteristica.CaracteristicaPackage;
-import caracteristica.CaracteristicaProduto;
 import caracteristica.CaracteristicaRaiz;
 import caracteristica.CardinalidadeMaxima;
-import caracteristica.CasoDeTeste;
-import caracteristica.CasoDeUso;
-import caracteristica.Designar;
+import caracteristica.Contexto;
 import caracteristica.Elemento;
 import caracteristica.ElementoCaracteristico;
-import caracteristica.ElementoDeProduto;
-import caracteristica.ElementoDeProduto;
-import caracteristica.ElementoExterno;
 import caracteristica.EntidadeDeContexto;
-import caracteristica.EntidadeDeContexto;
-import caracteristica.Estado;
-import caracteristica.Evento;
-import caracteristica.EventoLogico;
-import caracteristica.EventoRelacional;
-import caracteristica.Expressao;
-import caracteristica.ExpressaoLogica;
-import caracteristica.ExpressaoRelacional;
-import caracteristica.InconsistenciaRegraAdaptacao;
 import caracteristica.InformacaoDeContexto;
-import caracteristica.InformacaoDeContexto;
-import caracteristica.LiteralAcao;
-import caracteristica.LiteralComposicao;
 import caracteristica.OperadorAcaoLogico;
 import caracteristica.OperadorLogico;
 import caracteristica.OperadorRelacional;
 import caracteristica.Origem;
 import caracteristica.PontoDeVariacao;
-import caracteristica.PontoDeVariacao;
 import caracteristica.Presenca;
-import caracteristica.Produto;
 import caracteristica.Qualidade;
 import caracteristica.RaizDeContexto;
-import caracteristica.Regra;
-import caracteristica.RegraDeComposicao;
-import caracteristica.RegraDeContexto;
-import caracteristica.Simulacao;
 import caracteristica.TipoValor;
-import caracteristica.Transicao;
 import caracteristica.Validade;
 import caracteristica.Variacao;
 import caracteristica.VariacaoDois;
-import caracteristica.VariacaoDoisProduto;
-import caracteristica.VariacaoProduto;
 import caracteristica.Variante;
-import caracteristica.VarianteProduto;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -94,27 +59,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * @generated
    */
   private EClass elementoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass elementoExternoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass casoDeUsoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass casoDeTesteEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -192,6 +136,34 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * @generated
    */
   private EClass varianteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass contextoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass raizDeContextoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entidadeDeContextoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass informacaoDeContextoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -374,46 +346,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getElementoExterno()
-  {
-    return elementoExternoEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getElementoExterno_Nome()
-  {
-    return (EAttribute)elementoExternoEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCasoDeUso()
-  {
-    return casoDeUsoEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getCasoDeTeste()
-  {
-    return casoDeTesteEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getElementoCaracteristico()
   {
     return elementoCaracteristicoEClass;
@@ -464,7 +396,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_ElementosExternos()
+  public EReference getCaracteristica_CaracteristicaPai()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(0);
   }
@@ -474,7 +406,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaPai()
+  public EReference getCaracteristica_CaracteristicaFilha()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(1);
   }
@@ -484,7 +416,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_CaracteristicaFilha()
+  public EReference getCaracteristica_Variacoes()
   {
     return (EReference)caracteristicaEClass.getEStructuralFeatures().get(2);
   }
@@ -494,19 +426,9 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getCaracteristica_Variacoes()
-  {
-    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getCaracteristica_Atributo()
   {
-    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(4);
+    return (EReference)caracteristicaEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -684,6 +606,106 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getContexto()
+  {
+    return contextoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContexto_CaracteristicasIncluir()
+  {
+    return (EReference)contextoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getContexto_CaracteristicasExcluir()
+  {
+    return (EReference)contextoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRaizDeContexto()
+  {
+    return raizDeContextoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRaizDeContexto_EntidadesDeContexto()
+  {
+    return (EReference)raizDeContextoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getEntidadeDeContexto()
+  {
+    return entidadeDeContextoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntidadeDeContexto_Raiz()
+  {
+    return (EReference)entidadeDeContextoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEntidadeDeContexto_InformacoesDeContexto()
+  {
+    return (EReference)entidadeDeContextoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getInformacaoDeContexto()
+  {
+    return informacaoDeContextoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getInformacaoDeContexto_ElementoPai()
+  {
+    return (EReference)informacaoDeContextoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getOrigem()
   {
     return origemEEnum;
@@ -806,13 +828,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     elementoEClass = createEClass(ELEMENTO);
     createEAttribute(elementoEClass, ELEMENTO__NOME);
 
-    elementoExternoEClass = createEClass(ELEMENTO_EXTERNO);
-    createEAttribute(elementoExternoEClass, ELEMENTO_EXTERNO__NOME);
-
-    casoDeUsoEClass = createEClass(CASO_DE_USO);
-
-    casoDeTesteEClass = createEClass(CASO_DE_TESTE);
-
     elementoCaracteristicoEClass = createEClass(ELEMENTO_CARACTERISTICO);
 
     atributoEClass = createEClass(ATRIBUTO);
@@ -820,7 +835,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     createEReference(atributoEClass, ATRIBUTO__CARACTERISTICA_PAI);
 
     caracteristicaEClass = createEClass(CARACTERISTICA);
-    createEReference(caracteristicaEClass, CARACTERISTICA__ELEMENTOS_EXTERNOS);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_PAI);
     createEReference(caracteristicaEClass, CARACTERISTICA__CARACTERISTICA_FILHA);
     createEReference(caracteristicaEClass, CARACTERISTICA__VARIACOES);
@@ -850,6 +864,20 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     varianteEClass = createEClass(VARIANTE);
     createEReference(varianteEClass, VARIANTE__VARIACAO_PAI);
+
+    contextoEClass = createEClass(CONTEXTO);
+    createEReference(contextoEClass, CONTEXTO__CARACTERISTICAS_INCLUIR);
+    createEReference(contextoEClass, CONTEXTO__CARACTERISTICAS_EXCLUIR);
+
+    raizDeContextoEClass = createEClass(RAIZ_DE_CONTEXTO);
+    createEReference(raizDeContextoEClass, RAIZ_DE_CONTEXTO__ENTIDADES_DE_CONTEXTO);
+
+    entidadeDeContextoEClass = createEClass(ENTIDADE_DE_CONTEXTO);
+    createEReference(entidadeDeContextoEClass, ENTIDADE_DE_CONTEXTO__RAIZ);
+    createEReference(entidadeDeContextoEClass, ENTIDADE_DE_CONTEXTO__INFORMACOES_DE_CONTEXTO);
+
+    informacaoDeContextoEClass = createEClass(INFORMACAO_DE_CONTEXTO);
+    createEReference(informacaoDeContextoEClass, INFORMACAO_DE_CONTEXTO__ELEMENTO_PAI);
 
     // Create enums
     origemEEnum = createEEnum(ORIGEM);
@@ -892,8 +920,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    casoDeUsoEClass.getESuperTypes().add(this.getElementoExterno());
-    casoDeTesteEClass.getESuperTypes().add(this.getElementoExterno());
     elementoCaracteristicoEClass.getESuperTypes().add(this.getElemento());
     atributoEClass.getESuperTypes().add(this.getElemento());
     caracteristicaEClass.getESuperTypes().add(this.getElemento());
@@ -910,6 +936,10 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     varianteEClass.getESuperTypes().add(this.getPontoDeVariacao());
     varianteEClass.getESuperTypes().add(this.getElementoCaracteristico());
     varianteEClass.getESuperTypes().add(this.getCaracteristica());
+    contextoEClass.getESuperTypes().add(this.getElemento());
+    raizDeContextoEClass.getESuperTypes().add(this.getContexto());
+    entidadeDeContextoEClass.getESuperTypes().add(this.getContexto());
+    informacaoDeContextoEClass.getESuperTypes().add(this.getContexto());
 
     // Initialize classes and features; add operations and parameters
     initEClass(lpsEClass, caracteristica.LPS.class, "LPS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -919,13 +949,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEClass(elementoEClass, Elemento.class, "Elemento", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getElemento_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Elemento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(elementoExternoEClass, ElementoExterno.class, "ElementoExterno", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getElementoExterno_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, ElementoExterno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(casoDeUsoEClass, CasoDeUso.class, "CasoDeUso", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(casoDeTesteEClass, CasoDeTeste.class, "CasoDeTeste", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(elementoCaracteristicoEClass, ElementoCaracteristico.class, "ElementoCaracteristico", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(atributoEClass, Atributo.class, "Atributo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -933,7 +956,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     initEReference(getAtributo_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_Atributo(), "caracteristicaPai", null, 0, 1, Atributo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(caracteristicaEClass, Caracteristica.class, "Caracteristica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getCaracteristica_ElementosExternos(), this.getElementoExterno(), null, "elementosExternos", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaPai(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaFilha(), "caracteristicaPai", null, 0, 1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_CaracteristicaFilha(), this.getCaracteristica(), this.getCaracteristica_CaracteristicaPai(), "caracteristicaFilha", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getCaracteristica_Variacoes(), this.getVariacao(), this.getVariacao_CaracteristicaPai(), "variacoes", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -963,6 +985,20 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     initEClass(varianteEClass, Variante.class, "Variante", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getVariante_VariacaoPai(), this.getVariacao(), this.getVariacao_Variantes(), "variacaoPai", null, 0, 1, Variante.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(contextoEClass, Contexto.class, "Contexto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getContexto_CaracteristicasIncluir(), this.getCaracteristica(), null, "caracteristicasIncluir", null, 0, -1, Contexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getContexto_CaracteristicasExcluir(), this.getCaracteristica(), null, "caracteristicasExcluir", null, 0, -1, Contexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(raizDeContextoEClass, RaizDeContexto.class, "RaizDeContexto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRaizDeContexto_EntidadesDeContexto(), this.getEntidadeDeContexto(), this.getEntidadeDeContexto_Raiz(), "entidadesDeContexto", null, 0, -1, RaizDeContexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entidadeDeContextoEClass, EntidadeDeContexto.class, "EntidadeDeContexto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntidadeDeContexto_Raiz(), this.getRaizDeContexto(), this.getRaizDeContexto_EntidadesDeContexto(), "raiz", null, 0, 1, EntidadeDeContexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntidadeDeContexto_InformacoesDeContexto(), this.getInformacaoDeContexto(), this.getInformacaoDeContexto_ElementoPai(), "informacoesDeContexto", null, 0, -1, EntidadeDeContexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(informacaoDeContextoEClass, InformacaoDeContexto.class, "InformacaoDeContexto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getInformacaoDeContexto_ElementoPai(), this.getEntidadeDeContexto(), this.getEntidadeDeContexto_InformacoesDeContexto(), "elementoPai", null, 1, 1, InformacaoDeContexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(origemEEnum, Origem.class, "Origem");
@@ -1037,7 +1073,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "foo", "bar"
-       });													
+       });																		
   }
 
   /**
@@ -1050,24 +1086,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
   {
     String source = "gmf.node";			
     addAnnotation
-      (casoDeUsoEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Externo {0}"
-       });		
-    addAnnotation
-      (casoDeTesteEClass, 
-       source, 
-       new String[] 
-       {
-       "label", "nome",
-       "figure", "utils.TriangleFigure",
-       "label.pattern", "Externo {0}"
-       });		
-    addAnnotation
       (atributoEClass, 
        source, 
        new String[] 
@@ -1075,7 +1093,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "label", "nome",
        "figure", "utils.TriangleFigure",
        "label.pattern", "Attribute {0}"
-       });						
+       });					
     addAnnotation
       (caracteristicaRaizEClass, 
        source, 
@@ -1121,7 +1139,37 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "label", "nome,cardinalidadeMaxima",
        "label.pattern", "Variation {0} : {1} ",
        "figure", "utils.DiamondFigure"
-       });	
+       });			
+    addAnnotation
+      (contextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });				
+    addAnnotation
+      (raizDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });			
+    addAnnotation
+      (entidadeDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Entidade de Contexto {0}"
+       });			
+    addAnnotation
+      (informacaoDeContextoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Informa\u00e7\u00e3o de Contexto: {0}"
+       });
   }
 
   /**
@@ -1132,17 +1180,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    */
   protected void createGmf_2Annotations()
   {
-    String source = "gmf.link";						
-    addAnnotation
-      (getCaracteristica_ElementosExternos(), 
-       source, 
-       new String[] 
-       {
-       "target.decoration", "closedarrow",
-       "color", "0,0,0",
-       "style", "solid",
-       "width", "3"
-       });		
+    String source = "gmf.link";				
     addAnnotation
       (getCaracteristica_CaracteristicaFilha(), 
        source, 
@@ -1182,7 +1220,47 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
-       });
+       });			
+    addAnnotation
+      (getContexto_CaracteristicasIncluir(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });		
+    addAnnotation
+      (getContexto_CaracteristicasExcluir(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });			
+    addAnnotation
+      (getRaizDeContexto_EntidadesDeContexto(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });			
+    addAnnotation
+      (getEntidadeDeContexto_InformacoesDeContexto(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });	
   }
 
 } //CaracteristicaPackageImpl

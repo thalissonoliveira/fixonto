@@ -66,7 +66,7 @@
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
-          href="caracteristica.gmftool#//@palette/@tools.0/@tools.7"/>
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.9"/>
       <diagramNode
           href="caracteristica.gmfgraph#VariacaoDois"/>
     </ownedChild>
@@ -116,6 +116,72 @@
         href="caracteristica.ecore#//LPS/elementos"/>
     <ownedChild>
       <domainMetaElement
+          href="caracteristica.ecore#//RaizDeContexto"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="caracteristica.gmfgraph#RaizDeContextoLabel"/>
+        <features
+            href="caracteristica.ecore#//Elemento/nome"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.8"/>
+      <diagramNode
+          href="caracteristica.gmfgraph#RaizDeContexto"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="caracteristica.ecore#//LPS/elementos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="caracteristica.ecore#//EntidadeDeContexto"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="Entidade de Contexto {0}"
+          editorPattern="Entidade de Contexto {0}"
+          editPattern="Entidade de Contexto {0}">
+        <diagramLabel
+            href="caracteristica.gmfgraph#EntidadeDeContextoLabel"/>
+        <features
+            href="caracteristica.ecore#//Elemento/nome"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.6"/>
+      <diagramNode
+          href="caracteristica.gmfgraph#EntidadeDeContexto"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="caracteristica.ecore#//LPS/elementos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="caracteristica.ecore#//InformacaoDeContexto"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping"
+          viewPattern="Informa&#xe7;&#xe3;o de Contexto: {0}"
+          editorPattern="Informa&#xe7;&#xe3;o de Contexto: {0}"
+          editPattern="Informa&#xe7;&#xe3;o de Contexto: {0}">
+        <diagramLabel
+            href="caracteristica.gmfgraph#InformacaoDeContextoLabel"/>
+        <features
+            href="caracteristica.ecore#//Elemento/nome"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.7"/>
+      <diagramNode
+          href="caracteristica.gmfgraph#InformacaoDeContexto"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="caracteristica.ecore#//LPS/elementos"/>
+    <ownedChild>
+      <domainMetaElement
           href="caracteristica.ecore#//Atributo"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping"
@@ -134,22 +200,26 @@
           href="caracteristica.gmfgraph#Atributo"/>
     </ownedChild>
   </nodes>
-  <links>
-    <labelMappings
-        xsi:type="gmfmap:DesignLabelMapping"
-        readOnly="true">
-      <diagramLabel
-          href="caracteristica.gmfgraph#CaracteristicaElementosExternosExternalLabel"/>
-    </labelMappings>
-    <tool
-        xsi:type="gmftool:CreationTool"
-        href="caracteristica.gmftool#//@palette/@tools.1/@tools.2"/>
-    <diagramLink
-        href="caracteristica.gmfgraph#CaracteristicaElementosExternos"/>
-    <linkMetaFeature
-        xsi:type="ecore:EReference"
-        href="caracteristica.ecore#//Caracteristica/elementosExternos"/>
-  </links>
+  <nodes>
+    <containmentFeature
+        href="caracteristica.ecore#//LPS/elementos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="caracteristica.ecore#//Contexto"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="caracteristica.gmfgraph#ContextoLabel"/>
+        <features
+            href="caracteristica.ecore#//Elemento/nome"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="caracteristica.gmftool#//@palette/@tools.0/@tools.5"/>
+      <diagramNode
+          href="caracteristica.gmfgraph#Contexto"/>
+    </ownedChild>
+  </nodes>
   <links>
     <labelMappings
         xsi:type="gmfmap:DesignLabelMapping"
@@ -175,7 +245,7 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="caracteristica.gmftool#//@palette/@tools.1/@tools.3"/>
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.6"/>
     <diagramLink
         href="caracteristica.gmfgraph#CaracteristicaVariacoes"/>
     <linkMetaFeature
@@ -207,12 +277,76 @@
     </labelMappings>
     <tool
         xsi:type="gmftool:CreationTool"
-        href="caracteristica.gmftool#//@palette/@tools.1/@tools.4"/>
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.7"/>
     <diagramLink
         href="caracteristica.gmfgraph#VariacaoVariantes"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
         href="caracteristica.ecore#//Variacao/variantes"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="caracteristica.gmfgraph#ContextoCaracteristicasIncluirExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.3"/>
+    <diagramLink
+        href="caracteristica.gmfgraph#ContextoCaracteristicasIncluir"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="caracteristica.ecore#//Contexto/caracteristicasIncluir"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="caracteristica.gmfgraph#ContextoCaracteristicasExcluirExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.2"/>
+    <diagramLink
+        href="caracteristica.gmfgraph#ContextoCaracteristicasExcluir"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="caracteristica.ecore#//Contexto/caracteristicasExcluir"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="caracteristica.gmfgraph#RaizDeContextoEntidadesDeContextoExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.4"/>
+    <diagramLink
+        href="caracteristica.gmfgraph#RaizDeContextoEntidadesDeContexto"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="caracteristica.ecore#//RaizDeContexto/entidadesDeContexto"/>
+  </links>
+  <links>
+    <labelMappings
+        xsi:type="gmfmap:DesignLabelMapping"
+        readOnly="true">
+      <diagramLabel
+          href="caracteristica.gmfgraph#EntidadeDeContextoInformacoesDeContextoExternalLabel"/>
+    </labelMappings>
+    <tool
+        xsi:type="gmftool:CreationTool"
+        href="caracteristica.gmftool#//@palette/@tools.1/@tools.5"/>
+    <diagramLink
+        href="caracteristica.gmfgraph#EntidadeDeContextoInformacoesDeContexto"/>
+    <linkMetaFeature
+        xsi:type="ecore:EReference"
+        href="caracteristica.ecore#//EntidadeDeContexto/informacoesDeContexto"/>
   </links>
   <diagram>
     <diagramCanvas

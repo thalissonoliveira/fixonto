@@ -22,12 +22,19 @@ import caracteristica.diagram.edit.parts.AtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaAtributoEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaCaracteristicaFilhaEditPart;
-import caracteristica.diagram.edit.parts.CaracteristicaElementosExternosEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaVariacoesEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasExcluirEditPart;
+import caracteristica.diagram.edit.parts.ContextoCaracteristicasIncluirEditPart;
+import caracteristica.diagram.edit.parts.ContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
@@ -87,11 +94,23 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType RaizDeContexto_2034 = getElementType("caracteristica.diagram.RaizDeContexto_2034"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType EntidadeDeContexto_2035 = getElementType("caracteristica.diagram.EntidadeDeContexto_2035"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType InformacaoDeContexto_2036 = getElementType("caracteristica.diagram.InformacaoDeContexto_2036"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
 	public static final IElementType Atributo_2017 = getElementType("caracteristica.diagram.Atributo_2017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaElementosExternos_4024 = getElementType("caracteristica.diagram.CaracteristicaElementosExternos_4024"); //$NON-NLS-1$
+	public static final IElementType Contexto_2037 = getElementType("caracteristica.diagram.Contexto_2037"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -108,6 +127,22 @@ public class CaracteristicaElementTypes {
 	 * @generated
 	 */
 	public static final IElementType VariacaoVariantes_4005 = getElementType("caracteristica.diagram.VariacaoVariantes_4005"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ContextoCaracteristicasIncluir_4025 = getElementType("caracteristica.diagram.ContextoCaracteristicasIncluir_4025"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType ContextoCaracteristicasExcluir_4026 = getElementType("caracteristica.diagram.ContextoCaracteristicasExcluir_4026"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType RaizDeContextoEntidadesDeContexto_4027 = getElementType("caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4027"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType EntidadeDeContextoInformacoesDeContexto_4028 = getElementType("caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4028"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -165,12 +200,20 @@ public class CaracteristicaElementTypes {
 					CaracteristicaPackage.eINSTANCE
 							.getCaracteristicaMandatoria());
 
+			elements.put(RaizDeContexto_2034,
+					CaracteristicaPackage.eINSTANCE.getRaizDeContexto());
+
+			elements.put(EntidadeDeContexto_2035,
+					CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto());
+
+			elements.put(InformacaoDeContexto_2036,
+					CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto());
+
 			elements.put(Atributo_2017,
 					CaracteristicaPackage.eINSTANCE.getAtributo());
 
-			elements.put(CaracteristicaElementosExternos_4024,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristica_ElementosExternos());
+			elements.put(Contexto_2037,
+					CaracteristicaPackage.eINSTANCE.getContexto());
 
 			elements.put(CaracteristicaCaracteristicaFilha_4002,
 					CaracteristicaPackage.eINSTANCE
@@ -186,6 +229,22 @@ public class CaracteristicaElementTypes {
 
 			elements.put(VariacaoVariantes_4005,
 					CaracteristicaPackage.eINSTANCE.getVariacao_Variantes());
+
+			elements.put(ContextoCaracteristicasIncluir_4025,
+					CaracteristicaPackage.eINSTANCE
+							.getContexto_CaracteristicasIncluir());
+
+			elements.put(ContextoCaracteristicasExcluir_4026,
+					CaracteristicaPackage.eINSTANCE
+							.getContexto_CaracteristicasExcluir());
+
+			elements.put(RaizDeContextoEntidadesDeContexto_4027,
+					CaracteristicaPackage.eINSTANCE
+							.getRaizDeContexto_EntidadesDeContexto());
+
+			elements.put(EntidadeDeContextoInformacoesDeContexto_4028,
+					CaracteristicaPackage.eINSTANCE
+							.getEntidadeDeContexto_InformacoesDeContexto());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -209,12 +268,20 @@ public class CaracteristicaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(VariacaoDois_2002);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaRaiz_2003);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaMandatoria_2004);
+			KNOWN_ELEMENT_TYPES.add(RaizDeContexto_2034);
+			KNOWN_ELEMENT_TYPES.add(EntidadeDeContexto_2035);
+			KNOWN_ELEMENT_TYPES.add(InformacaoDeContexto_2036);
 			KNOWN_ELEMENT_TYPES.add(Atributo_2017);
-			KNOWN_ELEMENT_TYPES.add(CaracteristicaElementosExternos_4024);
+			KNOWN_ELEMENT_TYPES.add(Contexto_2037);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaCaracteristicaFilha_4002);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaVariacoes_4003);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaAtributo_4004);
 			KNOWN_ELEMENT_TYPES.add(VariacaoVariantes_4005);
+			KNOWN_ELEMENT_TYPES.add(ContextoCaracteristicasIncluir_4025);
+			KNOWN_ELEMENT_TYPES.add(ContextoCaracteristicasExcluir_4026);
+			KNOWN_ELEMENT_TYPES.add(RaizDeContextoEntidadesDeContexto_4027);
+			KNOWN_ELEMENT_TYPES
+					.add(EntidadeDeContextoInformacoesDeContexto_4028);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -236,10 +303,16 @@ public class CaracteristicaElementTypes {
 			return CaracteristicaRaiz_2003;
 		case CaracteristicaMandatoriaEditPart.VISUAL_ID:
 			return CaracteristicaMandatoria_2004;
+		case RaizDeContextoEditPart.VISUAL_ID:
+			return RaizDeContexto_2034;
+		case EntidadeDeContextoEditPart.VISUAL_ID:
+			return EntidadeDeContexto_2035;
+		case InformacaoDeContextoEditPart.VISUAL_ID:
+			return InformacaoDeContexto_2036;
 		case AtributoEditPart.VISUAL_ID:
 			return Atributo_2017;
-		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return CaracteristicaElementosExternos_4024;
+		case ContextoEditPart.VISUAL_ID:
+			return Contexto_2037;
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return CaracteristicaCaracteristicaFilha_4002;
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:
@@ -248,6 +321,14 @@ public class CaracteristicaElementTypes {
 			return CaracteristicaAtributo_4004;
 		case VariacaoVariantesEditPart.VISUAL_ID:
 			return VariacaoVariantes_4005;
+		case ContextoCaracteristicasIncluirEditPart.VISUAL_ID:
+			return ContextoCaracteristicasIncluir_4025;
+		case ContextoCaracteristicasExcluirEditPart.VISUAL_ID:
+			return ContextoCaracteristicasExcluir_4026;
+		case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
+			return RaizDeContextoEntidadesDeContexto_4027;
+		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
+			return EntidadeDeContextoInformacoesDeContexto_4028;
 		}
 		return null;
 	}
@@ -261,7 +342,7 @@ public class CaracteristicaElementTypes {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public boolean isKnownElementType(IElementType elementType) {
 			return caracteristica.diagram.providers.CaracteristicaElementTypes
 					.isKnownElementType(elementType);
@@ -270,7 +351,7 @@ public class CaracteristicaElementTypes {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public IElementType getElementTypeForVisualId(int visualID) {
 			return caracteristica.diagram.providers.CaracteristicaElementTypes
 					.getElementType(visualID);
@@ -279,7 +360,7 @@ public class CaracteristicaElementTypes {
 		/**
 		 * @generated
 		 */
-		
+		@Override
 		public ENamedElement getDefiningNamedElement(
 				IAdaptable elementTypeAdapter) {
 			return caracteristica.diagram.providers.CaracteristicaElementTypes

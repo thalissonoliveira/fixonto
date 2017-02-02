@@ -268,8 +268,7 @@ public enum Validade implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public String toString()
   {
     return literal;

@@ -5,7 +5,6 @@ package caracteristica.impl;
 import caracteristica.Atributo;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaPackage;
-import caracteristica.ElementoExterno;
 import caracteristica.Variacao;
 
 import java.util.Collection;
@@ -20,8 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -32,7 +29,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link caracteristica.impl.CaracteristicaImpl#getElementosExternos <em>Elementos Externos</em>}</li>
  *   <li>{@link caracteristica.impl.CaracteristicaImpl#getCaracteristicaPai <em>Caracteristica Pai</em>}</li>
  *   <li>{@link caracteristica.impl.CaracteristicaImpl#getCaracteristicaFilha <em>Caracteristica Filha</em>}</li>
  *   <li>{@link caracteristica.impl.CaracteristicaImpl#getVariacoes <em>Variacoes</em>}</li>
@@ -44,16 +40,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
 {
-  /**
-   * The cached value of the '{@link #getElementosExternos() <em>Elementos Externos</em>}' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getElementosExternos()
-   * @generated
-   * @ordered
-   */
-  protected EList<ElementoExterno> elementosExternos;
-
   /**
    * The cached value of the '{@link #getCaracteristicaPai() <em>Caracteristica Pai</em>}' reference.
    * <!-- begin-user-doc -->
@@ -109,25 +95,10 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.CARACTERISTICA;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<ElementoExterno> getElementosExternos()
-  {
-    if (elementosExternos == null)
-    {
-      elementosExternos = new EObjectResolvingEList<ElementoExterno>(ElementoExterno.class, this, CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS);
-    }
-    return elementosExternos;
   }
 
   /**
@@ -246,8 +217,7 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * @generated
    */
   @SuppressWarnings("unchecked")
-  
-  
+  @Override
   public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -271,8 +241,7 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -294,14 +263,11 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
-      case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS:
-        return getElementosExternos();
       case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI:
         if (resolve) return getCaracteristicaPai();
         return basicGetCaracteristicaPai();
@@ -321,16 +287,11 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * @generated
    */
   @SuppressWarnings("unchecked")
-  
-  
+  @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS:
-        getElementosExternos().clear();
-        getElementosExternos().addAll((Collection<? extends ElementoExterno>)newValue);
-        return;
       case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI:
         setCaracteristicaPai((Caracteristica)newValue);
         return;
@@ -355,15 +316,11 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eUnset(int featureID)
   {
     switch (featureID)
     {
-      case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS:
-        getElementosExternos().clear();
-        return;
       case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI:
         setCaracteristicaPai((Caracteristica)null);
         return;
@@ -385,14 +342,11 @@ public class CaracteristicaImpl extends ElementoImpl implements Caracteristica
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public boolean eIsSet(int featureID)
   {
     switch (featureID)
     {
-      case CaracteristicaPackage.CARACTERISTICA__ELEMENTOS_EXTERNOS:
-        return elementosExternos != null && !elementosExternos.isEmpty();
       case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_PAI:
         return caracteristicaPai != null;
       case CaracteristicaPackage.CARACTERISTICA__CARACTERISTICA_FILHA:

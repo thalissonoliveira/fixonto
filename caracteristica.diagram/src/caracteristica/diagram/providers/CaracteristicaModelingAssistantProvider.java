@@ -29,7 +29,11 @@ import caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
+import caracteristica.diagram.edit.parts.ContextoEditPart;
+import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
 import caracteristica.diagram.part.Messages;
@@ -47,13 +51,17 @@ public class CaracteristicaModelingAssistantProvider extends
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof LPSEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(6);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(10);
 			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
 			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
 			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
 			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
+			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
+			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
+			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
 			types.add(CaracteristicaElementTypes.Atributo_2017);
+			types.add(CaracteristicaElementTypes.Contexto_2037);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -85,6 +93,21 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof RaizDeContextoEditPart) {
+			return ((RaizDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
+			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof ContextoEditPart) {
+			return ((ContextoEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -112,6 +135,14 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
 			return ((CaracteristicaMandatoriaEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof EntidadeDeContextoEditPart) {
+			return ((EntidadeDeContextoEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof AtributoEditPart) {
@@ -149,6 +180,22 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof RaizDeContextoEditPart) {
+			return ((RaizDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
+			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof ContextoEditPart) {
+			return ((ContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		return Collections.EMPTY_LIST;
 	}
 
@@ -177,6 +224,14 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
 			return ((CaracteristicaMandatoriaEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof EntidadeDeContextoEditPart) {
+			return ((EntidadeDeContextoEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof AtributoEditPart) {
@@ -211,6 +266,22 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (sourceEditPart instanceof CaracteristicaMandatoriaEditPart) {
 			return ((CaracteristicaMandatoriaEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof RaizDeContextoEditPart) {
+			return ((RaizDeContextoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof EntidadeDeContextoEditPart) {
+			return ((EntidadeDeContextoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof InformacaoDeContextoEditPart) {
+			return ((InformacaoDeContextoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof ContextoEditPart) {
+			return ((ContextoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

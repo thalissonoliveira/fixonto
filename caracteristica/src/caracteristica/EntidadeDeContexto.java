@@ -6,7 +6,7 @@ import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Entidadede Contexto</b></em>'.
+ * A representation of the model object '<em><b>Entidade De Contexto</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model annotation="gmf.node label='nome' label.pattern='Entidade de Contexto {0}'"
  * @generated
  */
-public interface EntidadeDeContexto extends Elemento
+public interface EntidadeDeContexto extends Contexto
 {
   /**
    * Returns the value of the '<em><b>Raiz</b></em>' reference.
@@ -70,4 +70,4 @@ public interface EntidadeDeContexto extends Elemento
    */
   EList<InformacaoDeContexto> getInformacoesDeContexto();
 
-} // EntidadedeContexto
+} // EntidadeDeContexto

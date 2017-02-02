@@ -2,21 +2,9 @@
  */
 package caracteristica.impl;
 
-import caracteristica.Atributo;
 import caracteristica.CaracteristicaPackage;
-import caracteristica.CaracteristicaRaiz;
 import caracteristica.Elemento;
-import caracteristica.ElementoDeProduto;
-import caracteristica.ElementoDeProduto;
-import caracteristica.ElementoExterno;
-import caracteristica.Expressao;
-import caracteristica.InconsistenciaRegraAdaptacao;
 import caracteristica.LPS;
-import caracteristica.PontoDeVariacao;
-import caracteristica.PontoDeVariacao;
-import caracteristica.Produto;
-import caracteristica.Regra;
-import caracteristica.Simulacao;
 
 import java.util.Collection;
 
@@ -31,7 +19,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -96,8 +83,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   protected EClass eStaticClass()
   {
     return CaracteristicaPackage.Literals.LPS;
@@ -145,8 +131,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
@@ -162,8 +147,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -182,8 +166,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * @generated
    */
   @SuppressWarnings("unchecked")
-  
-  
+  @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
@@ -204,8 +187,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public void eUnset(int featureID)
   {
     switch (featureID)
@@ -225,8 +207,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public boolean eIsSet(int featureID)
   {
     switch (featureID)
@@ -244,8 +225,7 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
-  
-  
+  @Override
   public String toString()
   {
     if (eIsProxy()) return super.toString();

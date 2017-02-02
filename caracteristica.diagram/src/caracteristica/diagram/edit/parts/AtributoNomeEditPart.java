@@ -557,7 +557,7 @@ public class AtributoNomeEditPart extends CompartmentEditPart implements
 	/**
 	 * @generated
 	 */
-	
+	@Override
 	public Object getAdapter(Class key) {
 		if (ILabelDelegate.class.equals(key)) {
 			return getLabelDelegate();

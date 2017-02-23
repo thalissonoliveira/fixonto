@@ -4,6 +4,8 @@ package caracteristica;
 @gmf.diagram(foo="bar")
 class LPS {
   val Elemento[*] elementos;
+  val Regra[*] regras;
+  val Expressao[*] expressoes;
   attr String nome;
 }
 
@@ -23,10 +25,10 @@ class Atributo extends Elemento {
 class Caracteristica extends Elemento {
   ref Caracteristica#caracteristicaFilha caracteristicaPai;
 
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(color="0,0,0", style="solid", width="3")
   ref Caracteristica[*]#caracteristicaPai caracteristicaFilha;
 
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(color="0,0,0", style="solid", width="3")
   ref Variacao[*]#caracteristicaPai variacoes;
 
   @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
@@ -51,7 +53,7 @@ class CaracteristicaAgrupada extends Caracteristica, ElementoCaracteristico {
 class CaracteristicaMandatoria extends Caracteristica {
 }
 
-@gmf.node(label="nome,cardinalidadeMaxima", label.pattern="Variation {0} : {1} ", figure="utils.DiamondFigure")
+@gmf.node(label="cardinalidadeMaxima", label.pattern="{0} : {1}", figure="utils.DiamondFigure")
 class VariacaoDois extends Caracteristica, ElementoCaracteristico {
 	attr CardinalidadeMaxima cardinalidadeMaxima;
 	attr Integer cardinalidadeMinimaOr;
@@ -76,16 +78,16 @@ class Variante extends PontoDeVariacao, ElementoCaracteristico, Caracteristica {
 
 @gmf.node(label="nome")
 class Contexto extends Elemento {
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="dot", width="3")
   ref Caracteristica[*] caracteristicasIncluir;
   
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(target.decoration="closedarrow", source.decoration="closedarrow", color="0,0,0", style="dot", width="3")
   ref Caracteristica[*] caracteristicasExcluir;
 }
 
 @gmf.node(label="nome")
 class RaizDeContexto extends Contexto {
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(color="0,0,0", style="solid", width="3")
   ref EntidadeDeContexto[*]#raiz entidadesDeContexto;
 }
 
@@ -93,7 +95,7 @@ class RaizDeContexto extends Contexto {
 class EntidadeDeContexto extends Contexto {
   ref RaizDeContexto#entidadesDeContexto raiz;
 
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  @gmf.link(color="0,0,0", style="solid", width="3")
   ref InformacaoDeContexto[*]#elementoPai informacoesDeContexto;
 }
 
@@ -101,6 +103,55 @@ class EntidadeDeContexto extends Contexto {
 class InformacaoDeContexto extends Contexto {
   ref EntidadeDeContexto[1]#informacoesDeContexto elementoPai;
 }
+
+
+class Regra {
+  attr String nome;
+  attr String conteudo;
+}
+
+@gmf.node(label="nome", label.pattern="Composition Rule {0}")
+class RegraDeComposicao extends Regra {
+
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="antecedent")
+  ref Antecedente antecedente;
+
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", label="consequent")
+  ref Antecedente consequente;
+}
+
+class Expressao {
+  attr String nome;
+}
+
+class Antecedente extends Expressao {
+}
+
+@gmf.node(label="operadorLogico")
+class ExpressaoLogica extends Antecedente {
+
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref Antecedente ladoDireitoComposicao;
+  attr OperadorLogico operadorLogico;
+
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref Antecedente ladoEsquerdoComposicao;
+}
+
+@gmf.node(label="nome")
+class ExpressaoRelacional extends Antecedente {
+  ref Atributo variaveldaExpressao;
+  attr OperadorRelacional operadorRelacional;
+  attr String valor;
+}
+
+@gmf.node(label="nome")
+class LiteralComposicao extends Antecedente {
+  attr Presenca presenca;
+  ref ElementoCaracteristico elemento;
+}
+
+
 
 enum Origem {
   Sentida = 0;

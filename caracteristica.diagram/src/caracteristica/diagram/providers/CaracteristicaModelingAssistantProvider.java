@@ -31,9 +31,13 @@ import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
 import caracteristica.diagram.edit.parts.ContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
 import caracteristica.diagram.part.Messages;
@@ -51,7 +55,7 @@ public class CaracteristicaModelingAssistantProvider extends
 		IGraphicalEditPart editPart = (IGraphicalEditPart) host
 				.getAdapter(IGraphicalEditPart.class);
 		if (editPart instanceof LPSEditPart) {
-			ArrayList<IElementType> types = new ArrayList<IElementType>(10);
+			ArrayList<IElementType> types = new ArrayList<IElementType>(14);
 			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
 			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
 			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
@@ -60,8 +64,12 @@ public class CaracteristicaModelingAssistantProvider extends
 			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
 			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
 			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
+			types.add(CaracteristicaElementTypes.ExpressaoLogica_2038);
+			types.add(CaracteristicaElementTypes.ExpressaoRelacional_2039);
+			types.add(CaracteristicaElementTypes.LiteralComposicao_2040);
 			types.add(CaracteristicaElementTypes.Atributo_2017);
 			types.add(CaracteristicaElementTypes.Contexto_2037);
+			types.add(CaracteristicaElementTypes.RegraDeComposicao_2041);
 			return types;
 		}
 		return Collections.EMPTY_LIST;
@@ -105,8 +113,16 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSource();
 		}
+		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
+			return ((ExpressaoLogicaEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
+		}
 		if (sourceEditPart instanceof ContextoEditPart) {
 			return ((ContextoEditPart) sourceEditPart).getMARelTypesOnSource();
+		}
+		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
+			return ((RegraDeComposicaoEditPart) sourceEditPart)
+					.getMARelTypesOnSource();
 		}
 		return Collections.EMPTY_LIST;
 	}
@@ -143,6 +159,18 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
 			return ((InformacaoDeContextoEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ExpressaoLogicaEditPart) {
+			return ((ExpressaoLogicaEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof ExpressaoRelacionalEditPart) {
+			return ((ExpressaoRelacionalEditPart) targetEditPart)
+					.getMARelTypesOnTarget();
+		}
+		if (targetEditPart instanceof LiteralComposicaoEditPart) {
+			return ((LiteralComposicaoEditPart) targetEditPart)
 					.getMARelTypesOnTarget();
 		}
 		if (targetEditPart instanceof AtributoEditPart) {
@@ -192,8 +220,16 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
+		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
+			return ((ExpressaoLogicaEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
 		if (sourceEditPart instanceof ContextoEditPart) {
 			return ((ContextoEditPart) sourceEditPart)
+					.getMARelTypesOnSourceAndTarget(targetEditPart);
+		}
+		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
+			return ((RegraDeComposicaoEditPart) sourceEditPart)
 					.getMARelTypesOnSourceAndTarget(targetEditPart);
 		}
 		return Collections.EMPTY_LIST;
@@ -232,6 +268,18 @@ public class CaracteristicaModelingAssistantProvider extends
 		}
 		if (targetEditPart instanceof InformacaoDeContextoEditPart) {
 			return ((InformacaoDeContextoEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ExpressaoLogicaEditPart) {
+			return ((ExpressaoLogicaEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof ExpressaoRelacionalEditPart) {
+			return ((ExpressaoRelacionalEditPart) targetEditPart)
+					.getMATypesForSource(relationshipType);
+		}
+		if (targetEditPart instanceof LiteralComposicaoEditPart) {
+			return ((LiteralComposicaoEditPart) targetEditPart)
 					.getMATypesForSource(relationshipType);
 		}
 		if (targetEditPart instanceof AtributoEditPart) {
@@ -280,8 +328,16 @@ public class CaracteristicaModelingAssistantProvider extends
 			return ((InformacaoDeContextoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
+		if (sourceEditPart instanceof ExpressaoLogicaEditPart) {
+			return ((ExpressaoLogicaEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
 		if (sourceEditPart instanceof ContextoEditPart) {
 			return ((ContextoEditPart) sourceEditPart)
+					.getMATypesForTarget(relationshipType);
+		}
+		if (sourceEditPart instanceof RegraDeComposicaoEditPart) {
+			return ((RegraDeComposicaoEditPart) sourceEditPart)
 					.getMATypesForTarget(relationshipType);
 		}
 		return Collections.EMPTY_LIST;

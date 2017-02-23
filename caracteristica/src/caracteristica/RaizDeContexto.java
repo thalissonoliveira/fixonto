@@ -36,7 +36,7 @@ public interface RaizDeContexto extends Contexto
    * @see caracteristica.CaracteristicaPackage#getRaizDeContexto_EntidadesDeContexto()
    * @see caracteristica.EntidadeDeContexto#getRaiz
    * @model opposite="raiz"
-   *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   *        annotation="gmf.link color='0,0,0' style='solid' width='3'"
    * @generated
    */
   EList<EntidadeDeContexto> getEntidadesDeContexto();

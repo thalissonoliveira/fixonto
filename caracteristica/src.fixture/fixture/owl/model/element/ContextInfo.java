@@ -9,6 +9,10 @@ public class ContextInfo extends ElementImpl {
 		super();
 	}
 
+	public ContextInfo(String name) {
+		super(name);
+	}
+	
 	public ContextInfo(String id, String name) {
 		super(id, name);
 	}

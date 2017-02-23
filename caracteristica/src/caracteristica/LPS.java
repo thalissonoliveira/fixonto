@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link caracteristica.LPS#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link caracteristica.LPS#getRegras <em>Regras</em>}</li>
+ *   <li>{@link caracteristica.LPS#getExpressoes <em>Expressoes</em>}</li>
  *   <li>{@link caracteristica.LPS#getNome <em>Nome</em>}</li>
  * </ul>
  * </p>
@@ -40,6 +42,38 @@ public interface LPS extends EObject
    * @generated
    */
   EList<Elemento> getElementos();
+
+  /**
+   * Returns the value of the '<em><b>Regras</b></em>' containment reference list.
+   * The list contents are of type {@link caracteristica.Regra}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Regras</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Regras</em>' containment reference list.
+   * @see caracteristica.CaracteristicaPackage#getLPS_Regras()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Regra> getRegras();
+
+  /**
+   * Returns the value of the '<em><b>Expressoes</b></em>' containment reference list.
+   * The list contents are of type {@link caracteristica.Expressao}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Expressoes</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Expressoes</em>' containment reference list.
+   * @see caracteristica.CaracteristicaPackage#getLPS_Expressoes()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Expressao> getExpressoes();
 
   /**
    * Returns the value of the '<em><b>Nome</b></em>' attribute.

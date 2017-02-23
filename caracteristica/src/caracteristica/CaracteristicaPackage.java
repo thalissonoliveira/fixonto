@@ -77,13 +77,31 @@ public interface CaracteristicaPackage extends EPackage
   int LPS__ELEMENTOS = 0;
 
   /**
+   * The feature id for the '<em><b>Regras</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LPS__REGRAS = 1;
+
+  /**
+   * The feature id for the '<em><b>Expressoes</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LPS__EXPRESSOES = 2;
+
+  /**
    * The feature id for the '<em><b>Nome</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int LPS__NOME = 1;
+  int LPS__NOME = 3;
 
   /**
    * The number of structural features of the '<em>LPS</em>' class.
@@ -92,7 +110,7 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    * @ordered
    */
-  int LPS_FEATURE_COUNT = 2;
+  int LPS_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link caracteristica.impl.ElementoImpl <em>Elemento</em>}' class.
@@ -993,6 +1011,310 @@ public interface CaracteristicaPackage extends EPackage
   int INFORMACAO_DE_CONTEXTO_FEATURE_COUNT = CONTEXTO_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link caracteristica.impl.RegraImpl <em>Regra</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.RegraImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getRegra()
+   * @generated
+   */
+  int REGRA = 17;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA__NOME = 0;
+
+  /**
+   * The feature id for the '<em><b>Conteudo</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA__CONTEUDO = 1;
+
+  /**
+   * The number of structural features of the '<em>Regra</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.RegraDeComposicaoImpl <em>Regra De Composicao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.RegraDeComposicaoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeComposicao()
+   * @generated
+   */
+  int REGRA_DE_COMPOSICAO = 18;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_DE_COMPOSICAO__NOME = REGRA__NOME;
+
+  /**
+   * The feature id for the '<em><b>Conteudo</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_DE_COMPOSICAO__CONTEUDO = REGRA__CONTEUDO;
+
+  /**
+   * The feature id for the '<em><b>Antecedente</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_DE_COMPOSICAO__ANTECEDENTE = REGRA_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Consequente</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_DE_COMPOSICAO__CONSEQUENTE = REGRA_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Regra De Composicao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int REGRA_DE_COMPOSICAO_FEATURE_COUNT = REGRA_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.ExpressaoImpl <em>Expressao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.ExpressaoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressao()
+   * @generated
+   */
+  int EXPRESSAO = 19;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO__NOME = 0;
+
+  /**
+   * The number of structural features of the '<em>Expressao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.AntecedenteImpl <em>Antecedente</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.AntecedenteImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getAntecedente()
+   * @generated
+   */
+  int ANTECEDENTE = 20;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANTECEDENTE__NOME = EXPRESSAO__NOME;
+
+  /**
+   * The number of structural features of the '<em>Antecedente</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ANTECEDENTE_FEATURE_COUNT = EXPRESSAO_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.ExpressaoLogicaImpl <em>Expressao Logica</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.ExpressaoLogicaImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoLogica()
+   * @generated
+   */
+  int EXPRESSAO_LOGICA = 21;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_LOGICA__NOME = ANTECEDENTE__NOME;
+
+  /**
+   * The feature id for the '<em><b>Lado Direito Composicao</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_LOGICA__LADO_DIREITO_COMPOSICAO = ANTECEDENTE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operador Logico</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_LOGICA__OPERADOR_LOGICO = ANTECEDENTE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Lado Esquerdo Composicao</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_LOGICA__LADO_ESQUERDO_COMPOSICAO = ANTECEDENTE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Expressao Logica</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_LOGICA_FEATURE_COUNT = ANTECEDENTE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.ExpressaoRelacionalImpl <em>Expressao Relacional</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.ExpressaoRelacionalImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoRelacional()
+   * @generated
+   */
+  int EXPRESSAO_RELACIONAL = 22;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL__NOME = ANTECEDENTE__NOME;
+
+  /**
+   * The feature id for the '<em><b>Variavelda Expressao</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL__VARIAVELDA_EXPRESSAO = ANTECEDENTE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Operador Relacional</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL__OPERADOR_RELACIONAL = ANTECEDENTE_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Valor</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL__VALOR = ANTECEDENTE_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Expressao Relacional</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSAO_RELACIONAL_FEATURE_COUNT = ANTECEDENTE_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link caracteristica.impl.LiteralComposicaoImpl <em>Literal Composicao</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see caracteristica.impl.LiteralComposicaoImpl
+   * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralComposicao()
+   * @generated
+   */
+  int LITERAL_COMPOSICAO = 23;
+
+  /**
+   * The feature id for the '<em><b>Nome</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_COMPOSICAO__NOME = ANTECEDENTE__NOME;
+
+  /**
+   * The feature id for the '<em><b>Presenca</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_COMPOSICAO__PRESENCA = ANTECEDENTE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Elemento</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_COMPOSICAO__ELEMENTO = ANTECEDENTE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Literal Composicao</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LITERAL_COMPOSICAO_FEATURE_COUNT = ANTECEDENTE_FEATURE_COUNT + 2;
+
+  /**
    * The meta object id for the '{@link caracteristica.Origem <em>Origem</em>}' enum.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1000,7 +1322,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOrigem()
    * @generated
    */
-  int ORIGEM = 17;
+  int ORIGEM = 24;
 
   /**
    * The meta object id for the '{@link caracteristica.Validade <em>Validade</em>}' enum.
@@ -1010,7 +1332,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getValidade()
    * @generated
    */
-  int VALIDADE = 18;
+  int VALIDADE = 25;
 
   /**
    * The meta object id for the '{@link caracteristica.Qualidade <em>Qualidade</em>}' enum.
@@ -1020,7 +1342,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getQualidade()
    * @generated
    */
-  int QUALIDADE = 19;
+  int QUALIDADE = 26;
 
   /**
    * The meta object id for the '{@link caracteristica.TipoValor <em>Tipo Valor</em>}' enum.
@@ -1030,7 +1352,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getTipoValor()
    * @generated
    */
-  int TIPO_VALOR = 20;
+  int TIPO_VALOR = 27;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorLogico <em>Operador Logico</em>}' enum.
@@ -1040,7 +1362,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorLogico()
    * @generated
    */
-  int OPERADOR_LOGICO = 21;
+  int OPERADOR_LOGICO = 28;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorAcaoLogico <em>Operador Acao Logico</em>}' enum.
@@ -1050,7 +1372,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorAcaoLogico()
    * @generated
    */
-  int OPERADOR_ACAO_LOGICO = 22;
+  int OPERADOR_ACAO_LOGICO = 29;
 
   /**
    * The meta object id for the '{@link caracteristica.CardinalidadeMaxima <em>Cardinalidade Maxima</em>}' enum.
@@ -1060,7 +1382,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getCardinalidadeMaxima()
    * @generated
    */
-  int CARDINALIDADE_MAXIMA = 23;
+  int CARDINALIDADE_MAXIMA = 30;
 
   /**
    * The meta object id for the '{@link caracteristica.OperadorRelacional <em>Operador Relacional</em>}' enum.
@@ -1070,7 +1392,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getOperadorRelacional()
    * @generated
    */
-  int OPERADOR_RELACIONAL = 24;
+  int OPERADOR_RELACIONAL = 31;
 
   /**
    * The meta object id for the '{@link caracteristica.Presenca <em>Presenca</em>}' enum.
@@ -1080,7 +1402,7 @@ public interface CaracteristicaPackage extends EPackage
    * @see caracteristica.impl.CaracteristicaPackageImpl#getPresenca()
    * @generated
    */
-  int PRESENCA = 25;
+  int PRESENCA = 32;
 
 
   /**
@@ -1103,6 +1425,28 @@ public interface CaracteristicaPackage extends EPackage
    * @generated
    */
   EReference getLPS_Elementos();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link caracteristica.LPS#getRegras <em>Regras</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Regras</em>'.
+   * @see caracteristica.LPS#getRegras()
+   * @see #getLPS()
+   * @generated
+   */
+  EReference getLPS_Regras();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link caracteristica.LPS#getExpressoes <em>Expressoes</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expressoes</em>'.
+   * @see caracteristica.LPS#getExpressoes()
+   * @see #getLPS()
+   * @generated
+   */
+  EReference getLPS_Expressoes();
 
   /**
    * Returns the meta object for the attribute '{@link caracteristica.LPS#getNome <em>Nome</em>}'.
@@ -1518,6 +1862,219 @@ public interface CaracteristicaPackage extends EPackage
   EReference getInformacaoDeContexto_ElementoPai();
 
   /**
+   * Returns the meta object for class '{@link caracteristica.Regra <em>Regra</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Regra</em>'.
+   * @see caracteristica.Regra
+   * @generated
+   */
+  EClass getRegra();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.Regra#getNome <em>Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nome</em>'.
+   * @see caracteristica.Regra#getNome()
+   * @see #getRegra()
+   * @generated
+   */
+  EAttribute getRegra_Nome();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.Regra#getConteudo <em>Conteudo</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Conteudo</em>'.
+   * @see caracteristica.Regra#getConteudo()
+   * @see #getRegra()
+   * @generated
+   */
+  EAttribute getRegra_Conteudo();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.RegraDeComposicao <em>Regra De Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Regra De Composicao</em>'.
+   * @see caracteristica.RegraDeComposicao
+   * @generated
+   */
+  EClass getRegraDeComposicao();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.RegraDeComposicao#getAntecedente <em>Antecedente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Antecedente</em>'.
+   * @see caracteristica.RegraDeComposicao#getAntecedente()
+   * @see #getRegraDeComposicao()
+   * @generated
+   */
+  EReference getRegraDeComposicao_Antecedente();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.RegraDeComposicao#getConsequente <em>Consequente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Consequente</em>'.
+   * @see caracteristica.RegraDeComposicao#getConsequente()
+   * @see #getRegraDeComposicao()
+   * @generated
+   */
+  EReference getRegraDeComposicao_Consequente();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.Expressao <em>Expressao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expressao</em>'.
+   * @see caracteristica.Expressao
+   * @generated
+   */
+  EClass getExpressao();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.Expressao#getNome <em>Nome</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Nome</em>'.
+   * @see caracteristica.Expressao#getNome()
+   * @see #getExpressao()
+   * @generated
+   */
+  EAttribute getExpressao_Nome();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.Antecedente <em>Antecedente</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Antecedente</em>'.
+   * @see caracteristica.Antecedente
+   * @generated
+   */
+  EClass getAntecedente();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.ExpressaoLogica <em>Expressao Logica</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expressao Logica</em>'.
+   * @see caracteristica.ExpressaoLogica
+   * @generated
+   */
+  EClass getExpressaoLogica();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.ExpressaoLogica#getLadoDireitoComposicao <em>Lado Direito Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Lado Direito Composicao</em>'.
+   * @see caracteristica.ExpressaoLogica#getLadoDireitoComposicao()
+   * @see #getExpressaoLogica()
+   * @generated
+   */
+  EReference getExpressaoLogica_LadoDireitoComposicao();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.ExpressaoLogica#getOperadorLogico <em>Operador Logico</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operador Logico</em>'.
+   * @see caracteristica.ExpressaoLogica#getOperadorLogico()
+   * @see #getExpressaoLogica()
+   * @generated
+   */
+  EAttribute getExpressaoLogica_OperadorLogico();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.ExpressaoLogica#getLadoEsquerdoComposicao <em>Lado Esquerdo Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Lado Esquerdo Composicao</em>'.
+   * @see caracteristica.ExpressaoLogica#getLadoEsquerdoComposicao()
+   * @see #getExpressaoLogica()
+   * @generated
+   */
+  EReference getExpressaoLogica_LadoEsquerdoComposicao();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.ExpressaoRelacional <em>Expressao Relacional</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expressao Relacional</em>'.
+   * @see caracteristica.ExpressaoRelacional
+   * @generated
+   */
+  EClass getExpressaoRelacional();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.ExpressaoRelacional#getVariaveldaExpressao <em>Variavelda Expressao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Variavelda Expressao</em>'.
+   * @see caracteristica.ExpressaoRelacional#getVariaveldaExpressao()
+   * @see #getExpressaoRelacional()
+   * @generated
+   */
+  EReference getExpressaoRelacional_VariaveldaExpressao();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.ExpressaoRelacional#getOperadorRelacional <em>Operador Relacional</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Operador Relacional</em>'.
+   * @see caracteristica.ExpressaoRelacional#getOperadorRelacional()
+   * @see #getExpressaoRelacional()
+   * @generated
+   */
+  EAttribute getExpressaoRelacional_OperadorRelacional();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.ExpressaoRelacional#getValor <em>Valor</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Valor</em>'.
+   * @see caracteristica.ExpressaoRelacional#getValor()
+   * @see #getExpressaoRelacional()
+   * @generated
+   */
+  EAttribute getExpressaoRelacional_Valor();
+
+  /**
+   * Returns the meta object for class '{@link caracteristica.LiteralComposicao <em>Literal Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Literal Composicao</em>'.
+   * @see caracteristica.LiteralComposicao
+   * @generated
+   */
+  EClass getLiteralComposicao();
+
+  /**
+   * Returns the meta object for the attribute '{@link caracteristica.LiteralComposicao#getPresenca <em>Presenca</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Presenca</em>'.
+   * @see caracteristica.LiteralComposicao#getPresenca()
+   * @see #getLiteralComposicao()
+   * @generated
+   */
+  EAttribute getLiteralComposicao_Presenca();
+
+  /**
+   * Returns the meta object for the reference '{@link caracteristica.LiteralComposicao#getElemento <em>Elemento</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Elemento</em>'.
+   * @see caracteristica.LiteralComposicao#getElemento()
+   * @see #getLiteralComposicao()
+   * @generated
+   */
+  EReference getLiteralComposicao_Elemento();
+
+  /**
    * Returns the meta object for enum '{@link caracteristica.Origem <em>Origem</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1647,6 +2204,22 @@ public interface CaracteristicaPackage extends EPackage
      * @generated
      */
     EReference LPS__ELEMENTOS = eINSTANCE.getLPS_Elementos();
+
+    /**
+     * The meta object literal for the '<em><b>Regras</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LPS__REGRAS = eINSTANCE.getLPS_Regras();
+
+    /**
+     * The meta object literal for the '<em><b>Expressoes</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LPS__EXPRESSOES = eINSTANCE.getLPS_Expressoes();
 
     /**
      * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
@@ -1991,6 +2564,180 @@ public interface CaracteristicaPackage extends EPackage
      * @generated
      */
     EReference INFORMACAO_DE_CONTEXTO__ELEMENTO_PAI = eINSTANCE.getInformacaoDeContexto_ElementoPai();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.RegraImpl <em>Regra</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.RegraImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getRegra()
+     * @generated
+     */
+    EClass REGRA = eINSTANCE.getRegra();
+
+    /**
+     * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REGRA__NOME = eINSTANCE.getRegra_Nome();
+
+    /**
+     * The meta object literal for the '<em><b>Conteudo</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute REGRA__CONTEUDO = eINSTANCE.getRegra_Conteudo();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.RegraDeComposicaoImpl <em>Regra De Composicao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.RegraDeComposicaoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getRegraDeComposicao()
+     * @generated
+     */
+    EClass REGRA_DE_COMPOSICAO = eINSTANCE.getRegraDeComposicao();
+
+    /**
+     * The meta object literal for the '<em><b>Antecedente</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REGRA_DE_COMPOSICAO__ANTECEDENTE = eINSTANCE.getRegraDeComposicao_Antecedente();
+
+    /**
+     * The meta object literal for the '<em><b>Consequente</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference REGRA_DE_COMPOSICAO__CONSEQUENTE = eINSTANCE.getRegraDeComposicao_Consequente();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.ExpressaoImpl <em>Expressao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.ExpressaoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressao()
+     * @generated
+     */
+    EClass EXPRESSAO = eINSTANCE.getExpressao();
+
+    /**
+     * The meta object literal for the '<em><b>Nome</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSAO__NOME = eINSTANCE.getExpressao_Nome();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.AntecedenteImpl <em>Antecedente</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.AntecedenteImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getAntecedente()
+     * @generated
+     */
+    EClass ANTECEDENTE = eINSTANCE.getAntecedente();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.ExpressaoLogicaImpl <em>Expressao Logica</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.ExpressaoLogicaImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoLogica()
+     * @generated
+     */
+    EClass EXPRESSAO_LOGICA = eINSTANCE.getExpressaoLogica();
+
+    /**
+     * The meta object literal for the '<em><b>Lado Direito Composicao</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSAO_LOGICA__LADO_DIREITO_COMPOSICAO = eINSTANCE.getExpressaoLogica_LadoDireitoComposicao();
+
+    /**
+     * The meta object literal for the '<em><b>Operador Logico</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSAO_LOGICA__OPERADOR_LOGICO = eINSTANCE.getExpressaoLogica_OperadorLogico();
+
+    /**
+     * The meta object literal for the '<em><b>Lado Esquerdo Composicao</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSAO_LOGICA__LADO_ESQUERDO_COMPOSICAO = eINSTANCE.getExpressaoLogica_LadoEsquerdoComposicao();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.ExpressaoRelacionalImpl <em>Expressao Relacional</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.ExpressaoRelacionalImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getExpressaoRelacional()
+     * @generated
+     */
+    EClass EXPRESSAO_RELACIONAL = eINSTANCE.getExpressaoRelacional();
+
+    /**
+     * The meta object literal for the '<em><b>Variavelda Expressao</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EXPRESSAO_RELACIONAL__VARIAVELDA_EXPRESSAO = eINSTANCE.getExpressaoRelacional_VariaveldaExpressao();
+
+    /**
+     * The meta object literal for the '<em><b>Operador Relacional</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSAO_RELACIONAL__OPERADOR_RELACIONAL = eINSTANCE.getExpressaoRelacional_OperadorRelacional();
+
+    /**
+     * The meta object literal for the '<em><b>Valor</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSAO_RELACIONAL__VALOR = eINSTANCE.getExpressaoRelacional_Valor();
+
+    /**
+     * The meta object literal for the '{@link caracteristica.impl.LiteralComposicaoImpl <em>Literal Composicao</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see caracteristica.impl.LiteralComposicaoImpl
+     * @see caracteristica.impl.CaracteristicaPackageImpl#getLiteralComposicao()
+     * @generated
+     */
+    EClass LITERAL_COMPOSICAO = eINSTANCE.getLiteralComposicao();
+
+    /**
+     * The meta object literal for the '<em><b>Presenca</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute LITERAL_COMPOSICAO__PRESENCA = eINSTANCE.getLiteralComposicao_Presenca();
+
+    /**
+     * The meta object literal for the '<em><b>Elemento</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LITERAL_COMPOSICAO__ELEMENTO = eINSTANCE.getLiteralComposicao_Elemento();
 
     /**
      * The meta object literal for the '{@link caracteristica.Origem <em>Origem</em>}' enum.

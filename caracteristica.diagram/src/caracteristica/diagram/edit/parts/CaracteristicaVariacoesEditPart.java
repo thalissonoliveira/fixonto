@@ -76,24 +76,6 @@ public class CaracteristicaVariacoesEditPart extends ConnectionNodeEditPart
 			this.setLineWidth(3);
 			this.setForegroundColor(THIS_FORE);
 
-			setTargetDecoration(createTargetDecoration());
-		}
-
-		/**
-		 * @generated
-		 */
-		private RotatableDecoration createTargetDecoration() {
-			PolygonDecoration df = new PolygonDecoration();
-			df.setFill(true);
-			df.setBackgroundColor(ColorConstants.white);
-			PointList pl = new PointList();
-			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
-			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(2));
-			pl.addPoint(getMapMode().DPtoLP(-2), getMapMode().DPtoLP(-2));
-			pl.addPoint(getMapMode().DPtoLP(0), getMapMode().DPtoLP(0));
-			df.setTemplate(pl);
-			df.setScale(getMapMode().DPtoLP(7), getMapMode().DPtoLP(3));
-			return df;
 		}
 
 	}

@@ -118,8 +118,8 @@ public class VariacaoDoisEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof VariacaoDoisNomeCardinalidadeMaximaEditPart) {
-			((VariacaoDoisNomeCardinalidadeMaximaEditPart) childEditPart)
+		if (childEditPart instanceof VariacaoDoisCardinalidadeMaximaEditPart) {
+			((VariacaoDoisCardinalidadeMaximaEditPart) childEditPart)
 					.setLabel(getPrimaryShape()
 							.getFigureVariacaoDoisLabelFigure());
 			return true;
@@ -131,7 +131,7 @@ public class VariacaoDoisEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	protected boolean removeFixedChild(EditPart childEditPart) {
-		if (childEditPart instanceof VariacaoDoisNomeCardinalidadeMaximaEditPart) {
+		if (childEditPart instanceof VariacaoDoisCardinalidadeMaximaEditPart) {
 			return true;
 		}
 		return false;
@@ -255,7 +255,7 @@ public class VariacaoDoisEditPart extends ShapeNodeEditPart {
 	 */
 	public EditPart getPrimaryChildEditPart() {
 		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(VariacaoDoisNomeCardinalidadeMaximaEditPart.VISUAL_ID));
+				.getType(VariacaoDoisCardinalidadeMaximaEditPart.VISUAL_ID));
 	}
 
 	/**

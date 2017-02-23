@@ -73,7 +73,6 @@ public class SPLConceptFactory {
 		return new VariationTwo(id, name);
 	}
 	
-	
 	public VariationTwo createVariationTwo(String id, String name, Integer maximalCardinality, Integer minimalCardinalityOr, Integer maximalCardinalityOr) {
 		return new VariationTwo(id, name, maximalCardinality, minimalCardinalityOr, maximalCardinalityOr);
 	}

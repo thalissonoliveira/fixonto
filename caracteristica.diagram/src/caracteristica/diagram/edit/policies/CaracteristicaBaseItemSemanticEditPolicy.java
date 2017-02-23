@@ -35,12 +35,15 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
+import caracteristica.Antecedente;
 import caracteristica.Atributo;
 import caracteristica.Caracteristica;
 import caracteristica.Contexto;
 import caracteristica.EntidadeDeContexto;
+import caracteristica.ExpressaoLogica;
 import caracteristica.InformacaoDeContexto;
 import caracteristica.RaizDeContexto;
+import caracteristica.RegraDeComposicao;
 import caracteristica.Variacao;
 import caracteristica.Variante;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
@@ -467,6 +470,64 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
+		public boolean canCreateRegraDeComposicaoAntecedente_4029(
+				RegraDeComposicao source, Antecedente target) {
+			if (source != null) {
+				if (source.getAntecedente() != null) {
+					return false;
+				}
+			}
+
+			return canExistRegraDeComposicaoAntecedente_4029(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateRegraDeComposicaoConsequente_4030(
+				RegraDeComposicao source, Antecedente target) {
+			if (source != null) {
+				if (source.getConsequente() != null) {
+					return false;
+				}
+			}
+
+			return canExistRegraDeComposicaoConsequente_4030(source, target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateExpressaoLogicaLadoDireitoComposicao_4031(
+				ExpressaoLogica source, Antecedente target) {
+			if (source != null) {
+				if (source.getLadoDireitoComposicao() != null) {
+					return false;
+				}
+			}
+
+			return canExistExpressaoLogicaLadoDireitoComposicao_4031(source,
+					target);
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canCreateExpressaoLogicaLadoEsquerdoComposicao_4032(
+				ExpressaoLogica source, Antecedente target) {
+			if (source != null) {
+				if (source.getLadoEsquerdoComposicao() != null) {
+					return false;
+				}
+			}
+
+			return canExistExpressaoLogicaLadoEsquerdoComposicao_4032(source,
+					target);
+		}
+
+		/**
+		 * @generated
+		 */
 		public boolean canExistCaracteristicaCaracteristicaFilha_4002(
 				Caracteristica source, Caracteristica target) {
 			return true;
@@ -525,6 +586,38 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		 */
 		public boolean canExistEntidadeDeContextoInformacoesDeContexto_4028(
 				EntidadeDeContexto source, InformacaoDeContexto target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRegraDeComposicaoAntecedente_4029(
+				RegraDeComposicao source, Antecedente target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistRegraDeComposicaoConsequente_4030(
+				RegraDeComposicao source, Antecedente target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistExpressaoLogicaLadoDireitoComposicao_4031(
+				ExpressaoLogica source, Antecedente target) {
+			return true;
+		}
+
+		/**
+		 * @generated
+		 */
+		public boolean canExistExpressaoLogicaLadoEsquerdoComposicao_4032(
+				ExpressaoLogica source, Antecedente target) {
 			return true;
 		}
 	}

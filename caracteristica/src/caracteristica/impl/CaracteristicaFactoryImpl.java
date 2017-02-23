@@ -82,6 +82,13 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
       case CaracteristicaPackage.RAIZ_DE_CONTEXTO: return createRaizDeContexto();
       case CaracteristicaPackage.ENTIDADE_DE_CONTEXTO: return createEntidadeDeContexto();
       case CaracteristicaPackage.INFORMACAO_DE_CONTEXTO: return createInformacaoDeContexto();
+      case CaracteristicaPackage.REGRA: return createRegra();
+      case CaracteristicaPackage.REGRA_DE_COMPOSICAO: return createRegraDeComposicao();
+      case CaracteristicaPackage.EXPRESSAO: return createExpressao();
+      case CaracteristicaPackage.ANTECEDENTE: return createAntecedente();
+      case CaracteristicaPackage.EXPRESSAO_LOGICA: return createExpressaoLogica();
+      case CaracteristicaPackage.EXPRESSAO_RELACIONAL: return createExpressaoRelacional();
+      case CaracteristicaPackage.LITERAL_COMPOSICAO: return createLiteralComposicao();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -338,6 +345,83 @@ public class CaracteristicaFactoryImpl extends EFactoryImpl implements Caracteri
   {
     InformacaoDeContextoImpl informacaoDeContexto = new InformacaoDeContextoImpl();
     return informacaoDeContexto;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Regra createRegra()
+  {
+    RegraImpl regra = new RegraImpl();
+    return regra;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public RegraDeComposicao createRegraDeComposicao()
+  {
+    RegraDeComposicaoImpl regraDeComposicao = new RegraDeComposicaoImpl();
+    return regraDeComposicao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Expressao createExpressao()
+  {
+    ExpressaoImpl expressao = new ExpressaoImpl();
+    return expressao;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Antecedente createAntecedente()
+  {
+    AntecedenteImpl antecedente = new AntecedenteImpl();
+    return antecedente;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpressaoLogica createExpressaoLogica()
+  {
+    ExpressaoLogicaImpl expressaoLogica = new ExpressaoLogicaImpl();
+    return expressaoLogica;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ExpressaoRelacional createExpressaoRelacional()
+  {
+    ExpressaoRelacionalImpl expressaoRelacional = new ExpressaoRelacionalImpl();
+    return expressaoRelacional;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LiteralComposicao createLiteralComposicao()
+  {
+    LiteralComposicaoImpl literalComposicao = new LiteralComposicaoImpl();
+    return literalComposicao;
   }
 
   /**

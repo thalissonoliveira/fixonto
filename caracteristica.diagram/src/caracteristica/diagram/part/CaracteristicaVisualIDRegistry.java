@@ -31,15 +31,31 @@ import caracteristica.diagram.edit.parts.ContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoDireitoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoEsquerdoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaOperadorLogicoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalNomeEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoNomeEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteExternalLabelEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteExternalLabelEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoNomeEditPart;
+import caracteristica.diagram.edit.parts.VariacaoDoisCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel10EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel2EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel3EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel4EditPart;
@@ -47,6 +63,7 @@ import caracteristica.diagram.edit.parts.WrappingLabel5EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel6EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel7EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel8EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel9EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabelEditPart;
 
 /**
@@ -190,6 +207,18 @@ public class CaracteristicaVisualIDRegistry {
 					.isSuperTypeOf(domainElement.eClass())) {
 				return InformacaoDeContextoEditPart.VISUAL_ID;
 			}
+			if (CaracteristicaPackage.eINSTANCE.getExpressaoLogica()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return ExpressaoLogicaEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getExpressaoRelacional()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return ExpressaoRelacionalEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getLiteralComposicao()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return LiteralComposicaoEditPart.VISUAL_ID;
+			}
 			if (CaracteristicaPackage.eINSTANCE.getAtributo().isSuperTypeOf(
 					domainElement.eClass())) {
 				return AtributoEditPart.VISUAL_ID;
@@ -197,6 +226,10 @@ public class CaracteristicaVisualIDRegistry {
 			if (CaracteristicaPackage.eINSTANCE.getContexto().isSuperTypeOf(
 					domainElement.eClass())) {
 				return ContextoEditPart.VISUAL_ID;
+			}
+			if (CaracteristicaPackage.eINSTANCE.getRegraDeComposicao()
+					.isSuperTypeOf(domainElement.eClass())) {
+				return RegraDeComposicaoEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -250,10 +283,22 @@ public class CaracteristicaVisualIDRegistry {
 			if (InformacaoDeContextoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
+			if (ExpressaoLogicaEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (ExpressaoRelacionalEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (LiteralComposicaoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
 			if (AtributoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (ContextoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (RegraDeComposicaoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -268,7 +313,7 @@ public class CaracteristicaVisualIDRegistry {
 			}
 			break;
 		case VariacaoDoisEditPart.VISUAL_ID:
-			if (VariacaoDoisNomeCardinalidadeMaximaEditPart.VISUAL_ID == nodeVisualID) {
+			if (VariacaoDoisCardinalidadeMaximaEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -297,6 +342,21 @@ public class CaracteristicaVisualIDRegistry {
 				return true;
 			}
 			break;
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			if (ExpressaoLogicaOperadorLogicoEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			if (ExpressaoRelacionalNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			if (LiteralComposicaoNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
 		case AtributoEditPart.VISUAL_ID:
 			if (AtributoNomeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
@@ -304,6 +364,11 @@ public class CaracteristicaVisualIDRegistry {
 			break;
 		case ContextoEditPart.VISUAL_ID:
 			if (ContextoNomeEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			if (RegraDeComposicaoNomeEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -344,6 +409,26 @@ public class CaracteristicaVisualIDRegistry {
 			break;
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			if (WrappingLabel8EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+			if (RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+			if (RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+			if (WrappingLabel9EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+			if (WrappingLabel10EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -408,6 +493,10 @@ public class CaracteristicaVisualIDRegistry {
 		case EntidadeDeContextoEditPart.VISUAL_ID:
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 		case ContextoEditPart.VISUAL_ID:
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+		case LiteralComposicaoEditPart.VISUAL_ID:
+		case RegraDeComposicaoEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

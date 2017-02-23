@@ -253,15 +253,15 @@ public class Messages extends NLS {
 	 */
 	public static String Connections2Group_title;
 
-//	/**
-//	 * @generated
-//	 */
-//	public static String Atributo1CreationTool_title;
-//
-//	/**
-//	 * @generated
-//	 */
-//	public static String Atributo1CreationTool_desc;
+	//	/**
+	//	 * @generated
+	//	 */
+	//	public static String Atributo1CreationTool_title;
+	//
+	//	/**
+	//	 * @generated
+	//	 */
+	//	public static String Atributo1CreationTool_desc;
 
 	/**
 	 * @generated
@@ -326,32 +326,192 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
-	public static String InformacaoDeContexto8CreationTool_title;
+	public static String ExpressaoLogica8CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String InformacaoDeContexto8CreationTool_desc;
+	public static String ExpressaoLogica8CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String RaizDeContexto9CreationTool_title;
+	public static String ExpressaoRelacional9CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String RaizDeContexto9CreationTool_desc;
+	public static String ExpressaoRelacional9CreationTool_desc;
 
 	/**
 	 * @generated
 	 */
-	public static String VariacaoDois10CreationTool_title;
+	public static String InformacaoDeContexto10CreationTool_title;
 
 	/**
 	 * @generated
 	 */
-	public static String VariacaoDois10CreationTool_desc;
+	public static String InformacaoDeContexto10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LiteralComposicao11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LiteralComposicao11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String RaizDeContexto12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String RaizDeContexto12CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String RegraDeComposicao13CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String RegraDeComposicao13CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String VariacaoDois14CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String VariacaoDois14CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Antecedente1CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Antecedente1CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Atributo2CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Atributo2CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicaFilha3CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicaFilha3CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicasExcluir4CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicasExcluir4CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicasIncluir5CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String CaracteristicasIncluir5CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Consequente6CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Consequente6CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String EntidadesDeContexto7CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String EntidadesDeContexto7CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String InformacoesDeContexto8CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String InformacoesDeContexto8CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LadoDireitoComposicao9CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LadoDireitoComposicao9CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String LadoEsquerdoComposicao10CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String LadoEsquerdoComposicao10CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Variacoes11CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Variacoes11CreationTool_desc;
+
+	/**
+	 * @generated
+	 */
+	public static String Variantes12CreationTool_title;
+
+	/**
+	 * @generated
+	 */
+	public static String Variantes12CreationTool_desc;
 
 	/**
 	 * @generated
@@ -362,76 +522,6 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String Atributo1CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicaFilha2CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicaFilha2CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicasExcluir3CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicasExcluir3CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicasIncluir4CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String CaracteristicasIncluir4CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String EntidadesDeContexto5CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String EntidadesDeContexto5CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String InformacoesDeContexto6CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String InformacoesDeContexto6CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Variacoes7CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Variacoes7CreationTool_desc;
-
-	/**
-	 * @generated
-	 */
-	public static String Variantes8CreationTool_title;
-
-	/**
-	 * @generated
-	 */
-	public static String Variantes8CreationTool_desc;
 
 	/**
 	 * @generated
@@ -531,6 +621,31 @@ public class Messages extends NLS {
 	/**
 	 * @generated
 	 */
+	public static String NavigatorGroupName_ExpressaoLogica_2038_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoLogica_2038_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoRelacional_2039_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_LiteralComposicao_2040_incominglinks;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RegraDeComposicao_2041_outgoinglinks;
+
+	/**
+	 * @generated
+	 */
 	public static String NavigatorGroupName_CaracteristicaCaracteristicaFilha_4002_target;
 
 	/**
@@ -592,6 +707,46 @@ public class Messages extends NLS {
 	 * @generated
 	 */
 	public static String NavigatorGroupName_EntidadeDeContextoInformacoesDeContexto_4028_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RegraDeComposicaoAntecedente_4029_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RegraDeComposicaoAntecedente_4029_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RegraDeComposicaoConsequente_4030_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_RegraDeComposicaoConsequente_4030_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoLogicaLadoDireitoComposicao_4031_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoLogicaLadoDireitoComposicao_4031_source;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoLogicaLadoEsquerdoComposicao_4032_target;
+
+	/**
+	 * @generated
+	 */
+	public static String NavigatorGroupName_ExpressaoLogicaLadoEsquerdoComposicao_4032_source;
 
 	/**
 	 * @generated

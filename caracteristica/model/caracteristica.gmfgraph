@@ -57,6 +57,13 @@
       <template x="-2" y="-2"/>
       <template/>
     </figures>
+    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
+      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
+      <template/>
+      <template x="-2" y="2"/>
+      <template x="-2" y="-2"/>
+      <template/>
+    </figures>
     <descriptors name="AtributoFigure">
       <actualFigure xsi:type="gmfgraph:CustomFigure" name="AtributoFigure" qualifiedClassName="utils.TriangleFigure">
         <children xsi:type="gmfgraph:Label" name="AtributoLabelFigure" text="Atributo"/>
@@ -138,8 +145,44 @@
       </actualFigure>
       <accessors accessor="getFigureInformacaoDeContextoLabelFigure" figure="//@figures.0/@descriptors.9/@actualFigure/@children.0"/>
     </descriptors>
+    <descriptors name="RegraDeComposicaoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="RegraDeComposicaoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="RegraDeComposicaoLabelFigure" text="RegraDeComposicao"/>
+      </actualFigure>
+      <accessors accessor="getFigureRegraDeComposicaoLabelFigure" figure="//@figures.0/@descriptors.10/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ExpressaoLogicaFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoLogicaFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ExpressaoLogicaLabelFigure" text="ExpressaoLogica"/>
+      </actualFigure>
+      <accessors accessor="getFigureExpressaoLogicaLabelFigure" figure="//@figures.0/@descriptors.11/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="ExpressaoRelacionalFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ExpressaoRelacionalFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="ExpressaoRelacionalLabelFigure" text="ExpressaoRelacional"/>
+      </actualFigure>
+      <accessors accessor="getFigureExpressaoRelacionalLabelFigure" figure="//@figures.0/@descriptors.12/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="LiteralComposicaoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="LiteralComposicaoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="LiteralComposicaoLabelFigure" text="LiteralComposicao"/>
+      </actualFigure>
+      <accessors accessor="getFigureLiteralComposicaoLabelFigure" figure="//@figures.0/@descriptors.13/@actualFigure/@children.0"/>
+    </descriptors>
     <descriptors name="CaracteristicaCaracteristicaFilhaFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaCaracteristicaFilhaFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.0">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaCaracteristicaFilhaFigure" lineWidth="3">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -147,7 +190,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaCaracteristicaFilhaExternalLabel"/>
     </descriptors>
     <descriptors name="CaracteristicaVariacoesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaVariacoesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaVariacoesFigure" lineWidth="3">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -155,7 +198,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaVariacoesExternalLabel"/>
     </descriptors>
     <descriptors name="CaracteristicaAtributoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaAtributoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.2">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CaracteristicaAtributoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.0">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -163,7 +206,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="CaracteristicaAtributoExternalLabel"/>
     </descriptors>
     <descriptors name="VariacaoVariantesFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoVariantesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.3">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="VariacaoVariantesFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.1">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -171,7 +214,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="VariacaoVariantesExternalLabel"/>
     </descriptors>
     <descriptors name="ContextoCaracteristicasIncluirFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasIncluirFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.4">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasIncluirFigure" lineWidth="3" lineKind="LINE_DOT" targetDecoration="//@figures.0/@figures.2">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -179,7 +222,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="ContextoCaracteristicasIncluirExternalLabel"/>
     </descriptors>
     <descriptors name="ContextoCaracteristicasExcluirFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasExcluirFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.5">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ContextoCaracteristicasExcluirFigure" lineWidth="3" lineKind="LINE_DOT" sourceDecoration="//@figures.0/@figures.3" targetDecoration="//@figures.0/@figures.4">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -187,7 +230,7 @@
       <actualFigure xsi:type="gmfgraph:Label" name="ContextoCaracteristicasExcluirExternalLabel"/>
     </descriptors>
     <descriptors name="RaizDeContextoEntidadesDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RaizDeContextoEntidadesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.6">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RaizDeContextoEntidadesDeContextoFigure" lineWidth="3">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
@@ -195,12 +238,44 @@
       <actualFigure xsi:type="gmfgraph:Label" name="RaizDeContextoEntidadesDeContextoExternalLabel"/>
     </descriptors>
     <descriptors name="EntidadeDeContextoInformacoesDeContextoFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EntidadeDeContextoInformacoesDeContextoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.7">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EntidadeDeContextoInformacoesDeContextoFigure" lineWidth="3">
         <foregroundColor xsi:type="gmfgraph:RGBColor"/>
       </actualFigure>
     </descriptors>
     <descriptors name="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure">
       <actualFigure xsi:type="gmfgraph:Label" name="EntidadeDeContextoInformacoesDeContextoExternalLabel"/>
+    </descriptors>
+    <descriptors name="RegraDeComposicaoAntecedenteFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeComposicaoAntecedenteFigure" targetDecoration="//@figures.0/@figures.5">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="RegraDeComposicaoAntecedenteExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeComposicaoAntecedenteExternalLabel" text="antecedent"/>
+    </descriptors>
+    <descriptors name="RegraDeComposicaoConsequenteFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="RegraDeComposicaoConsequenteFigure" targetDecoration="//@figures.0/@figures.6">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="RegraDeComposicaoConsequenteExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="RegraDeComposicaoConsequenteExternalLabel" text="consequent"/>
+    </descriptors>
+    <descriptors name="ExpressaoLogicaLadoDireitoComposicaoFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExpressaoLogicaLadoDireitoComposicaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.7">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel"/>
+    </descriptors>
+    <descriptors name="ExpressaoLogicaLadoEsquerdoComposicaoFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ExpressaoLogicaLadoEsquerdoComposicaoFigure" lineWidth="3" targetDecoration="//@figures.0/@figures.8">
+        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+      </actualFigure>
+    </descriptors>
+    <descriptors name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel"/>
     </descriptors>
   </figures>
   <nodes name="Atributo" figure="AtributoFigure"/>
@@ -213,6 +288,10 @@
   <nodes name="RaizDeContexto" figure="RaizDeContextoFigure"/>
   <nodes name="EntidadeDeContexto" figure="EntidadeDeContextoFigure"/>
   <nodes name="InformacaoDeContexto" figure="InformacaoDeContextoFigure"/>
+  <nodes name="RegraDeComposicao" figure="RegraDeComposicaoFigure"/>
+  <nodes name="ExpressaoLogica" figure="ExpressaoLogicaFigure"/>
+  <nodes name="ExpressaoRelacional" figure="ExpressaoRelacionalFigure"/>
+  <nodes name="LiteralComposicao" figure="LiteralComposicaoFigure"/>
   <connections name="CaracteristicaCaracteristicaFilha" figure="CaracteristicaCaracteristicaFilhaFigure"/>
   <connections name="CaracteristicaVariacoes" figure="CaracteristicaVariacoesFigure"/>
   <connections name="CaracteristicaAtributo" figure="CaracteristicaAtributoFigure"/>
@@ -221,6 +300,10 @@
   <connections name="ContextoCaracteristicasExcluir" figure="ContextoCaracteristicasExcluirFigure"/>
   <connections name="RaizDeContextoEntidadesDeContexto" figure="RaizDeContextoEntidadesDeContextoFigure"/>
   <connections name="EntidadeDeContextoInformacoesDeContexto" figure="EntidadeDeContextoInformacoesDeContextoFigure"/>
+  <connections name="RegraDeComposicaoAntecedente" figure="RegraDeComposicaoAntecedenteFigure"/>
+  <connections name="RegraDeComposicaoConsequente" figure="RegraDeComposicaoConsequenteFigure"/>
+  <connections name="ExpressaoLogicaLadoDireitoComposicao" figure="ExpressaoLogicaLadoDireitoComposicaoFigure"/>
+  <connections name="ExpressaoLogicaLadoEsquerdoComposicao" figure="ExpressaoLogicaLadoEsquerdoComposicaoFigure"/>
   <labels name="AtributoLabel" figure="AtributoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
   <labels name="CaracteristicaRaizLabel" figure="CaracteristicaRaizFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="CaracteristicaOpcionalLabel" figure="CaracteristicaOpcionalFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
@@ -231,6 +314,10 @@
   <labels name="RaizDeContextoLabel" figure="RaizDeContextoFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
   <labels name="EntidadeDeContextoLabel" figure="EntidadeDeContextoFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
   <labels name="InformacaoDeContextoLabel" figure="InformacaoDeContextoFigure" accessor="//@figures.0/@descriptors.9/@accessors.0"/>
+  <labels name="RegraDeComposicaoLabel" figure="RegraDeComposicaoFigure" accessor="//@figures.0/@descriptors.10/@accessors.0"/>
+  <labels name="ExpressaoLogicaLabel" figure="ExpressaoLogicaFigure" accessor="//@figures.0/@descriptors.11/@accessors.0"/>
+  <labels name="ExpressaoRelacionalLabel" figure="ExpressaoRelacionalFigure" accessor="//@figures.0/@descriptors.12/@accessors.0"/>
+  <labels name="LiteralComposicaoLabel" figure="LiteralComposicaoFigure" accessor="//@figures.0/@descriptors.13/@accessors.0"/>
   <labels name="CaracteristicaCaracteristicaFilhaExternalLabel" figure="CaracteristicaCaracteristicaFilhaExternalLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaVariacoesExternalLabel" figure="CaracteristicaVariacoesExternalLabelFigure" elementIcon="false"/>
   <labels name="CaracteristicaAtributoExternalLabel" figure="CaracteristicaAtributoExternalLabelFigure" elementIcon="false"/>
@@ -239,4 +326,8 @@
   <labels name="ContextoCaracteristicasExcluirExternalLabel" figure="ContextoCaracteristicasExcluirExternalLabelFigure" elementIcon="false"/>
   <labels name="RaizDeContextoEntidadesDeContextoExternalLabel" figure="RaizDeContextoEntidadesDeContextoExternalLabelFigure" elementIcon="false"/>
   <labels name="EntidadeDeContextoInformacoesDeContextoExternalLabel" figure="EntidadeDeContextoInformacoesDeContextoExternalLabelFigure" elementIcon="false"/>
+  <labels name="RegraDeComposicaoAntecedenteExternalLabel" figure="RegraDeComposicaoAntecedenteExternalLabelFigure" elementIcon="false"/>
+  <labels name="RegraDeComposicaoConsequenteExternalLabel" figure="RegraDeComposicaoConsequenteExternalLabelFigure" elementIcon="false"/>
+  <labels name="ExpressaoLogicaLadoDireitoComposicaoExternalLabel" figure="ExpressaoLogicaLadoDireitoComposicaoExternalLabelFigure" elementIcon="false"/>
+  <labels name="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabel" figure="ExpressaoLogicaLadoEsquerdoComposicaoExternalLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

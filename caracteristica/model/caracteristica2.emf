@@ -156,7 +156,6 @@ class VariacaoDoisProduto extends CaracteristicaProduto {
 class CaracteristicaAgrupadaProduto extends CaracteristicaProduto {
 }
 
-
 class VariacaoProduto extends ElementoDeProduto {
   attr Integer cardinalidadeMinima;
   attr Integer cardinalidadeMaxima;

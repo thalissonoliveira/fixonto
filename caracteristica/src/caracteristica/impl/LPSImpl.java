@@ -4,8 +4,10 @@ package caracteristica.impl;
 
 import caracteristica.CaracteristicaPackage;
 import caracteristica.Elemento;
+import caracteristica.Expressao;
 import caracteristica.LPS;
 
+import caracteristica.Regra;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -30,6 +32,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link caracteristica.impl.LPSImpl#getElementos <em>Elementos</em>}</li>
+ *   <li>{@link caracteristica.impl.LPSImpl#getRegras <em>Regras</em>}</li>
+ *   <li>{@link caracteristica.impl.LPSImpl#getExpressoes <em>Expressoes</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getNome <em>Nome</em>}</li>
  * </ul>
  * </p>
@@ -47,6 +51,26 @@ public class LPSImpl extends EObjectImpl implements LPS
    * @ordered
    */
   protected EList<Elemento> elementos;
+
+  /**
+   * The cached value of the '{@link #getRegras() <em>Regras</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRegras()
+   * @generated
+   * @ordered
+   */
+  protected EList<Regra> regras;
+
+  /**
+   * The cached value of the '{@link #getExpressoes() <em>Expressoes</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpressoes()
+   * @generated
+   * @ordered
+   */
+  protected EList<Expressao> expressoes;
 
   /**
    * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
@@ -108,6 +132,34 @@ public class LPSImpl extends EObjectImpl implements LPS
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Regra> getRegras()
+  {
+    if (regras == null)
+    {
+      regras = new EObjectContainmentEList<Regra>(Regra.class, this, CaracteristicaPackage.LPS__REGRAS);
+    }
+    return regras;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Expressao> getExpressoes()
+  {
+    if (expressoes == null)
+    {
+      expressoes = new EObjectContainmentEList<Expressao>(Expressao.class, this, CaracteristicaPackage.LPS__EXPRESSOES);
+    }
+    return expressoes;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getNome()
   {
     return nome;
@@ -138,6 +190,10 @@ public class LPSImpl extends EObjectImpl implements LPS
     {
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return ((InternalEList<?>)getElementos()).basicRemove(otherEnd, msgs);
+      case CaracteristicaPackage.LPS__REGRAS:
+        return ((InternalEList<?>)getRegras()).basicRemove(otherEnd, msgs);
+      case CaracteristicaPackage.LPS__EXPRESSOES:
+        return ((InternalEList<?>)getExpressoes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -154,6 +210,10 @@ public class LPSImpl extends EObjectImpl implements LPS
     {
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return getElementos();
+      case CaracteristicaPackage.LPS__REGRAS:
+        return getRegras();
+      case CaracteristicaPackage.LPS__EXPRESSOES:
+        return getExpressoes();
       case CaracteristicaPackage.LPS__NOME:
         return getNome();
     }
@@ -175,6 +235,14 @@ public class LPSImpl extends EObjectImpl implements LPS
         getElementos().clear();
         getElementos().addAll((Collection<? extends Elemento>)newValue);
         return;
+      case CaracteristicaPackage.LPS__REGRAS:
+        getRegras().clear();
+        getRegras().addAll((Collection<? extends Regra>)newValue);
+        return;
+      case CaracteristicaPackage.LPS__EXPRESSOES:
+        getExpressoes().clear();
+        getExpressoes().addAll((Collection<? extends Expressao>)newValue);
+        return;
       case CaracteristicaPackage.LPS__NOME:
         setNome((String)newValue);
         return;
@@ -195,6 +263,12 @@ public class LPSImpl extends EObjectImpl implements LPS
       case CaracteristicaPackage.LPS__ELEMENTOS:
         getElementos().clear();
         return;
+      case CaracteristicaPackage.LPS__REGRAS:
+        getRegras().clear();
+        return;
+      case CaracteristicaPackage.LPS__EXPRESSOES:
+        getExpressoes().clear();
+        return;
       case CaracteristicaPackage.LPS__NOME:
         setNome(NOME_EDEFAULT);
         return;
@@ -214,6 +288,10 @@ public class LPSImpl extends EObjectImpl implements LPS
     {
       case CaracteristicaPackage.LPS__ELEMENTOS:
         return elementos != null && !elementos.isEmpty();
+      case CaracteristicaPackage.LPS__REGRAS:
+        return regras != null && !regras.isEmpty();
+      case CaracteristicaPackage.LPS__EXPRESSOES:
+        return expressoes != null && !expressoes.isEmpty();
       case CaracteristicaPackage.LPS__NOME:
         return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
     }

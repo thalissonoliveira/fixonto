@@ -31,10 +31,18 @@ import caracteristica.diagram.edit.parts.ContextoCaracteristicasIncluirEditPart;
 import caracteristica.diagram.edit.parts.ContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoDireitoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoEsquerdoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
@@ -106,11 +114,31 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
+	public static final IElementType ExpressaoLogica_2038 = getElementType("caracteristica.diagram.ExpressaoLogica_2038"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ExpressaoRelacional_2039 = getElementType("caracteristica.diagram.ExpressaoRelacional_2039"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType LiteralComposicao_2040 = getElementType("caracteristica.diagram.LiteralComposicao_2040"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
 	public static final IElementType Atributo_2017 = getElementType("caracteristica.diagram.Atributo_2017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
 	public static final IElementType Contexto_2037 = getElementType("caracteristica.diagram.Contexto_2037"); //$NON-NLS-1$
+	/**
+	 * @generated
+	 */
+	public static final IElementType RegraDeComposicao_2041 = getElementType("caracteristica.diagram.RegraDeComposicao_2041"); //$NON-NLS-1$
+
 	/**
 	 * @generated
 	 */
@@ -143,6 +171,26 @@ public class CaracteristicaElementTypes {
 	 * @generated
 	 */
 	public static final IElementType EntidadeDeContextoInformacoesDeContexto_4028 = getElementType("caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4028"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType RegraDeComposicaoAntecedente_4029 = getElementType("caracteristica.diagram.RegraDeComposicaoAntecedente_4029"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType RegraDeComposicaoConsequente_4030 = getElementType("caracteristica.diagram.RegraDeComposicaoConsequente_4030"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ExpressaoLogicaLadoDireitoComposicao_4031 = getElementType("caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4031"); //$NON-NLS-1$
+
+	/**
+	 * @generated
+	 */
+	public static final IElementType ExpressaoLogicaLadoEsquerdoComposicao_4032 = getElementType("caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4032"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -209,11 +257,23 @@ public class CaracteristicaElementTypes {
 			elements.put(InformacaoDeContexto_2036,
 					CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto());
 
+			elements.put(ExpressaoLogica_2038,
+					CaracteristicaPackage.eINSTANCE.getExpressaoLogica());
+
+			elements.put(ExpressaoRelacional_2039,
+					CaracteristicaPackage.eINSTANCE.getExpressaoRelacional());
+
+			elements.put(LiteralComposicao_2040,
+					CaracteristicaPackage.eINSTANCE.getLiteralComposicao());
+
 			elements.put(Atributo_2017,
 					CaracteristicaPackage.eINSTANCE.getAtributo());
 
 			elements.put(Contexto_2037,
 					CaracteristicaPackage.eINSTANCE.getContexto());
+
+			elements.put(RegraDeComposicao_2041,
+					CaracteristicaPackage.eINSTANCE.getRegraDeComposicao());
 
 			elements.put(CaracteristicaCaracteristicaFilha_4002,
 					CaracteristicaPackage.eINSTANCE
@@ -245,6 +305,22 @@ public class CaracteristicaElementTypes {
 			elements.put(EntidadeDeContextoInformacoesDeContexto_4028,
 					CaracteristicaPackage.eINSTANCE
 							.getEntidadeDeContexto_InformacoesDeContexto());
+
+			elements.put(RegraDeComposicaoAntecedente_4029,
+					CaracteristicaPackage.eINSTANCE
+							.getRegraDeComposicao_Antecedente());
+
+			elements.put(RegraDeComposicaoConsequente_4030,
+					CaracteristicaPackage.eINSTANCE
+							.getRegraDeComposicao_Consequente());
+
+			elements.put(ExpressaoLogicaLadoDireitoComposicao_4031,
+					CaracteristicaPackage.eINSTANCE
+							.getExpressaoLogica_LadoDireitoComposicao());
+
+			elements.put(ExpressaoLogicaLadoEsquerdoComposicao_4032,
+					CaracteristicaPackage.eINSTANCE
+							.getExpressaoLogica_LadoEsquerdoComposicao());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -271,8 +347,12 @@ public class CaracteristicaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(RaizDeContexto_2034);
 			KNOWN_ELEMENT_TYPES.add(EntidadeDeContexto_2035);
 			KNOWN_ELEMENT_TYPES.add(InformacaoDeContexto_2036);
+			KNOWN_ELEMENT_TYPES.add(ExpressaoLogica_2038);
+			KNOWN_ELEMENT_TYPES.add(ExpressaoRelacional_2039);
+			KNOWN_ELEMENT_TYPES.add(LiteralComposicao_2040);
 			KNOWN_ELEMENT_TYPES.add(Atributo_2017);
 			KNOWN_ELEMENT_TYPES.add(Contexto_2037);
+			KNOWN_ELEMENT_TYPES.add(RegraDeComposicao_2041);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaCaracteristicaFilha_4002);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaVariacoes_4003);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaAtributo_4004);
@@ -282,6 +362,10 @@ public class CaracteristicaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(RaizDeContextoEntidadesDeContexto_4027);
 			KNOWN_ELEMENT_TYPES
 					.add(EntidadeDeContextoInformacoesDeContexto_4028);
+			KNOWN_ELEMENT_TYPES.add(RegraDeComposicaoAntecedente_4029);
+			KNOWN_ELEMENT_TYPES.add(RegraDeComposicaoConsequente_4030);
+			KNOWN_ELEMENT_TYPES.add(ExpressaoLogicaLadoDireitoComposicao_4031);
+			KNOWN_ELEMENT_TYPES.add(ExpressaoLogicaLadoEsquerdoComposicao_4032);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -309,10 +393,18 @@ public class CaracteristicaElementTypes {
 			return EntidadeDeContexto_2035;
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 			return InformacaoDeContexto_2036;
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return ExpressaoLogica_2038;
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return ExpressaoRelacional_2039;
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return LiteralComposicao_2040;
 		case AtributoEditPart.VISUAL_ID:
 			return Atributo_2017;
 		case ContextoEditPart.VISUAL_ID:
 			return Contexto_2037;
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return RegraDeComposicao_2041;
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return CaracteristicaCaracteristicaFilha_4002;
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:
@@ -329,6 +421,14 @@ public class CaracteristicaElementTypes {
 			return RaizDeContextoEntidadesDeContexto_4027;
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return EntidadeDeContextoInformacoesDeContexto_4028;
+		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+			return RegraDeComposicaoAntecedente_4029;
+		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+			return RegraDeComposicaoConsequente_4030;
+		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+			return ExpressaoLogicaLadoDireitoComposicao_4031;
+		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+			return ExpressaoLogicaLadoEsquerdoComposicao_4032;
 		}
 		return null;
 	}

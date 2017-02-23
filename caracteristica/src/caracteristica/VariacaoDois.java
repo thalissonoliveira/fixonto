@@ -18,7 +18,7 @@ package caracteristica;
  * </p>
  *
  * @see caracteristica.CaracteristicaPackage#getVariacaoDois()
- * @model annotation="gmf.node label='nome,cardinalidadeMaxima' label.pattern='Variation {0} : {1} ' figure='utils.DiamondFigure'"
+ * @model annotation="gmf.node label='cardinalidadeMaxima' label.pattern='{0} : {1}' figure='utils.DiamondFigure'"
  * @generated
  */
 public interface VariacaoDois extends Caracteristica, ElementoCaracteristico

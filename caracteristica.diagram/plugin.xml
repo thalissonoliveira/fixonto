@@ -258,8 +258,8 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Caracteristica"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2033,2002,2003,2004,2034,2035,2036,2017,2037"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4003,4004,4005,4025,4026,4027,4028"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2033,2002,2003,2004,2034,2035,2036,2038,2039,2040,2017,2037,2041"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4002,4003,4004,4005,4025,4026,4027,4028,4029,4030,4031,4032"/>
       </viewProvider>
    </extension>
 
@@ -271,13 +271,13 @@
             <method name="getType()" value="Caracteristica"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2033,2002,2003,2004,2034,2035,2036,2017,2037"/>
+            <method name="getType()" value="2001,2033,2002,2003,2004,2034,2035,2036,2038,2039,2040,2017,2037,2041"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4002,4003,4004,4005,4025,4026,4027,4028"/>
+            <method name="getType()" value="4002,4003,4004,4005,4025,4026,4027,4028,4029,4030,4031,4032"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001,5034,5002,5003,5004,5035,5036,5037,5017,5038"/>
+            <method name="getType()" value="5001,5034,5002,5003,5004,5035,5036,5037,5039,5040,5041,5017,5038,5042"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
             <method name="getType()" value=""/>
@@ -299,9 +299,13 @@
          <object class="caracteristica.diagram.edit.parts.RaizDeContextoEditPart" id="RaizDeContexto_2034"/>
          <object class="caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart" id="EntidadeDeContexto_2035"/>
          <object class="caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart" id="InformacaoDeContexto_2036"/>
+         <object class="caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart" id="ExpressaoLogica_2038"/>
+         <object class="caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart" id="ExpressaoRelacional_2039"/>
+         <object class="caracteristica.diagram.edit.parts.LiteralComposicaoEditPart" id="LiteralComposicao_2040"/>
          <object class="caracteristica.diagram.edit.parts.AtributoEditPart" id="Atributo_2017"/>
          <object class="caracteristica.diagram.edit.parts.ContextoEditPart" id="Contexto_2037"/>
-         <context elements="LPS_1000,CaracteristicaOpcional_2001,CaracteristicaAgrupada_2033,VariacaoDois_2002,CaracteristicaRaiz_2003,CaracteristicaMandatoria_2004,RaizDeContexto_2034,EntidadeDeContexto_2035,InformacaoDeContexto_2036,Atributo_2017,Contexto_2037,"/>
+         <object class="caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart" id="RegraDeComposicao_2041"/>
+         <context elements="LPS_1000,CaracteristicaOpcional_2001,CaracteristicaAgrupada_2033,VariacaoDois_2002,CaracteristicaRaiz_2003,CaracteristicaMandatoria_2004,RaizDeContexto_2034,EntidadeDeContexto_2035,InformacaoDeContexto_2036,ExpressaoLogica_2038,ExpressaoRelacional_2039,LiteralComposicao_2040,Atributo_2017,Contexto_2037,RegraDeComposicao_2041,"/>
       </modelingAssistantProvider>
    </extension>
 
@@ -324,7 +328,7 @@
       <decoratorProvider class="caracteristica.diagram.providers.CaracteristicaShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2033,2002,2003,2004,2034,2035,2036,2017,2037"/>
+            <method name="getType()" value="2001,2033,2002,2003,2004,2034,2035,2036,2038,2039,2040,2017,2037,2041"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -424,6 +428,36 @@
       </metamodel>
       <metamodel nsURI="caracteristica">
          <metamodelType
+               id="caracteristica.diagram.ExpressaoLogica_2038"
+               name="%metatype.name.ExpressaoLogica_2038"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExpressaoLogica"
+               edithelper="caracteristica.diagram.edit.helpers.ExpressaoLogicaEditHelper">
+            <param name="semanticHint" value="2038"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <metamodelType
+               id="caracteristica.diagram.ExpressaoRelacional_2039"
+               name="%metatype.name.ExpressaoRelacional_2039"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="ExpressaoRelacional"
+               edithelper="caracteristica.diagram.edit.helpers.ExpressaoRelacionalEditHelper">
+            <param name="semanticHint" value="2039"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <metamodelType
+               id="caracteristica.diagram.LiteralComposicao_2040"
+               name="%metatype.name.LiteralComposicao_2040"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="LiteralComposicao"
+               edithelper="caracteristica.diagram.edit.helpers.LiteralComposicaoEditHelper">
+            <param name="semanticHint" value="2040"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <metamodelType
                id="caracteristica.diagram.Atributo_2017"
                name="%metatype.name.Atributo_2017"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
@@ -440,6 +474,16 @@
                eclass="Contexto"
                edithelper="caracteristica.diagram.edit.helpers.ContextoEditHelper">
             <param name="semanticHint" value="2037"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <metamodelType
+               id="caracteristica.diagram.RegraDeComposicao_2041"
+               name="%metatype.name.RegraDeComposicao_2041"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="RegraDeComposicao"
+               edithelper="caracteristica.diagram.edit.helpers.RegraDeComposicaoEditHelper">
+            <param name="semanticHint" value="2041"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="caracteristica">
@@ -514,6 +558,42 @@
             <param name="semanticHint" value="4028"/>
          </specializationType>
       </metamodel>
+      <metamodel nsURI="caracteristica">
+         <specializationType
+               id="caracteristica.diagram.RegraDeComposicaoAntecedente_4029"
+               name="%metatype.name.RegraDeComposicaoAntecedente_4029"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4029"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <specializationType
+               id="caracteristica.diagram.RegraDeComposicaoConsequente_4030"
+               name="%metatype.name.RegraDeComposicaoConsequente_4030"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4030"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <specializationType
+               id="caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4031"
+               name="%metatype.name.ExpressaoLogicaLadoDireitoComposicao_4031"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4031"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="caracteristica">
+         <specializationType
+               id="caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4032"
+               name="%metatype.name.ExpressaoLogicaLadoEsquerdoComposicao_4032"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="org.eclipse.gmf.runtime.emf.type.core.null"/>
+            <param name="semanticHint" value="4032"/>
+         </specializationType>
+      </metamodel>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypeBindings" id="element-types-bindings">
@@ -535,8 +615,12 @@
          <elementType ref="caracteristica.diagram.RaizDeContexto_2034"/>
          <elementType ref="caracteristica.diagram.EntidadeDeContexto_2035"/>
          <elementType ref="caracteristica.diagram.InformacaoDeContexto_2036"/>
+         <elementType ref="caracteristica.diagram.ExpressaoLogica_2038"/>
+         <elementType ref="caracteristica.diagram.ExpressaoRelacional_2039"/>
+         <elementType ref="caracteristica.diagram.LiteralComposicao_2040"/>
          <elementType ref="caracteristica.diagram.Atributo_2017"/>
          <elementType ref="caracteristica.diagram.Contexto_2037"/>
+         <elementType ref="caracteristica.diagram.RegraDeComposicao_2041"/>
          <elementType ref="caracteristica.diagram.CaracteristicaCaracteristicaFilha_4002"/>
          <elementType ref="caracteristica.diagram.CaracteristicaVariacoes_4003"/>
          <elementType ref="caracteristica.diagram.CaracteristicaAtributo_4004"/>
@@ -545,6 +629,10 @@
          <elementType ref="caracteristica.diagram.ContextoCaracteristicasExcluir_4026"/>
          <elementType ref="caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4027"/>
          <elementType ref="caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4028"/>
+         <elementType ref="caracteristica.diagram.RegraDeComposicaoAntecedente_4029"/>
+         <elementType ref="caracteristica.diagram.RegraDeComposicaoConsequente_4030"/>
+         <elementType ref="caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4031"/>
+         <elementType ref="caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4032"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

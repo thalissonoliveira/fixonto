@@ -65,7 +65,7 @@ public interface EntidadeDeContexto extends Contexto
    * @see caracteristica.CaracteristicaPackage#getEntidadeDeContexto_InformacoesDeContexto()
    * @see caracteristica.InformacaoDeContexto#getElementoPai
    * @model opposite="elementoPai"
-   *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   *        annotation="gmf.link color='0,0,0' style='solid' width='3'"
    * @generated
    */
   EList<InformacaoDeContexto> getInformacoesDeContexto();

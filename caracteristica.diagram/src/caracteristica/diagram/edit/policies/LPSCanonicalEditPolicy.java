@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
+import java.util.Set;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
@@ -40,9 +42,13 @@ import caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart;
 import caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart;
 import caracteristica.diagram.edit.parts.ContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.part.CaracteristicaDiagramUpdater;
 import caracteristica.diagram.part.CaracteristicaLinkDescriptor;
@@ -53,6 +59,11 @@ import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
  * @generated
  */
 public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
+
+	/**
+	 * @generated
+	 */
+	private Set<EStructuralFeature> myFeaturesToSynchronize;
 
 	/**
 	 * @generated
@@ -69,8 +80,17 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 	/**
 	 * @generated
 	 */
-	protected EStructuralFeature getFeatureToSynchronize() {
-		return CaracteristicaPackage.eINSTANCE.getLPS_Elementos();
+	protected Set getFeaturesToSynchronize() {
+		if (myFeaturesToSynchronize == null) {
+			myFeaturesToSynchronize = new HashSet<EStructuralFeature>();
+			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
+					.getLPS_Elementos());
+			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
+					.getLPS_Expressoes());
+			myFeaturesToSynchronize.add(CaracteristicaPackage.eINSTANCE
+					.getLPS_Regras());
+		}
+		return myFeaturesToSynchronize;
 	}
 
 	/**
@@ -114,8 +134,12 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 		case RaizDeContextoEditPart.VISUAL_ID:
 		case EntidadeDeContextoEditPart.VISUAL_ID:
 		case InformacaoDeContextoEditPart.VISUAL_ID:
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+		case LiteralComposicaoEditPart.VISUAL_ID:
 		case AtributoEditPart.VISUAL_ID:
 		case ContextoEditPart.VISUAL_ID:
+		case RegraDeComposicaoEditPart.VISUAL_ID:
 			return true;
 		}
 		return false;
@@ -353,6 +377,30 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
+		case ExpressaoLogicaEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getExpressaoLogica_2038ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case ExpressaoRelacionalEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getExpressaoRelacional_2039ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case LiteralComposicaoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getLiteralComposicao_2040ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
 		case AtributoEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(CaracteristicaDiagramUpdater
@@ -365,6 +413,14 @@ public class LPSCanonicalEditPolicy extends CanonicalEditPolicy {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
 				result.addAll(CaracteristicaDiagramUpdater
 						.getContexto_2037ContainedLinks(view));
+			}
+			domain2NotationMap.putView(view.getElement(), view);
+			break;
+		}
+		case RegraDeComposicaoEditPart.VISUAL_ID: {
+			if (!domain2NotationMap.containsKey(view.getElement())) {
+				result.addAll(CaracteristicaDiagramUpdater
+						.getRegraDeComposicao_2041ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

@@ -34,7 +34,7 @@ public interface Contexto extends Elemento
    * <!-- end-user-doc -->
    * @return the value of the '<em>Caracteristicas Incluir</em>' reference list.
    * @see caracteristica.CaracteristicaPackage#getContexto_CaracteristicasIncluir()
-   * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='dot' width='3'"
    * @generated
    */
   EList<Caracteristica> getCaracteristicasIncluir();
@@ -50,7 +50,7 @@ public interface Contexto extends Elemento
    * <!-- end-user-doc -->
    * @return the value of the '<em>Caracteristicas Excluir</em>' reference list.
    * @see caracteristica.CaracteristicaPackage#getContexto_CaracteristicasExcluir()
-   * @model annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   * @model annotation="gmf.link target.decoration='closedarrow' source.decoration='closedarrow' color='0,0,0' style='dot' width='3'"
    * @generated
    */
   EList<Caracteristica> getCaracteristicasExcluir();

@@ -75,6 +75,24 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="ExpressaoLogica"
+          description="Create new ExpressaoLogica">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="ExpressaoRelacional"
+          description="Create new ExpressaoRelacional">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="InformacaoDeContexto"
           description="Create new InformacaoDeContexto">
         <smallIcon
@@ -84,8 +102,26 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="LiteralComposicao"
+          description="Create new LiteralComposicao">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="RaizDeContexto"
           description="Create new RaizDeContexto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="RegraDeComposicao"
+          description="Create new RegraDeComposicao">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -105,6 +141,15 @@
         xsi:type="gmftool:ToolGroup"
         title="Connections"
         collapsible="true">
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Antecedente"
+          description="Create new Antecedente">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
       <tools
           xsi:type="gmftool:CreationTool"
           title="Atributo"
@@ -143,6 +188,15 @@
       </tools>
       <tools
           xsi:type="gmftool:CreationTool"
+          title="Consequente"
+          description="Create new Consequente">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
           title="EntidadesDeContexto"
           description="Create new EntidadesDeContexto">
         <smallIcon
@@ -154,6 +208,24 @@
           xsi:type="gmftool:CreationTool"
           title="InformacoesDeContexto"
           description="Create new InformacoesDeContexto">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="LadoDireitoComposicao"
+          description="Create new LadoDireitoComposicao">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="LadoEsquerdoComposicao"
+          description="Create new LadoEsquerdoComposicao">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

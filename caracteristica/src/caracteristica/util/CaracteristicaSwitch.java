@@ -220,6 +220,63 @@ public class CaracteristicaSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CaracteristicaPackage.REGRA:
+      {
+        Regra regra = (Regra)theEObject;
+        T result = caseRegra(regra);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.REGRA_DE_COMPOSICAO:
+      {
+        RegraDeComposicao regraDeComposicao = (RegraDeComposicao)theEObject;
+        T result = caseRegraDeComposicao(regraDeComposicao);
+        if (result == null) result = caseRegra(regraDeComposicao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.EXPRESSAO:
+      {
+        Expressao expressao = (Expressao)theEObject;
+        T result = caseExpressao(expressao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.ANTECEDENTE:
+      {
+        Antecedente antecedente = (Antecedente)theEObject;
+        T result = caseAntecedente(antecedente);
+        if (result == null) result = caseExpressao(antecedente);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.EXPRESSAO_LOGICA:
+      {
+        ExpressaoLogica expressaoLogica = (ExpressaoLogica)theEObject;
+        T result = caseExpressaoLogica(expressaoLogica);
+        if (result == null) result = caseAntecedente(expressaoLogica);
+        if (result == null) result = caseExpressao(expressaoLogica);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.EXPRESSAO_RELACIONAL:
+      {
+        ExpressaoRelacional expressaoRelacional = (ExpressaoRelacional)theEObject;
+        T result = caseExpressaoRelacional(expressaoRelacional);
+        if (result == null) result = caseAntecedente(expressaoRelacional);
+        if (result == null) result = caseExpressao(expressaoRelacional);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CaracteristicaPackage.LITERAL_COMPOSICAO:
+      {
+        LiteralComposicao literalComposicao = (LiteralComposicao)theEObject;
+        T result = caseLiteralComposicao(literalComposicao);
+        if (result == null) result = caseAntecedente(literalComposicao);
+        if (result == null) result = caseExpressao(literalComposicao);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -492,6 +549,118 @@ public class CaracteristicaSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInformacaoDeContexto(InformacaoDeContexto object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Regra</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Regra</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRegra(Regra object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Regra De Composicao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Regra De Composicao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseRegraDeComposicao(RegraDeComposicao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expressao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expressao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressao(Expressao object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Antecedente</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Antecedente</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAntecedente(Antecedente object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expressao Logica</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expressao Logica</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressaoLogica(ExpressaoLogica object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Expressao Relacional</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Expressao Relacional</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseExpressaoRelacional(ExpressaoRelacional object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Literal Composicao</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Literal Composicao</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLiteralComposicao(LiteralComposicao object)
   {
     return null;
   }

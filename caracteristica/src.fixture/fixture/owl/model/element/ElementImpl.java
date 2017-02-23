@@ -14,6 +14,10 @@ public abstract class ElementImpl implements Element {
 		this.id = id;
 		this.name = name;
 	}
+	
+	public ElementImpl(String name) {
+		this.name = name;
+	}
 
 
 	public String getId() {

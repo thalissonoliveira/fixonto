@@ -160,6 +160,41 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
         return createInformacaoDeContextoAdapter();
       }
       @Override
+      public Adapter caseRegra(Regra object)
+      {
+        return createRegraAdapter();
+      }
+      @Override
+      public Adapter caseRegraDeComposicao(RegraDeComposicao object)
+      {
+        return createRegraDeComposicaoAdapter();
+      }
+      @Override
+      public Adapter caseExpressao(Expressao object)
+      {
+        return createExpressaoAdapter();
+      }
+      @Override
+      public Adapter caseAntecedente(Antecedente object)
+      {
+        return createAntecedenteAdapter();
+      }
+      @Override
+      public Adapter caseExpressaoLogica(ExpressaoLogica object)
+      {
+        return createExpressaoLogicaAdapter();
+      }
+      @Override
+      public Adapter caseExpressaoRelacional(ExpressaoRelacional object)
+      {
+        return createExpressaoRelacionalAdapter();
+      }
+      @Override
+      public Adapter caseLiteralComposicao(LiteralComposicao object)
+      {
+        return createLiteralComposicaoAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -432,6 +467,111 @@ public class CaracteristicaAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInformacaoDeContextoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.Regra <em>Regra</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.Regra
+   * @generated
+   */
+  public Adapter createRegraAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.RegraDeComposicao <em>Regra De Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.RegraDeComposicao
+   * @generated
+   */
+  public Adapter createRegraDeComposicaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.Expressao <em>Expressao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.Expressao
+   * @generated
+   */
+  public Adapter createExpressaoAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.Antecedente <em>Antecedente</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.Antecedente
+   * @generated
+   */
+  public Adapter createAntecedenteAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.ExpressaoLogica <em>Expressao Logica</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.ExpressaoLogica
+   * @generated
+   */
+  public Adapter createExpressaoLogicaAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.ExpressaoRelacional <em>Expressao Relacional</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.ExpressaoRelacional
+   * @generated
+   */
+  public Adapter createExpressaoRelacionalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link caracteristica.LiteralComposicao <em>Literal Composicao</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see caracteristica.LiteralComposicao
+   * @generated
+   */
+  public Adapter createLiteralComposicaoAdapter()
   {
     return null;
   }

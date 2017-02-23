@@ -41,12 +41,25 @@ import caracteristica.diagram.edit.parts.ContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoDireitoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoEsquerdoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaOperadorLogicoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalNomeEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoNomeEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoNomeEditPart;
+import caracteristica.diagram.edit.parts.VariacaoDoisCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
@@ -155,6 +168,18 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 		case ContextoEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?TopLevelNode?caracteristica?Contexto", CaracteristicaElementTypes.Contexto_2037); //$NON-NLS-1$
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?caracteristica?ExpressaoLogica", CaracteristicaElementTypes.ExpressaoLogica_2038); //$NON-NLS-1$
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?caracteristica?ExpressaoRelacional", CaracteristicaElementTypes.ExpressaoRelacional_2039); //$NON-NLS-1$
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?caracteristica?LiteralComposicao", CaracteristicaElementTypes.LiteralComposicao_2040); //$NON-NLS-1$
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?TopLevelNode?caracteristica?RegraDeComposicao", CaracteristicaElementTypes.RegraDeComposicao_2041); //$NON-NLS-1$
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?caracteristica?Caracteristica?caracteristicaFilha", CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002); //$NON-NLS-1$
@@ -179,6 +204,18 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getImage(
 					"Navigator?Link?caracteristica?EntidadeDeContexto?informacoesDeContexto", CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028); //$NON-NLS-1$
+		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?caracteristica?RegraDeComposicao?antecedente", CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029); //$NON-NLS-1$
+		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?caracteristica?RegraDeComposicao?consequente", CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030); //$NON-NLS-1$
+		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?caracteristica?ExpressaoLogica?ladoDireitoComposicao", CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031); //$NON-NLS-1$
+		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+			return getImage(
+					"Navigator?Link?caracteristica?ExpressaoLogica?ladoEsquerdoComposicao", CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -261,6 +298,14 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 			return getInformacaoDeContexto_2036Text(view);
 		case ContextoEditPart.VISUAL_ID:
 			return getContexto_2037Text(view);
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return getExpressaoLogica_2038Text(view);
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return getExpressaoRelacional_2039Text(view);
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return getLiteralComposicao_2040Text(view);
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return getRegraDeComposicao_2041Text(view);
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 			return getCaracteristicaCaracteristicaFilha_4002Text(view);
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:
@@ -277,6 +322,14 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 			return getRaizDeContextoEntidadesDeContexto_4027Text(view);
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return getEntidadeDeContextoInformacoesDeContexto_4028Text(view);
+		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+			return getRegraDeComposicaoAntecedente_4029Text(view);
+		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+			return getRegraDeComposicaoConsequente_4030Text(view);
+		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+			return getExpressaoLogicaLadoDireitoComposicao_4031Text(view);
+		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+			return getExpressaoLogicaLadoEsquerdoComposicao_4032Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -325,7 +378,7 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 						CaracteristicaElementTypes.VariacaoDois_2002,
 						view.getElement() != null ? view.getElement() : view,
 						CaracteristicaVisualIDRegistry
-								.getType(VariacaoDoisNomeCardinalidadeMaximaEditPart.VISUAL_ID));
+								.getType(VariacaoDoisCardinalidadeMaximaEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(
 					view.getElement() != null ? view.getElement() : view),
@@ -501,6 +554,87 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 	/**
 	 * @generated
 	 */
+	private String getExpressaoLogica_2038Text(View view) {
+		IParser parser = CaracteristicaParserProvider
+				.getParser(
+						CaracteristicaElementTypes.ExpressaoLogica_2038,
+						view.getElement() != null ? view.getElement() : view,
+						CaracteristicaVisualIDRegistry
+								.getType(ExpressaoLogicaOperadorLogicoEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5039); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getExpressaoRelacional_2039Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.ExpressaoRelacional_2039, view
+						.getElement() != null ? view.getElement() : view,
+				CaracteristicaVisualIDRegistry
+						.getType(ExpressaoRelacionalNomeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5040); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getLiteralComposicao_2040Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.LiteralComposicao_2040, view
+						.getElement() != null ? view.getElement() : view,
+				CaracteristicaVisualIDRegistry
+						.getType(LiteralComposicaoNomeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5041); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRegraDeComposicao_2041Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.RegraDeComposicao_2041, view
+						.getElement() != null ? view.getElement() : view,
+				CaracteristicaVisualIDRegistry
+						.getType(RegraDeComposicaoNomeEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 5042); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
 	private String getCaracteristicaCaracteristicaFilha_4002Text(View view) {
 		IParser parser = CaracteristicaParserProvider
 				.getParser(
@@ -649,6 +783,84 @@ public class CaracteristicaNavigatorLabelProvider extends LabelProvider
 		} else {
 			CaracteristicaDiagramEditorPlugin.getInstance().logError(
 					"Parser was not found for label " + 6028); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRegraDeComposicaoAntecedente_4029Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029,
+				view.getElement() != null ? view.getElement() : view,
+				CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6029); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getRegraDeComposicaoConsequente_4030Text(View view) {
+		IParser parser = CaracteristicaParserProvider.getParser(
+				CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030,
+				view.getElement() != null ? view.getElement() : view,
+				CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6030); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getExpressaoLogicaLadoDireitoComposicao_4031Text(View view) {
+		IParser parser = CaracteristicaParserProvider
+				.getParser(
+						CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031,
+						view.getElement() != null ? view.getElement() : view,
+						CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6031); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	 * @generated
+	 */
+	private String getExpressaoLogicaLadoEsquerdoComposicao_4032Text(View view) {
+		IParser parser = CaracteristicaParserProvider
+				.getParser(
+						CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032,
+						view.getElement() != null ? view.getElement() : view,
+						CommonParserHint.DESCRIPTION);
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(
+					view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			CaracteristicaDiagramEditorPlugin.getInstance().logError(
+					"Parser was not found for label " + 6032); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

@@ -5,6 +5,7 @@ package caracteristica.diagram.edit.parts;
 
 import org.eclipse.draw2d.ColorConstants;
 import org.eclipse.draw2d.Connection;
+import org.eclipse.draw2d.Graphics;
 import org.eclipse.draw2d.PolygonDecoration;
 import org.eclipse.draw2d.RotatableDecoration;
 import org.eclipse.draw2d.geometry.PointList;
@@ -75,6 +76,7 @@ public class ContextoCaracteristicasIncluirEditPart extends
 		 */
 		public ContextoCaracteristicasIncluirFigure() {
 			this.setLineWidth(3);
+			this.setLineStyle(Graphics.LINE_DOT);
 			this.setForegroundColor(THIS_FORE);
 
 			setTargetDecoration(createTargetDecoration());

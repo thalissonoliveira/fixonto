@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
+import caracteristica.Antecedente;
 import caracteristica.Atributo;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaAgrupada;
@@ -26,8 +27,14 @@ import caracteristica.CaracteristicaRaiz;
 import caracteristica.Contexto;
 import caracteristica.Elemento;
 import caracteristica.EntidadeDeContexto;
+import caracteristica.Expressao;
+import caracteristica.ExpressaoLogica;
+import caracteristica.ExpressaoRelacional;
 import caracteristica.InformacaoDeContexto;
+import caracteristica.LiteralComposicao;
 import caracteristica.RaizDeContexto;
+import caracteristica.Regra;
+import caracteristica.RegraDeComposicao;
 import caracteristica.Variacao;
 import caracteristica.VariacaoDois;
 import caracteristica.diagram.edit.parts.AtributoEditPart;
@@ -43,10 +50,18 @@ import caracteristica.diagram.edit.parts.ContextoCaracteristicasIncluirEditPart;
 import caracteristica.diagram.edit.parts.ContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoDireitoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoEsquerdoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -142,6 +157,37 @@ public class CaracteristicaDiagramUpdater {
 				continue;
 			}
 		}
+		for (Iterator<?> it = modelElement.getExpressoes().iterator(); it
+				.hasNext();) {
+			Expressao childElement = (Expressao) it.next();
+			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == ExpressaoLogicaEditPart.VISUAL_ID) {
+				result.add(new CaracteristicaNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+			if (visualID == ExpressaoRelacionalEditPart.VISUAL_ID) {
+				result.add(new CaracteristicaNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+			if (visualID == LiteralComposicaoEditPart.VISUAL_ID) {
+				result.add(new CaracteristicaNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+		}
+		for (Iterator<?> it = modelElement.getRegras().iterator(); it.hasNext();) {
+			Regra childElement = (Regra) it.next();
+			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view,
+					childElement);
+			if (visualID == RegraDeComposicaoEditPart.VISUAL_ID) {
+				result.add(new CaracteristicaNodeDescriptor(childElement,
+						visualID));
+				continue;
+			}
+		}
 		return result;
 	}
 
@@ -168,10 +214,18 @@ public class CaracteristicaDiagramUpdater {
 			return getEntidadeDeContexto_2035ContainedLinks(view);
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 			return getInformacaoDeContexto_2036ContainedLinks(view);
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return getExpressaoLogica_2038ContainedLinks(view);
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return getExpressaoRelacional_2039ContainedLinks(view);
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return getLiteralComposicao_2040ContainedLinks(view);
 		case AtributoEditPart.VISUAL_ID:
 			return getAtributo_2017ContainedLinks(view);
 		case ContextoEditPart.VISUAL_ID:
 			return getContexto_2037ContainedLinks(view);
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return getRegraDeComposicao_2041ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -197,10 +251,18 @@ public class CaracteristicaDiagramUpdater {
 			return getEntidadeDeContexto_2035IncomingLinks(view);
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 			return getInformacaoDeContexto_2036IncomingLinks(view);
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return getExpressaoLogica_2038IncomingLinks(view);
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return getExpressaoRelacional_2039IncomingLinks(view);
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return getLiteralComposicao_2040IncomingLinks(view);
 		case AtributoEditPart.VISUAL_ID:
 			return getAtributo_2017IncomingLinks(view);
 		case ContextoEditPart.VISUAL_ID:
 			return getContexto_2037IncomingLinks(view);
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return getRegraDeComposicao_2041IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -226,10 +288,18 @@ public class CaracteristicaDiagramUpdater {
 			return getEntidadeDeContexto_2035OutgoingLinks(view);
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 			return getInformacaoDeContexto_2036OutgoingLinks(view);
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return getExpressaoLogica_2038OutgoingLinks(view);
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return getExpressaoRelacional_2039OutgoingLinks(view);
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return getLiteralComposicao_2040OutgoingLinks(view);
 		case AtributoEditPart.VISUAL_ID:
 			return getAtributo_2017OutgoingLinks(view);
 		case ContextoEditPart.VISUAL_ID:
 			return getContexto_2037OutgoingLinks(view);
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return getRegraDeComposicao_2041OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -354,6 +424,34 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038ContainedLinks(
+			View view) {
+		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040ContainedLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<CaracteristicaLinkDescriptor> getAtributo_2017ContainedLinks(
 			View view) {
 		return Collections.emptyList();
@@ -368,6 +466,18 @@ public class CaracteristicaDiagramUpdater {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041ContainedLinks(
+			View view) {
+		RegraDeComposicao modelElement = (RegraDeComposicao) view.getElement();
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(modelElement));
 		return result;
 	}
 
@@ -506,6 +616,67 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038IncomingLinks(
+			View view) {
+		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039IncomingLinks(
+			View view) {
+		ExpressaoRelacional modelElement = (ExpressaoRelacional) view
+				.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040IncomingLinks(
+			View view) {
+		LiteralComposicao modelElement = (LiteralComposicao) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
+				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
+				modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<CaracteristicaLinkDescriptor> getAtributo_2017IncomingLinks(
 			View view) {
 		Atributo modelElement = (Atributo) view.getElement();
@@ -521,6 +692,14 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	public static List<CaracteristicaLinkDescriptor> getContexto_2037IncomingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041IncomingLinks(
 			View view) {
 		return Collections.emptyList();
 	}
@@ -637,6 +816,34 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038OutgoingLinks(
+			View view) {
+		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040OutgoingLinks(
+			View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
 	public static List<CaracteristicaLinkDescriptor> getAtributo_2017OutgoingLinks(
 			View view) {
 		return Collections.emptyList();
@@ -651,6 +858,18 @@ public class CaracteristicaDiagramUpdater {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041OutgoingLinks(
+			View view) {
+		RegraDeComposicao modelElement = (RegraDeComposicao) view.getElement();
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement));
+		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(modelElement));
 		return result;
 	}
 
@@ -788,6 +1007,94 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
+	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
+			Antecedente target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
+					.getRegraDeComposicao_Antecedente()) {
+				result.add(new CaracteristicaLinkDescriptor(
+						setting.getEObject(),
+						target,
+						CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029,
+						RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
+			Antecedente target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
+					.getRegraDeComposicao_Consequente()) {
+				result.add(new CaracteristicaLinkDescriptor(
+						setting.getEObject(),
+						target,
+						CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030,
+						RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
+			Antecedente target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
+					.getExpressaoLogica_LadoDireitoComposicao()) {
+				result.add(new CaracteristicaLinkDescriptor(
+						setting.getEObject(),
+						target,
+						CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031,
+						ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
+			Antecedente target,
+			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Collection<EStructuralFeature.Setting> settings = crossReferences
+				.get(target);
+		for (EStructuralFeature.Setting setting : settings) {
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
+					.getExpressaoLogica_LadoEsquerdoComposicao()) {
+				result.add(new CaracteristicaLinkDescriptor(
+						setting.getEObject(),
+						target,
+						CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032,
+						ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			}
+		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
 			Caracteristica source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
@@ -906,6 +1213,74 @@ public class CaracteristicaDiagramUpdater {
 					CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028,
 					EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 		}
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
+			RegraDeComposicao source) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Antecedente destination = source.getAntecedente();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new CaracteristicaLinkDescriptor(source, destination,
+				CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029,
+				RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
+			RegraDeComposicao source) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Antecedente destination = source.getConsequente();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new CaracteristicaLinkDescriptor(source, destination,
+				CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030,
+				RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
+			ExpressaoLogica source) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Antecedente destination = source.getLadoDireitoComposicao();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new CaracteristicaLinkDescriptor(
+				source,
+				destination,
+				CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031,
+				ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
+			ExpressaoLogica source) {
+		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
+		Antecedente destination = source.getLadoEsquerdoComposicao();
+		if (destination == null) {
+			return result;
+		}
+		result.add(new CaracteristicaLinkDescriptor(
+				source,
+				destination,
+				CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032,
+				ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
 		return result;
 	}
 

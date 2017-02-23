@@ -17,8 +17,12 @@ import caracteristica.diagram.edit.commands.CaracteristicaOpcionalCreateCommand;
 import caracteristica.diagram.edit.commands.CaracteristicaRaizCreateCommand;
 import caracteristica.diagram.edit.commands.ContextoCreateCommand;
 import caracteristica.diagram.edit.commands.EntidadeDeContextoCreateCommand;
+import caracteristica.diagram.edit.commands.ExpressaoLogicaCreateCommand;
+import caracteristica.diagram.edit.commands.ExpressaoRelacionalCreateCommand;
 import caracteristica.diagram.edit.commands.InformacaoDeContextoCreateCommand;
+import caracteristica.diagram.edit.commands.LiteralComposicaoCreateCommand;
 import caracteristica.diagram.edit.commands.RaizDeContextoCreateCommand;
+import caracteristica.diagram.edit.commands.RegraDeComposicaoCreateCommand;
 import caracteristica.diagram.edit.commands.VariacaoDoisCreateCommand;
 import caracteristica.diagram.providers.CaracteristicaElementTypes;
 
@@ -71,11 +75,27 @@ public class LPSItemSemanticEditPolicy extends
 				.getElementType()) {
 			return getGEFWrapper(new InformacaoDeContextoCreateCommand(req));
 		}
+		if (CaracteristicaElementTypes.ExpressaoLogica_2038 == req
+				.getElementType()) {
+			return getGEFWrapper(new ExpressaoLogicaCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.ExpressaoRelacional_2039 == req
+				.getElementType()) {
+			return getGEFWrapper(new ExpressaoRelacionalCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.LiteralComposicao_2040 == req
+				.getElementType()) {
+			return getGEFWrapper(new LiteralComposicaoCreateCommand(req));
+		}
 		if (CaracteristicaElementTypes.Atributo_2017 == req.getElementType()) {
 			return getGEFWrapper(new AtributoCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.Contexto_2037 == req.getElementType()) {
 			return getGEFWrapper(new ContextoCreateCommand(req));
+		}
+		if (CaracteristicaElementTypes.RegraDeComposicao_2041 == req
+				.getElementType()) {
+			return getGEFWrapper(new RegraDeComposicaoCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

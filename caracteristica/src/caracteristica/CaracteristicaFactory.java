@@ -176,6 +176,69 @@ public interface CaracteristicaFactory extends EFactory
   InformacaoDeContexto createInformacaoDeContexto();
 
   /**
+   * Returns a new object of class '<em>Regra</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Regra</em>'.
+   * @generated
+   */
+  Regra createRegra();
+
+  /**
+   * Returns a new object of class '<em>Regra De Composicao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Regra De Composicao</em>'.
+   * @generated
+   */
+  RegraDeComposicao createRegraDeComposicao();
+
+  /**
+   * Returns a new object of class '<em>Expressao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expressao</em>'.
+   * @generated
+   */
+  Expressao createExpressao();
+
+  /**
+   * Returns a new object of class '<em>Antecedente</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Antecedente</em>'.
+   * @generated
+   */
+  Antecedente createAntecedente();
+
+  /**
+   * Returns a new object of class '<em>Expressao Logica</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expressao Logica</em>'.
+   * @generated
+   */
+  ExpressaoLogica createExpressaoLogica();
+
+  /**
+   * Returns a new object of class '<em>Expressao Relacional</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expressao Relacional</em>'.
+   * @generated
+   */
+  ExpressaoRelacional createExpressaoRelacional();
+
+  /**
+   * Returns a new object of class '<em>Literal Composicao</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Literal Composicao</em>'.
+   * @generated
+   */
+  LiteralComposicao createLiteralComposicao();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

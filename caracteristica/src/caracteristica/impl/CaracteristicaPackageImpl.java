@@ -2,6 +2,7 @@
  */
 package caracteristica.impl;
 
+import caracteristica.Antecedente;
 import caracteristica.Atributo;
 import caracteristica.Caracteristica;
 import caracteristica.CaracteristicaAgrupada;
@@ -15,7 +16,11 @@ import caracteristica.Contexto;
 import caracteristica.Elemento;
 import caracteristica.ElementoCaracteristico;
 import caracteristica.EntidadeDeContexto;
+import caracteristica.Expressao;
+import caracteristica.ExpressaoLogica;
+import caracteristica.ExpressaoRelacional;
 import caracteristica.InformacaoDeContexto;
+import caracteristica.LiteralComposicao;
 import caracteristica.OperadorAcaoLogico;
 import caracteristica.OperadorLogico;
 import caracteristica.OperadorRelacional;
@@ -24,6 +29,8 @@ import caracteristica.PontoDeVariacao;
 import caracteristica.Presenca;
 import caracteristica.Qualidade;
 import caracteristica.RaizDeContexto;
+import caracteristica.Regra;
+import caracteristica.RegraDeComposicao;
 import caracteristica.TipoValor;
 import caracteristica.Validade;
 import caracteristica.Variacao;
@@ -164,6 +171,55 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * @generated
    */
   private EClass informacaoDeContextoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass regraEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass regraDeComposicaoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressaoEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass antecedenteEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressaoLogicaEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass expressaoRelacionalEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass literalComposicaoEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -316,9 +372,29 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLPS_Regras()
+  {
+    return (EReference)lpsEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLPS_Expressoes()
+  {
+    return (EReference)lpsEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getLPS_Nome()
   {
-    return (EAttribute)lpsEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)lpsEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -706,6 +782,206 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getRegra()
+  {
+    return regraEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRegra_Nome()
+  {
+    return (EAttribute)regraEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRegra_Conteudo()
+  {
+    return (EAttribute)regraEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getRegraDeComposicao()
+  {
+    return regraDeComposicaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRegraDeComposicao_Antecedente()
+  {
+    return (EReference)regraDeComposicaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getRegraDeComposicao_Consequente()
+  {
+    return (EReference)regraDeComposicaoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpressao()
+  {
+    return expressaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpressao_Nome()
+  {
+    return (EAttribute)expressaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAntecedente()
+  {
+    return antecedenteEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpressaoLogica()
+  {
+    return expressaoLogicaEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpressaoLogica_LadoDireitoComposicao()
+  {
+    return (EReference)expressaoLogicaEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpressaoLogica_OperadorLogico()
+  {
+    return (EAttribute)expressaoLogicaEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpressaoLogica_LadoEsquerdoComposicao()
+  {
+    return (EReference)expressaoLogicaEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getExpressaoRelacional()
+  {
+    return expressaoRelacionalEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getExpressaoRelacional_VariaveldaExpressao()
+  {
+    return (EReference)expressaoRelacionalEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpressaoRelacional_OperadorRelacional()
+  {
+    return (EAttribute)expressaoRelacionalEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getExpressaoRelacional_Valor()
+  {
+    return (EAttribute)expressaoRelacionalEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLiteralComposicao()
+  {
+    return literalComposicaoEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getLiteralComposicao_Presenca()
+  {
+    return (EAttribute)literalComposicaoEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLiteralComposicao_Elemento()
+  {
+    return (EReference)literalComposicaoEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EEnum getOrigem()
   {
     return origemEEnum;
@@ -823,6 +1099,8 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     // Create classes and their features
     lpsEClass = createEClass(LPS);
     createEReference(lpsEClass, LPS__ELEMENTOS);
+    createEReference(lpsEClass, LPS__REGRAS);
+    createEReference(lpsEClass, LPS__EXPRESSOES);
     createEAttribute(lpsEClass, LPS__NOME);
 
     elementoEClass = createEClass(ELEMENTO);
@@ -878,6 +1156,33 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     informacaoDeContextoEClass = createEClass(INFORMACAO_DE_CONTEXTO);
     createEReference(informacaoDeContextoEClass, INFORMACAO_DE_CONTEXTO__ELEMENTO_PAI);
+
+    regraEClass = createEClass(REGRA);
+    createEAttribute(regraEClass, REGRA__NOME);
+    createEAttribute(regraEClass, REGRA__CONTEUDO);
+
+    regraDeComposicaoEClass = createEClass(REGRA_DE_COMPOSICAO);
+    createEReference(regraDeComposicaoEClass, REGRA_DE_COMPOSICAO__ANTECEDENTE);
+    createEReference(regraDeComposicaoEClass, REGRA_DE_COMPOSICAO__CONSEQUENTE);
+
+    expressaoEClass = createEClass(EXPRESSAO);
+    createEAttribute(expressaoEClass, EXPRESSAO__NOME);
+
+    antecedenteEClass = createEClass(ANTECEDENTE);
+
+    expressaoLogicaEClass = createEClass(EXPRESSAO_LOGICA);
+    createEReference(expressaoLogicaEClass, EXPRESSAO_LOGICA__LADO_DIREITO_COMPOSICAO);
+    createEAttribute(expressaoLogicaEClass, EXPRESSAO_LOGICA__OPERADOR_LOGICO);
+    createEReference(expressaoLogicaEClass, EXPRESSAO_LOGICA__LADO_ESQUERDO_COMPOSICAO);
+
+    expressaoRelacionalEClass = createEClass(EXPRESSAO_RELACIONAL);
+    createEReference(expressaoRelacionalEClass, EXPRESSAO_RELACIONAL__VARIAVELDA_EXPRESSAO);
+    createEAttribute(expressaoRelacionalEClass, EXPRESSAO_RELACIONAL__OPERADOR_RELACIONAL);
+    createEAttribute(expressaoRelacionalEClass, EXPRESSAO_RELACIONAL__VALOR);
+
+    literalComposicaoEClass = createEClass(LITERAL_COMPOSICAO);
+    createEAttribute(literalComposicaoEClass, LITERAL_COMPOSICAO__PRESENCA);
+    createEReference(literalComposicaoEClass, LITERAL_COMPOSICAO__ELEMENTO);
 
     // Create enums
     origemEEnum = createEEnum(ORIGEM);
@@ -940,10 +1245,17 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
     raizDeContextoEClass.getESuperTypes().add(this.getContexto());
     entidadeDeContextoEClass.getESuperTypes().add(this.getContexto());
     informacaoDeContextoEClass.getESuperTypes().add(this.getContexto());
+    regraDeComposicaoEClass.getESuperTypes().add(this.getRegra());
+    antecedenteEClass.getESuperTypes().add(this.getExpressao());
+    expressaoLogicaEClass.getESuperTypes().add(this.getAntecedente());
+    expressaoRelacionalEClass.getESuperTypes().add(this.getAntecedente());
+    literalComposicaoEClass.getESuperTypes().add(this.getAntecedente());
 
     // Initialize classes and features; add operations and parameters
     initEClass(lpsEClass, caracteristica.LPS.class, "LPS", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLPS_Elementos(), this.getElemento(), null, "elementos", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLPS_Regras(), this.getRegra(), null, "regras", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLPS_Expressoes(), this.getExpressao(), null, "expressoes", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getLPS_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementoEClass, Elemento.class, "Elemento", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -999,6 +1311,33 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
     initEClass(informacaoDeContextoEClass, InformacaoDeContexto.class, "InformacaoDeContexto", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getInformacaoDeContexto_ElementoPai(), this.getEntidadeDeContexto(), this.getEntidadeDeContexto_InformacoesDeContexto(), "elementoPai", null, 1, 1, InformacaoDeContexto.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(regraEClass, Regra.class, "Regra", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRegra_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Regra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRegra_Conteudo(), ecorePackage.getEString(), "conteudo", null, 0, 1, Regra.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(regraDeComposicaoEClass, RegraDeComposicao.class, "RegraDeComposicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getRegraDeComposicao_Antecedente(), this.getAntecedente(), null, "antecedente", null, 0, 1, RegraDeComposicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRegraDeComposicao_Consequente(), this.getAntecedente(), null, "consequente", null, 0, 1, RegraDeComposicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expressaoEClass, Expressao.class, "Expressao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExpressao_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Expressao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(antecedenteEClass, Antecedente.class, "Antecedente", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(expressaoLogicaEClass, ExpressaoLogica.class, "ExpressaoLogica", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpressaoLogica_LadoDireitoComposicao(), this.getAntecedente(), null, "ladoDireitoComposicao", null, 0, 1, ExpressaoLogica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpressaoLogica_OperadorLogico(), this.getOperadorLogico(), "operadorLogico", null, 0, 1, ExpressaoLogica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getExpressaoLogica_LadoEsquerdoComposicao(), this.getAntecedente(), null, "ladoEsquerdoComposicao", null, 0, 1, ExpressaoLogica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(expressaoRelacionalEClass, ExpressaoRelacional.class, "ExpressaoRelacional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getExpressaoRelacional_VariaveldaExpressao(), this.getAtributo(), null, "variaveldaExpressao", null, 0, 1, ExpressaoRelacional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpressaoRelacional_OperadorRelacional(), this.getOperadorRelacional(), "operadorRelacional", null, 0, 1, ExpressaoRelacional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExpressaoRelacional_Valor(), ecorePackage.getEString(), "valor", null, 0, 1, ExpressaoRelacional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(literalComposicaoEClass, LiteralComposicao.class, "LiteralComposicao", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getLiteralComposicao_Presenca(), this.getPresenca(), "presenca", null, 0, 1, LiteralComposicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLiteralComposicao_Elemento(), this.getElementoCaracteristico(), null, "elemento", null, 0, 1, LiteralComposicao.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(origemEEnum, Origem.class, "Origem");
@@ -1073,7 +1412,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "foo", "bar"
-       });																		
+       });																										
   }
 
   /**
@@ -1136,8 +1475,8 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        source, 
        new String[] 
        {
-       "label", "nome,cardinalidadeMaxima",
-       "label.pattern", "Variation {0} : {1} ",
+       "label", "cardinalidadeMaxima",
+       "label.pattern", "{0} : {1}",
        "figure", "utils.DiamondFigure"
        });			
     addAnnotation
@@ -1169,6 +1508,35 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        {
        "label", "nome",
        "label.pattern", "Informa\u00e7\u00e3o de Contexto: {0}"
+       });		
+    addAnnotation
+      (regraDeComposicaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome",
+       "label.pattern", "Composition Rule {0}"
+       });				
+    addAnnotation
+      (expressaoLogicaEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "operadorLogico"
+       });				
+    addAnnotation
+      (expressaoRelacionalEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
+       });		
+    addAnnotation
+      (literalComposicaoEClass, 
+       source, 
+       new String[] 
+       {
+       "label", "nome"
        });
   }
 
@@ -1186,7 +1554,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        source, 
        new String[] 
        {
-       "target.decoration", "closedarrow",
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
@@ -1196,7 +1563,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        source, 
        new String[] 
        {
-       "target.decoration", "closedarrow",
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
@@ -1228,7 +1594,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        {
        "target.decoration", "closedarrow",
        "color", "0,0,0",
-       "style", "solid",
+       "style", "dot",
        "width", "3"
        });		
     addAnnotation
@@ -1237,8 +1603,9 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        new String[] 
        {
        "target.decoration", "closedarrow",
+       "source.decoration", "closedarrow",
        "color", "0,0,0",
-       "style", "solid",
+       "style", "dot",
        "width", "3"
        });			
     addAnnotation
@@ -1246,7 +1613,6 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        source, 
        new String[] 
        {
-       "target.decoration", "closedarrow",
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
@@ -1256,11 +1622,50 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
        source, 
        new String[] 
        {
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });				
+    addAnnotation
+      (getRegraDeComposicao_Antecedente(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "label", "antecedent"
+       });		
+    addAnnotation
+      (getRegraDeComposicao_Consequente(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "label", "consequent"
+       });			
+    addAnnotation
+      (getExpressaoLogica_LadoDireitoComposicao(), 
+       source, 
+       new String[] 
+       {
        "target.decoration", "closedarrow",
        "color", "0,0,0",
        "style", "solid",
        "width", "3"
-       });	
+       });		
+    addAnnotation
+      (getExpressaoLogica_LadoEsquerdoComposicao(), 
+       source, 
+       new String[] 
+       {
+       "target.decoration", "closedarrow",
+       "color", "0,0,0",
+       "style", "solid",
+       "width", "3"
+       });		
   }
 
 } //CaracteristicaPackageImpl

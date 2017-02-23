@@ -43,8 +43,8 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 			case VariacaoDoisEditPart.VISUAL_ID:
 				return new VariacaoDoisEditPart(view);
 
-			case VariacaoDoisNomeCardinalidadeMaximaEditPart.VISUAL_ID:
-				return new VariacaoDoisNomeCardinalidadeMaximaEditPart(view);
+			case VariacaoDoisCardinalidadeMaximaEditPart.VISUAL_ID:
+				return new VariacaoDoisCardinalidadeMaximaEditPart(view);
 
 			case CaracteristicaRaizEditPart.VISUAL_ID:
 				return new CaracteristicaRaizEditPart(view);
@@ -76,6 +76,24 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 			case InformacaoDeContextoNomeEditPart.VISUAL_ID:
 				return new InformacaoDeContextoNomeEditPart(view);
 
+			case ExpressaoLogicaEditPart.VISUAL_ID:
+				return new ExpressaoLogicaEditPart(view);
+
+			case ExpressaoLogicaOperadorLogicoEditPart.VISUAL_ID:
+				return new ExpressaoLogicaOperadorLogicoEditPart(view);
+
+			case ExpressaoRelacionalEditPart.VISUAL_ID:
+				return new ExpressaoRelacionalEditPart(view);
+
+			case ExpressaoRelacionalNomeEditPart.VISUAL_ID:
+				return new ExpressaoRelacionalNomeEditPart(view);
+
+			case LiteralComposicaoEditPart.VISUAL_ID:
+				return new LiteralComposicaoEditPart(view);
+
+			case LiteralComposicaoNomeEditPart.VISUAL_ID:
+				return new LiteralComposicaoNomeEditPart(view);
+
 			case AtributoEditPart.VISUAL_ID:
 				return new AtributoEditPart(view);
 
@@ -87,6 +105,12 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 
 			case ContextoNomeEditPart.VISUAL_ID:
 				return new ContextoNomeEditPart(view);
+
+			case RegraDeComposicaoEditPart.VISUAL_ID:
+				return new RegraDeComposicaoEditPart(view);
+
+			case RegraDeComposicaoNomeEditPart.VISUAL_ID:
+				return new RegraDeComposicaoNomeEditPart(view);
 
 			case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
 				return new CaracteristicaCaracteristicaFilhaEditPart(view);
@@ -135,6 +159,32 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 
 			case WrappingLabel8EditPart.VISUAL_ID:
 				return new WrappingLabel8EditPart(view);
+
+			case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+				return new RegraDeComposicaoAntecedenteEditPart(view);
+
+			case RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID:
+				return new RegraDeComposicaoAntecedenteExternalLabelEditPart(
+						view);
+
+			case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+				return new RegraDeComposicaoConsequenteEditPart(view);
+
+			case RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID:
+				return new RegraDeComposicaoConsequenteExternalLabelEditPart(
+						view);
+
+			case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+				return new ExpressaoLogicaLadoDireitoComposicaoEditPart(view);
+
+			case WrappingLabel9EditPart.VISUAL_ID:
+				return new WrappingLabel9EditPart(view);
+
+			case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+				return new ExpressaoLogicaLadoEsquerdoComposicaoEditPart(view);
+
+			case WrappingLabel10EditPart.VISUAL_ID:
+				return new WrappingLabel10EditPart(view);
 
 			}
 		}

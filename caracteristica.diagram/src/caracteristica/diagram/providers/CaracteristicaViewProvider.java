@@ -64,15 +64,31 @@ import caracteristica.diagram.edit.parts.ContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoInformacoesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.EntidadeDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoDireitoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaLadoEsquerdoComposicaoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoLogicaOperadorLogicoEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart;
+import caracteristica.diagram.edit.parts.ExpressaoRelacionalNomeEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart;
 import caracteristica.diagram.edit.parts.InformacaoDeContextoNomeEditPart;
 import caracteristica.diagram.edit.parts.LPSEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoEditPart;
+import caracteristica.diagram.edit.parts.LiteralComposicaoNomeEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoEntidadesDeContextoEditPart;
 import caracteristica.diagram.edit.parts.RaizDeContextoNomeEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoAntecedenteExternalLabelEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoConsequenteExternalLabelEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart;
+import caracteristica.diagram.edit.parts.RegraDeComposicaoNomeEditPart;
+import caracteristica.diagram.edit.parts.VariacaoDoisCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisEditPart;
 import caracteristica.diagram.edit.parts.VariacaoDoisNomeCardinalidadeMaximaEditPart;
 import caracteristica.diagram.edit.parts.VariacaoVariantesEditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel10EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel2EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel3EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel4EditPart;
@@ -80,6 +96,7 @@ import caracteristica.diagram.edit.parts.WrappingLabel5EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel6EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel7EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabel8EditPart;
+import caracteristica.diagram.edit.parts.WrappingLabel9EditPart;
 import caracteristica.diagram.edit.parts.WrappingLabelEditPart;
 import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 
@@ -183,8 +200,12 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 				case RaizDeContextoEditPart.VISUAL_ID:
 				case EntidadeDeContextoEditPart.VISUAL_ID:
 				case InformacaoDeContextoEditPart.VISUAL_ID:
+				case ExpressaoLogicaEditPart.VISUAL_ID:
+				case ExpressaoRelacionalEditPart.VISUAL_ID:
+				case LiteralComposicaoEditPart.VISUAL_ID:
 				case AtributoEditPart.VISUAL_ID:
 				case ContextoEditPart.VISUAL_ID:
+				case RegraDeComposicaoEditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != CaracteristicaVisualIDRegistry
 									.getNodeVisualID(op.getContainerView(),
@@ -205,8 +226,12 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 				|| RaizDeContextoEditPart.VISUAL_ID == visualID
 				|| EntidadeDeContextoEditPart.VISUAL_ID == visualID
 				|| InformacaoDeContextoEditPart.VISUAL_ID == visualID
+				|| ExpressaoLogicaEditPart.VISUAL_ID == visualID
+				|| ExpressaoRelacionalEditPart.VISUAL_ID == visualID
+				|| LiteralComposicaoEditPart.VISUAL_ID == visualID
 				|| AtributoEditPart.VISUAL_ID == visualID
-				|| ContextoEditPart.VISUAL_ID == visualID;
+				|| ContextoEditPart.VISUAL_ID == visualID
+				|| RegraDeComposicaoEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -288,12 +313,24 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		case InformacaoDeContextoEditPart.VISUAL_ID:
 			return createInformacaoDeContexto_2036(domainElement,
 					containerView, index, persisted, preferencesHint);
+		case ExpressaoLogicaEditPart.VISUAL_ID:
+			return createExpressaoLogica_2038(domainElement, containerView,
+					index, persisted, preferencesHint);
+		case ExpressaoRelacionalEditPart.VISUAL_ID:
+			return createExpressaoRelacional_2039(domainElement, containerView,
+					index, persisted, preferencesHint);
+		case LiteralComposicaoEditPart.VISUAL_ID:
+			return createLiteralComposicao_2040(domainElement, containerView,
+					index, persisted, preferencesHint);
 		case AtributoEditPart.VISUAL_ID:
 			return createAtributo_2017(domainElement, containerView, index,
 					persisted, preferencesHint);
 		case ContextoEditPart.VISUAL_ID:
 			return createContexto_2037(domainElement, containerView, index,
 					persisted, preferencesHint);
+		case RegraDeComposicaoEditPart.VISUAL_ID:
+			return createRegraDeComposicao_2041(domainElement, containerView,
+					index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -331,6 +368,18 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 					index, persisted, preferencesHint);
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
 			return createEntidadeDeContextoInformacoesDeContexto_4028(
+					containerView, index, persisted, preferencesHint);
+		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
+			return createRegraDeComposicaoAntecedente_4029(containerView,
+					index, persisted, preferencesHint);
+		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
+			return createRegraDeComposicaoConsequente_4030(containerView,
+					index, persisted, preferencesHint);
+		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
+			return createExpressaoLogicaLadoDireitoComposicao_4031(
+					containerView, index, persisted, preferencesHint);
+		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
+			return createExpressaoLogicaLadoEsquerdoComposicao_4032(
 					containerView, index, persisted, preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -475,7 +524,7 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		Node label5002 = createLabel(
 				node,
 				CaracteristicaVisualIDRegistry
-						.getType(VariacaoDoisNomeCardinalidadeMaximaEditPart.VISUAL_ID));
+						.getType(VariacaoDoisCardinalidadeMaximaEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -718,6 +767,148 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 	/**
 	 * @generated
 	 */
+	public Node createExpressaoLogica_2038(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(CaracteristicaVisualIDRegistry
+				.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5039 = createLabel(
+				node,
+				CaracteristicaVisualIDRegistry
+						.getType(ExpressaoLogicaOperadorLogicoEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createExpressaoRelacional_2039(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(CaracteristicaVisualIDRegistry
+				.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5040 = createLabel(node,
+				CaracteristicaVisualIDRegistry
+						.getType(ExpressaoRelacionalNomeEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createLiteralComposicao_2040(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(CaracteristicaVisualIDRegistry
+				.getType(LiteralComposicaoEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5041 = createLabel(node,
+				CaracteristicaVisualIDRegistry
+						.getType(LiteralComposicaoNomeEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
 	public Node createAtributo_2017(EObject domainElement, View containerView,
 			int index, boolean persisted, PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
@@ -804,6 +995,53 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		Node label5038 = createLabel(node,
 				CaracteristicaVisualIDRegistry
 						.getType(ContextoNomeEditPart.VISUAL_ID));
+		return node;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Node createRegraDeComposicao_2041(EObject domainElement,
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Shape node = NotationFactory.eINSTANCE.createShape();
+		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
+		node.setType(CaracteristicaVisualIDRegistry
+				.getType(RegraDeComposicaoEditPart.VISUAL_ID));
+		ViewUtil.insertChildView(containerView, node, index, persisted);
+		node.setElement(domainElement);
+		stampShortcut(containerView, node);
+		// initializeFromPreferences 
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+
+		org.eclipse.swt.graphics.RGB lineRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_LINE_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getLineStyle_LineColor(),
+				FigureUtilities.RGBToInteger(lineRGB));
+		FontStyle nodeFontStyle = (FontStyle) node
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (nodeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			nodeFontStyle.setFontName(fontData.getName());
+			nodeFontStyle.setFontHeight(fontData.getHeight());
+			nodeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			nodeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			nodeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		org.eclipse.swt.graphics.RGB fillRGB = PreferenceConverter.getColor(
+				prefStore, IPreferenceConstants.PREF_FILL_COLOR);
+		ViewUtil.setStructuralFeatureValue(node,
+				NotationPackage.eINSTANCE.getFillStyle_FillColor(),
+				FigureUtilities.RGBToInteger(fillRGB));
+		Node label5042 = createLabel(node,
+				CaracteristicaVisualIDRegistry
+						.getType(RegraDeComposicaoNomeEditPart.VISUAL_ID));
 		return node;
 	}
 
@@ -1263,6 +1501,238 @@ public class CaracteristicaViewProvider extends AbstractProvider implements
 		Location location6028 = (Location) label6028.getLayoutConstraint();
 		location6028.setX(0);
 		location6028.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createRegraDeComposicaoAntecedente_4029(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(CaracteristicaVisualIDRegistry
+				.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6029 = createLabel(
+				edge,
+				CaracteristicaVisualIDRegistry
+						.getType(RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID));
+		label6029.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6029.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6029 = (Location) label6029.getLayoutConstraint();
+		location6029.setX(0);
+		location6029.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createRegraDeComposicaoConsequente_4030(View containerView,
+			int index, boolean persisted, PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(CaracteristicaVisualIDRegistry
+				.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6030 = createLabel(
+				edge,
+				CaracteristicaVisualIDRegistry
+						.getType(RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID));
+		label6030.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6030.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6030 = (Location) label6030.getLayoutConstraint();
+		location6030.setX(0);
+		location6030.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createExpressaoLogicaLadoDireitoComposicao_4031(
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(CaracteristicaVisualIDRegistry
+				.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6031 = createLabel(edge,
+				CaracteristicaVisualIDRegistry
+						.getType(WrappingLabel9EditPart.VISUAL_ID));
+		label6031.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6031.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6031 = (Location) label6031.getLayoutConstraint();
+		location6031.setX(0);
+		location6031.setY(40);
+		return edge;
+	}
+
+	/**
+	 * @generated
+	 */
+	public Edge createExpressaoLogicaLadoEsquerdoComposicao_4032(
+			View containerView, int index, boolean persisted,
+			PreferencesHint preferencesHint) {
+		Edge edge = NotationFactory.eINSTANCE.createEdge();
+		edge.getStyles().add(NotationFactory.eINSTANCE.createRoutingStyle());
+		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
+		RelativeBendpoints bendpoints = NotationFactory.eINSTANCE
+				.createRelativeBendpoints();
+		ArrayList<RelativeBendpoint> points = new ArrayList<RelativeBendpoint>(
+				2);
+		points.add(new RelativeBendpoint());
+		points.add(new RelativeBendpoint());
+		bendpoints.setPoints(points);
+		edge.setBendpoints(bendpoints);
+		ViewUtil.insertChildView(containerView, edge, index, persisted);
+		edge.setType(CaracteristicaVisualIDRegistry
+				.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+		edge.setElement(null);
+		// initializePreferences
+		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint
+				.getPreferenceStore();
+		FontStyle edgeFontStyle = (FontStyle) edge
+				.getStyle(NotationPackage.Literals.FONT_STYLE);
+		if (edgeFontStyle != null) {
+			FontData fontData = PreferenceConverter.getFontData(prefStore,
+					IPreferenceConstants.PREF_DEFAULT_FONT);
+			edgeFontStyle.setFontName(fontData.getName());
+			edgeFontStyle.setFontHeight(fontData.getHeight());
+			edgeFontStyle.setBold((fontData.getStyle() & SWT.BOLD) != 0);
+			edgeFontStyle.setItalic((fontData.getStyle() & SWT.ITALIC) != 0);
+			org.eclipse.swt.graphics.RGB fontRGB = PreferenceConverter
+					.getColor(prefStore, IPreferenceConstants.PREF_FONT_COLOR);
+			edgeFontStyle.setFontColor(FigureUtilities.RGBToInteger(fontRGB)
+					.intValue());
+		}
+		Routing routing = Routing.get(prefStore
+				.getInt(IPreferenceConstants.PREF_LINE_STYLE));
+		if (routing != null) {
+			ViewUtil.setStructuralFeatureValue(edge,
+					NotationPackage.eINSTANCE.getRoutingStyle_Routing(),
+					routing);
+		}
+		Node label6032 = createLabel(edge,
+				CaracteristicaVisualIDRegistry
+						.getType(WrappingLabel10EditPart.VISUAL_ID));
+		label6032.getStyles().add(
+				NotationFactory.eINSTANCE.createDescriptionStyle());
+		label6032.setLayoutConstraint(NotationFactory.eINSTANCE
+				.createLocation());
+		Location location6032 = (Location) label6032.getLayoutConstraint();
+		location6032.setX(0);
+		location6032.setY(40);
 		return edge;
 	}
 

@@ -67,7 +67,7 @@ public interface Caracteristica extends Elemento
    * @see caracteristica.CaracteristicaPackage#getCaracteristica_CaracteristicaFilha()
    * @see caracteristica.Caracteristica#getCaracteristicaPai
    * @model opposite="caracteristicaPai"
-   *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   *        annotation="gmf.link color='0,0,0' style='solid' width='3'"
    * @generated
    */
   EList<Caracteristica> getCaracteristicaFilha();
@@ -86,7 +86,7 @@ public interface Caracteristica extends Elemento
    * @see caracteristica.CaracteristicaPackage#getCaracteristica_Variacoes()
    * @see caracteristica.Variacao#getCaracteristicaPai
    * @model opposite="caracteristicaPai"
-   *        annotation="gmf.link target.decoration='closedarrow' color='0,0,0' style='solid' width='3'"
+   *        annotation="gmf.link color='0,0,0' style='solid' width='3'"
    * @generated
    */
   EList<Variacao> getVariacoes();

@@ -19,8 +19,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class ExpressaoLogicaLadoDireitoComposicaoReorientCommand extends
-		EditElementCommand {
+public class ExpressaoLogicaLadoDireitoComposicaoReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -45,8 +44,7 @@ public class ExpressaoLogicaLadoDireitoComposicaoReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public ExpressaoLogicaLadoDireitoComposicaoReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public ExpressaoLogicaLadoDireitoComposicaoReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -78,8 +76,7 @@ public class ExpressaoLogicaLadoDireitoComposicaoReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistExpressaoLogicaLadoDireitoComposicao_4031(
-						getNewSource(), getOldTarget());
+				.canExistExpressaoLogicaLadoDireitoComposicao_4031(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -90,18 +87,15 @@ public class ExpressaoLogicaLadoDireitoComposicaoReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistExpressaoLogicaLadoDireitoComposicao_4031(
-						getOldSource(), getNewTarget());
+				.canExistExpressaoLogicaLadoDireitoComposicao_4031(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

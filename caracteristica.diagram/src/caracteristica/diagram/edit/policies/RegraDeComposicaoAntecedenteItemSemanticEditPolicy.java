@@ -12,8 +12,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class RegraDeComposicaoAntecedenteItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class RegraDeComposicaoAntecedenteItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

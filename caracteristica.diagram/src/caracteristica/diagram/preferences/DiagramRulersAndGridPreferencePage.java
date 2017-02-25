@@ -16,7 +16,6 @@ public class DiagramRulersAndGridPreferencePage extends RulerGridPreferencePage 
 	 * @generated
 	 */
 	public DiagramRulersAndGridPreferencePage() {
-		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

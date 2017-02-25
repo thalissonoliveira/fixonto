@@ -20,204 +20,204 @@ import org.eclipse.emf.common.util.Enumerator;
 public enum CardinalidadeMaxima implements Enumerator
 {
   /**
-   * The '<em><b>OR</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>OR</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #OR_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #OR_VALUE
+	 * @generated
+	 * @ordered
+	 */
   OR(0, "OR", "OR"),
 
   /**
-   * The '<em><b>XOR</b></em>' literal object.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>XOR</b></em>' literal object.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #XOR_VALUE
-   * @generated
-   * @ordered
-   */
+	 * @see #XOR_VALUE
+	 * @generated
+	 * @ordered
+	 */
   XOR(1, "XOR", "XOR");
 
   /**
-   * The '<em><b>OR</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>OR</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>OR</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #OR
-   * @model
-   * @generated
-   * @ordered
-   */
+	 * @see #OR
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
   public static final int OR_VALUE = 0;
 
   /**
-   * The '<em><b>XOR</b></em>' literal value.
-   * <!-- begin-user-doc -->
+	 * The '<em><b>XOR</b></em>' literal value.
+	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>XOR</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #XOR
-   * @model
-   * @generated
-   * @ordered
-   */
+	 * @see #XOR
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
   public static final int XOR_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>Cardinalidade Maxima</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * An array of all the '<em><b>Cardinalidade Maxima</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private static final CardinalidadeMaxima[] VALUES_ARRAY =
-    new CardinalidadeMaxima[]
-    {
-      OR,
-      XOR,
-    };
+    new CardinalidadeMaxima[] {
+			OR,
+			XOR,
+		};
 
   /**
-   * A public read-only list of all the '<em><b>Cardinalidade Maxima</b></em>' enumerators.
-   * <!-- begin-user-doc -->
+	 * A public read-only list of all the '<em><b>Cardinalidade Maxima</b></em>' enumerators.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public static final List<CardinalidadeMaxima> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified literal value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified literal value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @param literal the literal.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static CardinalidadeMaxima get(String literal)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      CardinalidadeMaxima result = VALUES_ARRAY[i];
-      if (result.toString().equals(literal))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			CardinalidadeMaxima result = VALUES_ARRAY[i];
+			if (result.toString().equals(literal)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified name.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified name.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @param name the name.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static CardinalidadeMaxima getByName(String name)
   {
-    for (int i = 0; i < VALUES_ARRAY.length; ++i)
-    {
-      CardinalidadeMaxima result = VALUES_ARRAY[i];
-      if (result.getName().equals(name))
-      {
-        return result;
-      }
-    }
-    return null;
-  }
+		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
+			CardinalidadeMaxima result = VALUES_ARRAY[i];
+			if (result.getName().equals(name)) {
+				return result;
+			}
+		}
+		return null;
+	}
 
   /**
-   * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified integer value.
-   * <!-- begin-user-doc -->
+	 * Returns the '<em><b>Cardinalidade Maxima</b></em>' literal with the specified integer value.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @param value the integer value.
+	 * @return the matching enumerator or <code>null</code>.
+	 * @generated
+	 */
   public static CardinalidadeMaxima get(int value)
   {
-    switch (value)
-    {
-      case OR_VALUE: return OR;
-      case XOR_VALUE: return XOR;
-    }
-    return null;
-  }
+		switch (value) {
+			case OR_VALUE: return OR;
+			case XOR_VALUE: return XOR;
+		}
+		return null;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final int value;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String name;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private final String literal;
 
   /**
-   * Only this class can construct instances.
-   * <!-- begin-user-doc -->
+	 * Only this class can construct instances.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   private CardinalidadeMaxima(int value, String name, String literal)
   {
-    this.value = value;
-    this.name = name;
-    this.literal = literal;
-  }
+		this.value = value;
+		this.name = name;
+		this.literal = literal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public int getValue()
   {
-    return value;
-  }
+	  return value;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getName()
   {
-    return name;
-  }
+	  return name;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getLiteral()
   {
-    return literal;
-  }
+	  return literal;
+	}
 
   /**
-   * Returns the literal value of the enumerator, which is its string representation.
-   * <!-- begin-user-doc -->
+	 * Returns the literal value of the enumerator, which is its string representation.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    return literal;
-  }
+		return literal;
+	}
   
 } //CardinalidadeMaxima

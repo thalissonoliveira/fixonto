@@ -36,8 +36,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class ExpressaoLogicaItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class ExpressaoLogicaItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -51,38 +50,37 @@ public class ExpressaoLogicaItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == RegraDeComposicaoAntecedenteEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == RegraDeComposicaoAntecedenteEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == RegraDeComposicaoConsequenteEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == RegraDeComposicaoConsequenteEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -91,17 +89,17 @@ public class ExpressaoLogicaItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -126,32 +124,26 @@ public class ExpressaoLogicaItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029 == req
-				.getElementType()) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031 == req
-				.getElementType()) {
-			return getGEFWrapper(new ExpressaoLogicaLadoDireitoComposicaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031 == req.getElementType()) {
+			return getGEFWrapper(
+					new ExpressaoLogicaLadoDireitoComposicaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032 == req
-				.getElementType()) {
-			return getGEFWrapper(new ExpressaoLogicaLadoEsquerdoComposicaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032 == req.getElementType()) {
+			return getGEFWrapper(
+					new ExpressaoLogicaLadoEsquerdoComposicaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -159,27 +151,20 @@ public class ExpressaoLogicaItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeComposicaoAntecedenteCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeComposicaoAntecedenteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeComposicaoConsequenteCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeComposicaoConsequenteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031 == req
-				.getElementType()) {
-			return getGEFWrapper(new ExpressaoLogicaLadoDireitoComposicaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031 == req.getElementType()) {
+			return getGEFWrapper(
+					new ExpressaoLogicaLadoDireitoComposicaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032 == req
-				.getElementType()) {
-			return getGEFWrapper(new ExpressaoLogicaLadoEsquerdoComposicaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032 == req.getElementType()) {
+			return getGEFWrapper(
+					new ExpressaoLogicaLadoEsquerdoComposicaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -190,21 +175,16 @@ public class ExpressaoLogicaItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
-			return getGEFWrapper(new RegraDeComposicaoAntecedenteReorientCommand(
-					req));
+			return getGEFWrapper(new RegraDeComposicaoAntecedenteReorientCommand(req));
 		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
-			return getGEFWrapper(new RegraDeComposicaoConsequenteReorientCommand(
-					req));
+			return getGEFWrapper(new RegraDeComposicaoConsequenteReorientCommand(req));
 		case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
-			return getGEFWrapper(new ExpressaoLogicaLadoDireitoComposicaoReorientCommand(
-					req));
+			return getGEFWrapper(new ExpressaoLogicaLadoDireitoComposicaoReorientCommand(req));
 		case ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID:
-			return getGEFWrapper(new ExpressaoLogicaLadoEsquerdoComposicaoReorientCommand(
-					req));
+			return getGEFWrapper(new ExpressaoLogicaLadoEsquerdoComposicaoReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

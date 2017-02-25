@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.RegraDeComposicaoConsequenteItemSema
 /**
  * @generated
  */
-public class RegraDeComposicaoConsequenteEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class RegraDeComposicaoConsequenteEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class RegraDeComposicaoConsequenteEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new RegraDeComposicaoConsequenteItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RegraDeComposicaoConsequenteItemSemanticEditPolicy());
 	}
 
 	/**
@@ -67,8 +65,7 @@ public class RegraDeComposicaoConsequenteEditPart extends
 	/**
 	 * @generated
 	 */
-	public class RegraDeComposicaoConsequenteFigure extends
-			PolylineConnectionEx {
+	public class RegraDeComposicaoConsequenteFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

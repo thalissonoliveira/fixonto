@@ -35,8 +35,7 @@ public class CaracteristicaOpcionalCreateCommand extends EditElementCommand {
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -54,10 +53,8 @@ public class CaracteristicaOpcionalCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
-		CaracteristicaOpcional newElement = CaracteristicaFactory.eINSTANCE
-				.createCaracteristicaOpcional();
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		CaracteristicaOpcional newElement = CaracteristicaFactory.eINSTANCE.createCaracteristicaOpcional();
 
 		caracteristica.LPS owner = (caracteristica.LPS) getElementToEdit();
 		owner.getElementos().add(newElement);
@@ -71,18 +68,13 @@ public class CaracteristicaOpcionalCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(CaracteristicaOpcional newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(CaracteristicaOpcional newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

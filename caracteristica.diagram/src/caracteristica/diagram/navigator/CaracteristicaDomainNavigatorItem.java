@@ -20,34 +20,28 @@ public class CaracteristicaDomainNavigatorItem extends PlatformObject {
 	 * @generated
 	 */
 	static {
-		final Class[] supportedTypes = new Class[] { EObject.class,
-				IPropertySource.class };
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		final Class[] supportedTypes = new Class[] { EObject.class, IPropertySource.class };
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) {
-							caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem domainNavigatorItem = (caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) adaptableObject;
-							EObject eObject = domainNavigatorItem.getEObject();
-							if (adapterType == EObject.class) {
-								return eObject;
-							}
-							if (adapterType == IPropertySource.class) {
-								return domainNavigatorItem
-										.getPropertySourceProvider()
-										.getPropertySource(eObject);
-							}
-						}
-
-						return null;
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) {
+					caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem domainNavigatorItem = (caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) adaptableObject;
+					EObject eObject = domainNavigatorItem.getEObject();
+					if (adapterType == EObject.class) {
+						return eObject;
 					}
-
-					public Class[] getAdapterList() {
-						return supportedTypes;
+					if (adapterType == IPropertySource.class) {
+						return domainNavigatorItem.getPropertySourceProvider().getPropertySource(eObject);
 					}
-				},
-				caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem.class);
+				}
+
+				return null;
+			}
+
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem.class);
 	}
 
 	/**
@@ -101,11 +95,8 @@ public class CaracteristicaDomainNavigatorItem extends PlatformObject {
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) {
-			return EcoreUtil
-					.getURI(getEObject())
-					.equals(EcoreUtil
-							.getURI(((caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) obj)
-									.getEObject()));
+			return EcoreUtil.getURI(getEObject()).equals(EcoreUtil
+					.getURI(((caracteristica.diagram.navigator.CaracteristicaDomainNavigatorItem) obj).getEObject()));
 		}
 		return super.equals(obj);
 	}

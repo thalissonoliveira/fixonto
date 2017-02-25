@@ -69,8 +69,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CaracteristicaOpcionalItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CaracteristicaOpcionalItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -83,8 +82,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -122,8 +120,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CaracteristicaOpcionalNomeEditPart) {
 			((CaracteristicaOpcionalNomeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureCaracteristicaOpcionalLabelFigure());
+					.setLabel(getPrimaryShape().getFigureCaracteristicaOpcionalLabelFigure());
 			return true;
 		}
 		return false;
@@ -256,98 +253,8 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(CaracteristicaOpcionalNomeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof CaracteristicaAgrupadaEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof VariacaoDoisEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof CaracteristicaRaizEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof AtributoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		} else if (relationshipType == CaracteristicaElementTypes.CaracteristicaAtributo_4004) {
-			types.add(CaracteristicaElementTypes.Atributo_2017);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		} else if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025) {
-			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
-			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
-			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
-			types.add(CaracteristicaElementTypes.Contexto_2037);
-		} else if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026) {
-			types.add(CaracteristicaElementTypes.RaizDeContexto_2034);
-			types.add(CaracteristicaElementTypes.EntidadeDeContexto_2035);
-			types.add(CaracteristicaElementTypes.InformacaoDeContexto_2036);
-			types.add(CaracteristicaElementTypes.Contexto_2037);
-		}
-		return types;
+		return getChildBySemanticHint(
+				CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalNomeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -355,8 +262,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -379,8 +285,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 		public CaracteristicaOpcionalFigure() {
 			this.setLineWidth(2);
 			this.setLineStyle(Graphics.LINE_DASH);
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}
@@ -392,8 +297,7 @@ public class CaracteristicaOpcionalEditPart extends ShapeNodeEditPart {
 
 			fFigureCaracteristicaOpcionalLabelFigure = new WrappingLabel();
 
-			fFigureCaracteristicaOpcionalLabelFigure
-					.setText("CaracteristicaOpcional");
+			fFigureCaracteristicaOpcionalLabelFigure.setText("CaracteristicaOpcional");
 
 			this.add(fFigureCaracteristicaOpcionalLabelFigure);
 

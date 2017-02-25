@@ -45,8 +45,6 @@ public class DSPLConceptFactory {
 	
 	private static DSPLConceptFactory factory;
 	
-	
-	
 	private DSPLConceptFactory() {}
 	
 	public static DSPLConceptFactory getFactory() {

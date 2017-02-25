@@ -36,8 +36,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class EntidadeDeContextoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class EntidadeDeContextoItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -51,14 +50,13 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -67,25 +65,25 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ContextoCaracteristicasIncluirEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == ContextoCaracteristicasIncluirEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == ContextoCaracteristicasExcluirEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == ContextoCaracteristicasExcluirEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -110,33 +108,27 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req
-				.getElementType()) {
-			return getGEFWrapper(new ContextoCaracteristicasIncluirCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req.getElementType()) {
+			return getGEFWrapper(
+					new ContextoCaracteristicasIncluirCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req
-				.getElementType()) {
-			return getGEFWrapper(new ContextoCaracteristicasExcluirCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req.getElementType()) {
+			return getGEFWrapper(
+					new ContextoCaracteristicasExcluirCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028 == req
-				.getElementType()) {
-			return getGEFWrapper(new EntidadeDeContextoInformacoesDeContextoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028 == req.getElementType()) {
+			return getGEFWrapper(
+					new EntidadeDeContextoInformacoesDeContextoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -144,23 +136,18 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req
-				.getElementType()) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027 == req
-				.getElementType()) {
-			return getGEFWrapper(new RaizDeContextoEntidadesDeContextoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027 == req.getElementType()) {
+			return getGEFWrapper(
+					new RaizDeContextoEntidadesDeContextoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -172,21 +159,16 @@ public class EntidadeDeContextoItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case ContextoCaracteristicasIncluirEditPart.VISUAL_ID:
-			return getGEFWrapper(new ContextoCaracteristicasIncluirReorientCommand(
-					req));
+			return getGEFWrapper(new ContextoCaracteristicasIncluirReorientCommand(req));
 		case ContextoCaracteristicasExcluirEditPart.VISUAL_ID:
-			return getGEFWrapper(new ContextoCaracteristicasExcluirReorientCommand(
-					req));
+			return getGEFWrapper(new ContextoCaracteristicasExcluirReorientCommand(req));
 		case RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID:
-			return getGEFWrapper(new RaizDeContextoEntidadesDeContextoReorientCommand(
-					req));
+			return getGEFWrapper(new RaizDeContextoEntidadesDeContextoReorientCommand(req));
 		case EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID:
-			return getGEFWrapper(new EntidadeDeContextoInformacoesDeContextoReorientCommand(
-					req));
+			return getGEFWrapper(new EntidadeDeContextoInformacoesDeContextoReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

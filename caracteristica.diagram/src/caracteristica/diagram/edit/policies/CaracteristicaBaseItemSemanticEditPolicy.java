@@ -53,8 +53,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class CaracteristicaBaseItemSemanticEditPolicy extends
-		SemanticEditPolicy {
+public class CaracteristicaBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 
 	/**
 	 * Extended request data key to hold editpart visual id.
@@ -85,11 +84,9 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	 */
 	public Command getCommand(Request request) {
 		if (request instanceof ReconnectRequest) {
-			Object view = ((ReconnectRequest) request).getConnectionEditPart()
-					.getModel();
+			Object view = ((ReconnectRequest) request).getConnectionEditPart().getModel();
 			if (view instanceof View) {
-				Integer id = new Integer(
-						CaracteristicaVisualIDRegistry.getVisualID((View) view));
+				Integer id = new Integer(CaracteristicaVisualIDRegistry.getVisualID((View) view));
 				request.getExtendedData().put(VISUAL_ID_KEY, id);
 			}
 		}
@@ -111,12 +108,10 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	protected Command getSemanticCommand(IEditCommandRequest request) {
 		IEditCommandRequest completedRequest = completeRequest(request);
 		Command semanticCommand = getSemanticCommandSwitch(completedRequest);
-		semanticCommand = getEditHelperCommand(completedRequest,
-				semanticCommand);
+		semanticCommand = getEditHelperCommand(completedRequest, semanticCommand);
 		if (completedRequest instanceof DestroyRequest) {
 			DestroyRequest destroyRequest = (DestroyRequest) completedRequest;
-			return shouldProceed(destroyRequest) ? addDeleteViewCommand(
-					semanticCommand, destroyRequest) : null;
+			return shouldProceed(destroyRequest) ? addDeleteViewCommand(semanticCommand, destroyRequest) : null;
 		}
 		return semanticCommand;
 	}
@@ -124,35 +119,28 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command addDeleteViewCommand(Command mainCommand,
-			DestroyRequest completedRequest) {
-		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(
-				getEditingDomain(), (View) getHost().getModel()));
-		return mainCommand == null ? deleteViewCommand : mainCommand
-				.chain(deleteViewCommand);
+	protected Command addDeleteViewCommand(Command mainCommand, DestroyRequest completedRequest) {
+		Command deleteViewCommand = getGEFWrapper(new DeleteCommand(getEditingDomain(), (View) getHost().getModel()));
+		return mainCommand == null ? deleteViewCommand : mainCommand.chain(deleteViewCommand);
 	}
 
 	/**
 	 * @generated
 	 */
-	private Command getEditHelperCommand(IEditCommandRequest request,
-			Command editPolicyCommand) {
+	private Command getEditHelperCommand(IEditCommandRequest request, Command editPolicyCommand) {
 		if (editPolicyCommand != null) {
-			ICommand command = editPolicyCommand instanceof ICommandProxy ? ((ICommandProxy) editPolicyCommand)
-					.getICommand() : new CommandProxy(editPolicyCommand);
-			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND,
-					command);
+			ICommand command = editPolicyCommand instanceof ICommandProxy
+					? ((ICommandProxy) editPolicyCommand).getICommand() : new CommandProxy(editPolicyCommand);
+			request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, command);
 		}
 		IElementType requestContextElementType = getContextElementType(request);
-		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE,
-				requestContextElementType);
+		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, requestContextElementType);
 		ICommand command = requestContextElementType.getEditCommand(request);
 		request.setParameter(GeneratedEditHelperBase.EDIT_POLICY_COMMAND, null);
 		request.setParameter(GeneratedEditHelperBase.CONTEXT_ELEMENT_TYPE, null);
 		if (command != null) {
 			if (!(command instanceof CompositeTransactionalCommand)) {
-				command = new CompositeTransactionalCommand(getEditingDomain(),
-						command.getLabel()).compose(command);
+				command = new CompositeTransactionalCommand(getEditingDomain(), command.getLabel()).compose(command);
 			}
 			return new ICommandProxy(command);
 		}
@@ -163,10 +151,8 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	private IElementType getContextElementType(IEditCommandRequest request) {
-		IElementType requestContextElementType = CaracteristicaElementTypes
-				.getElementType(getVisualID(request));
-		return requestContextElementType != null ? requestContextElementType
-				: myElementType;
+		IElementType requestContextElementType = CaracteristicaElementTypes.getElementType(getVisualID(request));
+		return requestContextElementType != null ? requestContextElementType : myElementType;
 	}
 
 	/**
@@ -265,16 +251,14 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getReorientRelationshipCommand(
-			ReorientRelationshipRequest req) {
+	protected Command getReorientRelationshipCommand(ReorientRelationshipRequest req) {
 		return UnexecutableCommand.INSTANCE;
 	}
 
@@ -299,10 +283,10 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	 */
 	protected void addDestroyShortcutsCommand(ICompositeCommand cmd, View view) {
 		assert view.getEAnnotation("Shortcut") == null; //$NON-NLS-1$
-		for (Iterator it = view.getDiagram().getChildren().iterator(); it
-				.hasNext();) {
+		for (Iterator it = view.getDiagram().getChildren().iterator(); it.hasNext();) {
 			View nextView = (View) it.next();
-			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() || nextView.getElement() != view.getElement()) { //$NON-NLS-1$
+			if (nextView.getEAnnotation("Shortcut") == null || !nextView.isSetElement() //$NON-NLS-1$
+					|| nextView.getElement() != view.getElement()) {
 				continue;
 			}
 			cmd.add(new DeleteCommand(getEditingDomain(), nextView));
@@ -313,11 +297,9 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	public static LinkConstraints getLinkConstraints() {
-		LinkConstraints cached = CaracteristicaDiagramEditorPlugin
-				.getInstance().getLinkConstraints();
+		LinkConstraints cached = CaracteristicaDiagramEditorPlugin.getInstance().getLinkConstraints();
 		if (cached == null) {
-			CaracteristicaDiagramEditorPlugin.getInstance().setLinkConstraints(
-					cached = new LinkConstraints());
+			CaracteristicaDiagramEditorPlugin.getInstance().setLinkConstraints(cached = new LinkConstraints());
 		}
 		return cached;
 	}
@@ -337,8 +319,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCaracteristicaCaracteristicaFilha_4002(
-				Caracteristica source, Caracteristica target) {
+		public boolean canCreateCaracteristicaCaracteristicaFilha_4002(Caracteristica source, Caracteristica target) {
 			if (source != null) {
 				if (source.getCaracteristicaFilha().contains(target)) {
 					return false;
@@ -348,15 +329,13 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 				return false;
 			}
 
-			return canExistCaracteristicaCaracteristicaFilha_4002(source,
-					target);
+			return canExistCaracteristicaCaracteristicaFilha_4002(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCaracteristicaVariacoes_4003(
-				Caracteristica source, Variacao target) {
+		public boolean canCreateCaracteristicaVariacoes_4003(Caracteristica source, Variacao target) {
 			if (source != null) {
 				if (source.getVariacoes().contains(target)) {
 					return false;
@@ -372,8 +351,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateCaracteristicaAtributo_4004(
-				Caracteristica source, Atributo target) {
+		public boolean canCreateCaracteristicaAtributo_4004(Caracteristica source, Atributo target) {
 			if (source != null) {
 				if (source.getAtributo().contains(target)) {
 					return false;
@@ -389,8 +367,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateVariacaoVariantes_4005(Variacao source,
-				Variante target) {
+		public boolean canCreateVariacaoVariantes_4005(Variacao source, Variante target) {
 			if (source != null) {
 				if (source.getVariantes().contains(target)) {
 					return false;
@@ -406,8 +383,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateContextoCaracteristicasIncluir_4025(
-				Contexto source, Caracteristica target) {
+		public boolean canCreateContextoCaracteristicasIncluir_4025(Contexto source, Caracteristica target) {
 			if (source != null) {
 				if (source.getCaracteristicasIncluir().contains(target)) {
 					return false;
@@ -420,8 +396,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateContextoCaracteristicasExcluir_4026(
-				Contexto source, Caracteristica target) {
+		public boolean canCreateContextoCaracteristicasExcluir_4026(Contexto source, Caracteristica target) {
 			if (source != null) {
 				if (source.getCaracteristicasExcluir().contains(target)) {
 					return false;
@@ -434,8 +409,8 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRaizDeContextoEntidadesDeContexto_4027(
-				RaizDeContexto source, EntidadeDeContexto target) {
+		public boolean canCreateRaizDeContextoEntidadesDeContexto_4027(RaizDeContexto source,
+				EntidadeDeContexto target) {
 			if (source != null) {
 				if (source.getEntidadesDeContexto().contains(target)) {
 					return false;
@@ -445,15 +420,14 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 				return false;
 			}
 
-			return canExistRaizDeContextoEntidadesDeContexto_4027(source,
-					target);
+			return canExistRaizDeContextoEntidadesDeContexto_4027(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateEntidadeDeContextoInformacoesDeContexto_4028(
-				EntidadeDeContexto source, InformacaoDeContexto target) {
+		public boolean canCreateEntidadeDeContextoInformacoesDeContexto_4028(EntidadeDeContexto source,
+				InformacaoDeContexto target) {
 			if (source != null) {
 				if (source.getInformacoesDeContexto().contains(target)) {
 					return false;
@@ -463,15 +437,13 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 				return false;
 			}
 
-			return canExistEntidadeDeContextoInformacoesDeContexto_4028(source,
-					target);
+			return canExistEntidadeDeContextoInformacoesDeContexto_4028(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRegraDeComposicaoAntecedente_4029(
-				RegraDeComposicao source, Antecedente target) {
+		public boolean canCreateRegraDeComposicaoAntecedente_4029(RegraDeComposicao source, Antecedente target) {
 			if (source != null) {
 				if (source.getAntecedente() != null) {
 					return false;
@@ -484,8 +456,7 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateRegraDeComposicaoConsequente_4030(
-				RegraDeComposicao source, Antecedente target) {
+		public boolean canCreateRegraDeComposicaoConsequente_4030(RegraDeComposicao source, Antecedente target) {
 			if (source != null) {
 				if (source.getConsequente() != null) {
 					return false;
@@ -498,126 +469,112 @@ public class CaracteristicaBaseItemSemanticEditPolicy extends
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExpressaoLogicaLadoDireitoComposicao_4031(
-				ExpressaoLogica source, Antecedente target) {
+		public boolean canCreateExpressaoLogicaLadoDireitoComposicao_4031(ExpressaoLogica source, Antecedente target) {
 			if (source != null) {
 				if (source.getLadoDireitoComposicao() != null) {
 					return false;
 				}
 			}
 
-			return canExistExpressaoLogicaLadoDireitoComposicao_4031(source,
-					target);
+			return canExistExpressaoLogicaLadoDireitoComposicao_4031(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canCreateExpressaoLogicaLadoEsquerdoComposicao_4032(
-				ExpressaoLogica source, Antecedente target) {
+		public boolean canCreateExpressaoLogicaLadoEsquerdoComposicao_4032(ExpressaoLogica source, Antecedente target) {
 			if (source != null) {
 				if (source.getLadoEsquerdoComposicao() != null) {
 					return false;
 				}
 			}
 
-			return canExistExpressaoLogicaLadoEsquerdoComposicao_4032(source,
-					target);
+			return canExistExpressaoLogicaLadoEsquerdoComposicao_4032(source, target);
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCaracteristicaCaracteristicaFilha_4002(
-				Caracteristica source, Caracteristica target) {
+		public boolean canExistCaracteristicaCaracteristicaFilha_4002(Caracteristica source, Caracteristica target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCaracteristicaVariacoes_4003(
-				Caracteristica source, Variacao target) {
+		public boolean canExistCaracteristicaVariacoes_4003(Caracteristica source, Variacao target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistCaracteristicaAtributo_4004(
-				Caracteristica source, Atributo target) {
+		public boolean canExistCaracteristicaAtributo_4004(Caracteristica source, Atributo target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistVariacaoVariantes_4005(Variacao source,
-				Variante target) {
+		public boolean canExistVariacaoVariantes_4005(Variacao source, Variante target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistContextoCaracteristicasIncluir_4025(
-				Contexto source, Caracteristica target) {
+		public boolean canExistContextoCaracteristicasIncluir_4025(Contexto source, Caracteristica target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistContextoCaracteristicasExcluir_4026(
-				Contexto source, Caracteristica target) {
+		public boolean canExistContextoCaracteristicasExcluir_4026(Contexto source, Caracteristica target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistRaizDeContextoEntidadesDeContexto_4027(
-				RaizDeContexto source, EntidadeDeContexto target) {
+		public boolean canExistRaizDeContextoEntidadesDeContexto_4027(RaizDeContexto source,
+				EntidadeDeContexto target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistEntidadeDeContextoInformacoesDeContexto_4028(
-				EntidadeDeContexto source, InformacaoDeContexto target) {
+		public boolean canExistEntidadeDeContextoInformacoesDeContexto_4028(EntidadeDeContexto source,
+				InformacaoDeContexto target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistRegraDeComposicaoAntecedente_4029(
-				RegraDeComposicao source, Antecedente target) {
+		public boolean canExistRegraDeComposicaoAntecedente_4029(RegraDeComposicao source, Antecedente target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistRegraDeComposicaoConsequente_4030(
-				RegraDeComposicao source, Antecedente target) {
+		public boolean canExistRegraDeComposicaoConsequente_4030(RegraDeComposicao source, Antecedente target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistExpressaoLogicaLadoDireitoComposicao_4031(
-				ExpressaoLogica source, Antecedente target) {
+		public boolean canExistExpressaoLogicaLadoDireitoComposicao_4031(ExpressaoLogica source, Antecedente target) {
 			return true;
 		}
 
 		/**
 		 * @generated
 		 */
-		public boolean canExistExpressaoLogicaLadoEsquerdoComposicao_4032(
-				ExpressaoLogica source, Antecedente target) {
+		public boolean canExistExpressaoLogicaLadoEsquerdoComposicao_4032(ExpressaoLogica source, Antecedente target) {
 			return true;
 		}
 	}

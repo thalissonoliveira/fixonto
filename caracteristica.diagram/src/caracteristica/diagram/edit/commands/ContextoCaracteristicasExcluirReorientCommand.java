@@ -19,8 +19,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class ContextoCaracteristicasExcluirReorientCommand extends
-		EditElementCommand {
+public class ContextoCaracteristicasExcluirReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -45,8 +44,7 @@ public class ContextoCaracteristicasExcluirReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public ContextoCaracteristicasExcluirReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public ContextoCaracteristicasExcluirReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -78,8 +76,7 @@ public class ContextoCaracteristicasExcluirReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistContextoCaracteristicasExcluir_4026(getNewSource(),
-						getOldTarget());
+				.canExistContextoCaracteristicasExcluir_4026(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -90,18 +87,15 @@ public class ContextoCaracteristicasExcluirReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistContextoCaracteristicasExcluir_4026(getOldSource(),
-						getNewTarget());
+				.canExistContextoCaracteristicasExcluir_4026(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

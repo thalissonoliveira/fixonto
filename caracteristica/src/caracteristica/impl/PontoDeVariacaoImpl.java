@@ -13,32 +13,30 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Ponto De Variacao</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class PontoDeVariacaoImpl extends EObjectImpl implements PontoDeVariacao
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected PontoDeVariacaoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.PONTO_DE_VARIACAO;
-  }
+		return CaracteristicaPackage.Literals.PONTO_DE_VARIACAO;
+	}
 
 } //PontoDeVariacaoImpl

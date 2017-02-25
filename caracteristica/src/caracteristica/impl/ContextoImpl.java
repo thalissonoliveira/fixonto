@@ -20,162 +20,156 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link caracteristica.impl.ContextoImpl#getCaracteristicasIncluir <em>Caracteristicas Incluir</em>}</li>
  *   <li>{@link caracteristica.impl.ContextoImpl#getCaracteristicasExcluir <em>Caracteristicas Excluir</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ContextoImpl extends ElementoImpl implements Contexto
 {
   /**
-   * The cached value of the '{@link #getCaracteristicasIncluir() <em>Caracteristicas Incluir</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCaracteristicasIncluir() <em>Caracteristicas Incluir</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCaracteristicasIncluir()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCaracteristicasIncluir()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Caracteristica> caracteristicasIncluir;
 
   /**
-   * The cached value of the '{@link #getCaracteristicasExcluir() <em>Caracteristicas Excluir</em>}' reference list.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getCaracteristicasExcluir() <em>Caracteristicas Excluir</em>}' reference list.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCaracteristicasExcluir()
-   * @generated
-   * @ordered
-   */
+	 * @see #getCaracteristicasExcluir()
+	 * @generated
+	 * @ordered
+	 */
   protected EList<Caracteristica> caracteristicasExcluir;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ContextoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.CONTEXTO;
-  }
+		return CaracteristicaPackage.Literals.CONTEXTO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Caracteristica> getCaracteristicasIncluir()
   {
-    if (caracteristicasIncluir == null)
-    {
-      caracteristicasIncluir = new EObjectResolvingEList<Caracteristica>(Caracteristica.class, this, CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR);
-    }
-    return caracteristicasIncluir;
-  }
+		if (caracteristicasIncluir == null) {
+			caracteristicasIncluir = new EObjectResolvingEList<Caracteristica>(Caracteristica.class, this, CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR);
+		}
+		return caracteristicasIncluir;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public EList<Caracteristica> getCaracteristicasExcluir()
   {
-    if (caracteristicasExcluir == null)
-    {
-      caracteristicasExcluir = new EObjectResolvingEList<Caracteristica>(Caracteristica.class, this, CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR);
-    }
-    return caracteristicasExcluir;
-  }
+		if (caracteristicasExcluir == null) {
+			caracteristicasExcluir = new EObjectResolvingEList<Caracteristica>(Caracteristica.class, this, CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR);
+		}
+		return caracteristicasExcluir;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
-        return getCaracteristicasIncluir();
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
-        return getCaracteristicasExcluir();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
+				return getCaracteristicasIncluir();
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
+				return getCaracteristicasExcluir();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
-        getCaracteristicasIncluir().clear();
-        getCaracteristicasIncluir().addAll((Collection<? extends Caracteristica>)newValue);
-        return;
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
-        getCaracteristicasExcluir().clear();
-        getCaracteristicasExcluir().addAll((Collection<? extends Caracteristica>)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
+				getCaracteristicasIncluir().clear();
+				getCaracteristicasIncluir().addAll((Collection<? extends Caracteristica>)newValue);
+				return;
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
+				getCaracteristicasExcluir().clear();
+				getCaracteristicasExcluir().addAll((Collection<? extends Caracteristica>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
-        getCaracteristicasIncluir().clear();
-        return;
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
-        getCaracteristicasExcluir().clear();
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
+				getCaracteristicasIncluir().clear();
+				return;
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
+				getCaracteristicasExcluir().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
-        return caracteristicasIncluir != null && !caracteristicasIncluir.isEmpty();
-      case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
-        return caracteristicasExcluir != null && !caracteristicasExcluir.isEmpty();
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_INCLUIR:
+				return caracteristicasIncluir != null && !caracteristicasIncluir.isEmpty();
+			case CaracteristicaPackage.CONTEXTO__CARACTERISTICAS_EXCLUIR:
+				return caracteristicasExcluir != null && !caracteristicasExcluir.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ContextoImpl

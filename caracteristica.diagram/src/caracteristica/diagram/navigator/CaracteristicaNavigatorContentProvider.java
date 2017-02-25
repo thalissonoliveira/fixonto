@@ -61,8 +61,7 @@ import caracteristica.diagram.part.Messages;
 /**
  * @generated
  */
-public class CaracteristicaNavigatorContentProvider implements
-		ICommonContentProvider {
+public class CaracteristicaNavigatorContentProvider implements ICommonContentProvider {
 
 	/**
 	 * @generated
@@ -94,8 +93,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	 */
 	@SuppressWarnings({ "unchecked", "serial", "rawtypes" })
 	public CaracteristicaNavigatorContentProvider() {
-		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE
-				.createEditingDomain();
+		TransactionalEditingDomain editingDomain = GMFEditingDomainFactory.INSTANCE.createEditingDomain();
 		myEditingDomain = (AdapterFactoryEditingDomain) editingDomain;
 		myEditingDomain.setResourceToReadOnlyMap(new HashMap() {
 			public Object get(Object key) {
@@ -112,30 +110,28 @@ public class CaracteristicaNavigatorContentProvider implements
 				}
 			}
 		};
-		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain,
-				new WorkspaceSynchronizer.Delegate() {
-					public void dispose() {
-					}
+		myWorkspaceSynchronizer = new WorkspaceSynchronizer(editingDomain, new WorkspaceSynchronizer.Delegate() {
+			public void dispose() {
+			}
 
-					public boolean handleResourceChanged(final Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceChanged(final Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceDeleted(Resource resource) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
+			public boolean handleResourceDeleted(Resource resource) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
 
-					public boolean handleResourceMoved(Resource resource,
-							final URI newURI) {
-						unloadAllResources();
-						asyncRefresh();
-						return true;
-					}
-				});
+			public boolean handleResourceMoved(Resource resource, final URI newURI) {
+				unloadAllResources();
+				asyncRefresh();
+				return true;
+			}
+		});
 	}
 
 	/**
@@ -162,8 +158,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	 * @generated
 	 */
 	void unloadAllResources() {
-		for (Resource nextResource : myEditingDomain.getResourceSet()
-				.getResources()) {
+		for (Resource nextResource : myEditingDomain.getResourceSet().getResources()) {
 			nextResource.unload();
 		}
 	}
@@ -173,8 +168,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	 */
 	void asyncRefresh() {
 		if (myViewer != null && !myViewer.getControl().isDisposed()) {
-			myViewer.getControl().getDisplay()
-					.asyncExec(myViewerRefreshRunnable);
+			myViewer.getControl().getDisplay().asyncExec(myViewerRefreshRunnable);
 		}
 	}
 
@@ -209,21 +203,16 @@ public class CaracteristicaNavigatorContentProvider implements
 	public Object[] getChildren(Object parentElement) {
 		if (parentElement instanceof IFile) {
 			IFile file = (IFile) parentElement;
-			URI fileURI = URI.createPlatformResourceURI(file.getFullPath()
-					.toString(), true);
-			Resource resource = myEditingDomain.getResourceSet().getResource(
-					fileURI, true);
+			URI fileURI = URI.createPlatformResourceURI(file.getFullPath().toString(), true);
+			Resource resource = myEditingDomain.getResourceSet().getResource(fileURI, true);
 			ArrayList<CaracteristicaNavigatorItem> result = new ArrayList<CaracteristicaNavigatorItem>();
-			ArrayList<View> topViews = new ArrayList<View>(resource
-					.getContents().size());
+			ArrayList<View> topViews = new ArrayList<View>(resource.getContents().size());
 			for (EObject o : resource.getContents()) {
 				if (o instanceof View) {
 					topViews.add((View) o);
 				}
 			}
-			result.addAll(createNavigatorItems(
-					selectViewsByType(topViews, LPSEditPart.MODEL_ID), file,
-					false));
+			result.addAll(createNavigatorItems(selectViewsByType(topViews, LPSEditPart.MODEL_ID), file, false));
 			return result.toArray();
 		}
 
@@ -241,12 +230,11 @@ public class CaracteristicaNavigatorContentProvider implements
 		}
 
 		/*
-		 * Due to plugin.xml restrictions this code will be called only for views representing
-		 * shortcuts to this diagram elements created on other diagrams. 
-		 */
+		* Due to plugin.xml restrictions this code will be called only for views representing
+		* shortcuts to this diagram elements created on other diagrams. 
+		*/
 		if (parentElement instanceof IAdaptable) {
-			View view = (View) ((IAdaptable) parentElement)
-					.getAdapter(View.class);
+			View view = (View) ((IAdaptable) parentElement).getAdapter(View.class);
 			if (view != null) {
 				return getViewChildren(view, parentElement);
 			}
@@ -266,136 +254,85 @@ public class CaracteristicaNavigatorContentProvider implements
 			result.addAll(getForeignShortcuts((Diagram) view, parentElement));
 			Diagram sv = (Diagram) view;
 			CaracteristicaNavigatorGroup links = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_LPS_1000_links,
-					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_LPS_1000_links, "icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getChildrenByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(InformacaoDeContextoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(InformacaoDeContextoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(LiteralComposicaoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(AtributoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(LiteralComposicaoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
+					CaracteristicaVisualIDRegistry.getType(AtributoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement,
-					false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+					CaracteristicaVisualIDRegistry.getType(ContextoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoEditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoVariantesEditPart.VISUAL_ID));
+					CaracteristicaVisualIDRegistry.getType(VariacaoVariantesEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
-			connectedViews = getDiagramLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
 			links.addChildren(createNavigatorItems(connectedViews, links, false));
 			if (!links.isEmpty()) {
 				result.add(links);
@@ -413,40 +350,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_CaracteristicaOpcional_2001_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -466,40 +387,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_VariacaoDois_2002_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -519,40 +424,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_CaracteristicaRaiz_2003_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -572,40 +461,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_CaracteristicaMandatoria_2004_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -619,14 +492,12 @@ public class CaracteristicaNavigatorContentProvider implements
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			CaracteristicaNavigatorGroup incominglinks = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_Atributo_2017_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_Atributo_2017_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -643,40 +514,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_CaracteristicaAgrupada_2033_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaVariacoesEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAtributoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -693,24 +548,15 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_RaizDeContexto_2034_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -727,30 +573,18 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_EntidadeDeContexto_2035_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -770,24 +604,15 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_InformacaoDeContexto_2036_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -801,21 +626,15 @@ public class CaracteristicaNavigatorContentProvider implements
 			LinkedList<CaracteristicaAbstractNavigatorItem> result = new LinkedList<CaracteristicaAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			CaracteristicaNavigatorGroup outgoinglinks = new CaracteristicaNavigatorGroup(
-					Messages.NavigatorGroupName_Contexto_2037_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
+					Messages.NavigatorGroupName_Contexto_2037_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					parentElement);
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -832,42 +651,24 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_ExpressaoLogica_2038_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -884,30 +685,18 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_ExpressaoRelacional_2039_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -921,30 +710,18 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_LiteralComposicao_2040_incominglinks,
 					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
-			connectedViews = getIncomingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews,
-					incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
+			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
+			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
 			if (!incominglinks.isEmpty()) {
 				result.add(incominglinks);
 			}
@@ -958,18 +735,12 @@ public class CaracteristicaNavigatorContentProvider implements
 					Messages.NavigatorGroupName_RegraDeComposicao_2041_outgoinglinks,
 					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
-			connectedViews = getOutgoingLinksByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews,
-					outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
+			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
+			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
 			if (!outgoinglinks.isEmpty()) {
 				result.add(outgoinglinks);
 			}
@@ -987,57 +758,35 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1055,31 +804,20 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!source.isEmpty()) {
 				result.add(source);
 			}
@@ -1097,36 +835,23 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(AtributoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(AtributoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
-			connectedViews = getLinksSourceByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
+			connectedViews = getLinksSourceByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1147,51 +872,32 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(InformacaoDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(InformacaoDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1212,51 +918,32 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaOpcionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(VariacaoDoisEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(VariacaoDoisEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaRaizEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
-			connectedViews = getLinksTargetByType(
-					Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaRaizEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
+			connectedViews = getLinksTargetByType(Collections.singleton(sv),
+					CaracteristicaVisualIDRegistry.getType(CaracteristicaMandatoriaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(InformacaoDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(InformacaoDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1277,15 +964,11 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RaizDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(RaizDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1306,15 +989,11 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(InformacaoDeContextoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(InformacaoDeContextoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(EntidadeDeContextoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(EntidadeDeContextoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1335,25 +1014,17 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(LiteralComposicaoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(LiteralComposicaoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1374,25 +1045,17 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(LiteralComposicaoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(LiteralComposicaoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(RegraDeComposicaoEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(RegraDeComposicaoEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1413,25 +1076,17 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(LiteralComposicaoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(LiteralComposicaoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1452,25 +1107,17 @@ public class CaracteristicaNavigatorContentProvider implements
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoRelacionalEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(LiteralComposicaoEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target,
-					true));
+					CaracteristicaVisualIDRegistry.getType(LiteralComposicaoEditPart.VISUAL_ID));
+			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					CaracteristicaVisualIDRegistry
-							.getType(ExpressaoLogicaEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source,
-					true));
+					CaracteristicaVisualIDRegistry.getType(ExpressaoLogicaEditPart.VISUAL_ID));
+			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);
 			}
@@ -1486,13 +1133,11 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksSourceByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksSourceByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeSource = nextEdge.getSource();
-			if (type.equals(nextEdgeSource.getType())
-					&& isOwnView(nextEdgeSource)) {
+			if (type.equals(nextEdgeSource.getType()) && isOwnView(nextEdgeSource)) {
 				result.add(nextEdgeSource);
 			}
 		}
@@ -1502,13 +1147,11 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getLinksTargetByType(Collection<Edge> edges,
-			String type) {
+	private Collection<View> getLinksTargetByType(Collection<Edge> edges, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Edge nextEdge : edges) {
 			View nextEdgeTarget = nextEdge.getTarget();
-			if (type.equals(nextEdgeTarget.getType())
-					&& isOwnView(nextEdgeTarget)) {
+			if (type.equals(nextEdgeTarget.getType()) && isOwnView(nextEdgeTarget)) {
 				result.add(nextEdgeTarget);
 			}
 		}
@@ -1518,8 +1161,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getOutgoingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getOutgoingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getSourceEdges(), type));
@@ -1530,8 +1172,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getIncomingLinksByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getIncomingLinksByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getTargetEdges(), type));
@@ -1542,8 +1183,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getChildrenByType(
-			Collection<? extends View> nodes, String type) {
+	private Collection<View> getChildrenByType(Collection<? extends View> nodes, String type) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (View nextNode : nodes) {
 			result.addAll(selectViewsByType(nextNode.getChildren(), type));
@@ -1554,8 +1194,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> getDiagramLinksByType(
-			Collection<Diagram> diagrams, String type) {
+	private Collection<View> getDiagramLinksByType(Collection<Diagram> diagrams, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (Diagram nextDiagram : diagrams) {
 			result.addAll(selectViewsByType(nextDiagram.getEdges(), type));
@@ -1567,8 +1206,7 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<View> selectViewsByType(Collection<View> views,
-			String type) {
+	private Collection<View> selectViewsByType(Collection<View> views, String type) {
 		ArrayList<View> result = new ArrayList<View>();
 		for (View nextView : views) {
 			if (type.equals(nextView.getType()) && isOwnView(nextView)) {
@@ -1582,20 +1220,17 @@ public class CaracteristicaNavigatorContentProvider implements
 	 * @generated
 	 */
 	private boolean isOwnView(View view) {
-		return LPSEditPart.MODEL_ID.equals(CaracteristicaVisualIDRegistry
-				.getModelID(view));
+		return LPSEditPart.MODEL_ID.equals(CaracteristicaVisualIDRegistry.getModelID(view));
 	}
 
 	/**
 	 * @generated
 	 */
-	private Collection<CaracteristicaNavigatorItem> createNavigatorItems(
-			Collection<View> views, Object parent, boolean isLeafs) {
-		ArrayList<CaracteristicaNavigatorItem> result = new ArrayList<CaracteristicaNavigatorItem>(
-				views.size());
+	private Collection<CaracteristicaNavigatorItem> createNavigatorItems(Collection<View> views, Object parent,
+			boolean isLeafs) {
+		ArrayList<CaracteristicaNavigatorItem> result = new ArrayList<CaracteristicaNavigatorItem>(views.size());
 		for (View nextView : views) {
-			result.add(new CaracteristicaNavigatorItem(nextView, parent,
-					isLeafs));
+			result.add(new CaracteristicaNavigatorItem(nextView, parent, isLeafs));
 		}
 		return result;
 	}
@@ -1603,13 +1238,11 @@ public class CaracteristicaNavigatorContentProvider implements
 	/**
 	 * @generated
 	 */
-	private Collection<CaracteristicaNavigatorItem> getForeignShortcuts(
-			Diagram diagram, Object parent) {
+	private Collection<CaracteristicaNavigatorItem> getForeignShortcuts(Diagram diagram, Object parent) {
 		LinkedList<View> result = new LinkedList<View>();
 		for (Iterator<View> it = diagram.getChildren().iterator(); it.hasNext();) {
 			View nextView = it.next();
-			if (!isOwnView(nextView)
-					&& nextView.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
+			if (!isOwnView(nextView) && nextView.getEAnnotation("Shortcut") != null) { //$NON-NLS-1$
 				result.add(nextView);
 			}
 		}

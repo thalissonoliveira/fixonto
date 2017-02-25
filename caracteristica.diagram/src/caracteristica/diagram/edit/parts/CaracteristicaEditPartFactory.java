@@ -164,15 +164,13 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 				return new RegraDeComposicaoAntecedenteEditPart(view);
 
 			case RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID:
-				return new RegraDeComposicaoAntecedenteExternalLabelEditPart(
-						view);
+				return new RegraDeComposicaoAntecedenteExternalLabelEditPart(view);
 
 			case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
 				return new RegraDeComposicaoConsequenteEditPart(view);
 
 			case RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID:
-				return new RegraDeComposicaoConsequenteExternalLabelEditPart(
-						view);
+				return new RegraDeComposicaoConsequenteExternalLabelEditPart(view);
 
 			case ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID:
 				return new ExpressaoLogicaLadoDireitoComposicaoEditPart(view);
@@ -202,10 +200,8 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

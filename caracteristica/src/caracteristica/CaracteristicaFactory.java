@@ -15,236 +15,236 @@ import org.eclipse.emf.ecore.EFactory;
 public interface CaracteristicaFactory extends EFactory
 {
   /**
-   * The singleton instance of the factory.
-   * <!-- begin-user-doc -->
+	 * The singleton instance of the factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   CaracteristicaFactory eINSTANCE = caracteristica.impl.CaracteristicaFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>LPS</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>LPS</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>LPS</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>LPS</em>'.
+	 * @generated
+	 */
   LPS createLPS();
 
   /**
-   * Returns a new object of class '<em>Elemento</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Elemento</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elemento</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Elemento</em>'.
+	 * @generated
+	 */
   Elemento createElemento();
 
   /**
-   * Returns a new object of class '<em>Elemento Caracteristico</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Elemento Caracteristico</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Elemento Caracteristico</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Elemento Caracteristico</em>'.
+	 * @generated
+	 */
   ElementoCaracteristico createElementoCaracteristico();
 
   /**
-   * Returns a new object of class '<em>Atributo</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Atributo</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Atributo</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Atributo</em>'.
+	 * @generated
+	 */
   Atributo createAtributo();
 
   /**
-   * Returns a new object of class '<em>Caracteristica</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Caracteristica</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Caracteristica</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Caracteristica</em>'.
+	 * @generated
+	 */
   Caracteristica createCaracteristica();
 
   /**
-   * Returns a new object of class '<em>Raiz</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Raiz</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Raiz</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Raiz</em>'.
+	 * @generated
+	 */
   CaracteristicaRaiz createCaracteristicaRaiz();
 
   /**
-   * Returns a new object of class '<em>Opcional</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Opcional</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Opcional</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Opcional</em>'.
+	 * @generated
+	 */
   CaracteristicaOpcional createCaracteristicaOpcional();
 
   /**
-   * Returns a new object of class '<em>Agrupada</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Agrupada</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Agrupada</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Agrupada</em>'.
+	 * @generated
+	 */
   CaracteristicaAgrupada createCaracteristicaAgrupada();
 
   /**
-   * Returns a new object of class '<em>Mandatoria</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Mandatoria</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mandatoria</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Mandatoria</em>'.
+	 * @generated
+	 */
   CaracteristicaMandatoria createCaracteristicaMandatoria();
 
   /**
-   * Returns a new object of class '<em>Variacao Dois</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Variacao Dois</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variacao Dois</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Variacao Dois</em>'.
+	 * @generated
+	 */
   VariacaoDois createVariacaoDois();
 
   /**
-   * Returns a new object of class '<em>Ponto De Variacao</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Ponto De Variacao</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Ponto De Variacao</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Ponto De Variacao</em>'.
+	 * @generated
+	 */
   PontoDeVariacao createPontoDeVariacao();
 
   /**
-   * Returns a new object of class '<em>Variacao</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Variacao</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variacao</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Variacao</em>'.
+	 * @generated
+	 */
   Variacao createVariacao();
 
   /**
-   * Returns a new object of class '<em>Variante</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Variante</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variante</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Variante</em>'.
+	 * @generated
+	 */
   Variante createVariante();
 
   /**
-   * Returns a new object of class '<em>Contexto</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Contexto</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Contexto</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Contexto</em>'.
+	 * @generated
+	 */
   Contexto createContexto();
 
   /**
-   * Returns a new object of class '<em>Raiz De Contexto</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Raiz De Contexto</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Raiz De Contexto</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Raiz De Contexto</em>'.
+	 * @generated
+	 */
   RaizDeContexto createRaizDeContexto();
 
   /**
-   * Returns a new object of class '<em>Entidade De Contexto</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Entidade De Contexto</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Entidade De Contexto</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Entidade De Contexto</em>'.
+	 * @generated
+	 */
   EntidadeDeContexto createEntidadeDeContexto();
 
   /**
-   * Returns a new object of class '<em>Informacao De Contexto</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Informacao De Contexto</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Informacao De Contexto</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Informacao De Contexto</em>'.
+	 * @generated
+	 */
   InformacaoDeContexto createInformacaoDeContexto();
 
   /**
-   * Returns a new object of class '<em>Regra</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Regra</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Regra</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Regra</em>'.
+	 * @generated
+	 */
   Regra createRegra();
 
   /**
-   * Returns a new object of class '<em>Regra De Composicao</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Regra De Composicao</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Regra De Composicao</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Regra De Composicao</em>'.
+	 * @generated
+	 */
   RegraDeComposicao createRegraDeComposicao();
 
   /**
-   * Returns a new object of class '<em>Expressao</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Expressao</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expressao</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Expressao</em>'.
+	 * @generated
+	 */
   Expressao createExpressao();
 
   /**
-   * Returns a new object of class '<em>Antecedente</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Antecedente</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Antecedente</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Antecedente</em>'.
+	 * @generated
+	 */
   Antecedente createAntecedente();
 
   /**
-   * Returns a new object of class '<em>Expressao Logica</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Expressao Logica</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expressao Logica</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Expressao Logica</em>'.
+	 * @generated
+	 */
   ExpressaoLogica createExpressaoLogica();
 
   /**
-   * Returns a new object of class '<em>Expressao Relacional</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Expressao Relacional</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expressao Relacional</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Expressao Relacional</em>'.
+	 * @generated
+	 */
   ExpressaoRelacional createExpressaoRelacional();
 
   /**
-   * Returns a new object of class '<em>Literal Composicao</em>'.
-   * <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Literal Composicao</em>'.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Literal Composicao</em>'.
-   * @generated
-   */
+	 * @return a new object of class '<em>Literal Composicao</em>'.
+	 * @generated
+	 */
   LiteralComposicao createLiteralComposicao();
 
   /**
-   * Returns the package supported by this factory.
-   * <!-- begin-user-doc -->
+	 * Returns the package supported by this factory.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the package supported by this factory.
-   * @generated
-   */
+	 * @return the package supported by this factory.
+	 * @generated
+	 */
   CaracteristicaPackage getCaracteristicaPackage();
 
 } //CaracteristicaFactory

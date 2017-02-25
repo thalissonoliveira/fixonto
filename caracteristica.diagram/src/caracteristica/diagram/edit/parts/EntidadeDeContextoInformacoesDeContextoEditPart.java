@@ -20,8 +20,8 @@ import caracteristica.diagram.edit.policies.EntidadeDeContextoInformacoesDeConte
 /**
  * @generated
  */
-public class EntidadeDeContextoInformacoesDeContextoEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class EntidadeDeContextoInformacoesDeContextoEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +40,7 @@ public class EntidadeDeContextoInformacoesDeContextoEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new EntidadeDeContextoInformacoesDeContextoItemSemanticEditPolicy());
 	}
 
@@ -68,8 +67,7 @@ public class EntidadeDeContextoInformacoesDeContextoEditPart extends
 	/**
 	 * @generated
 	 */
-	public class EntidadeDeContextoInformacoesDeContextoFigure extends
-			PolylineConnectionEx {
+	public class EntidadeDeContextoInformacoesDeContextoFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

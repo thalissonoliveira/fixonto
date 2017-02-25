@@ -18,8 +18,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class ExpressaoLogicaLadoDireitoComposicaoCreateCommand extends
-		EditElementCommand {
+public class ExpressaoLogicaLadoDireitoComposicaoCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -34,8 +33,8 @@ public class ExpressaoLogicaLadoDireitoComposicaoCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public ExpressaoLogicaLadoDireitoComposicaoCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public ExpressaoLogicaLadoDireitoComposicaoCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -59,18 +58,15 @@ public class ExpressaoLogicaLadoDireitoComposicaoCreateCommand extends
 		}
 		// target may be null here but it's possible to check constraint
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canCreateExpressaoLogicaLadoDireitoComposicao_4031(
-						getSource(), getTarget());
+				.canCreateExpressaoLogicaLadoDireitoComposicao_4031(getSource(), getTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

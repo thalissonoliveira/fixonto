@@ -21,8 +21,7 @@ import caracteristica.diagram.edit.policies.ContextoCaracteristicasIncluirItemSe
 /**
  * @generated
  */
-public class ContextoCaracteristicasIncluirEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class ContextoCaracteristicasIncluirEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -41,8 +40,7 @@ public class ContextoCaracteristicasIncluirEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ContextoCaracteristicasIncluirItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ContextoCaracteristicasIncluirItemSemanticEditPolicy());
 	}
 
 	/**
@@ -68,8 +66,7 @@ public class ContextoCaracteristicasIncluirEditPart extends
 	/**
 	 * @generated
 	 */
-	public class ContextoCaracteristicasIncluirFigure extends
-			PolylineConnectionEx {
+	public class ContextoCaracteristicasIncluirFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

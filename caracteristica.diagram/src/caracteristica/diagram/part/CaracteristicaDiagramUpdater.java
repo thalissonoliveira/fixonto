@@ -74,15 +74,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	public static boolean isShortcutOrphaned(View view) {
-		return !view.isSetElement() || view.getElement() == null
-				|| view.getElement().eIsProxy();
+		return !view.isSetElement() || view.getElement() == null || view.getElement().eIsProxy();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaNodeDescriptor> getSemanticChildren(
-			View view) {
+	public static List<CaracteristicaNodeDescriptor> getSemanticChildren(View view) {
 		switch (CaracteristicaVisualIDRegistry.getVisualID(view)) {
 		case LPSEditPart.VISUAL_ID:
 			return getLPS_1000SemanticChildren(view);
@@ -93,98 +91,77 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaNodeDescriptor> getLPS_1000SemanticChildren(
-			View view) {
+	public static List<CaracteristicaNodeDescriptor> getLPS_1000SemanticChildren(View view) {
 		if (!view.isSetElement()) {
 			return Collections.emptyList();
 		}
-		caracteristica.LPS modelElement = (caracteristica.LPS) view
-				.getElement();
+		caracteristica.LPS modelElement = (caracteristica.LPS) view.getElement();
 		LinkedList<CaracteristicaNodeDescriptor> result = new LinkedList<CaracteristicaNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getElementos().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getElementos().iterator(); it.hasNext();) {
 			Elemento childElement = (Elemento) it.next();
-			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == CaracteristicaOpcionalEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == CaracteristicaAgrupadaEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == VariacaoDoisEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == CaracteristicaRaizEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == CaracteristicaMandatoriaEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == RaizDeContextoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == EntidadeDeContextoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == InformacaoDeContextoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == AtributoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == ContextoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
-		for (Iterator<?> it = modelElement.getExpressoes().iterator(); it
-				.hasNext();) {
+		for (Iterator<?> it = modelElement.getExpressoes().iterator(); it.hasNext();) {
 			Expressao childElement = (Expressao) it.next();
-			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == ExpressaoLogicaEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == ExpressaoRelacionalEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 			if (visualID == LiteralComposicaoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
 		for (Iterator<?> it = modelElement.getRegras().iterator(); it.hasNext();) {
 			Regra childElement = (Regra) it.next();
-			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view,
-					childElement);
+			int visualID = CaracteristicaVisualIDRegistry.getNodeVisualID(view, childElement);
 			if (visualID == RegraDeComposicaoEditPart.VISUAL_ID) {
-				result.add(new CaracteristicaNodeDescriptor(childElement,
-						visualID));
+				result.add(new CaracteristicaNodeDescriptor(childElement, visualID));
 				continue;
 			}
 		}
@@ -307,18 +284,15 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getLPS_1000ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getLPS_1000ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001ContainedLinks(
-			View view) {
-		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001ContainedLinks(View view) {
+		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -329,10 +303,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033ContainedLinks(
-			View view) {
-		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033ContainedLinks(View view) {
+		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -343,8 +315,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002ContainedLinks(View view) {
 		VariacaoDois modelElement = (VariacaoDois) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
@@ -356,10 +327,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003ContainedLinks(
-			View view) {
-		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003ContainedLinks(View view) {
+		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -370,10 +339,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004ContainedLinks(
-			View view) {
-		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004ContainedLinks(View view) {
+		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -384,8 +351,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034ContainedLinks(View view) {
 		RaizDeContexto modelElement = (RaizDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
@@ -397,10 +363,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035ContainedLinks(
-			View view) {
-		EntidadeDeContexto modelElement = (EntidadeDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035ContainedLinks(View view) {
+		EntidadeDeContexto modelElement = (EntidadeDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
@@ -411,10 +375,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036ContainedLinks(
-			View view) {
-		InformacaoDeContexto modelElement = (InformacaoDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036ContainedLinks(View view) {
+		InformacaoDeContexto modelElement = (InformacaoDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
@@ -424,8 +386,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038ContainedLinks(View view) {
 		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement));
@@ -436,32 +397,28 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getAtributo_2017ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getAtributo_2017ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getContexto_2037ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getContexto_2037ContainedLinks(View view) {
 		Contexto modelElement = (Contexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
@@ -472,8 +429,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041ContainedLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041ContainedLinks(View view) {
 		RegraDeComposicao modelElement = (RegraDeComposicao) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement));
@@ -484,233 +440,209 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001IncomingLinks(
-			View view) {
-		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001IncomingLinks(View view) {
+		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement,
+				crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033IncomingLinks(
-			View view) {
-		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033IncomingLinks(View view) {
+		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement,
+				crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002IncomingLinks(View view) {
 		VariacaoDois modelElement = (VariacaoDois) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement,
+				crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003IncomingLinks(
-			View view) {
-		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003IncomingLinks(View view) {
+		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement,
+				crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004IncomingLinks(
-			View view) {
-		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004IncomingLinks(View view) {
+		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement,
+				crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035IncomingLinks(
-			View view) {
-		EntidadeDeContexto modelElement = (EntidadeDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035IncomingLinks(View view) {
+		EntidadeDeContexto modelElement = (EntidadeDeContexto) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_RaizDeContexto_EntidadesDeContexto_4027(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_RaizDeContexto_EntidadesDeContexto_4027(modelElement,
+				crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036IncomingLinks(
-			View view) {
-		InformacaoDeContexto modelElement = (InformacaoDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036IncomingLinks(View view) {
+		InformacaoDeContexto modelElement = (InformacaoDeContexto) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_EntidadeDeContexto_InformacoesDeContexto_4028(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_EntidadeDeContexto_InformacoesDeContexto_4028(modelElement,
+				crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038IncomingLinks(View view) {
 		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
-				modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement,
+				crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(modelElement,
+				crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039IncomingLinks(
-			View view) {
-		ExpressaoRelacional modelElement = (ExpressaoRelacional) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039IncomingLinks(View view) {
+		ExpressaoRelacional modelElement = (ExpressaoRelacional) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
-				modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement,
+				crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(modelElement,
+				crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040IncomingLinks(View view) {
 		LiteralComposicao modelElement = (LiteralComposicao) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
-				modelElement, crossReferences));
-		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
-				modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement, crossReferences));
+		result.addAll(
+				getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement,
+				crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(modelElement,
+				crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getAtributo_2017IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getAtributo_2017IncomingLinks(View view) {
 		Atributo modelElement = (Atributo) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_Atributo_4004(
-				modelElement, crossReferences));
+		result.addAll(getIncomingFeatureModelFacetLinks_Caracteristica_Atributo_4004(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getContexto_2037IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getContexto_2037IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041IncomingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001OutgoingLinks(
-			View view) {
-		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaOpcional_2001OutgoingLinks(View view) {
+		CaracteristicaOpcional modelElement = (CaracteristicaOpcional) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -721,10 +653,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033OutgoingLinks(
-			View view) {
-		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaAgrupada_2033OutgoingLinks(View view) {
+		CaracteristicaAgrupada modelElement = (CaracteristicaAgrupada) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -735,8 +665,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getVariacaoDois_2002OutgoingLinks(View view) {
 		VariacaoDois modelElement = (VariacaoDois) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
@@ -748,10 +677,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003OutgoingLinks(
-			View view) {
-		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaRaiz_2003OutgoingLinks(View view) {
+		CaracteristicaRaiz modelElement = (CaracteristicaRaiz) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -762,10 +689,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004OutgoingLinks(
-			View view) {
-		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getCaracteristicaMandatoria_2004OutgoingLinks(View view) {
+		CaracteristicaMandatoria modelElement = (CaracteristicaMandatoria) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(modelElement));
@@ -776,8 +701,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRaizDeContexto_2034OutgoingLinks(View view) {
 		RaizDeContexto modelElement = (RaizDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
@@ -789,10 +713,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035OutgoingLinks(
-			View view) {
-		EntidadeDeContexto modelElement = (EntidadeDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getEntidadeDeContexto_2035OutgoingLinks(View view) {
+		EntidadeDeContexto modelElement = (EntidadeDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
@@ -803,10 +725,8 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036OutgoingLinks(
-			View view) {
-		InformacaoDeContexto modelElement = (InformacaoDeContexto) view
-				.getElement();
+	public static List<CaracteristicaLinkDescriptor> getInformacaoDeContexto_2036OutgoingLinks(View view) {
+		InformacaoDeContexto modelElement = (InformacaoDeContexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(modelElement));
@@ -816,8 +736,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getExpressaoLogica_2038OutgoingLinks(View view) {
 		ExpressaoLogica modelElement = (ExpressaoLogica) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(modelElement));
@@ -828,32 +747,28 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getExpressaoRelacional_2039OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getLiteralComposicao_2040OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getAtributo_2017OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getAtributo_2017OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getContexto_2037OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getContexto_2037OutgoingLinks(View view) {
 		Contexto modelElement = (Contexto) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(modelElement));
@@ -864,8 +779,7 @@ public class CaracteristicaDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041OutgoingLinks(
-			View view) {
+	public static List<CaracteristicaLinkDescriptor> getRegraDeComposicao_2041OutgoingLinks(View view) {
 		RegraDeComposicao modelElement = (RegraDeComposicao) view.getElement();
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
 		result.addAll(getOutgoingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(modelElement));
@@ -877,17 +791,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
-			Caracteristica target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Caracteristica target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getCaracteristica_CaracteristicaFilha()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002,
 						CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
 			}
@@ -899,16 +809,12 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_Caracteristica_Atributo_4004(
-			Atributo target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Atributo target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
-					.getCaracteristica_Atributo()) {
-				result.add(new CaracteristicaLinkDescriptor(setting
-						.getEObject(), target,
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE.getCaracteristica_Atributo()) {
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.CaracteristicaAtributo_4004,
 						CaracteristicaAtributoEditPart.VISUAL_ID));
 			}
@@ -920,17 +826,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
-			Caracteristica target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Caracteristica target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getContexto_CaracteristicasIncluir()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025,
 						ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
 			}
@@ -942,17 +844,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
-			Caracteristica target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Caracteristica target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getContexto_CaracteristicasExcluir()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026,
 						ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
 			}
@@ -964,17 +862,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_RaizDeContexto_EntidadesDeContexto_4027(
-			EntidadeDeContexto target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			EntidadeDeContexto target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getRaizDeContexto_EntidadesDeContexto()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027,
 						RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
 			}
@@ -986,17 +880,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_EntidadeDeContexto_InformacoesDeContexto_4028(
-			InformacaoDeContexto target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			InformacaoDeContexto target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getEntidadeDeContexto_InformacoesDeContexto()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028,
 						EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 			}
@@ -1008,17 +898,12 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_RegraDeComposicao_Antecedente_4029(
-			Antecedente target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Antecedente target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
-					.getRegraDeComposicao_Antecedente()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE.getRegraDeComposicao_Antecedente()) {
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4029,
 						RegraDeComposicaoAntecedenteEditPart.VISUAL_ID));
 			}
@@ -1030,17 +915,12 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_RegraDeComposicao_Consequente_4030(
-			Antecedente target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Antecedente target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
-					.getRegraDeComposicao_Consequente()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE.getRegraDeComposicao_Consequente()) {
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.RegraDeComposicaoConsequente_4030,
 						RegraDeComposicaoConsequenteEditPart.VISUAL_ID));
 			}
@@ -1052,17 +932,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoDireitoComposicao_4031(
-			Antecedente target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Antecedente target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getExpressaoLogica_LadoDireitoComposicao()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031,
 						ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
 			}
@@ -1074,17 +950,13 @@ public class CaracteristicaDiagramUpdater {
 	 * @generated
 	 */
 	private static Collection<CaracteristicaLinkDescriptor> getIncomingFeatureModelFacetLinks_ExpressaoLogica_LadoEsquerdoComposicao_4032(
-			Antecedente target,
-			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
+			Antecedente target, Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		Collection<EStructuralFeature.Setting> settings = crossReferences
-				.get(target);
+		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
 			if (setting.getEStructuralFeature() == CaracteristicaPackage.eINSTANCE
 					.getExpressaoLogica_LadoEsquerdoComposicao()) {
-				result.add(new CaracteristicaLinkDescriptor(
-						setting.getEObject(),
-						target,
+				result.add(new CaracteristicaLinkDescriptor(setting.getEObject(), target,
 						CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032,
 						ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
 			}
@@ -1098,12 +970,9 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Caracteristica_CaracteristicaFilha_4002(
 			Caracteristica source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getCaracteristicaFilha()
-				.iterator(); destinations.hasNext();) {
+		for (Iterator<?> destinations = source.getCaracteristicaFilha().iterator(); destinations.hasNext();) {
 			Caracteristica destination = (Caracteristica) destinations.next();
-			result.add(new CaracteristicaLinkDescriptor(
-					source,
-					destination,
+			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002,
 					CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID));
 		}
@@ -1116,8 +985,7 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Caracteristica_Variacoes_4003(
 			Caracteristica source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getVariacoes().iterator(); destinations
-				.hasNext();) {
+		for (Iterator<?> destinations = source.getVariacoes().iterator(); destinations.hasNext();) {
 			Variacao destination = (Variacao) destinations.next();
 			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.CaracteristicaVariacoes_4003,
@@ -1132,12 +1000,10 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Caracteristica_Atributo_4004(
 			Caracteristica source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getAtributo().iterator(); destinations
-				.hasNext();) {
+		for (Iterator<?> destinations = source.getAtributo().iterator(); destinations.hasNext();) {
 			Atributo destination = (Atributo) destinations.next();
 			result.add(new CaracteristicaLinkDescriptor(source, destination,
-					CaracteristicaElementTypes.CaracteristicaAtributo_4004,
-					CaracteristicaAtributoEditPart.VISUAL_ID));
+					CaracteristicaElementTypes.CaracteristicaAtributo_4004, CaracteristicaAtributoEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -1148,12 +1014,9 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasIncluir_4025(
 			Contexto source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getCaracteristicasIncluir()
-				.iterator(); destinations.hasNext();) {
+		for (Iterator<?> destinations = source.getCaracteristicasIncluir().iterator(); destinations.hasNext();) {
 			Caracteristica destination = (Caracteristica) destinations.next();
-			result.add(new CaracteristicaLinkDescriptor(
-					source,
-					destination,
+			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025,
 					ContextoCaracteristicasIncluirEditPart.VISUAL_ID));
 		}
@@ -1166,12 +1029,9 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_Contexto_CaracteristicasExcluir_4026(
 			Contexto source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getCaracteristicasExcluir()
-				.iterator(); destinations.hasNext();) {
+		for (Iterator<?> destinations = source.getCaracteristicasExcluir().iterator(); destinations.hasNext();) {
 			Caracteristica destination = (Caracteristica) destinations.next();
-			result.add(new CaracteristicaLinkDescriptor(
-					source,
-					destination,
+			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026,
 					ContextoCaracteristicasExcluirEditPart.VISUAL_ID));
 		}
@@ -1184,13 +1044,9 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_RaizDeContexto_EntidadesDeContexto_4027(
 			RaizDeContexto source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getEntidadesDeContexto()
-				.iterator(); destinations.hasNext();) {
-			EntidadeDeContexto destination = (EntidadeDeContexto) destinations
-					.next();
-			result.add(new CaracteristicaLinkDescriptor(
-					source,
-					destination,
+		for (Iterator<?> destinations = source.getEntidadesDeContexto().iterator(); destinations.hasNext();) {
+			EntidadeDeContexto destination = (EntidadeDeContexto) destinations.next();
+			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.RaizDeContextoEntidadesDeContexto_4027,
 					RaizDeContextoEntidadesDeContextoEditPart.VISUAL_ID));
 		}
@@ -1203,13 +1059,9 @@ public class CaracteristicaDiagramUpdater {
 	private static Collection<CaracteristicaLinkDescriptor> getOutgoingFeatureModelFacetLinks_EntidadeDeContexto_InformacoesDeContexto_4028(
 			EntidadeDeContexto source) {
 		LinkedList<CaracteristicaLinkDescriptor> result = new LinkedList<CaracteristicaLinkDescriptor>();
-		for (Iterator<?> destinations = source.getInformacoesDeContexto()
-				.iterator(); destinations.hasNext();) {
-			InformacaoDeContexto destination = (InformacaoDeContexto) destinations
-					.next();
-			result.add(new CaracteristicaLinkDescriptor(
-					source,
-					destination,
+		for (Iterator<?> destinations = source.getInformacoesDeContexto().iterator(); destinations.hasNext();) {
+			InformacaoDeContexto destination = (InformacaoDeContexto) destinations.next();
+			result.add(new CaracteristicaLinkDescriptor(source, destination,
 					CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4028,
 					EntidadeDeContextoInformacoesDeContextoEditPart.VISUAL_ID));
 		}
@@ -1258,9 +1110,7 @@ public class CaracteristicaDiagramUpdater {
 		if (destination == null) {
 			return result;
 		}
-		result.add(new CaracteristicaLinkDescriptor(
-				source,
-				destination,
+		result.add(new CaracteristicaLinkDescriptor(source, destination,
 				CaracteristicaElementTypes.ExpressaoLogicaLadoDireitoComposicao_4031,
 				ExpressaoLogicaLadoDireitoComposicaoEditPart.VISUAL_ID));
 		return result;
@@ -1276,9 +1126,7 @@ public class CaracteristicaDiagramUpdater {
 		if (destination == null) {
 			return result;
 		}
-		result.add(new CaracteristicaLinkDescriptor(
-				source,
-				destination,
+		result.add(new CaracteristicaLinkDescriptor(source, destination,
 				CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4032,
 				ExpressaoLogicaLadoEsquerdoComposicaoEditPart.VISUAL_ID));
 		return result;
@@ -1289,29 +1137,37 @@ public class CaracteristicaDiagramUpdater {
 	 */
 	public static final DiagramUpdater TYPED_INSTANCE = new DiagramUpdater() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<CaracteristicaNodeDescriptor> getSemanticChildren(View view) {
 			return CaracteristicaDiagramUpdater.getSemanticChildren(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<CaracteristicaLinkDescriptor> getContainedLinks(View view) {
 			return CaracteristicaDiagramUpdater.getContainedLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<CaracteristicaLinkDescriptor> getIncomingLinks(View view) {
 			return CaracteristicaDiagramUpdater.getIncomingLinks(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
+		@Override
+
 		public List<CaracteristicaLinkDescriptor> getOutgoingLinks(View view) {
 			return CaracteristicaDiagramUpdater.getOutgoingLinks(view);
 		}

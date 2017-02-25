@@ -29,8 +29,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class LPSItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class LPSItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -43,48 +42,37 @@ public class LPSItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaOpcional_2001 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaOpcional_2001 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaOpcionalCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaAgrupada_2033 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaAgrupada_2033 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaAgrupadaCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.VariacaoDois_2002 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.VariacaoDois_2002 == req.getElementType()) {
 			return getGEFWrapper(new VariacaoDoisCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaRaiz_2003 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaRaiz_2003 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaRaizCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaMandatoria_2004 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaMandatoria_2004 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaMandatoriaCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.RaizDeContexto_2034 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RaizDeContexto_2034 == req.getElementType()) {
 			return getGEFWrapper(new RaizDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.EntidadeDeContexto_2035 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EntidadeDeContexto_2035 == req.getElementType()) {
 			return getGEFWrapper(new EntidadeDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.InformacaoDeContexto_2036 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.InformacaoDeContexto_2036 == req.getElementType()) {
 			return getGEFWrapper(new InformacaoDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogica_2038 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ExpressaoLogica_2038 == req.getElementType()) {
 			return getGEFWrapper(new ExpressaoLogicaCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.ExpressaoRelacional_2039 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ExpressaoRelacional_2039 == req.getElementType()) {
 			return getGEFWrapper(new ExpressaoRelacionalCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.LiteralComposicao_2040 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.LiteralComposicao_2040 == req.getElementType()) {
 			return getGEFWrapper(new LiteralComposicaoCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.Atributo_2017 == req.getElementType()) {
@@ -93,8 +81,7 @@ public class LPSItemSemanticEditPolicy extends
 		if (CaracteristicaElementTypes.Contexto_2037 == req.getElementType()) {
 			return getGEFWrapper(new ContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicao_2041 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RegraDeComposicao_2041 == req.getElementType()) {
 			return getGEFWrapper(new RegraDeComposicaoCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
@@ -104,26 +91,20 @@ public class LPSItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

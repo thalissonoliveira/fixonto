@@ -11,8 +11,7 @@ import org.eclipse.ui.views.properties.tabbed.ITabbedPropertySheetPageContributo
 /**
  * @generated
  */
-public abstract class CaracteristicaAbstractNavigatorItem extends
-		PlatformObject {
+public abstract class CaracteristicaAbstractNavigatorItem extends PlatformObject {
 
 	/**
 	 * @generated
@@ -24,23 +23,20 @@ public abstract class CaracteristicaAbstractNavigatorItem extends
 				return "caracteristica.diagram"; //$NON-NLS-1$
 			}
 		};
-		Platform.getAdapterManager().registerAdapters(
-				new IAdapterFactory() {
+		Platform.getAdapterManager().registerAdapters(new IAdapterFactory() {
 
-					public Object getAdapter(Object adaptableObject,
-							Class adapterType) {
-						if (adaptableObject instanceof caracteristica.diagram.navigator.CaracteristicaAbstractNavigatorItem
-								&& adapterType == ITabbedPropertySheetPageContributor.class) {
-							return propertySheetPageContributor;
-						}
-						return null;
-					}
+			public Object getAdapter(Object adaptableObject, Class adapterType) {
+				if (adaptableObject instanceof caracteristica.diagram.navigator.CaracteristicaAbstractNavigatorItem
+						&& adapterType == ITabbedPropertySheetPageContributor.class) {
+					return propertySheetPageContributor;
+				}
+				return null;
+			}
 
-					public Class[] getAdapterList() {
-						return supportedTypes;
-					}
-				},
-				caracteristica.diagram.navigator.CaracteristicaAbstractNavigatorItem.class);
+			public Class[] getAdapterList() {
+				return supportedTypes;
+			}
+		}, caracteristica.diagram.navigator.CaracteristicaAbstractNavigatorItem.class);
 	}
 
 	/**

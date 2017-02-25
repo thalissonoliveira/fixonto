@@ -18,8 +18,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class CaracteristicaSheetLabelProvider extends BaseLabelProvider
-		implements ILabelProvider {
+public class CaracteristicaSheetLabelProvider extends BaseLabelProvider implements ILabelProvider {
 
 	/**
 	 * @generated
@@ -38,8 +37,7 @@ public class CaracteristicaSheetLabelProvider extends BaseLabelProvider
 	 */
 	public Image getImage(Object element) {
 		IElementType etype = getElementType(getView(unwrap(element)));
-		return etype == null ? null : CaracteristicaElementTypes
-				.getImage(etype);
+		return etype == null ? null : CaracteristicaElementTypes.getImage(etype);
 	}
 
 	/**
@@ -76,8 +74,7 @@ public class CaracteristicaSheetLabelProvider extends BaseLabelProvider
 			if (etype != null) {
 				return etype;
 			}
-			view = view.eContainer() instanceof View ? (View) view.eContainer()
-					: null;
+			view = view.eContainer() instanceof View ? (View) view.eContainer() : null;
 		}
 		return null;
 	}

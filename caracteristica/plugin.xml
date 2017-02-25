@@ -93,14 +93,12 @@
             defaultName="DLQueryEngine">
       </tool>
    </extension>
-   
    <extension
-	id="workbench"
-	point="org.eclipse.core.runtime.applications">
-	<application>
-		<run
-			class="org.eclipse.ui.internal.ide.IDEApplication">
-		</run>
-	</application>
-</extension> 
+         point="org.eclipse.epsilon.common.dt.tool">
+      <tool
+            class="fixture.owl.parser.FeaToPromela"
+            defaultName="FeaToPromela">
+      </tool>
+   </extension>
+   
 </plugin>

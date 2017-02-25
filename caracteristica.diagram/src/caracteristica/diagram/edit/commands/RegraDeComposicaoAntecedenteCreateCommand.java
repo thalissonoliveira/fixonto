@@ -18,8 +18,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class RegraDeComposicaoAntecedenteCreateCommand extends
-		EditElementCommand {
+public class RegraDeComposicaoAntecedenteCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -34,8 +33,8 @@ public class RegraDeComposicaoAntecedenteCreateCommand extends
 	/**
 	 * @generated
 	 */
-	public RegraDeComposicaoAntecedenteCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public RegraDeComposicaoAntecedenteCreateCommand(CreateRelationshipRequest request, EObject source,
+			EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -59,18 +58,15 @@ public class RegraDeComposicaoAntecedenteCreateCommand extends
 		}
 		// target may be null here but it's possible to check constraint
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canCreateRegraDeComposicaoAntecedente_4029(getSource(),
-						getTarget());
+				.canCreateRegraDeComposicaoAntecedente_4029(getSource(), getTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.RegraDeComposicaoAntecedenteItemSema
 /**
  * @generated
  */
-public class RegraDeComposicaoAntecedenteEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class RegraDeComposicaoAntecedenteEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class RegraDeComposicaoAntecedenteEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new RegraDeComposicaoAntecedenteItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RegraDeComposicaoAntecedenteItemSemanticEditPolicy());
 	}
 
 	/**
@@ -67,8 +65,7 @@ public class RegraDeComposicaoAntecedenteEditPart extends
 	/**
 	 * @generated
 	 */
-	public class RegraDeComposicaoAntecedenteFigure extends
-			PolylineConnectionEx {
+	public class RegraDeComposicaoAntecedenteFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

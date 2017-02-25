@@ -20,8 +20,8 @@ import caracteristica.diagram.edit.policies.ExpressaoLogicaLadoDireitoComposicao
 /**
  * @generated
  */
-public class ExpressaoLogicaLadoDireitoComposicaoEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class ExpressaoLogicaLadoDireitoComposicaoEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +40,7 @@ public class ExpressaoLogicaLadoDireitoComposicaoEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new ExpressaoLogicaLadoDireitoComposicaoItemSemanticEditPolicy());
 	}
 
@@ -68,8 +67,7 @@ public class ExpressaoLogicaLadoDireitoComposicaoEditPart extends
 	/**
 	 * @generated
 	 */
-	public class ExpressaoLogicaLadoDireitoComposicaoFigure extends
-			PolylineConnectionEx {
+	public class ExpressaoLogicaLadoDireitoComposicaoFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

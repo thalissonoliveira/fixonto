@@ -69,8 +69,7 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new ContextoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ContextoItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -83,8 +82,7 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -121,8 +119,7 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof ContextoNomeEditPart) {
-			((ContextoNomeEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureContextoLabelFigure());
+			((ContextoNomeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureContextoLabelFigure());
 			return true;
 		}
 		return false;
@@ -255,78 +252,7 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(ContextoNomeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof CaracteristicaOpcionalEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		}
-		if (targetEditPart instanceof CaracteristicaAgrupadaEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		}
-		if (targetEditPart instanceof VariacaoDoisEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		}
-		if (targetEditPart instanceof CaracteristicaRaizEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025);
-		}
-		if (targetEditPart instanceof CaracteristicaOpcionalEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		}
-		if (targetEditPart instanceof CaracteristicaAgrupadaEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		}
-		if (targetEditPart instanceof VariacaoDoisEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		}
-		if (targetEditPart instanceof CaracteristicaRaizEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
-			types.add(CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasIncluir_4025) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		} else if (relationshipType == CaracteristicaElementTypes.ContextoCaracteristicasExcluir_4026) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		}
-		return types;
+		return getChildBySemanticHint(CaracteristicaVisualIDRegistry.getType(ContextoNomeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -334,8 +260,7 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -356,10 +281,8 @@ public class ContextoEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public ContextoFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}

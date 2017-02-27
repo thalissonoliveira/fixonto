@@ -104,13 +104,22 @@ public interface CaracteristicaPackage extends EPackage
   int LPS__NOME = 3;
 
   /**
+	 * The feature id for the '<em><b>Sistema</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LPS__SISTEMA = 4;
+
+		/**
 	 * The number of structural features of the '<em>LPS</em>' class.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-  int LPS_FEATURE_COUNT = 4;
+  int LPS_FEATURE_COUNT = 5;
 
   /**
 	 * The meta object id for the '{@link caracteristica.impl.ElementoImpl <em>Elemento</em>}' class.
@@ -1460,6 +1469,17 @@ public interface CaracteristicaPackage extends EPackage
   EAttribute getLPS_Nome();
 
   /**
+	 * Returns the meta object for the reference '{@link caracteristica.LPS#getSistema <em>Sistema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Sistema</em>'.
+	 * @see caracteristica.LPS#getSistema()
+	 * @see #getLPS()
+	 * @generated
+	 */
+	EReference getLPS_Sistema();
+
+		/**
 	 * Returns the meta object for class '{@link caracteristica.Elemento <em>Elemento</em>}'.
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2230,6 +2250,14 @@ public interface CaracteristicaPackage extends EPackage
     EAttribute LPS__NOME = eINSTANCE.getLPS_Nome();
 
     /**
+		 * The meta object literal for the '<em><b>Sistema</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference LPS__SISTEMA = eINSTANCE.getLPS_Sistema();
+
+				/**
 		 * The meta object literal for the '{@link caracteristica.impl.ElementoImpl <em>Elemento</em>}' class.
 		 * <!-- begin-user-doc -->
      * <!-- end-user-doc -->

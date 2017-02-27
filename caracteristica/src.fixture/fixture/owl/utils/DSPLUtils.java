@@ -1,7 +1,8 @@
 package fixture.owl.utils;
 
-import fixture.owl.factory.DSPLConceptFactory;
+import fixture.dspl.factory.DSPLConceptFactory;
 import fixture.owl.model.element.Feature;
+import fmp.featureModel.FeatureGroup;
 
 public class DSPLUtils {
 	
@@ -29,6 +30,10 @@ public class DSPLUtils {
 		} else {
 			throw new RuntimeException("Error translating a feature to OWL. Invalid Feature Type.");
 		}
+	}
+	
+	public FeatureGroup createFeatureGroup(Feature feature) {
+		return DSPLConceptFactory.getFactory().createFeatureGroup(feature);
 	}
 
 }

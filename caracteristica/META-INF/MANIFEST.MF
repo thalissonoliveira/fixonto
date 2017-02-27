@@ -27,7 +27,8 @@ Bundle-ClassPath: lib/aterm-java-1.6.jar,
  lib/pellet-rules.jar,
  lib/pellet-test.jar,
  lib/reflections-0.9.9-RC1-uberjar.jar,
- .
+ .,
+ lib/ismayle/fmtp.jar
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

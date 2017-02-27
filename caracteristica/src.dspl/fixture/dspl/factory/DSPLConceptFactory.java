@@ -1,13 +1,12 @@
-package fixture.owl.factory;
+package fixture.dspl.factory;
 
 import java.util.List;
 
-import fixture.owl.model.element.Attribute;
 import fixture.owl.model.element.ContextEntity;
 import fixture.owl.model.element.ContextInfo;
 import fixture.owl.model.element.ContextRoot;
-import fixture.owl.model.element.GroupedFeature;
 import fixture.owl.model.element.VariationTwo;
+import fixture.owl.model.enumeration.MaximalCardinality;
 import fixture.owl.model.externalelement.TestCase;
 import fixture.owl.model.externalelement.UseCase;
 import fixture.owl.model.product.Product;
@@ -21,7 +20,6 @@ import fixture.owl.model.product.ProductVariationTwo;
 import fixture.owl.model.rule.ActionLiteral;
 import fixture.owl.model.rule.CompositionLiteral;
 import fixture.owl.model.rule.CompositionRule;
-import fixture.owl.model.rule.ContextRule;
 import fixture.owl.model.rule.Designate;
 import fixture.owl.model.rule.LogicalAction;
 import fixture.owl.model.rule.LogicalEvent;
@@ -60,18 +58,21 @@ public class DSPLConceptFactory {
 	
 	public Feature createMandatoryFeature(String name) {
 		Feature feature = new Feature();
+		feature.setName(name);
 		feature.setFeatureType(FeatureType.Mandatory);
 		return feature;
 	}
 	
 	public Feature createOptionalFeature(String name) {
 		Feature feature = new Feature();
+		feature.setName(name);
 		feature.setFeatureType(FeatureType.Optional);
 		return feature;
 	}
 	
 	public Feature createGroupFeature(String name) {
 		Feature feature = new Feature();
+		feature.setName(name);
 		feature.setFeatureType(FeatureType.Group);
 		return feature;
 	}
@@ -82,6 +83,18 @@ public class DSPLConceptFactory {
 			featureGroup.getFeatures().add(feature);
 		}
 		featureGroup.setGroupType(featureGroupType);
+		return featureGroup;
+	}
+	
+	public FeatureGroup createFeatureGroup(fixture.owl.model.element.Feature feature) {
+		FeatureGroup featureGroup = new FeatureGroup();
+		if (((VariationTwo) feature).getMaximalCardinality().equals(MaximalCardinality.OR)) {
+			featureGroup.setGroupType(FeatureGroupType.OR_Group);
+		} else if (((VariationTwo) feature).getMaximalCardinality().equals(MaximalCardinality.XOR)) {
+			featureGroup.setGroupType(FeatureGroupType.Alternative_Group);
+		} else {
+			throw new RuntimeException("Group Feature inválido");
+		}
 		return featureGroup;
 	}
 	

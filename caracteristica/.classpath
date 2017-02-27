@@ -4,6 +4,7 @@
 	<classpathentry kind="src" path="src.bdd"/>
 	<classpathentry kind="src" path="src.fixture"/>
 	<classpathentry kind="src" path="tests"/>
+	<classpathentry kind="src" path="src.dspl"/>
 	<classpathentry exported="true" kind="lib" path="lib/aterm-java-1.6.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/guava-17.0.jar"/>
 	<classpathentry exported="true" kind="lib" path="lib/javassist.jar"/>

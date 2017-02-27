@@ -3,6 +3,7 @@
 package caracteristica.impl;
 
 import caracteristica.CaracteristicaPackage;
+import caracteristica.CaracteristicaRaiz;
 import caracteristica.Elemento;
 import caracteristica.Expressao;
 import caracteristica.LPS;
@@ -36,6 +37,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link caracteristica.impl.LPSImpl#getRegras <em>Regras</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getExpressoes <em>Expressoes</em>}</li>
  *   <li>{@link caracteristica.impl.LPSImpl#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.impl.LPSImpl#getSistema <em>Sistema</em>}</li>
  * </ul>
  *
  * @generated
@@ -93,6 +95,16 @@ public class LPSImpl extends EObjectImpl implements LPS
   protected String nome = NOME_EDEFAULT;
 
   /**
+	 * The cached value of the '{@link #getSistema() <em>Sistema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSistema()
+	 * @generated
+	 * @ordered
+	 */
+	protected CaracteristicaRaiz sistema;
+
+		/**
 	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
@@ -177,6 +189,82 @@ public class LPSImpl extends EObjectImpl implements LPS
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CaracteristicaRaiz getSistema() {
+		if (sistema != null && sistema.eIsProxy()) {
+			InternalEObject oldSistema = (InternalEObject)sistema;
+			sistema = (CaracteristicaRaiz)eResolveProxy(oldSistema);
+			if (sistema != oldSistema) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.LPS__SISTEMA, oldSistema, sistema));
+			}
+		}
+		return sistema;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CaracteristicaRaiz basicGetSistema() {
+		return sistema;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetSistema(CaracteristicaRaiz newSistema, NotificationChain msgs) {
+		CaracteristicaRaiz oldSistema = sistema;
+		sistema = newSistema;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LPS__SISTEMA, oldSistema, newSistema);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSistema(CaracteristicaRaiz newSistema) {
+		if (newSistema != sistema) {
+			NotificationChain msgs = null;
+			if (sistema != null)
+				msgs = ((InternalEObject)sistema).eInverseRemove(this, CaracteristicaPackage.CARACTERISTICA_RAIZ__LPS_DO_SISTEMA, CaracteristicaRaiz.class, msgs);
+			if (newSistema != null)
+				msgs = ((InternalEObject)newSistema).eInverseAdd(this, CaracteristicaPackage.CARACTERISTICA_RAIZ__LPS_DO_SISTEMA, CaracteristicaRaiz.class, msgs);
+			msgs = basicSetSistema(newSistema, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.LPS__SISTEMA, newSistema, newSistema));
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case CaracteristicaPackage.LPS__SISTEMA:
+				if (sistema != null)
+					msgs = ((InternalEObject)sistema).eInverseRemove(this, CaracteristicaPackage.CARACTERISTICA_RAIZ__LPS_DO_SISTEMA, CaracteristicaRaiz.class, msgs);
+				return basicSetSistema((CaracteristicaRaiz)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -190,6 +278,8 @@ public class LPSImpl extends EObjectImpl implements LPS
 				return ((InternalEList<?>)getRegras()).basicRemove(otherEnd, msgs);
 			case CaracteristicaPackage.LPS__EXPRESSOES:
 				return ((InternalEList<?>)getExpressoes()).basicRemove(otherEnd, msgs);
+			case CaracteristicaPackage.LPS__SISTEMA:
+				return basicSetSistema(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -211,6 +301,9 @@ public class LPSImpl extends EObjectImpl implements LPS
 				return getExpressoes();
 			case CaracteristicaPackage.LPS__NOME:
 				return getNome();
+			case CaracteristicaPackage.LPS__SISTEMA:
+				if (resolve) return getSistema();
+				return basicGetSistema();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -240,6 +333,9 @@ public class LPSImpl extends EObjectImpl implements LPS
 			case CaracteristicaPackage.LPS__NOME:
 				setNome((String)newValue);
 				return;
+			case CaracteristicaPackage.LPS__SISTEMA:
+				setSistema((CaracteristicaRaiz)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -265,6 +361,9 @@ public class LPSImpl extends EObjectImpl implements LPS
 			case CaracteristicaPackage.LPS__NOME:
 				setNome(NOME_EDEFAULT);
 				return;
+			case CaracteristicaPackage.LPS__SISTEMA:
+				setSistema((CaracteristicaRaiz)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -286,6 +385,8 @@ public class LPSImpl extends EObjectImpl implements LPS
 				return expressoes != null && !expressoes.isEmpty();
 			case CaracteristicaPackage.LPS__NOME:
 				return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+			case CaracteristicaPackage.LPS__SISTEMA:
+				return sistema != null;
 		}
 		return super.eIsSet(featureID);
 	}

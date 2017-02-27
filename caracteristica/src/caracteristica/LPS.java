@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link caracteristica.LPS#getRegras <em>Regras</em>}</li>
  *   <li>{@link caracteristica.LPS#getExpressoes <em>Expressoes</em>}</li>
  *   <li>{@link caracteristica.LPS#getNome <em>Nome</em>}</li>
+ *   <li>{@link caracteristica.LPS#getSistema <em>Sistema</em>}</li>
  * </ul>
  *
  * @see caracteristica.CaracteristicaPackage#getLPS()
@@ -100,5 +101,33 @@ public interface LPS extends EObject
 	 * @generated
 	 */
   void setNome(String value);
+
+		/**
+	 * Returns the value of the '<em><b>Sistema</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link caracteristica.CaracteristicaRaiz#getLpsDoSistema <em>Lps Do Sistema</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Sistema</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Sistema</em>' reference.
+	 * @see #setSistema(CaracteristicaRaiz)
+	 * @see caracteristica.CaracteristicaPackage#getLPS_Sistema()
+	 * @see caracteristica.CaracteristicaRaiz#getLpsDoSistema
+	 * @model opposite="LpsDoSistema"
+	 * @generated
+	 */
+	CaracteristicaRaiz getSistema();
+
+		/**
+	 * Sets the value of the '{@link caracteristica.LPS#getSistema <em>Sistema</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Sistema</em>' reference.
+	 * @see #getSistema()
+	 * @generated
+	 */
+	void setSistema(CaracteristicaRaiz value);
 
 } // LPS

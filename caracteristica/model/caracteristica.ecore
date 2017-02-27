@@ -12,6 +12,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressoes" upperBound="-1"
         eType="#//Expressao" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sistema" eType="#//CaracteristicaRaiz"
+        eOpposite="#//CaracteristicaRaiz/LpsDoSistema"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Elemento">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nome" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,7 +63,7 @@
       <details key="label" value="nome"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="LpsDoSistema" lowerBound="1"
-        eType="#//LPS"/>
+        eType="#//LPS" eOpposite="#//LPS/sistema"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="CaracteristicaOpcional" eSuperTypes="#//Caracteristica #//ElementoCaracteristico">
     <eAnnotations source="gmf.node">

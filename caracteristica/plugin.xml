@@ -96,7 +96,7 @@
    <extension
          point="org.eclipse.epsilon.common.dt.tool">
       <tool
-            class="fixture.owl.parser.FeaToPromela"
+            class="fixture.dspl.parser.FeaToPromela"
             defaultName="FeaToPromela">
       </tool>
    </extension>

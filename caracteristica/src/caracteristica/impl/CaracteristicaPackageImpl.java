@@ -399,6 +399,15 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 
   /**
 	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getLPS_Sistema() {
+		return (EReference)lpsEClass.getEStructuralFeatures().get(4);
+	}
+
+		/**
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1102,6 +1111,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		createEReference(lpsEClass, LPS__REGRAS);
 		createEReference(lpsEClass, LPS__EXPRESSOES);
 		createEAttribute(lpsEClass, LPS__NOME);
+		createEReference(lpsEClass, LPS__SISTEMA);
 
 		elementoEClass = createEClass(ELEMENTO);
 		createEAttribute(elementoEClass, ELEMENTO__NOME);
@@ -1257,6 +1267,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		initEReference(getLPS_Regras(), this.getRegra(), null, "regras", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getLPS_Expressoes(), this.getExpressao(), null, "expressoes", null, 0, -1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLPS_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLPS_Sistema(), this.getCaracteristicaRaiz(), this.getCaracteristicaRaiz_LpsDoSistema(), "sistema", null, 0, 1, caracteristica.LPS.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(elementoEClass, Elemento.class, "Elemento", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getElemento_Nome(), ecorePackage.getEString(), "nome", null, 0, 1, Elemento.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1274,7 +1285,7 @@ public class CaracteristicaPackageImpl extends EPackageImpl implements Caracteri
 		initEReference(getCaracteristica_Atributo(), this.getAtributo(), this.getAtributo_CaracteristicaPai(), "atributo", null, 0, -1, Caracteristica.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(caracteristicaRaizEClass, CaracteristicaRaiz.class, "CaracteristicaRaiz", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCaracteristicaRaiz_LpsDoSistema(), this.getLPS(), null, "LpsDoSistema", null, 1, 1, CaracteristicaRaiz.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCaracteristicaRaiz_LpsDoSistema(), this.getLPS(), this.getLPS_Sistema(), "LpsDoSistema", null, 1, 1, CaracteristicaRaiz.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(caracteristicaOpcionalEClass, CaracteristicaOpcional.class, "CaracteristicaOpcional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

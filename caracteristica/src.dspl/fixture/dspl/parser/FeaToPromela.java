@@ -1,32 +1,42 @@
-package fixture.owl.parser;
+package fixture.dspl.parser;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import fixture.owl.factory.SPLConceptFactory;
 import fixture.owl.model.SPL;
 import fixture.owl.model.element.Feature;
-import fixture.owl.model.element.RootFeature;
 import fixture.owl.model.intefaces.Nameable;
 import fixture.owl.utils.DSPLUtils;
 import fixture.owl.utils.Utils;
-import fmp.contextEvolModel.CKS;
 import fmp.featureModel.DSPL;
-import fmp.mapping.Parser;
-import fmp.utilities.GenerateFiles;
+import fmp.featureModel.FeatureGroup;
 
 public class FeaToPromela {
 	
 	private DSPL dspl;
 	private DSPLUtils dsplUtils;
 	private Map<String, Nameable> fixtureOracle;
-	private Map<String, fmp.featureModel.Feature> promelaOracle;
+	private Map<String, fmp.featureModel.Feature> promelaFeatureOracle;
+	private Map<String, FeatureGroup> promelaGroupOracle;
 	
 	public FeaToPromela() {
 		super();
 		dspl = new DSPL();
+		fixtureOracle = new HashMap<String, Nameable>();
+		promelaFeatureOracle = new HashMap<String, fmp.featureModel.Feature>();
+		promelaGroupOracle = new HashMap<String, FeatureGroup>();
 	}
 
+	/**
+	 * Used by de EWL file to translate the model in Java objects related to {@link SPL}.
+	 * </b>
+	 * After that, these java object will be the start point to instantiate objects relatet to {@link DSPL}.
+	 * 
+	 * 
+	 * @return factory to instantiate {@link SPL} concepts classes
+	 */
 	public SPLConceptFactory getSplConceptFactory() {
 		return SPLConceptFactory.getFactory();
 	}
@@ -34,25 +44,23 @@ public class FeaToPromela {
 	public void run(SPL spl) {
 		dsplUtils = DSPLUtils.getInstance();
 		populateDspl(spl);
-		CKS cks = new CKS();
-		Parser parser = new Parser(dspl,cks);
-		String promelaCodeGenerated = parser.generatePromelaCodefromDSPL();
-		System.out.println(promelaCodeGenerated);
 		
-		GenerateFiles gen = new GenerateFiles();
-		gen.generatePMLFile(promelaCodeGenerated, "promelaCodeGenerated");
+		dspl.print();
+//		CKS cks = new CKS();
+//		Parser parser = new Parser(dspl,cks);
+//		String promelaCodeGenerated = parser.generatePromelaCodefromDSPL();
+//		System.out.println(promelaCodeGenerated);
+//		
+//		GenerateFiles gen = new GenerateFiles();
+//		gen.generatePMLFile(promelaCodeGenerated, "promelaCodeGenerated");
 	}
 
 	private void populateDspl(SPL spl) {
-		RootFeature feature = Utils.getRootFeatureOf(spl.getSystem());;
-		
-		
 		//TODO Finalizar
 //		ContextRoot contextRoot;
 //		CompositionRule compositionRule;
 //		ContextRule contextRule;
-		
-		buildDspl(feature);
+		buildDspl(Utils.getRootFeatureOf(spl.getSystem()));
 		
 		
 		//TODO Finalizar
@@ -76,26 +84,29 @@ public class FeaToPromela {
 	}
 	
 	private void buildDspl(Feature feature) {
-		
-		//TODO Está dando erro por causa da diferença do funcionamento das features agrupadas. Já tenho noção de como resolver
-		//     e esse é o meu próximo passo.
-		
-		fmp.featureModel.Feature currentFeatureDspl = dsplUtils.createFeature(feature);
-		
-		dspl.getFeatures().add(currentFeatureDspl);
-		
-		promelaOracle.put(currentFeatureDspl.getName(), currentFeatureDspl);
-		
-		Feature fatherFeature = feature.getFatherFeature();
-		if (fatherFeature != null) {
-			String fatherName = fatherFeature.getName();
-			if (promelaOracle.containsKey(fatherName)) {
-				currentFeatureDspl.setFatherFeature(promelaOracle.get(fatherName));
+		if (feature.isVariatioTwoFeature()) {
+			FeatureGroup featureGroup = dsplUtils.createFeatureGroup(feature);
+			addToPromelaGroupOracle(feature.getName(), featureGroup);
+		} else {
+			fmp.featureModel.Feature currentFeatureDspl = dsplUtils.createFeature(feature);
+			dspl.getFeatures().add(currentFeatureDspl);
+			addToPromelaFeatureOracle(currentFeatureDspl);
+			
+			Feature fatherFeature;
+			if (feature.isGroupedFeature()) {
+				fatherFeature = feature.getFatherFeature().getFatherFeature();
 			} else {
-				throw new RuntimeException("ERRO NO ORÁCULO. VER O MOTIVO DESSA VIAGEM MALUCA (DORGAS");
+				fatherFeature = feature.getFatherFeature();
+			}
+			if (fatherFeature != null) {
+				String fatherName = fatherFeature.getName();
+				if (promelaFeatureOracle.containsKey(fatherName)) {
+					currentFeatureDspl.setFatherFeature(promelaFeatureOracle.get(fatherName));
+				} else {
+					throw new RuntimeException("ERRO NO ORÁCULO. VER O MOTIVO DESSA VIAGEM MALUCA (DORGAS)");
+				}
 			}
 		}
-		
 		Set<Feature> childrenFeatures = feature.getChildrenFeatures();
 		if (!childrenFeatures.isEmpty()) {
 			for (Feature childFeature : childrenFeatures) {
@@ -104,7 +115,11 @@ public class FeaToPromela {
 		} else {
 			return;
 		}
-		
+
+	}
+	
+	public Map<String, Nameable> getOracle() {
+		return fixtureOracle;
 	}
 	
 //	private void buildDspl(ContextRoot contextRoot) {
@@ -193,7 +208,24 @@ public class FeaToPromela {
 		if (!fixtureOracle.containsKey(id)) {
 			fixtureOracle.put(id, nameable);
 		} else {
-			throw new RuntimeException("Problema ao adicionar um elemento ao oráculo.");
+			throw new RuntimeException("Problema ao adicionar um elemento Feature ao oráculo.");
+		}
+	}
+	
+	public void addToPromelaFeatureOracle(fmp.featureModel.Feature feature) {
+		String id = feature.getName();
+		if (!promelaFeatureOracle.containsKey(id)) {
+			promelaFeatureOracle.put(id, feature);
+		} else {
+			throw new RuntimeException("Problema ao adicionar um elemento fmp.featureModel.Feature ao oráculo.");
+		}
+	}
+	
+	public void addToPromelaGroupOracle(String name, FeatureGroup featureGroup) {
+		if (!promelaGroupOracle.containsKey(name)) {
+			promelaGroupOracle.put(name, featureGroup);
+		} else {
+			throw new RuntimeException("Problema ao adicionar um FeatureGroup ao oráculo.");
 		}
 	}
 

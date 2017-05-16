@@ -15,15 +15,13 @@ import caracteristica.diagram.part.CaracteristicaDiagramEditorPlugin;
 /**
  * @generated
  */
-public class CaracteristicaDomainNavigatorLabelProvider implements
-		ICommonLabelProvider {
+public class CaracteristicaDomainNavigatorLabelProvider implements ICommonLabelProvider {
 
 	/**
 	 * @generated
 	 */
 	private AdapterFactoryLabelProvider myAdapterFactoryLabelProvider = new AdapterFactoryLabelProvider(
-			CaracteristicaDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			CaracteristicaDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -36,9 +34,7 @@ public class CaracteristicaDomainNavigatorLabelProvider implements
 	 */
 	public Image getImage(Object element) {
 		if (element instanceof CaracteristicaDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getImage(((CaracteristicaDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getImage(((CaracteristicaDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}
@@ -48,9 +44,7 @@ public class CaracteristicaDomainNavigatorLabelProvider implements
 	 */
 	public String getText(Object element) {
 		if (element instanceof CaracteristicaDomainNavigatorItem) {
-			return myAdapterFactoryLabelProvider
-					.getText(((CaracteristicaDomainNavigatorItem) element)
-							.getEObject());
+			return myAdapterFactoryLabelProvider.getText(((CaracteristicaDomainNavigatorItem) element).getEObject());
 		}
 		return null;
 	}

@@ -19,8 +19,7 @@ public class CaracteristicaProdutoCaracteristicaProdutoFilhaItemSemanticEditPoli
 	 * @generated
 	 */
 	public CaracteristicaProdutoCaracteristicaProdutoFilhaItemSemanticEditPolicy() {
-		super(
-				CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
+		super(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
 	}
 
 	/**

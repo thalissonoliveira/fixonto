@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.RegraDeContextoEventoItemSemanticEdi
 /**
  * @generated
  */
-public class RegraDeContextoEventoEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class RegraDeContextoEventoEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class RegraDeContextoEventoEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new RegraDeContextoEventoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new RegraDeContextoEventoItemSemanticEditPolicy());
 	}
 
 	/**

@@ -9,8 +9,7 @@ import java.util.LinkedList;
 /**
  * @generated
  */
-public class CaracteristicaNavigatorGroup extends
-		CaracteristicaAbstractNavigatorItem {
+public class CaracteristicaNavigatorGroup extends CaracteristicaAbstractNavigatorItem {
 
 	/**
 	 * @generated

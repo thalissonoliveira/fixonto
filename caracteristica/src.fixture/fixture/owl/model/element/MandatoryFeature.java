@@ -46,5 +46,15 @@ public class MandatoryFeature extends Feature {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 	
 } // CaracteristicaMandatoria

@@ -25,7 +25,6 @@ class Elemento {
 
 class ElementoExterno {
   attr String nome;
-    
 }
 
 @gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Externo {0}")
@@ -37,6 +36,8 @@ class CasoDeTeste extends ElementoExterno {
 }
 
 class ElementoCaracteristico extends Elemento {
+  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
+  ref ElementoExterno[*] elementosExternos;
 }
 
 @gmf.node(label="nome", figure="utils.TriangleFigure", label.pattern="Attribute {0}")
@@ -46,9 +47,6 @@ class Atributo extends Elemento {
 }
 
 class Caracteristica extends Elemento {
-  @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")
-  ref ElementoExterno[*] elementosExternos;
-  
   ref Caracteristica#caracteristicaFilha caracteristicaPai;
 
   @gmf.link(target.decoration="closedarrow", color="0,0,0", style="solid", width="3")

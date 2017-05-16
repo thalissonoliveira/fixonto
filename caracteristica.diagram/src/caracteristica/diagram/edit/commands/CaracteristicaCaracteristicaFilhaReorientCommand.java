@@ -18,8 +18,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class CaracteristicaCaracteristicaFilhaReorientCommand extends
-		EditElementCommand {
+public class CaracteristicaCaracteristicaFilhaReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -44,8 +43,7 @@ public class CaracteristicaCaracteristicaFilhaReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public CaracteristicaCaracteristicaFilhaReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public CaracteristicaCaracteristicaFilhaReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -77,8 +75,7 @@ public class CaracteristicaCaracteristicaFilhaReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistCaracteristicaCaracteristicaFilha_4002(getNewSource(),
-						getOldTarget());
+				.canExistCaracteristicaCaracteristicaFilha_4002(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -89,18 +86,15 @@ public class CaracteristicaCaracteristicaFilhaReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistCaracteristicaCaracteristicaFilha_4002(getOldSource(),
-						getNewTarget());
+				.canExistCaracteristicaCaracteristicaFilha_4002(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

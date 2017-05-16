@@ -33,8 +33,7 @@ public class AcaoLogicoLadoDireitoAcaoCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public AcaoLogicoLadoDireitoAcaoCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public AcaoLogicoLadoDireitoAcaoCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -58,18 +57,15 @@ public class AcaoLogicoLadoDireitoAcaoCreateCommand extends EditElementCommand {
 		}
 		// target may be null here but it's possible to check constraint
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canCreateAcaoLogicoLadoDireitoAcao_4019(getSource(),
-						getTarget());
+				.canCreateAcaoLogicoLadoDireitoAcao_4019(getSource(), getTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

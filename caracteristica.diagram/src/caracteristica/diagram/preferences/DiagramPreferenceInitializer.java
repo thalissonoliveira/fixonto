@@ -30,7 +30,6 @@ public class DiagramPreferenceInitializer extends AbstractPreferenceInitializer 
 	 * @generated
 	 */
 	protected IPreferenceStore getPreferenceStore() {
-		return CaracteristicaDiagramEditorPlugin.getInstance()
-				.getPreferenceStore();
+		return CaracteristicaDiagramEditorPlugin.getInstance().getPreferenceStore();
 	}
 }

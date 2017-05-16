@@ -67,8 +67,7 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CaracteristicaAgrupadaProdutoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CaracteristicaAgrupadaProdutoItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,8 +80,7 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,8 +118,7 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CaracteristicaAgrupadaProdutoNomeEditPart) {
 			((CaracteristicaAgrupadaProdutoNomeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureCaracteristicaAgrupadaProdutoLabelFigure());
+					.setLabel(getPrimaryShape().getFigureCaracteristicaAgrupadaProdutoLabelFigure());
 			return true;
 		}
 		return false;
@@ -254,86 +251,8 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(CaracteristicaAgrupadaProdutoNomeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		types.add(CaracteristicaElementTypes.CaracteristicaProdutoAtributoProduto_4009);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof ProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		}
-		if (targetEditPart instanceof CaracteristicaOpcionalProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		}
-		if (targetEditPart instanceof VariacaoDoisProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		}
-		if (targetEditPart instanceof caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		}
-		if (targetEditPart instanceof AtributoProdutoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaProdutoAtributoProduto_4009);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008) {
-			types.add(CaracteristicaElementTypes.Produto_2005);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoriaProduto_2025);
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcionalProduto_2026);
-			types.add(CaracteristicaElementTypes.VariacaoDoisProduto_2027);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupadaProduto_2035);
-		} else if (relationshipType == CaracteristicaElementTypes.CaracteristicaProdutoAtributoProduto_4009) {
-			types.add(CaracteristicaElementTypes.AtributoProduto_2030);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaProdutoCaracteristicaProdutoFilha_4008) {
-			types.add(CaracteristicaElementTypes.Produto_2005);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoriaProduto_2025);
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcionalProduto_2026);
-			types.add(CaracteristicaElementTypes.VariacaoDoisProduto_2027);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupadaProduto_2035);
-		}
-		return types;
+		return getChildBySemanticHint(
+				CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaProdutoNomeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -341,8 +260,7 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -373,8 +291,7 @@ public class CaracteristicaAgrupadaProdutoEditPart extends ShapeNodeEditPart {
 
 			fFigureCaracteristicaAgrupadaProdutoLabelFigure = new WrappingLabel();
 
-			fFigureCaracteristicaAgrupadaProdutoLabelFigure
-					.setText("CaracteristicaAgrupadaProduto");
+			fFigureCaracteristicaAgrupadaProdutoLabelFigure.setText("CaracteristicaAgrupadaProduto");
 
 			this.add(fFigureCaracteristicaAgrupadaProdutoLabelFigure);
 

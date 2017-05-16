@@ -44,8 +44,7 @@ public class ProdutoLinhaDoProdutoReorientCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public ProdutoLinhaDoProdutoReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public ProdutoLinhaDoProdutoReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -77,8 +76,7 @@ public class ProdutoLinhaDoProdutoReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistProdutoLinhaDoProduto_4011(getNewSource(),
-						getOldTarget());
+				.canExistProdutoLinhaDoProduto_4011(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -89,18 +87,15 @@ public class ProdutoLinhaDoProdutoReorientCommand extends EditElementCommand {
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistProdutoLinhaDoProduto_4011(getOldSource(),
-						getNewTarget());
+				.canExistProdutoLinhaDoProduto_4011(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

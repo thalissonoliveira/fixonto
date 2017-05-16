@@ -13,7 +13,8 @@ OptionalFeature(?x) ^ MandatoryFeature(?y) ^ hasChildFeature(?x,?y) -> WFSMR8(?x
 --CompositionRule(?x) ^ MandatoryFeature(?y) ^ hasConsequent(?x,?y) -> WFCR9(?x)
 CompositionLiteral(?x) ^ MandatoryFeature(?y) ^ hasFeaturedElement(?x,?y) -> WFCR1(?x)
 --CompositionLiteral(?x) ^ RootFeature(?y) ^ hasFeaturedElement(?x,?y) -> WFCR1(?x)
--- ##### ADAPTATION RULES WELL-FORMEDNESS
+-- ##### ADAPTATION RULES WELL-FORMEDNESS --
 ActionLiteral(?x) ^ MandatoryFeature(?y) ^ hasFeaturedElement(?x,?y) -> WFAR1(?x)
 --ActionLiteral(?x) ^ RootFeature(?y) ^ hasFeaturedElement(?x,?y) -> WFAR1(?x)
-
+-- ##### ORPHAN ELEMENTS --
+OptionalFeature(?x) ^ hasFatherFeature max 0 Feature(?y) -> WFSMRN(?x)

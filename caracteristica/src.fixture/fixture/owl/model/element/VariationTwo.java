@@ -94,4 +94,14 @@ public class VariationTwo extends Feature implements FeaturedElement {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 } // VariacaoDois

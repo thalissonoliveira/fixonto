@@ -12,8 +12,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class RegraDeContextoAcaoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class RegraDeContextoAcaoItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

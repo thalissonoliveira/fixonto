@@ -16,7 +16,6 @@ public class DiagramPrintingPreferencePage extends PrintingPreferencePage {
 	 * @generated
 	 */
 	public DiagramPrintingPreferencePage() {
-		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

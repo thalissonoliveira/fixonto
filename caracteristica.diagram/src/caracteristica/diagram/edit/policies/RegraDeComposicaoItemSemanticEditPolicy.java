@@ -30,8 +30,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class RegraDeComposicaoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class RegraDeComposicaoItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -45,22 +44,21 @@ public class RegraDeComposicaoItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == RegraDeComposicaoAntecedenteEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == RegraDeComposicaoAntecedenteEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == RegraDeComposicaoConsequenteEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == RegraDeComposicaoConsequenteEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -85,24 +83,18 @@ public class RegraDeComposicaoItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4012 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeComposicaoAntecedenteCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4012 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeComposicaoAntecedenteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4013 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeComposicaoConsequenteCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4013 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeComposicaoConsequenteCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -110,14 +102,11 @@ public class RegraDeComposicaoItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4012 == req
-				.getElementType()) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoAntecedente_4012 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4013 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RegraDeComposicaoConsequente_4013 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -129,15 +118,12 @@ public class RegraDeComposicaoItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case RegraDeComposicaoAntecedenteEditPart.VISUAL_ID:
-			return getGEFWrapper(new RegraDeComposicaoAntecedenteReorientCommand(
-					req));
+			return getGEFWrapper(new RegraDeComposicaoAntecedenteReorientCommand(req));
 		case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
-			return getGEFWrapper(new RegraDeComposicaoConsequenteReorientCommand(
-					req));
+			return getGEFWrapper(new RegraDeComposicaoConsequenteReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

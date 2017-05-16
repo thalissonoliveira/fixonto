@@ -19,154 +19,148 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link caracteristica.impl.ProdutoImpl#getLinhaDoProduto <em>Linha Do Produto</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ProdutoImpl extends CaracteristicaProdutoImpl implements Produto
 {
   /**
-   * The cached value of the '{@link #getLinhaDoProduto() <em>Linha Do Produto</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getLinhaDoProduto() <em>Linha Do Produto</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getLinhaDoProduto()
-   * @generated
-   * @ordered
-   */
+	 * @see #getLinhaDoProduto()
+	 * @generated
+	 * @ordered
+	 */
   protected CaracteristicaRaiz linhaDoProduto;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ProdutoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.PRODUTO;
-  }
+		return CaracteristicaPackage.Literals.PRODUTO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CaracteristicaRaiz getLinhaDoProduto()
   {
-    if (linhaDoProduto != null && linhaDoProduto.eIsProxy())
-    {
-      InternalEObject oldLinhaDoProduto = (InternalEObject)linhaDoProduto;
-      linhaDoProduto = (CaracteristicaRaiz)eResolveProxy(oldLinhaDoProduto);
-      if (linhaDoProduto != oldLinhaDoProduto)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO, oldLinhaDoProduto, linhaDoProduto));
-      }
-    }
-    return linhaDoProduto;
-  }
+		if (linhaDoProduto != null && linhaDoProduto.eIsProxy()) {
+			InternalEObject oldLinhaDoProduto = (InternalEObject)linhaDoProduto;
+			linhaDoProduto = (CaracteristicaRaiz)eResolveProxy(oldLinhaDoProduto);
+			if (linhaDoProduto != oldLinhaDoProduto) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO, oldLinhaDoProduto, linhaDoProduto));
+			}
+		}
+		return linhaDoProduto;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public CaracteristicaRaiz basicGetLinhaDoProduto()
   {
-    return linhaDoProduto;
-  }
+		return linhaDoProduto;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setLinhaDoProduto(CaracteristicaRaiz newLinhaDoProduto)
   {
-    CaracteristicaRaiz oldLinhaDoProduto = linhaDoProduto;
-    linhaDoProduto = newLinhaDoProduto;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO, oldLinhaDoProduto, linhaDoProduto));
-  }
+		CaracteristicaRaiz oldLinhaDoProduto = linhaDoProduto;
+		linhaDoProduto = newLinhaDoProduto;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO, oldLinhaDoProduto, linhaDoProduto));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
-        if (resolve) return getLinhaDoProduto();
-        return basicGetLinhaDoProduto();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
+				if (resolve) return getLinhaDoProduto();
+				return basicGetLinhaDoProduto();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
-        setLinhaDoProduto((CaracteristicaRaiz)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
+				setLinhaDoProduto((CaracteristicaRaiz)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
-        setLinhaDoProduto((CaracteristicaRaiz)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
+				setLinhaDoProduto((CaracteristicaRaiz)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
-        return linhaDoProduto != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.PRODUTO__LINHA_DO_PRODUTO:
+				return linhaDoProduto != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //ProdutoImpl

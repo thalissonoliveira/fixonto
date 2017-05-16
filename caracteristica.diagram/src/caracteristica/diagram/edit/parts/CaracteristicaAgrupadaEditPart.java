@@ -67,8 +67,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CaracteristicaAgrupadaItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CaracteristicaAgrupadaItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,8 +80,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -120,8 +118,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof CaracteristicaAgrupadaNomeEditPart) {
 			((CaracteristicaAgrupadaNomeEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureCaracteristicaAgrupadaLabelFigure());
+					.setLabel(getPrimaryShape().getFigureCaracteristicaAgrupadaLabelFigure());
 			return true;
 		}
 		return false;
@@ -254,96 +251,8 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(CaracteristicaAgrupadaNomeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
-		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof CasoDeUsoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
-		}
-		if (targetEditPart instanceof CasoDeTesteEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaElementosExternos_4024);
-		}
-		if (targetEditPart instanceof CaracteristicaOpcionalEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof VariacaoDoisEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof CaracteristicaRaizEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof CaracteristicaMandatoriaEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		}
-		if (targetEditPart instanceof AtributoEditPart) {
-			types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaElementosExternos_4024) {
-			types.add(CaracteristicaElementTypes.CasoDeUso_2038);
-			types.add(CaracteristicaElementTypes.CasoDeTeste_2039);
-		} else if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		} else if (relationshipType == CaracteristicaElementTypes.CaracteristicaAtributo_4004) {
-			types.add(CaracteristicaElementTypes.Atributo_2017);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		}
-		return types;
+		return getChildBySemanticHint(
+				CaracteristicaVisualIDRegistry.getType(CaracteristicaAgrupadaNomeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -351,8 +260,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -383,8 +291,7 @@ public class CaracteristicaAgrupadaEditPart extends ShapeNodeEditPart {
 
 			fFigureCaracteristicaAgrupadaLabelFigure = new WrappingLabel();
 
-			fFigureCaracteristicaAgrupadaLabelFigure
-					.setText("CaracteristicaAgrupada");
+			fFigureCaracteristicaAgrupadaLabelFigure.setText("CaracteristicaAgrupada");
 
 			this.add(fFigureCaracteristicaAgrupadaLabelFigure);
 

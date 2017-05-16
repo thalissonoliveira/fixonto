@@ -18,9 +18,7 @@ public class CaracteristicaEditPartProvider extends DefaultEditPartProvider {
 	 * @generated
 	 */
 	public CaracteristicaEditPartProvider() {
-		super(new CaracteristicaEditPartFactory(),
-				CaracteristicaVisualIDRegistry.TYPED_INSTANCE,
-				LPSEditPart.MODEL_ID);
+		super(new CaracteristicaEditPartFactory(), CaracteristicaVisualIDRegistry.TYPED_INSTANCE, LPSEditPart.MODEL_ID);
 	}
 
 }

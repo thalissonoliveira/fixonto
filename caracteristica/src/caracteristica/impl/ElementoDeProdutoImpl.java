@@ -20,225 +20,219 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link caracteristica.impl.ElementoDeProdutoImpl#getNome <em>Nome</em>}</li>
  *   <li>{@link caracteristica.impl.ElementoDeProdutoImpl#getElementoOriginal <em>Elemento Original</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class ElementoDeProdutoImpl extends EObjectImpl implements ElementoDeProduto
 {
   /**
-   * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The default value of the '{@link #getNome() <em>Nome</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNome()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNome()
+	 * @generated
+	 * @ordered
+	 */
   protected static final String NOME_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getNome() <em>Nome</em>}' attribute.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNome()
-   * @generated
-   * @ordered
-   */
+	 * @see #getNome()
+	 * @generated
+	 * @ordered
+	 */
   protected String nome = NOME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getElementoOriginal() <em>Elemento Original</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getElementoOriginal() <em>Elemento Original</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getElementoOriginal()
-   * @generated
-   * @ordered
-   */
+	 * @see #getElementoOriginal()
+	 * @generated
+	 * @ordered
+	 */
   protected Elemento elementoOriginal;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected ElementoDeProdutoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.ELEMENTO_DE_PRODUTO;
-  }
+		return CaracteristicaPackage.Literals.ELEMENTO_DE_PRODUTO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public String getNome()
   {
-    return nome;
-  }
+		return nome;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setNome(String newNome)
   {
-    String oldNome = nome;
-    nome = newNome;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME, oldNome, nome));
-  }
+		String oldNome = nome;
+		nome = newNome;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME, oldNome, nome));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Elemento getElementoOriginal()
   {
-    if (elementoOriginal != null && elementoOriginal.eIsProxy())
-    {
-      InternalEObject oldElementoOriginal = (InternalEObject)elementoOriginal;
-      elementoOriginal = (Elemento)eResolveProxy(oldElementoOriginal);
-      if (elementoOriginal != oldElementoOriginal)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL, oldElementoOriginal, elementoOriginal));
-      }
-    }
-    return elementoOriginal;
-  }
+		if (elementoOriginal != null && elementoOriginal.eIsProxy()) {
+			InternalEObject oldElementoOriginal = (InternalEObject)elementoOriginal;
+			elementoOriginal = (Elemento)eResolveProxy(oldElementoOriginal);
+			if (elementoOriginal != oldElementoOriginal) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL, oldElementoOriginal, elementoOriginal));
+			}
+		}
+		return elementoOriginal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Elemento basicGetElementoOriginal()
   {
-    return elementoOriginal;
-  }
+		return elementoOriginal;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setElementoOriginal(Elemento newElementoOriginal)
   {
-    Elemento oldElementoOriginal = elementoOriginal;
-    elementoOriginal = newElementoOriginal;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL, oldElementoOriginal, elementoOriginal));
-  }
+		Elemento oldElementoOriginal = elementoOriginal;
+		elementoOriginal = newElementoOriginal;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL, oldElementoOriginal, elementoOriginal));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
-        return getNome();
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
-        if (resolve) return getElementoOriginal();
-        return basicGetElementoOriginal();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
+				return getNome();
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
+				if (resolve) return getElementoOriginal();
+				return basicGetElementoOriginal();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
-        setNome((String)newValue);
-        return;
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
-        setElementoOriginal((Elemento)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
+				setNome((String)newValue);
+				return;
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
+				setElementoOriginal((Elemento)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
-        setNome(NOME_EDEFAULT);
-        return;
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
-        setElementoOriginal((Elemento)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
+				setNome(NOME_EDEFAULT);
+				return;
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
+				setElementoOriginal((Elemento)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
-        return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
-      case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
-        return elementoOriginal != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__NOME:
+				return NOME_EDEFAULT == null ? nome != null : !NOME_EDEFAULT.equals(nome);
+			case CaracteristicaPackage.ELEMENTO_DE_PRODUTO__ELEMENTO_ORIGINAL:
+				return elementoOriginal != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public String toString()
   {
-    if (eIsProxy()) return super.toString();
+		if (eIsProxy()) return super.toString();
 
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (nome: ");
-    result.append(nome);
-    result.append(')');
-    return result.toString();
-  }
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (nome: ");
+		result.append(nome);
+		result.append(')');
+		return result.toString();
+	}
 
 } //ElementodeProdutoImpl

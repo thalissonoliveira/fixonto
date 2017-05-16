@@ -69,8 +69,7 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new EventoLogicoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EventoLogicoItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -83,8 +82,7 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -122,8 +120,7 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof EventoLogicoOperadorLogicoEditPart) {
 			((EventoLogicoOperadorLogicoEditPart) childEditPart)
-					.setLabel(getPrimaryShape()
-							.getFigureEventoLogicoLabelFigure());
+					.setLabel(getPrimaryShape().getFigureEventoLogicoLabelFigure());
 			return true;
 		}
 		return false;
@@ -256,80 +253,8 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(EventoLogicoOperadorLogicoEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSource() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016);
-		types.add(CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnSourceAndTarget(
-			IGraphicalEditPart targetEditPart) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof caracteristica.diagram.edit.parts.EventoLogicoEditPart) {
-			types.add(CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016);
-		}
-		if (targetEditPart instanceof EventoRelacionalEditPart) {
-			types.add(CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016);
-		}
-		if (targetEditPart instanceof caracteristica.diagram.edit.parts.EventoLogicoEditPart) {
-			types.add(CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017);
-		}
-		if (targetEditPart instanceof EventoRelacionalEditPart) {
-			types.add(CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForTarget(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016) {
-			types.add(CaracteristicaElementTypes.EventoLogico_2006);
-			types.add(CaracteristicaElementTypes.EventoRelacional_2007);
-		} else if (relationshipType == CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017) {
-			types.add(CaracteristicaElementTypes.EventoLogico_2006);
-			types.add(CaracteristicaElementTypes.EventoRelacional_2007);
-		}
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(3);
-		types.add(CaracteristicaElementTypes.RegraDeContextoEvento_4014);
-		types.add(CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016);
-		types.add(CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.RegraDeContextoEvento_4014) {
-			types.add(CaracteristicaElementTypes.RegraDeContexto_2022);
-		} else if (relationshipType == CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016) {
-			types.add(CaracteristicaElementTypes.EventoLogico_2006);
-		} else if (relationshipType == CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017) {
-			types.add(CaracteristicaElementTypes.EventoLogico_2006);
-		}
-		return types;
+		return getChildBySemanticHint(
+				CaracteristicaVisualIDRegistry.getType(EventoLogicoOperadorLogicoEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -337,8 +262,7 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);
@@ -359,10 +283,8 @@ public class EventoLogicoEditPart extends ShapeNodeEditPart {
 		 * @generated
 		 */
 		public EventoLogicoFigure() {
-			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8),
-					getMapMode().DPtoLP(8)));
-			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5),
-					getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
+			this.setCornerDimensions(new Dimension(getMapMode().DPtoLP(8), getMapMode().DPtoLP(8)));
+			this.setBorder(new MarginBorder(getMapMode().DPtoLP(5), getMapMode().DPtoLP(5), getMapMode().DPtoLP(5),
 					getMapMode().DPtoLP(5)));
 			createContents();
 		}

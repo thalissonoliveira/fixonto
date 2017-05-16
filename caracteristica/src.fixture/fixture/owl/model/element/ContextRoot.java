@@ -59,4 +59,14 @@ public class ContextRoot extends ElementImpl {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 } // RaizDeContexto

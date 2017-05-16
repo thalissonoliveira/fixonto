@@ -47,4 +47,14 @@ public class GroupedFeature extends Feature implements FeaturedElement {
 		return true;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 }

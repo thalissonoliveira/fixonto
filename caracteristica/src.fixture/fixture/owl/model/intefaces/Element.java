@@ -9,5 +9,7 @@ public interface Element extends Nameable {
 	boolean isGroupedFeature();
 	boolean isAttribute();
 	boolean isContextRoot();
+	boolean isContextEntity();
+	boolean isContextInfo();
 
 }

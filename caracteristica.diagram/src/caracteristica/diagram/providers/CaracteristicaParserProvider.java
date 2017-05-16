@@ -54,8 +54,7 @@ import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 /**
  * @generated
  */
-public class CaracteristicaParserProvider extends AbstractProvider implements
-		IParserProvider {
+public class CaracteristicaParserProvider extends AbstractProvider implements IParserProvider {
 
 	/**
 	 * @generated
@@ -67,8 +66,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaOpcionalNome_5001Parser() {
 		if (caracteristicaOpcionalNome_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaOpcionalNome_5001Parser = parser;
 		}
@@ -85,8 +83,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaAgrupadaNome_5034Parser() {
 		if (caracteristicaAgrupadaNome_5034Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaAgrupadaNome_5034Parser = parser;
 		}
@@ -103,10 +100,8 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getVariacaoDoisNomeCardinalidadeMaxima_5002Parser() {
 		if (variacaoDoisNomeCardinalidadeMaxima_5002Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					CaracteristicaPackage.eINSTANCE.getElemento_Nome(),
-					CaracteristicaPackage.eINSTANCE
-							.getVariacaoDois_CardinalidadeMaxima() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome(),
+					CaracteristicaPackage.eINSTANCE.getVariacaoDois_CardinalidadeMaxima() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Variation {0} : {1} "); //$NON-NLS-1$
 			parser.setEditorPattern("Variation {0} : {1} "); //$NON-NLS-1$
@@ -126,8 +121,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaRaizNome_5003Parser() {
 		if (caracteristicaRaizNome_5003Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaRaizNome_5003Parser = parser;
 		}
@@ -144,8 +138,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaMandatoriaNome_5004Parser() {
 		if (caracteristicaMandatoriaNome_5004Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaMandatoriaNome_5004Parser = parser;
 		}
@@ -162,8 +155,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getProdutoNome_5005Parser() {
 		if (produtoNome_5005Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoDeProduto_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Product: {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Product: {0}"); //$NON-NLS-1$
@@ -183,8 +175,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventoLogicoOperadorLogico_5006Parser() {
 		if (eventoLogicoOperadorLogico_5006Parser == null) {
-			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE
-					.getEventoLogico_OperadorLogico();
+			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE.getEventoLogico_OperadorLogico();
 			EnumParser parser = new EnumParser(editableFeature);
 			eventoLogicoOperadorLogico_5006Parser = parser;
 		}
@@ -201,8 +192,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEventoRelacionalNome_5007Parser() {
 		if (eventoRelacionalNome_5007Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getExpressao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getExpressao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			eventoRelacionalNome_5007Parser = parser;
 		}
@@ -219,8 +209,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getAcaoLogicoOperadorAcaoLogico_5008Parser() {
 		if (acaoLogicoOperadorAcaoLogico_5008Parser == null) {
-			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE
-					.getAcaoLogico_OperadorAcaoLogico();
+			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE.getAcaoLogico_OperadorAcaoLogico();
 			EnumParser parser = new EnumParser(editableFeature);
 			acaoLogicoOperadorAcaoLogico_5008Parser = parser;
 		}
@@ -237,8 +226,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getLiteralAcaoNome_5009Parser() {
 		if (literalAcaoNome_5009Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getExpressao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getExpressao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			literalAcaoNome_5009Parser = parser;
 		}
@@ -255,8 +243,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getDesignarNome_5010Parser() {
 		if (designarNome_5010Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getExpressao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getExpressao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			designarNome_5010Parser = parser;
 		}
@@ -273,8 +260,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getExpressaoLogicaOperadorLogico_5011Parser() {
 		if (expressaoLogicaOperadorLogico_5011Parser == null) {
-			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE
-					.getExpressaoLogica_OperadorLogico();
+			EAttribute editableFeature = CaracteristicaPackage.eINSTANCE.getExpressaoLogica_OperadorLogico();
 			EnumParser parser = new EnumParser(editableFeature);
 			expressaoLogicaOperadorLogico_5011Parser = parser;
 		}
@@ -291,8 +277,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getExpressaoRelacionalNome_5012Parser() {
 		if (expressaoRelacionalNome_5012Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getExpressao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getExpressao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			expressaoRelacionalNome_5012Parser = parser;
 		}
@@ -309,8 +294,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getLiteralComposicaoNome_5013Parser() {
 		if (literalComposicaoNome_5013Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getExpressao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getExpressao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			literalComposicaoNome_5013Parser = parser;
 		}
@@ -327,8 +311,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaMandatoriaProdutoNome_5026Parser() {
 		if (caracteristicaMandatoriaProdutoNome_5026Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoDeProduto_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaMandatoriaProdutoNome_5026Parser = parser;
 		}
@@ -345,8 +328,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaOpcionalProdutoNome_5027Parser() {
 		if (caracteristicaOpcionalProdutoNome_5027Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoDeProduto_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaOpcionalProdutoNome_5027Parser = parser;
 		}
@@ -363,10 +345,8 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getVariacaoDoisProdutoNomeCardinalidadeMaxima_5028Parser() {
 		if (variacaoDoisProdutoNomeCardinalidadeMaxima_5028Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome(),
-					CaracteristicaPackage.eINSTANCE
-							.getVariacaoDoisProduto_CardinalidadeMaxima() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome(),
+					CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto_CardinalidadeMaxima() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Variation {0} : {1} "); //$NON-NLS-1$
 			parser.setEditorPattern("Variation {0} : {1} "); //$NON-NLS-1$
@@ -386,8 +366,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCaracteristicaAgrupadaProdutoNome_5036Parser() {
 		if (caracteristicaAgrupadaProdutoNome_5036Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoDeProduto_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			caracteristicaAgrupadaProdutoNome_5036Parser = parser;
 		}
@@ -404,8 +383,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getAtributoNome_5017Parser() {
 		if (atributoNome_5017Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Attribute {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Attribute {0}"); //$NON-NLS-1$
@@ -425,8 +403,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRaizDeContextoNome_5018Parser() {
 		if (raizDeContextoNome_5018Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			raizDeContextoNome_5018Parser = parser;
 		}
@@ -443,8 +420,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEntidadeDeContextoNome_5029Parser() {
 		if (entidadeDeContextoNome_5029Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElemento_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Entidade de Contexto {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Entidade de Contexto {0}"); //$NON-NLS-1$
@@ -464,10 +440,8 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getInformacaoDeContextoNomeValor_5030Parser() {
 		if (informacaoDeContextoNomeValor_5030Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					CaracteristicaPackage.eINSTANCE.getElemento_Nome(),
-					CaracteristicaPackage.eINSTANCE
-							.getInformacaoDeContexto_Valor() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElemento_Nome(),
+					CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto_Valor() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Informação de Contexto: {0} Valor {1}"); //$NON-NLS-1$
 			parser.setEditorPattern("Informação de Contexto: {0} Valor {1}"); //$NON-NLS-1$
@@ -487,8 +461,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCasoDeUsoNome_5039Parser() {
 		if (casoDeUsoNome_5039Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoExterno_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoExterno_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Externo {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Externo {0}"); //$NON-NLS-1$
@@ -508,8 +481,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getCasoDeTesteNome_5040Parser() {
 		if (casoDeTesteNome_5040Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getElementoExterno_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoExterno_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Externo {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Externo {0}"); //$NON-NLS-1$
@@ -529,8 +501,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRegraDeComposicaoNome_5021Parser() {
 		if (regraDeComposicaoNome_5021Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getRegra_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getRegra_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Composition Rule {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Composition Rule {0}"); //$NON-NLS-1$
@@ -550,8 +521,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getRegraDeContextoNome_5022Parser() {
 		if (regraDeContextoNome_5022Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getRegra_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getRegra_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Regra de Contexto {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Regra de Contexto {0}"); //$NON-NLS-1$
@@ -571,8 +541,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getAtributoProdutoNomeValor_5031Parser() {
 		if (atributoProdutoNomeValor_5031Parser == null) {
-			EAttribute[] features = new EAttribute[] {
-					CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome(),
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getElementoDeProduto_Nome(),
 					CaracteristicaPackage.eINSTANCE.getAtributoProduto_Valor() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Attribute {0}:{1}"); //$NON-NLS-1$
@@ -593,8 +562,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getSimulacaoNome_5025Parser() {
 		if (simulacaoNome_5025Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getSimulacao_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getSimulacao_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			parser.setViewPattern("Simulation {0}"); //$NON-NLS-1$
 			parser.setEditorPattern("Simulation {0}"); //$NON-NLS-1$
@@ -614,8 +582,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getEstadoNome_5024Parser() {
 		if (estadoNome_5024Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getEstado_Nome() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getEstado_Nome() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			estadoNome_5024Parser = parser;
 		}
@@ -632,8 +599,7 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 */
 	private IParser getTransicaoEtiqueta_6001Parser() {
 		if (transicaoEtiqueta_6001Parser == null) {
-			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE
-					.getTransicao_Etiqueta() };
+			EAttribute[] features = new EAttribute[] { CaracteristicaPackage.eINSTANCE.getTransicao_Etiqueta() };
 			MessageFormatParser parser = new MessageFormatParser(features);
 			transicaoEtiqueta_6001Parser = parser;
 		}
@@ -716,10 +682,8 @@ public class CaracteristicaParserProvider extends AbstractProvider implements
 	 * Utility method that consults ParserService
 	 * @generated
 	 */
-	public static IParser getParser(IElementType type, EObject object,
-			String parserHint) {
-		return ParserService.getInstance().getParser(
-				new HintAdapter(type, object, parserHint));
+	public static IParser getParser(IElementType type, EObject object, String parserHint) {
+		return ParserService.getInstance().getParser(new HintAdapter(type, object, parserHint));
 	}
 
 	/**

@@ -30,8 +30,7 @@ public class CaracteristicaValidationProvider {
 	/**
 	 * @generated
 	 */
-	public static void runWithConstraints(
-			TransactionalEditingDomain editingDomain, Runnable operation) {
+	public static void runWithConstraints(TransactionalEditingDomain editingDomain, Runnable operation) {
 		final Runnable op = operation;
 		Runnable task = new Runnable() {
 			public void run() {
@@ -47,8 +46,7 @@ public class CaracteristicaValidationProvider {
 			try {
 				editingDomain.runExclusive(task);
 			} catch (Exception e) {
-				CaracteristicaDiagramEditorPlugin.getInstance().logError(
-						"Validation failed", e); //$NON-NLS-1$
+				CaracteristicaDiagramEditorPlugin.getInstance().logError("Validation failed", e); //$NON-NLS-1$
 			}
 		} else {
 			task.run();
@@ -64,9 +62,7 @@ public class CaracteristicaValidationProvider {
 		}
 		if (object instanceof View) {
 			return constraintsActive
-					&& LPSEditPart.MODEL_ID
-							.equals(CaracteristicaVisualIDRegistry
-									.getModelID((View) object));
+					&& LPSEditPart.MODEL_ID.equals(CaracteristicaVisualIDRegistry.getModelID((View) object));
 		}
 		return true;
 	}

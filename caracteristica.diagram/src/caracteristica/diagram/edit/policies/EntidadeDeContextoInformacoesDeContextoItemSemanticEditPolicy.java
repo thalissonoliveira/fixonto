@@ -19,8 +19,7 @@ public class EntidadeDeContextoInformacoesDeContextoItemSemanticEditPolicy
 	 * @generated
 	 */
 	public EntidadeDeContextoInformacoesDeContextoItemSemanticEditPolicy() {
-		super(
-				CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4023);
+		super(CaracteristicaElementTypes.EntidadeDeContextoInformacoesDeContexto_4023);
 	}
 
 	/**

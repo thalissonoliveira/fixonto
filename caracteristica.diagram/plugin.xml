@@ -288,40 +288,157 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="caracteristica.diagram.providers.CaracteristicaModelingAssistantProvider">
+      <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfLPSEditPart">
          <Priority name="Lowest"/>
          <object class="caracteristica.diagram.edit.parts.LPSEditPart" id="LPS_1000"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart" id="CaracteristicaOpcional_2001"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart" id="CaracteristicaAgrupada_2033"/>
-         <object class="caracteristica.diagram.edit.parts.VariacaoDoisEditPart" id="VariacaoDois_2002"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart" id="CaracteristicaRaiz_2003"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart" id="CaracteristicaMandatoria_2004"/>
-         <object class="caracteristica.diagram.edit.parts.ProdutoEditPart" id="Produto_2005"/>
-         <object class="caracteristica.diagram.edit.parts.EventoLogicoEditPart" id="EventoLogico_2006"/>
-         <object class="caracteristica.diagram.edit.parts.EventoRelacionalEditPart" id="EventoRelacional_2007"/>
-         <object class="caracteristica.diagram.edit.parts.AcaoLogicoEditPart" id="AcaoLogico_2008"/>
-         <object class="caracteristica.diagram.edit.parts.LiteralAcaoEditPart" id="LiteralAcao_2009"/>
-         <object class="caracteristica.diagram.edit.parts.DesignarEditPart" id="Designar_2010"/>
-         <object class="caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart" id="ExpressaoLogica_2011"/>
-         <object class="caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart" id="ExpressaoRelacional_2012"/>
-         <object class="caracteristica.diagram.edit.parts.LiteralComposicaoEditPart" id="LiteralComposicao_2013"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart" id="CaracteristicaMandatoriaProduto_2025"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaOpcionalProdutoEditPart" id="CaracteristicaOpcionalProduto_2026"/>
-         <object class="caracteristica.diagram.edit.parts.VariacaoDoisProdutoEditPart" id="VariacaoDoisProduto_2027"/>
-         <object class="caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart" id="CaracteristicaAgrupadaProduto_2035"/>
-         <object class="caracteristica.diagram.edit.parts.AtributoEditPart" id="Atributo_2017"/>
-         <object class="caracteristica.diagram.edit.parts.RaizDeContextoEditPart" id="RaizDeContexto_2018"/>
-         <object class="caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart" id="EntidadeDeContexto_2028"/>
-         <object class="caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart" id="InformacaoDeContexto_2029"/>
-         <object class="caracteristica.diagram.edit.parts.CasoDeUsoEditPart" id="CasoDeUso_2038"/>
-         <object class="caracteristica.diagram.edit.parts.CasoDeTesteEditPart" id="CasoDeTeste_2039"/>
-         <object class="caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart" id="RegraDeComposicao_2021"/>
-         <object class="caracteristica.diagram.edit.parts.RegraDeContextoEditPart" id="RegraDeContexto_2022"/>
-         <object class="caracteristica.diagram.edit.parts.AtributoProdutoEditPart" id="AtributoProduto_2030"/>
-         <object class="caracteristica.diagram.edit.parts.SimulacaoEditPart" id="Simulacao_2024"/>
-         <object class="caracteristica.diagram.edit.parts.EstadoEditPart" id="Estado_3001"/>
-         <context elements="LPS_1000,CaracteristicaOpcional_2001,CaracteristicaAgrupada_2033,VariacaoDois_2002,CaracteristicaRaiz_2003,CaracteristicaMandatoria_2004,Produto_2005,EventoLogico_2006,EventoRelacional_2007,AcaoLogico_2008,LiteralAcao_2009,Designar_2010,ExpressaoLogica_2011,ExpressaoRelacional_2012,LiteralComposicao_2013,CaracteristicaMandatoriaProduto_2025,CaracteristicaOpcionalProduto_2026,VariacaoDoisProduto_2027,CaracteristicaAgrupadaProduto_2035,Atributo_2017,RaizDeContexto_2018,EntidadeDeContexto_2028,InformacaoDeContexto_2029,CasoDeUso_2038,CasoDeTeste_2039,RegraDeComposicao_2021,RegraDeContexto_2022,AtributoProduto_2030,Simulacao_2024,Estado_3001"/>
+         <context elements="LPS_1000"/>
       </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaOpcionalEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaOpcionalEditPart" id="CaracteristicaOpcional_2001"/>
+         <context elements="CaracteristicaOpcional_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaAgrupadaEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaAgrupadaEditPart" id="CaracteristicaAgrupada_2033"/>
+         <context elements="CaracteristicaAgrupada_2033"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfVariacaoDoisEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.VariacaoDoisEditPart" id="VariacaoDois_2002"/>
+         <context elements="VariacaoDois_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaRaizEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaRaizEditPart" id="CaracteristicaRaiz_2003"/>
+         <context elements="CaracteristicaRaiz_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaMandatoriaEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaEditPart" id="CaracteristicaMandatoria_2004"/>
+         <context elements="CaracteristicaMandatoria_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.ProdutoEditPart" id="Produto_2005"/>
+         <context elements="Produto_2005"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfEventoLogicoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.EventoLogicoEditPart" id="EventoLogico_2006"/>
+         <context elements="EventoLogico_2006"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfEventoRelacionalEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.EventoRelacionalEditPart" id="EventoRelacional_2007"/>
+         <context elements="EventoRelacional_2007"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfAcaoLogicoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.AcaoLogicoEditPart" id="AcaoLogico_2008"/>
+         <context elements="AcaoLogico_2008"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfLiteralAcaoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.LiteralAcaoEditPart" id="LiteralAcao_2009"/>
+         <context elements="LiteralAcao_2009"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfDesignarEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.DesignarEditPart" id="Designar_2010"/>
+         <context elements="Designar_2010"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfExpressaoLogicaEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.ExpressaoLogicaEditPart" id="ExpressaoLogica_2011"/>
+         <context elements="ExpressaoLogica_2011"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfExpressaoRelacionalEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.ExpressaoRelacionalEditPart" id="ExpressaoRelacional_2012"/>
+         <context elements="ExpressaoRelacional_2012"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfLiteralComposicaoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.LiteralComposicaoEditPart" id="LiteralComposicao_2013"/>
+         <context elements="LiteralComposicao_2013"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaMandatoriaProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaMandatoriaProdutoEditPart" id="CaracteristicaMandatoriaProduto_2025"/>
+         <context elements="CaracteristicaMandatoriaProduto_2025"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaOpcionalProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaOpcionalProdutoEditPart" id="CaracteristicaOpcionalProduto_2026"/>
+         <context elements="CaracteristicaOpcionalProduto_2026"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfVariacaoDoisProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.VariacaoDoisProdutoEditPart" id="VariacaoDoisProduto_2027"/>
+         <context elements="VariacaoDoisProduto_2027"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCaracteristicaAgrupadaProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CaracteristicaAgrupadaProdutoEditPart" id="CaracteristicaAgrupadaProduto_2035"/>
+         <context elements="CaracteristicaAgrupadaProduto_2035"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfAtributoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.AtributoEditPart" id="Atributo_2017"/>
+         <context elements="Atributo_2017"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfRaizDeContextoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.RaizDeContextoEditPart" id="RaizDeContexto_2018"/>
+         <context elements="RaizDeContexto_2018"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfEntidadeDeContextoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.EntidadeDeContextoEditPart" id="EntidadeDeContexto_2028"/>
+         <context elements="EntidadeDeContexto_2028"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfInformacaoDeContextoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.InformacaoDeContextoEditPart" id="InformacaoDeContexto_2029"/>
+         <context elements="InformacaoDeContexto_2029"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCasoDeUsoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CasoDeUsoEditPart" id="CasoDeUso_2038"/>
+         <context elements="CasoDeUso_2038"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfCasoDeTesteEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.CasoDeTesteEditPart" id="CasoDeTeste_2039"/>
+         <context elements="CasoDeTeste_2039"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfRegraDeComposicaoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.RegraDeComposicaoEditPart" id="RegraDeComposicao_2021"/>
+         <context elements="RegraDeComposicao_2021"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfRegraDeContextoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.RegraDeContextoEditPart" id="RegraDeContexto_2022"/>
+         <context elements="RegraDeContexto_2022"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfAtributoProdutoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.AtributoProdutoEditPart" id="AtributoProduto_2030"/>
+         <context elements="AtributoProduto_2030"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfSimulacaoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.SimulacaoEditPart" id="Simulacao_2024"/>
+         <context elements="Simulacao_2024"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="caracteristica.diagram.providers.assistants.CaracteristicaModelingAssistantProviderOfEstadoEditPart">
+         <Priority name="Lowest"/>
+         <object class="caracteristica.diagram.edit.parts.EstadoEditPart" id="Estado_3001"/>
+         <context elements="Estado_3001"/>
+      </modelingAssistantProvider>
+      
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">

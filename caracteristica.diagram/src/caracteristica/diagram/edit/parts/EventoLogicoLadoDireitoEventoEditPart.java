@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.EventoLogicoLadoDireitoEventoItemSem
 /**
  * @generated
  */
-public class EventoLogicoLadoDireitoEventoEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class EventoLogicoLadoDireitoEventoEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class EventoLogicoLadoDireitoEventoEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new EventoLogicoLadoDireitoEventoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new EventoLogicoLadoDireitoEventoItemSemanticEditPolicy());
 	}
 
 	/**
@@ -67,8 +65,7 @@ public class EventoLogicoLadoDireitoEventoEditPart extends
 	/**
 	 * @generated
 	 */
-	public class EventoLogicoLadoDireitoEventoFigure extends
-			PolylineConnectionEx {
+	public class EventoLogicoLadoDireitoEventoFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

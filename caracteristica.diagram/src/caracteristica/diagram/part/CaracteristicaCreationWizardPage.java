@@ -24,8 +24,7 @@ public class CaracteristicaCreationWizardPage extends WizardNewFileCreationPage 
 	/**
 	 * @generated
 	 */
-	public CaracteristicaCreationWizardPage(String pageName,
-			IStructuredSelection selection, String fileExtension) {
+	public CaracteristicaCreationWizardPage(String pageName, IStructuredSelection selection, String fileExtension) {
 		super(pageName, selection);
 		this.fileExtension = fileExtension;
 	}
@@ -66,8 +65,8 @@ public class CaracteristicaCreationWizardPage extends WizardNewFileCreationPage 
 	 */
 	public void createControl(Composite parent) {
 		super.createControl(parent);
-		setFileName(CaracteristicaDiagramEditorUtil.getUniqueFileName(
-				getContainerFullPath(), getFileName(), getExtension()));
+		setFileName(CaracteristicaDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), getFileName(),
+				getExtension()));
 		setPageComplete(validatePage());
 	}
 
@@ -79,11 +78,8 @@ public class CaracteristicaCreationWizardPage extends WizardNewFileCreationPage 
 			return false;
 		}
 		String extension = getExtension();
-		if (extension != null
-				&& !getFilePath().toString().endsWith("." + extension)) {
-			setErrorMessage(NLS.bind(
-					Messages.CaracteristicaCreationWizardPageExtensionError,
-					extension));
+		if (extension != null && !getFilePath().toString().endsWith("." + extension)) {
+			setErrorMessage(NLS.bind(Messages.CaracteristicaCreationWizardPageExtensionError, extension));
 			return false;
 		}
 		return true;

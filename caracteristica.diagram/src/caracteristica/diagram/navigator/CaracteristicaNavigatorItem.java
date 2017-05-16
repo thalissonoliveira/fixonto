@@ -12,8 +12,7 @@ import org.eclipse.gmf.runtime.notation.View;
 /**
  * @generated
  */
-public class CaracteristicaNavigatorItem extends
-		CaracteristicaAbstractNavigatorItem {
+public class CaracteristicaNavigatorItem extends CaracteristicaAbstractNavigatorItem {
 
 	/**
 	 * @generated
@@ -25,8 +24,7 @@ public class CaracteristicaNavigatorItem extends
 			public Object getAdapter(Object adaptableObject, Class adapterType) {
 				if (adaptableObject instanceof caracteristica.diagram.navigator.CaracteristicaNavigatorItem
 						&& (adapterType == View.class || adapterType == EObject.class)) {
-					return ((caracteristica.diagram.navigator.CaracteristicaNavigatorItem) adaptableObject)
-							.getView();
+					return ((caracteristica.diagram.navigator.CaracteristicaNavigatorItem) adaptableObject).getView();
 				}
 				return null;
 			}
@@ -75,11 +73,8 @@ public class CaracteristicaNavigatorItem extends
 	 */
 	public boolean equals(Object obj) {
 		if (obj instanceof caracteristica.diagram.navigator.CaracteristicaNavigatorItem) {
-			return EcoreUtil
-					.getURI(getView())
-					.equals(EcoreUtil
-							.getURI(((caracteristica.diagram.navigator.CaracteristicaNavigatorItem) obj)
-									.getView()));
+			return EcoreUtil.getURI(getView()).equals(
+					EcoreUtil.getURI(((caracteristica.diagram.navigator.CaracteristicaNavigatorItem) obj).getView()));
 		}
 		return super.equals(obj);
 	}

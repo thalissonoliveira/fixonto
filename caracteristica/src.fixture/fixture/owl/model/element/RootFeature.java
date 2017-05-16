@@ -42,4 +42,14 @@ public class RootFeature extends Feature {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 } // CaracteristicaRaiz

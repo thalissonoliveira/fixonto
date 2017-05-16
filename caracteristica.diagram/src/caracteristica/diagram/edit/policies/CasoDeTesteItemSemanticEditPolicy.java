@@ -27,8 +27,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class CasoDeTesteItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class CasoDeTesteItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -42,14 +41,13 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -74,17 +72,14 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -93,12 +88,10 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaElementosExternosCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req.getElementType()) {
+			return getGEFWrapper(
+					new CaracteristicaElementosExternosCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -109,12 +102,10 @@ public class CasoDeTesteItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(
-					req));
+			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

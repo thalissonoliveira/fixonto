@@ -12,15 +12,14 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class CaracteristicaProdutoAtributoProdutoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class CaracteristicaProdutoAtributoProdutoItemSemanticEditPolicy
+		extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public CaracteristicaProdutoAtributoProdutoItemSemanticEditPolicy() {
-		super(
-				CaracteristicaElementTypes.CaracteristicaProdutoAtributoProduto_4009);
+		super(CaracteristicaElementTypes.CaracteristicaProdutoAtributoProduto_4009);
 	}
 
 	/**

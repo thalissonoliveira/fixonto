@@ -38,8 +38,7 @@ public class CaracteristicaVisualIDRegistry {
 				return -1;
 			}
 		}
-		return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-				.getVisualID(view.getType());
+		return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getVisualID(view.getType());
 	}
 
 	/**
@@ -64,11 +63,9 @@ public class CaracteristicaVisualIDRegistry {
 		try {
 			return Integer.parseInt(type);
 		} catch (NumberFormatException e) {
-			if (Boolean.TRUE.toString().equalsIgnoreCase(
-					Platform.getDebugOption(DEBUG_KEY))) {
-				CaracteristicaDiagramEditorPlugin.getInstance().logError(
-						"Unable to parse view type as a visualID number: "
-								+ type);
+			if (Boolean.TRUE.toString().equalsIgnoreCase(Platform.getDebugOption(DEBUG_KEY))) {
+				CaracteristicaDiagramEditorPlugin.getInstance()
+						.logError("Unable to parse view type as a visualID number: " + type);
 			}
 		}
 		return -1;
@@ -88,8 +85,7 @@ public class CaracteristicaVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (CaracteristicaPackage.eINSTANCE.getLPS().isSuperTypeOf(
-				domainElement.eClass())
+		if (CaracteristicaPackage.eINSTANCE.getLPS().isSuperTypeOf(domainElement.eClass())
 				&& isDiagram((caracteristica.LPS) domainElement)) {
 			return LPSEditPart.VISUAL_ID;
 		}
@@ -103,16 +99,13 @@ public class CaracteristicaVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		String containerModelID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-				.getModelID(containerView);
-		if (!LPSEditPart.MODEL_ID.equals(containerModelID)
-				&& !"caracteristica".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getModelID(containerView);
+		if (!LPSEditPart.MODEL_ID.equals(containerModelID) && !"caracteristica".equals(containerModelID)) { //$NON-NLS-1$
 			return -1;
 		}
 		int containerVisualID;
 		if (LPSEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = LPSEditPart.VISUAL_ID;
@@ -122,125 +115,96 @@ public class CaracteristicaVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case LPSEditPart.VISUAL_ID:
-			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcional()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcional().isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaOpcionalEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupada()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupada().isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaAgrupadaEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getVariacaoDois()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getVariacaoDois().isSuperTypeOf(domainElement.eClass())) {
 				return VariacaoDoisEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaRaiz()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaRaiz().isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaRaizEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaMandatoria()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaMandatoria().isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaMandatoriaEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getProduto().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getProduto().isSuperTypeOf(domainElement.eClass())) {
 				return ProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getEventoLogico()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getEventoLogico().isSuperTypeOf(domainElement.eClass())) {
 				return EventoLogicoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getEventoRelacional()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getEventoRelacional().isSuperTypeOf(domainElement.eClass())) {
 				return EventoRelacionalEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getAcaoLogico().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getAcaoLogico().isSuperTypeOf(domainElement.eClass())) {
 				return AcaoLogicoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getLiteralAcao().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getLiteralAcao().isSuperTypeOf(domainElement.eClass())) {
 				return LiteralAcaoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getDesignar().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getDesignar().isSuperTypeOf(domainElement.eClass())) {
 				return DesignarEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getExpressaoLogica()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getExpressaoLogica().isSuperTypeOf(domainElement.eClass())) {
 				return ExpressaoLogicaEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getExpressaoRelacional()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getExpressaoRelacional().isSuperTypeOf(domainElement.eClass())) {
 				return ExpressaoRelacionalEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getLiteralComposicao()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getLiteralComposicao().isSuperTypeOf(domainElement.eClass())) {
 				return LiteralComposicaoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaMandatoriaProduto().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaMandatoriaProduto()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaMandatoriaProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaOpcionalProduto().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcionalProduto()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaOpcionalProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto().isSuperTypeOf(domainElement.eClass())) {
 				return VariacaoDoisProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE
-					.getCaracteristicaAgrupadaProduto().isSuperTypeOf(
-							domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupadaProduto()
+					.isSuperTypeOf(domainElement.eClass())) {
 				return CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getAtributo().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getAtributo().isSuperTypeOf(domainElement.eClass())) {
 				return AtributoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getRaizDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getRaizDeContexto().isSuperTypeOf(domainElement.eClass())) {
 				return RaizDeContextoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto().isSuperTypeOf(domainElement.eClass())) {
 				return EntidadeDeContextoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto().isSuperTypeOf(domainElement.eClass())) {
 				return InformacaoDeContextoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getCasoDeUso().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCasoDeUso().isSuperTypeOf(domainElement.eClass())) {
 				return CasoDeUsoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getCasoDeTeste().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getCasoDeTeste().isSuperTypeOf(domainElement.eClass())) {
 				return CasoDeTesteEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getRegraDeComposicao()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getRegraDeComposicao().isSuperTypeOf(domainElement.eClass())) {
 				return RegraDeComposicaoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getRegraDeContexto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getRegraDeContexto().isSuperTypeOf(domainElement.eClass())) {
 				return RegraDeContextoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getAtributoProduto()
-					.isSuperTypeOf(domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getAtributoProduto().isSuperTypeOf(domainElement.eClass())) {
 				return AtributoProdutoEditPart.VISUAL_ID;
 			}
-			if (CaracteristicaPackage.eINSTANCE.getSimulacao().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getSimulacao().isSuperTypeOf(domainElement.eClass())) {
 				return SimulacaoEditPart.VISUAL_ID;
 			}
 			break;
 		case SimulacaoSimulacaoEstadosCompartmentEditPart.VISUAL_ID:
-			if (CaracteristicaPackage.eINSTANCE.getEstado().isSuperTypeOf(
-					domainElement.eClass())) {
+			if (CaracteristicaPackage.eINSTANCE.getEstado().isSuperTypeOf(domainElement.eClass())) {
 				return EstadoEditPart.VISUAL_ID;
 			}
 			break;
@@ -252,16 +216,13 @@ public class CaracteristicaVisualIDRegistry {
 	 * @generated
 	 */
 	public static boolean canCreateNode(View containerView, int nodeVisualID) {
-		String containerModelID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-				.getModelID(containerView);
-		if (!LPSEditPart.MODEL_ID.equals(containerModelID)
-				&& !"caracteristica".equals(containerModelID)) { //$NON-NLS-1$
+		String containerModelID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getModelID(containerView);
+		if (!LPSEditPart.MODEL_ID.equals(containerModelID) && !"caracteristica".equals(containerModelID)) { //$NON-NLS-1$
 			return false;
 		}
 		int containerVisualID;
 		if (LPSEditPart.MODEL_ID.equals(containerModelID)) {
-			containerVisualID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.getVisualID(containerView);
+			containerVisualID = caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getVisualID(containerView);
 		} else {
 			if (containerView instanceof Diagram) {
 				containerVisualID = LPSEditPart.VISUAL_ID;
@@ -630,8 +591,7 @@ public class CaracteristicaVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (CaracteristicaPackage.eINSTANCE.getTransicao().isSuperTypeOf(
-				domainElement.eClass())) {
+		if (CaracteristicaPackage.eINSTANCE.getTransicao().isSuperTypeOf(domainElement.eClass())) {
 			return TransicaoEditPart.VISUAL_ID;
 		}
 		return -1;
@@ -650,8 +610,7 @@ public class CaracteristicaVisualIDRegistry {
 	/**
 	 * @generated
 	 */
-	public static boolean checkNodeVisualID(View containerView,
-			EObject domainElement, int candidate) {
+	public static boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
 		if (candidate == -1) {
 			//unrecognized id is always bad
 			return false;
@@ -720,58 +679,59 @@ public class CaracteristicaVisualIDRegistry {
 	 */
 	public static final DiagramStructure TYPED_INSTANCE = new DiagramStructure() {
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getVisualID(View view) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.getVisualID(view);
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getVisualID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public String getModelID(View view) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.getModelID(view);
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getModelID(view);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public int getNodeVisualID(View containerView, EObject domainElement) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.getNodeVisualID(containerView, domainElement);
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.getNodeVisualID(containerView,
+					domainElement);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public boolean checkNodeVisualID(View containerView,
-				EObject domainElement, int candidate) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.checkNodeVisualID(containerView, domainElement, candidate);
+
+		public boolean checkNodeVisualID(View containerView, EObject domainElement, int candidate) {
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.checkNodeVisualID(containerView,
+					domainElement, candidate);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isCompartmentVisualID(int visualID) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.isCompartmentVisualID(visualID);
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.isCompartmentVisualID(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isSemanticLeafVisualID(int visualID) {
-			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry
-					.isSemanticLeafVisualID(visualID);
+			return caracteristica.diagram.part.CaracteristicaVisualIDRegistry.isSemanticLeafVisualID(visualID);
 		}
 	};
 

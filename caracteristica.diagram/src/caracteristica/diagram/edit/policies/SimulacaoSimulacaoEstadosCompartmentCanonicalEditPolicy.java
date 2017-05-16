@@ -33,8 +33,7 @@ import caracteristica.diagram.part.CaracteristicaVisualIDRegistry;
 /**
  * @generated
  */
-public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
-		CanonicalEditPolicy {
+public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	 * @generated
@@ -73,18 +72,15 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected boolean isOrphaned(Collection<EObject> semanticChildren,
-			final View view) {
-		return isMyDiagramElement(view)
-				&& !semanticChildren.contains(view.getElement());
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
 	}
 
 	/**
 	 * @generated
 	 */
 	private boolean isMyDiagramElement(View view) {
-		return EstadoEditPart.VISUAL_ID == CaracteristicaVisualIDRegistry
-				.getVisualID(view);
+		return EstadoEditPart.VISUAL_ID == CaracteristicaVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -96,8 +92,7 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<CaracteristicaNodeDescriptor> childDescriptors = CaracteristicaDiagramUpdater
-				.getSimulacaoSimulacaoEstadosCompartment_7001SemanticChildren((View) getHost()
-						.getModel());
+				.getSimulacaoSimulacaoEstadosCompartment_7001SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();
@@ -114,8 +109,7 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 		for (Iterator<CaracteristicaNodeDescriptor> descriptorsIterator = childDescriptors
 				.iterator(); descriptorsIterator.hasNext();) {
 			CaracteristicaNodeDescriptor next = descriptorsIterator.next();
-			String hint = CaracteristicaVisualIDRegistry.getType(next
-					.getVisualID());
+			String hint = CaracteristicaVisualIDRegistry.getType(next.getVisualID());
 			LinkedList<View> perfectMatch = new LinkedList<View>(); // both semanticElement and hint match that of NodeDescriptor
 			for (View childView : getViewChildren()) {
 				EObject semanticElement = childView.getElement();
@@ -141,13 +135,10 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 		ArrayList<CreateViewRequest.ViewDescriptor> viewDescriptors = new ArrayList<CreateViewRequest.ViewDescriptor>(
 				childDescriptors.size());
 		for (CaracteristicaNodeDescriptor next : childDescriptors) {
-			String hint = CaracteristicaVisualIDRegistry.getType(next
-					.getVisualID());
-			IAdaptable elementAdapter = new CanonicalElementAdapter(
-					next.getModelElement(), hint);
-			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(
-					elementAdapter, Node.class, hint, ViewUtil.APPEND, false,
-					host().getDiagramPreferencesHint());
+			String hint = CaracteristicaVisualIDRegistry.getType(next.getVisualID());
+			IAdaptable elementAdapter = new CanonicalElementAdapter(next.getModelElement(), hint);
+			CreateViewRequest.ViewDescriptor descriptor = new CreateViewRequest.ViewDescriptor(elementAdapter,
+					Node.class, hint, ViewUtil.APPEND, false, host().getDiagramPreferencesHint());
 			viewDescriptors.add(descriptor);
 		}
 
@@ -156,10 +147,10 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 		CreateViewRequest request = getCreateViewRequest(viewDescriptors);
 		Command cmd = getCreateViewCommand(request);
 		if (cmd != null && cmd.canExecute()) {
-			SetViewMutabilityCommand.makeMutable(
-					new EObjectAdapter(host().getNotationView())).execute();
+			SetViewMutabilityCommand.makeMutable(new EObjectAdapter(host().getNotationView())).execute();
 			executeCommand(cmd);
 			@SuppressWarnings("unchecked")
+
 			List<IAdaptable> nl = (List<IAdaptable>) request.getNewObject();
 			createdViews.addAll(nl);
 		}
@@ -168,8 +159,8 @@ public class SimulacaoSimulacaoEstadosCompartmentCanonicalEditPolicy extends
 		}
 		if (createdViews.size() > 1) {
 			// perform a layout of the container
-			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host()
-					.getEditingDomain(), createdViews, host());
+			DeferredLayoutCommand layoutCmd = new DeferredLayoutCommand(host().getEditingDomain(), createdViews,
+					host());
 			executeCommand(new ICommandProxy(layoutCmd));
 		}
 

@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaElementosExternosItemS
 /**
  * @generated
  */
-public class CaracteristicaElementosExternosEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class CaracteristicaElementosExternosEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class CaracteristicaElementosExternosEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CaracteristicaElementosExternosItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CaracteristicaElementosExternosItemSemanticEditPolicy());
 	}
 
 	/**
@@ -67,8 +65,7 @@ public class CaracteristicaElementosExternosEditPart extends
 	/**
 	 * @generated
 	 */
-	public class CaracteristicaElementosExternosFigure extends
-			PolylineConnectionEx {
+	public class CaracteristicaElementosExternosFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

@@ -12,15 +12,14 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class ExpressaoLogicaLadoEsquerdoComposicaoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class ExpressaoLogicaLadoEsquerdoComposicaoItemSemanticEditPolicy
+		extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
 	 */
 	public ExpressaoLogicaLadoEsquerdoComposicaoItemSemanticEditPolicy() {
-		super(
-				CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4021);
+		super(CaracteristicaElementTypes.ExpressaoLogicaLadoEsquerdoComposicao_4021);
 	}
 
 	/**

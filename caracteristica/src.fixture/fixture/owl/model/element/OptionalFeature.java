@@ -47,4 +47,14 @@ public class OptionalFeature extends Feature implements FeaturedElement {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
+	
 } // CaracteristicaOpcional

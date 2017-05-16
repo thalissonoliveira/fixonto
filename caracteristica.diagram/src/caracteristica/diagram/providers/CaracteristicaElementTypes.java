@@ -92,8 +92,7 @@ public class CaracteristicaElementTypes {
 	 * @generated
 	 */
 	private static DiagramElementTypeImages elementTypeImages = new DiagramElementTypeImages(
-			CaracteristicaDiagramEditorPlugin.getInstance()
-					.getItemProvidersAdapterFactory());
+			CaracteristicaDiagramEditorPlugin.getInstance().getItemProvidersAdapterFactory());
 
 	/**
 	 * @generated
@@ -107,11 +106,13 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaOpcional_2001 = getElementType("caracteristica.diagram.CaracteristicaOpcional_2001"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaOpcional_2001 = getElementType(
+			"caracteristica.diagram.CaracteristicaOpcional_2001"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaAgrupada_2033 = getElementType("caracteristica.diagram.CaracteristicaAgrupada_2033"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaAgrupada_2033 = getElementType(
+			"caracteristica.diagram.CaracteristicaAgrupada_2033"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -119,11 +120,13 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaRaiz_2003 = getElementType("caracteristica.diagram.CaracteristicaRaiz_2003"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaRaiz_2003 = getElementType(
+			"caracteristica.diagram.CaracteristicaRaiz_2003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaMandatoria_2004 = getElementType("caracteristica.diagram.CaracteristicaMandatoria_2004"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaMandatoria_2004 = getElementType(
+			"caracteristica.diagram.CaracteristicaMandatoria_2004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -135,7 +138,8 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventoRelacional_2007 = getElementType("caracteristica.diagram.EventoRelacional_2007"); //$NON-NLS-1$
+	public static final IElementType EventoRelacional_2007 = getElementType(
+			"caracteristica.diagram.EventoRelacional_2007"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -151,31 +155,38 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExpressaoLogica_2011 = getElementType("caracteristica.diagram.ExpressaoLogica_2011"); //$NON-NLS-1$
+	public static final IElementType ExpressaoLogica_2011 = getElementType(
+			"caracteristica.diagram.ExpressaoLogica_2011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExpressaoRelacional_2012 = getElementType("caracteristica.diagram.ExpressaoRelacional_2012"); //$NON-NLS-1$
+	public static final IElementType ExpressaoRelacional_2012 = getElementType(
+			"caracteristica.diagram.ExpressaoRelacional_2012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType LiteralComposicao_2013 = getElementType("caracteristica.diagram.LiteralComposicao_2013"); //$NON-NLS-1$
+	public static final IElementType LiteralComposicao_2013 = getElementType(
+			"caracteristica.diagram.LiteralComposicao_2013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaMandatoriaProduto_2025 = getElementType("caracteristica.diagram.CaracteristicaMandatoriaProduto_2025"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaMandatoriaProduto_2025 = getElementType(
+			"caracteristica.diagram.CaracteristicaMandatoriaProduto_2025"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaOpcionalProduto_2026 = getElementType("caracteristica.diagram.CaracteristicaOpcionalProduto_2026"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaOpcionalProduto_2026 = getElementType(
+			"caracteristica.diagram.CaracteristicaOpcionalProduto_2026"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType VariacaoDoisProduto_2027 = getElementType("caracteristica.diagram.VariacaoDoisProduto_2027"); //$NON-NLS-1$
+	public static final IElementType VariacaoDoisProduto_2027 = getElementType(
+			"caracteristica.diagram.VariacaoDoisProduto_2027"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaAgrupadaProduto_2035 = getElementType("caracteristica.diagram.CaracteristicaAgrupadaProduto_2035"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaAgrupadaProduto_2035 = getElementType(
+			"caracteristica.diagram.CaracteristicaAgrupadaProduto_2035"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -187,11 +198,13 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType EntidadeDeContexto_2028 = getElementType("caracteristica.diagram.EntidadeDeContexto_2028"); //$NON-NLS-1$
+	public static final IElementType EntidadeDeContexto_2028 = getElementType(
+			"caracteristica.diagram.EntidadeDeContexto_2028"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType InformacaoDeContexto_2029 = getElementType("caracteristica.diagram.InformacaoDeContexto_2029"); //$NON-NLS-1$
+	public static final IElementType InformacaoDeContexto_2029 = getElementType(
+			"caracteristica.diagram.InformacaoDeContexto_2029"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -203,15 +216,18 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeComposicao_2021 = getElementType("caracteristica.diagram.RegraDeComposicao_2021"); //$NON-NLS-1$
+	public static final IElementType RegraDeComposicao_2021 = getElementType(
+			"caracteristica.diagram.RegraDeComposicao_2021"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeContexto_2022 = getElementType("caracteristica.diagram.RegraDeContexto_2022"); //$NON-NLS-1$
+	public static final IElementType RegraDeContexto_2022 = getElementType(
+			"caracteristica.diagram.RegraDeContexto_2022"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AtributoProduto_2030 = getElementType("caracteristica.diagram.AtributoProduto_2030"); //$NON-NLS-1$
+	public static final IElementType AtributoProduto_2030 = getElementType(
+			"caracteristica.diagram.AtributoProduto_2030"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
@@ -227,87 +243,108 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaElementosExternos_4024 = getElementType("caracteristica.diagram.CaracteristicaElementosExternos_4024"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaElementosExternos_4024 = getElementType(
+			"caracteristica.diagram.CaracteristicaElementosExternos_4024"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaCaracteristicaFilha_4002 = getElementType("caracteristica.diagram.CaracteristicaCaracteristicaFilha_4002"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaCaracteristicaFilha_4002 = getElementType(
+			"caracteristica.diagram.CaracteristicaCaracteristicaFilha_4002"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaVariacoes_4003 = getElementType("caracteristica.diagram.CaracteristicaVariacoes_4003"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaVariacoes_4003 = getElementType(
+			"caracteristica.diagram.CaracteristicaVariacoes_4003"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaAtributo_4004 = getElementType("caracteristica.diagram.CaracteristicaAtributo_4004"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaAtributo_4004 = getElementType(
+			"caracteristica.diagram.CaracteristicaAtributo_4004"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType VariacaoVariantes_4005 = getElementType("caracteristica.diagram.VariacaoVariantes_4005"); //$NON-NLS-1$
+	public static final IElementType VariacaoVariantes_4005 = getElementType(
+			"caracteristica.diagram.VariacaoVariantes_4005"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RaizDeContextoEntidadesDeContexto_4006 = getElementType("caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4006"); //$NON-NLS-1$
+	public static final IElementType RaizDeContextoEntidadesDeContexto_4006 = getElementType(
+			"caracteristica.diagram.RaizDeContextoEntidadesDeContexto_4006"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EntidadeDeContextoInformacoesDeContexto_4023 = getElementType("caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4023"); //$NON-NLS-1$
+	public static final IElementType EntidadeDeContextoInformacoesDeContexto_4023 = getElementType(
+			"caracteristica.diagram.EntidadeDeContextoInformacoesDeContexto_4023"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaProdutoCaracteristicaProdutoFilha_4008 = getElementType("caracteristica.diagram.CaracteristicaProdutoCaracteristicaProdutoFilha_4008"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaProdutoCaracteristicaProdutoFilha_4008 = getElementType(
+			"caracteristica.diagram.CaracteristicaProdutoCaracteristicaProdutoFilha_4008"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType CaracteristicaProdutoAtributoProduto_4009 = getElementType("caracteristica.diagram.CaracteristicaProdutoAtributoProduto_4009"); //$NON-NLS-1$
+	public static final IElementType CaracteristicaProdutoAtributoProduto_4009 = getElementType(
+			"caracteristica.diagram.CaracteristicaProdutoAtributoProduto_4009"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType VariacaoProdutoVariantesProduto_4010 = getElementType("caracteristica.diagram.VariacaoProdutoVariantesProduto_4010"); //$NON-NLS-1$
+	public static final IElementType VariacaoProdutoVariantesProduto_4010 = getElementType(
+			"caracteristica.diagram.VariacaoProdutoVariantesProduto_4010"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ProdutoLinhaDoProduto_4011 = getElementType("caracteristica.diagram.ProdutoLinhaDoProduto_4011"); //$NON-NLS-1$
+	public static final IElementType ProdutoLinhaDoProduto_4011 = getElementType(
+			"caracteristica.diagram.ProdutoLinhaDoProduto_4011"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeComposicaoAntecedente_4012 = getElementType("caracteristica.diagram.RegraDeComposicaoAntecedente_4012"); //$NON-NLS-1$
+	public static final IElementType RegraDeComposicaoAntecedente_4012 = getElementType(
+			"caracteristica.diagram.RegraDeComposicaoAntecedente_4012"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeComposicaoConsequente_4013 = getElementType("caracteristica.diagram.RegraDeComposicaoConsequente_4013"); //$NON-NLS-1$
+	public static final IElementType RegraDeComposicaoConsequente_4013 = getElementType(
+			"caracteristica.diagram.RegraDeComposicaoConsequente_4013"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeContextoEvento_4014 = getElementType("caracteristica.diagram.RegraDeContextoEvento_4014"); //$NON-NLS-1$
+	public static final IElementType RegraDeContextoEvento_4014 = getElementType(
+			"caracteristica.diagram.RegraDeContextoEvento_4014"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType RegraDeContextoAcao_4015 = getElementType("caracteristica.diagram.RegraDeContextoAcao_4015"); //$NON-NLS-1$
+	public static final IElementType RegraDeContextoAcao_4015 = getElementType(
+			"caracteristica.diagram.RegraDeContextoAcao_4015"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventoLogicoLadoDireitoEvento_4016 = getElementType("caracteristica.diagram.EventoLogicoLadoDireitoEvento_4016"); //$NON-NLS-1$
+	public static final IElementType EventoLogicoLadoDireitoEvento_4016 = getElementType(
+			"caracteristica.diagram.EventoLogicoLadoDireitoEvento_4016"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType EventoLogicoLadoEsquerdoEvento_4017 = getElementType("caracteristica.diagram.EventoLogicoLadoEsquerdoEvento_4017"); //$NON-NLS-1$
+	public static final IElementType EventoLogicoLadoEsquerdoEvento_4017 = getElementType(
+			"caracteristica.diagram.EventoLogicoLadoEsquerdoEvento_4017"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AcaoLogicoLadoEsquerdoAcao_4018 = getElementType("caracteristica.diagram.AcaoLogicoLadoEsquerdoAcao_4018"); //$NON-NLS-1$
+	public static final IElementType AcaoLogicoLadoEsquerdoAcao_4018 = getElementType(
+			"caracteristica.diagram.AcaoLogicoLadoEsquerdoAcao_4018"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType AcaoLogicoLadoDireitoAcao_4019 = getElementType("caracteristica.diagram.AcaoLogicoLadoDireitoAcao_4019"); //$NON-NLS-1$
+	public static final IElementType AcaoLogicoLadoDireitoAcao_4019 = getElementType(
+			"caracteristica.diagram.AcaoLogicoLadoDireitoAcao_4019"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExpressaoLogicaLadoDireitoComposicao_4020 = getElementType("caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4020"); //$NON-NLS-1$
+	public static final IElementType ExpressaoLogicaLadoDireitoComposicao_4020 = getElementType(
+			"caracteristica.diagram.ExpressaoLogicaLadoDireitoComposicao_4020"); //$NON-NLS-1$
 	/**
 	 * @generated
 	 */
-	public static final IElementType ExpressaoLogicaLadoEsquerdoComposicao_4021 = getElementType("caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4021"); //$NON-NLS-1$
+	public static final IElementType ExpressaoLogicaLadoEsquerdoComposicao_4021 = getElementType(
+			"caracteristica.diagram.ExpressaoLogicaLadoEsquerdoComposicao_4021"); //$NON-NLS-1$
 
 	/**
 	 * @generated
@@ -349,180 +386,125 @@ public class CaracteristicaElementTypes {
 
 			elements.put(LPS_1000, CaracteristicaPackage.eINSTANCE.getLPS());
 
-			elements.put(CaracteristicaOpcional_2001,
-					CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcional());
+			elements.put(CaracteristicaOpcional_2001, CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcional());
 
-			elements.put(CaracteristicaAgrupada_2033,
-					CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupada());
+			elements.put(CaracteristicaAgrupada_2033, CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupada());
 
-			elements.put(VariacaoDois_2002,
-					CaracteristicaPackage.eINSTANCE.getVariacaoDois());
+			elements.put(VariacaoDois_2002, CaracteristicaPackage.eINSTANCE.getVariacaoDois());
 
-			elements.put(CaracteristicaRaiz_2003,
-					CaracteristicaPackage.eINSTANCE.getCaracteristicaRaiz());
+			elements.put(CaracteristicaRaiz_2003, CaracteristicaPackage.eINSTANCE.getCaracteristicaRaiz());
 
-			elements.put(CaracteristicaMandatoria_2004,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaMandatoria());
+			elements.put(CaracteristicaMandatoria_2004, CaracteristicaPackage.eINSTANCE.getCaracteristicaMandatoria());
 
-			elements.put(Produto_2005,
-					CaracteristicaPackage.eINSTANCE.getProduto());
+			elements.put(Produto_2005, CaracteristicaPackage.eINSTANCE.getProduto());
 
-			elements.put(EventoLogico_2006,
-					CaracteristicaPackage.eINSTANCE.getEventoLogico());
+			elements.put(EventoLogico_2006, CaracteristicaPackage.eINSTANCE.getEventoLogico());
 
-			elements.put(EventoRelacional_2007,
-					CaracteristicaPackage.eINSTANCE.getEventoRelacional());
+			elements.put(EventoRelacional_2007, CaracteristicaPackage.eINSTANCE.getEventoRelacional());
 
-			elements.put(AcaoLogico_2008,
-					CaracteristicaPackage.eINSTANCE.getAcaoLogico());
+			elements.put(AcaoLogico_2008, CaracteristicaPackage.eINSTANCE.getAcaoLogico());
 
-			elements.put(LiteralAcao_2009,
-					CaracteristicaPackage.eINSTANCE.getLiteralAcao());
+			elements.put(LiteralAcao_2009, CaracteristicaPackage.eINSTANCE.getLiteralAcao());
 
-			elements.put(Designar_2010,
-					CaracteristicaPackage.eINSTANCE.getDesignar());
+			elements.put(Designar_2010, CaracteristicaPackage.eINSTANCE.getDesignar());
 
-			elements.put(ExpressaoLogica_2011,
-					CaracteristicaPackage.eINSTANCE.getExpressaoLogica());
+			elements.put(ExpressaoLogica_2011, CaracteristicaPackage.eINSTANCE.getExpressaoLogica());
 
-			elements.put(ExpressaoRelacional_2012,
-					CaracteristicaPackage.eINSTANCE.getExpressaoRelacional());
+			elements.put(ExpressaoRelacional_2012, CaracteristicaPackage.eINSTANCE.getExpressaoRelacional());
 
-			elements.put(LiteralComposicao_2013,
-					CaracteristicaPackage.eINSTANCE.getLiteralComposicao());
+			elements.put(LiteralComposicao_2013, CaracteristicaPackage.eINSTANCE.getLiteralComposicao());
 
 			elements.put(CaracteristicaMandatoriaProduto_2025,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaMandatoriaProduto());
+					CaracteristicaPackage.eINSTANCE.getCaracteristicaMandatoriaProduto());
 
 			elements.put(CaracteristicaOpcionalProduto_2026,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaOpcionalProduto());
+					CaracteristicaPackage.eINSTANCE.getCaracteristicaOpcionalProduto());
 
-			elements.put(VariacaoDoisProduto_2027,
-					CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto());
+			elements.put(VariacaoDoisProduto_2027, CaracteristicaPackage.eINSTANCE.getVariacaoDoisProduto());
 
 			elements.put(CaracteristicaAgrupadaProduto_2035,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaAgrupadaProduto());
+					CaracteristicaPackage.eINSTANCE.getCaracteristicaAgrupadaProduto());
 
-			elements.put(Atributo_2017,
-					CaracteristicaPackage.eINSTANCE.getAtributo());
+			elements.put(Atributo_2017, CaracteristicaPackage.eINSTANCE.getAtributo());
 
-			elements.put(RaizDeContexto_2018,
-					CaracteristicaPackage.eINSTANCE.getRaizDeContexto());
+			elements.put(RaizDeContexto_2018, CaracteristicaPackage.eINSTANCE.getRaizDeContexto());
 
-			elements.put(EntidadeDeContexto_2028,
-					CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto());
+			elements.put(EntidadeDeContexto_2028, CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto());
 
-			elements.put(InformacaoDeContexto_2029,
-					CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto());
+			elements.put(InformacaoDeContexto_2029, CaracteristicaPackage.eINSTANCE.getInformacaoDeContexto());
 
-			elements.put(CasoDeUso_2038,
-					CaracteristicaPackage.eINSTANCE.getCasoDeUso());
+			elements.put(CasoDeUso_2038, CaracteristicaPackage.eINSTANCE.getCasoDeUso());
 
-			elements.put(CasoDeTeste_2039,
-					CaracteristicaPackage.eINSTANCE.getCasoDeTeste());
+			elements.put(CasoDeTeste_2039, CaracteristicaPackage.eINSTANCE.getCasoDeTeste());
 
-			elements.put(RegraDeComposicao_2021,
-					CaracteristicaPackage.eINSTANCE.getRegraDeComposicao());
+			elements.put(RegraDeComposicao_2021, CaracteristicaPackage.eINSTANCE.getRegraDeComposicao());
 
-			elements.put(RegraDeContexto_2022,
-					CaracteristicaPackage.eINSTANCE.getRegraDeContexto());
+			elements.put(RegraDeContexto_2022, CaracteristicaPackage.eINSTANCE.getRegraDeContexto());
 
-			elements.put(AtributoProduto_2030,
-					CaracteristicaPackage.eINSTANCE.getAtributoProduto());
+			elements.put(AtributoProduto_2030, CaracteristicaPackage.eINSTANCE.getAtributoProduto());
 
-			elements.put(Simulacao_2024,
-					CaracteristicaPackage.eINSTANCE.getSimulacao());
+			elements.put(Simulacao_2024, CaracteristicaPackage.eINSTANCE.getSimulacao());
 
-			elements.put(Estado_3001,
-					CaracteristicaPackage.eINSTANCE.getEstado());
+			elements.put(Estado_3001, CaracteristicaPackage.eINSTANCE.getEstado());
 
-			elements.put(Transicao_4001,
-					CaracteristicaPackage.eINSTANCE.getTransicao());
+			elements.put(Transicao_4001, CaracteristicaPackage.eINSTANCE.getTransicao());
 
 			elements.put(CaracteristicaElementosExternos_4024,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristica_ElementosExternos());
+					CaracteristicaPackage.eINSTANCE.getCaracteristica_ElementosExternos());
 
 			elements.put(CaracteristicaCaracteristicaFilha_4002,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristica_CaracteristicaFilha());
+					CaracteristicaPackage.eINSTANCE.getCaracteristica_CaracteristicaFilha());
 
-			elements.put(CaracteristicaVariacoes_4003,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristica_Variacoes());
+			elements.put(CaracteristicaVariacoes_4003, CaracteristicaPackage.eINSTANCE.getCaracteristica_Variacoes());
 
-			elements.put(CaracteristicaAtributo_4004,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristica_Atributo());
+			elements.put(CaracteristicaAtributo_4004, CaracteristicaPackage.eINSTANCE.getCaracteristica_Atributo());
 
-			elements.put(VariacaoVariantes_4005,
-					CaracteristicaPackage.eINSTANCE.getVariacao_Variantes());
+			elements.put(VariacaoVariantes_4005, CaracteristicaPackage.eINSTANCE.getVariacao_Variantes());
 
 			elements.put(RaizDeContextoEntidadesDeContexto_4006,
-					CaracteristicaPackage.eINSTANCE
-							.getRaizDeContexto_EntidadesDeContexto());
+					CaracteristicaPackage.eINSTANCE.getRaizDeContexto_EntidadesDeContexto());
 
 			elements.put(EntidadeDeContextoInformacoesDeContexto_4023,
-					CaracteristicaPackage.eINSTANCE
-							.getEntidadeDeContexto_InformacoesDeContexto());
+					CaracteristicaPackage.eINSTANCE.getEntidadeDeContexto_InformacoesDeContexto());
 
-			elements.put(
-					CaracteristicaProdutoCaracteristicaProdutoFilha_4008,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaProduto_CaracteristicaProdutoFilha());
+			elements.put(CaracteristicaProdutoCaracteristicaProdutoFilha_4008,
+					CaracteristicaPackage.eINSTANCE.getCaracteristicaProduto_CaracteristicaProdutoFilha());
 
 			elements.put(CaracteristicaProdutoAtributoProduto_4009,
-					CaracteristicaPackage.eINSTANCE
-							.getCaracteristicaProduto_AtributoProduto());
+					CaracteristicaPackage.eINSTANCE.getCaracteristicaProduto_AtributoProduto());
 
 			elements.put(VariacaoProdutoVariantesProduto_4010,
-					CaracteristicaPackage.eINSTANCE
-							.getVariacaoProduto_VariantesProduto());
+					CaracteristicaPackage.eINSTANCE.getVariacaoProduto_VariantesProduto());
 
-			elements.put(ProdutoLinhaDoProduto_4011,
-					CaracteristicaPackage.eINSTANCE.getProduto_LinhaDoProduto());
+			elements.put(ProdutoLinhaDoProduto_4011, CaracteristicaPackage.eINSTANCE.getProduto_LinhaDoProduto());
 
 			elements.put(RegraDeComposicaoAntecedente_4012,
-					CaracteristicaPackage.eINSTANCE
-							.getRegraDeComposicao_Antecedente());
+					CaracteristicaPackage.eINSTANCE.getRegraDeComposicao_Antecedente());
 
 			elements.put(RegraDeComposicaoConsequente_4013,
-					CaracteristicaPackage.eINSTANCE
-							.getRegraDeComposicao_Consequente());
+					CaracteristicaPackage.eINSTANCE.getRegraDeComposicao_Consequente());
 
-			elements.put(RegraDeContextoEvento_4014,
-					CaracteristicaPackage.eINSTANCE.getRegraDeContexto_Evento());
+			elements.put(RegraDeContextoEvento_4014, CaracteristicaPackage.eINSTANCE.getRegraDeContexto_Evento());
 
-			elements.put(RegraDeContextoAcao_4015,
-					CaracteristicaPackage.eINSTANCE.getRegraDeContexto_Acao());
+			elements.put(RegraDeContextoAcao_4015, CaracteristicaPackage.eINSTANCE.getRegraDeContexto_Acao());
 
 			elements.put(EventoLogicoLadoDireitoEvento_4016,
-					CaracteristicaPackage.eINSTANCE
-							.getEventoLogico_LadoDireitoEvento());
+					CaracteristicaPackage.eINSTANCE.getEventoLogico_LadoDireitoEvento());
 
 			elements.put(EventoLogicoLadoEsquerdoEvento_4017,
-					CaracteristicaPackage.eINSTANCE
-							.getEventoLogico_LadoEsquerdoEvento());
+					CaracteristicaPackage.eINSTANCE.getEventoLogico_LadoEsquerdoEvento());
 
 			elements.put(AcaoLogicoLadoEsquerdoAcao_4018,
-					CaracteristicaPackage.eINSTANCE
-							.getAcaoLogico_LadoEsquerdoAcao());
+					CaracteristicaPackage.eINSTANCE.getAcaoLogico_LadoEsquerdoAcao());
 
 			elements.put(AcaoLogicoLadoDireitoAcao_4019,
-					CaracteristicaPackage.eINSTANCE
-							.getAcaoLogico_LadoDireitoAcao());
+					CaracteristicaPackage.eINSTANCE.getAcaoLogico_LadoDireitoAcao());
 
 			elements.put(ExpressaoLogicaLadoDireitoComposicao_4020,
-					CaracteristicaPackage.eINSTANCE
-							.getExpressaoLogica_LadoDireitoComposicao());
+					CaracteristicaPackage.eINSTANCE.getExpressaoLogica_LadoDireitoComposicao());
 
 			elements.put(ExpressaoLogicaLadoEsquerdoComposicao_4021,
-					CaracteristicaPackage.eINSTANCE
-							.getExpressaoLogica_LadoEsquerdoComposicao());
+					CaracteristicaPackage.eINSTANCE.getExpressaoLogica_LadoEsquerdoComposicao());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -577,10 +559,8 @@ public class CaracteristicaElementTypes {
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaAtributo_4004);
 			KNOWN_ELEMENT_TYPES.add(VariacaoVariantes_4005);
 			KNOWN_ELEMENT_TYPES.add(RaizDeContextoEntidadesDeContexto_4006);
-			KNOWN_ELEMENT_TYPES
-					.add(EntidadeDeContextoInformacoesDeContexto_4023);
-			KNOWN_ELEMENT_TYPES
-					.add(CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
+			KNOWN_ELEMENT_TYPES.add(EntidadeDeContextoInformacoesDeContexto_4023);
+			KNOWN_ELEMENT_TYPES.add(CaracteristicaProdutoCaracteristicaProdutoFilha_4008);
 			KNOWN_ELEMENT_TYPES.add(CaracteristicaProdutoAtributoProduto_4009);
 			KNOWN_ELEMENT_TYPES.add(VariacaoProdutoVariantesProduto_4010);
 			KNOWN_ELEMENT_TYPES.add(ProdutoLinhaDoProduto_4011);
@@ -714,35 +694,33 @@ public class CaracteristicaElementTypes {
 	/**
 	 * @generated
 	 */
-	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(
-			elementTypeImages) {
+	public static final DiagramElementTypes TYPED_INSTANCE = new DiagramElementTypes(elementTypeImages) {
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public boolean isKnownElementType(IElementType elementType) {
-			return caracteristica.diagram.providers.CaracteristicaElementTypes
-					.isKnownElementType(elementType);
+			return caracteristica.diagram.providers.CaracteristicaElementTypes.isKnownElementType(elementType);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
+
 		public IElementType getElementTypeForVisualId(int visualID) {
-			return caracteristica.diagram.providers.CaracteristicaElementTypes
-					.getElementType(visualID);
+			return caracteristica.diagram.providers.CaracteristicaElementTypes.getElementType(visualID);
 		}
 
 		/**
-		 * @generated
-		 */
+		* @generated
+		*/
 		@Override
-		public ENamedElement getDefiningNamedElement(
-				IAdaptable elementTypeAdapter) {
-			return caracteristica.diagram.providers.CaracteristicaElementTypes
-					.getElement(elementTypeAdapter);
+
+		public ENamedElement getDefiningNamedElement(IAdaptable elementTypeAdapter) {
+			return caracteristica.diagram.providers.CaracteristicaElementTypes.getElement(elementTypeAdapter);
 		}
 	};
 

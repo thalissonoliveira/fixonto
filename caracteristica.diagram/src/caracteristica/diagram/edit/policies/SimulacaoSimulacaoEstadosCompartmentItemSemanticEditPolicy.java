@@ -12,8 +12,8 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class SimulacaoSimulacaoEstadosCompartmentItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class SimulacaoSimulacaoEstadosCompartmentItemSemanticEditPolicy
+		extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated

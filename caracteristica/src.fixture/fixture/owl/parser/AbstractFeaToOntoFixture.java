@@ -1,7 +1,9 @@
 package fixture.owl.parser;
 
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -48,6 +50,9 @@ public abstract class AbstractFeaToOntoFixture {
 	protected OWLUtils feaToOntoFixtureUtils;
 	protected Map<String, OWLNamedIndividual> owlOracle;
 	protected Map<String, Nameable> fixtureOracle;
+	
+	protected List<Element> usedElements = new ArrayList<Element>();
+	protected List<Element> orphanElements;
 		
 	public AbstractFeaToOntoFixture() {
 		ontoHelper = new OntoHelper();
@@ -109,8 +114,45 @@ public abstract class AbstractFeaToOntoFixture {
 			buildOntology(product);
 		}
 		
+		
+		buildOrphanElements(spl);
+		
 	}
 	
+	private void buildOrphanElements(SPL spl) {
+		orphanElements = new ArrayList<Element>(spl.getElements());
+		boolean removed = orphanElements.removeAll(usedElements);
+		if (removed) {
+			System.err.println("------------- ORPHAN ---------------");
+			for (Element element : orphanElements) {
+				System.err.println(element.getName());
+				buildOrphanElement(element);
+			}
+		}
+	}
+
+	private void buildOrphanElement(Element element) {
+		OWLIndividual currentElementOwl = null;
+		
+		if (element.isMandatoryFeature() || element.isOptionalFeature() || element.isGroupedFeature() || element.isVariatioTwoFeature()) {
+			currentElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(element, owlOracle);
+			feaToOntoFixtureUtils.addFeatureClassification((Feature) element, currentElementOwl);
+		}
+		if (element.isContextRoot()) {
+			currentElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(element, owlOracle);
+			feaToOntoFixtureUtils.addContextRootClassification(currentElementOwl);
+		}
+		if (element.isContextEntity()) {
+			currentElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(element, owlOracle);
+			feaToOntoFixtureUtils.addContextEntityClassification(currentElementOwl);
+		}
+		if (element.isContextInfo()) {
+			currentElementOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(element, owlOracle);
+			feaToOntoFixtureUtils.addContextInfoClassification(currentElementOwl);
+		}
+		
+	}
+
 	private void buildOntologyFromProduct(ProductFeature product) {
 		
 		Feature feature = (Feature) getElementById(product.getOriginalElement().getId());
@@ -277,17 +319,20 @@ public abstract class AbstractFeaToOntoFixture {
 	protected abstract void buildOntology(Antecedent antecedent, OWLIndividual currentAntecedentRuleOWL);
 
 	private void buildOntology(ContextRoot contextRoot) {
+		usedElements.add(contextRoot);
 		OWLIndividual currentContextRootOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextRoot, owlOracle);
 		feaToOntoFixtureUtils.addContextRootClassification(currentContextRootOWL);
 		
 		OWLIndividual currentContextEntityOWL;
 		OWLIndividual currentContextInfoOWL;
 		for (ContextEntity contextEntity : contextRoot.getContextEntities()) {
+			usedElements.add(contextEntity);
 			currentContextEntityOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextEntity, owlOracle);
 			feaToOntoFixtureUtils.addContextEntityClassification(currentContextEntityOWL);
 			feaToOntoFixtureUtils.addParentalRelationBetweenContextRootAndEntity(currentContextRootOWL, currentContextEntityOWL);
 			
 			for (ContextInfo contextInfo : contextEntity.getContextInfos()) {
+				usedElements.add(contextInfo);
 				currentContextInfoOWL = feaToOntoFixtureUtils.createNewOWLNamedIndividual(contextInfo, owlOracle);
 				feaToOntoFixtureUtils.addContextInfoClassification(currentContextInfoOWL);
 				feaToOntoFixtureUtils.addParentalRelationBetweenContextEntityAndInfo(currentContextEntityOWL, currentContextInfoOWL);

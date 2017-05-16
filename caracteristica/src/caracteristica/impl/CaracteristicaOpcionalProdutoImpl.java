@@ -11,32 +11,30 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Opcional Produto</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class CaracteristicaOpcionalProdutoImpl extends CaracteristicaProdutoImpl implements CaracteristicaOpcionalProduto
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaracteristicaOpcionalProdutoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL_PRODUTO;
-  }
+		return CaracteristicaPackage.Literals.CARACTERISTICA_OPCIONAL_PRODUTO;
+	}
 
 } //CaracteristicaOpcionalProdutoImpl

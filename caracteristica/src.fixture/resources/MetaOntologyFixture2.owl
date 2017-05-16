@@ -154,6 +154,9 @@
         <Class IRI="#WFSMR1"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#WFSMRN"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#WFSMR2"/>
     </Declaration>
     <Declaration>
@@ -452,6 +455,10 @@
     <SubClassOf>
         <Class IRI="#VariationTwo"/>
         <Class IRI="#Feature"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WFSMRN"/>
+        <Class IRI="#OntologyInconsistences"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#WFAR1"/>

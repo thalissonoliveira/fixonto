@@ -6,6 +6,5 @@ package caracteristica.diagram.edit.helpers;
 /**
  * @generated
  */
-public class CaracteristicaOpcionalEditHelper extends
-		CaracteristicaBaseEditHelper {
+public class CaracteristicaOpcionalEditHelper extends CaracteristicaBaseEditHelper {
 }

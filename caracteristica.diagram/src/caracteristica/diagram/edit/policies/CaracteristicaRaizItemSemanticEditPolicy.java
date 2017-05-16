@@ -39,8 +39,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class CaracteristicaRaizItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class CaracteristicaRaizItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -54,22 +53,20 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
 			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == ProdutoLinhaDoProdutoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -78,33 +75,31 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 		}
 		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
 			Edge outgoingLink = (Edge) it.next();
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == CaracteristicaElementosExternosEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(outgoingLink) == CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
 			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaVariacoesEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
 				continue;
 			}
 			if (CaracteristicaVisualIDRegistry.getVisualID(outgoingLink) == CaracteristicaAtributoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						outgoingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(outgoingLink.getSource().getElement(), null,
 						outgoingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
@@ -129,37 +124,28 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaElementosExternosCreateCommand(
-					req, req.getSource(), req.getTarget()));
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req.getElementType()) {
+			return getGEFWrapper(
+					new CaracteristicaElementosExternosCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req.getElementType()) {
+			return getGEFWrapper(
+					new CaracteristicaCaracteristicaFilhaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaVariacoes_4003 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaVariacoesCreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.CaracteristicaVariacoes_4003 == req.getElementType()) {
+			return getGEFWrapper(new CaracteristicaVariacoesCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaAtributoCreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req.getElementType()) {
+			return getGEFWrapper(new CaracteristicaAtributoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -168,29 +154,22 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req
-				.getElementType()) {
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.CaracteristicaElementosExternos_4024 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.CaracteristicaCaracteristicaFilha_4002 == req.getElementType()) {
+			return getGEFWrapper(
+					new CaracteristicaCaracteristicaFilhaCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaVariacoes_4003 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaVariacoes_4003 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaAtributo_4004 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req
-				.getElementType()) {
-			return getGEFWrapper(new ProdutoLinhaDoProdutoCreateCommand(req,
-					req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.ProdutoLinhaDoProduto_4011 == req.getElementType()) {
+			return getGEFWrapper(new ProdutoLinhaDoProdutoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -201,15 +180,12 @@ public class CaracteristicaRaizItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case CaracteristicaElementosExternosEditPart.VISUAL_ID:
-			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(
-					req));
+			return getGEFWrapper(new CaracteristicaElementosExternosReorientCommand(req));
 		case CaracteristicaCaracteristicaFilhaEditPart.VISUAL_ID:
-			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaReorientCommand(
-					req));
+			return getGEFWrapper(new CaracteristicaCaracteristicaFilhaReorientCommand(req));
 		case CaracteristicaVariacoesEditPart.VISUAL_ID:
 			return getGEFWrapper(new CaracteristicaVariacoesReorientCommand(req));
 		case CaracteristicaAtributoEditPart.VISUAL_ID:

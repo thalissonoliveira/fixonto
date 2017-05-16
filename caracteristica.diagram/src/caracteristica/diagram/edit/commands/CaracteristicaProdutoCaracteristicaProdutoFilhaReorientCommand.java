@@ -18,8 +18,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class CaracteristicaProdutoCaracteristicaProdutoFilhaReorientCommand
-		extends EditElementCommand {
+public class CaracteristicaProdutoCaracteristicaProdutoFilhaReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -77,8 +76,7 @@ public class CaracteristicaProdutoCaracteristicaProdutoFilhaReorientCommand
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistCaracteristicaProdutoCaracteristicaProdutoFilha_4008(
-						getNewSource(), getOldTarget());
+				.canExistCaracteristicaProdutoCaracteristicaProdutoFilha_4008(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -89,18 +87,15 @@ public class CaracteristicaProdutoCaracteristicaProdutoFilhaReorientCommand
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistCaracteristicaProdutoCaracteristicaProdutoFilha_4008(
-						getOldSource(), getNewTarget());
+				.canExistCaracteristicaProdutoCaracteristicaProdutoFilha_4008(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

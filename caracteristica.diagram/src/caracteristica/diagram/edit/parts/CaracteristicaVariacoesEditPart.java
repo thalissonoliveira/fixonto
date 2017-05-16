@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaVariacoesItemSemanticE
 /**
  * @generated
  */
-public class CaracteristicaVariacoesEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class CaracteristicaVariacoesEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class CaracteristicaVariacoesEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new CaracteristicaVariacoesItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new CaracteristicaVariacoesItemSemanticEditPolicy());
 	}
 
 	/**

@@ -99,6 +99,7 @@ public class FeaToOntoFixture extends AbstractFeaToOntoFixture {
 	}
 
 	protected void buildOntology(Feature feature) {
+		usedElements.add(feature);
 
 		OWLIndividual currentFeatureOwl = feaToOntoFixtureUtils.createNewOWLNamedIndividual(feature, owlOracle);
 		feaToOntoFixtureUtils.addFeatureClassification(feature, currentFeatureOwl);

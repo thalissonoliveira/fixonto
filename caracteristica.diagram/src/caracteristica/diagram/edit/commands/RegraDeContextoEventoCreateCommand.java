@@ -33,8 +33,7 @@ public class RegraDeContextoEventoCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	public RegraDeContextoEventoCreateCommand(
-			CreateRelationshipRequest request, EObject source, EObject target) {
+	public RegraDeContextoEventoCreateCommand(CreateRelationshipRequest request, EObject source, EObject target) {
 		super(request.getLabel(), null, request);
 		this.source = source;
 		this.target = target;
@@ -64,11 +63,9 @@ public class RegraDeContextoEventoCreateCommand extends EditElementCommand {
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in create link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in create link command"); //$NON-NLS-1$
 		}
 
 		if (getSource() != null && getTarget() != null) {

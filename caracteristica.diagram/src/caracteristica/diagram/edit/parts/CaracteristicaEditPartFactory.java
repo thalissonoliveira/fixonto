@@ -128,8 +128,7 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 				return new VariacaoDoisProdutoEditPart(view);
 
 			case VariacaoDoisProdutoNomeCardinalidadeMaximaEditPart.VISUAL_ID:
-				return new VariacaoDoisProdutoNomeCardinalidadeMaximaEditPart(
-						view);
+				return new VariacaoDoisProdutoNomeCardinalidadeMaximaEditPart(view);
 
 			case CaracteristicaAgrupadaProdutoEditPart.VISUAL_ID:
 				return new CaracteristicaAgrupadaProdutoEditPart(view);
@@ -255,8 +254,7 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 				return new WrappingLabel7EditPart(view);
 
 			case CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart.VISUAL_ID:
-				return new CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart(
-						view);
+				return new CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart(view);
 
 			case WrappingLabel8EditPart.VISUAL_ID:
 				return new WrappingLabel8EditPart(view);
@@ -283,15 +281,13 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 				return new RegraDeComposicaoAntecedenteEditPart(view);
 
 			case RegraDeComposicaoAntecedenteExternalLabelEditPart.VISUAL_ID:
-				return new RegraDeComposicaoAntecedenteExternalLabelEditPart(
-						view);
+				return new RegraDeComposicaoAntecedenteExternalLabelEditPart(view);
 
 			case RegraDeComposicaoConsequenteEditPart.VISUAL_ID:
 				return new RegraDeComposicaoConsequenteEditPart(view);
 
 			case RegraDeComposicaoConsequenteExternalLabelEditPart.VISUAL_ID:
-				return new RegraDeComposicaoConsequenteExternalLabelEditPart(
-						view);
+				return new RegraDeComposicaoConsequenteExternalLabelEditPart(view);
 
 			case RegraDeContextoEventoEditPart.VISUAL_ID:
 				return new RegraDeContextoEventoEditPart(view);
@@ -357,10 +353,8 @@ public class CaracteristicaEditPartFactory implements EditPartFactory {
 	/**
 	 * @generated
 	 */
-	public static CellEditorLocator getTextCellEditorLocator(
-			ITextAwareEditPart source) {
-		return CellEditorLocatorAccess.INSTANCE
-				.getTextCellEditorLocator(source);
+	public static CellEditorLocator getTextCellEditorLocator(ITextAwareEditPart source) {
+		return CellEditorLocatorAccess.INSTANCE.getTextCellEditorLocator(source);
 	}
 
 }

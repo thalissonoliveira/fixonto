@@ -56,4 +56,14 @@ public class ContextInfo extends ElementImpl {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return true;
+	}
+	
 } // InformacaodeContexto

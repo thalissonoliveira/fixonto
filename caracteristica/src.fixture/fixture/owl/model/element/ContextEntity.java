@@ -68,4 +68,13 @@ public class ContextEntity extends ElementImpl {
 		return false;
 	}
 	
+	@Override
+	public boolean isContextEntity() {
+		return true;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
 } // EntidadedeContexto

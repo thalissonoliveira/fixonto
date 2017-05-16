@@ -33,8 +33,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class LiteralAcaoItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class LiteralAcaoItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -48,30 +47,28 @@ public class LiteralAcaoItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == RegraDeContextoAcaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == AcaoLogicoLadoEsquerdoAcaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == AcaoLogicoLadoEsquerdoAcaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == AcaoLogicoLadoDireitoAcaoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == AcaoLogicoLadoDireitoAcaoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -96,25 +93,20 @@ public class LiteralAcaoItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeContextoAcao_4015 == req
-				.getElementType()) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeContextoAcao_4015 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.AcaoLogicoLadoEsquerdoAcao_4018 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.AcaoLogicoLadoEsquerdoAcao_4018 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.AcaoLogicoLadoDireitoAcao_4019 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.AcaoLogicoLadoDireitoAcao_4019 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -123,22 +115,15 @@ public class LiteralAcaoItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeContextoAcao_4015 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeContextoAcaoCreateCommand(req,
-					req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeContextoAcao_4015 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeContextoAcaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.AcaoLogicoLadoEsquerdoAcao_4018 == req
-				.getElementType()) {
-			return getGEFWrapper(new AcaoLogicoLadoEsquerdoAcaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.AcaoLogicoLadoEsquerdoAcao_4018 == req.getElementType()) {
+			return getGEFWrapper(new AcaoLogicoLadoEsquerdoAcaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.AcaoLogicoLadoDireitoAcao_4019 == req
-				.getElementType()) {
-			return getGEFWrapper(new AcaoLogicoLadoDireitoAcaoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.AcaoLogicoLadoDireitoAcao_4019 == req.getElementType()) {
+			return getGEFWrapper(new AcaoLogicoLadoDireitoAcaoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -149,17 +134,14 @@ public class LiteralAcaoItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case RegraDeContextoAcaoEditPart.VISUAL_ID:
 			return getGEFWrapper(new RegraDeContextoAcaoReorientCommand(req));
 		case AcaoLogicoLadoEsquerdoAcaoEditPart.VISUAL_ID:
-			return getGEFWrapper(new AcaoLogicoLadoEsquerdoAcaoReorientCommand(
-					req));
+			return getGEFWrapper(new AcaoLogicoLadoEsquerdoAcaoReorientCommand(req));
 		case AcaoLogicoLadoDireitoAcaoEditPart.VISUAL_ID:
-			return getGEFWrapper(new AcaoLogicoLadoDireitoAcaoReorientCommand(
-					req));
+			return getGEFWrapper(new AcaoLogicoLadoDireitoAcaoReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

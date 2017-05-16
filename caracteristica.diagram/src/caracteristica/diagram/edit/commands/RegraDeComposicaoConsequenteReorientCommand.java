@@ -19,8 +19,7 @@ import caracteristica.diagram.edit.policies.CaracteristicaBaseItemSemanticEditPo
 /**
  * @generated
  */
-public class RegraDeComposicaoConsequenteReorientCommand extends
-		EditElementCommand {
+public class RegraDeComposicaoConsequenteReorientCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -45,8 +44,7 @@ public class RegraDeComposicaoConsequenteReorientCommand extends
 	/**
 	 * @generated
 	 */
-	public RegraDeComposicaoConsequenteReorientCommand(
-			ReorientReferenceRelationshipRequest request) {
+	public RegraDeComposicaoConsequenteReorientCommand(ReorientReferenceRelationshipRequest request) {
 		super(request.getLabel(), null, request);
 		reorientDirection = request.getDirection();
 		referenceOwner = request.getReferenceOwner();
@@ -78,8 +76,7 @@ public class RegraDeComposicaoConsequenteReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRegraDeComposicaoConsequente_4013(getNewSource(),
-						getOldTarget());
+				.canExistRegraDeComposicaoConsequente_4013(getNewSource(), getOldTarget());
 	}
 
 	/**
@@ -90,18 +87,15 @@ public class RegraDeComposicaoConsequenteReorientCommand extends
 			return false;
 		}
 		return CaracteristicaBaseItemSemanticEditPolicy.getLinkConstraints()
-				.canExistRegraDeComposicaoConsequente_4013(getOldSource(),
-						getNewTarget());
+				.canExistRegraDeComposicaoConsequente_4013(getOldSource(), getNewTarget());
 	}
 
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		if (!canExecute()) {
-			throw new ExecutionException(
-					"Invalid arguments in reorient link command"); //$NON-NLS-1$
+			throw new ExecutionException("Invalid arguments in reorient link command"); //$NON-NLS-1$
 		}
 		if (reorientDirection == ReorientRelationshipRequest.REORIENT_SOURCE) {
 			return reorientSource();

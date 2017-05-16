@@ -83,8 +83,7 @@ public class CaracteristicaCreationWizard extends Wizard implements INewWizard {
 	/**
 	 * @generated
 	 */
-	public void setOpenNewlyCreatedDiagramEditor(
-			boolean openNewlyCreatedDiagramEditor) {
+	public void setOpenNewlyCreatedDiagramEditor(boolean openNewlyCreatedDiagramEditor) {
 		this.openNewlyCreatedDiagramEditor = openNewlyCreatedDiagramEditor;
 	}
 
@@ -104,33 +103,27 @@ public class CaracteristicaCreationWizard extends Wizard implements INewWizard {
 	 * @generated
 	 */
 	public void addPages() {
-		diagramModelFilePage = new CaracteristicaCreationWizardPage(
-				"DiagramModelFile", getSelection(), "caracteristica_diagram"); //$NON-NLS-1$ //$NON-NLS-2$
-		diagramModelFilePage
-				.setTitle(Messages.CaracteristicaCreationWizard_DiagramModelFilePageTitle);
-		diagramModelFilePage
-				.setDescription(Messages.CaracteristicaCreationWizard_DiagramModelFilePageDescription);
+		diagramModelFilePage = new CaracteristicaCreationWizardPage("DiagramModelFile", getSelection(), //$NON-NLS-1$
+				"caracteristica_diagram"); //$NON-NLS-1$
+		diagramModelFilePage.setTitle(Messages.CaracteristicaCreationWizard_DiagramModelFilePageTitle);
+		diagramModelFilePage.setDescription(Messages.CaracteristicaCreationWizard_DiagramModelFilePageDescription);
 		addPage(diagramModelFilePage);
 
-		domainModelFilePage = new CaracteristicaCreationWizardPage(
-				"DomainModelFile", getSelection(), "caracteristica") { //$NON-NLS-1$ //$NON-NLS-2$
+		domainModelFilePage = new CaracteristicaCreationWizardPage("DomainModelFile", getSelection(), //$NON-NLS-1$
+				"caracteristica") { //$NON-NLS-1$
 
 			public void setVisible(boolean visible) {
 				if (visible) {
 					String fileName = diagramModelFilePage.getFileName();
-					fileName = fileName.substring(0, fileName.length()
-							- ".caracteristica_diagram".length()); //$NON-NLS-1$
-					setFileName(CaracteristicaDiagramEditorUtil
-							.getUniqueFileName(getContainerFullPath(),
-									fileName, "caracteristica")); //$NON-NLS-1$
+					fileName = fileName.substring(0, fileName.length() - ".caracteristica_diagram".length()); //$NON-NLS-1$
+					setFileName(CaracteristicaDiagramEditorUtil.getUniqueFileName(getContainerFullPath(), fileName,
+							"caracteristica")); //$NON-NLS-1$
 				}
 				super.setVisible(visible);
 			}
 		};
-		domainModelFilePage
-				.setTitle(Messages.CaracteristicaCreationWizard_DomainModelFilePageTitle);
-		domainModelFilePage
-				.setDescription(Messages.CaracteristicaCreationWizard_DomainModelFilePageDescription);
+		domainModelFilePage.setTitle(Messages.CaracteristicaCreationWizard_DomainModelFilePageTitle);
+		domainModelFilePage.setDescription(Messages.CaracteristicaCreationWizard_DomainModelFilePageDescription);
 		addPage(domainModelFilePage);
 	}
 
@@ -140,20 +133,15 @@ public class CaracteristicaCreationWizard extends Wizard implements INewWizard {
 	public boolean performFinish() {
 		IRunnableWithProgress op = new WorkspaceModifyOperation(null) {
 
-			protected void execute(IProgressMonitor monitor)
-					throws CoreException, InterruptedException {
-				diagram = CaracteristicaDiagramEditorUtil.createDiagram(
-						diagramModelFilePage.getURI(),
+			protected void execute(IProgressMonitor monitor) throws CoreException, InterruptedException {
+				diagram = CaracteristicaDiagramEditorUtil.createDiagram(diagramModelFilePage.getURI(),
 						domainModelFilePage.getURI(), monitor);
 				if (isOpenNewlyCreatedDiagramEditor() && diagram != null) {
 					try {
 						CaracteristicaDiagramEditorUtil.openDiagram(diagram);
 					} catch (PartInitException e) {
-						ErrorDialog
-								.openError(
-										getContainer().getShell(),
-										Messages.CaracteristicaCreationWizardOpenEditorError,
-										null, e.getStatus());
+						ErrorDialog.openError(getContainer().getShell(),
+								Messages.CaracteristicaCreationWizardOpenEditorError, null, e.getStatus());
 					}
 				}
 			}
@@ -164,13 +152,11 @@ public class CaracteristicaCreationWizard extends Wizard implements INewWizard {
 			return false;
 		} catch (InvocationTargetException e) {
 			if (e.getTargetException() instanceof CoreException) {
-				ErrorDialog.openError(getContainer().getShell(),
-						Messages.CaracteristicaCreationWizardCreationError,
-						null,
-						((CoreException) e.getTargetException()).getStatus());
+				ErrorDialog.openError(getContainer().getShell(), Messages.CaracteristicaCreationWizardCreationError,
+						null, ((CoreException) e.getTargetException()).getStatus());
 			} else {
-				CaracteristicaDiagramEditorPlugin.getInstance().logError(
-						"Error creating diagram", e.getTargetException()); //$NON-NLS-1$
+				CaracteristicaDiagramEditorPlugin.getInstance().logError("Error creating diagram", //$NON-NLS-1$
+						e.getTargetException());
 			}
 			return false;
 		}

@@ -33,8 +33,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class EventoRelacionalItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class EventoRelacionalItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -48,30 +47,28 @@ public class EventoRelacionalItemSemanticEditPolicy extends
 	 */
 	protected Command getDestroyElementCommand(DestroyElementRequest req) {
 		View view = (View) getHost().getModel();
-		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(
-				getEditingDomain(), null);
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
 		cmd.setTransactionNestingEnabled(false);
 		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
 			Edge incomingLink = (Edge) it.next();
 			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == RegraDeContextoEventoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == EventoLogicoLadoDireitoEventoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == EventoLogicoLadoDireitoEventoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
 				continue;
 			}
-			if (CaracteristicaVisualIDRegistry.getVisualID(incomingLink) == EventoLogicoLadoEsquerdoEventoEditPart.VISUAL_ID) {
-				DestroyReferenceRequest r = new DestroyReferenceRequest(
-						incomingLink.getSource().getElement(), null,
+			if (CaracteristicaVisualIDRegistry
+					.getVisualID(incomingLink) == EventoLogicoLadoEsquerdoEventoEditPart.VISUAL_ID) {
+				DestroyReferenceRequest r = new DestroyReferenceRequest(incomingLink.getSource().getElement(), null,
 						incomingLink.getTarget().getElement(), false);
 				cmd.add(new DestroyReferenceCommand(r));
 				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
@@ -96,25 +93,20 @@ public class EventoRelacionalItemSemanticEditPolicy extends
 	protected Command getCreateRelationshipCommand(CreateRelationshipRequest req) {
 		Command command = req.getTarget() == null ? getStartCreateRelationshipCommand(req)
 				: getCompleteCreateRelationshipCommand(req);
-		return command != null ? command : super
-				.getCreateRelationshipCommand(req);
+		return command != null ? command : super.getCreateRelationshipCommand(req);
 	}
 
 	/**
 	 * @generated
 	 */
-	protected Command getStartCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeContextoEvento_4014 == req
-				.getElementType()) {
+	protected Command getStartCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeContextoEvento_4014 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016 == req.getElementType()) {
 			return null;
 		}
-		if (CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017 == req.getElementType()) {
 			return null;
 		}
 		return null;
@@ -123,22 +115,16 @@ public class EventoRelacionalItemSemanticEditPolicy extends
 	/**
 	 * @generated
 	 */
-	protected Command getCompleteCreateRelationshipCommand(
-			CreateRelationshipRequest req) {
-		if (CaracteristicaElementTypes.RegraDeContextoEvento_4014 == req
-				.getElementType()) {
-			return getGEFWrapper(new RegraDeContextoEventoCreateCommand(req,
-					req.getSource(), req.getTarget()));
+	protected Command getCompleteCreateRelationshipCommand(CreateRelationshipRequest req) {
+		if (CaracteristicaElementTypes.RegraDeContextoEvento_4014 == req.getElementType()) {
+			return getGEFWrapper(new RegraDeContextoEventoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016 == req
-				.getElementType()) {
-			return getGEFWrapper(new EventoLogicoLadoDireitoEventoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.EventoLogicoLadoDireitoEvento_4016 == req.getElementType()) {
+			return getGEFWrapper(new EventoLogicoLadoDireitoEventoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
-		if (CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017 == req
-				.getElementType()) {
-			return getGEFWrapper(new EventoLogicoLadoEsquerdoEventoCreateCommand(
-					req, req.getSource(), req.getTarget()));
+		if (CaracteristicaElementTypes.EventoLogicoLadoEsquerdoEvento_4017 == req.getElementType()) {
+			return getGEFWrapper(
+					new EventoLogicoLadoEsquerdoEventoCreateCommand(req, req.getSource(), req.getTarget()));
 		}
 		return null;
 	}
@@ -149,17 +135,14 @@ public class EventoRelacionalItemSemanticEditPolicy extends
 	 * 
 	 * @generated
 	 */
-	protected Command getReorientReferenceRelationshipCommand(
-			ReorientReferenceRelationshipRequest req) {
+	protected Command getReorientReferenceRelationshipCommand(ReorientReferenceRelationshipRequest req) {
 		switch (getVisualID(req)) {
 		case RegraDeContextoEventoEditPart.VISUAL_ID:
 			return getGEFWrapper(new RegraDeContextoEventoReorientCommand(req));
 		case EventoLogicoLadoDireitoEventoEditPart.VISUAL_ID:
-			return getGEFWrapper(new EventoLogicoLadoDireitoEventoReorientCommand(
-					req));
+			return getGEFWrapper(new EventoLogicoLadoDireitoEventoReorientCommand(req));
 		case EventoLogicoLadoEsquerdoEventoEditPart.VISUAL_ID:
-			return getGEFWrapper(new EventoLogicoLadoEsquerdoEventoReorientCommand(
-					req));
+			return getGEFWrapper(new EventoLogicoLadoEsquerdoEventoReorientCommand(req));
 		}
 		return super.getReorientReferenceRelationshipCommand(req);
 	}

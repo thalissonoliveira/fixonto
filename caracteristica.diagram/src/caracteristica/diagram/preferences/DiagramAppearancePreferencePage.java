@@ -16,7 +16,6 @@ public class DiagramAppearancePreferencePage extends AppearancePreferencePage {
 	 * @generated
 	 */
 	public DiagramAppearancePreferencePage() {
-		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance()
-				.getPreferenceStore());
+		setPreferenceStore(CaracteristicaDiagramEditorPlugin.getInstance().getPreferenceStore());
 	}
 }

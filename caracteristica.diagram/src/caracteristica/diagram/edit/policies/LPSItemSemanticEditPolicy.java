@@ -43,8 +43,7 @@ import caracteristica.diagram.providers.CaracteristicaElementTypes;
 /**
  * @generated
  */
-public class LPSItemSemanticEditPolicy extends
-		CaracteristicaBaseItemSemanticEditPolicy {
+public class LPSItemSemanticEditPolicy extends CaracteristicaBaseItemSemanticEditPolicy {
 
 	/**
 	 * @generated
@@ -57,35 +56,28 @@ public class LPSItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (CaracteristicaElementTypes.CaracteristicaOpcional_2001 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaOpcional_2001 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaOpcionalCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaAgrupada_2033 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaAgrupada_2033 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaAgrupadaCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.VariacaoDois_2002 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.VariacaoDois_2002 == req.getElementType()) {
 			return getGEFWrapper(new VariacaoDoisCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaRaiz_2003 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaRaiz_2003 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaRaizCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaMandatoria_2004 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.CaracteristicaMandatoria_2004 == req.getElementType()) {
 			return getGEFWrapper(new CaracteristicaMandatoriaCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.Produto_2005 == req.getElementType()) {
 			return getGEFWrapper(new ProdutoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.EventoLogico_2006 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EventoLogico_2006 == req.getElementType()) {
 			return getGEFWrapper(new EventoLogicoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.EventoRelacional_2007 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EventoRelacional_2007 == req.getElementType()) {
 			return getGEFWrapper(new EventoRelacionalCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.AcaoLogico_2008 == req.getElementType()) {
@@ -97,50 +89,37 @@ public class LPSItemSemanticEditPolicy extends
 		if (CaracteristicaElementTypes.Designar_2010 == req.getElementType()) {
 			return getGEFWrapper(new DesignarCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.ExpressaoLogica_2011 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ExpressaoLogica_2011 == req.getElementType()) {
 			return getGEFWrapper(new ExpressaoLogicaCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.ExpressaoRelacional_2012 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.ExpressaoRelacional_2012 == req.getElementType()) {
 			return getGEFWrapper(new ExpressaoRelacionalCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.LiteralComposicao_2013 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.LiteralComposicao_2013 == req.getElementType()) {
 			return getGEFWrapper(new LiteralComposicaoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaMandatoriaProduto_2025 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaMandatoriaProdutoCreateCommand(
-					req));
+		if (CaracteristicaElementTypes.CaracteristicaMandatoriaProduto_2025 == req.getElementType()) {
+			return getGEFWrapper(new CaracteristicaMandatoriaProdutoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaOpcionalProduto_2026 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaOpcionalProdutoCreateCommand(
-					req));
+		if (CaracteristicaElementTypes.CaracteristicaOpcionalProduto_2026 == req.getElementType()) {
+			return getGEFWrapper(new CaracteristicaOpcionalProdutoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.VariacaoDoisProduto_2027 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.VariacaoDoisProduto_2027 == req.getElementType()) {
 			return getGEFWrapper(new VariacaoDoisProdutoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.CaracteristicaAgrupadaProduto_2035 == req
-				.getElementType()) {
-			return getGEFWrapper(new CaracteristicaAgrupadaProdutoCreateCommand(
-					req));
+		if (CaracteristicaElementTypes.CaracteristicaAgrupadaProduto_2035 == req.getElementType()) {
+			return getGEFWrapper(new CaracteristicaAgrupadaProdutoCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.Atributo_2017 == req.getElementType()) {
 			return getGEFWrapper(new AtributoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.RaizDeContexto_2018 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RaizDeContexto_2018 == req.getElementType()) {
 			return getGEFWrapper(new RaizDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.EntidadeDeContexto_2028 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.EntidadeDeContexto_2028 == req.getElementType()) {
 			return getGEFWrapper(new EntidadeDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.InformacaoDeContexto_2029 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.InformacaoDeContexto_2029 == req.getElementType()) {
 			return getGEFWrapper(new InformacaoDeContextoCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.CasoDeUso_2038 == req.getElementType()) {
@@ -149,16 +128,13 @@ public class LPSItemSemanticEditPolicy extends
 		if (CaracteristicaElementTypes.CasoDeTeste_2039 == req.getElementType()) {
 			return getGEFWrapper(new CasoDeTesteCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.RegraDeComposicao_2021 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RegraDeComposicao_2021 == req.getElementType()) {
 			return getGEFWrapper(new RegraDeComposicaoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.RegraDeContexto_2022 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.RegraDeContexto_2022 == req.getElementType()) {
 			return getGEFWrapper(new RegraDeContextoCreateCommand(req));
 		}
-		if (CaracteristicaElementTypes.AtributoProduto_2030 == req
-				.getElementType()) {
+		if (CaracteristicaElementTypes.AtributoProduto_2030 == req.getElementType()) {
 			return getGEFWrapper(new AtributoProdutoCreateCommand(req));
 		}
 		if (CaracteristicaElementTypes.Simulacao_2024 == req.getElementType()) {
@@ -171,26 +147,20 @@ public class LPSItemSemanticEditPolicy extends
 	 * @generated
 	 */
 	protected Command getDuplicateCommand(DuplicateElementsRequest req) {
-		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost())
-				.getEditingDomain();
+		TransactionalEditingDomain editingDomain = ((IGraphicalEditPart) getHost()).getEditingDomain();
 		return getGEFWrapper(new DuplicateAnythingCommand(editingDomain, req));
 	}
 
 	/**
 	 * @generated
 	 */
-	private static class DuplicateAnythingCommand extends
-			DuplicateEObjectsCommand {
+	private static class DuplicateAnythingCommand extends DuplicateEObjectsCommand {
 
 		/**
 		 * @generated
 		 */
-		public DuplicateAnythingCommand(
-				TransactionalEditingDomain editingDomain,
-				DuplicateElementsRequest req) {
-			super(editingDomain, req.getLabel(), req
-					.getElementsToBeDuplicated(), req
-					.getAllDuplicatedElementsMap());
+		public DuplicateAnythingCommand(TransactionalEditingDomain editingDomain, DuplicateElementsRequest req) {
+			super(editingDomain, req.getLabel(), req.getElementsToBeDuplicated(), req.getAllDuplicatedElementsMap());
 		}
 
 	}

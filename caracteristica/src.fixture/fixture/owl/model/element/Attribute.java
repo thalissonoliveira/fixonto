@@ -66,6 +66,15 @@ public class Attribute extends ElementImpl {
 	public void setValueType(ValueType valueType) {
 		this.valueType = valueType;
 	}
-	
+
+	@Override
+	public boolean isContextEntity() {
+		return false;
+	}
+
+	@Override
+	public boolean isContextInfo() {
+		return false;
+	}
 	
 } // Atributo

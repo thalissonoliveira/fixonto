@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.AcaoLogicoLadoEsquerdoAcaoItemSemant
 /**
  * @generated
  */
-public class AcaoLogicoLadoEsquerdoAcaoEditPart extends ConnectionNodeEditPart
-		implements ITreeBranchEditPart {
+public class AcaoLogicoLadoEsquerdoAcaoEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class AcaoLogicoLadoEsquerdoAcaoEditPart extends ConnectionNodeEditPart
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new AcaoLogicoLadoEsquerdoAcaoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AcaoLogicoLadoEsquerdoAcaoItemSemanticEditPolicy());
 	}
 
 	/**

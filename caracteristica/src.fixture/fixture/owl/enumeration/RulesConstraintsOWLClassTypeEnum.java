@@ -23,7 +23,8 @@ public enum RulesConstraintsOWLClassTypeEnum implements FixtureOWLClassTypeEnumI
 			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM",  
 			"WFAR1", 
 			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM", 
-			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM");
+			"Features referenced in the SE should be\n either an optional feature or an attribute feature\n and should be owned by the SM"),
+	ORPHAN_FEATURE (12, "'Features out of the tree' Rule",  "WFSMRN", "Caracteristicas precisam ter um pai", "");
 
 	
 	private int code;

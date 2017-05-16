@@ -20,8 +20,7 @@ import caracteristica.diagram.edit.policies.VariacaoProdutoVariantesProdutoItemS
 /**
  * @generated
  */
-public class VariacaoProdutoVariantesProdutoEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class VariacaoProdutoVariantesProdutoEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +39,7 @@ public class VariacaoProdutoVariantesProdutoEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new VariacaoProdutoVariantesProdutoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new VariacaoProdutoVariantesProdutoItemSemanticEditPolicy());
 	}
 
 	/**
@@ -67,8 +65,7 @@ public class VariacaoProdutoVariantesProdutoEditPart extends
 	/**
 	 * @generated
 	 */
-	public class VariacaoProdutoVariantesProdutoFigure extends
-			PolylineConnectionEx {
+	public class VariacaoProdutoVariantesProdutoFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

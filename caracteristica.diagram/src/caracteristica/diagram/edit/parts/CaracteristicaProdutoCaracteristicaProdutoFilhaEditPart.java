@@ -20,8 +20,8 @@ import caracteristica.diagram.edit.policies.CaracteristicaProdutoCaracteristicaP
 /**
  * @generated
  */
-public class CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart extends
-		ConnectionNodeEditPart implements ITreeBranchEditPart {
+public class CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart extends ConnectionNodeEditPart
+		implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -40,8 +40,7 @@ public class CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart extends
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(
-				EditPolicyRoles.SEMANTIC_ROLE,
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
 				new CaracteristicaProdutoCaracteristicaProdutoFilhaItemSemanticEditPolicy());
 	}
 
@@ -68,8 +67,7 @@ public class CaracteristicaProdutoCaracteristicaProdutoFilhaEditPart extends
 	/**
 	 * @generated
 	 */
-	public class CaracteristicaProdutoCaracteristicaProdutoFilhaFigure extends
-			PolylineConnectionEx {
+	public class CaracteristicaProdutoCaracteristicaProdutoFilhaFigure extends PolylineConnectionEx {
 
 		/**
 		 * @generated

@@ -11,32 +11,30 @@ import org.eclipse.emf.ecore.EClass;
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Mandatoria Produto</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * </p>
  *
  * @generated
  */
 public class CaracteristicaMandatoriaProdutoImpl extends CaracteristicaProdutoImpl implements CaracteristicaMandatoriaProduto
 {
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected CaracteristicaMandatoriaProdutoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.CARACTERISTICA_MANDATORIA_PRODUTO;
-  }
+		return CaracteristicaPackage.Literals.CARACTERISTICA_MANDATORIA_PRODUTO;
+	}
 
 } //CaracteristicaMandatoriaProdutoImpl

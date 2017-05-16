@@ -18,11 +18,9 @@ public class ElementInitializers {
 	 * @generated
 	 */
 	public static ElementInitializers getInstance() {
-		ElementInitializers cached = CaracteristicaDiagramEditorPlugin
-				.getInstance().getElementInitializers();
+		ElementInitializers cached = CaracteristicaDiagramEditorPlugin.getInstance().getElementInitializers();
 		if (cached == null) {
-			CaracteristicaDiagramEditorPlugin.getInstance()
-					.setElementInitializers(cached = new ElementInitializers());
+			CaracteristicaDiagramEditorPlugin.getInstance().setElementInitializers(cached = new ElementInitializers());
 		}
 		return cached;
 	}

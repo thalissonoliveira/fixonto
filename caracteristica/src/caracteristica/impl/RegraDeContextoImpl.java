@@ -20,219 +20,211 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link caracteristica.impl.RegraDeContextoImpl#getEvento <em>Evento</em>}</li>
  *   <li>{@link caracteristica.impl.RegraDeContextoImpl#getAcao <em>Acao</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
 public class RegraDeContextoImpl extends RegraImpl implements RegraDeContexto
 {
   /**
-   * The cached value of the '{@link #getEvento() <em>Evento</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getEvento() <em>Evento</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvento()
-   * @generated
-   * @ordered
-   */
+	 * @see #getEvento()
+	 * @generated
+	 * @ordered
+	 */
   protected Evento evento;
 
   /**
-   * The cached value of the '{@link #getAcao() <em>Acao</em>}' reference.
-   * <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getAcao() <em>Acao</em>}' reference.
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcao()
-   * @generated
-   * @ordered
-   */
+	 * @see #getAcao()
+	 * @generated
+	 * @ordered
+	 */
   protected Acao acao;
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   protected RegraDeContextoImpl()
   {
-    super();
-  }
+		super();
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   protected EClass eStaticClass()
   {
-    return CaracteristicaPackage.Literals.REGRA_DE_CONTEXTO;
-  }
+		return CaracteristicaPackage.Literals.REGRA_DE_CONTEXTO;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Evento getEvento()
   {
-    if (evento != null && evento.eIsProxy())
-    {
-      InternalEObject oldEvento = (InternalEObject)evento;
-      evento = (Evento)eResolveProxy(oldEvento);
-      if (evento != oldEvento)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO, oldEvento, evento));
-      }
-    }
-    return evento;
-  }
+		if (evento != null && evento.eIsProxy()) {
+			InternalEObject oldEvento = (InternalEObject)evento;
+			evento = (Evento)eResolveProxy(oldEvento);
+			if (evento != oldEvento) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO, oldEvento, evento));
+			}
+		}
+		return evento;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Evento basicGetEvento()
   {
-    return evento;
-  }
+		return evento;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setEvento(Evento newEvento)
   {
-    Evento oldEvento = evento;
-    evento = newEvento;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO, oldEvento, evento));
-  }
+		Evento oldEvento = evento;
+		evento = newEvento;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO, oldEvento, evento));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Acao getAcao()
   {
-    if (acao != null && acao.eIsProxy())
-    {
-      InternalEObject oldAcao = (InternalEObject)acao;
-      acao = (Acao)eResolveProxy(oldAcao);
-      if (acao != oldAcao)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO, oldAcao, acao));
-      }
-    }
-    return acao;
-  }
+		if (acao != null && acao.eIsProxy()) {
+			InternalEObject oldAcao = (InternalEObject)acao;
+			acao = (Acao)eResolveProxy(oldAcao);
+			if (acao != oldAcao) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO, oldAcao, acao));
+			}
+		}
+		return acao;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public Acao basicGetAcao()
   {
-    return acao;
-  }
+		return acao;
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   public void setAcao(Acao newAcao)
   {
-    Acao oldAcao = acao;
-    acao = newAcao;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO, oldAcao, acao));
-  }
+		Acao oldAcao = acao;
+		acao = newAcao;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO, oldAcao, acao));
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
-        if (resolve) return getEvento();
-        return basicGetEvento();
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
-        if (resolve) return getAcao();
-        return basicGetAcao();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
+				if (resolve) return getEvento();
+				return basicGetEvento();
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
+				if (resolve) return getAcao();
+				return basicGetAcao();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eSet(int featureID, Object newValue)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
-        setEvento((Evento)newValue);
-        return;
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
-        setAcao((Acao)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
+				setEvento((Evento)newValue);
+				return;
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
+				setAcao((Acao)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public void eUnset(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
-        setEvento((Evento)null);
-        return;
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
-        setAcao((Acao)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
+				setEvento((Evento)null);
+				return;
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
+				setAcao((Acao)null);
+				return;
+		}
+		super.eUnset(featureID);
+	}
 
   /**
-   * <!-- begin-user-doc -->
+	 * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @generated
-   */
+	 * @generated
+	 */
   @Override
   public boolean eIsSet(int featureID)
   {
-    switch (featureID)
-    {
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
-        return evento != null;
-      case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
-        return acao != null;
-    }
-    return super.eIsSet(featureID);
-  }
+		switch (featureID) {
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__EVENTO:
+				return evento != null;
+			case CaracteristicaPackage.REGRA_DE_CONTEXTO__ACAO:
+				return acao != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } //RegraDeContextoImpl

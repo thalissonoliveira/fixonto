@@ -19,8 +19,7 @@ import caracteristica.diagram.edit.policies.TransicaoItemSemanticEditPolicy;
 /**
  * @generated
  */
-public class TransicaoEditPart extends ConnectionNodeEditPart implements
-		ITreeBranchEditPart {
+public class TransicaoEditPart extends ConnectionNodeEditPart implements ITreeBranchEditPart {
 
 	/**
 	 * @generated
@@ -39,8 +38,7 @@ public class TransicaoEditPart extends ConnectionNodeEditPart implements
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new TransicaoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new TransicaoItemSemanticEditPolicy());
 	}
 
 	/**

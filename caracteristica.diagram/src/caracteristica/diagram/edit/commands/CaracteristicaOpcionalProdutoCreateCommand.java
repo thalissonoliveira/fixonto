@@ -21,8 +21,7 @@ import caracteristica.CaracteristicaOpcionalProduto;
 /**
  * @generated
  */
-public class CaracteristicaOpcionalProdutoCreateCommand extends
-		EditElementCommand {
+public class CaracteristicaOpcionalProdutoCreateCommand extends EditElementCommand {
 
 	/**
 	 * @generated
@@ -36,8 +35,7 @@ public class CaracteristicaOpcionalProdutoCreateCommand extends
 	 * @generated
 	 */
 	protected EObject getElementToEdit() {
-		EObject container = ((CreateElementRequest) getRequest())
-				.getContainer();
+		EObject container = ((CreateElementRequest) getRequest()).getContainer();
 		if (container instanceof View) {
 			container = ((View) container).getElement();
 		}
@@ -55,8 +53,7 @@ public class CaracteristicaOpcionalProdutoCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected CommandResult doExecuteWithResult(IProgressMonitor monitor,
-			IAdaptable info) throws ExecutionException {
+	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		CaracteristicaOpcionalProduto newElement = CaracteristicaFactory.eINSTANCE
 				.createCaracteristicaOpcionalProduto();
 
@@ -72,18 +69,13 @@ public class CaracteristicaOpcionalProdutoCreateCommand extends
 	/**
 	 * @generated
 	 */
-	protected void doConfigure(CaracteristicaOpcionalProduto newElement,
-			IProgressMonitor monitor, IAdaptable info)
+	protected void doConfigure(CaracteristicaOpcionalProduto newElement, IProgressMonitor monitor, IAdaptable info)
 			throws ExecutionException {
-		IElementType elementType = ((CreateElementRequest) getRequest())
-				.getElementType();
-		ConfigureRequest configureRequest = new ConfigureRequest(
-				getEditingDomain(), newElement, elementType);
-		configureRequest.setClientContext(((CreateElementRequest) getRequest())
-				.getClientContext());
+		IElementType elementType = ((CreateElementRequest) getRequest()).getElementType();
+		ConfigureRequest configureRequest = new ConfigureRequest(getEditingDomain(), newElement, elementType);
+		configureRequest.setClientContext(((CreateElementRequest) getRequest()).getClientContext());
 		configureRequest.addParameters(getRequest().getParameters());
-		ICommand configureCommand = elementType
-				.getEditCommand(configureRequest);
+		ICommand configureCommand = elementType.getEditCommand(configureRequest);
 		if (configureCommand != null && configureCommand.canExecute()) {
 			configureCommand.execute(monitor, info);
 		}

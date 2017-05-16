@@ -67,8 +67,7 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE,
-				new AtributoItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new AtributoItemSemanticEditPolicy());
 		installEditPolicy(EditPolicy.LAYOUT_ROLE, createLayoutEditPolicy());
 		// XXX need an SCR to runtime to have another abstract superclass that would let children add reasonable editpolicies
 		// removeEditPolicy(org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles.CONNECTION_HANDLES_ROLE);
@@ -81,8 +80,7 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 		org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy lep = new org.eclipse.gmf.runtime.diagram.ui.editpolicies.LayoutEditPolicy() {
 
 			protected EditPolicy createChildEditPolicy(EditPart child) {
-				EditPolicy result = child
-						.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
+				EditPolicy result = child.getEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE);
 				if (result == null) {
 					result = new NonResizableEditPolicy();
 				}
@@ -119,8 +117,7 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 	 */
 	protected boolean addFixedChild(EditPart childEditPart) {
 		if (childEditPart instanceof AtributoNomeEditPart) {
-			((AtributoNomeEditPart) childEditPart).setLabel(getPrimaryShape()
-					.getFigureAtributoLabelFigure());
+			((AtributoNomeEditPart) childEditPart).setLabel(getPrimaryShape().getFigureAtributoLabelFigure());
 			return true;
 		}
 		return false;
@@ -253,32 +250,7 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 	 * @generated
 	 */
 	public EditPart getPrimaryChildEditPart() {
-		return getChildBySemanticHint(CaracteristicaVisualIDRegistry
-				.getType(AtributoNomeEditPart.VISUAL_ID));
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMARelTypesOnTarget() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(CaracteristicaElementTypes.CaracteristicaAtributo_4004);
-		return types;
-	}
-
-	/**
-	 * @generated
-	 */
-	public List<IElementType> getMATypesForSource(IElementType relationshipType) {
-		LinkedList<IElementType> types = new LinkedList<IElementType>();
-		if (relationshipType == CaracteristicaElementTypes.CaracteristicaAtributo_4004) {
-			types.add(CaracteristicaElementTypes.CaracteristicaOpcional_2001);
-			types.add(CaracteristicaElementTypes.CaracteristicaAgrupada_2033);
-			types.add(CaracteristicaElementTypes.VariacaoDois_2002);
-			types.add(CaracteristicaElementTypes.CaracteristicaRaiz_2003);
-			types.add(CaracteristicaElementTypes.CaracteristicaMandatoria_2004);
-		}
-		return types;
+		return getChildBySemanticHint(CaracteristicaVisualIDRegistry.getType(AtributoNomeEditPart.VISUAL_ID));
 	}
 
 	/**
@@ -286,8 +258,7 @@ public class AtributoEditPart extends ShapeNodeEditPart {
 	 */
 	protected void handleNotificationEvent(Notification event) {
 		if (event.getNotifier() == getModel()
-				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations()
-						.equals(event.getFeature())) {
+				&& EcorePackage.eINSTANCE.getEModelElement_EAnnotations().equals(event.getFeature())) {
 			handleMajorSemanticChange();
 		} else {
 			super.handleNotificationEvent(event);

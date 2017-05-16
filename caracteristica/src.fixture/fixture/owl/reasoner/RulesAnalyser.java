@@ -25,7 +25,6 @@ import fixture.owl.enumeration.RulesConstraintsOWLClassTypeEnum;
 import fixture.owl.factory.OWLClassFactory;
 import fixture.owl.factory.OWLObjectPropertyFactory;
 import fixture.owl.rules.error.SWRLError;
-import fixture.owl.rules.error.SWRLErrorBuilder;
 import fixture.owl.rules.error.SWRLErrorBuilderV2;
 import fixture.owl.swrl.FixtureBuiltin;
 import fixture.owl.swrl.FixtureEqualNameFeatureBuiltinHelper;
